@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'charterregular';
+  src: url('charter_regular-webfont.eot');
+  src: url('charter_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, li  p {
+  font-family: "charterregular";
+}
+
+html {
+  height: 100%;
+  font-size: 24px;
+}
+
+body {
+  padding: 0;
+
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  max-width:1000px;
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: 'kern=1';
+  -moz-font-feature-settings: 'kern' 1;
+  -webkit-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+  -ms-font-feature-settings: 'kern' 1;
+  font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'liga=1';
+  -moz-font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga' 1;
+  -o-font-feature-settings: 'liga' 1;
+  -ms-font-feature-settings: 'liga' 1;
+  font-feature-settings: 'liga' 1;
+}
+
+
+body > * {
+  font-size: 100%;
+
+  margin-left: 11.5rem;
+  margin-right: 2.5rem;
+}
+
+.content {
+    display: block;
+    padding: 2rem 0 10rem 0;
+    hyphens: auto;
+}
+
+p, li {
+  margin-bottom: 1em;
+  line-height: 1.35;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition-property: background;
+  transition-duration: 0.2s;
+}
+
+a:active {
+  color: #777;
+}
+
+a:after {
+    position: relative;
+    content: "*";
+    margin-left: 0.10em;
+    font-size: 90%;
+    top: -0.10em;
+    color: #933;
+}
+
+a:hover {
+  background: #fbf3f3;
+  transition-property: background;
+  transition-duration: 0.2s;
+  border-radius: 8px;
+}
+
+code {
+  font-family: "triplicate-code";
+  font-size: 95%;
+  hyphens: none;
+}
+
+.aside {
+  margin: 0;
+  float: left;
+  padding-top: 5em;
+  max-width: 200px;
+  min-width: 100px;
+  font-weight: 500;
+}
+
+.aside h1 {
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  padding-left: 0.2em;
+  font-size: 32px;
+}
+
+@media(max-width:960px){
+  html {font-size: 23px;}
+  .aside {
+    padding-top: 0;
+    float: none;
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+}
+@media(max-width:880px){
+  html {font-size: 21px;}
+}
+@media(max-width:520px) {
+  html{font-size: 18px;}
+  body > * {margin: 2rem;}
+  content { padding: 0;}
+}
