@@ -96,8 +96,8 @@ a:hover {
 }
 
 code {
-  font-family: "triplicate-code";
-  font-size: 95%;
+  font-family: Monaco, monospace;
+  font-size: 85%;
   hyphens: none;
 }
 

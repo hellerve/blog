@@ -1,6 +1,6 @@
 I have abandoned my blog for a long time. This might be due to
-my sub par writing skills in English, a lack of time or - most
-likely - a mixture of both. I would like to change that, though,
+my sub par writing skills in English, a lack of time or—most
+likely—a mixture of both. I would like to change that, though,
 and I hope I will with this new format. It also means that I had
 to move from [Ghost](https://ghost.org/), which was never my thing
 to begin with, to a more DIY platform.
