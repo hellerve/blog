@@ -57,6 +57,12 @@ body > * {
     hyphens: auto;
 }
 
+.footer {
+    padding-top: 1em;
+    border-top: 1px solid blacK;
+    font-size: 90%;
+}
+
 p, li {
   margin-bottom: 1em;
   line-height: 1.35;
