@@ -43,7 +43,6 @@ body {
   font-feature-settings: 'liga' 1;
 }
 
-
 body > * {
   font-size: 100%;
 
@@ -52,15 +51,20 @@ body > * {
 }
 
 .content {
-    display: block;
-    padding: 2rem 0 10rem 0;
-    hyphens: auto;
+  display: block;
+  padding: 2rem 0 10rem 0;
+  hyphens: auto;
+}
+
+.content h2 {
+  font-size: 120%;
+  font-weight: 500;
 }
 
 .footer {
-    padding-top: 1em;
-    border-top: 1px solid blacK;
-    font-size: 90%;
+  padding-top: 1em;
+  border-top: 1px solid blacK;
+  font-size: 90%;
 }
 
 p, li {
@@ -71,8 +75,6 @@ p, li {
 a {
   text-decoration: none;
   color: inherit;
-  transition-property: background;
-  transition-duration: 0.2s;
 }
 
 a:active {
@@ -80,19 +82,16 @@ a:active {
 }
 
 a:after {
-    position: relative;
-    content: "*";
-    margin-left: 0.10em;
-    font-size: 90%;
-    top: -0.10em;
-    color: #933;
+  position: relative;
+  content: "*";
+  margin-left: 0.10em;
+  font-size: 90%;
+  top: -0.10em;
+  color: #933;
 }
 
 a:hover {
-  background: #fbf3f3;
-  transition-property: background;
-  transition-duration: 0.2s;
-  border-radius: 8px;
+  border-bottom: 2px solid #933;
 }
 
 code {
