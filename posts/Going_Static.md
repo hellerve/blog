@@ -33,7 +33,7 @@ and, quite possibly, my eyes only.
 
 ## I against the world
 
-*I.* I embrace minimalism. It caters to my artistic and æsthetic principles. I
+**I.** I embrace minimalism. It caters to my artistic and æsthetic principles. I
 don't mean bogus minimalism à la [material design](https://material.io/guidelines/),
 which try to invent a visual language that a) looks appealing and b) works in
 a corporate context. In fact, I think every effort to make anything corporate
@@ -41,19 +41,19 @@ look good is doomed. I don't think it is impossible a priori, but I do think
 it is hard—especially so if it has to fulfill a purpose (think Customer Resource
 Management software or sales portals).
 
-*II.* I believe minimalism and function are naturally at odds. Professional life
+**II.** I believe minimalism and function are naturally at odds. Professional life
 is always about selling things, in one or another. It has to serve a purpose,
 it has to fulfill its function. Thus, looking back at the first sentence of this
 paragraph, we can conclude that minimalism and professional life are at odds.
 
-*III.* I need to earn money. I like to do so doing things that please me. At the
+**III.** I need to earn money. I like to do so doing things that please me. At the
 beginning of my career I was intimidated by the websites of people who were good
 at what they were doing. That was especially true if they built software, just as
 I aspired to do. I did the natural thing. I copied their style. Most of these
 websites were made by talented people and still, they looked bad. In hindsight
 it is obvious that my website was also destined to look bad.
 
-*IV.* I have gained a lot of experience since then, working on all sorts of projects,
+**IV.** I have gained a lot of experience since then, working on all sorts of projects,
 trying to make the best of things, good and bad. Now I can follow my own æsthetic
 intuition.
 

@@ -57,8 +57,10 @@ body > * {
 }
 
 .content h2 {
-  font-size: 120%;
+  font-size: 110%;
   font-weight: 500;
+  padding-bottom: 0.3em;
+  padding-left: 1em;
 }
 
 .footer {
