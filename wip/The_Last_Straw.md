@@ -38,7 +38,7 @@ from the layout of my blog—, but I enjoy thinking about it and I
 know typography is important for my audience. I know about kerning
 and ligatures. I have a basic grasp on good and bad fonts. I read
 [Practical Typography](http://practicaltypography.com/), and I enjoyed
-it. I payed the author for the experience, and I use [Charter](http://practicaltypography.com/charter.html)
+it. I paid the author for the experience, and I use [Charter](http://practicaltypography.com/charter.html)
 as my main font for a lot of tasks, such as this blog. And look at
 the book I linked to just now. Does the layout seem familiar? I will
 admit to it, I initially stole his layout for my blog. But I think I
