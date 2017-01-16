@@ -25,7 +25,7 @@ should be shipping multiple megabytes of application code.
 But, stubborn as I am, I stayed true to the browser, even as some of
 [my favorite features were killed](https://support.mozilla.org/en-US/kb/tab-groups-removal).
 After all, these were mere inconveniences, and Chrome has a host of
-problems and it is being developed by a company I am not particularly
+problems and is being developed by a company I am not particularly
 fond of. I can live with inconvenience. Sometimes I even need
 inconvenience, for the sake of creativity and productivity. So I
 ignored these problems, reminding myself what a pain migrating to
@@ -41,7 +41,7 @@ and ligatures. I have a basic grasp on good and bad fonts. I read
 it. I payed the author for the experience, and I use [Charter](http://practicaltypography.com/charter.html)
 as my main font for a lot of tasks, such as this blog. And look at
 the book I linked to just now. Does the layout seem familiar? I will
-admit to it, I initially stole his layout of my blog. But I think I
+admit to it, I initially stole his layout for my blog. But I think I
 changed, tweaked, and twisted it enough to rightfully call it my own
 now—though I will always have to stick a footnote at the end of that
 blurb. In short, typography is one of my secret, if a bit untended to,
