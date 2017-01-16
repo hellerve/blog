@@ -87,11 +87,11 @@ a {
   color: inherit;
 }
 
-a:active {
+.content a:active {
   color: #777;
 }
 
-a:after {
+.content a:after {
   position: relative;
   content: "*";
   margin-left: 0.10em;
@@ -124,6 +124,11 @@ code {
   border-left: 3px solid black;
   padding-left: 0.2em;
   font-size: 32px;
+}
+
+.aside a {
+  font-size: 130%;
+  font-style: italic;
 }
 
 @media(max-device-width:960px){
