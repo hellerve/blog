@@ -10,7 +10,7 @@
   (regex:sub r/.md$/ "" (list:last (string:split file "/"))))
 
 (define (output-file file)
-  (++ "rendered/" (from-path file) ".html"))
+  (++ (from-path file) ".html"))
 
 (define (file-to-title file)
   (regex:gsub r/_/ " " (from-path file)))
