@@ -1,9 +1,17 @@
 @font-face {
-  font-family: 'charterregular';
+  font-family: 'charter';
   src: url('charter_regular-webfont.eot');
   src: url('charter_regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'charter';
+  src: url('charter_italic-webfont.eot');
+  src: url('charter_italic-webfont.woff') format('woff');
+  font-weight: italic;
+  font-style: italic;
 }
 
 * {
@@ -12,7 +20,7 @@
 }
 
 body, li  p {
-  font-family: "charterregular";
+  font-family: "charter";
 }
 
 html {
