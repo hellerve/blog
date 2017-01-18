@@ -43,4 +43,36 @@ dialect of CSS to make it work better with how Python data is structured—build
 what amounts to an ad-hoc, badly specified DSL.
 
 Against all odds, it seems to work fairly well for me. The code base is tiny and
-really easy to understand, which is a good thing in my book.
+really easy to understand, which is a good thing in my book. Still, I would not
+suggest you use it if it does not scratch a *really bad* itch in your code. The
+reason for that is really simple: it is simply not idiomatic Python. It looks
+relatively functional from the inside—if you squint hard enough and ignore the
+mutations, that is—, which is not generally a good starting point for Python in
+my opinion. I find myself writing functional, or rather procedural, Python code
+very often for small data-driven tools, because I find the data flow is much more
+easy to reason about like that. Another toolset of mine, [hawkweed](http://github.com/hellerve/hawkweed),
+tries to make actual functional constructs work well in Python. It has not been
+very popular, and I think that this has two primary reasons. Firstly, the
+documentation is very suboptimal, because it has largely been a tool for my own
+code or people who know the librarys capabilities already. The docstrings within
+the code are extensive, but discovering what functions are actually there is
+hard. This approach puts the onus of learning about the tools usefulness on
+the user, which, in my experience, does not work very well.
+
+The second reason is rather simple: Python is not a functional language. Most
+Python programmers I know do not think in terms of higher order functions, currying,
+and other constructs that are generally employed by people who work primarily in
+functional languages to manage complexity, and so they do not understand how these
+programs can be useful for abstractions. This is not primarily due to willful ignorance,
+but because Python was not designed to work like that. It took me a long time to
+accept that programming languages are not what I want them to be. Sure, I can bend
+them until they fit into the box that I work in, but that is not how I should go
+about things if I want to work productively with other people.
+
+## Back on track
+
+I still use `manipulator`. I have designed it to work with a set of small internal
+tools for a client of mine. These tools interact with a database and transform data
+into different shapes for monitoring and analytics. This is a perfect fit for a tool
+like that: you know the shape of the input data, you know how to transform it, mostly
+statically, only influenced by the input data itself. It is almost a pure system.
