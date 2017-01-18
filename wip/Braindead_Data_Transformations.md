@@ -75,4 +75,9 @@ I still use `manipulator`. I have designed it to work with a set of small intern
 tools for a client of mine. These tools interact with a database and transform data
 into different shapes for monitoring and analytics. This is a perfect fit for a tool
 like that: you know the shape of the input data, you know how to transform it, mostly
-statically, only influenced by the input data itself. It is almost a pure system.
+statically, only influenced by the input data itself. It is almost a pure system and
+lends itself well to reasoning.
+
+My conclusion from this little experiment is that sometimes hacks are acceptable, if
+they are kept local and do not taint any other part of the program but rather enrich
+the overall programming experience. Your mileage may vary.
