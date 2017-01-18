@@ -10,8 +10,16 @@
   font-family: 'charter';
   src: url('charter_italic-webfont.eot');
   src: url('charter_italic-webfont.woff') format('woff');
-  font-weight: italic;
+  font-weight: normal;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'triplicate';
+  src: url('triplicate_code_regular.eot');
+  src: url('triplicate_code_rehular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
@@ -105,8 +113,7 @@ a:hover {
 }
 
 code {
-  font-family: Monaco, monospace;
-  font-size: 85%;
+  font-family: "triplicate", monospace;
   hyphens: none;
 }
 
