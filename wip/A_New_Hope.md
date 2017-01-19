@@ -27,3 +27,11 @@
 :(typed-first : [a] -> a)
 (def (typed-first l) (head l))
 ```
+
+- deviances from zepto:
+  - gradually typed
+  - macro system implemented in zepto
+  - prioritized in development: compiler, its backends, parsers
+  - no FFI for now (hard to implement cross-platform)
+  - should be seen as a tool rather than a programming language; programming language coincidental
+  - tell noone its actually a good programming language!
