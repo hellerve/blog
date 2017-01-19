@@ -9,7 +9,7 @@
 (def (print-rand-string len alphabet := [\a \b \c])
   (|> (take len (rand-elems alphabet))
       s:join
-      io/print))
+      io:print))
 
 ; simple data structures
 ; (constructors defined in mythical language)
