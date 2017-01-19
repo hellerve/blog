@@ -1,4 +1,4 @@
-```
+```scheme
 ; correct load semantics
 (load random) ; refers rand-elems, for example
 (require io)
@@ -6,8 +6,8 @@
 
 ; define with def, keyword arguments by default
 ; (defined in mythical language)
-(def (print-rand-string) (alphabet := [\a \b \c])
-  (|> (take 10 (rand-elems alphabet))
+(def (print-rand-string len alphabet := [\a \b \c])
+  (|> (take len (rand-elems alphabet))
       s:join
       io/print))
 
