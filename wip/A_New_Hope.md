@@ -1,4 +1,4 @@
-```scheme
+```clojure
 ; correct load semantics
 (load random) ; refers rand-elems, for example
 (require io)
