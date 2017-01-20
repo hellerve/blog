@@ -35,3 +35,8 @@
   - no FFI for now (hard to implement cross-platform)
   - should be seen as a tool rather than a programming language; programming language coincidental
   - tell noone its actually a good programming language!
+- minimum requirements
+  - macro system
+  - type checker
+  - pluggable parsers and loaders (minimum: what's currently supported) 
+  - nanopass Compiler (minimum: JavaScript and llvm) 
