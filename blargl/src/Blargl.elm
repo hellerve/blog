@@ -31,6 +31,7 @@ input extra =
          , ("box-sizing", "border-box")
          , ("margin-bottom", "1em")
          , ("font-size", "20px")
+         , ("overflow", "scroll")
          ] ++ extra)
 
 btn = style [ ("border", "3px solid #333")
