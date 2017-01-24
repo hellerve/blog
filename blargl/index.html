@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="blargl.js"></script>
+  </head>
+  <body style="margin:0">
+  </body>
+  <script type="text/javascript">
+    var app = Elm.Blargl.fullscreen();
+
+    app.ports.click.subscribe(function(data) {
+      window.open("data:text/plain;charset=utf-8,"+data, "_blank");
+    });
+  </script>
+</html>
