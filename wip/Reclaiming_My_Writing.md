@@ -1,4 +1,4 @@
-I released a new tool for my blog yesterday which also marks my first project in [Elm](elm-lang.org). It's a small [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) [editor for Markdown files](blog.veitheller.de/blargl). I'm fairly happy with it. It's simple and efficient and does not get in my way. Time will tell whether I will actually use it to write my posts, but I consider it to be useful, at least at the moment. And i learned a bit about Elm on the way, which is a nice byproduct of the experiment.
+I released a new tool for my blog yesterday which also marks my first project in [Elm](elm-lang.org). It's a small [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) [editor for Markdown files](blog.veitheller.de/blargl). I'm fairly happy with it. It's simple and efficient and does not get in my way. Time will tell whether I will actually use it to write my posts, but I consider it to be useful, at least at the moment. And I learned a bit about Elm on the way, which is a nice byproduct of the experiment.
 
 ## The Third Newtonian Law of Motion
 
