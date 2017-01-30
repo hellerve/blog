@@ -85,6 +85,11 @@ body > * {
   font-size: 90%;
 }
 
+.date {
+  font-style: italic;
+  margin: 0.3em;
+}
+
 p, li {
   margin-bottom: 1em;
   line-height: 1.35;
