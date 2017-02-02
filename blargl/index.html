@@ -2,14 +2,9 @@
 <html>
   <head>
     <script type="text/javascript" src="blargl.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body style="margin:0">
+    <script>Elm.Blargl.fullscreen()</script>
   </body>
-  <script type="text/javascript">
-    var app = Elm.Blargl.fullscreen();
-
-    app.ports.click.subscribe(function(data) {
-      window.open("data:text/plain;charset=utf-8,"+data, "_blank");
-    });
-  </script>
 </html>

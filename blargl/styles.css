@@ -1,0 +1,42 @@
+.bg {
+  background-color: #eee;
+  height: 100vh;
+}
+
+.input {
+   width: 44vw;
+   margin-left: 2.5vw;
+   margin-right: 2.5vw;
+   height: 90vh;
+   margin-top: 5vh;
+   border: none;
+   background-color: white;
+   resize: none;
+   float: left;
+   padding: 1em;
+   box-sizing: border-box;
+   margin-bottom: 1em;
+   font-size: 20px;
+   overflow: scroll;
+}
+
+#output {
+  font-family: "charter";
+  padding-top: 0;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #output, #output * {
+    visibility: visible;
+  }
+  #output {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
