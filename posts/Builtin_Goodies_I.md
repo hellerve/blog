@@ -8,7 +8,7 @@ For this exact reason I will also not go into every function listed on this page
 
 With all of the rubble out of the way, let's dive right into the first of my favorites.
 
-## Taking control over the processor with `__builtin_expect`
+## Taking control with `__builtin_expect`
 
 `__builtin_expect` is fairly obscure, but tremendously useful. It basically tells the processor which branch is more likely to be executed. This helps the [branch predictor](https://en.wikipedia.org/wiki/Branch_predictor) in making the speculative execution of one of the branches more likely. Now, there is a major drawback to this, and the GCC documentation page mentions it explictly: “`programmers are notoriously bad at predicting how their programs actually perform`”.
 
