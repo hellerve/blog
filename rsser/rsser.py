@@ -27,7 +27,7 @@ def post_elem(name, stats, url, idx):
     elem.append(description)
 
     link = E.Element("link")
-    link.text = "{}{}".format(config.blog, url)
+    link.text = "{}/{}".format(config.blog, url)
     elem.append(link)
 
     pub_date = E.Element("pubDate")
