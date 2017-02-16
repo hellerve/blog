@@ -2,3 +2,6 @@
 triplicate_*
 elm-stuff/
 blargl.js
+
+# my private deploy script
+deploy.sh
