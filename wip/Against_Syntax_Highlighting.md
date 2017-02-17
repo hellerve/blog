@@ -1,0 +1,1 @@
+I've been asked to add syntax highlighting to this blog by friends and peers a few times now. I didn't listen to them, though, and that's not because I don't value their contribution. I thought about syntax highlighting in blog posts for some time and then decided it was doing more harm than good. Let me explain.
