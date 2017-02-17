@@ -10,35 +10,39 @@ import config
 def read_index():
     tree = E.parse(config.index)
 
-    for post in tree.findall(".//li[@id='post']"):
+    for post in tree.findall(".//li[@class='post']"):
         yield post[0].text, post[0].attrib["href"][1:] # trim leading /
 
-# ToDo: That's dumb
-def post_elem(name, stats, url, idx):
 
+def post_elem(name, stats, url, idx):
     elem = E.Element("item")
 
-    title = E.Element("title")
-    title.text = name
-    elem.append(title)
+    subelems = {
+        "title": name,
+        "description": name,
+        "link": "{}/{}".format(config.blog, url),
+        "pubDate": str(datetime.fromtimestamp(stats.st_mtime)),
+        "guid": str(idx),
+    }
 
-    description = E.Element("description")
-    description.text = name
-    elem.append(description)
-
-    link = E.Element("link")
-    link.text = "{}/{}".format(config.blog, url)
-    elem.append(link)
-
-    pub_date = E.Element("pubDate")
-    pub_date.text = str(datetime.fromtimestamp(stats.st_mtime))
-    elem.append(pub_date)
-
-    guid = E.Element("guid")
-    guid.text = str(idx)
-    elem.append(guid)
+    for name, val in subelems.items():
+        subelem = E.SubElement(elem, name)
+        subelem.text = val
 
     return elem
+
+
+def renumerate(l):
+    """
+    Reverse index enumeration.
+    We have to force it to be a list, though, bummer.
+    """
+    l   = list(l)
+    idx = len(l) - 1
+
+    for elem in l:
+        yield idx, elem
+        idx -= 1
 
 
 def build(posts):
@@ -46,7 +50,7 @@ def build(posts):
     channel = tree.find("channel")
     channel.append(E.Element('lastBuildDate', text=str(datetime.now())))
 
-    for idx, (name, url) in enumerate(posts):
+    for idx, (name, url) in renumerate(posts):
         stats = os.stat(url)
         channel.append(post_elem(name, stats, url, idx))
 
