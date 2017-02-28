@@ -199,6 +199,19 @@ table + .figure-label {
   .aside h1 {
     font-size: 60px;
   }
+  table {
+    font-size: 30px;
+    width: 100%;
+  }
+  table th {
+    font-size: 24px;
+  }
+  .figure-label {
+    font-size: 13px;
+  }
+  table + .figure-label {
+    margin-top: -0.5em;
+  }
 }
 @media(max-width:880px){
   html {font-size: 21px;}
