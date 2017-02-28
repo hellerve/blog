@@ -180,7 +180,7 @@ table th {
 .figure-label {
   text-align: center;
   font-size: 80%;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 table + .figure-label {
