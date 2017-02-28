@@ -28,12 +28,12 @@ is two days less than in January, where my page count was at 9.64 per working
 day. This month, this is up to 18.4 pages a day, marking 90.8% growth. Not
 quite as impressive as the raw pages per day, but still a pretty clear uptick.
 
-| Metric            | January | February | Growth Rate |
-| ----------------- | ------- | -------- | ----------- |
-| Papers            | 15      | 15       | 0%          |
-| Total Pages       | 212     | 368      | 73.6%       |
-| Pages p. day      | 6.84    | 13.14    | 92.1%       |
-| Pages p. work day | 9.64    | 18.4     | 90.8%       |
+| Metric             | January | February | Growth Rate |
+| ------------------ | ------- | -------- | ----------- |
+| Papers             | 15      | 15       | 0%          |
+| Total Pages        | 212     | 368      | 73.6%       |
+| Pages per day      | 6.84    | 13.14    | 92.1%       |
+| Pages per work day | 9.64    | 18.4     | 90.8%       |
 <div class="figure-label">Fig. 1: An overview over the data as a nice little table.</div>
 
 ## Now what?
