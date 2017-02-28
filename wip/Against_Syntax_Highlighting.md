@@ -35,3 +35,6 @@ is very different from how one usually operates with code, and the needs I have
 here are different from the needs I have in my terminal.
 
 ## Why syntax highlighting is bad
+
+I read a lot of blog posts, both for pleasure and when I need to research all
+kinds of things for work.

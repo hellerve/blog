@@ -147,6 +147,46 @@ code {
   font-style: italic;
 }
 
+table {
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  width: 95%;
+  font-size: 80%;
+}
+
+table tr + tr {
+  border: 1px solid #ccc;
+  border-top: 2px solid #ccc;
+}
+
+table td {
+  border: 1px solid #ccc;
+}
+
+table td {
+  padding: 0.4em;
+  text-align: center;
+  hyphens: none;
+}
+
+table th {
+  font-weight: normal;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  line-height: 1.05;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #999;
+}
+
+.figure-label {
+  text-align: center;
+  font-size: 80%;
+  margin-bottom: 1em;
+}
+
+table + .figure-label {
+  margin-top: -1.2em;
+}
+
 @media(max-device-width:960px){
   html {font-size: 23px;}
   .aside {
