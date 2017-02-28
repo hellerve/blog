@@ -7,7 +7,7 @@ that is not mindnumbingly boring, but I'm not one of them, so consider
 yourself warned. I will throw around a few numbers that might not at all
 interest you.
 
-# Give me the data
+## Give me the data
 
 First of all I've started reading prose and poetry books again. I've yet to
 finish one of these books—both of them are rather long—but I've progressing
@@ -36,7 +36,7 @@ quite as impressive as the raw pages per day, but still a pretty clear uptick.
 | Pages p. work day | 9.64    | 18.4     | 90.8%       |
 <div class="figure-label">Fig. 1: An overview over the data as a nice little table.</div>
 
-# Now what?
+## Now what?
 
 After giving you the raw numbers like your employer might in an annual
 review—meaning you consider faking a coughing fit just to get out of there—I
@@ -61,4 +61,5 @@ happens and in the meantime let's all just assume that this project is now tagge
 as a stable release—sorry for the lame pun, but I couldn't think of a better analogy.
 See you soon!
 
-P.S.: I also added table styling just to make the table in this post a bit more palatable.
+P.S.: I also added table styling just to make the data in this post a bit more palatable.
+I hope you like the layout.
