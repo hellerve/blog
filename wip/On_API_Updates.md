@@ -1,10 +1,10 @@
 Sometimes API changes make my day, namely when they enable me to refactor a
 historically gnarly bit of code to a cleaner, more efficient, and shorter
 version of itself. Alas, library maintainers do not always agree with me in
-terms of what needs to be changed and sometimes they decide to make my life a
+terms of what needs to be changed. Sometimes they decide to make my life a
 little bit harder. The particularly nasty thing is that I can't always object to
-their changes, because they might make perfect sense in other contexts, it just
-breaks my one weird use case. Today is such a day, and so I shall tell you a
+their changes, because they might make perfect sense in other contexts, they just
+break my one weird use case. Today is such a day, so I shall tell you a
 story of sorrow and woe.
 
 ## The use case
@@ -12,30 +12,30 @@ story of sorrow and woe.
 One of my clients does a lot of monitoring, which is a good thing. I'm excited
 about monitoring and love implementing fancy dashboards, awesome data wrangling
 toolchains, and blazing fast collectors. All of those things are in place there
-and I am actually pretty proud of the work that I and the people who work there
+and I am actually pretty proud of the work that the people who work there and I 
 have done.
 
-What makes this client a little special is that they wanted a lightweight
+This particular client is a little special; they wanted a lightweight
 statistics portal that serves prerendered plots for the operations staff to look
-at, without them having to have great bandwidth or a browser with JavaScript
+at without having to have great bandwidth or a browser with JavaScript
 enabled. There are a few good tools out there that create images from timeseries
 data—a particularly popular example is
-[RRDTool](http://oss.oetiker.ch/rrdtool/)—, all of them with their unique set of
-shortcomings. As this client used mostly Python for their API and data analysis
+[RRDTool](http://oss.oetiker.ch/rrdtool/)—, each with a unique set of
+shortcomings. As this client used mostly Python for their API and data analysis,
 I decided to go for a tool that makes programming in LaTeX seem like the holy
 grail of user experience: [matplotlib](http://matplotlib.org/).
 
-Despite its sometimes clunky and awkward API, it is a battle-tested
+Despite its sometimes clunky and awkward API, it's a battle-tested
 functionality monster. I was convinced it was up for the task from the get-go,
 and while I spent a few hours looking at obscure functions hidden deep within
-the many layers of matplotlib, I got the job done. As an aside: to make the page
+the many layers of matplotlib, I ultimately got the job done. (Aside: to make the page
 render a little faster and reduce the load on the API service, I actually made
-[Celery](http://celeryproject.org/) workers do the heavy lifting and let the
-served page call to an API endpoint that take a job ID and return a redirect to
+[Celery](http://celeryproject.org/) workers do the heavy lifting. This lets the
+served page call to an API endpoint that then takes a job ID and returns a redirect to
 the prepared image once the workers are done. This is an overly complex way of
 generating images on-the-fly, but it works quite well and has its very own hacky
 charm. Once I figured out how to generalize the job dispatch and image creation
-mechanisms, it also made adding functionality quite simple.
+mechanisms, it also made adding functionality quite simple.)
 
 So far, so good. And then matplotlib decided to release version `2.0.0`.
 
@@ -43,11 +43,11 @@ So far, so good. And then matplotlib decided to release version `2.0.0`.
 
 Because always upgrading to the bleeding edge is a good idea—statements like
 this might be why people are hesitant to take advice from me—we decided to
-update to the newest version of matplotlib. In our defense, it had been released
-for a month and a half when we upgraded. For some reasons someone decided it was
-a good idea to test that in the staging environment instead of locally and thus
-graph generation failed.  Hard. None of the graphs worked any more, and because
-I was the one who concocted the matplotlib code I was also assigned the task to
+update to the newest version of matplotlib. In our defense, it had been out
+for a month and a half before we upgraded. For some reasons someone decided it was
+a good idea to test it in the staging environment instead of locally, and, thus,
+graph generation failed.  Hard. None of the graphs worked any more. Because
+I was the one who concocted the matplotlib code, I was also assigned the task to
 fix that. So, naturally, the first thing was to break my local build and start
 looking at stack traces. I soon realized that the failure had resulted from us
 using a semi-internal matplotlib function, namely `get_facecolor`. Let
@@ -99,12 +99,12 @@ random arrays in the range `[80, 120[` for entering and leaving).</div>
 
 I know this example is a little contrived, but bear with me. Suppose we use this service
 for a while before it breaks, like our real-world application did. The stack traces tell
-you there is something wrong with the format that `get_facecolor` returns—they will tell
-you they expected a string, but you gave it a `numpy.ndarray` by trying to call the `find`
-method, which is defined for strings, and failing. You never looked at the color format
+you there is something wrong with the format returned by `get_facecolor`—they tell
+you they expected a string, but you gave it a `numpy.ndarray`.You try to call the `find`
+method, which is defined for strings, and fail. You never looked at the color format
 returned by `get_facecolor`, so you decide to take a peek. In your youthful ignorance you
 expect to find something along the lines of the input colors, a CSS-style hexadecimal RGB
-value. You find this abomination instead: `array([[0.73333333, 0.59215686, 0.3372549, 1.]])`.
+value. Instead, you find this abomination: `array([[0.73333333, 0.59215686, 0.3372549, 1.]])`.
 What is that? It is a nested [numpy](http://www.numpy.org/) array, containing what seems
 to be an RGBA value, encoded as floating point numbers from `0` to `1`. What the heck is
 this format.
@@ -117,9 +117,8 @@ internally, which erodes my argument that there might be a good reason for forma
 color like that.
 
 So, how can I fix that without diving into the documentation of matplotlib again and trying
-to figure out what to do, because that is obviously better than actually understanding what's
-going on—again, don't listen to me, please? A way that is guaranteed to work is to reverse
-engineer the format and get it back into the CSS-like form, because that still seems to work.
+to figure out what to do, because that's obviously better than actually understanding what's
+going on—again, don't listen to me, please? Reverse engineering the format to get it back into the CSS-like form is a guaranteed solution, because the CSS-like form itself still seems to work.
 Let's do that.
 
 ```python
@@ -152,7 +151,7 @@ first remove alpha): `"#{}{}{}".format(*[int(e*255) for e in l])`
 
 We're done. Phew.
 
-Let's inline the helper function as well, just for the heck of it, so we can see a before-after-comparison:
+Let's inline the helper function as well, just for the heck of it, so we can see a before-after comparison:
 
 ```python
 # before
@@ -164,9 +163,9 @@ Let's inline the helper function as well, just for the heck of it, so we can see
 ```
 
 
-Now is probably an appropriate time to tell you that chances are that you don't need that. Even if
+Now is probably an appropriate time to tell you that chances are you won't need this. Even if
 you have a similar use case to my client and you need to match color, if the two arrays are in the
-same order (as they will always be in the above case) you will be able to just reuse `COLORS` and be
+same order (as they will always be in the above case), you can reuse `COLORS` and be
 done with it. This also saves you a line of code, because you needn't build a `colors` list.
 
 ```python
@@ -177,16 +176,16 @@ def render(filename, stats):
     [...]
 ```
 
-Sadly, the case of my client wasn't that simple and our fix looked a little more gruesome, but it is
-documented pretty well, so I hope that even in the unlikely event of me dying before being able to
-hand the project over whoever looks at it will, after a moment of rage why I found no better way to
+Sadly, in the case of my client, it wasn't this simple and our fix looked a little more gruesome. It is
+documented pretty well, so I hope that even in the unlikely event that I die before being able to
+hand over the project, whoever looks at it will, after a moment of rage and posing the furious question of why I found no better way to
 do this, just shrug and read on.
 
 ## The takeaway
 
 You could take away a lot of different things from this, for instance that I should try and understand
-the frameworks I use a little better or that matplotlib sucks. I think both are valid sentiments, but
-I happen to disagree with them. What I decide to take away is that formats, even if they're internal
+the frameworks that I use a little better or that matplotlib sucks. I think both are valid sentiments, but
+I happen to disagree with them. What I decided to take away is that formats, even if they're internal
 and supposedly local to one component, need to be congruent. If you decide to format colors as nested
 numpy arrays of floating point numbers internally, please make sure that the rest of your API working
 with colors works with that as input, even if you don't think anyone outside of your component will ever
