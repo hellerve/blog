@@ -90,6 +90,10 @@ body > * {
   margin: 0.3em;
 }
 
+img {
+  width: 100%;
+}
+
 p, li {
   margin-bottom: 1em;
   line-height: 1.35;
@@ -220,6 +224,9 @@ ol li {
   }
   table + .figure-label {
     margin-top: -0.5em;
+  }
+  pre {
+    font-size: 110%;
   }
 }
 @media(max-width:880px){
