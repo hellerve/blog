@@ -94,7 +94,7 @@ the stats up a little and generally make this a bit less brittle.
 
 ![](./assets/plot.png)
 <div class="figure-label">Fig. 1: Example output (timeslices are 5 minutes, values are 10
-random arrays in the range `[80, 120[` for ebtering and leaving).</div>
+random arrays in the range `[80, 120[` for entering and leaving).</div>
 
 I know this example is a little contrived, but bear with me. Suppose we use this service
 for a while before it breaks, like our real-world application did. The stack traces tell
