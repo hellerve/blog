@@ -167,7 +167,7 @@ you have a similar use case to my client and you need to match color, if the two
 same order (as they will always be in the above case) you will be able to just reuse `COLORS` and be
 done with it. This also saves you a line of code, because you needn't build a `colors` list.
 
-```
+```python
 def render(filename, stats):
     [...]
     plot.stackplot(stats["time"], *stats["leaving"], edgecolor="none",
