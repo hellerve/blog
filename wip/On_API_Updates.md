@@ -180,7 +180,7 @@ documented pretty well, so I hope that even in the unlikely event of me dying be
 hand the project over whoever looks at it will, after a moment of rage why I found no better way to
 do this, just shrug and read on.
 
-## The meaning
+## The takeaway
 
 You could take away a lot of different things from this, for instance that I should try and understand
 the frameworks I use a little better or that matplotlib sucks. I think both are valid sentiments, but
