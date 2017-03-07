@@ -123,6 +123,7 @@ pre {
 
 code {
   font-family: "triplicate", monospace;
+  font-size: 90%;
   hyphens: none;
 }
 
@@ -184,6 +185,15 @@ table th {
 
 table + .figure-label {
   margin-top: -1.2em;
+}
+
+ol li {
+  margin-left: 1em;
+}
+
+ol li {
+  border-left: 2px solid;
+  padding-left: 0.5em;
 }
 
 @media(max-device-width:960px){
