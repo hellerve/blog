@@ -28,14 +28,14 @@ grail of user experience: [matplotlib](http://matplotlib.org/).
 Despite its sometimes clunky and awkward API, it's a battle-tested
 functionality monster. I was convinced it was up for the task from the get-go,
 and while I spent a few hours looking at obscure functions hidden deep within
-the many layers of matplotlib, I ultimately got the job done. (Aside: to make the page
+the many layers of matplotlib, I ultimately got the job done. To make the page
 render a little faster and reduce the load on the API service, I actually made
 [Celery](http://celeryproject.org/) workers do the heavy lifting. This lets the
 served page call to an API endpoint that then takes a job ID and returns a redirect to
 the prepared image once the workers are done. This is an overly complex way of
 generating images on-the-fly, but it works quite well and has its very own hacky
 charm. Once I figured out how to generalize the job dispatch and image creation
-mechanisms, it also made adding functionality quite simple.)
+mechanisms, it also made adding functionality quite simple.
 
 So far, so good. And then matplotlib decided to release version `2.0.0`.
 
@@ -100,8 +100,8 @@ random arrays in the range `[80, 120[` for entering and leaving).</div>
 I know this example is a little contrived, but bear with me. Suppose we use this service
 for a while before it breaks, like our real-world application did. The stack traces tell
 you there is something wrong with the format returned by `get_facecolor`—they tell
-you they expected a string, but you gave it a `numpy.ndarray`.You try to call the `find`
-method, which is defined for strings, and fail. You never looked at the color format
+you they expected a string, but you gave it a `numpy.ndarray`. It tries to call the `find`
+method, which is defined for strings, and fails. You never looked at the color format
 returned by `get_facecolor`, so you decide to take a peek. In your youthful ignorance you
 expect to find something along the lines of the input colors, a CSS-style hexadecimal RGB
 value. Instead, you find this abomination: `array([[0.73333333, 0.59215686, 0.3372549, 1.]])`.
@@ -158,7 +158,7 @@ Let's inline the helper function as well, just for the heck of it, so we can see
 [x.get_facecolor() for x in ax]
 # after
 ["#{:02X}{:02X}{:02X}".format(*[int(e*255) for e
-                                           in x.get_facecolor()[0]])
+                                       in x.get_facecolor()[0]])
   for x in ax]
 ```
 
