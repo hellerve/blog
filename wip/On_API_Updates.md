@@ -81,7 +81,8 @@ def render(filename, stats):
 
     ax = plot.stackplot(stats["time"], *stats["entering"],
                         edgecolor="none")
-    colors = [x.get_facecolor() for x in ax] # this is where we need you!
+    # this is where we need you, facecolor!
+    colors = [x.get_facecolor() for x in ax]
     plot.stackplot(stats["time"], *stats["leaving"],
                    edgecolor="none", colors=colors)
 
@@ -157,7 +158,8 @@ Let's inline the helper function as well, just for the heck of it, so we can see
 # before
 [x.get_facecolor() for x in ax]
 # after
-["#{:02X}{:02X}{:02X}".format(*[int(e*255) for e in x.get_facecolor()[0]])
+["#{:02X}{:02X}{:02X}".format(*[int(e*255) for e
+                                           in x.get_facecolor()[0]])
   for x in ax]
 ```
 
@@ -170,8 +172,8 @@ done with it. This also saves you a line of code, because you needn't build a `c
 ```python
 def render(filename, stats):
     [...]
-    plot.stackplot(stats["time"], *stats["leaving"], edgecolor="none",
-                  colors=COLORS)
+    plot.stackplot(stats["time"], *stats["leaving"],
+                   edgecolor="none", colors=COLORS)
     [...]
 ```
 
@@ -190,3 +192,5 @@ numpy arrays of floating point numbers internally, please make sure that the res
 with colors works with that as input, even if you don't think anyone outside of your component will ever
 see that data. That's a weak conclusion, I suppose, but not adhering to it broke a real system, so it can't
 be completely worthless.
+
+See you soon!
