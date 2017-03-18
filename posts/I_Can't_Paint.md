@@ -8,7 +8,7 @@ the source code [on Github](https://github.com/hellerve/shinu).
 <div class="figure-label">Fig. 1: One of my favorites thus far.</div>
 
 A bit of background: shinupaint (or 死ぬ, which is Japanese for
-"to die") started out by me fiddling around with [snek](https://github.com/inconvergent/snek),
+"to die") started out with me fiddling around with [snek](https://github.com/inconvergent/snek),
 a system for producing generative art in Common Lisp. The project
 is in its infancy and there is little documentation, so I took one
 of the examples and started from there. It is still very much
