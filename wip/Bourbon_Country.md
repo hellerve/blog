@@ -26,12 +26,11 @@ to visit her parents.
 
 It wasn't my first time at the TSA, though, and my English was generally not
 at its best for the first three days of the trip, so I refuse to place the blame on
-my experience at the border. For the first time, the reason why the progress in my language
-learning is sometimes not that linear seemed graspable to me: linguistic
-laziness. I simply don't have to try very hard. That's as true in my own
-language as in any other. I don't stretch unless there is something I want to
-reach, and, most of the time, what I want to reach is just being understood.
-Naturally, I refuse to admit that most of the time, so I get anxious when
+my experience at the border. I finnaly grasped why my language learning is sometimes
+not as linear as I would like: linguistic laziness. I simply don't have to try very
+hard. That's as true in my own language as in any other. I don't stretch unless there
+is something I want to reach, and, most of the time, what I want to reach is just being
+understood. Naturally, I refuse to admit that most of the time, so I get anxious when
 the right words don't come to me. But this time, I practically felt something
 inside me shrug and go “nah, we're good”, and _simply stop trying_.
 
@@ -41,5 +40,5 @@ saying that feels like an insult to anyone who has ever complimented my speaking
 and meant it. And, not unlike my attitude towards programming, even when I 
 say that I don't think I'm that great, something immediately protests: _I know better_.
 And so I will go back to my old modus operandi: if there's no problem with my
-productivity *s/productivity/performance ?* in any field—in this case English—I will refrain from commenting on
+performance in any field—in this case English—I will refrain from commenting on
 my ability. And of course Bourbon always helps.
