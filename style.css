@@ -68,7 +68,7 @@ body > * {
 
 .content {
   display: block;
-  padding: 2rem 0 10rem 0;
+  padding: 2rem 0 0 0;
   hyphens: auto;
 }
 

@@ -5,7 +5,6 @@ brainchild of Mark Underwood, also known as DJ Nature—, titled
 quite enjoy the record, so what the heck.
 
 <iframe src="https://www.npr.org/player/embed/520995327/520999948" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
-<div class="figure-label">Fig. 1: NPR's First Listen on the matter.</div>
 
 Do not be fooled by the first song, though, not all the material on the
 album is so radical and unconpromising. Some of the songs are actually
