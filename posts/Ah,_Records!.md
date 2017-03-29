@@ -8,7 +8,7 @@ and everything with operations.
 
 While I was on vacation my hosting provider [Webfaction](http://webfaction.com/)
 informed me that they would need to perform a VM migration, which meant my sites
-would be unavailable for the duration of the maintenance and the IP addresses
+would be unavailable for the duration of the maintenance and the IP address
 would change. Fair enough, I thought. The migration came and went, and I
 checked whether everything was still in working order. It did, so I went back to
 visiting distilleries and overeating. This is where you should start to get
@@ -23,13 +23,24 @@ The chat service uses WebSockets to distribute messages between clients
 in real time. WebSockets use regular TCP connections, and its initial handshake
 uses HTTP. It works like this:
 
-This, in connection with the IP change, came back to bite me when I continued to work on the
-chat application. I realized that the websocket handshake between my browser and
-the server failed, and thus I couldn't connect to the chat. Weird. The logs told
-me that my server found some of the headers needed for a successful handshake were
-missing—`websocket: not a websocket handshake: 'websocket' token not found in
-'Upgrade' header`. A quick look into the developer console confirmed that my
-browser did send that header.
+1. An initial HTTP request is sent. The most important headers to look out for
+   are the `Connection` header, the value of which should be `Upgrade`, and the
+   `Upgrade` header, the value of which should be `websocket`. There is also a
+   random key being transmitted and some metainformation, but for the sake of
+   this post, we will omit that.
+2. The server responds with the HTTP status code 101 (`Switching Protocols`).
+   The `Upgrade` and `Connection` headers stay the same, the key will be sent
+   back hashed, to identify the connection—not for security reasons.
+3. The connection is now a duplex connection and messages will be sent back and
+   forth using the WebSocket protocol. Yay!
+
+This, in connection with the IP change, came back to bite me when I continued to
+work on the chat application. I realized that the websocket handshake between my
+browser and the server failed, and thus I couldn't connect to the chat. Weird.
+The logs told me that my server found some of the headers needed for a successful
+handshake were missing—`websocket: not a websocket handshake: 'websocket' token
+not found in 'Upgrade' header`. A quick look into the developer console confirmed
+that my browser did send that header.
 
 This meant that the header was somehow lost in transmission, and my first guess
 was that the [NGINX](https://www.nginx.com/) configuration was somehow mangling
