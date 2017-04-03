@@ -1,21 +1,24 @@
+html, body {
+  margin: 0;
+  height: 100vh;
+}
+
 .bg {
   background-color: #eee;
   height: 100vh;
 }
 
 .input {
-   width: 44vw;
-   margin-left: 2.5vw;
-   margin-right: 2.5vw;
-   height: 90vh;
-   margin-top: 5vh;
+   margin: 0;
+   width: 49vw;
+   height: 100vh;
    border: none;
    background-color: white;
    resize: none;
    float: left;
-   padding: 1em;
+   padding-left: 0.5em;
+   padding-right: 0.2em;
    box-sizing: border-box;
-   margin-bottom: 1em;
    font-size: 20px;
    overflow: scroll;
    font-family: monospace;
@@ -24,6 +27,7 @@
 #output {
   font-family: "charter";
   padding-top: 0;
+  margin-left: 2vw;
 }
 
 @media print {
