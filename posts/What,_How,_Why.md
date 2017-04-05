@@ -43,7 +43,7 @@ The effect of syntax highlighting on program understanding seems
 
 In a blog setting, however, it just encourages writers to sling walls of code at
 their unsuspecting readers. I specifically chose not to use syntax highlighting
-with, [Prism](http://prismjs.com/) or [highlight.js](http://highlightjs.org/), for example,
+with [Prism](http://prismjs.com/) or [highlight.js](http://highlightjs.org/), for example,
 because I would be tempted to do the same. By not having syntax highlighting, I
 restrict myself to not showing my readers more than ~8 lines of code at a time.
 I've been asked a few times to add syntax highlighting by friends and colleagues.
@@ -56,6 +56,6 @@ in fact, I don't. I started this blog a mere three months ago on a whim,
 without giving it much thought. But I am an avid reader of blogs, both
 professionally and in my free time, and I failed to keep a blog twice in the
 past. Now, for the first time, it feels like I'm onto something sustainable. And
-I want to share the product of this process with you while be transparent why
-and how I get there. Maybe my ideals will change. If they do I'll share them with
-you again; let me wish you all the best in the meantime!
+I want to share the product of this process with you while being transparent about
+why and how I get there. Maybe my ideals will change. If they do I'll share them
+with you again; let me wish you all the best in the meantime!
