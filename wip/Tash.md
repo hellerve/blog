@@ -1,8 +1,7 @@
 It's time for sharing music again. Interestingly I only feel like writing about
-the msuic when I normally wouldn't enjoy the music and yet something about it
-intrigues me. Let's see whether that trend continues.
+music when it's something I normally wouldn't enjoy but still find intriguing. Let's see if that trend continues.
 
-So, today I want to share Tash Sultana with you. She seems new in the spotlight,
+So, today I want to share Tash Sultana with you. She seems new to the spotlight,
 but an experienced musician, though I cannot say for sure. All I know is that her
 [Tiny Desk](http://www.npr.org/2017/04/06/522848880/tash-sultana-tiny-desk-concert)
 performance blew me away. She is so energetic and beautifully excited by her own
