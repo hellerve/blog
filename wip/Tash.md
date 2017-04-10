@@ -12,3 +12,5 @@ and calming. Not this time.
 
 I didn't know her music before watching this performance. I'm glad that changed,
 and I hope I will see much more of her in the future.
+
+Also, that last song is just _insane_ guitar work.
