@@ -121,6 +121,14 @@ a:hover {
   border-bottom: 2px solid #933;
 }
 
+.content .imglink:after {
+  content: "";
+}
+
+.content .imglink:hover {
+  border-bottom: none;
+}
+
 pre {
   margin-bottom: 1em;
 }

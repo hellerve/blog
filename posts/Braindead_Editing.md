@@ -6,8 +6,8 @@ on [a terminal editor](https://github.com/hellerve/e) that
 looks and feels a lot like Vim, but caters more to my needs.
 This meant that I had to make it snappier, provide defaults
 that are saner (to me, all of this is completely personal),
-and does not provide much of a scripting language for me to
-get lost in.
+and does not provide a scripting language for me to get lost
+in.
 
 That last idea might sound like a non-feature, but I don't need
 all that many features in my day-to-day editing. I normally
