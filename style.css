@@ -70,6 +70,7 @@ body > * {
   display: block;
   padding: 2rem 0 0 0;
   hyphens: auto;
+  text-align: justify;
 }
 
 .content h2 {
