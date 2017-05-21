@@ -14,9 +14,7 @@ content[<sup>1</sup>](#1).
 Anyway, I'm looking forward to starting the Recurse Center tomorrow, because the
 introductions of my fellow recursers were amazing and inspiring and I'm really
 stoked to meet them. To all of y'all at home, I love you and I miss you. You're
-the best.
-
-
+the best. To a great three months!
 
 <p id="1">[1] When I don't think about my girlfriend and my cat, that is,
 because missing them is hell.</p>
