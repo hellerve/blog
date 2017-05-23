@@ -12,7 +12,7 @@ insightful, they will be fun. Breathe.
 <br/>
 
 Thank you, Jeff, Nick, Dave, Saul, Trent, Da Hua, Rudi, Abe, Mark, Sabelo,
-Ethan, James, Parthiv, Alokh, Ben, Michael, Andrea, Iain, Alistair, Sean, and
+Ethan, James, Parthiv, Alok, Ben, Michael, Andrea, Iain, Alistair, Sean, and
 anyone who I failed to list. You made this day wonderful, and I am happy to have
 met you. And now I need some sleep.
 
