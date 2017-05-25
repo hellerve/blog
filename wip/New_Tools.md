@@ -1,11 +1,10 @@
 After having spent two days working at the Recurse Center—the intro day doesn't
-really count here—, I feel like I should comment on my experience again. It has
-been an amazing experience overall. I have seldom been as productive as I am
-right now—maybe only during the height of my work on
-[zepto](https://github.com/zepto-lang/zepto). But that is not the main reason
-I'm excited; that would be my newly found workflow and productivity tooling that
-I shamelessly stole from the Recurse Center standard. Let me walk you through
-them.
+really count here—, I feel like I should comment on my experience again. I had
+an amazing time thus far. I have seldom been as productive as I am right now—maybe
+only during the height of my work on [zepto](https://github.com/zepto-lang/zepto).
+But that is not the main reason I'm excited; that would be my newly found workflow
+and productivity tooling that I shamelessly stole from the Recurse Center classics.
+Let me walk you through my favorites.
 
 ## Check ins are awesome
 
@@ -15,19 +14,19 @@ did the last day and what you plan on doing the next day. This provides a nice
 resource for you to look at during the day if you're unsure what to do next,
 which is one of my main problems when working on a bunch of small projects
 during the day. It also helps me be honest to myself about whether I was
-productive during the day. I tend to leave work thinking I didn't do a lot
-during the day, and it takes active reevaluation for me to really know whether
-my productivity was bad, normal, or exceptional.
+productive. I tend to leave work thinking I didn't do a lot with my time, and
+it takes active reevaluation for me to really know whether my productivity was
+sub par, normal, or exceptional.
 
 ![](/images/checkin.png)
 
 <div class="figure-label">Fig. 1: A typical check in.</div>
 
-It's not all about me, though. It also engages your readers—in this case, other
-Recursers—, and possibly incentivizes them to pair with you. I myself have
-paired with people because of items on their check-in on both days. This serves
-as a perfect transition to my second favorite new thing to keep me productive
-and happy, pairing.
+Check-ins aren't all about you, though. It also engages your readers—in this
+case other Recursers—, and possibly incentivizes them to pair with you. I myself
+have paired with people because of items on their check-in on both days. This
+serves as a perfect transition to my second favorite new thing to keep me
+productive and happy, pairing.
 
 ## One is the loneliest number
 
@@ -51,15 +50,16 @@ I've worked on:
 - A virtual machine in Rust (my project)
 - A lexer for the lambda calculus in Python (other person's project)
 
-All of these have been amazing, and when I come back to work I plan on doing
-these more. They're insightful—for me anyway, but hopefully not exclusively—,
-engaging and entertaining.
+All of these have been amazing, and when I come back to the regular working
+world I plan on doing these more. They're insightful—for me anyway, but
+hopefully not exclusively—, engaging and entertaining.
 
 ## New tools keep my workflow sharp
 
 Before going to RC I already had a solid workflow—or so I thought. But sometimes
-even a few changes help to realize that with a bit of tweaking it can get *even*
-better, no matter how comfortable you are. This might seem obvious, but I know I
-haven't tried out something new to mix up my routine in years. I try to stay on
-top of my game when it comes to technology, and maybe I should try and practice
-the same rigorous experiments with softer skills? It's at least worth exploring.
+even a few changes help to make you realize that with a bit of tweaking it can
+get *even* better, no matter how comfortable you are. This might seem obvious,
+but I know I haven't tried out something new to mix up my routine in years. I
+try to stay on top of my game when it comes to cool new technology, and maybe
+I should try and practice the same rigorous experiments with softer skills? At
+the very least it's worth exploring.
