@@ -55,7 +55,7 @@ All of these have been amazing, and when I come back to work I plan on doing
 these more. They're insightful—for me anyway, but hopefully not exclusively—,
 engaging and entertaining.
 
-# New tools keep my workflow sharp
+## New tools keep my workflow sharp
 
 Before going to RC I already had a solid workflow—or so I thought. But sometimes
 even a few changes help to realize that with a bit of tweaking it can get *even*
