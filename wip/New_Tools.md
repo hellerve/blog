@@ -54,3 +54,12 @@ I've worked on:
 All of these have been amazing, and when I come back to work I plan on doing
 these more. They're insightful—for me anyway, but hopefully not exclusively—,
 engaging and entertaining.
+
+# New tools keep my workflow sharp
+
+Before going to RC I already had a solid workflow—or so I thought. But sometimes
+even a few changes help to realize that with a bit of tweaking it can get *even*
+better, no matter how comfortable you are. This might seem obvious, but I know I
+haven't tried out something new to mix up my routine in years. I try to stay on
+top of my game when it comes to technology, and maybe I should try and practice
+the same rigorous experiments with softer skills? It's at least worth exploring.
