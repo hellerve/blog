@@ -10,7 +10,7 @@ plug—hint: I've been bitten by the
 extremely handy if you know about them. It's a simple C-like programming
 language—how often do you see “simple” and “C” used in the same sentence?—that
 is mostly used from within shell scripts if one needs to do quick, yet possibly
-advanced calculations, a task that is not trivial in most shell languages. It is
+advanced calculations–a task that is not trivial in most shell languages. It is
 also, admittedly, not an all too common task.
 
 ```
@@ -44,8 +44,8 @@ action.</div>
 The REPL features a nice realtime preview, readline capabilites, and tab
 completion—coming soon, courtesy of an
 [independent contributor](https://github.com/hellerve/bc/pull/1). It is a
-pleasure to use, even if the underlying `bc` implementation does not completely
-mimic the standard. Some of deviations are bugs that I still have to fix, some
+pleasure to use, even if the underlying `bc` implementation doesn't completely
+mimic the standard. Some of the deviations are bugs that I still have to fix, some
 of them deliberate design decisions. Time will tell which are which.
 
 I had a lot of fun implementing this little language. It didn't require a lot of
