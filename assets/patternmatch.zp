@@ -1,3 +1,7 @@
+(define (nfirst e n) (if (= n 0) [] (cons (car e) (nfirst (cdr e) (- n 1)))))
+
+(define (nrest e n) (if (= n 0) e (nrest (cdr e (- n 1)))))
+
 (define (match pattern expression)
   (define (match1 p e alist lose)
     (if (null? p)
