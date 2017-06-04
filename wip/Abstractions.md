@@ -1,5 +1,5 @@
 I had an epiphany a while back. It was one of those observations that seems
-obvious in hindsight, and I think I knew it on a subconscious level. Pinning it
+obvious in hindsight, one I think I knew on a subconscious level. Pinning it
 down and formulating it in actual words helped make it more of an actionable
 piece of my philosophy, though, and I hope that sharing it will further solidify
 my stance on an important issue: abstractions.
@@ -25,7 +25,7 @@ seen through the lens of X. We can now objectively decide whether the flaw was
 merely in the implementation of its underlying idea, or whether the idea itself
 falls short in certain respects. Then we can reimplement the idea—or not.
 
-Ideas are also much more easy to reason about. Without the burden of reality, we
+Ideas are also much easier to reason through. Without the burden of reality, we
 can think about the properties that really make up a system, without having to
 wade through all of the implicit decisions that have been made while forming an
 artifact from an idea. “Is this a good piece of software?” becomes “is this idea
@@ -50,14 +50,14 @@ or juxtapose the information with another map, which is as tedious as it sounds.
 ## Make it actionable
 
 I am aware that this has been fairly hand-wavy, so let me tell you what concrete
-take-away I've got from thinking about this. You are free to disagree and shout
+take-away I've gotten from thinking about this. You are free to disagree and shout
 at me on the internet, of course.
 
 When I create my next set of abstractions—which really is the only thing I do as
 a software developer—I will think of it as a map over a territory. I will think
 about whether all of these valleys and peaks are needed or whether they are just
 embellishment. I will think about whether I should really hide that river on the
-map, lest my users will fall into it. I will think about who my map is for, what
+map, lest my users fall into it. I will think about who my map is for, what
 my map represents, and communicate that as clearly as possible.
 
 I will tell my readers why I hid what I hid, and why I've shown what is there to
