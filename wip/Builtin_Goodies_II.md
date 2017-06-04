@@ -44,7 +44,8 @@ warning levels or turn on `-Wreturn-type` manually:
 
 ```
 main.c: in function 'main':
-t.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+t.c:61:1: warning: control reaches end of
+non-void function [-Wreturn-type]
 ```
 <div class="figure-label">Fig. 2: GCC being unhappy with me.</div>
 
