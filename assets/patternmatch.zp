@@ -2,6 +2,25 @@
 
 (define (nrest e n) (if (= n 0) e (nrest (cdr e (- n 1)))))
 
+(define (atom? x) (not (char:alpha? (car (symbol->string x)))))
+
+(defimpl traversable-collec symbol?
+  ((car   (lambda (s) (->symbol (car (symbol->string s)))))
+   (cdr   (lambda (s) (string->symbol (cdr (symbol->string s)))))
+   (null? (lambda (s) (string->symbol (null? (symbol->string s)))))
+   (empty (lambda (s) (->symbol "")))))
+
+(defimpl collec symbol?
+  ((length   (lambda (s) (string:length (symbol->string s))))
+   (in?      (lambda (s el) (string:in? (symbol->string s) el)))
+   (get-from
+    (collec:get-from-skeleton
+      (lambda (s i)
+        (let ((s (symbol->string s)))
+          (if (> (length s) i)
+            (collec-val:found (string:ref s i))
+            (collec-val:not-found))))))))
+
 (define (match pattern expression)
   (define (match1 p e alist lose)
     (if (null? p)
