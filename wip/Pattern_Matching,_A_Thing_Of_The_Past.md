@@ -30,6 +30,17 @@ plug, but I like to put my language to use every once in a while.
 
 ## Consumer information
 
+Before I explain the algorithm I want to show you the API. It is relatively
+simple and intuitive, and exposes only one function, aptly called `match`.
+Let's first look at the examples from the paper, and then construct our own,
+to make sure we understood the interface.
+
+```
+```
+<div class="figure-label">
+  Fig. 1: A few examples of function invocations and their result.
+</div>
+
 ## A setup of sorts
 
 ## The meat of it
