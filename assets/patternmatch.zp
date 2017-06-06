@@ -1,7 +1,3 @@
-(define (nfirst e n) (if (= n 0) [] (cons (car e) (nfirst (cdr e) (- n 1)))))
-
-(define (nrest e n) (if (= n 0) e (nrest (cdr e (- n 1)))))
-
 (define (atom? x) (not (char:alpha? (car (symbol->string x)))))
 
 (defimpl traversable-collec symbol?
@@ -46,15 +42,15 @@
               (if v
                 (if (< (length e) (length (cadr v)))
                   (lose)
-                  (if (eq? (nfirst e (length (cadr v))) (cadr v))
-                    (match1 (cdr p) (nrest e (length (cadr v))) alist lose)
+                  (if (eq? (take (length (cadr v)) e) (cadr v))
+                    (match1 (cdr p) (drop (length (cadr v)) e) alist lose)
                     (lose)))
                 (let ((match*
                         (lambda (n)
                           (if (> n (length e))
                             (lose)
-                            (match1 (cdr p) (nrest e n)
-                                    (cons (list (cadar p) (nfirst e n)) alist)
+                            (match1 (cdr p) (nrest n e)
+                                    (cons (list (cadar p) (take n e)) alist)
                                     (lambda () (match* (+ n 1))))))))
                   (match* 0))))
               (assq (cadar p) alist))
