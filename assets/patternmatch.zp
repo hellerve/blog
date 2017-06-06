@@ -1,5 +1,11 @@
-(define (atom? x) (not (char:alpha? (car (symbol->string x)))))
+; The notion of an atom is different in the Scheme the original
+; algorithm was written in, so we redefine the function here
+(define atom? (compose not char:alpha? car symbol->string))
 
+; Apparently it was valid to ask for a symbol's length in
+; the original Scheme and take its first character, so we
+; define implementations for the collec and traversable-collec
+; protocols for symbols in zepto.
 (defimpl traversable-collec symbol?
   ((car   (lambda (s) (->symbol (car (symbol->string s)))))
    (cdr   (lambda (s) (string->symbol (cdr (symbol->string s)))))
@@ -17,6 +23,7 @@
             (collec-val:found (string:ref s i))
             (collec-val:not-found))))))))
 
+; The original, largely unmodified algorithm
 (define (match pattern expression)
   (define (match1 p e alist lose)
     (if (null? p)
