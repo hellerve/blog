@@ -2,7 +2,7 @@ When I started my [reading list](https://github.com/hellerve/ptolemy)
 in January of this year, I decided to give rereading the
 [Lambda Papers](http://library.readscheme.org/page1.html)
 a shot. To the uninitiated: in the latter half of the 1970s, Guy Steele and
-Gerald J. Sussman worked on Scheme. This was an extremely productive time for
+Gerald J. Sussman were working on Scheme. This was an extremely productive time for
 both of them, and they published a series of now-famous papers collectively
 dubbed the “Lambda Papers”. They are mostly concerned with Scheme and how it
 compares to other languages of the time, and neat tricks that they discovered
@@ -18,12 +18,11 @@ This paper is startling for a bunch of reasons, the most anxiety-inducing of
 which is that Guy Steele was 21 years old when this paper was published, and
 it is ground-breaking in more than one respect.
 
-The part I want to talk about is not about one persons gifts, however. I want
+The part I want to talk about is not about one person's gifts, however. I want
 to talk about an algorithm that implements an extremely capable pattern matching
 system in 38—admittedly very dense—lines. I didn't understand what it meant the
 first time I read the paper, and the second time it completely blew my mind. In
-this post, I want to attempt to walk you through the original source, which I do
-not think is still runnable in modern implementations of Scheme. If you want to
+this post, I want to attempt to walk you through the original source, which I don't think is still runnable in modern implementations of Scheme. If you want to
 follow along using a slightly more modernized version, you can download
 [an attempt at a transcript into zepto](/assets/patternmatch.zp). Excuse the
 plug, but I like to put my language to use every once in a while.
