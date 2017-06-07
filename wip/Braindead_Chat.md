@@ -8,8 +8,8 @@ blog arguably is part of this tradition as well.
 What I want to talk about today is [a chat
 system](https://github.com/hellerve/hi) I wrote a while ago. It's written in Go
 and leverages websockets. The UI's language is inspired by [Material
-Design](https://material.io/), but not really adhering to it. It's also not
-responsive, because I couldn't be bothered as of yet. Let me walk you through
+Design](https://material.io/), but doesn't really adhere to it. It's also not
+responsive, because I couldn't be bothered with that just yet. Let me walk you through
 the ideas and guidelines I adhered to and the design decisions I made on the
 way, because I feel like it is a different kind of chat system alltogether.
 
@@ -20,14 +20,14 @@ You can see it in action [here](https://veitheller.de/hi).
 Let me start off by introducing the components you can see. The frontend is
 completely custom, i.e. I don't use any libraries, frameworks, or external
 tools. I optimized it for size and speed while not wanting to sacrifice
-functionality, and it seems to have worked. It is okay on the eyes and performs
+functionality, and it seems to have worked. It's OK on the eyes and performs
 well enough under pressure—though, admittedly, I haven't rigorously verified
 that claim.
 
 The interactions are fairly simple: After you provide a username, you will be
-logged into the default channel, which is `#general` right now. You will be
+logged into the default channel, which is called `#general` for now. You will be
 greeted by a little channel message and can start typing right away—unless
-you're on mobile, in which case all bets for sending messages are off. Typing
+you're on mobile, in which case all bets are off for sending messages. Typing
 the command `/list` will enumerate all the users in a channel, `/channels` will
 enumerate all the channels (remember IRC?). You can join a channel by typing
 `/join <channel>`—or create it, if it's not there. Inversely, typing `/leave
@@ -52,8 +52,8 @@ behaved person on the internet—this is where the naivete comes in.
 This is a simple addition, but it completely changes the semantics of a channel.
 It is more like a stream, but not in the [Zulip](https://zulipchat.com/) sense.
 There are readers and writers, and they are not necessarily the same people. In
-case yo're a little confused about the implications of this: I don't think I
-know what this means, either. But it is fun exploring that idea.
+case you're a little confused about the implications of this: I don't think I
+know what this means either. But it is fun exploring the idea.
 
 ## A work in progress
 
@@ -64,6 +64,6 @@ chat window only to tell you that the username is already taken.
 
 I cut all kinds of corners. But it is a simple, performant chat system that
 required me to write around 40 lines of JavaScript and around 200 lines of
-Go—and I'm actually fairly happy with its architecture. It is a fun project, and
-if any of you are interested in working on it with me, or have any kind of
+Go—and I'm actually fairly happy with its architecture. It is a fun project.
+If any of you are interested in working on it with me, or have any kind of
 feedback, you know where to find me.
