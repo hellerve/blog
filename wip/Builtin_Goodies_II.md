@@ -34,7 +34,7 @@ int main() {
   event_loop(e);
 }
 ```
-<div class="figure-label">Fig. 1: An artistic rendition of `e`s event loop.</div>
+<div class="figure-label">Fig. 1: An artistic rendition of `e`'s event loop.</div>
 
 This loop obviously never terminates. Instead, my library calls `exit()`
 internally when certain keys are pressed, and a registered cleanup function is
