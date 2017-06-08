@@ -36,10 +36,30 @@ Let's first look at the examples from the paper, and then construct our own,
 to make sure we understood the interface.
 
 ```
+; from the paper
+(match '(A !B ?C ?C !B !E)
+       '(A X Y Q Q X Y Z Z X Y Q Q X Y R))
+; => (((E (Z Z X Y Q Q X Y R))
+;      (C Q)
+;      (B X Y))
+;     <continuation1>)
+
+(<continuation1>)
+; => (((E (R))
+;      (C Z)
+;      (B (X Y Q Q X Y)))
+;      <continuation2>)
+
+(<continuation2>)
+; => nil
 ```
 <div class="figure-label">
   Fig. 1: A few examples of function invocations and their result.
 </div>
+
+This is fairly involved and I don't expect you to understand it, especially
+since the authors didn't choose a very simple example. Let's go through the
+invocations and the return values one by one.
 
 ## A setup of sorts
 
