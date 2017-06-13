@@ -61,9 +61,100 @@ This is fairly involved and I don't expect you to understand it, especially
 since the authors didn't choose a very simple example. Let's go through the
 invocations and the return values one by one.
 
+First, let me explain the prefixes to you: there is a `!` and a `?` character
+with real semantical meaning. The `!` character will match any one character,
+similar to `.` in regular expressions. The `?` character, on the other hand,
+holds the same meaning as `.*` in regular expressions, i.e. it will match zero
+or more of any character. This means that the match expression, transcribed
+into PCRE, would be `A (.) (.)* (\2)* (\1)* (.)*`. Don't worry if that doesn't
+tell you much yet, I have another example that you can try to wrap your heads
+around.
+
+For now, let's try to decypher the return values. It gives us back a two-element
+list, the first element of which is another list. The second element is a
+continuation that we will ignore for now. The nested list contains pairs of
+names and the matched values. It will will tell us that it bound `C` to `Q`,
+`E` to a long list, and `B` to `X Y` in the first call. Figure 2 tries to
+glue those back together, which will, unsurprisingly, result in the input list.
+
+```
+input: (A !B ?C ?C !B !E)
+substituting B: (A X Y ?C ?C X Y !E)
+substituting C: (A X Y Q Q X Y !E)
+substituting E: (A X Y Q Q X Y Z Z X Y Q Q X Y R) == input
+```
+<div class="figure label">Fig. 2: Rebuilding the input from the matches.</div>
+
+Now, let's look at that continuation business. The contiunation will actually
+give us the facilities to try the same algorithm again, and try to match
+different values. If that is possible, calling the continuation will give us
+the next possible match. In case of failure it will return `nil`.
+
+That just about covers the API of the algorithm, and, looking at just that, we
+could be tempted to assume that the algorithm is long, complex, and daunting to
+understand—at least that's what I did. It's rather short, though, and completely
+understandable. Let's try to reimplement it, shall we?
+
 ## A setup of sorts
 
+Before we start with the actual algorithm, we need a few helper functions. Those
+are given upfront in the paper, and so I shall do the same, because they are
+generally useful anyway. The helper functions are `nfirst` and `nrest`, respectively,
+which people familiar with functional languages will know as `take` and `drop`.
+Everyone else will be happy to hear that these algorithms, given a list and a
+number `n`, just take the first `n` elements of the input list, or drop them
+and return the rest. I'll give to alternative implementations of each, one from
+the paper, and one in zepto.
+
+```
+; Original: nfirst
+(define (nfirst e n)
+  (if (= n 0)
+    nil
+    (cons (car e) (nfirst (cdr e) (- n 1)))))
+; zepto: nfirst
+(define nfirst (flip take))
+
+; Original: nrest
+(define (nrest e n)
+  (if (= n 0) e (nrest (cdr e) (- n 1))))
+; zepto: nfirst
+(define nrest (flip drop))
+```
+<div class="figure-label">
+  Fig. 3: Two implementations of `nfirst` and `ndrop` each.
+</div>
+
+A few notes seem in order at this point: firstly, I'd like to say that I
+modernized the example given in the paper very slightly. Namely, I introduced
+the first-class definition of functions, as opposed to binding a lambda to a
+name, because I consider it readable. Secondly, the zepto version is cheating
+a bit by using modern functional primitives to do the dirty work. Those
+functions are, however, tail-recursiver and safe by default, so it is a big win.
+It is also shorter to use them.
+
+Another thing I want to address before moving on is why more modern languages
+decided to flip the argument list, moving from having the list as the first
+argument to having the number first. The issue being addressed here is
+composability. It turns out that you want to express `give me the first 5
+elements of a given list` more often than `give me the first n elements of list
+[1..n]`. We can curry—another word for partial evaluation—functions, such that
+we can define `first5` as `(curry take 5)`. In short, we learned how to be more
+modular and pattern-oriented, which is what ~~object-oriented~~ functional
+programming is all about.
+
 ## The meat of it
+
+Take a deep breath now, for we're diving in heads-first. If you're
+over-whelmed or feel like you don't understand what's going on, do something
+else for a bit, come back, reread the bits that were unclear to you and try
+again. If you don't feel like this post makes any sense to you, don't worry
+about it. The algorithm is dense and complex, and this is my first time
+explaining something like that in a blog post. Having said that, I'd be happy
+to hear about your experiences wading through this by mail or any other medium
+you get a hold on me in.
+
+
 
 ## Putting it all together
 
