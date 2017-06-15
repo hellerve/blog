@@ -165,7 +165,9 @@ form, look like this:
 (define (? sym) (eq? #\? (car (symbol->string sym))))
 (define (! sym) (eq? #\! (car (symbol->string sym))))
 (define (plain? sym) (not (or (? sym) (! sym))))
-(define to-plain (compose string->symbol cdr symbol->string))
+(define to-plain (compose string->symbol
+                          cdr
+                          symbol->string))
 ```
 <div class="figure-label">
   Fig. 5: Distinction functions.
@@ -430,4 +432,4 @@ it as much as I enjoyed writing it. I tried to make the post accessible to a
 lot of the programming world, though I understand both Lisp and the algorithm
 at hand might be confusing for a non-negligible percentage of programmers. If
 you have any questions, comments, or criticism, please reach out to me via
-e-mail or any medium you can get a hold of me in. See you next tim!
+e-mail or any medium you can get a hold of me in. See you next time!
