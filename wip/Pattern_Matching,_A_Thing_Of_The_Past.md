@@ -209,8 +209,8 @@ whether we have consumed all of the patterns.
   (if (null? p)
     (if (null? e)
       (list res cont)
-      (cont)))
-  ; more magic...
+      (cont))
+    ; more magic...
   )
 ```
 <div class="figure-label">
@@ -265,13 +265,13 @@ any character.
       (if (null? e)
         (cont)
         ((lambda (v)
-          (if (not (null? v))
-            (if (eq? (car e) (cadr v))
-              (matchfun (cdr p) (cdr e) res cont)
-              (cont))
+          (if (eq? v #f)
             (matchfun (cdr p) (cdr e)
                       (cons (list (to-plain p) (car e)) res)
-                      cont)))
+                      cont)
+            (if (eq? (car e) (cadr v))
+              (matchfun (cdr p) (cdr e) res cont)
+              (cont))))
           (assq (to-plain p) res))))
     ; more cases
   ))
@@ -314,6 +314,75 @@ truthy and either insert it and move on or try to match the current value
 to the old value. All in all, this is a big hack around a clunky data
 structure which happens to work quite well.
 
+Now we've arrived at the last part of our matcher, the `!`. This means we need
+to match zero or more characters.
+
+```
+(define (matchfun p e res cont)
+  ; base case
+  (cond
+    ; literal case
+    ((! (car p))
+      ((lambda (v)
+        (if (eq? v #f)
+          (let ((match* (lambda (n)
+                          (if (> n (length e))
+                            (cont)
+                            (match1 (cdr p) (nrest e n)
+                                    (cons (list (cadar p) (nfirst e n))
+                                          res)
+                                    (lambda () (match* (+ n 1))))))))
+            (match* 0))
+          (if (< (length e) (length (cadr v)))
+            (cont)
+            (if (eq? (nfirst e (length (cadr v))) (cadr v))
+              (match1 (cdr p) (nrest e (length (cadr v))) res cont)
+              (cont)))))
+        (assq (cadar p) res)))
+    ; more cases
+  ))
+```
+<div class="figure-label">
+  Fig. 9: Matching any zero or more characters.
+</div>
+
+The structure of the case is similar to the one we just examined, with a few
+important differences. We don't need to check whether the list is empty,
+because that would be a valid match, so we move into the closure immediately
+to find out whether we've already encountered this symbol. If we have, we
+simply check whether the two lists are equal, and then either progress or
+yield.
+
+The really interesting bit is what happens if we encounter the symbol for the
+first time, in which case we define a function called `match*` that will
+progressively try to call the match function, at first with an empty list bound
+to our symbol. It will also set `cont` to a version of itself with a longer
+list. If we ponder that for a while we see that this means it will try to go
+on with a minimal list and then come back and grow the list if we can't proceed
+otherwise. This is a fairly simple idea, although the implementation tends to
+disagree.
+
+We're almost done, all we have to do is add another case to our top-level
+expression that will call `cont` if none of the cases we handled makes sense.
+This should never happen provided the user hands us valid arguments, but we
+shouldn't rely on that.
+
+```
+(define (matchfun p e res cont)
+  ; base case
+  (cond
+    ; regular matchers
+    (else (cont))))
+```
+<div class="figure-label">
+  Fig. 10. A catch-all matcher.
+</div>
+
+This is it! We've just built a pattern matching system with back-tracking in
+Scheme.
+
 ## Putting it all together
+
+
 
 ## Fin
