@@ -143,6 +143,32 @@ we can define `first5` as `(curry take 5)`. In short, we learned how to be more
 modular and pattern-oriented, which is what ~~object-oriented~~ functional
 programming is all about.
 
+Now, depending on which Scheme you are running, you either have reader macros
+at your disposal or you haven't, both of which are fine. The original paper
+assumes there is a reader macro that transforms symbols with leading `?`
+characters into a list of the form `(THV <symbol>)` and symbols with leading
+`!` characters into a list of the form `(THV* <symbol>)`. For reasons of
+compatibility I will instead define a few matching functions, that, in zepto
+form, look like this:
+
+```
+(define (? sym) (eq? #\? (car (symbol->string sym))))
+(define (! sym) (eq? #\! (car (symbol->string sym))))
+(define (plain? sym) (not (or (? sym) (! sym))))
+(define to-plain (compose string->symbol cdr symbol->string))
+```
+<div class="figure-label">
+  Fig. 4: Distinction functions.
+</div>
+
+The Scheme of your choice should provide functions that are at least equivalent.
+If you just follow along, you will need to keep in mind that the function
+`plain?` matches regular symbols, and the functions `?` and `!` match symbols
+that start with these letters, respectively. `to-plain` creates a plain symbol
+from a special symbol by stripping away the leading special character.
+
+Now, let's go ahead and implement the actual pattern matching!
+
 ## The meat of it
 
 Take a deep breath now, for we're diving in heads-first. If you're
@@ -154,7 +180,142 @@ explaining something like that in a blog post. Having said that, I'd be happy
 to hear about your experiences wading through this by mail or any other medium
 you get a hold on me in.
 
+First, let's define a function that shares the API of `match` as seen above.
+It will take a pattern and an expression, do some magic, and return a result.
 
+```
+(define (match pattern expression)
+  (define (matchfun p e res cont)
+    ;do some magic here
+    )
+  (matchfun pattern expression [] (lambda () nil)))
+```
+<div class="figure-label">
+  Fig. 5: A setup for the `match` function.
+</div>
+
+You might ask yourself why there is an inner function defined within `match`,
+and for good reason. While the gain might not be immediately obvious, for now
+just think about it like that: it is easier to make everything a tail call if
+we carry around the state in arguments, while it also makes initializing the
+state we might need obvious. In this case, we initialize the result list to
+be an empty list—passed as `res`—andt the continuation to return as a simple
+function that returns `nil`, passed as `cont`. The latter makes it easy to
+tell the user there are no more valid matches: remember that when all the
+possible patterns have been returned, we want to return `nil`.
+
+Let's begin flashing out our inner function `matchfun`. First we want to check
+whether we have consumed all of the patterns.
+
+```
+(define (matchfun p e res cont)
+  (if (null? p)
+    (if (null? e)
+      (list res cont)
+      (cont)))
+  ; more magic...
+  )
+```
+<div class="figure-label">
+  Fig. 6: Our base case that tells us when to stop matching.
+</div>
+
+When we have to consumed all of the patterns, a valid match requires us to
+have consumed all of the given expressions as well. If we have, we return a
+list of our result list `res` and our continuation `cont`. If, on the other
+hand, there are more expressions to match, the match isn't valid and we have
+to call into our continuation directly, which will either fail and return `nil`,
+or backtrack into a previous state—a mechanism we haven't defined yet.
+
+Let's move on to the easy part of our pattern matcher: if we encounter a plain
+symbol in our pattern list, we just try to match it verbatim.
+
+```
+(define (matchfun p e res cont)
+  ; base case goes here
+  (cond
+    ((plain? (car p))
+      (cond
+        ((null? e) (cont))
+        ((eq? (car e) (car p))
+          (matchfun (cdr p) (cdr e) res cont))
+        (else (cont))))
+  ; other cases here
+  ))
+```
+<div class="figure-label">
+  Fig. 7: The plain case.
+</div>
+
+We use the function `plain?` we defined in the previous section to see whether
+the symbol is in fact a plain old symbol. If it is, we have to check whether we
+have anything to match against—and if not call the continuation—, and if we do
+call `matchfun` again with the rest of the lists, passing the other two
+arguments merrily along. If we don't we defer to the continuation again. From
+now on, I will stop highlighting when we call the continuation. As a general
+rule we will always do that if there is no way to progress in our current state
+and we have to yield.
+
+It's time to move on to the second least-complicated case, matching one of
+any character.
+
+```
+(define (matchfun p e res cont)
+  ; base case
+  (cond
+    ; literal case
+    ((? (car p))
+      (if (null? e)
+        (cont)
+        ((lambda (v)
+          (if (not (null? v))
+            (if (eq? (car e) (cadr v))
+              (matchfun (cdr p) (cdr e) res cont)
+              (cont))
+            (matchfun (cdr p) (cdr e)
+                      (cons (list (to-plain p) (car e)) res)
+                      cont)))
+          (assq (to-plain p) res))))
+    ; more cases
+  ))
+```
+<div class="figure-label">
+  Fig. 8: Matching any one character.
+</div>
+
+Okay, this is an order of magnitude harder to understand than the plain case.
+Let me explain what we had to do, and then associate that with how we actually
+implemented that behavior. If we find a symbol `p` that matches any one
+character, we see whether there is anything left to match. If there is, we have
+to check whether the match will align with our previous matches, i.e. whether
+the `p` we matched previously were matched to the same symbol. If there was no
+previous occurrence of `p`, we just record the current match and try to match
+the rest with a recursive call. If it was there but did not resolve to the same
+match, we are trapped in a dead end and have to yield. If it was there and
+matches our previous occurrences, we just move along and don't need to record
+any new symbol.
+
+How do we actually implement this in the above code? The answer is sadly not as
+elegant as I would like it to be, because regular Scheme—and especially not the
+first iteration of it—did not have hash maps or dictionaries or any fast
+key-value data structure. Instead, the above code is implemented in terms of
+[association lists](https://en.wikipedia.org/wiki/Association_list). Association
+lists are basically a poor man's implementation of a key-value data structure,
+with `O(n)` time for everything except insertion. It's nothing more than a list
+of pairs of the structure `(key value)` with a fancy name.
+
+I would love to implement this in terms of a faster key-value data structure,
+but sadly there is no big unifying structure that I could use—zepto does have
+hash maps, even hash map literals, but that's beside the point.
+
+If you already know Scheme's API for `association lists`, then the above code
+snippet should be fairly straight-forward. If you do not, maybe pointing out
+that `assq` is a function that takes in a key and an association list and
+returns the key value pair will help. In the code above, this pair is handed
+to a lambda where it is bound to the name `v`. We then check whether `v` is
+truthy and either insert it and move on or try to match the current value
+to the old value. All in all, this is a big hack around a clunky data
+structure which happens to work quite well.
 
 ## Putting it all together
 
