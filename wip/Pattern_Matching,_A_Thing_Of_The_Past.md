@@ -82,12 +82,23 @@ substituting B: (A X Y ?C ?C X Y !E)
 substituting C: (A X Y Q Q X Y !E)
 substituting E: (A X Y Q Q X Y Z Z X Y Q Q X Y R) == input
 ```
-<div class="figure label">Fig. 2: Rebuilding the input from the matches.</div>
+<div class="figure-label">Fig. 2: Rebuilding the input from the matches.</div>
 
 Now, let's look at that continuation business. The contiunation will actually
 give us the facilities to try the same algorithm again, and try to match
 different values. If that is possible, calling the continuation will give us
 the next possible match. In case of failure it will return `nil`.
+
+```
+; Exercise: Can you figure out what the function should return,
+; given the following inputs?
+(match '(A !C B) '(A B C D E X X S B))
+
+(match '(A !C !C ?B !D ?B) '(A F D A D F))
+
+(match '(?X !Y ?Z ?Z !Y) '(A B B C D D B B C))
+```
+<div class "figure-label">Fig. 3: An exercise for the reader.</div>
 
 That just about covers the API of the algorithm, and, looking at just that, we
 could be tempted to assume that the algorithm is long, complex, and daunting to
@@ -121,7 +132,7 @@ the paper, and one in zepto.
 (define nrest (flip drop))
 ```
 <div class="figure-label">
-  Fig. 3: Two implementations of `nfirst` and `ndrop` each.
+  Fig. 4: Two implementations of `nfirst` and `ndrop` each.
 </div>
 
 A few notes seem in order at this point: firstly, I'd like to say that I
@@ -157,7 +168,7 @@ form, look like this:
 (define to-plain (compose string->symbol cdr symbol->string))
 ```
 <div class="figure-label">
-  Fig. 4: Distinction functions.
+  Fig. 5: Distinction functions.
 </div>
 
 The Scheme of your choice should provide functions that are at least equivalent.
@@ -185,10 +196,10 @@ It will take a pattern and an expression, do some magic, and return a result.
   (define (matchfun p e res cont)
     ;do some magic here
     )
-  (matchfun pattern expression [] (lambda () nil)))
+  (matchfun pattern expression '() (lambda () nil)))
 ```
 <div class="figure-label">
-  Fig. 5: A setup for the `match` function.
+  Fig. 6: A setup for the `match` function.
 </div>
 
 You might ask yourself why there is an inner function defined within `match`,
@@ -214,7 +225,7 @@ whether we have consumed all of the patterns.
   ))
 ```
 <div class="figure-label">
-  Fig. 6: Our base case that tells us when to stop matching.
+  Fig. 7: Our base case that tells us when to stop matching.
 </div>
 
 When we have to consumed all of the patterns, a valid match requires us to
@@ -241,7 +252,7 @@ symbol in our pattern list, we just try to match it verbatim.
   ))
 ```
 <div class="figure-label">
-  Fig. 7: The plain case.
+  Fig. 8: The plain case.
 </div>
 
 We use the function `plain?` we defined in the previous section to see whether
@@ -279,7 +290,7 @@ any character.
   ))
 ```
 <div class="figure-label">
-  Fig. 8: Matching any one character.
+  Fig. 9: Matching any one character.
 </div>
 
 Okay, this is an order of magnitude harder to understand than the plain case.
@@ -350,7 +361,7 @@ to match zero or more characters.
   ))
 ```
 <div class="figure-label">
-  Fig. 9: Matching any zero or more characters.
+  Fig. 10: Matching any zero or more characters.
 </div>
 
 The structure of the case is similar to the one we just examined, with a few
@@ -382,14 +393,41 @@ shouldn't rely on that.
     (else (cont))))
 ```
 <div class="figure-label">
-  Fig. 10. A catch-all matcher.
+  Fig. 11. A catch-all matcher.
 </div>
 
 This is it! We've just built a pattern matching system with back-tracking in
 Scheme.
 
-## Putting it all together
+## What remains to be done
 
+The code above I presented is dense and very conservative. The Scheme or Lisp
+of your choice will probably provide many more advanced features that are
+suited to simplify the code—hash maps come to mind, for which even a
+[SRFI](https://srfi.schemers.org/srfi-69/srfi-69.html) with reference
+implementations exists. I limited myself to pure Scheme as specified in the
+R5RS standard, though—except for the helper functions, in which I took some
+liberty. It would be a worthwile exercise to transcribe the algorithm into a
+more modern version of Scheme. I'm positive it would make the code more
+readable, and quite certainly more performant.
 
+Other worthwile exercises I could think of:
+* supporting arbitrarily deeply nested match expressions
+* adding head-tail patterns to the nested expressions, although a valid
+  workaround would be `(?H !T)`
+* throwaway patterns, e.g. with `_` and `!_`
+
+There's plenty of work that could be done to improve this algorithm, but I
+believe that the fundamental simplicity of the idea is what makes the algorithm
+appealing to begin with. Thus any kind of work should strive for the same
+conceptual simplicity instead of just blindly tacking on features blindly, at
+least in my book.
 
 ## Fin
+
+This has been my longest blog post to date by far. I hope you enjoyed reading
+it as much as I enjoyed writing it. I tried to make the post accessible to a
+lot of the programming world, though I understand both Lisp and the algorithm
+at hand might be confusing for a non-negligible percentage of programmers. If
+you have any questions, comments, or criticism, please reach out to me via
+e-mail or any medium you can get a hold of me in. See you next tim!
