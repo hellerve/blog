@@ -8,8 +8,8 @@ dubbed the “Lambda Papers”. They are mostly concerned with Scheme and how it
 compares to other languages of the time, and neat tricks that they discovered
 were possible while working on it.
 
-I've reread a good amount of them by now, and they are all as excellent as I
-remembered—maybe even more so now that I've gathered a fair amount of knowledge
+I've reread a good amount of the papers by now, and they are all as excellent as
+I remembered—maybe even more so now that I've gathered a fair amount of knowledge
 of what makes a Scheme and how to program in it. But most importantly I've
 gained an appreciation for sections that went unappreciated when I first read
 the papers. Today I want to talk about one of them, found in
@@ -19,7 +19,7 @@ which is that Guy Steele was 21 years old when this paper was published, and
 it is ground-breaking in more than one respect.
 
 The part I want to talk about is not about one persons gifts, however. I want
-to talk about an algorithm that implements an extremely capable pattern matching
+to talk about an algorithm that implements a very capable pattern matching
 system in 38—admittedly very dense—lines. I didn't understand what it meant the
 first time I read the paper, and the second time it completely blew my mind. In
 this post, I want to attempt to walk you through the original source, which I do
@@ -30,8 +30,8 @@ plug, but I like to put my language to use every once in a while.
 
 ## Consumer information
 
-Before I explain the algorithm I want to show you the API. It is relatively
-simple and intuitive, and exposes only one function, aptly called `match`.
+Before I explain the algorithm I want to show you the API. It exposes only one
+function, aptly called `match`, that is relatively simple and intuitive to use.
 Let's first look at the examples from the paper, and then construct our own,
 to make sure we understood the interface.
 
@@ -61,14 +61,13 @@ This is fairly involved and I don't expect you to understand it, especially
 since the authors didn't choose a very simple example. Let's go through the
 invocations and the return values one by one.
 
-First, let me explain the prefixes to you: there is a `!` and a `?` character
-with real semantical meaning. The `!` character will match any one character,
-similar to `.` in regular expressions. The `?` character, on the other hand,
-holds the same meaning as `.*` in regular expressions, i.e. it will match zero
-or more of any character. This means that the match expression, transcribed
-into PCRE, would be `A (.) (.)* (\2)* (\1)* (.)*`. Don't worry if that doesn't
-tell you much yet, I have another example that you can try to wrap your heads
-around.
+First, let's observe that the prefixes hold real semantical meaning. The `!`
+character will match any one character, similar to `.` in regular expressions.
+The `?` character, on the other hand, holds the same meaning as `.*` in regular
+expressions, i.e. it will match zero or more of any character. This means that
+the match expression, transcribed into PCRE, would be `A (.) (.)* (\2)* (\1)*
+(.)*`. Don't worry if that doesn't tell you much yet, I have another example
+that you can try to wrap your heads around.
 
 For now, let's try to decypher the return values. It gives us back a two-element
 list, the first element of which is another list. The second element is a
@@ -100,7 +99,7 @@ understandable. Let's try to reimplement it, shall we?
 Before we start with the actual algorithm, we need a few helper functions. Those
 are given upfront in the paper, and so I shall do the same, because they are
 generally useful anyway. The helper functions are `nfirst` and `nrest`, respectively,
-which people familiar with functional languages will know as `take` and `drop`.
+which people familiar with functional languages may know as `take` and `drop`.
 Everyone else will be happy to hear that these algorithms, given a list and a
 number `n`, just take the first `n` elements of the input list, or drop them
 and return the rest. I'll give to alternative implementations of each, one from
@@ -130,7 +129,7 @@ modernized the example given in the paper very slightly. Namely, I introduced
 the first-class definition of functions, as opposed to binding a lambda to a
 name, because I consider it readable. Secondly, the zepto version is cheating
 a bit by using modern functional primitives to do the dirty work. Those
-functions are, however, tail-recursiver and safe by default, so it is a big win.
+functions are, however, tail-recursive and safe by default, so it is a big win.
 It is also shorter to use them.
 
 Another thing I want to address before moving on is why more modern languages
@@ -138,7 +137,7 @@ decided to flip the argument list, moving from having the list as the first
 argument to having the number first. The issue being addressed here is
 composability. It turns out that you want to express `give me the first 5
 elements of a given list` more often than `give me the first n elements of list
-[1..n]`. We can curry—another word for partial evaluation—functions, such that
+[1..n]`. We can curry—that is, partially evaluate—functions, such that
 we can define `first5` as `(curry take 5)`. In short, we learned how to be more
 modular and pattern-oriented, which is what ~~object-oriented~~ functional
 programming is all about.
@@ -175,10 +174,8 @@ Take a deep breath now, for we're diving in heads-first. If you're
 over-whelmed or feel like you don't understand what's going on, do something
 else for a bit, come back, reread the bits that were unclear to you and try
 again. If you don't feel like this post makes any sense to you, don't worry
-about it. The algorithm is dense and complex, and this is my first time
-explaining something like that in a blog post. Having said that, I'd be happy
-to hear about your experiences wading through this by mail or any other medium
-you get a hold on me in.
+about it. The algorithm is dense and complex, and might not make sense on the
+first read-through.
 
 First, let's define a function that shares the API of `match` as seen above.
 It will take a pattern and an expression, do some magic, and return a result.
