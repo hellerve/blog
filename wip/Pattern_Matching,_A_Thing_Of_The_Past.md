@@ -336,7 +336,7 @@ to match zero or more characters.
 (define (matchfun p e res cont)
   ; base case
   (cond
-    ; literal case
+    ; literal and ? cases
     ((! (car p))
       ((lambda (v)
         (if (eq? v #f)
