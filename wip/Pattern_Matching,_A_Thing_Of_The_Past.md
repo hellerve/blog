@@ -427,6 +427,18 @@ least in my book.
 
 ## Fin
 
+When I first understood that algorithm I was stunned. Surely it can't be that
+simple, but somehow it is. It took me by surprise because it is not the paper's
+main event, rather it was meant to be an illustration of Scheme as a language.
+I'm not sure if anyone ever took it at face value and tried to play around with
+it more, whether it had any impact on the implementation of logic or functional
+programming languages, or whether everyone silently agreed that it was just a
+toy. Prolog had been around for three years at that point, providing a capable
+unification and pattern matching engine already. I've never ventured to
+understand the implementation of logic programming, but having seen the
+algorithm I presented today—and having enjoyed it thoroughly—I believe I might
+appreciate looking at their underpinning.
+
 This has been my longest blog post to date by far. I hope you enjoyed reading
 it as much as I enjoyed writing it. I tried to make the post accessible to a
 lot of the programming world, though I understand both Lisp and the algorithm
