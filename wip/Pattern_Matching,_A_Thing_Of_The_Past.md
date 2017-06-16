@@ -61,13 +61,13 @@ This is fairly involved and I don't expect you to understand it, especially
 since the authors didn't choose a very simple example. Let's go through the
 invocations and the return values one by one.
 
-First, let's observe that the prefixes hold real semantical meaning. The `!`
+First, let's observe that the prefixes hold real semantical meaning. The `?`
 character will match any one character, similar to `.` in regular expressions.
-The `?` character, on the other hand, holds the same meaning as `.*` in regular
+The `!` character, on the other hand, holds the same meaning as `.*` in regular
 expressions, i.e. it will match zero or more of any character. This means that
-the match expression, transcribed into PCRE, would be `A (.) (.)* (\2)* (\1)*
-(.)*`. Don't worry if that doesn't tell you much yet, I have another example
-that you can try to wrap your heads around.
+the match expression, transcribed into PCRE, would be `A (.)* (.) \2 \1 (.)*`.
+Don't worry if that doesn't tell you much yet, I have another example that you
+can try to wrap your heads around.
 
 For now, let's try to decypher the return values. It gives us back a two-element
 list, the first element of which is another list. The second element is a
