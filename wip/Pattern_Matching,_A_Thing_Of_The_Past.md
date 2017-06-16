@@ -65,7 +65,7 @@ First, let's observe that the prefixes hold real semantical meaning. The `?`
 character will match any one character, similar to `.` in regular expressions.
 The `!` character, on the other hand, holds the same meaning as `.*` in regular
 expressions, i.e. it will match zero or more of any character. This means that
-the match expression, transcribed into PCRE, would be `A (.)* (.) \2 \1 (.)*`.
+the match expression, transcribed into PCRE, would be `A (.*) (.) \2 \1 (.*)`.
 Don't worry if that doesn't tell you much yet, I have another example that you
 can try to wrap your heads around.
 
