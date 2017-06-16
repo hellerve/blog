@@ -64,10 +64,11 @@ invocations and the return values one by one.
 First, let's observe that the prefixes hold real semantical meaning. The `?`
 character will match any one character, similar to `.` in regular expressions.
 The `!` character, on the other hand, holds the same meaning as `.*` in regular
-expressions, i.e. it will match zero or more of any character. This means that
-the match expression, transcribed into PCRE, would be `A (.*) (.) \2 \1 (.*)`.
-Don't worry if that doesn't tell you much yet, I have another example that you
-can try to wrap your heads around.
+expressions, i.e. it will match zero or more of any character, but unlike in
+regular expressions, it will match non-greedily. This means that the match
+expression, transcribed into PCRE, would be `A (.*) (.) \2 \1 (.*)`. Don't worry
+if that doesn't tell you much yet, I have another example that you can try to
+wrap your heads around.
 
 For now, let's try to decypher the return values. It gives us back a two-element
 list, the first element of which is another list. The second element is a
@@ -354,9 +355,9 @@ to match zero or more characters.
             (cont)
             (if (eq? (nfirst e (length (cadr v)))
                      (cadr v))
-              (match1 (cdr p)
-                      (nrest e (length (cadr v)))
-                      res cont)
+              (matchfun (cdr p)
+                        (nrest e (length (cadr v)))
+                        res cont)
               (cont)))))
         (assq (cadar p) res)))
     ; more cases
@@ -418,11 +419,12 @@ Other worthwile exercises I could think of:
 * adding head-tail patterns to the nested expressions, although a valid
   workaround would be `(?H !T)`
 * throwaway patterns, e.g. with `_` and `!_`
+* Make the `!` matcher greedy
 
 There's plenty of work that could be done to improve this algorithm, but I
 believe that the fundamental simplicity of the idea is what makes the algorithm
 appealing to begin with. Thus any kind of work should strive for the same
-conceptual simplicity instead of just blindly tacking on features blindly, at
+conceptual simplicity instead of just tacking on features blindly, at
 least in my book.
 
 ## Fin
