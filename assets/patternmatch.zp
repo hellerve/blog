@@ -1,65 +1,53 @@
-; The notion of an atom is different in the Scheme the original
-; algorithm was written in, so we redefine the function here
-(define atom? (compose not char:alpha? car symbol->string))
+(define nfirst (flip take))
+(define nrest (flip drop))
+(define (? sym) (eq? #\? (car (symbol->string sym))))
+(define (! sym) (eq? #\! (car (symbol->string sym))))
+(define (plain? sym) (not (or (? sym) (! sym))))
+(define to-plain (compose string->symbol
+                          cdr
+                          symbol->string))
 
-; Apparently it was valid to ask for a symbol's length in
-; the original Scheme and take its first character, so we
-; define implementations for the collec and traversable-collec
-; protocols for symbols in zepto.
-(defimpl traversable-collec symbol?
-  ((car   (lambda (s) (->symbol (car (symbol->string s)))))
-   (cdr   (lambda (s) (string->symbol (cdr (symbol->string s)))))
-   (null? (lambda (s) (string->symbol (null? (symbol->string s)))))
-   (empty (lambda (s) (->symbol "")))))
-
-(defimpl collec symbol?
-  ((length   (lambda (s) (string:length (symbol->string s))))
-   (in?      (lambda (s el) (string:in? (symbol->string s) el)))
-   (get-from
-    (collec:get-from-skeleton
-      (lambda (s i)
-        (let ((s (symbol->string s)))
-          (if (> (length s) i)
-            (collec-val:found (string:ref s i))
-            (collec-val:not-found))))))))
-
-; The original, largely unmodified algorithm
 (define (match pattern expression)
-  (define (match1 p e alist lose)
+  (define (matchfun p e res cont)
     (if (null? p)
-      (if (null? e) (list alist lose) (lose))
-      (if (atom? (car p))
-        (if (null? e)
-          (lose)
-          (if (eq? (car e) (car p))
-            (match1 (cdr p) (cdr e) alist lose)
-            (lose)))
-        (if (eq? (caar p) 'THV)
+      (if (null? e)
+        (list res cont)
+        (cont))
+      (cond
+        ((plain? (car p))
+          (cond
+            ((null? e) (cont))
+            ((eq? (car e) (car p)) (matchfun (cdr p) (cdr e) res cont))
+            (else (cont))))
+        ((? (car p))
           (if (null? e)
-            (lose)
+            (cont)
             ((lambda (v)
-              (if v
-                (if (eq? (car e) (cadr p))
-                  (match1 (cdr p) (cdr e) alist lose)
-                  (lose))
-                (match1 (cdr p) (cdr e) (cons (list (cadar p) (car e)) alist) lose)))
-              (assq (cadar p) alist)))
-          (if (eq? (caar p) 'THV*)
-            ((lambda (v)
-              (if v
-                (if (< (length e) (length (cadr v)))
-                  (lose)
-                  (if (eq? (take (length (cadr v)) e) (cadr v))
-                    (match1 (cdr p) (drop (length (cadr v)) e) alist lose)
-                    (lose)))
-                (let ((match*
-                        (lambda (n)
-                          (if (> n (length e))
-                            (lose)
-                            (match1 (cdr p) (nrest n e)
-                                    (cons (list (cadar p) (take n e)) alist)
-                                    (lambda () (match* (+ n 1))))))))
-                  (match* 0))))
-              (assq (cadar p) alist))
-            (lose))))))
-  (match1 pattern expression (nil) (lambda () (nil))))
+              (if (eq? v #f)
+                (matchfun (cdr p) (cdr e) (cons (list (to-plain (car p))
+                                                      (car e))
+                                                      res)
+                          cont)
+                (if (eq? (car e) (cadr v))
+                  (matchfun (cdr p) (cdr e) res cont)
+                  (cont))))
+              (assq (to-plain (car p)) res))))
+        ((! (car p))
+          ((lambda (v)
+            (if (eq? v #f)
+              (letrec ((match* (lambda (n)
+                      (if (> n (length e))
+                        (cont)
+                        (matchfun (cdr p) (nrest e n) (cons (list (car p)
+                                                            (nfirst e n))
+                                                            res)
+                                  (lambda () (match* (+ n 1))))))))
+                (match* 0))
+              (if (< (length e) (length (cadr v)))
+                (cont)
+                (if (eq? (nfirst e (length (cadr v))) (cadr v))
+                  (matchfun (cdr p) (nrest e (length (cadr v))) res cont)
+                  (cont)))))
+            (assq (to-plain (car p)) res)))
+        (else (cont)))))
+  (matchfun pattern expression '() (lambda () nil)))
