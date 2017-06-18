@@ -105,8 +105,8 @@ different values. If that's possible, calling the continuation will give us
 the next possible match. In case of failure it will return `nil`.
 
 ```
-; Exercise: Can you figure out what the function should return,
-; given the following inputs?
+; Exercise: Can you figure out what the function
+; should return, given the following inputs?
 (match '(A !C B) '(A B C D E X X S B))
 
 (match '(A !C !C ?B !D ?B) '(A F D A D F))
