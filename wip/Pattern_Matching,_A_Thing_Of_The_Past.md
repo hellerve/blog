@@ -35,9 +35,9 @@ function, aptly called `match`, that is relatively simple and intuitive.
 Let's first look at the examples from the paper, and then construct our own,
 to make sure we understood the interface.
 
-This first example is fairly involved and I don't expect you to understand it–
-especially since the authors didn't choose a very simple example–,but I'm using it
-because here it's the only example in the paper.
+This first example is fairly involved and it's okay if it doesn't make sense at
+first glance–especially since the authors didn't choose a very simple example–,
+but I'm using it because here it's the only example in the paper.
 
 ```
 ; from the paper
