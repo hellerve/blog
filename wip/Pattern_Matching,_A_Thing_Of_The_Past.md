@@ -35,6 +35,10 @@ function, aptly called `match`, that is relatively simple and intuitive to use.
 Let's first look at the examples from the paper, and then construct our own,
 to make sure we understood the interface.
 
+This is first example is fairly involved and I don't expect you to understand it,
+especially since the authors didn't choose a very simple example, but I use it
+because it is the only example that appears in the paper.
+
 ```
 ; from the paper
 (match '(A !B ?C ?C !B !E)
@@ -57,11 +61,9 @@ to make sure we understood the interface.
   Fig. 1: A few examples of function invocations and their result.
 </div>
 
-This is fairly involved and I don't expect you to understand it, especially
-since the authors didn't choose a very simple example. Let's go through the
-invocations and the return values one by one.
+Let's go through the invocations and the return values one by one.
 
-First, let's observe that the prefixes hold real semantical meaning. The `?`
+First, let's observe that the prefixes hold real semantic meaning. The `?`
 character will match any one character, similar to `.` in regular expressions.
 The `!` character, on the other hand, holds the same meaning as `.*` in regular
 expressions, i.e. it will match zero or more of any character, but unlike in
@@ -70,12 +72,24 @@ expression, transcribed into PCRE, would be `A (.*) (.) \2 \1 (.*)`. Don't worry
 if that doesn't tell you much yet, I have another example that you can try to
 wrap your heads around.
 
+It is important to note at this point, however, that these special prefixed
+symbols are similar to capture groups. These groups will make up the return
+value of the `match` function.
+
+```
+E=Z Z X Y Q Q X Y R
+C=Q
+B=X Y
+```
+<div class="figure-label">Fig. 2: The match groups.</div>
+
 For now, let's try to decypher the return values. It gives us back a two-element
 list, the first element of which is another list. The second element is a
-continuation that we will ignore for now. The nested list contains pairs of
-names and the matched values. It will will tell us that it bound `C` to `Q`,
-`E` to a long list, and `B` to `X Y` in the first call. Figure 2 tries to
-glue those back together, which will, unsurprisingly, result in the input list.
+continuation that we will ignore for now. The nested list represent the matched
+captured groups and contains pairs of names and the matched values. It will will
+tell us that it bound `C` to `Q`, `E` to a long list, and `B` to `X Y` in the
+first call. Figure 2 tries to glue those back together, which will,
+unsurprisingly, result in the input list.
 
 ```
 input: (A !B ?C ?C !B !E)
@@ -83,7 +97,7 @@ substituting B: (A X Y ?C ?C X Y !E)
 substituting C: (A X Y Q Q X Y !E)
 substituting E: (A X Y Q Q X Y Z Z X Y Q Q X Y R) == input
 ```
-<div class="figure-label">Fig. 2: Rebuilding the input from the matches.</div>
+<div class="figure-label">Fig. 3: Rebuilding the input from the matches.</div>
 
 Now, let's look at that continuation business. The contiunation will actually
 give us the facilities to try the same algorithm again, and try to match
@@ -99,7 +113,7 @@ the next possible match. In case of failure it will return `nil`.
 
 (match '(?X !Y ?Z ?Z !Y) '(A B B C D D B B C))
 ```
-<div class "figure-label">Fig. 3: An exercise for the reader.</div>
+<div class "figure-label">Fig. 4: An exercise for the reader.</div>
 
 That just about covers the API of the algorithm, and, looking at just that, we
 could be tempted to assume that the algorithm is long, complex, and daunting to
@@ -133,7 +147,7 @@ the paper, and one in zepto.
 (define nrest (flip drop))
 ```
 <div class="figure-label">
-  Fig. 4: Two implementations of `nfirst` and `ndrop` each.
+  Fig. 5: Two implementations of `nfirst` and `ndrop` each.
 </div>
 
 A few notes seem in order at this point: firstly, I'd like to say that I
@@ -171,7 +185,7 @@ form, look like this:
                           symbol->string))
 ```
 <div class="figure-label">
-  Fig. 5: Distinction functions.
+  Fig. 6: Distinction functions.
 </div>
 
 The Scheme of your choice should provide functions that are at least equivalent.
@@ -188,8 +202,8 @@ Take a deep breath now, for we're diving in heads-first. If you're
 over-whelmed or feel like you don't understand what's going on, do something
 else for a bit, come back, reread the bits that were unclear to you and try
 again. If you don't feel like this post makes any sense to you, don't worry
-about it. The algorithm is dense and complex, and might not make sense on the
-first read-through.
+about it. The implementation of the algorithm—simple as the idea itself is—is
+dense and complex, and might not make sense on the first read-through.
 
 First, let's define a function that shares the API of `match` as seen above.
 It will take a pattern and an expression, do some magic, and return a result.
@@ -202,7 +216,7 @@ It will take a pattern and an expression, do some magic, and return a result.
   (matchfun pattern expression '() (lambda () nil)))
 ```
 <div class="figure-label">
-  Fig. 6: A setup for the `match` function.
+  Fig. 7: A setup for the `match` function.
 </div>
 
 You might ask yourself why there is an inner function defined within `match`,
@@ -228,7 +242,7 @@ whether we have consumed all of the patterns.
   ))
 ```
 <div class="figure-label">
-  Fig. 7: Our base case that tells us when to stop matching.
+  Fig. 8: Our base case that tells us when to stop matching.
 </div>
 
 When we have to consumed all of the patterns, a valid match requires us to
@@ -255,7 +269,7 @@ symbol in our pattern list, we just try to match it verbatim.
   ))
 ```
 <div class="figure-label">
-  Fig. 8: The plain case.
+  Fig. 9: The plain case.
 </div>
 
 We use the function `plain?` we defined in the previous section to see whether
@@ -293,7 +307,7 @@ any character.
   ))
 ```
 <div class="figure-label">
-  Fig. 9: Matching any one character.
+  Fig. 10: Matching any one character.
 </div>
 
 Okay, this is an order of magnitude harder to understand than the plain case.
@@ -319,7 +333,8 @@ of pairs of the structure `(key value)` with a fancy name.
 
 I would love to implement this in terms of a faster key-value data structure,
 but sadly there is no big unifying structure that I could use—zepto does have
-hash maps, even hash map literals, but that's beside the point.
+hash maps, even hash map literals, but that's beside the point if we want to
+stick to a format that every Scheme implementation can run.
 
 If you already know Scheme's API for `association lists`, then the above code
 snippet should be fairly straight-forward. If you do not, maybe pointing out
@@ -364,7 +379,7 @@ to match zero or more characters.
   ))
 ```
 <div class="figure-label">
-  Fig. 10: Matching any zero or more characters.
+  Fig. 11: Matching any zero or more characters.
 </div>
 
 The structure of the case is similar to the one we just examined, with a few
@@ -381,7 +396,7 @@ to our symbol. It will also set `cont` to a version of itself with a longer
 list. If we ponder that for a while we see that this means it will try to go
 on with a minimal list and then come back and grow the list if we can't proceed
 otherwise. This is a fairly simple idea, although the implementation tends to
-disagree.
+disagree and admittedly is a little hard to read.
 
 We're almost done, all we have to do is add another case to our top-level
 expression that will call `cont` if none of the cases we handled makes sense.
@@ -396,7 +411,7 @@ shouldn't rely on that.
     (else (cont))))
 ```
 <div class="figure-label">
-  Fig. 11. A catch-all matcher.
+  Fig. 12: A catch-all matcher.
 </div>
 
 This is it! We've just built a pattern matching system with back-tracking in
