@@ -461,4 +461,10 @@ it as much as I enjoyed writing it. I tried to make the post accessible to a
 lot of the programming world, though I understand both Lisp and the algorithm
 at hand might be confusing for a non-negligible percentage of programmers. If
 you have any questions, comments, or criticism, please reach out to me via
-e-mail or any medium you can get a hold of me in. See you next time!
+e-mail or any medium you can get a hold of me in.
+
+Lastly, I want to thank all of the awesome people who reviewed my blog post
+and without whose feedback this would've been much more of a mess! You know
+who you are and what you did and I'm really grateful for all of it.
+
+See you next time!
