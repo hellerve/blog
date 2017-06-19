@@ -1,0 +1,26 @@
+(define (match regexp text)
+  (if (eq? (car regexp) #\^)
+    (match-here (cdr regexp) text)
+    (let loop ((text text))
+      (cond
+        ((null? text) #f)
+        ((match-here regexp text) #t)
+        (else (loop (cdr text)))))))
+
+(define (match-here r t)
+  (cond
+    ((null? r) #t)
+    ((and (> (length r) 1) (eq? (cadr r) #\*))
+      (match-star (car r) (cddr r) t))
+    ((and (eq? (car r) #\$) (eq? (length r) 1))
+      (null? t))
+    ((and (not (null? t)) (or (eq? (car r) #\.) (eq? (car r) (car t))))
+      (match-here (cdr r) (cdr t)))
+    (else #f)))
+
+(define (match-star c r t)
+  (let loop ((t t))
+    (cond
+      ((or (null? t) (and (not (eq? t c)) (not (eq? c #\.)))) #f)
+      ((match-here r t) #t)
+      (else (loop (cdr t))))))
