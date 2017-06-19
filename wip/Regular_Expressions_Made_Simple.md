@@ -18,13 +18,16 @@ round of parenthetical goodness, though, I'm happy to provide it!
 This fairly restricted regular expression engine tries to emulate `grep`
 without the `-E` option provided, i.e. without enabling its extended regular
 expression engine. Figure 1 shows which special characters are provided.
+An important difference between most regular expression engines and this one
+is that the `*` wildcard matches lazily. This stays true to the algorithm
+shown in the book.
 
 ```
 ^: matches the start of the string
 $: matches the end of the string
 .: matches any one character
 *: matches zero or more occurrences of the
-   character that precedes it
+   character that precedes it, lazily
 ```
 <div class="figure-label">
   Fig. 1: The meta-characters provided by the algorithm.
@@ -158,13 +161,45 @@ gained from defining `match-here` we try our hands on `match-star` and get:
 (define (match-star chr regex text)
   (let loop ((text text))
     (cond
+      ((match-here r t) #t)
       ((or (null? text)
            (and (not (eq? (car text) chr))
                 (not (eq? chr #\.))))
         #f)
-      ((match-here r t) #t)
       (else (loop (cdr t))))))
 ```
 <div class="figure-label">Fig. 6: An implementation of `match-star`.</div>
 
+`match-star` is a looped function that, for every iteration, checks whether
+the string currently under scrutiny can be handled by the `match-here` function.
+This is where we rely on laziness for the `*` wildcard, because if `match-here`
+can take over it will, regardless of whether `match-star` could also match the
+input. If `match-here` cannot consume the input, we will check whether the
+wildcard can consume the first character instead, and do the check over again.
 
+This is all of the code needed for the matcher! It is, much like the pattern
+matching algorithm we looked at last time, reasonably simple in its idea.
+Playing around with it reveals that it works quite well to boot.
+
+## Exercises for the reader
+
+Like last time I will propose a couple of exercises one could do to deepen
+the understanding of the algorithm:
+
+* Make the `*` wildcard matcher greedy
+* Add `+` and `?`
+* Make it iterative rather than recursive.
+
+In a language with [tail-call optimization](https://en.wikipedia.org/wiki/Tail_call),
+the recursive version is probably more performant while retaining its elegance.
+In a language that lacks them, however, we might have think of an iterative
+version as a performance optimization—I doubt the algorithm will often run into
+stack overflow problems.
+
+## Fin
+
+Once again, I marvel at the beauty of a finely crafted algorithm. I don't think
+I could ever think of them myself, so I am grateful for the likes of Steele,
+Sussman, and Pike for coming up with algorithms that please me aesthetically.
+
+See you soon!
