@@ -21,6 +21,6 @@
 (define (match-star c r t)
   (let loop ((t t))
     (cond
-      ((or (null? t) (and (not (eq? t c)) (not (eq? c #\.)))) #f)
+      ((or (null? t) (and (not (eq? (car t) c)) (not (eq? c #\.)))) #f)
       ((match-here r t) #t)
       (else (loop (cdr t))))))
