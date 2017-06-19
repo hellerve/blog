@@ -26,7 +26,10 @@ this post, I want to attempt to walk you through the original source, which I do
 not think is still runnable in modern implementations of Scheme. If you want to
 follow along using a slightly more modernized version, you can download
 [an attempt at a transcript into zepto](/assets/patternmatch.zp). Excuse the
-plug, but I like to put my language to use every once in a while.
+plug, but I like to put my language to use every once in a while. If you're
+familiar with Racket and prefer to look at things from a test-driven angle,
+you might want to check out [this repository](https://github.com/carld/lambda-papers-match),
+where Carl Douglas and I re-explored the algorithm step by step through testing.
 
 ## Consumer information
 
