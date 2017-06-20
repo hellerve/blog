@@ -6,8 +6,8 @@ expression engine ever, written by Rob Pike for educational purposes. The
 chapter is written by Brian Kernighan, and it's a promising preview for the
 book.
 
-As in the previous post, the algorithm is suprisingly compact for what it is.
-It is originally written in C, and the code is very nice to look at. I've
+As in the previous post, the algorithm is suprisingly compact.
+It's originally written in C, and the code is very nice to look at. I've
 deviced to transcribe it into Scheme for the purposes of this blog post. If
 you are familiar with C and aren't interested in Lisp I urge you to read the
 original article, because it is very illuminating. If you're up for another
@@ -61,13 +61,13 @@ code is available [here](/assets/regexp.zp).
 
 ## The implemenetation
 
-Before we start I will have to warn you that this implementation is not
+Before we start I have to warn you that this implementation is not
 R5RS-compliant, meaning it will most likely not run on many implementations of
 Scheme–it does run on zepto, though. The reason why I didn't restrict myself to
 standard Scheme is pure convenience: `car`, `cdr`, and `length` in zepto are
 generic functions that accept any type that implements the `traversable-collec`
-protocol. Protocols in zepto are fairly interesting and I might write a blog
-post about them in the future, but for the purpose of this blog post it is
+protocol. Protocols in zepto are fairly interesting (and I might write a blog
+post about them in the future). However, for the purpose of this blog post it's
 sufficient to say that `car` will return the first character of the string
 while `cdr` will return the string from the second character onwards. `length`
 will return the length of the string.
@@ -151,9 +151,9 @@ We dispatch on a number of case, in descending order:
   match.
 * In all other cases the match has failed.
 
-We get all of that logic in a handful of lines, which is pretty neat, even if I
-do say so myself. We almost have a working regular expression engine now, all
-we have to do is define a function `match-star` that takes care of the `*`
+We get all of that logic in a handful of lines, which is pretty neat, if I
+do say so myself. We almost have a working regular expression engine now. All
+we have left to do is define a function `match-star` that takes care of the `*`
 wildcard. How hard can it be, right? With the newly-found confidence we've
 gained from defining `match-here` we try our hands on `match-star` and get:
 
@@ -174,7 +174,7 @@ gained from defining `match-here` we try our hands on `match-star` and get:
 the string currently under scrutiny can be handled by the `match-here` function.
 This is where we rely on laziness for the `*` wildcard, because if `match-here`
 can take over it will, regardless of whether `match-star` could also match the
-input. If `match-here` cannot consume the input, we will check whether the
+input. If `match-here` cannot consume the input, we'll check whether the
 wildcard can consume the first character instead, and do the check over again.
 
 This is all of the code needed for the matcher! It is, much like the pattern
@@ -192,13 +192,13 @@ the understanding of the algorithm:
 
 In a language with [tail-call optimization](https://en.wikipedia.org/wiki/Tail_call),
 the recursive version is probably more performant while retaining its elegance.
-In a language that lacks them, however, we might have think of an iterative
+In a language that lacks them, however, we might think of an iterative
 version as a performance optimization—I doubt the algorithm will often run into
 stack overflow problems.
 
 ## Fin
 
-Once again, I marvel at the beauty of a finely crafted algorithm. I don't think
+Once again, I marvel at the beauty of this finely crafted algorithm. I don't think
 I could ever think of them myself, so I am grateful for the likes of Steele,
 Sussman, and Pike for coming up with algorithms that please me aesthetically.
 
