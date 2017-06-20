@@ -433,6 +433,7 @@ more modern version of Scheme. I'm positive it would make the code more
 readable, and quite certainly more performant.
 
 Other worthwile exercises I could think of:
+
 * supporting arbitrarily deeply nested match expressions
 * adding head-tail patterns to the nested expressions, although a valid
   workaround would be `(?H !T)`
