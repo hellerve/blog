@@ -1,0 +1,41 @@
+(define *protocols* #{})
+(define *impls* #{})
+
+(define-syntax defproto
+  (syntax-rules ()
+    ((_ name functions ...)
+      (let ((env      (curent-env))
+            (name-str (symbol->string 'name)))
+        (map
+          (lambda (fun)
+            (let ((fun-str   (symbol->string (car x)))
+                  (fun-nargs (cadr x)))
+              (eval
+                `(define ,fun (lambda args
+                  (let ((impls (*impls* ,name-str))
+                        (type  (car args)))
+                    (if (or (eq? (length args) fun-nargs)
+                            (eq? :overloaded fun-nargs))
+                      (let
+                        ((funs (filter
+                                  (lambda (v) (eval (list (car v) 'arg)))
+                                  impls)))
+                          (apply ((cadr funs) ,fun-str) args))
+                      (error ,fun-str "takes" ,fun-nargs "arguments, was given"
+                             (length args))))))
+                  env)))
+          'functions)
+        (hash:set! *protocols* (symbol->string 'name) 'functions)))))
+
+(define-syntax defimpl
+  (syntax-rules ()
+    ((_ name pred funs)
+      (let* ((name-str (symbol->string 'name))
+             (protocol (map car (*protocols* name-str)))
+             (impls    (map (lambda (x) (list (symbol->string (car x))
+                                        (eval (macro-expand (cadr x)))))
+                           'funcs)))
+          (hash:update! *impls* name-str
+                    (lambda (impl)
+                      (let ((impl (if (truthy? impl) impl #{})))
+                        (++ impl (list pred (make-hash nfuncs))))))))))
