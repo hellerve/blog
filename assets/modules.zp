@@ -1,0 +1,42 @@
+(define *modules* #{})
+
+(define-syntax import
+  (syntax-rules ()
+    ((import name)
+      (let ((_name (if (symbol? 'name) (symbol->string 'name) name)))
+        (if (not (in? _name #\:))
+          (*modules* _name)
+          (let* ((fullname (string:split _name #\:))
+                 (_module (car fullname))
+                 (function (cadr fullname)))
+            ((*modules* _module) function)))))))
+
+(define-syntax import-all
+  (syntax-rules ()
+    ((import-all name to env)
+      (hash:kv-map
+        (lambda (kv)
+          (eval `(define ,(string->symbol (++ to ":" (car kv)))
+                          (quote ,(cadr kv)))
+                env))
+        (*modules* name)))
+    ((import-all name to)
+      (let ((env (current-env)))
+        (import-all name to env)))
+    ((import-all name)
+      (import-all name name))))
+
+(define-syntax module
+  (syntax-rules (export loads)
+    ((module name (export exports ...) (loads files ...) x ...)
+     ((lambda ()
+      (let ((env (current-env)))
+        (begin
+          (map
+            (lambda (file) (load file env))
+            'files)
+          (module name (export exports ...) x ...))))))
+    ((module name (export exports ...) x ...)
+      (letrec* (x ...)
+        (hash:set! *modules* name
+          (make-hash (list exports ...)))))))
