@@ -13,6 +13,9 @@ you are familiar with C and aren't interested in Lisp I urge you to read the
 original article, because it is very illuminating. If you're up for another
 round of parenthetical goodness, though, I'm happy to provide it!
 
+The complete code used in this blog post can be downloaded
+[here](/assets/regexp.zp).
+
 ## What is it & how can I use it?
 
 This fairly restricted regular expression engine tries to emulate `grep`
