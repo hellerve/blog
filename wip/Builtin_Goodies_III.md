@@ -61,38 +61,37 @@ some pretty telling differences. Using `perf` I get the following results:
 
 ```
 > perf stat ./fetch
+Performance counter stats for './fetch':
 
- Performance counter stats for './fetch':
+  16325.496220 task-clock:u (msec) #  1.000 CPUs utilized
+             0 context-switches:u  #  0.000 K/sec
+             0 cpu-migrations:u    #  0.000 K/sec
+     2,003,706 page-faults:u       #  0.104 M/sec
+34,011,082,658 cycles:u            #  1.760 GHz
+ 6,989,566,005 instructions:u      #  0.21  insn per cycle
+   975,131,080 branches:u          # 50.458 M/sec
+   102,786,380 branch-misses:u     # 10.90% of all branches
 
-      16325.496220      task-clock:u (msec)       #    1.000 CPUs utilized          
-                 0      context-switches:u        #    0.000 K/sec                  
-                 0      cpu-migrations:u          #    0.000 K/sec                  
-         2,003,706      page-faults:u             #    0.104 M/sec                  
-    34,011,082,658      cycles:u                  #    1.760 GHz                    
-     6,989,566,005      instructions:u            #    0.21  insn per cycle         
-       975,131,080      branches:u                #   50.458 M/sec                  
-       102,786,380      branch-misses:u           #   10.90% of all branches        
-
-      16.327586407 seconds time elapsed
-
+  16.327586407 seconds time elapsed
 
 > perf stat ./nofetch
+Performance counter stats for './nofetch':
 
- Performance counter stats for './nofetch':
+  20601.422096 task-clock:u (msec) #  1.000 CPUs utilized
+             0 context-switches:u  #  0.000 K/sec
+             0 cpu-migrations:u    #  0.000 K/sec
+     1,857,587 page-faults:u       #  0.090 M/sec
+38,226,536,467 cycles:u            #  1.856 GHz
+ 4,057,610,809 instructions:u      #  0.11  insn per cycle
+   870,122,085 branches:u          # 42.236 M/sec
+   129,432,512 branch-misses:u     # 14.88% of all branches
 
-      20601.422096      task-clock:u (msec)       #    1.000 CPUs utilized          
-                 0      context-switches:u        #    0.000 K/sec                  
-                 0      cpu-migrations:u          #    0.000 K/sec                  
-         1,857,587      page-faults:u             #    0.090 M/sec                  
-    38,226,536,467      cycles:u                  #    1.856 GHz                    
-     4,057,610,809      instructions:u            #    0.11  insn per cycle         
-       870,122,085      branches:u                #   42.236 M/sec                  
-       129,432,512      branch-misses:u           #   14.88% of all branches        
-
-      20.602873818 seconds time elapsed
-
+  20.602873818 seconds time elapsed
 ```
-<div class="figure-label">Fig. 1: A methodically questionable benchmark.</div>
+<div class="figure-label">
+  Fig. 1: A methodically questionable benchmark (the output was reformatted to
+  fit on the page).
+</div>
 
 I also learned that using `perf` on your Webfaction VM makes Webfaction
 unhappy and it will open tickets because you exceed your memory limit. Oops.
