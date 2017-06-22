@@ -3,14 +3,14 @@
 For parts I and II, click [here](http://blog.veitheller.de/Builtin_Goodies_I.html)
 and [here](http://blog.veitheller.de/Builtin_Goodies_II.html), respectively.*
 
-In this third post of the series we will again learn to help our compiler
+In this third post we will again learn to help our compiler
 figure out how to make assumptions about our code, which in turn might help
 make our code more performant.
 
 This time we will look into “prefetching”, i.e. moving data into memory that
-we're sure we need soon. Our compiler is somewhat smart about that, but even
-today we can sometimes do better than the machine—although I'd be very wary to
-go down that rabbit hole only when I need to, which fankly isn't all too often.
+we're sure we will need soon. Our compiler is somewhat smart about that, but even
+today we can sometimes do better than the machine—although I'd be very wary
+and go down that rabbit hole only when I need to, which fankly isn't all too often.
 
 Let's tell GCC to grab our stuff!
 
@@ -19,7 +19,7 @@ Let's tell GCC to grab our stuff!
 The builtin we need to get GCC to emit data prefetch instructions is
 `__builtin_prefetch(addr, ...)`, where `addr` is a valid memory address and
 the optional arguments are `rw` and `locality`, both of which are integers.
-Before we go into the semantics of the arguments, allow me to clear things
+Before we get into the semantics of the arguments, allow me to clear things
 up for my more inquisitive readers: data prefetch instructions aren't
 available on all platforms. A list of supported targets can be obtained
 [here](https://gcc.gnu.org/projects/prefetch.html#targets). The builtin,
@@ -29,7 +29,7 @@ stunts the collapsing of code paths—as `asm("nop")` would do—, because all o
 my machines generate prefetching instructions.
 
 As for the arguments, `addr` can be any expression that represents or generates
-a valid address, even complicated ones such as `&(l[i+1].str)` seem to work.
+a valid address. Even complicated ones such as `&(l[i+1].str)` seem to work.
 The first optional argument `rw` must be a compile-time boolean flag, i.e. `0`
 or `1`, that signals whether we read (`0`) or write (`1`) to the memory address
 we prefetch, where reading is the default. The second optional argument
@@ -37,7 +37,7 @@ we prefetch, where reading is the default. The second optional argument
 `3` is the default. It tweaks the degree of temporal locality, meaning that if
 we want to access the memory address multiple times—such as in a long loop—we
 can keep this value as it is. We might want to tweak it if we only access it
-once or a few times. Both of these values should probably only ever set after
+once or more. Both of these values should probably only ever set after
 experimenting with their perforamnce implications, because I'm not sure they
 make a huge difference. Then again, this blog post is basically on
 micro-optimizations, so maybe my audience will disagree.
@@ -94,19 +94,19 @@ Performance counter stats for './nofetch':
 </div>
 
 I also learned that using `perf` on your Webfaction VM makes Webfaction
-unhappy and it will open tickets because you exceed your memory limit. Oops.
+unhappy, and it will open tickets because you exceed your memory limit. Oops.
 
 The performance gain seems to come largely from a decrease in cache load
 misses—you will also see an increase in cache loads, but this leads to
 a better memory access pattern. I would've liked to show you the output of
 `perf` with these misses enabled, but that'll have to wait until I have a
-Linux machine that will not blow up my hosting plan when I run tests on it.
+Linux machine that will doesn't blow up my hosting plan when I run tests on it.
 
 ## A quick recap
 
-I ran into a lot of walls while testing whether the builtin was any good. It
+I ran into a lot of walls while testing the builtin. It
 turns out that most applications don't need manual prefetching—which is fairly
-obvious if you think about how smart compilers are about this—, and it is hard
+obvious if you think about how smart compilers are in this regard—, and it's hard
 to find a problem with random enough memory accesses to validate claims of
 speedup. Chances are that your codebase has only a very limited set of sections
 where optimizing in this way makes sense, and I wouldn't spend much time on it.
@@ -114,7 +114,7 @@ I also learned that detailed performance measurement in OS X doesn't really
 seem to be a thing. I'm not really an expert in that field, though, and would
 love some input in what's useful for detailed benchmarking on Macs.
 
-Having said that, I still think that this is both a useful tool to have in your
-optimization toolbox, and understanding it might help you understand memory
+Having said that, I still think this is a useful tool to have in your
+optimization toolbox and that understanding it might help you understand memory
 access patterns, caching, and pipelining, concepts that I have only working
 knowledge of.
