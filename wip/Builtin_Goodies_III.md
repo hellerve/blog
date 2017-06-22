@@ -3,9 +3,8 @@
 For parts I and II, click [here](http://blog.veitheller.de/Builtin_Goodies_I.html)
 and [here](http://blog.veitheller.de/Builtin_Goodies_II.html), respectively.*
 
-In this third post we will again learn to help our compiler
-figure out how to make assumptions about our code, which in turn might help
-make our code more performant.
+In this third post we will again learn to help our compiler figure out how our
+code should run. This in turn might help make our code more performant.
 
 This time we will look into “prefetching”, i.e. moving data into memory that
 we're sure we will need soon. Our compiler is somewhat smart about that, but even
