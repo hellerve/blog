@@ -62,7 +62,7 @@ code golf exercise, and Rob Pike did a great job in keeping it terse yet
 readable. In this blog post we will try and do the same for Scheme. The source
 code is available [here](/assets/regexp.zp).
 
-## The implemenetation
+## The implementation
 
 Before we start I have to warn you that this implementation is not
 R5RS-compliant, meaning it will most likely not run on many implementations of
