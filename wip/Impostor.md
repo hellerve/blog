@@ -6,7 +6,7 @@ then promptly asked what the others thought they were and we made a little
 circle, everyone asking someone else what the other person thought they were.
 To my surprise, no feelings were hurt.
 
-I'm a guesser, I've been told, but ith an asterisk. “You're a guesser, but you
+I'm a guesser, I've been told, but with an asterisk. “You're a guesser, but you
 know you're good”. I wasn't sure what that meant, but it stroked my vanity, and
 in lack of a better response I just said that. And then I thought about how not
 too long ago I would've vehemently fought against that statement, and we talked
@@ -22,7 +22,7 @@ that hurt other people's feelings. It turns out that, if people regard you as
 higher in some intellectual hierarchy—hierarchies are as stupid as they are
 pervasive—and hear your self-deprecation, they mostly react in one of two ways:
 
-1. They realize “smart” people have these feelings, too, and maybe that makes
+1. They realize “smart” people have these feelings too, and maybe that makes
    them worry less.
 2. They go into full panic mode, because if “smart” people think they're dumb,
    what does this make them?
@@ -31,7 +31,7 @@ After learning that the second reaction was a thing I stopped openly
 self-deprecating. Of course I never implied that anyone else around me was
 stupid, but I definitely see how that sentiment can be inferred.
 
-Of course, that didn't help with the underlying feeling. It just stopped me
+Naturally that didn't change the underlying feeling. It just stopped me
 from perpetuating the same old truisms about myself. But it also led me on a
 journey to reflect about who I was and who I am.
 
@@ -49,7 +49,7 @@ life—the small things, you know. I also knew that I was not worthy to study
 with the others, and I learned about impostor syndrome after I'd overcome the
 worst parts of it.
 
-When I stopped self-deprecating, I reflected on who I'd changed and how anyone
+When I stopped self-deprecating, I reflected on how I'd changed and how anyone
 could sincerely regard me as intellectually superior, and for the first time
 realized that I had made tremendous progress. It helped me cast myself in a
 different light and acknowledge positive thoughts about who I am.
@@ -63,9 +63,10 @@ succeeding side, and hidden that pile of garbage that is the other half of me?
 Then a thought hit me: if people I respect talked about someone else in the
 same way they talked about me, what would I think of them? If a former
 colleague walked up to me and said “I know this person. They are nice, and a
-really good programmer.”, I would probably want to meet them. I wouldn't ask
+really good programmer”, I would probably want to meet them. I wouldn't ask
 about their emotional backyard first. Sure, maybe they fooled my friend and
-are really just an impostor, but I think they're really smart and hard to fool.
+are really just an impostor, but I think my friends are really smart and
+generally hard to fool.
 
 If I discount my friend's opinion about me, I discount my friend's opinion in
 general. And I know better than that.
@@ -80,9 +81,9 @@ It is hard to talk about myself, and this blog post definitely feels too
 positive. I'm wary of positive emotions, and even more wary of overtly
 displaying them. But this feels important.
 
-Impostor syndrome and self-deprecation are incredibly common in programmers.
-Everyone is different and has different ways to cope with feelings of
-not-belonging, and I feel like we all should share our personal collections
+Impostor syndrome and self-deprecation are incredibly common in the tech
+community. Everyone is different and has different ways to cope with feelings
+of not-belonging, and I feel like we all should share our personal collections
 of tools.
 
 I invite you to think about how you deal with these feelings, if you have
