@@ -1,9 +1,9 @@
-A few days ago one of my friends from Recurse Center asked me to review
-references—i.e. pointers—in Go with him. Primarily a Clojure developer, he had
-a bit of trouble to get a feeling when to use references and when to use
-values. After talking about that for about an hour he seemed to have a much
-better intuition about what to use when. This, however, is not what I want to
-talk about today.
+A few days ago one of my friends from Recurse Center, [David Shaked](https://github.com/ds2643),
+asked me to review references—i.e. pointers—in Go with him. Primarily a Clojure
+developer, he had a bit of trouble to get a feeling when to use references and
+when to use values. After talking about that for about an hour he seemed to
+have a much better intuition about what to use when. This, however, is not what
+I want to talk about today.
 
 What I want to talk about is an intuition about the operators involved in
 working with pointers and what they mean on a type-level. They happen to be
