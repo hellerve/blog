@@ -3,32 +3,27 @@
 (define-syntax import
   (syntax-rules ()
     ((import name)
-      (let ((_name (if (symbol? 'name) (symbol->string 'name) name)))
+      (import name name))
+    ((import name as)
+      (let ((env (current-env))
+            (_name (if (symbol? 'name) (symbol->string 'name) name)))
         (if (not (in? _name #\:))
-          (*modules* _name)
+          (hash:kv-map
+            ($
+              (eval `(define ,(string->symbol (++ (->string 'as) ":"
+                                                  (->string (car %))))
+                             ,(cadr %))
+                    env))
+            (*modules* _name))
           (let* ((fullname (string:split _name #\:))
                  (_module (car fullname))
                  (function (cadr fullname)))
-            ((*modules* _module) function)))))))
+            (eval `(define ,(->symbol 'as) ,((*modules* _module) function))
+                  env)))))))
 
-(define-syntax import-all
-  (syntax-rules ()
-    ((import-all name to env)
-      (hash:kv-map
-        (lambda (kv)
-          (eval `(define ,(string->symbol (++ to ":" (car kv)))
-                          (quote ,(cadr kv)))
-                env))
-        (*modules* name)))
-    ((import-all name to)
-      (let ((env (current-env)))
-        (import-all name to env)))
-    ((import-all name)
-      (import-all name name))))
-
-(define-syntax module
-  (syntax-rules (export loads)
-    ((module name (export exports ...) (loads files ...) x ...)
+(define-syntax defmodule
+  (syntax-rules (export require)
+    ((module name (export exports ...) (require files ...) x ...)
      ((lambda ()
       (let ((env (current-env)))
         (begin
@@ -37,6 +32,11 @@
             'files)
           (module name (export exports ...) x ...))))))
     ((module name (export exports ...) x ...)
-      (letrec* (x ...)
-        (hash:set! *modules* name
-          (make-hash (list exports ...)))))))
+      (let ()
+        x ...
+        (hash:set! *modules* (->string 'name)
+          (make-hash
+            (map ($ (if (list? %)
+                      (cons (->string (car %)) (eval (cddr %)))
+                      (list (->string %) (eval %))))
+                 '(exports ...))))))))
