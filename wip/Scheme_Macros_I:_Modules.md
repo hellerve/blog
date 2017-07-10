@@ -4,7 +4,8 @@ attempt to give a few interesting cases for how we can level up our code
 through the use of macros.
 
 This time we will look at how to implement a module system. Many Lisps already
-come with a module system out of the box—both R7RS and Common Lisp provide a
+come with a module system out of the box—both <a href="http://trac.sacrideo.us/wg/wiki/ModuleSystems">R7RS</a>
+and <a href="http://weitz.de/packages.html">Common Lisp</a> provide a
 facility for packaging and namespacing libraries and modules—, but it is still
 helpful to know how these abstractions are built and look from the inside.
 
