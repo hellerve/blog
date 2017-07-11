@@ -93,6 +93,8 @@ delete(number)
 move(number, number)
 -- open another file, closing the current file
 open("string")
+-- prompt the user for input
+string = prompt("input: %s")
 
 -- get the current cursor position
 number, number = get_coords()
@@ -113,10 +115,6 @@ keys = {}
 meta_commands = {}
 ```
 <div class="figure-label">Fig. 1: `e`'s Lua API.</div>
-
-One other function is not yet implemented, but will be before the PR is merged.
-It enables Lua code to use the editor prompt for getting user input and will
-most likely be called `prompt("prompt string")`.
 
 The `keys` and `meta_commands` variables might not be immediately obvious, so
 let me give you an example for both of them. Suppose you want to register a
