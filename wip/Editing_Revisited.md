@@ -82,14 +82,18 @@ So, without further ado, here's a complete listing of the API:
 ```
 -- print something in the status line
 message("string")
+
 -- insert text at the current cursor position
 insert("string")
--- insert text at the current position, appending a newline
+-- insert text at the current position (appends a newline)
 insertn("string")
--- delete a given number of characters at the current position
+-- delete a number of characters at the current position
 delete(number)
 -- move to a given cursor position
 move(number, number)
+-- open another file, closing the current file
+open("string")
+
 -- get the current cursor position
 number, number = get_coords()
 -- get the window size
@@ -102,8 +106,7 @@ number = get_tab()
 number = set_tab()
 -- get filename
 string = get_filename()
--- open another file, closing the current file
-open("string")
+
 -- a table containing custom edit keys
 keys = {}
 -- a table containing custom meta commands
