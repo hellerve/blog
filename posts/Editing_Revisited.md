@@ -33,7 +33,8 @@ calulation rather pointless to begin with.
 
 I decided to vendor the latest version of Lua. While this is not the prettiest
 solution for a variety of reasons, it ensures that I can keep the build
-mechanisms simple and sane. I'll probably have to change that in the future.
+mechanisms simple to reason about. I'll probably have to change that in the
+future.
 
 More importantly, [Lua's C API](https://www.lua.org/manual/5.3/manual.html#4)
 is refreshingly simple and pretty. Within about an hour of work, I was able
