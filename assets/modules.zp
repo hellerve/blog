@@ -31,12 +31,12 @@
             (lambda (file) (load file env))
             'files)
           (module name (export exports ...) x ...))))))
-    ((module name (export exports ...) x ...)
+    ((module name (export exports ...) body ...)
       (let ()
-        x ...
+        body ...
         (hash:set! *modules* (->string 'name)
           (make-hash
             (map ($ (if (list? %)
-                      (cons (->string (car %)) (eval (cddr %)))
+                      (cons (->string (caddr %)) (eval (car %)))
                       (list (->string %) (eval %))))
                  '(exports ...))))))))
