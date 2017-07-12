@@ -23,7 +23,7 @@
 
 (define-syntax defmodule
   (syntax-rules (export require)
-    ((module name (export exports ...) (require files ...) x ...)
+    ((defmodule name (export exports ...) (require files ...) x ...)
      ((lambda ()
       (let ((env (current-env)))
         (begin
@@ -31,7 +31,7 @@
             (lambda (file) (load file env))
             'files)
           (module name (export exports ...) x ...))))))
-    ((module name (export exports ...) body ...)
+    ((defmodule name (export exports ...) body ...)
       (let ()
         body ...
         (hash:set! *modules* (->string 'name)
