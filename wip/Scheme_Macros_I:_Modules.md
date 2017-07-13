@@ -313,11 +313,35 @@ And with this we are done. We have implemented the promised module system, and
 while some bits of the code are a bit gnarly, it is not overly complex. Most of
 the time is spent on wiring that depends on the input data.
 
-## Recap & Outlook
+## Recap
 
+This has been a wild ride, but we now have a working version of a module
+system. It is relatively simple and limited, but serves as a good foundation
+for something that caters better to your needs.
 
+There are a few low-hanging fruits that you could work on to get started
+making this the truly awesome module system your language deserves, or just as
+an exercise.
+
+* Try implementing loading required files yourself and see how your solution is
+  different from mine.
+* Currently loading and importing are two separate steps. Write a `require`
+  form that unifies the two in a sensible API. Maybe readd that into the former
+  exercise.
+* Implement extending modules, i.e. being able to add functions to a module
+  after it has been defined. An example for that can be found in the actual
+  [zepto module system](https://github.com/zepto-lang/module).
+
+These all make objective sense and should be somewhat simple.
 
 ## Fin
+
+Thank you for reading this far! This has been a fairly long blog post; I hope
+it was worthwhile! As the name suggests, I'm planning to make these posts a
+series. The next thing I want to be covering is generic functions through
+protocols—commonly known as interfaces or sometimes traits. If that sounds
+appealing to you, be sure to check back soon! And if you have any other macro
+ideas that you want me to write about, contact me.
 
 ##### Footnotes
 
