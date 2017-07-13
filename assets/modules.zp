@@ -6,16 +6,16 @@
       (import name name))
     ((import name as)
       (let ((env (current-env))
-            (_name (if (symbol? 'name) (symbol->string 'name) name)))
-        (if (not (in? _name #\:))
+            (strname (if (symbol? 'name) (symbol->string 'name) name)))
+        (if (not (in? strname #\:))
           (hash:kv-map
             ($
               (eval `(define ,(string->symbol (++ (->string 'as) ":"
                                                   (->string (car %))))
                              ,(cadr %))
                     env))
-            (*modules* _name))
-          (let* ((fullname (string:split _name #\:))
+            (*modules* strname))
+          (let* ((fullname (string:split strname #\:))
                  (_module (car fullname))
                  (function (cadr fullname)))
             (eval `(define ,(->symbol 'as) ,((*modules* _module) function))

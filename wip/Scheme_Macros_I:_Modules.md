@@ -210,7 +210,14 @@ non-renaming case even simpler, by defining it as the renaming case, renaming
 to the original name. That's not very interesting, but reduces code duplication
 by a lot.
 
-What do we have to do for the renaming case then?
+What do we have to do for the renaming case then? If we look at the API for
+`import` from Figure 2 again, we realize that there are basically two cases:
+either we want to import everything from a module or a specific function.
+We can distinguish between those two cases by checking whether the symbol
+contains a colon, since this character is reserved as a separator between
+module and function names<a href="#2"><sup>2</sup></a>.
+
+Updating our skeleton to reflect our new insights, we end up with:
 
 ## Recap & Outlook
 
@@ -220,3 +227,7 @@ What do we have to do for the renaming case then?
 
 <span id="1">1.</span> This is an implementation detail, but as it pertains to
   the implementation of the API I felt like it should be mentioned.
+
+<span id="2">2.</span> This is not enforced by the implementation and purely
+based on convention.
+
