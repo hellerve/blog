@@ -159,8 +159,10 @@ and the zepto shorthand for unary lambdas `$`—it will bind the argument to
 ```
 (map
   ($ (if (list? %)
-       (list (->string (caddr %)) (eval (car %))) ; the aliasing case
-       (list (->string %) (eval %)))) ; the regular case
+       ; the aliasing case
+       (list (->string (caddr %)) (eval (car %)))
+       ; the regular case
+       (list (->string %) (eval %))))
   '(exports ...)))
 ```
 <div class="figure-label">Fig. 6: A convoluted list transformation</div>
@@ -219,7 +221,101 @@ module and function names<a href="#2"><sup>2</sup></a>.
 
 Updating our skeleton to reflect our new insights, we end up with:
 
+```
+(define-syntax import
+  (synax-rules ()
+    ; the non-renaming case
+    ((import name as)
+      (let ((strname (if (symbol? 'name) 
+                        (->string 'name)
+                        name)))
+        (if (in? strname #\:)
+          ; import single function
+          ; import module
+        )))))
+```
+<div class="figure-label">Fig. 8: A more complete skeleton.</div>
+
+This looks reasonable, but something important is missing. By using a `let`
+expression, we introduce a new scope, which makes defining functions in the
+`if` body useless, since it will not be available in the scope above. What we
+need to do, thus, is capture the environment in the `let` variable capture.
+zepto has a mechanism for getting the current environment, `current-env`. If
+we bind it to a variable `env` and pass that on to `eval`, it will evaluate the
+expression in the environment.
+
+Equipped with our new knowledge, we can try to implement importing a single
+function. We will need to split the module and function names, look them up in
+the module map, and bind the function to the given name, like this:
+
+```
+(define-syntax import
+  (syntax-rules ()
+    ; the non-renaming case
+    ((import name as)
+      (let ((env (current-env))
+            (strname (if (symbol? 'name)
+                          (->string 'name)
+                          name)))
+        (if (in? strname #\:))
+          (let* ((split (string:split strname #\:))
+                 (_mod  (car fullname))
+                 (fun   (cadr fullname)))
+            (eval `(define ,(->symbol 'as)
+                           ,((*modules* _mod) fun))
+                  env))
+          ; import module
+        )))))
+```
+<div class="figure-label">Fig. 9: We're getting closer.</div>
+
+In the above code, we're basically just piecing together information we already
+have into a `define` form and evaluating it in the parent context. This is
+indeed all we need for importing single functions. People who are not familiar
+with zepto might be confused by the lookup function: hash maps and vectors are
+callable and will return the value if given a key as argument, which is why we
+are applying `_mod` and `fun` to the `*modules*` variable, which houses all of
+our modules.
+
+Importing a whole module is then just a matter of iterating over the contents
+of the module, getting the namespacing right, and doing our little evaluation
+trick to bind the functions. Let's try that as well.
+
+```
+(define-syntax import
+  (syntax-rules ()
+    ; the non-renaming case
+    ((import name as)
+      (let ((env (current-env))
+            (strname (if (symbol? 'name)
+                          (->string 'name)
+                          name)))
+        (if (in? strname #\:)
+          ; import single function
+          (hash:kv-map
+            ($
+              (eval `(define ,(string->symbol
+                                (++ (->string 'as) ":"
+                                    (->string (car %))))
+                             ,(cadr %))
+                    env))
+            (*modules* strname)))))))
+```
+<div class="figure-label">Fig. 10: Importing, completed.</div>
+
+This is a tad wordy yet again, but it basically does what was promised: it maps
+over the key-value pairs in the module—using `hash:kv-map`—and for each
+function stitches together a name from the key and the module name or alias,
+then binds that name to the function—the hash map value. This uses zepto's
+`$` shorthand for unary functions again.
+
+And with this we are done. We have implemented the promised module system, and
+while some bits of the code are a bit gnarly, it is not overly complex. Most of
+the time is spent on wiring that depends on the input data.
+
 ## Recap & Outlook
+
+
 
 ## Fin
 
