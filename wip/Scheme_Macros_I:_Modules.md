@@ -191,10 +191,9 @@ link to at the beginning of this post.
 ## Importing
 
 Now we come to the part that makes this system actually usable: importing.
-Importing is just a simple abstraction over retrieving the function(s) we
-stored earlier and binding it to the appropriate name. There is a renaming
-import and a non-renaming import in our API, let's define the renaming import
-first:
+Importing is simple: we retrieve the functions we stored earlier and bind them
+to the appropriate name. There is a renaming import and a non-renaming import
+in our API, let's define the renaming import first:
 
 ```
 (define-syntax import
@@ -207,10 +206,9 @@ first:
 ```
 <div class="figure-label">Fig. 7: We cheated.</div>
 
-Isn't that cheating? We used a little trick to make the
-non-renaming case even simpler, by defining it as the renaming case, renaming
-to the original name. That's not very interesting, but it reduces code duplication
-by a lot.
+Isn't that cheating? We used a little trick to make the non-renaming case even
+simpler, by defining it as the renaming case, “renaming” to the real name.
+That's not very interesting, but it reduces code duplication by a lot.
 
 What do we have to do for the renaming case then? If we look at the API for
 `import` from Figure 2 again, we realize that there are basically two cases:
@@ -332,7 +330,8 @@ an exercise.
   after it has been defined. An example for that can be found in the actual
   [zepto module system](https://github.com/zepto-lang/module).
 
-These all make objective sense and should be somewhat simple.
+All of these are definitely achievable, and most of them have been implemented
+in zepto already, so you can search for solutions if you're stuck.
 
 ## Fin
 
