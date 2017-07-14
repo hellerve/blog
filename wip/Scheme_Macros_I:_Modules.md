@@ -167,8 +167,9 @@ and the zepto shorthand for unary lambdas `$`—it will bind the argument to
 ```
 <div class="figure-label">Fig. 6: A convoluted list transformation</div>
 
-This definition packs a punch, so let's walk through it slowly. We go over the
-list in export one by one. In each iteration of the mapping function, the
+This definition packs a punch, so let's walk through it slowly. An
+illustrative example to make this clearer can be found in Figure 7. We go over
+the list in export one by one. In each iteration of the mapping function, the
 element will be bound to `%`, as mentioned before. If it is a list, we assume
 that it is an aliased form—defined as `(foo :as bar)`—, which means that the
 list will be a pair of the last element `(caddr %)` as a string and the
@@ -177,6 +178,13 @@ If `%` is not a list, however, we just stringify the symbol for naming it
 and evaluate it to get the implementation. This might not make immediate sense,
 and I arrived at it step by step, but this concludes our definition of
 `defmodule`.
+
+```
+(exports add sub (m :as mul))
+;; =>
+'((add <function: add>) (sub <function: sub>) (mul <function: m>))
+```
+<div class="figure-label">Fig. 7: Example inputs and outputs.</div>
 
 Well, almost. In Figure 1 we also said that we can require other source files,
 which is not accounted for in this definition. For brevity, I won't
@@ -204,7 +212,7 @@ in our API, let's define the renaming import first:
       ; here be dragons
     )))
 ```
-<div class="figure-label">Fig. 7: We cheated.</div>
+<div class="figure-label">Fig. 8: We cheated.</div>
 
 Isn't that cheating? We used a little trick to make the non-renaming case even
 simpler, by defining it as the renaming case, “renaming” to the real name.
@@ -232,7 +240,7 @@ Updating our skeleton to reflect our new insights, we end up with:
           ; import module
         )))))
 ```
-<div class="figure-label">Fig. 8: A more complete skeleton.</div>
+<div class="figure-label">Fig. 9: A more complete skeleton.</div>
 
 This looks reasonable, but something important is missing. By using a `let`
 expression, we introduce a new scope, which makes defining functions in the
@@ -265,7 +273,7 @@ the module map, and bind the function to the given name, like this:
           ; import module
         )))))
 ```
-<div class="figure-label">Fig. 9: We're getting closer.</div>
+<div class="figure-label">Fig. 10: We're getting closer.</div>
 
 In the above code, we're basically just piecing together information we already
 have into a `define` form and evaluating it in the parent context. This is
@@ -299,7 +307,7 @@ trick to bind the functions. Let's try that as well.
                     env))
             (*modules* strname)))))))
 ```
-<div class="figure-label">Fig. 10: Importing, completed.</div>
+<div class="figure-label">Fig. 11: Importing, completed.</div>
 
 This is again a tad wordy, but it basically does what was promised: it maps
 over the key-value pairs in the module—using `hash:kv-map`—and for each
