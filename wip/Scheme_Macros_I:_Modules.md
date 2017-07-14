@@ -7,7 +7,7 @@ This time we will look at how to implement a module system. Many Lisps already
 come with a module system out of the box—both <a href="http://trac.sacrideo.us/wg/wiki/ModuleSystems">R7RS</a>
 and <a href="http://weitz.de/packages.html">Common Lisp</a> provide a
 facility for packaging and namespacing libraries and modules—, but it is still
-helpful to know how these abstractions are built and look from the inside.
+helpful to know how these abstractions are built and how they look on the inside.
 
 The module system we're about to implement is a stripped-down, simplified
 version of the actual [zepto module system](https://github.com/zepto-lang/module).
@@ -17,9 +17,9 @@ This post assumes a certain familiarity with the `define-syntax` Scheme form.
 
 ## An API
 
-As per usual in my tutorial-style blog posts, we're going to take the route of
-defining an API first and then trying to implement it. Let's look at a simple
-module and the syntax involved in defining it.
+As per usual in my tutorial-style blog posts, we're going to go the route of
+first defining an API and then trying to implement it. Let's look at a simple
+module and its defining syntax.
 
 ```
 (defmodule math
@@ -121,9 +121,9 @@ it in a `let` form that binds no new variables. This is a short trick to define
 a new scope and assures that the functions don't leak. If they did, we wouldn't
 define much of a module system.
 
-All that we need to be doing now is to take the exported forms and put them in
+All we need now is to take the exported forms and put them in
 the hash maps. Their closures will persist, meaning that the non-exported
-functions and variables then live on without leaking out of their defined
+functions and variables will live on without leaking out of their defined
 scope.
 
 Let's try to make a skeleton of how we would set the values in the hash map,
@@ -143,8 +143,8 @@ destructively.
 ```
 <div class="figure-label">Fig. 5: An update skeleton.</div>
 
-The function `hash:set!` takes three arguments: the hash map, the key—in this
-case a string representation of the module name, and a value. In this case, we
+The function `hash:set!` takes three arguments: the hash map, the key—here 
+a string representation of the module name–, and a value. In this case, we
 know that the value will be a hash map, so I already put the `make-hash`
 function in the skeleton. `make-hash` in zepto can also operate on a list of
 key-value pairs, which we will leverage. But how do we generate a list of
@@ -179,9 +179,9 @@ and I arrived at it step by step, but this concludes our definition of
 `defmodule`.
 
 Well, almost. In Figure 1 we also said that we can require other source files,
-which is not accounted for in this definition. For reasons of brevity, I will
-not go into a step-by-step derivation of how to do this, but it is included in
-the implementation that accompanies this blog post. You can also try to
+which is not accounted for in this definition. For brevity, I won't
+go into a step-by-step derivation of how to do this, but it is included in
+the implementation that accompanies this post. You can also try to
 implement it yourself, if you wish, in which case I will give you the following
 hint to get started: if you want to load in a list of source files, you'll have
 to capture the environment, and then map over the files and load them into that
@@ -192,7 +192,7 @@ link to at the beginning of this post.
 
 Now we come to the part that makes this system actually usable: importing.
 Importing is just a simple abstraction over retrieving the function(s) we
-stored earlier, and binding it to the appropriate name. There is a renaming
+stored earlier and binding it to the appropriate name. There is a renaming
 import and a non-renaming import in our API, let's define the renaming import
 first:
 
@@ -207,9 +207,9 @@ first:
 ```
 <div class="figure-label">Fig. 7: We cheated.</div>
 
-Well, if that doesn't look like cheating. We used a little trick to make the
+Isn't that cheating? We used a little trick to make the
 non-renaming case even simpler, by defining it as the renaming case, renaming
-to the original name. That's not very interesting, but reduces code duplication
+to the original name. That's not very interesting, but it reduces code duplication
 by a lot.
 
 What do we have to do for the renaming case then? If we look at the API for
@@ -303,15 +303,15 @@ trick to bind the functions. Let's try that as well.
 ```
 <div class="figure-label">Fig. 10: Importing, completed.</div>
 
-This is a tad wordy yet again, but it basically does what was promised: it maps
+This is again a tad wordy, but it basically does what was promised: it maps
 over the key-value pairs in the module—using `hash:kv-map`—and for each
 function stitches together a name from the key and the module name or alias,
 then binds that name to the function—the hash map value. This uses zepto's
 `$` shorthand for unary functions again.
 
-And with this we are done. We have implemented the promised module system, and
-while some bits of the code are a bit gnarly, it is not overly complex. Most of
-the time is spent on wiring that depends on the input data.
+And with this we are done. We have implemented the promised module system.
+While some bits of the code are a bit gnarly, it's not overly complex. Most of
+the time invested is spent on wiring that depends on the input data.
 
 ## Recap
 
@@ -319,7 +319,7 @@ This has been a wild ride, but we now have a working version of a module
 system. It is relatively simple and limited, but serves as a good foundation
 for something that caters better to your needs.
 
-There are a few low-hanging fruits that you could work on to get started
+There are a few low-hanging fruit that you could work on to get started
 making this the truly awesome module system your language deserves, or just as
 an exercise.
 
@@ -338,7 +338,7 @@ These all make objective sense and should be somewhat simple.
 
 Thank you for reading this far! This has been a fairly long blog post; I hope
 it was worthwhile! As the name suggests, I'm planning to make these posts a
-series. The next thing I want to be covering is generic functions through
+series. The next thing I want to cover is generic functions through
 protocols—commonly known as interfaces or sometimes traits. If that sounds
 appealing to you, be sure to check back soon! And if you have any other macro
 ideas that you want me to write about, contact me.
