@@ -182,7 +182,8 @@ and I arrived at it step by step, but this concludes our definition of
 ```
 (exports add sub (m :as mul))
 ;; =>
-'((add <function: add>) (sub <function: sub>) (mul <function: m>))
+'((add <function: add>) (sub <function: sub>)
+  (mul <function: m>))
 ```
 <div class="figure-label">Fig. 7: Example inputs and outputs.</div>
 
