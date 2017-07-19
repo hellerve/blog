@@ -9,7 +9,8 @@ the terms interfaces, protocols, traits, and type classes floating around.
 zepto calls them protocols.
 
 Let’s define protocols as a structure, define an API, and then go about
-implementing them!
+implementing them! As always, you can [get the code to follow
+along](/assets/generics.zp).
 
 ## What are proctols, anyway?
 
@@ -35,9 +36,9 @@ define a collection protocol that defines the functions `car`, `cdr`, and `null?
 
 ```
 (defproto collection
-  ((car 1)
-   (cdr 1)
-   (null? 1)))
+  (car 1)
+  (cdr 1)
+  (null? 1))
 ```
 <div class="figure-label">Fig. 1: A simple collection protocol.</div>
 
@@ -67,4 +68,43 @@ feature-complete. Type safety is not really a thing in this API, although Lisps
 are generally not known for that anyway. It also doesn’t allow us to define
 functions with a variable number of arguments, but we will rectify that during
 our implementation of the interface. For now we just observe that the API is
-nice enough to be usable, but fairly suboptimal.
+nice enough to be usable, but fairly suboptimal when compared to the utopian
+version.
+
+Now for an implementation. These are going to be the most advanced macros on
+this blog yet, but they’re still among the simpler macros that you might
+encounter when programming Lisp.
+
+## Implementation
+
+We talked about defining and implementing protocols a lot above. If you squint,
+you might see some parallels to defining and importing modules, which I talked
+about [in a previous post](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html).
+This connection might admittedly not be obvious, and it only occurred to me in
+hindsight, but I’ll still use the connection to guide you through the
+implementation.
+
+To get started with registering and looking up generics we need some structure
+to save them in. As in the previous post, hash maps come to the rescue. We will
+need two of those in our implementation, I call them `*protocols*` and `*impls*`.
+`*protocols*` will hold the definitions of protocols, while `*impls*` will hold
+the implementations. This means we will have to duplicate some structure, but it
+also makes the structure of the individual hash maps much simpler.
+
+`defproto` is actually the more complex macro of the two, but we will start with
+it, because without it defining ìmplementations is useless, and useless code
+shouldn’t be what we strive for.
+
+## Defining protocols
+
+As always, let’s start with a simple skeleton. We need a macro `defproto` that
+takes a name and a number of functions.
+
+```
+(define-syntax defproto
+  (syntax-rules
+    ((defproto name functions ...)
+      ; define the protocol
+      )))
+```
+<div class="figure-label">Fig. 3: A skeleton for defining protocols.</div>
