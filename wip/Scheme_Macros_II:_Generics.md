@@ -131,7 +131,8 @@ Letâ€™s try to extend our skeleton with what we know.
               ; do something here
               env)))
           'functions)
-        (hash:set! *protocols* (symbol->string 'name) 'functions)))))
+        (hash:set! *protocols* (symbol->string 'name)
+                   'functions)))))
 ```
 <div class="figure-label">Fig. 4: An extended skeleton, almost useful.</div>
 
@@ -156,8 +157,8 @@ enable us to inject information.
                     (lambda (v) (eval (list (car v) 'arg)))
                     impls)))
         (apply ((cadr funs) ,fun-str) args))
-      (error ,fun-str "takes" ,fun-nargs "arguments, was given"
-             (length args))))))
+      (error ,fun-str "takes" ,fun-nargs
+             "arguments, was given" (length args))))))
 ```
 <div class="figure-label">Fig. 5: The scaffolding function.</div>
 
@@ -195,8 +196,8 @@ insert where we would normally specify the number of argumentsâ€”writing e.g.
                     (lambda (v) (eval (list (car v) 'arg)))
                     impls)))
         (apply ((cadr funs) ,fun-str) args))
-      (error ,fun-str "takes" ,fun-nargs "arguments, was given"
-             (length args))))))
+      (error ,fun-str "takes" ,fun-nargs
+             "arguments, was given" (length args))))))
 ```
 <div class="figure-label">Fig. 6: We support variable arguments now!</div>
 
@@ -210,4 +211,4 @@ more with a definition of `defimpl`.
 ##### Footnotes
 
 <span id="1">1:</span> Atoms are equivalent to keywords in Common Lisp and
-Clojure.€”
+Clojure.
