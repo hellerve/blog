@@ -102,9 +102,37 @@ takes a name and a number of functions.
 
 ```
 (define-syntax defproto
-  (syntax-rules
+  (syntax-rules ()
     ((defproto name functions ...)
       ; define the protocol
       )))
 ```
 <div class="figure-label">Fig. 3: A skeleton for defining protocols.</div>
+
+This is well and good, but what do we actually have to do inside that macro?
+There are various ways to go about this, but the way I like most because of its
+simplicity is defining a dispatch function that will ensure the contract
+is kept—in this case, this only concerns the number of arguments—and then
+dispatches the appropriate function. This means we will have to define a number
+of functions in the macro. Using a pattern that we discussed in the first post
+in this series, we will capture the environment and then map over the functions
+were given. After we’ve done that, we can register them in our hash map.
+
+Let’s try to extend our skeleton with what we know.
+
+```
+(define-syntax defproto
+  (syntax-rules ()
+    ((defproto name functions ...)
+      (let ((env (current-env)))
+        (map
+          (lambda (fun)
+            (eval
+              ; do something here
+              env)))
+          'functions)
+        (hash:set! *protocols* (symbol->string 'name) 'functions)))))
+```
+<div class="figure-label">Fig. 4: An extended skeleton, almost useful.</div>
+
+We almost got it! The only part that’s missing is the actually crucial part.
