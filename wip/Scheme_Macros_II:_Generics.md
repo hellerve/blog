@@ -12,7 +12,7 @@ Let’s define protocols as a structure, define an API, and then go about
 implementing them! As always, you can [get the code to follow
 along](/assets/generics.zp).
 
-## What are proctols, anyway?
+## What are protocols, anyway?
 
 In zepto, protocols are very similar to type classes in Haskell. They are any
 number of functions that take an element of the type we want to define the
@@ -135,4 +135,79 @@ Let’s try to extend our skeleton with what we know.
 ```
 <div class="figure-label">Fig. 4: An extended skeleton, almost useful.</div>
 
-We almost got it! The only part that’s missing is the actually crucial part.
+We almost got it! The only part that’s missing is what’s actually crucial. Now
+we need to take care of the scaffolding function. What will it do? We want it to
+look up the implementations we have and find the one that is appropriate in our
+case. We will also need to check whether the number of arguments is actually
+correct. Why do we have to do this manually instead of relying on function
+arity? The reason is two-fold: it simplifies the scaffolding function and it
+will allow us to extend the function to work with overloaded/variable argument
+functions.
+
+Let’s define this mythical scaffolding function. It will be quasi-quoted to
+enable us to inject information.
+
+```
+`(define ,fun (lambda args
+  (let ((impls (*impls* ,fun-name))
+        (type (car args)))
+    (if (eq? (length args) fun-nargs)
+      (let ((funs (filter
+                    (lambda (v) (eval (list (car v) 'arg)))
+                    impls)))
+        (apply ((cadr funs) ,fun-str) args))
+      (error ,fun-str "takes" ,fun-nargs "arguments, was given"
+             (length args))))))
+```
+<div class="figure-label">Fig. 5: The scaffolding function.</div>
+
+There are a few variables in there whose definition I’ve omitted. If you want
+to see where they’re defined, I invite you to study the complete implementation
+of generics linked to at the top of the page. Here is a quick list to get you
+up to speed:
+
+* `name-str`: the stringified name of the protocol.
+* `fun-name`: the stringified name of the function.
+* `fun-nargs`: the expected number of arguments as specified by the user.
+
+Now, what does this code actually do? We’re defining a function that takes a
+variable number of arguments, checks whether the number of those is equal to
+what is expected in the contract, and if no, throws an error. If it is,
+it filters the list of function implementations for the ones whose predicate
+matches—this is the second argument to `defimpl`, `string?` in Figure 2—,
+and takes the first of these functions, calling it with the arguments.
+Quite dense, but all of the setup we need.
+
+Now, optionally, we can define a variable number of arguments. All we need to
+do is define an alternative to the number of arguments—for the sake of this
+article I’ve chosen the atom<sup><a href="#1">1</a></sup> `:varargs`—that we
+insert where we would normally specify the number of arguments—writing e.g.
+`(car :varargs)` instead. Then we just need to check for this atom in our
+`if` at the beginning of the scaffolding function.
+
+```
+`(define ,fun (lambda args
+  (let ((impls (*impls* ,fun-name))
+        (type (car args)))
+    (if (or (eq? (length args) fun-nargs)
+            (eq? :varargs fun-nargs))
+      (let ((funs (filter
+                    (lambda (v) (eval (list (car v) 'arg)))
+                    impls)))
+        (apply ((cadr funs) ,fun-str) args))
+      (error ,fun-str "takes" ,fun-nargs "arguments, was given"
+             (length args))))))
+```
+<div class="figure-label">Fig. 6: We support variable arguments now!</div>
+
+This actually concludes our definition of `defproto`. We can now relax a little
+more with a definition of `defimpl`.
+
+## The implementation of implementations
+
+
+
+##### Footnotes
+
+<span id="1">1:</span> Atoms are equivalent to keywords in Common Lisp and
+Clojure.��

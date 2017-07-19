@@ -15,7 +15,7 @@
                   (let ((impls (*impls* ,name-str))
                         (type  (car args)))
                     (if (or (eq? (length args) fun-nargs)
-                            (eq? :overloaded fun-nargs))
+                            (eq? :varargs fun-nargs))
                       (let
                         ((funs (filter
                                   (lambda (v) (eval (list (car v) 'arg)))
@@ -25,7 +25,7 @@
                              (length args))))))
                   env)))
           'functions)
-        (hash:set! *protocols* (symbol->string 'name) 'functions)))))
+        (hash:set! *protocols* name-str 'functions)))))
 
 (define-syntax defimpl
   (syntax-rules ()
