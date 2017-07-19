@@ -206,7 +206,18 @@ more with a definition of `defimpl`.
 
 ## The implementation of implementations
 
+All the `defimpl` macro has to do is to put the functions we register into the
+`*impls*` macro in such a manner that our scaffolding function finds it. Let’s
+again define a skeleton and then start to fill in the blanks.
 
+```
+(define-syntax defimpl
+  (syntax-rules ()
+    ((_ name pred funs)
+      ; housekeeping goes here
+    )))
+```
+<div class="figure-label">Fig. 7: A `defimpl` skeleton.</div>
 
 ##### Footnotes
 
