@@ -21,7 +21,7 @@ my library. I owe the people who find out what it does without reading the
 original source a beer, which I expect will get pretty expensive:
 
 ```
-for(i=0;i<20;i+=2)if(x[i/2]!=0){if(!(x[i/2]&0xf0))i++;break;}
+for(i=0;i<20;i+=2)if(x+i/2){if(!((x+i/2)&0xf0))i++;break;}
 ```
 <div class="figure-label">Fig. 1: A loop, evidently.</div>
 
