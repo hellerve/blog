@@ -208,7 +208,7 @@ more with a definition of `defimpl`.
 
 All the `defimpl` macro has to do is to put the functions we register into the
 `*impls*` macro in such a manner that our scaffolding function finds it. Let’s
-again define a skeleton and then start to fill in the blanks.
+define a skeleton again and then start to fill in the blanks.
 
 ```
 (define-syntax defimpl
@@ -218,6 +218,8 @@ again define a skeleton and then start to fill in the blanks.
     )))
 ```
 <div class="figure-label">Fig. 7: A `defimpl` skeleton.</div>
+
+
 
 ##### Footnotes
 

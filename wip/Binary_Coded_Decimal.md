@@ -1,0 +1,28 @@
+Today I spent some of my day writing [a toy library](http://github.com/hellerve/nibbles)
+for [Binary Coded Decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal).
+I’m reading through [Write Great Code](https://www.amazon.com/Write-Great-Code-Understanding-Machine/dp/1593270038),
+and they were explained in chapter two<sup><a href="#1">1</a></sup>.
+
+Binary coded decimals are an interesting beast in numerical computing—somewhat
+out of fashion, but still used in a few select industries, apparently.
+
+I can’t say I’ve ever used them myself, although I’m sure that some libraries I
+use in some project or other at least implements them. This of course makes me
+a prime candidate for re-implementing the format.
+
+So I wrote a tiny C library that implements packed Binary-Coded Decimals—that
+means that every digit takes up half a byte. It is terrible, and I loved every
+second of working on it. In fine “Write Great Code” tradition most of the code
+is quite terrible bitmasking and shifting hacks, but it gets the job done.
+
+Before I leave you, let me give you a loop, slightly more obfuscated than in
+my library. I owe the people who find out what it does without reading the
+original source a beer, which I expect will get pretty expensive:
+
+```
+for(i=0;i<20;i+=2)if(x[i/2]!=0){if(!(x[i/2]&0xf0))i++;break;}
+```
+<div class="figure-label">Fig. 1: A loop, evidently.</div>
+
+##### Footnotes
+<span id="1">1.</span> As an aside, the book seems quite astoundingly good.
