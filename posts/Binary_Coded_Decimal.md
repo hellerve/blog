@@ -14,7 +14,9 @@ So I wrote a tiny C library that implements packed Binary-Coded Decimals—that
 means that every digit takes up half a byte. It is pretty terrible code, and I
 loved every second of working on it. In fine “Write Great Code” tradition most
 of the code is an abominable mix of bitmasking and shifting hacks, but it gets
-the job done.
+the job done. One of the main restrictions of the library is that it currently
+only supports 8–64 bits precision, though it would be fairly trivial to make it
+infinte precision. It’s left as an exercise to the reader, let’s say.
 
 Before I leave you, let me give you a loop, slightly more obfuscated than in
 my library. I owe the people who find out what it does without reading the
