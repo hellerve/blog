@@ -7,13 +7,14 @@ Binary coded decimals are an interesting beast in numerical computing—somewhat
 out of fashion, but still used in a few select industries, apparently.
 
 I can’t say I’ve ever used them myself, although I’m sure that some libraries I
-use in some project or other at least implements them. This of course makes me
-a prime candidate for re-implementing the format.
+depend on in some project or other at least implement them. This of course made
+me a prime candidate for re-implementing the format.
 
 So I wrote a tiny C library that implements packed Binary-Coded Decimals—that
-means that every digit takes up half a byte. It is terrible, and I loved every
-second of working on it. In fine “Write Great Code” tradition most of the code
-is quite terrible bitmasking and shifting hacks, but it gets the job done.
+means that every digit takes up half a byte. It is pretty terrible code, and I
+loved every second of working on it. In fine “Write Great Code” tradition most
+of the code is an abominable mix of bitmasking and shifting hacks, but it gets
+the job done.
 
 Before I leave you, let me give you a loop, slightly more obfuscated than in
 my library. I owe the people who find out what it does without reading the
