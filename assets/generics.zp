@@ -30,12 +30,8 @@
 (define-syntax defimpl
   (syntax-rules ()
     ((_ name pred funs)
-      (let* ((name-str (symbol->string 'name))
-             (protocol (map car (*protocols* name-str)))
-             (impls    (map (lambda (x) (list (symbol->string (car x))
-                                        (eval (macro-expand (cadr x)))))
-                           'funcs)))
+      (let* ((name-str (symbol->string 'name)))
           (hash:update! *impls* name-str
                     (lambda (impl)
-                      (let ((impl (if (truthy? impl) impl #{})))
+                      (let ((impl (if (truthy? impl) impl [])))
                         (++ impl (list pred (make-hash nfuncs))))))))))

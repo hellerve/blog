@@ -49,7 +49,7 @@ heads for now and move on to an implementation of that protocol for strings.
 ```
 (defimpl collection string?
   ((car string:head)
-   (cdr string:last)
+   (cdr string:tail)
    (null? (lambda (str) (eq? 0 (string:length str))))))
 ```
 <div class="figure-label">Fig. 2: An implementation of the collection protocol
@@ -75,6 +75,7 @@ Now for an implementation. These are going to be the most advanced macros on
 this blog yet, but they’re still among the simpler macros that you might
 encounter when programming Lisp.
 
+
 ## Implementation
 
 We talked about defining and implementing protocols a lot above. If you squint,
@@ -86,14 +87,32 @@ implementation.
 
 To get started with registering and looking up generics we need some structure
 to save them in. As in the previous post, hash maps come to the rescue. We will
-need two of those in our implementation, I call them `*protocols*` and `*impls*`.
-`*protocols*` will hold the definitions of protocols, while `*impls*` will hold
-the implementations. This means we will have to duplicate some structure, but it
-also makes the structure of the individual hash maps much simpler.
+need one of those in our implementation; I call it `*impls*`. `*impls*` will hold
+the implementations of a given protocol.
 
-`defproto` is actually the more complex macro of the two, but we will start with
-it, because without it defining ìmplementations is useless, and useless code
-shouldn’t be what we strive for.
+## A data format
+
+The data format I’m going to present right now will feel a little arbitrary,
+and I largely write this section to give you a reference for later, when you
+want to retrace the traversals and manipulations we do in the macros. First,
+a view of what `*impls*` looks like after we’ve defined and implemented the
+`collection` protocol above:
+
+```
+#{"collection"
+    [<function: string?>,
+      #{"car" <function: string:head>,
+        "cdr" <function: string:tail>,
+        "null?" <lambda>}]}
+```
+<div class="figure-label">Fig. 3: `*impls*` after a defintion of the
+first protocol.</div>
+
+The structure is a hash map, holding the protocol names as keys and as values a
+pair of the predicate and another hash map of the function names and their
+implementation. I suggest you don’t worry too much about it for now and read
+on. The definitions of both `defproto` and `defimpl` will hopefully make much
+more sense with this structure in mind.
 
 ## Defining protocols
 
@@ -219,7 +238,63 @@ define a skeleton again and then start to fill in the blanks.
 ```
 <div class="figure-label">Fig. 7: A `defimpl` skeleton.</div>
 
+The `defimpl` macro takes a protocol name, a predicate function, and the
+function implementations we need to provide to fulfill the protocol contract.
 
+All we really have to do here is to look up the protocol and register the new
+implementation. In order to keep this implementation simple we omit all error
+checking. The [reference implementation for zepto](https://github.com/zepto-lang/zepto-stdlib/blob/master/zpgenerics.zp)
+comes with all kinds of checks that ensure we respect the contract.
+
+Let's fill in the blanks with some lookup and an update skeleton:
+
+```
+(define-syntax defimpl
+  (syntax-rules ()
+    ((_ name pred funs)
+      (let* ((name-str (symbol->string 'name)))
+        (hash:update! *impls* name-str ; update function
+          )))))
+```
+<div class="figure-label">Fig. 8: A complete `defimpl` skeleton.</div>
+
+All we do is convert the name to a string and hand it over to `hash:update!`,
+which implements destructive assignment of a hash map’s key-value pair.
+`hash:update!` takes a hash map, a key and a function that will be handed the
+old value—or `nil` if the key doesn’t exists—and should return the new value.
+
+Equipped with that knowledge, updating the list is as simple as making sure
+we replace `nil` with an empty list and append the new implementation to it.
+
+```
+(define-syntax defimpl
+  (syntax-rules ()
+    ((_ name pred funs)
+      (let* ((name-str (symbol->string 'name)))
+          (hash:update! *impls* name-str
+            (lambda (impl)
+              (let ((impl (if (truthy? impl) impl [])))
+                (++ impl (list pred (make-hash nfuncs))))))))))
+```
+<div class="figure-label">Fig. 9: The finished version of `defimpl`.</div>
+
+The new implementation is a pair of the predicate, by which we will filter the
+list of implementations when we look up the function to execute in `defproto`,
+and a hash maps of the functions and names. That’s all!
+
+## Wrapping up
+
+This is a capable, but very brittle sketch of a generics system. It has all of
+the moving parts, but as mentioned before, we don’t actually check whether our
+protocols and their implementations make sense. This is unacceptable in the
+real world, but it’s also a very simple issue to fix if you want to build
+upwards from here.
+
+This was the second post in my little series on how we can utilize the power
+of Scheme macros. If you would like me to continue this series and have any
+requests for future posts, I invite you to open a [reminder issue on
+Github](https://github.com/hellerve/blog/issues). Take care and see you very
+soon!
 
 ##### Footnotes
 
