@@ -1,3 +1,7 @@
+*Update:* I realized that my format actually makes sense and I intuitively
+implemented it correctly. This means the lower half is a bit wonky. Sorry about
+that.
+
 I’ve always been fascinated by fixed point numbers. For the uninitiated, fixed
 point numbers are related to floating point numbers.
 Like their more common counterpart, they are numbers with a decimal point.
@@ -48,10 +52,17 @@ surprise got through multiplication, although it is a bit more complex than if
 I had used a well-studied format.
 
 ```
+2.5
+// means "two and half", and is encoded as
+// '2'     'half'
+00000010.10000000
+
+// So don't be tempted to write
+00000010.00000101 // <- INCORRECT!
 ```
 <div class="figure-label">
   [Fig. 2: The dos and don’ts of fixed points, as found on
-   the internet.]()
+   the internet.](http://x86asm.net/articles/fixed-point-arithmetic-and-tricks/)
 </div>
 
 I suppose it’s good to document that I know I’m doing it wrong and should
