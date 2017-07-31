@@ -44,8 +44,8 @@ I find this format too cute to pass up<sup><a href="#1">1</a></sup>. The part
 after the decimal point, however, is where I was a bit more naive than is
 appropriate. The general consensus seems to be not just to store the fractional
 part as binary that “behaves like an integer”. I did it anyway, and to my
-surprise everything was fine. I’m not sure what the reasoning behind advices
-like these are:
+surprise got through multiplication, although it is a bit more complex than if
+I had used a well-studied format.
 
 ```
 ```
@@ -57,6 +57,16 @@ like these are:
 I suppose it’s good to document that I know I’m doing it wrong and should
 really care more.
 
+Back to division: the problem that I encountered—and haven’t solved yet,
+because I couldn’t find a fix on the internet—is that when dividing two
+numbers I suffer from a loss of precision. In multiplication I solved that by
+multiplying the components individually and then shifting or masking the
+result, which degrades in the same way as an overflow would. With division,
+however, I need a double precision container type in which I could perform
+the calculation—a `uint128_t` would be great here. Alas, this type doesn’t
+exist, and it wasn’t immediately obvious how to emulate that behaviour; for
+now the “library” only supports integer precision division.<sup><a href="#2">2</a></sup>
+
 This was a fun little exercise in computational mathematics and really
 foundational. In hindisght I’m a bit bummed I didn’t get to do things like
 these in university, because I think those exercises are simple and
@@ -64,3 +74,12 @@ have a big return on investment. If I go back to university and work as a
 TA, my students might have to trudge through horrible exercises like these.
 Read this, according to personal taste, as an invitation either to pity or envy
 them.
+
+##### Footnotes
+
+<span id="1">1.</span> If you don’t know what the trailing numbers in the
+struct definitions are: these are bitfields, and they are incredibly handy.
+
+<span id="2">2.</span> If anyone knows how to remedy this, please explain it to
+me! It sounds like this is a well-known problem, but I can’t figure it out for
+division.
