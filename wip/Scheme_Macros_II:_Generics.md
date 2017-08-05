@@ -4,7 +4,7 @@ Modules aren’t the only use case of macros, though, and so this time I want to
 talk about generic functions as an another case study.
 
 Generic functions are a milestone in any programming language. Most languages
-use some kind of interface structure, but the naming is incosistent. I’ve seen
+use some kind of interface structure, but the naming is inconsistent. I’ve seen
 the terms interfaces, protocols, traits, and type classes floating around.
 zepto calls them protocols.
 
@@ -18,14 +18,14 @@ In zepto, protocols are very similar to type classes in Haskell. They are any
 number of functions that take an element of the type we want to define the
 protocol for as a first argument and a predefined number of arguments after
 that. A protocol is just the declaration of that contract, and an implementation
-is an implementation of these functions for a specific data types.
+is an implementation of these functions for specific data types.
 
 All we need to do is define two macros `defproto` and `defimpl` that do the
 necessary plumbing to register a new protocol and a new implementation of that
 protocol, respectively.
 
-I suspect that all of this was a bit abstract and hard to follow. In the next
-section we will define an API for the two macros that hopefully clear things up
+I suspect all of this was a bit abstract and hard to follow. In the next
+section we'll define an API for the two macros and hopefully clear things up
 a little.
 
 ## An API
@@ -66,22 +66,22 @@ references any kind of function anywhere else.
 This API makes for a relatively slick interface, although it is not necessarily
 feature-complete. Type safety is not really a thing in this API, although Lisps
 are generally not known for that anyway. It also doesn’t allow us to define
-functions with a variable number of arguments, but we will rectify that during
-our implementation of the interface. For now we just observe that the API is
+functions with a variable number of arguments, but we'll rectify that during
+our implementation of the interface. For now we can just note that the API is
 nice enough to be usable, but fairly suboptimal when compared to the utopian
 version.
 
 Now for an implementation. These are going to be the most advanced macros on
-this blog yet, but they’re still among the simpler macros that you might
+this blog yet, but they’re still among the simpler macros you might
 encounter when programming Lisp.
 
 
 ## Implementation
 
-We talked about defining and implementing protocols a lot above. If you squint,
+We talked a lot about defining and implementing protocols above. If you squint,
 you might see some parallels to defining and importing modules, which I talked
 about [in a previous post](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html).
-This connection might admittedly not be obvious, and it only occurred to me in
+This connection admittedly might not be obvious, and it only occurred to me in
 hindsight, but I’ll still use the connection to guide you through the
 implementation.
 
@@ -92,8 +92,8 @@ the implementations of a given protocol.
 
 ## A data format
 
-The data format I’m going to present right now will feel a little arbitrary,
-and I largely write this section to give you a reference for later, when you
+The data format I’m going to present right now might feel a little arbitrary;
+this is largely to offer a reference for later, when you
 want to retrace the traversals and manipulations we do in the macros. First,
 a view of what `*impls*` looks like after we’ve defined and implemented the
 `collection` protocol above:
@@ -110,7 +110,7 @@ first protocol.</div>
 
 The structure is a hash map, holding the protocol names as keys and as values a
 pair of the predicate and another hash map of the function names and their
-implementation. I suggest you don’t worry too much about it for now and read
+implementation. I suggest not worrying too much about it for now and reading
 on. The definitions of both `defproto` and `defimpl` will hopefully make much
 more sense with this structure in mind.
 
@@ -128,14 +128,14 @@ takes a name and a number of functions.
 ```
 <div class="figure-label">Fig. 3: A skeleton for defining protocols.</div>
 
-This is well and good, but what do we actually have to do inside that macro?
-There are various ways to go about this, but the way I like most because of its
-simplicity is defining a dispatch function that will ensure the contract
+This is all well and good, but what do we actually have to do inside that macro?
+There are various ways to go about this, but the simple way I like most 
+is defining a dispatch function that will ensure the contract
 is kept—in this case, this only concerns the number of arguments—and then
 dispatches the appropriate function. This means we will have to define a number
-of functions in the macro. Using a pattern that we discussed in the first post
-in this series, we will capture the environment and then map over the functions
-were given. After we’ve done that, we can register them in our hash map.
+of functions in the macro. Using a pattern discussed in the first post
+in this series, we'll capture the environment and then map over the given functions.
+After that, we can register them in our hash map.
 
 Let’s try to extend our skeleton with what we know.
 
@@ -155,7 +155,7 @@ Let’s try to extend our skeleton with what we know.
 ```
 <div class="figure-label">Fig. 4: An extended skeleton, almost useful.</div>
 
-We almost got it! The only part that’s missing is what’s actually crucial. Now
+We're almost there! The only part missing is what’s actually crucial. Now
 we need to take care of the scaffolding function. What will it do? We want it to
 look up the implementations we have and find the one that is appropriate in our
 case. We will also need to check whether the number of arguments is actually
@@ -192,7 +192,7 @@ up to speed:
 
 Now, what does this code actually do? We’re defining a function that takes a
 variable number of arguments, checks whether the number of those is equal to
-what is expected in the contract, and if no, throws an error. If it is,
+what is expected in the contract, and if not, throws an error. If it is,
 it filters the list of function implementations for the ones whose predicate
 matches—this is the second argument to `defimpl`, `string?` in Figure 2—,
 and takes the first of these functions, calling it with the arguments.
@@ -258,7 +258,7 @@ Let's fill in the blanks with some lookup and an update skeleton:
 ```
 <div class="figure-label">Fig. 8: A complete `defimpl` skeleton.</div>
 
-All we do is convert the name to a string and hand it over to `hash:update!`,
+Here we just convert the name to a string and hand it over to `hash:update!`,
 which implements destructive assignment of a hash map’s key-value pair.
 `hash:update!` takes a hash map, a key and a function that will be handed the
 old value—or `nil` if the key doesn’t exists—and should return the new value.
@@ -284,8 +284,8 @@ and a hash maps of the functions and names. That’s all!
 
 ## Wrapping up
 
-This is a capable, but very brittle sketch of a generics system. It has all of
-the moving parts, but as mentioned before, we don’t actually check whether our
+This is a capable, but very brittle sketch of a generics system. It has all
+the moving parts. But, as mentioned before, we don’t actually check whether our
 protocols and their implementations make sense. This is unacceptable in the
 real world, but it’s also a very simple issue to fix if you want to build
 upwards from here.
