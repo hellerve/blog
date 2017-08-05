@@ -37,7 +37,7 @@ struct are. Realizing that it really is just a 64 bit bytestring, we could also
 define the `silly` data type as:
 
 ```
-typedef silly uint64_t;
+typedef uint64_t silly;
 ```
 <div class="figure-label">Fig. 2: A simpler representation of `silly`.</div>
 
