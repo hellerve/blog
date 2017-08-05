@@ -131,3 +131,94 @@ silly silly_div(silly x, silly y) {
 
 This is a lot of code. Let’s try to walk through it block by block and figure
 out what it does together.
+
+First we define two variables `rem` and `div` that are our input values without
+the sign bit set. Then we define a variable `quo`, which stands for quotient.
+It will hold the result of our computation. We also define the number of bits
+we have to go through—named `b` in this context. We’ll have to go through at
+most `<width> / 2 + 1` bits. Because we know that in our use case the width is
+always `64`, I unrolled that equation; the result is `33`.
+
+Most of the work here happens in the `while` loop. It will be executed `b`
+times, but we also have a shortcut condition: if the remainder is zero, we can
+stop because no more work will happen in the loop anyway.
+
+So what is the loop doing? It’s basically performing long division in binary.
+Maybe a visualizing example will help, so let’s walk through a division of
+`20.0` and `8.0`. It should yield `2.5`. All of the values look like 64-bit
+integers, shifted by 32 bits, because of the fraction.
+
+```
+// first iteration:
+//   rem = 20.0<<32
+d = rem/div; // 2.0
+rem %= div; // 2.0<<32
+quo += d << b; // 2.0<<33 == 4.0<<32
+
+rem <<= 1; // 2.0<<33 == 4.0<<32
+--b; // 32
+
+//second iteration
+// rem = 2.0<<32
+d = rem/div; // 0
+rem %= div; // 2.0<<32
+quo += d << b; // d == 0, so same a before
+
+rem <<= 1; // 2.0<<34 == 8.0<<32
+--b; // 31
+
+//third iteration
+// rem = 8.0<<32
+d = rem/div; // 1.0
+rem %= div; // 0.0<<32
+quo += d << b; // 1.0<<31 == 0.5<<32 (kind of)
+
+[rest of the loop has no effect, we’re done]
+```
+<div class="figure-label">Fig. 6: Moving bits by hand.</div>
+
+This exercise might seem a bit silly, but it visualizes the sliding window of
+our division pretty well. Through all of the steps we successively build our
+`quo` value. It’s basically just binary long division, though the format is
+a little contrived.
+
+We are not done yet, however. Particularly perceptive observers will have
+noted that what we stored in `quo` isn’t actually `2.5`. It almost is, however.
+In particular, it’s `0.5` shifted to the left by one bit. That is why, at the
+end of the function shown in Figure 5, we have to shift the value in `quo`
+by one bit. Then we add the sign bit back—the process for that is the same as
+in the naive solution—and we’re good to go!
+
+## Possible optimizations
+
+I talked about possible optimizations earlier, and I don’t want to leave you
+without talking about them at least for a bit. The code I borrowed from and my
+own both implement two simple optimizations:
+
+1. If the divider is divisible by 2^n, we can reduce the number of loop
+iterations by four for each byte if we just shift the divider. Look at the
+implementation [here](https://github.com/hellerve/silly/blob/master/silly.c#L108).
+2. If the remainder has leading zeroes we can skip this number of iterations.
+Think of long division: I can skip a bunch of steps if my number is padded
+with `0`. This can be checked in each iteration and is implemented
+[here](https://github.com/hellerve/silly/blob/master/silly.c#L114).
+
+Neither of these optimizations interfere with the actual algorithm, meaning we
+could just turn them off if we wanted to. This makes the optimizations very
+low-hanging fruit: they are local, small, and have a sufficient performance
+impact, such that Knuth’s famous quip [about “the root of all evil”](http://wiki.c2.com/?PrematureOptimization)
+is not applicable to us.
+
+## Fin
+
+Implementing this was another fun exercise! I hope you enjoyed my little
+walkthrough into long form division to solve a real world problem. Though the
+library in which I implemented this algorithm is merely a toy and I urge you
+not to use it, the underlying algorithm seems pretty solid to me.
+
+This whole journey, like my [foray into Binary Coded Decimals](http://blog.veitheller.de/Binary_Coded_Decimal.html),
+has been inspired by [Write Great Code](https://www.nostarch.com/greatcode.htm),
+and I still wholeheartedly recommend it. It’s well written, ridiculously
+informative, and highly inspirational. With the authors help, I might
+implement floating point numbers next—if I do, I’m sure you’ll hear about it
+here.

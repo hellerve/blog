@@ -2,3 +2,7 @@
 [Sukanya Aneja](http://playdo.io/)
 [Sabelo Mhlambi](http://http://sabelo.io/)
 [Saul Pwanson](http://saul.pw/)
+[Abe Hmiel](http://abehmiel.net)
+[Dan Luu](https://danluu.com)
+[Indradhanush Gupta](http://indradhanush.github.io/)
+[Tim Babb](htpp://bzarg.com)
