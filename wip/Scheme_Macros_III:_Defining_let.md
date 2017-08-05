@@ -6,7 +6,20 @@ local bindings. As a little extra, we’ll also explore a way of defining `letre
 that I’ve never seen used before, partly because it’s somewhat inefficient—but
 at least it gets rid of mutable state.
 
-As always, we’ll first define an API, and then implement it bit by bit.
+As always, we’ll first define an API, and then implement it bit by bit,
+learning about the intricacies of well-crafted macros on the way.
 
 Some experience with Scheme macros—being able to read through them should
 suffice—is assumed. Experience with `let` is not required.
+
+## The API
+
+## let
+
+## let\*
+
+## letrec—a unique approach
+
+## Caveats
+
+## Fin
