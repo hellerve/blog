@@ -1,6 +1,6 @@
-I wrote a [blog post](http://blog.veitheller.de/Fixed_Point_Arithmetic.html)
-on a library—dubbed `silly`—that implements Fixed Point Arithmetic a few days
-back. At that point I wasn’t sure how to properly implement division—i.e.
+A few days back, I wrote a [blog post](http://blog.veitheller.de/Fixed_Point_Arithmetic.html)
+on a library—dubbed `silly`—that implements Fixed Point Arithmetic. 
+At that point I wasn’t sure how to properly implement division—i.e.
 without losing the fractional part. Afraid I might get the details wrong, I
 decided to gloss over the problem description and implementation a little.
 [Harrison Clarke](http://hclarke.ca/), a fellow Recurser, pointed me to a
@@ -11,15 +11,15 @@ solutions [in my repo](https://github.com/hellerve/silly), one named
 the integral version is that it’s a whole lot faster, and for some calculations
 you don’t really need the fractional part.
 
-I’m going to walk you through my initial solution and it’s limitations, and
-then look at an implementation that remedies it.
+I’m going to walk you through my initial solution and its limitations, and
+then look at an implementation that remedies those.
 
 This post assumes familiarity with the C programming language. It will make
 heavy use of bitwise operators.
 
 ## Fixed Point numbers
 
-There are multiple ways how we can reasonably represent fixed point numbers, of
+There are multiple ways to reasonably represent fixed point numbers, of
 course. In `silly`, I used a silly—sorry—but very clear format. It is a struct
 of the form:
 
@@ -41,13 +41,13 @@ typedef uint64_t silly;
 ```
 <div class="figure-label">Fig. 2: A simpler representation of `silly`.</div>
 
-The formats are essentially equivalent—assuming the compiler actually honors
+The formats are essentially equivalent—assuming the compiler honors
 our width specifiers. With a struct, however, we get the accessors for free.
-Because we don’t need those accessors and work on the whole thing while
+Because we don’t need the accessors and work on the whole thing while
 implementing division, I decide to cheat in this post and assume that the
 format is the one presented in Figure 2.
 
-For completeness’ sake, I’ll also provide a routine that converts from the
+For the sake of completion, I’ll also provide a routine that converts from the
 struct representation to the `uint64_t` representation:
 
 ```
@@ -63,7 +63,7 @@ Don’t worry, the rest of the code will be more readable.
 ## Implementing integer division
 
 Implementing division is simple if you think about our format. All we have to
-do is dividing the two numbers *as if they were integers* and taking care of
+do is divide the two numbers *as if they were integers* and take care of
 the sign bit. Let's do it:
 
 ```
@@ -80,7 +80,7 @@ silly silly_idiv(silly x, silly y) {
 <div class="figure-label">Fig. 4: Dividing, the naive way.</div>
 
 Great. We’ve implemented division. The sign bit part is a bit clunky, but if we
-strip that away, all we are left with is one division operation and a shift
+strip that away, all we have left is one division operation and a shift
 left by 32 bits. The division is integral because of that shift: we fill up the
 fractional part with zeroes by shifting.
 
@@ -96,7 +96,7 @@ I was stumped by this problem and couldn’t really figure out a neat way to fix
 my code. This is where I left y’all in my last blog post. But Harrison sent me
 [a link to a C# library](https://github.com/asik/FixedMath.Net) that
 implements long form division. The main problem with this is, of course, that
-it’s much slower. Sometimes you just need to bite the bullet, however, so I
+it’s much slower. But sometimes you just need to bite the bullet, so I
 reimplemented their algorithm in C. Here is a stripped down version of that
 algorithm, without a whole bunch of optimizations that you can find [in the
 actual implementation](https://github.com/hellerve/silly/blob/master/silly.c#L99):
@@ -183,8 +183,8 @@ our division pretty well. Through all of the steps we successively build our
 a little contrived.
 
 We are not done yet, however. Particularly perceptive observers will have
-noted that what we stored in `quo` isn’t actually `2.5`. It almost is, however.
-In particular, it’s `0.5` shifted to the left by one bit. That is why, at the
+noted that what we stored in `quo` isn’t actually `2.5`. Though it almost is.
+To be precise, it’s `0.5` shifted to the left by one bit. That is why, at the
 end of the function shown in Figure 5, we have to shift the value in `quo`
 by one bit. Then we add the sign bit back—the process for that is the same as
 in the naive solution—and we’re good to go!
@@ -192,8 +192,8 @@ in the naive solution—and we’re good to go!
 ## Possible optimizations
 
 I talked about possible optimizations earlier, and I don’t want to leave you
-without talking about them at least for a bit. The code I borrowed from and my
-own both implement two simple optimizations:
+without talking about them at least for a bit. Both the code I borrowed from and my
+own code implement two simple optimizations:
 
 1. If the divider is divisible by 2^n, we can reduce the number of loop
 iterations by four for each byte if we just shift the divider. Look at the
@@ -213,12 +213,12 @@ is not applicable to us.
 
 Implementing this was another fun exercise! I hope you enjoyed my little
 walkthrough into long form division to solve a real world problem. Though the
-library in which I implemented this algorithm is merely a toy and I urge you
-not to use it, the underlying algorithm seems pretty solid to me.
+library in which I implemented this algorithm is just a toy, 
+the underlying algorithm seems pretty solid to me.
 
 This whole journey, like my [foray into Binary Coded Decimals](http://blog.veitheller.de/Binary_Coded_Decimal.html),
 has been inspired by [Write Great Code](https://www.nostarch.com/greatcode.htm),
 and I still wholeheartedly recommend it. It’s well written, ridiculously
-informative, and highly inspirational. With the authors help, I might
-implement floating point numbers next—if I do, I’m sure you’ll hear about it
+informative, and highly inspirational. With the author's help, I might
+implement floating point numbers next. And if I do, I’m sure you’ll hear about it
 here.
