@@ -189,7 +189,7 @@ silly silly_div(silly x, silly y) {
   return res;
 }
 ```
-<div class="figure-label">Fig. 5: Dividing, the slow way.</div>
+<div class="figure-label">Fig. 6: Dividing, the slow way.</div>
 
 This is a lot of code. Let’s try to walk through it block by block and figure
 out what it does together.
@@ -232,7 +232,7 @@ rem <<= 1; // 0.0
 
 [rest of the loop has no effect, we’re done]
 ```
-<div class="figure-label">Fig. 6: Moving bits by hand.</div>
+<div class="figure-label">Fig. 7: Moving bits by hand.</div>
 
 This exercise might seem a bit silly—those of you who studied Computer Science
 might be reminded of exercises from first semester courses that seemed pointless
@@ -244,7 +244,7 @@ format is a little contrived.
 We are not done yet, however. Particularly perceptive observers will have
 noted that what we stored in `quo` isn’t actually `2.5`. Though it almost is.
 To be precise, it’s `5.0`, the double of our expected result. That is why, at
-the end of the function shown in Figure 5, we have to shift the value in `quo`
+the end of the function shown in Figure 6, we have to shift the value in `quo`
 by one bit, effectively dividing by 2. Then we add the sign bit back—the
 process for that is the same as in the naive solution—and we’re good to go!
 
