@@ -97,8 +97,70 @@ my code. This is where I left y’all in my last blog post. But Harrison sent me
 [a link to a C# library](https://github.com/asik/FixedMath.Net) that
 implements long form division. The main problem with this is, of course, that
 it’s much slower. But sometimes you just need to bite the bullet, so I
-reimplemented their algorithm in C. Here is a stripped down version of that
-algorithm, without a whole bunch of optimizations that you can find [in the
+reimplemented their algorithm in C.
+
+Before we dive into the implementation, let me talk about the underlying
+algorithm for a moment: what we’r trying to implement is a binary form of long
+division. We will go through the bits as we go through the digits in decimal
+long division, the form you probably learned in school.
+
+Let’s go through the division of 2456 by 12, in decimal, just to recapitulate.
+This example mirrors Figure 3-1 from “Write Great Code”:
+
+```
+      2    -> 12 goes into 34 twice
+   _______
+12 | 3456
+     24
+
+     2    -> subtract and pull down
+   _______
+12 | 3456
+     24
+   ------
+     105
+
+// rinse and repeat
+
+     28
+   _______
+12 | 3456
+     24
+   ------
+     105
+      96
+
+
+     28
+   _______
+12 | 3456
+     24
+   ------
+     105
+      96
+   ------
+       96
+
+
+     288
+   _______
+12 | 3456
+     24
+   ------
+     105
+      96
+   ------
+       96
+       96
+
+// done: result is 288
+```
+<div class="figure-label">Fig. 5: Long division.</div>
+
+Turns out you can do the same thing in binary. There is another example in
+“Write Great Code”, Figure 3-2, that you can work through. The mechanics are
+exactly the same. So, without further ado, here is a stripped down version of
+that algorithm, without a whole bunch of optimizations that you can find [in the
 actual implementation](https://github.com/hellerve/silly/blob/master/silly.c#L99):
 
 ```
@@ -136,8 +198,9 @@ First we define two variables `rem` and `div` that are our input values without
 the sign bit set. Then we define a variable `quo`, which stands for quotient.
 It will hold the result of our computation. We also define the number of bits
 we have to go through—named `b` in this context. We’ll have to go through at
-most `<width> / 2 + 1` bits. Because we know that in our use case the width is
-always `64`, I unrolled that equation; the result is `33`.
+most `<width> / 2 + 1` bits, where `width` is the total of bits in the number.
+Because we know that in our use case the width is always `64`, I unrolled that
+equation; the result is `33`.
 
 Most of the work here happens in the `while` loop. It will be executed `b`
 times, but we also have a shortcut condition: if the remainder is zero, we can
@@ -152,42 +215,38 @@ integers, shifted by 32 bits, because of the fraction.
 // first iteration:
 //   rem = 20.0<<32
 d = rem/div; // 2.0
-rem %= div; // 2.0<<32
+rem %= div; // 4.0<<32
 quo += d << b; // 2.0<<33 == 4.0<<32
 
-rem <<= 1; // 2.0<<33 == 4.0<<32
+rem <<= 1; // 4.0<<33 == 8.0<<32
 --b; // 32
 
 //second iteration
-// rem = 2.0<<32
-d = rem/div; // 0
-rem %= div; // 2.0<<32
-quo += d << b; // d == 0, so same a before
-
-rem <<= 1; // 2.0<<34 == 8.0<<32
---b; // 31
-
-//third iteration
 // rem = 8.0<<32
 d = rem/div; // 1.0
-rem %= div; // 0.0<<32
-quo += d << b; // 1.0<<31 == 0.5<<32 (kind of)
+rem %= div; // 0.0
+quo += d << b; // 4.0<<32 + 1.0<<32 == 5.0<<32
+
+rem <<= 1; // 0.0
+--b; // 31
 
 [rest of the loop has no effect, we’re done]
 ```
 <div class="figure-label">Fig. 6: Moving bits by hand.</div>
 
-This exercise might seem a bit silly, but it visualizes the sliding window of
+This exercise might seem a bit silly—those of you who studied Computer Science
+might be reminded of exercises from first semester courses that seemed pointless
+even back in the day—, but it visualizes the sliding window of
 our division pretty well. Through all of the steps we successively build our
-`quo` value. It’s basically just binary long division, though the format is
-a little contrived.
+`quo` value. As promised, it’s basically just binary long division, though the
+format is a little contrived.
 
 We are not done yet, however. Particularly perceptive observers will have
 noted that what we stored in `quo` isn’t actually `2.5`. Though it almost is.
-To be precise, it’s `0.5` shifted to the left by one bit. That is why, at the
-end of the function shown in Figure 5, we have to shift the value in `quo`
-by one bit. Then we add the sign bit back—the process for that is the same as
-in the naive solution—and we’re good to go!
+To be precise, it’s `5.0`, the double of our expected result. That is why, at
+the end of the function shown in Figure 5, we have to shift the value in `quo`
+by one bit, effectively dividing by 2. Then we add the sign bit back—the
+process for that is the same as in the naive solution—and we’re good to go!
 
 ## Possible optimizations
 
@@ -213,8 +272,8 @@ is not applicable to us.
 
 Implementing this was another fun exercise! I hope you enjoyed my little
 walkthrough into long form division to solve a real world problem. Though the
-library in which I implemented this algorithm is just a toy, 
-the underlying algorithm seems pretty solid to me.
+library in which I implemented this algorithm is just a toy, the underlying
+algorithm seems pretty solid to me.
 
 This whole journey, like my [foray into Binary Coded Decimals](http://blog.veitheller.de/Binary_Coded_Decimal.html),
 has been inspired by [Write Great Code](https://www.nostarch.com/greatcode.htm),
