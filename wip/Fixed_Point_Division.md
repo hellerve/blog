@@ -7,9 +7,9 @@ decided to gloss over the problem description and implementation a little.
 code snippet in reaction to the post that solves the problem with long
 division. I rewrote my code based on that, and now I actually have both
 solutions [in my repo](https://github.com/hellerve/silly), one named
-`silly_idiv` and the other, proper solution `silly_div`. The only reason I kept
-the integral version is that it’s a whole lot faster, and for some calculations
-you don’t really need the fractional part.
+`silly_idiv` and the other, proper solution, `silly_div`. The only reason I kept
+the integral version is that it’s a whole lot faster, and the fractional part 
+isn't really necessary for some calculations.
 
 I’m going to walk you through my initial solution and its limitations, and
 then look at an implementation that remedies those.
@@ -95,12 +95,12 @@ way out.
 I was stumped by this problem and couldn’t really figure out a neat way to fix
 my code. This is where I left y’all in my last blog post. But Harrison sent me
 [a link to a C# library](https://github.com/asik/FixedMath.Net) that
-implements long form division. The main problem with this is, of course, that
+implements long form division. The main problem with this is that
 it’s much slower. But sometimes you just need to bite the bullet, so I
 reimplemented their algorithm in C.
 
 Before we dive into the implementation, let me talk about the underlying
-algorithm for a moment: what we’r trying to implement is a binary form of long
+algorithm for a moment: what we’re trying to implement is a binary form of long
 division. We will go through the bits as we go through the digits in decimal
 long division, the form you probably learned in school.
 
@@ -235,14 +235,14 @@ rem <<= 1; // 0.0
 <div class="figure-label">Fig. 7: Moving bits by hand.</div>
 
 This exercise might seem a bit silly—those of you who studied Computer Science
-might be reminded of exercises from first semester courses that seemed pointless
-even back in the day—, but it visualizes the sliding window of
+might be reminded of exercises from first semester courses that then seemed 
+pointless—, but it visualizes the sliding window of
 our division pretty well. Through all of the steps we successively build our
 `quo` value. As promised, it’s basically just binary long division, though the
 format is a little contrived.
 
-We are not done yet, however. Particularly perceptive observers will have
-noted that what we stored in `quo` isn’t actually `2.5`. Though it almost is.
+We are not done yet, though. Particularly perceptive observers will have
+noted that what we stored in `quo` isn’t actually `2.5`. But it almost is.
 To be precise, it’s `5.0`, the double of our expected result. That is why, at
 the end of the function shown in Figure 6, we have to shift the value in `quo`
 by one bit, effectively dividing by 2. Then we add the sign bit back—the
@@ -251,7 +251,7 @@ process for that is the same as in the naive solution—and we’re good to go!
 ## Possible optimizations
 
 I talked about possible optimizations earlier, and I don’t want to leave you
-without talking about them at least for a bit. Both the code I borrowed from and my
+without touching on them again briefly. Both the code I borrowed from and my
 own code implement two simple optimizations:
 
 1. If the divider is divisible by 2^n, we can reduce the number of loop
@@ -273,7 +273,7 @@ is not applicable to us.
 Implementing this was another fun exercise! I hope you enjoyed my little
 walkthrough into long form division to solve a real world problem. Though the
 library in which I implemented this algorithm is just a toy, the underlying
-algorithm seems pretty solid to me.
+algorithm seems pretty solid.
 
 This whole journey, like my [foray into Binary Coded Decimals](http://blog.veitheller.de/Binary_Coded_Decimal.html),
 has been inspired by [Write Great Code](https://www.nostarch.com/greatcode.htm),
