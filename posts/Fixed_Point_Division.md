@@ -1,5 +1,5 @@
 A few days back, I wrote a [blog post](http://blog.veitheller.de/Fixed_Point_Arithmetic.html)
-on a library—dubbed `silly`—that implements Fixed Point Arithmetic. 
+on a library—dubbed `silly`—that implements Fixed Point Arithmetic.
 At that point I wasn’t sure how to properly implement division—i.e.
 without losing the fractional part. Afraid I might get the details wrong, I
 decided to gloss over the problem description and implementation a little.
