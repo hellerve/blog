@@ -54,12 +54,12 @@ that.
 
 ## Who I met
 
-I’ll be frank with you for a moment: RC was the most experience of my life. I
-got to be at peak productivity whenever I wanted to be, which happens to be
-more often than my body and mind allow me to. What helped me keep going every
-day were the people. I’ve met more good people in three months than I have in
-several years back home—though I do have a considerable friend base, comprised
-entirely out of people I truly enjoy.
+I’ll be frank with you for a moment: RC was the most draining experience of my
+life. I got to be at peak productivity whenever I wanted to be, which happens
+to be more often than my body and mind allow me to. What helped me keep going
+every day were the people. I’ve met more good people in three months than I
+have in several years back home—though I do have a considerable friend base,
+comprised entirely out of people I truly enjoy.
 
 Again, because I made this an opt-in thing, the list is considerably smaller
 than the one that I have in my head, but here, in no particular order, are some
