@@ -32,3 +32,6 @@ the 20th century, and production stopped in 1971. Only in the 90’s did the sam
 corporation that abandoned the product repurchase the property and start anew.
 
 ## A spirit of horses and farms
+
+I came to Woodford through my partner, who is much well versed in the world of
+Bourbon than I am—although I try to keep up as much as possible.
