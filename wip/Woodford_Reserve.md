@@ -159,6 +159,6 @@ and enjoy the wealth in taste and texture.
 at one of the most famous whiskey shops in Germany, and I doubt I’ll ever catch
 up now.
 
-<span id "2">2.</span> For more information on this little feud and a history
+<span id="2">2.</span> For more information on this little feud and a history
 of bourbon in general I suggest Fred Minnick’s “Bourbon: : The Rise, Fall, and
 Rebirth of an American Whiskey”.
