@@ -1,4 +1,4 @@
-As a few of my readeers might know, I recently finished my batch at the
+As a few of my readers might know, I recently finished my batch at the
 [Recurse Center](http://recurse.com/). I’m currently on my flight back from
 the States. Because of a delayed flight, I found myself in a duty-free shop
 earlier, and I decided to buy my frustration away. Naturally, my eyes were
