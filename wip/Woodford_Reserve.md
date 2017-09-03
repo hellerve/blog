@@ -18,10 +18,10 @@ an experience about which [I blogged before](http://blog.veitheller.de/Jeptha_Cr
 The distillery of Woodford stands on one of the oldest distilling sites in
 Kentucky—bourbon distillation started in 1780. One of the more interesting
 historical tidbits on the Whiskey is that [Dr. James Crow](https://en.wikipedia.org/wiki/Dr._James_C._Crow)
-of sour mash fame worked there in the early 19th century. The history is
-very palpable when visiting: all of the buildings, from the actual
-distillery to the warehouses and bottling plant, are actually pretty old.
-The site is charmingly pretty, even if it feels pretty manicured.
+of sour mash—and, sadly, “Old Crow”—fame worked there in the early 19th
+century. The history is very palpable when visiting: all of the buildings, from
+the actual distillery to the warehouses and bottling plant, are actually pretty
+old. The site is charmingly pretty, even if it feels pretty manicured.
 
 ![](/assets/woodford_casks.jpeg)
 <div class="figure-label">Fig. 1: A bourbon fiend’s wet dream.</div>

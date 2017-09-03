@@ -80,6 +80,13 @@ body > * {
   padding-left: 1em;
 }
 
+.content h3 {
+  font-size: 110%;
+  font-weight: 500;
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+}
+
 .footer {
   padding-top: 1em;
   border-top: 1px solid blacK;
