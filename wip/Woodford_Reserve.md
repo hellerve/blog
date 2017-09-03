@@ -1,49 +1,49 @@
 As a few of my readers might know, I recently finished my batch at the
 [Recurse Center](http://recurse.com/). I’m currently on my flight back from
 the States. Because of a delayed flight, I found myself in a duty-free shop
-earlier, and I decided to buy my frustration away. Naturally, my eyes were
-mesmerized by the—emberassingly small—liquor shelves. After toying with the
+earlier where I decided to shop my frustration away. Naturally, my eyes were
+mesmerized by the—embarassingly small—liquor shelves. After toying with the
 idea of buying a young bottle of Royal Salute—young in this case means their
 youngest edition, which is 21 years old—I settled for a bottle of one of my
 go-to bourbons, [Woodford Reserve](https://www.woodfordreserve.com/) Double
 Oaked, for reasons of price and availability.
 
 Let me tell you a little bit about Woodford Reserve, because I like their
-products a lot and I visited their distillery last March, on the same trip
+products a lot. I also visited their distillery last March, on the same trip
 during which I visited the [Jeptha Creed](http://jepthacreed.com/) distillery,
 an experience about which [I blogged before](http://blog.veitheller.de/Jeptha_Creed,_or:_How_I_Learned_to_Love_Vodka.html).
 
 ## Damn old, yet so new
 
-The distillery of Woodford stands on one of the oldest distilling sites in
+Woodford's distillery stands on one of the oldest distilling sites in
 Kentucky—bourbon distillation started in 1780. One of the more interesting
 historical tidbits on the Whiskey is that [Dr. James Crow](https://en.wikipedia.org/wiki/Dr._James_C._Crow)
 of sour mash—and, sadly, “Old Crow”—fame worked there in the early 19th
-century. The history is very palpable when visiting: all of the buildings, from
+century. The history on site is palpable: all of the buildings, from
 the actual distillery to the warehouses and bottling plant, are actually pretty
-old. The site is charmingly pretty, even if it feels pretty manicured.
+old. The site is charmingly pretty, even if it feels manicured.
 
 ![](/assets/woodford_casks.jpeg)
 <div class="figure-label">Fig. 1: A bourbon fiend’s wet dream.</div>
 
-The interesting part about the Whiskey from this distillery then is that it
+The interesting part about the whiskey from this distillery is that it
 doesn’t *taste* old, despite all of the heritage. It is a fresh-tasting spirit
 with a distinctly unique taste and feel. Of course the explanation for this is
-as simple as the explanation for why most of bourbon production is currently in
+as simple as the explanation for why most bourbon production is currently in
 a weird place: bourbon fell from consumers' grace for most of the second half of
-the 20th century, and production stopped in 1971. Only in the 90’s did the same
+the 20th century, and production stopped in 1971. Only in the 90s did the same
 corporation that abandoned the product repurchase the property and start anew.
 
 ## A spirit of horses and farms
 
-I came to Woodford through my partner, who is much well versed in the world of
+I came to Woodford through my partner, who is much more well-versed in the world of
 bourbon than I am.<sup><a href="#1">1</a></sup> I never bought into the—mostly
 uninformed—snobbery that surrounds whiskey in Europe, especially the “old
 guard” parts that scoff at bourbon without having tried it. But it’s somewhat
 hard to find Germans who are excited about bourbon, especially people my age,
 so it took a US-American for me to really get into it.
 
-Woodford Reserve was among the first ones that I sampled, and I immediately
+Woodford Reserve was among the first that I sampled, and I immediately
 fell in love. It’s now the bourbon I serve friends and family who claim not to
 like bourbon, and it turns out a lot of them actually enjoy it. It’s a sweet
 and rich bourbon, with a lot of caramel and toffee, so that might help—but
@@ -63,7 +63,7 @@ rich facility to the next.
 </div>
 
 While I quite enjoyed seeing the production line, it all looks uncannily
-pretty. This is not uncommon for distilleries that offer tours—it’s a
+shiny. This is not uncommon for distilleries that offer tours—it’s a
 marketing thing, after all—, but Woodford’s facilities are lavish even compared
 to the other beauties in the area. This, of course, is no coincidence: as I
 alluded to earlier, this is a ploy by Brown-Forman: they needed to create a
@@ -106,7 +106,7 @@ the wood itself had liquified, sloshing in the glass heavily.
 
 ### Nose
 
-The nose doesn’t break the promise the color made: rich caramel and toffee
+The nose cashes in on the color's promise: rich caramel and toffee
 notes, but a surprising wealth of fruits as well, some of them a little
 synthetic—remember those hard, round bubble gums that tasted like nothing but
 artificial flavoring? I do, and the Double Oaked is making sure I never forget.
@@ -124,7 +124,7 @@ grapes, and tobacco. Vanilla, caramel, and oak make for a sweet and pleasant
 combo that makes me want to sit by the fire and read stories to my children.
 Now I only need children.
 
-Contrastingly, the Double Double Oaked makes for a less pleasant experience.
+The Double Double Oaked makes, in contrast, for a less pleasant experience.
 With its even greater viscosity and dominant oak notes it is relatively banal,
 but stays with you a long time. This bourbon is living proof of a higher age
 not always leading to a better whiskey.
@@ -151,7 +151,7 @@ only very seldom be found in my liquor cabinet—, their standard offerings are
 quite good as sippers. Their Master’s Collection line is also always promising,
 although to be frank I’ve only sampled one of them. If you want a solid and
 affordable bourbon experience, get a bottle of Woodford Reserve Double Oaked
-and enjoy the wealth in taste and texture.
+and enjoy the bounty in taste and texture.
 
 ##### Footnotes
 
