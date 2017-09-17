@@ -104,7 +104,7 @@ like API updates. Some APIs need a thorough cleanup, and, much like people who
 change for the better, emerge as more productive members of society. I even
 applaud some updates that break my software, because they provide soothing
 for my code that has been plagued by a sore for no good reason. Sometimes,
-however, the updates don’t lead anywhere; either they don’t adress a need/make
+however, the updates don’t lead anywhere; either they don’t address a need/make
 things worse or they introduce incompatibilities that make supporting multiple
 platforms harder for the user. OS X’s API is a prime example for both of these
 points.
