@@ -98,6 +98,14 @@ body > * {
   margin: 0.3em;
 }
 
+.spoiler {
+  background: #000;
+}
+
+.spoiler:hover {
+  background: #fff;
+}
+
 img {
   width: 100%;
 }

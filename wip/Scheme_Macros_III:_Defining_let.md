@@ -2,9 +2,9 @@ After exploring how to implement a [module system](http://blog.veitheller.de/Sch
 and [generic functions](http://blog.veitheller.de/Scheme_Macros_I:_Generics.html)
 in Scheme macros, this time we’ll explore how to reimplement
 [let-style](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Lexical-Binding.html)
-local bindings. As a little extra, we’ll also explore a way of defining `letrec`
-that I’ve never seen used before, partly because it’s somewhat inefficient—but
-at least it gets rid of mutable state.
+local bindings. As a little extra, we’ll explore a way of defining them that
+I’ve never seen used before, partly because it’s somewhat inefficient—but
+at least it gets rid of mutable state—no `set!` required.
 
 As always, we’ll first define an API, and then implement it bit by bit,
 learning about the intricacies of well-crafted macros on the way.
@@ -180,16 +180,192 @@ That’s a lot of lingo, so let’s look at another example:
   Fig. 8: The example from Figure 2, before and after expansion.
 </div>
 
-And that’s it! We’re done with `let`. And because that didn’t require a lot of
-code, we’ll now look at `let`s more handy brother, `let*`.
+And that’s it! We’re done with `let`.<a href="#3"><sup>3</sup></a> And because
+that didn’t require a lot of code, we’ll now look at `let`s more handy brother,
+`let*`.
 
 ## let\*
 
-## letrec—a unique approach
+`let*` isn’t that different from `let`. The only thing we need to achieve is
+having the bindings happen sequentially, instead of concurrently, as they do
+in `let`. That sounds like a job for nested lambdas!
 
-## Caveats
+```
+(define-syntax let*
+  (syntax-rules ()
+    ((let* () body ...) ; base case
+      ((lambda () body ...)))
+    ((let* ((var val) rest ...) body ...) ; binding case
+      ((lambda (var) (let* (rest ...) body ...)) val))))
+```
+<div class="figure-label">
+  Fig. 9: Implementing sequential bindings with nested lambdas.
+</div>
+
+Let’s walk though the code again—recursive macros are a bit hard to keep in
+one’s head. Our base case will be invoked when there are no more bindings to
+produce; it will create a lambda with the body that was provided to `let*` and
+immediately call it. This ensures that we don’t leak any contents of the body
+if `let*` is called without bindings. If we used `begin` instead, we might
+produce unwanted side effects, for instance through `define` expressions.
+
+The other case—I called it the binding case above—takes the head of the
+bindings, destructures it, and forms an immediately invoked one-argument
+lambda: our first binding. Inside the lambda, it will call itself recursively
+with the rest of the binding lists and the function body, until it will finally
+match the base case.
+
+This should also make obvious why `let*`—at least implemented in this
+fashion—is more expensive than `let`. Because we build a new closure for every
+variable we define, we will end up wasting a whole bunch of precious cycles and
+memory. But because we assume that those are cheap in our case, we put
+conceptual clarity first. We could also transform the bindings into a flat
+closure with a bunch of defines, but this wouldn’t satisfy the contract of
+`let*` to disallow recursive function bindings. You could implement another
+flavor of `let` pretty cheaply using this pattern, though.
+
+Because the output of this might not be immediately apparent, I will provide
+you with the input and output of a simple `let*` expression:
+
+```
+; before macro expansion:
+(let* ((x 1)
+       (y (+ x 1)))
+  (+ x y))
+
+; after macro expansion
+((lambda (x)
+  ((lambda (y)
+    ((lambda () (+ x y))))
+   (+ x y)))
+ 1)
+```
+<div class="figure-label">
+  Fig. 10: A simple `let*` expression, before and after expansion (these are
+  the moments where I’d wish for parenthesis-based highlighting on my blog).
+</div>
+
+This wasn’t so bad, was it? If you’re not fed up yet, try implementing labels
+for this form of `let*`. It shouldn’t be too different from the version we used
+for our implementation of `let`.
+
+Let’s move on to `letrec*`.
+
+## letrec\*
+
+This one is the most interesting of all of the macros we’re going to implement
+here. Our version will again be a bit unusual, but straightforward. Consider
+the implementation of `let*` from Figure 9 again; it’s not too far from what
+we want: all that’s left is transforming the bindings from anonymous bindings
+to named ones. How could we do that? Let’s try `define`:
+
+```
+(define-syntax letrec*
+  (syntax-rules ()
+    ((letrec* () body ...) ; base case
+      ((lambda () body ...)))
+    ((letrec* ((var val) rest ...) body ...) ; binding case
+      ((lambda ()
+        (define var val)
+        (letrec* (rest ...) body ...))))))
+```
+<div class="figure-label">Fig. 11: `letrec*`, demistified.</div>
+
+As promised this is very similar to `let*` as implemented in Figure 9. We just
+pushed the binding of `val` to `var` down into the body of the lambda. I’m not
+completely sold, though. Remember how I said we could implement another flavor
+of `let` pretty cheaply through flattened closures? This is the time to whip
+out this little trick. It makes the implementation a bit less pretty to look
+at, but it’s interesting enough for us to try it here:
+
+```
+(define-syntax letrec*-helper
+  (syntax-rules ()
+    ((letrec*-helper () body ...)
+      (begin body ...))
+    ((letrec*-helper ((var val) rest ...) body ...)
+      (begin
+        (define var val)
+        (letrec*-helper (rest ...) body ...)))))
+
+(define-syntax letrec*
+  (syntax-rules ()
+    ((letrec* bindings body ...)
+      ((lambda ()
+        (letrec*-helper bindings body ...))))))
+```
+<div class="figure-label">Fig. 12: `letrec*`, efficient yet hideous.</div>
+
+That’s about an order of magnitude worse! Great, let’s walk through it! First
+we define a helper macro—in my experience that’s never a good sign—that does
+exactly what our first implementation of `letrec*` from Figure 11 does, but
+we swap the `lambda` expression for `begin`.<a href="#4"><sup>4</sup></a>
+All that `letrec*` does, then, is wrap the code that the helper generates in
+a lambda that is immediately called, and we’re done.
+
+This macro is even more opaque than the ones before, so I’m sure you all look
+forward to a manual expansion!
+
+```
+; before
+(letrec* ((x (lambda (n)
+              (if (> n 3) n (x (+ n 1)))))
+          (y 1))
+  (x y))
+
+; after expanding version 1
+((lambda ()
+  (define x (lambda (n)
+              (if (> n 3) n (x (+ n 1)))))
+  ((lambda ()
+    (define y 1)
+    ((lambda () (x y)))))))
+
+; after expanding version 2
+((lambda ()
+  (begin
+    (define x (lambda (n)
+                (if (> n 3) n (x (+ n 1)))))
+    (begin
+      (define y 1)
+      (begin (x y))))))
+```
+<div class="figure-label">
+  Fig. 13: A manual expansion of version 1 and 2 of `letrec*`.
+</div>
+
+Figure 13 should shed some light on how version 2 is more efficient than
+version 1, even if it’s not more terse.
+
+## Recap
+
+At this point you might ask yourself why we didn’t talk about `letrec`. Well,
+`letrec` is the ugliest of all of the expressions in the `let` family. It
+requires the implementor to enable recursion, but not sequential bindings.
+I haven’t found it to be tremendously helpful and mostly a pain to implement.
+Racket even ditched the name `letrec*` and made `letrec` behave like the former
+instead.
+
+As always, I have a couple of ideas what you could work on to deepen your
+knowledge of implementing `let` in self-study:
+
+* You could implement labels for `let*` and `letrec*`. They should be a very
+  good addition to start out with and pretty rewarding and useful to boot.
+* You could play around with an implementation based on the Y combinator—that
+  is, the lambda calculus combinator, not the startup accelerator. There is a
+  hint in the footnotes if you need it.<sup><a href="#5">5</a></sup>
 
 ## Fin
+
+We just implemented local bindings! I hope it was as much fun for you reading
+this as it was for me writing it. I don’t write much Scheme these days—ever
+since abandoing [zepto](https://github.com/zepto-lang/zepto), really—, and it’s
+a breath of fresh air to get back into it. Opening my own REPL and hacking away
+is one of the most rewarding things I do in my spare time, so if you have any
+suggestions for future posts in this series, [ping
+me](https://github.com/hellerve/blog/issues) and I might write about it!
+
+See you soon!
 
 #### Footnotes
 <span id="1">1.</span> No, really. At least according to the numbers on
@@ -198,3 +374,21 @@ code, we’ll now look at `let`s more handy brother, `let*`.
 <span id="2">2.</span> My reading of the original lambda papers tells me that
 `let` was called `labels` back then. I’m not positive the “fancier” versions
 even existed.
+
+<span id="3">3.</span> Purists will object that there are other—and better—ways
+to implement labels. I wholeheartedly agree—particularly the versions that use
+the infamous [Y combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus)
+are interesting. They’re a little harder to grok, though, and not particularly
+suited for introductory tutorials like this one. [Here is Rosetta Code for
+implementing anonymous recursion](https://rosettacode.org/wiki/Anonymous_recursion).
+
+<span id="4">4.</span> This version will not end up generating prettier code,
+but it will be more efficient assuming `begin` is cheaper than calling a
+function, which it should always be.
+
+<span id="5">5.</span> The Y combinator can be used to assign a name to the
+function passed to `let`. You will want to bind the value to a specific call
+to the combinator. Here be spoilers (hover to reveal): <span class="spoiler">
+You will want to call the combinator with a lambda that takes an argument
+named like the variable and the binding as body, like so:
+`(Y (lambda (var) val))`. Put that in a `let` and bind it to `var`.</span>
