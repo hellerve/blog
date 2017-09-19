@@ -117,7 +117,7 @@ That doesn’t look so bad, does it? Let’s walk through it together before we
 make our version feature-complete.
 
 This definition of `let` makes heavy use of ellipses—the `...`—to destructure
-the form. We take all of the variable names—named `var` here`—and put them in
+the form. We take all of the variable names—named `var` here—and put them in
 the argument list of the lambda. Then we take the body and set it as the body
 of the lambda. Finally, we take all of the values—names `val` here—and call our
 lambda with them. Let’s look at the example from Figure 1, before and after
