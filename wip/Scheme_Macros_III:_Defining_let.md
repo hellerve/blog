@@ -54,8 +54,8 @@ construct like the following is not valid:
 
 ```
 (let ((x 1)
-      (y (+ x 1)))
-  (+ x y)) ; this will complain about the absence of y
+      (y (+ x 1))) ; this will complain about the absence of x
+  (+ x y))
 ```
 <div class="figure-label">Fig. 3: Blowing up `let`.</div>
 
