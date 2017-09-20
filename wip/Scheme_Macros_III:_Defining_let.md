@@ -1,13 +1,13 @@
-After exploring how to implement a [module system](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html)
+After having explored how to implement a [module system](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html)
 and [generic functions](http://blog.veitheller.de/Scheme_Macros_I:_Generics.html)
-in Scheme macros, this time we’ll explore how to reimplement
+in Scheme macros, we’ll look this time at how to reimplement
 [let-style](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Lexical-Binding.html)
 local bindings. As a little extra, we’ll explore a way of defining them that
 I’ve never seen used before, partly because it’s somewhat inefficient—but
 at least it gets rid of mutable state—no `set!` required.
 
 As always, we’ll first define an API, and then implement it bit by bit,
-learning about the intricacies of well-crafted macros on the way.
+learning about the intricacies of well-crafted macros along the way.
 
 Some experience with Scheme macros—being able to read through them should
 suffice—is assumed. Experience with `let` is not required.
@@ -29,8 +29,8 @@ form of `let` and its derivatives as a macro.
 As you can see in Figure 1, `let` takes a list of pairs, where the first value
 is the variable name and the second value is what we bind the name to. Simple
 enough, but fairly powerful, because it gives us something a lot of languages
-have lacked for a long time: block scope. The values bound by `let` shall not
-leak outside its body, which makes it a powerful building block for
+have lacked for a long time: block scope. The values bound by `let` won't
+leak outside their body, which makes it a powerful building block for
 abstractions.
 
 This is not the full power of `let`, though. `let` can also be used for
@@ -101,7 +101,7 @@ For now, let’s try and implement the simplest version first: plain `let`.
 ## let
 
 At it’s core, `let` is quite simple: if we just want to introduce local
-bindings, we can just rewrite `let` expressions to a lambda that takes a bunch
+bindings, we can rewrite `let` expressions to a lambda that takes a bunch
 of arguments and is immediately called with the values that were provided in
 the form. Let’s build a simple macro that does exactly this:
 
@@ -203,8 +203,8 @@ in `let`. That sounds like a job for nested lambdas!
   Fig. 9: Implementing sequential bindings with nested lambdas.
 </div>
 
-Let’s walk though the code again—recursive macros are a bit hard to keep in
-one’s head. Our base case will be invoked when there are no more bindings to
+Let’s walk though the code again—recursive macros can be a bit hard to keep straight. 
+Our base case will be invoked when there are no more bindings to
 produce; it will create a lambda with the body that was provided to `let*` and
 immediately call it. This ensures that we don’t leak any contents of the body
 if `let*` is called without bindings. If we used `begin` instead, we might
@@ -219,7 +219,7 @@ match the base case.
 This should also make obvious why `let*`—at least implemented in this
 fashion—is more expensive than `let`. Because we build a new closure for every
 variable we define, we will end up wasting a whole bunch of precious cycles and
-memory. But because we assume that those are cheap in our case, we put
+memory. But, because we assume that those are cheap in our case, we put
 conceptual clarity first. We could also transform the bindings into a flat
 closure with a bunch of defines, but this wouldn’t satisfy the contract of
 `let*` to disallow recursive function bindings. You could implement another
@@ -270,7 +270,7 @@ to named ones. How could we do that? Let’s try `define`:
         (define var val)
         (letrec* (rest ...) body ...))))))
 ```
-<div class="figure-label">Fig. 11: `letrec*`, demistified.</div>
+<div class="figure-label">Fig. 11: `letrec*`, demystified.</div>
 
 As promised this is very similar to `let*` as implemented in Figure 9. We just
 pushed the binding of `val` to `var` down into the body of the lambda. I’m not
