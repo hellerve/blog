@@ -91,10 +91,10 @@ the best computer most programmers use has 9KB of memory and an add takes
 5 microseconds<a href="#1"><sup>1</sup></a>, efficiency truly matters—I
 imagine people took a lot of coffee breaks back then. Now, when efficiency
 truly matters, you don’t want to waste any cycles for features you don’t need,
-and sometimes a fancy programming language feature does exactly that: waste
-cycles. So back in the day it was a great idea to make the least expensive
-feature the default, and if people needed it, they could upgrade to one of
-the fancier versions.<a href="#2"><sup>2</sup></a>
+and sometimes a fancy programming language feature does exactly that. So back
+in the day it was a great idea to make the least expensive feature the default,
+and if people needed it, they could upgrade to one of the fancier
+versions.<a href="#2"><sup>2</sup></a>
 
 For now, let’s try and implement the simplest version first: plain `let`.
 
