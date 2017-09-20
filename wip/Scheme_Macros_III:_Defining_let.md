@@ -119,7 +119,7 @@ make our version feature-complete.
 This definition of `let` makes heavy use of ellipses—the `...`—to destructure
 the form. We take all of the variable names—named `var` here—and put them in
 the argument list of the lambda. Then we take the body and set it as the body
-of the lambda. Finally, we take all of the values—names `val` here—and call our
+of the lambda. Finally, we take all of the values—named `val` here—and call our
 lambda with them. Let’s look at the example from Figure 1, before and after
 transformation:
 
@@ -147,7 +147,8 @@ up with the following definition:
 ```
 (define-syntax let
   (syntax-rules ()
-    ; the rule from Figure 5
+    ; the rule from Figure 5 goes here
+    ; ...
     ((let label ((var val) ...) body ...)
       ((lambda ()
         (define label (lambda (var ...) body ...))
@@ -159,7 +160,7 @@ This is also fairly simple! It’s likely not the version you’ll find in the
 books, because PLT purists have found a more theoretically sound implementation
 over the years, but it’s good enough for us: it just wraps the expansion in
 another lambda, so that we have a local closure in which we can call our label.
-That’s a lot of lingo, so let’s look at another example:
+That’s a lot of lingo, so let’s look at an example of macro expansion:
 
 ```
 ; before:
@@ -225,7 +226,7 @@ closure with a bunch of defines, but this wouldn’t satisfy the contract of
 flavor of `let` pretty cheaply using this pattern, though.
 
 Because the output of this might not be immediately apparent, I will provide
-you with the input and output of a simple `let*` expression:
+you with the expansion input and output of a simple `let*` expression:
 
 ```
 ; before macro expansion:
