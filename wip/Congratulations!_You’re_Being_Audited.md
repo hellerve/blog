@@ -56,6 +56,87 @@ Bugs happen. Sometimes they’re benign, but as soon as they’re dependent on u
 input and reproducible it could turn into a security incident at any point in
 time.
 
+What I want to express with this needlessly long anecdote is that an auditor’s
+job is similar to that of an editor: identifying problems within the code and
+trying to suggest how best get rid of them.
+
+Let’s talk about methodologies. If you know me you know I’m a relatively
+relaxed person, and this often translates into my thinking about software; and
+so, when I start out manually inspecting a codebase, my method will seem pretty
+random at first. The chief architect, head of engineering, or lead developer
+will probably already have explained the architecture of the code base to me
+and I’ll have a bird’s eye overview. I’ll then try to poke around in the code,
+see how the components fit together, and make tons of notes that try to
+identify the relationship of the modules. I’ll not try to compile or run the
+code right away, because if I do it the other way around and get something
+wrong, I’ll know by the time I first run the application. I’d like to think
+these surprises happen less and less, but I really have no idea, as my data
+is largely anecdotal and fairly biased. Holding myself accountable is an art I
+practice, but will most likely never master.
+
+I try to note any code smell, which in my world includes missing or
+wrongly-formatted documentation,<sup><a href="#3">3</a></sup> because, as has
+been discussed time and time again by people much more reputable than I’ll ever
+be, those often lead to subtle bugs.
+
+If my client has automated tests in place I’ll then look at those and try to
+find cases that were missed, because chances are that they were also missed in
+the component under scrutiny. A surprisingly large number of my clients has
+fairly comprehensive test suites, but then if you invest in having your code
+audited, you’re probably not in the worst shape anyway.
+
+Depending on the complexity and size of the project and the budget I’m
+operating under, I’ll also look at historic bugs and see whether I can sense
+a pattern. This influences the way I inspect current bugs, because if there is
+a consistent lack of, say, null checks or input sanitizing I’ll watch out for
+those in particular.
+
+This process can take any amount of time from a few hours to a few days,
+depending on the level of granularity, project, and budget. When this process
+is over, we move on to the reporting phase.
+
+## Blameless blames
+
+Reporting audit results can take many shapes and forms. I usually prefer a
+combination of a comprehensive document and one or more presentations. If my
+clients are open for it I will also have one or more meetings with the
+developers to try and “workshop” their coding. This helps get rid of bad habits
+instead of just duct-taping over problems and then going on as before.
+
+Whatever the format is, though, I try to make it as blameless as possible. I
+have this bad habit of getting to attached to my own code and then feeling
+bad when someone criticizes it or finds a bug, and I don’t want anyone on the
+team to feel as if anything is “their fault” just because they wrote a
+particular piece of code that was buggy. These things happen to the best of us,
+and I don’t think I’ll ever encounter a bug-free piece of code in my life.
+We’re working in a continuum of worse and better, but I don’t think there are
+limits to either side of the spectrum.<sup><a href="#4">4</a></sup>
+
+And so, it’s important to make a point of not blaming or fingerpointing and
+still “telling it as it is”. Our profession is hard and stressful enough as it
+is without someone screaming at us because we forgot that one of our parameters
+is nullable. I’m not perfect, and sometimes it will seem as if I’m being unjust
+in my assessments; but I try to minimize this source of friction as well as I
+can.
+
+## See you around!
+
+This post didn’t contain as much information about my actual methods as I’d
+like it to, but I feel as if it is too long as it is already. I might come
+back to this topic in a while and talk about a more specific aspect of my
+craft, but for now you’ll have to deal with me being a little vague here and
+there and not really giving you actionable items. The truth is that every
+customer is different, and a one-size-fits-all solution will fall short for
+all but one of them; the only thing you achieve by having a set of fixed rules
+handy for every gig is making your job as an auditor easier, not better.
+
+Appreciating diversity in a business sense—I’m not commenting on the other
+meaning of that phrase here—has been a fairly successful model for me. I don’t
+want to waste my or my client’s time by selling them an ideology. There are
+plenty of other people who will happily fill that role.
+
+And with that I wish you a great day and hope to see you around soon!
+
 #### Footnotes
 
 <span id="1">1.</span> You might think it’s more gratifying to look at bad
@@ -71,3 +152,25 @@ between languages that are memory-safe and those that aren’t, because the
 auditor has to watch out and think through another class of bugs when memory
 management comes into play. Of course there’s also the garbage collector, but
 that’s mostly a problem for the perfomance people.
+
+<span id="3">3.</span> Documentation is crucial especially when, during the
+initial development of an application, someone is writing a partial
+implementation of a particular component and then forgets to document that. If
+it isn’t even marked with a searchable marker—such as `TODO` or `FIXME`—, I
+consider this a bug. This marker should be fairly uniform. Of course it’s best
+to write a ticket detailing the missing functionality, but beggars can’t be
+choosers.
+
+<span id="4">4.</span> Arguably, defining “worse” and “better” themselves is
+a sisyphean task, as requirements change and there is never just one dimension.
+Is an unmaintainable and opaque piece of code that speeds up my application by
+an order of magnitude “worth it”? Is a pristine, concise, and proven solution
+to a problem if it means that the end user has to wait 15 seconds for a report
+to be generated, when we could generate it instantly if we didn’t care about
+race conditions? Such are the trade-offs we make, and we have to live with
+them. As always, documentation can at least codify intent, and enable you to
+tell future maintainers “I thought long and hard about these things, and this
+is the best I could come up with because of this or that condition”. It will
+stop them from cursing you and your kin to the seventh generation because they
+have to stare at your code in fear and trembling instead of getting the job
+done.
