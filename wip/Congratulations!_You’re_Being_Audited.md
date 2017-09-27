@@ -1,6 +1,6 @@
 I’ve been back at my job from my brief stint at the [Recurse Center](https://www.recurse.com/scout/click?t=3f214b4d8605308d27685ebd4548905e)
 for over a month now and have largely settled back into a regular work week.
-For those of you who don’t know it, [I work at Port Zero](http://port-zero.com/),
+For those of you who don’t know, [I work at Port Zero](http://port-zero.com/),
 a small but efficient security consultancy from Berlin. While my business card
 says something about “Software Engineer”, these days I audit about as much code
 as I write for our clients. I figured that a considerable amount of my readers
@@ -9,19 +9,19 @@ it’s focused on security. Let me tell you about it!
 
 ## The process is a lie
 
-First things first: unless your company is seeking accreditation in some
-restricted field of tech, chances are that there either is no standard process
-or the people who audit you will, for various reasons, not adhere to them. Of
+First thing's first: unless your company is seeking accreditation in some
+restricted field of tech, chances are that there is either no standard process
+or that the people who audit you will, for various reasons, not adhere to it. Of
 course most of us with some experience will look at a standard set of
-checklists and see whether we see anything from there—e.g. usage of Python’s
+checklists and see if we can spot anything there—e.g. usage of Python’s
 [`pickle`](https://docs.python.org/2/library/pickle.html) module on
 a user-supplied datum—but oftentimes security holes aren’t that simple to find
 and require the interplay of various different components in your system. These
-are the times when automated analysesi & tools often don’t cut it anymore and
+are the times when automated analyses & tools often don’t cut it anymore and
 someone like me appears on the scene.
 
 In the following I’ll talk a bit about my methods and tools. It’s not magic,
-just a trained eye and a helathy dose of masochism. The former is required to
+just a trained eye and a healthy dose of masochism. The former is required to
 read through large amounts of code of varying quality and make a ton of notes
 over prolonged periods of time.<sup><a href="#1">1</a></sup>
 
@@ -34,38 +34,37 @@ differences come with the architecture, or the interplay of components.
 
 Secure programs are a subset of correct programs. As such, security bugs are a
 subset of bugs in general, and sometimes a “regular” bug can have security
-implications. This means that I, as an auditor, are constantly on the lookout
-for code smells. If something icky is going on an attacker might be able to use
+implications. This means that I, as an auditor, am constantly on the lookout
+for code smells. If something icky is going on, an attacker might be able to use
 some subtle behaviour of the code to take control of the app.
 
 To illustrate that last point, let’s assume that you maintain a magic web
 application that herds unicorns. Users upload their unicorns, you assign them
 an ID number, and the unicorn gets to frolic through the meadows with its new
-friends. One of your colleagues thought that 32 bit is too much wasted space
+friends. One of your colleagues thinks that 32 bits is too much wasted space
 for an ID, so they create their own ID class that creates a random number for
-each unicorn based on its mane color. Sadly they forgot to take care about
-uniqueness, and so sometimes a unicorn gets assigned a number that was already
+each unicorn based on its mane color. Sadly they forgot to take uniqueness into account
+uniqueness, so sometimes a unicorn gets assigned a number that was already
 assigned. What sounds like a regular bug quickly turns into a security problem
-when it turns out that due to the lack of checks—you didn’t think ID creation
-could ever fail—your application crashes every time. If a unicorn-hating hacker
+when, due to the lack of checks—you didn’t think ID creation
+could ever fail—, your application crashes every time. If a unicorn-hating hacker
 or competitor ever finds out that this bug exists, they will send a whole bunch
 of unicorns with very similarly-looking manes to your service and constantly
 crash it. This is a very silly transcription of a simple security bug I found
 at one of my clients—these things happen, and we found it in time and fixed it.
 Bugs happen. Sometimes they’re benign, but as soon as they’re dependent on user
-input and reproducible it could turn into a security incident at any point in
-time.
+input and reproducible it could turn into a security incident at any moment.
 
 What I want to express with this needlessly long anecdote is that an auditor’s
 job is similar to that of an editor: identifying problems within the code and
-trying to suggest how best get rid of them.
+trying to suggest how to best get rid of them.
 
-Let’s talk about methodologies. If you know me you know I’m a relatively
-relaxed person, and this often translates into my thinking about software; and
-so, when I start out manually inspecting a codebase, my method will seem pretty
+Let’s talk about methodologies. If you know me, you know I’m a relatively
+relaxed person, and this often translates into my thinking towards software; 
+when I start out manually inspecting a codebase, my method will seem pretty
 random at first. The chief architect, head of engineering, or lead developer
 will probably already have explained the architecture of the code base to me
-and I’ll have a bird’s eye overview. I’ll then try to poke around in the code,
+and I’ll have a bird’s-eye overview. I’ll then try to poke around in the code,
 see how the components fit together, and make tons of notes that try to
 identify the relationship of the modules. I’ll not try to compile or run the
 code right away, because if I do it the other way around and get something
@@ -82,16 +81,16 @@ be, those often lead to subtle bugs.
 If my client has automated tests in place I’ll then look at those and try to
 find cases that were missed, because chances are that they were also missed in
 the component under scrutiny. A surprisingly large number of my clients has
-fairly comprehensive test suites, but then if you invest in having your code
+fairly comprehensive test suites; then again, if you invest in having your code
 audited, you’re probably not in the worst shape anyway.
 
 Depending on the complexity and size of the project and the budget I’m
-operating under, I’ll also look at historic bugs and see whether I can sense
+operating with, I’ll also look at historic bugs and see whether I can sense
 a pattern. This influences the way I inspect current bugs, because if there is
 a consistent lack of, say, null checks or input sanitizing I’ll watch out for
 those in particular.
 
-This process can take any amount of time from a few hours to a few days,
+This process can take anywhere from a few hours to a few days,
 depending on the level of granularity, project, and budget. When this process
 is over, we move on to the reporting phase.
 
@@ -99,7 +98,7 @@ is over, we move on to the reporting phase.
 
 Reporting audit results can take many shapes and forms. I usually prefer a
 combination of a comprehensive document and one or more presentations. If my
-clients are open for it I will also have one or more meetings with the
+clients are open to it, I will also have one or more meetings with the
 developers to try and “workshop” their coding. This helps get rid of bad habits
 instead of just duct-taping over problems and then going on as before.
 
@@ -113,8 +112,8 @@ We’re working in a continuum of worse and better, but I don’t think there ar
 limits to either side of the spectrum.<sup><a href="#4">4</a></sup>
 
 And so, it’s important to make a point of not blaming or fingerpointing and
-still “telling it as it is”. Our profession is hard and stressful enough as it
-is without someone screaming at us because we forgot that one of our parameters
+still “telling it as it is”. Our profession is already hard and stressful enough
+without someone screaming at us because we forgot that one of our parameters
 is nullable. I’m not perfect, and sometimes it will seem as if I’m being unjust
 in my assessments; but I try to minimize this source of friction as well as I
 can.
@@ -122,7 +121,7 @@ can.
 ## See you around!
 
 This post didn’t contain as much information about my actual methods as I’d
-like it to, but I feel as if it is too long as it is already. I might come
+like it to, but I feel it's too long as it is already. I might come
 back to this topic in a while and talk about a more specific aspect of my
 craft, but for now you’ll have to deal with me being a little vague here and
 there and not really giving you actionable items. The truth is that every
@@ -132,7 +131,7 @@ handy for every gig is making your job as an auditor easier, not better.
 
 Appreciating diversity in a business sense—I’m not commenting on the other
 meaning of that phrase here—has been a fairly successful model for me. I don’t
-want to waste my or my client’s time by selling them an ideology. There are
+want to waste my or my clients' time by selling them an ideology. There are
 plenty of other people who will happily fill that role.
 
 And with that I wish you a great day and hope to see you around soon!
