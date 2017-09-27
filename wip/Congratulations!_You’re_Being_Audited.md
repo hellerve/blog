@@ -9,7 +9,7 @@ it’s focused on security. Let me tell you about it!
 
 ## The process is a lie
 
-First thing's first: unless your company is seeking accreditation in some
+First things first: unless your company is seeking accreditation in some
 restricted field of tech, chances are that there is either no standard process
 or that the people who audit you will, for various reasons, not adhere to it. Of
 course most of us with some experience will look at a standard set of
@@ -121,7 +121,7 @@ can.
 ## See you around!
 
 This post didn’t contain as much information about my actual methods as I’d
-like it to, but I feel it's too long as it is already. I might come
+like it to, but I feel it’s too long as it is already. I might come
 back to this topic in a while and talk about a more specific aspect of my
 craft, but for now you’ll have to deal with me being a little vague here and
 there and not really giving you actionable items. The truth is that every
@@ -131,7 +131,7 @@ handy for every gig is making your job as an auditor easier, not better.
 
 Appreciating diversity in a business sense—I’m not commenting on the other
 meaning of that phrase here—has been a fairly successful model for me. I don’t
-want to waste my or my clients' time by selling them an ideology. There are
+want to waste my or my clients’ time by selling them an ideology. There are
 plenty of other people who will happily fill that role.
 
 And with that I wish you a great day and hope to see you around soon!
