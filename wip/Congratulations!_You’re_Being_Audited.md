@@ -43,13 +43,13 @@ application that herds unicorns. Users upload their unicorns, you assign them
 an ID number, and the unicorn gets to frolic through the meadows with its new
 friends. One of your colleagues thinks that 32 bits is too much wasted space
 for an ID, so they create their own ID class that creates a random number for
-each unicorn based on its mane color. Sadly they forgot to take uniqueness into account
-uniqueness, so sometimes a unicorn gets assigned a number that was already
-assigned. What sounds like a regular bug quickly turns into a security problem
-when, due to the lack of checks—you didn’t think ID creation
-could ever fail—, your application crashes every time. If a unicorn-hating hacker
-or competitor ever finds out that this bug exists, they will send a whole bunch
-of unicorns with very similarly-looking manes to your service and constantly
+each unicorn based on its mane color. Sadly they forgot to take uniqueness into
+account, so sometimes a unicorn gets assigned a number that was already
+taken. What sounds like a regular bug quickly turns into a security problem
+when, due to the lack of checks—you didn’t think ID creation could ever fail—
+your application crashes every time an erroneous ID is produced. If a unicorn-hating
+hacker or competitor ever finds out that this bug exists, they will send a whole
+bunch of unicorns with very similarly-looking manes to your service and constantly
 crash it. This is a very silly transcription of a simple security bug I found
 at one of my clients—these things happen, and we found it in time and fixed it.
 Bugs happen. Sometimes they’re benign, but as soon as they’re dependent on user
