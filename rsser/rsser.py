@@ -9,12 +9,12 @@ import config
 import twitter
 
 
-def twitter(posts):
+def tweet(posts):
     api = twitter.Api(consumer_key=config.consumer_key,
                       consumer_secret=config.consumer_secret,
                       access_token_key=config.access_token_key,
                       access_token_secret=config.access_token_secret)
-    check = datetime.now() - timedelta(hours=1)
+    check = datetime.now() - timedelta(hours=3)
 
     for (post, url) in posts:
         stats = os.stat(url)
@@ -22,14 +22,17 @@ def twitter(posts):
         if datetime.fromtimestamp(stats.st_mtime) < check:
             continue
 
-        api.PostUpdate("Veit has a new blog post: {}! {}".format(post, url))
+        api.PostUpdate("Veit has a new blog post: {}! {}/{}".format(post, config.blog, url))
 
 
 def read_index():
     tree = E.parse(config.index)
+    posts = []
 
     for post in tree.findall(".//li[@class='post']"):
-        yield post[0].text, post[0].attrib["href"][1:] # trim leading /
+        posts.append((post[0].text, post[0].attrib["href"][1:]))
+
+    return posts
 
 
 def post_elem(name, stats, url, idx):
@@ -90,7 +93,7 @@ def main():
 
     prettyprint(tree)
 
-    twitter(posts)
+    tweet(posts)
 
 
 if __name__ == "__main__":
