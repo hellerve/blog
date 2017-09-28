@@ -1,10 +1,28 @@
 import os
 
-from datetime  import datetime
+from datetime  import datetime, timedelta
 from xml.etree import ElementTree as E
 from xml.dom   import minidom
 
 import config
+
+import twitter
+
+
+def twitter(posts):
+    api = twitter.Api(consumer_key=config.consumer_key,
+                      consumer_secret=config.consumer_secret,
+                      access_token_key=config.access_token_key,
+                      access_token_secret=config.access_token_secret)
+    check = datetime.now() - timedelta(hours=1)
+
+    for (post, url) in posts:
+        stats = os.stat(url)
+
+        if datetime.fromtimestamp(stats.st_mtime) < check:
+            continue
+
+        api.PostUpdate("Veit has a new blog post: {}! {}".format(post, url))
 
 
 def read_index():
@@ -71,6 +89,8 @@ def main():
     tree = build(posts)
 
     prettyprint(tree)
+
+    twitter(posts)
 
 
 if __name__ == "__main__":
