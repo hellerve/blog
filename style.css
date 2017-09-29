@@ -224,6 +224,10 @@ ol li {
   padding-left: 0.5em;
 }
 
+.rc-scout {
+  height: 50px;
+}
+
 @media(max-device-width:960px){
   html {font-size: 23px;}
   .aside {
