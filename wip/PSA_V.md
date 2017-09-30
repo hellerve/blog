@@ -6,7 +6,7 @@ my users actually uses the RSS feed. A pretty good amount of people who read
 my blog either come through the [Recurse Centers](https://www.recurse.com/scout/click?t=3f214b4d8605308d27685ebd4548905e)
 internal blog aggregator or various postings and links on the web. A small
 amount of my closest friends even receive pesky private messages on some
-platform or other so that they feel guilty for not keeping track of my
+platform or other so that they'll feel guilty for not keeping track of my
 outbursts.
 
 In an effort to create yet another avenue of discoverability, I wrote a few
