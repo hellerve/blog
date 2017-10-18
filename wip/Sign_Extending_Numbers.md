@@ -1,7 +1,7 @@
 This will be a fairly short blog post about a neat trick that I found today
 that makes correctly sign extending numbers in C trivial. It is based on the
 version found in this [great list of bit hacks](http://graphics.stanford.edu/~seander/bithacks.html),
-just generalized.
+but generalized.
 
 ## What is sign extending, anyway?
 
@@ -11,17 +11,17 @@ numerical formats used today—this is purely by convention, but to my knowledge
 always true. This means that we have to shift the most significant bit up to
 the new highest position, while keeping the rest of the number intact.
 
-When you’re coming from C you’ll probably say “But C does that automatically!”
+If you’re coming from C, you’re probably saying “But C does that automatically!”
 right around now. And that’s true for builtin types. But say you’re building
 your own numerical format, like I’ve done in [the](http://blog.veitheller.de/Binary_Coded_Decimal.html)
-[past](http://blog.veitheller.de/Fixed_Point_Arithmetic.html); then you’ll need
-to either do that manually or rely on this beautifully elegant trick I’m about
+[past](http://blog.veitheller.de/Fixed_Point_Arithmetic.html); then you’ll either need
+to do that manually or rely on this beautifully elegant trick I’m about
 to show you.
 
 ## Remember bitfields?
 
 Bitfields are a great way of controlling just how many bits a particular value
-of yours should take up. Of course they’re useless if you want to save space
+should take up. Of course they’re useless if you want to save space
 that’s less than the size of an `int`—or are they? Enter sign extension
 
 ```
