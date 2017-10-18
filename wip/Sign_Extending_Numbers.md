@@ -1,5 +1,5 @@
 This will be a fairly short blog post about a neat trick that I found today
-that makes correctly sign extending numbers in C trivial. It is based on the
+that makes sign extending numbers in C correctly trivial. It is based on the
 version found in this [great list of bit hacks](http://graphics.stanford.edu/~seander/bithacks.html),
 but generalized.
 
@@ -22,7 +22,7 @@ to show you.
 
 Bitfields are a great way of controlling just how many bits a particular value
 should take up. Of course they’re useless if you want to save space
-that’s less than the size of an `int`—or are they? Enter sign extension
+that’s less than the size of an `int`—or are they? Enter sign extension:
 
 ```
 #define extend(O,I,N) {\
