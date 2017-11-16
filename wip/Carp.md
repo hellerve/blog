@@ -8,6 +8,12 @@ APIs I’m about to show you might change in the future and my post might become
 obsolete. It won’t be the last time you’ll hear me talk about Carp anyway, so
 I suggest you be on the lookout for follow-ups.
 
+*Warning*: This post is *very* long. You’ll have a good initial grasp on the
+language once you’ve read it, but feel free to skip the parts that you don’t
+care about. If you only care about how it works with memory, for instance, feel
+free to skip the language guide. If you plan on learning Carp, however, this is
+probably the most exhaustive resource out there at the time of writing.
+
 ## A palatable fish from a reputable source
 
 Let me get those dry, hard facts out of the way first. Carp is a compiled Lisp
@@ -484,6 +490,7 @@ apparently very large sleeve. Next up we will talk about references and values!
 
 <span id="5">5.</span> I am talking about “Simply Scheme: Introducing Computer
                        Science” by Harvey and Wright, Chapter 18.
+
 <span id="6">6.</span> Where is that ivory tower, anyway? I’ve written
                        thousands of lines of Lisp and built some Lisps on my
                        own, so I’d appreciate an invite, guys’n’gals, lest I
