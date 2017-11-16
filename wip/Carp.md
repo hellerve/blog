@@ -11,16 +11,17 @@ I suggest you be on the lookout for follow-ups.
 ## A palatable fish from a reputable source
 
 Let me get those dry, hard facts out of the way first. Carp is a compiled Lisp
-that utilizes type inference and a mechanism akin to Rust’s borrow checker to
-produce a language that is both functional and fast. Due to its lack of a
-garbage collector it can be used for hard realtime systems while still not
-requiring the programmer to do manual memory allocations. Instead, the concepts
-the user has to think about are those of ownership and references versus
-values. Those are familiar concepts to systems programmers, even more so if
-they happen to have prior experience with Rust. It provides machinery we know
-and love from other modern programming languages, such as a module system and
-metaprogramming capabilities—in its infamous Lisp ways—, and, most delicious of
-all, it has near-seamless C interoperability.
+that utilizes type inference and a mechanism akin to
+Rust’s<sup><a href="#1">1</a></sup> borrow checker to produce a language that
+is both functional and fast. Due to its lack of a garbage collector it can be
+used for hard realtime systems while still not requiring the programmer to do
+manual memory allocations. Instead, the concepts the user has to think about
+are those of ownership and references versus values. Those are familiar
+concepts to systems programmers, even more so if they happen to have prior
+experience with Rust. It provides machinery we know and love from other modern
+programming languages, such as a module system and metaprogramming
+capabilities—in its infamous Lisp ways—, and, most delicious of all, it has
+near-seamless C interoperability.
 
 ```
 (defn main []
@@ -34,7 +35,7 @@ all, it has near-seamless C interoperability.
 Carp compiles to C. This is an unusual design choice and seems almost
 anachronistic in a world where building a compiler more often than not means
 working with LLVM. It also likely doesn’t matter much, because chances are your
-machine has a C compiler<sup><a href="#1">1</a></sup>. What’s interesting about
+machine has a C compiler<sup><a href="#2">2</a></sup>. What’s interesting about
 this, though, is that the C code that is produced is actually decent to look at.
 
 ```
@@ -73,7 +74,7 @@ this will have to do.
 
 The first thing you’ll want to do after installing will be playing around. When
 you run `carp` with no arguments, you’ll be greeted by a slick
-REPL<sup><a href="#2">2</a></sup>. “Play with me”, it seems to say. If you do
+REPL<sup><a href="#3">3</a></sup>. “Play with me”, it seems to say. If you do
 decide to play with it, however, you’re in for a surprise.
 
 ```
@@ -116,7 +117,7 @@ what those glyphs mean later. For now, you’re a stranger in a foreign land, an
 I’m your handwavy guide.
 
 Then we `build` our program, to which our compiler helpfully remarks that the
-program was, in fact, compiled.<sup><a href="#3">3</a></sup> Lastly, we `run`
+program was, in fact, compiled.<sup><a href="#4">4</a></sup> Lastly, we `run`
 it. Lo and behold, 1 and 10 do equal 11! Tamensi movetur!
 
 This marks the end of my introduction into Carp’s REPL. I suggest you play
@@ -132,6 +133,8 @@ guide](https://github.com/carp-lang/Carp/blob/master/docs/LanguageGuide.md) in
 the Carp repository. We will cover roughly the same bits here, so feel free to
 skip this part and read the official document instead.
 
+### Defining things
+
 ```
 (def x 1) ; defines a variable called x and binds it to 1
 (defn y [a] ; defines a function y that takes one argument a
@@ -143,6 +146,8 @@ Defining variables and functions looks similar to Clojure, meaning that you use
 `def` to define variables and `defn` to define functions. Global variables can
 only have stack-allocated types right now, but this is listed as a bug and will
 probably change fairly soon.
+
+#### Types & Literals
 
 There are a few different kinds of literals.
 
@@ -196,6 +201,8 @@ with defining data types. I’m currently working on fixing some name mangling
 problems with types in modules, for instance. As I said, Carp is still in flux,
 and sometimes we have to get our hands dirty.
 
+#### Special forms
+
 With this off my chest, I’m ready to guide you deeper into the heart of the
 wild. We have so much more ground to cover; for now let’s talk some more about
 special forms!
@@ -241,7 +248,7 @@ look out the window for some time, asking yourself why you haven’t discovered
 this magnificent language sooner. That’s what I did when I discovered it,
 anyway.
 
-<hr/>
+#### Modules
 
 Welcome back, traveler! I hope you’ve left weary and woe behind, ready to take
 on a new challenge. I certainly am excited to tell you about modules!
@@ -309,7 +316,149 @@ defined within `Math`, we would have to write `Math.Point2D.set-x` and so on.
 That’s all the magic there is to modules, which means that we can move on to
 macros! Are you excited? I’m excited!
 
-### The memory model
+#### Macros
+
+If you’ve ever programmed in Lisp, you probably know about macros. I also
+wrote [a](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html)
+[series](http://blog.veitheller.de/Scheme_Macros_II:_Generics.html)
+[of](http://blog.veitheller.de/Scheme_Macros_III:_Defining_let.html) blog posts
+about writing Lisp macros, but let me try to sum the most important ideas up
+for those of you who don’t have the time to do all of the research: since Lisp
+code is essentially only lists, we can easily rewrite it programmatically. Lisp
+macro systems exploit this fact; the compiler introduces a separate step into
+its compilation toolchain that evaluates macros and expands their use. It’s
+essentially a small interpreter that is geared towards rewriting Lisp forms
+into other forms. This enables to introduce interesting new syntax without
+changing the language proper, and in fact that is how `for` and the threading
+macro `=>` are defined in Carp.
+
+This tremendous power is easily abused and indeed macros have for a long time
+had the reputation of being too powerful and leading to programmers writing
+their own languages on top of their implemenation Lisp that only they
+themselves understand. [I renounce any catalogue of
+despair](https://kar.kent.ac.uk/33611/7/paper.pdf). It is perfectly feasible to
+write maintainable and understandable macros, and tying the programmers hands
+to avoid bad code isn’t exactly what I want my language to do. But this is a
+topic for another day. For now I will show you how to write macros in Carp, and
+you can make up your own mind as to whether you want your code to make use of
+them. Yet another caveat before we begin, though: I’m planning on rewriting the
+macro system to a full-featured, hygienic piece of craftmanship. These things
+take time, however, and for now I’m going to show you the current state of the
+art.
+
+```
+(defmacro incr [x]
+  (list '+ x 1))
+```
+<div class="figure-label">Fig. 13: A simple incrementor macro.</div>
+
+As you can see in Figure 13, defining macros looks somewhat similar to defining
+functions. The main difference is the body, which constructs a list instead of
+applying the `+` function. Please note that the `list` keyword can only be used
+within macros, and it is used to make a list from everything following it. The
+`+` function is also quoted, which is a fancy Lisp term for saying that instead
+of looking up the value of symbol right now, the runtime will just pass it as
+is, not caring whether it’s actually defined or not.
+
+So what is the value of doing that here? Doing this enables us to write
+`(incr x)` instead of `(+ x 1)` wherever we want. The same would be possible
+with a function, though, right? Well, kind of. But at runtime, there will be
+no function. Instead, the macro system will have transformed `(incr x)` into
+`(+ x 1)` *directly*, within its context. Beautiful, isn’t it?
+
+Maybe that just knocked you out of your knickers, but I know that back in the
+day before I knew Lisp macros, it would certainly not have impressed me very
+much. So, let’s look at a more involved example, and take advantage of all of
+the exciting features the Carp macro runtime has to over: infix math!
+
+```
+(defdynamic rewrite-infix [form]
+  (if (= (count form) 0)
+    (list)
+    (if (= (count form) 1)
+      (car form)
+      (list (car (cdr form))
+            (car form)
+            (rewrite-infix (cdr (cdr form)))))))
+
+(defmacro infix [:rest form]
+  (rewrite-infix form))
+```
+<div class="figure-label">Fig. 14: Infix math.</div>
+
+Figure 14 contains code that rewrites infix math expressions—that is, math that
+follows the conventional form of `1 + 2 * 2`—to Lisp-compatible prefix math.
+Most Lisps provide some kind of mechanism to do that, and even one of the more
+famous books on programming in Scheme<sup><a href="#5">5</a></sup> includes an
+implementation of that.
+
+The above code contains a slew of new concepts; let me walk you through them.
+First, you will notice the definition `defdynamic`, which we haven’t
+encountered before. Dynamic functions are functions that you can use from
+within a macro, but not during runtime. They’re the basic building blocks for
+abstraction during macro evaluation, so to speak. From the outside, they’re
+very similar to regular functions, but they have a whole host of functions
+that only work within them. Some of these functions are used in the snippet
+in Figure 14, like `car`, `cdr`, `cons`, `list`, `quote`—though we use the
+reader macro `'` instead—, and, somewhat surprisingly, `array`.
+
+At this point I expect all of the old Lisp hackers that have found this blog
+post to scream in terror. No `cons`, `car`, or `cdr`? The audacity! The
+blasphemy! I too had to squint at this in disbelief. But it makes sense:
+lists are replaced by random access arrays in Carp. Lists only exists during
+macro evaluation, where they are linked lists of code. Arrays, however, are
+random access data structures, like C arrays—Carp compiles to C, after all.
+This removes a bit of the beautiful abstraction of Lisp—one data structure
+to rule them all—and it makes runtime metaprogramming nigh impossible, but it
+does make sense for a language compiled to C. And, as seen in Figure 14, it’s
+not really that much harder to write a macro like that.
+
+For all of the people above who don’t know what `cons`, `car`, or `cdr` are
+and didn’t appreciate me going off on a tangent directed at only the
+enlightened few Lispers scoffing at me in their ivory
+tower<sup><a href="#6">6</a></sup>, these functions are the pinnacle of
+working with lists in Lisp. `car` takes a list and returns its first element,
+`cdr` takes the rest—i.e. everything but the first element—, and `cons` takes
+an element and a list and prepends the element onto the list. Those functions
+are incredibly handy for working with linked lists, but again, Carp works with
+array, and it really doesn’t make sense there.
+
+In general, all of the functions listed above are overly generic and not
+incredibly useful in the context of Carp. Including them certainly posed a
+trade-off, and in my opinion the maintainers took the right step in allowing
+these constructs only where they made sense. Feel free to disagree.
+
+There is at least one more syntactic item we haven’t looked at yet, and that
+is `:rest`. This little beauty is, like its friends, not available in Carp
+proper. It signifies that this macro is variadic, that is it can have a
+varying number of arguments. The symbol that comes after `:rest` will bind all
+of the “overflowing” parameters in a list. Let’s look at a few examples for
+that:
+
+```
+; none of this will compile
+(defmacro macro1 [:rest x]
+  x)
+
+(macro1 1 2 3) ; x=(1 2 3)
+
+(defmacro macro2 [a b :rest c]
+  a b c)
+
+(macro2 1 2 3 4 5) ; a=1, b=2, c=(3 4 5)
+```
+<div class="figure-label">Fig. 15: Illustrative macros.</p>
+
+As you can see, you can also have variadic macros that do take a certain number
+of parameters, but then a variable number of extra ones. For the Lispers: it’s
+equivalent to `(a b . c)`. For the Pythonistas: it’s equivalent to
+`(a, b, *c)`.
+
+This concludes our little—by which I mean approximately 3000 words—whirlwind
+tour of the language. This is enough to get you started, but I have more up my
+apparently very large sleeve. Next up we will talk about references and values!
+
+### The memory model: references & values
 
 ### The libraries
 
@@ -319,13 +468,23 @@ macros! Are you excited? I’m excited!
 
 #### Footnotes
 
-<span id="1">1.</span> It’s arguably more likely that your machine has a C
+<span id="1">1.</span> I’m going to compare Carp to a whole lot of programming
+                       languages; you don’t need to know all—or any—of them to
+                       understand what I’m talking about.
+
+<span id="2">2.</span> It’s arguably more likely that your machine has a C
                        compiler than the LLVM library.
 
-<span id="2">2.</span> Readline support thanks to yours truly.
+<span id="3">3.</span> Readline support thanks to yours truly.
 
-<span id="3">3.</span> There are shortcuts for building and running. These are
+<span id="4">4.</span> There are shortcuts for building and running. These are
                        prefixed with a colon, and are `b` and `x`, respectively,
                        and can be combined in any order. `:bx` is your friend
                        for a quick development cycle.
 
+<span id="5">5.</span> I am talking about “Simply Scheme: Introducing Computer
+                       Science” by Harvey and Wright, Chapter 18.
+<span id="6">6.</span> Where is that ivory tower, anyway? I’ve written
+                       thousands of lines of Lisp and built some Lisps on my
+                       own, so I’d appreciate an invite, guys’n’gals, lest I
+                       doubt its existence.
