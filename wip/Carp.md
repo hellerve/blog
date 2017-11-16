@@ -461,16 +461,133 @@ equivalent to `(a b . c)`. For the Pythonistas: it’s equivalent to
 `(a, b, *c)`.
 
 This concludes our little—by which I mean approximately 3000 words—whirlwind
-tour of the language. This is enough to get you started, but I have more up my
-apparently very large sleeve. Next up we will talk about references and values!
+tour of the language. This is enough to get you started, but Carp has more up
+its apparently very large sleeve: I’ve omitted type annotations and C interop,
+both of which I will cover in later posts.
+
+Next up we will talk about references and values!
 
 ### The memory model: references & values
 
+Somewhere done the road in your programming career, you’ll have to think about
+memory, no matter the programming language you chose. Some of us choose
+languages that are very explicit about who owns what (like Rust), or even let
+you choose who has to allocate and free it (like C). Some others include a
+garbage collector (Python, Ruby, Go, JavaScript, and the like) to avoid the
+cognitive complexity manual memory management introduces. But memory will rear
+its ugly head sooner or later, be it through contention, corruption, races, or
+any other of the countless horsemen of the software apocalypse it employs.
+
+Yes, I’m being melodramatic here, but sleepless nights and loss of hair are not
+unheard of when dealing with these types of problems, so I couldn’t be dramatic
+enough, not even with a skull in my hand and leggings on, declaiming: “To
+collect or not to collect...”. I’m not sure whether you like the picture of
+me in leggings, but I’d rather avoid it, so I’ll try to have you believe in
+the Carp way.
+
+Who owns memory in Carp? Simple: whoever created it, unless it is returned to
+the encompassing scope. That means that at the end of each function or `let`
+form, things defined inside it get destroyed. Within this block, it is free
+to do with this datum as it pleases, even lending it to another function is
+alright. Remember the function `ref` I talked about earlier? Yeah, that’s what
+that is. And because this is done fairly often, Carp decided to sprinkle a bit
+of syntactic sugar on top of that construct, in the form of the abbreviation—or
+reader macro, if you like—`&`. The two constructs `(ref "string")` and
+`&"string"` are functionally equivalent.
+
+```
+; println takes a reference to a string,
+; but str returns a normal string, so we have
+; to add &
+(IO.println &(Int.str 1))
+```
+<div class="figure-label">Fig. 16: A simple use case of references.</div>
+
+This also explains the ampersand we used in Figure 4. I hope it all starts
+to make sense.
+
+The inverse of referencing is copying. It can either be used through `copy` or
+through the abbreviation `@`. Be aware that in the current iteration of Carp,
+`copy` without a namespace—or `@`—will be interpreted as `String.copy`, and
+the type system will complain if you pass anything else. The current workaround
+is either `use`ing the type you’re copying, or referencing the fully qualified
+function. This might be fixed in the future, or so I hope.
+
+```
+@1 ; uh oh
+
+(Int.copy 1) ; this is fine
+
+(use Int)
+@1 ; this is fine now
+```
+<div class="figure-label">Fig. 17: Copying stuff and its oddities.</div>
+
+That’s all there is to memory in Carp. The [official
+documentation](https://github.com/carp-lang/Carp/blob/master/docs/Memory.md)
+has a little bit of additional information and illustration, if you
+need it.
+
 ### The libraries
 
-### Testing and benchmarking
+Libraries are an integral part of any language. No programming language will
+get adoption without a proper ecosystem, no matter how well it is designed. And
+this is where things get sad in Carp. There is no dependency managment, no
+package manager. I plan on porting my package manager for zepto,
+[zeps](https://github.com/zeps-system/zeps), to Carp sooner or later, but this
+might take a while. There is also not much of a standard library yet, although
+the team and I are working on that too, having introduced a few hundred lines
+of new code to the system in the last few weeks. There is light at the end of
+the tunnel, sed ars longa, vita brevis.
+
+Nonetheless, I want to introduce you to at least a few libraries that exist
+right now, and how to use them. There is an emberassing scarcity of
+documentation, but we plan on changing that as well.
+
+Here is an exhaustive list of modules with a little bit of preliminary
+information, in alphabetical order:
+
+* Array: includes a few functions for working with arrays. All of them are
+         generic.
+* Bench: a simple benchmarking library, for testing the performance of small
+         snippets of code. Modeled after Rust’s benchmarking tooling.
+* Bool: includes a few functions for working with boolean values.
+* Char: includes a few functions for working with and convering boolean values.
+* Double: see above, but for Doubles. Also includes all mathematical functions
+          from `math.h`.
+* Float: see above, but for Floats.
+* Geometry: includes very few functions for geometrical computations.
+* IO: includes a few functions for input and output, like printing, reading
+      lines, and exiting.
+* Int: see above numerical modules, but for Ints.
+* Long: see above numerical modules, but for Longs.
+* Macros: non-namespaced macro utilities, like `for`, `cond` and the threading
+          macros.
+* sdl: includes bindings to the SDL (Simple DirectMedia Layer) library.
+* Statistics: includes statistical functions, like `mean`, `median`, and
+              `winsorize`.
+* String: includes all kinds of utilities for working with and converting
+          strings.
+* System: includes a few functions for working with the OS, such as timing,
+          seeding the random number generator, and such.
+* Test: includes a testing library.
+* Vector: includes an implementation of 2D, 3D, and n-dimensional vectors.
+
+Your best bet for getting detailed information for these modules is currently
+by looking at the [source](https://github.com/carp-lang/Carp/tree/master/core),
+the [examples directory](https://github.com/carp-lang/Carp/tree/master/examples),
+or, for a few modules, the [test cases](https://github.com/carp-lang/Carp/tree/master/test).
+We hope this will change soon.
+
+A few of my babies are the testing and benchmarking libraries, and I intend to
+write about them specifically in future posts.
 
 ### Fin
+
+As promised, this post was fairly long. You’ve been warned. I hope it gave you
+a taste of what Carp is like. I’ll write a few more practical posts in the
+future, but I needed to help you understand the syntax to be comfortable with
+showing you the fun things we can do with Carp. I hope you agree.
 
 #### Footnotes
 
