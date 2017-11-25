@@ -140,8 +140,11 @@ skip this part and read the official document instead.
 ### Defining things
 
 ```
-(def x 1) ; defines a variable called x and binds it to 1
-(defn y [a] ; defines a function y that takes one argument a
+; defines a variable called x and binds it to 1
+(def x 1)
+
+; defines a function y that takes one argument a
+(defn y [a]
   (+ a 1)) ; and which adds 1 to a
 ```
 <div class="figure-label">Fig. 5: Defining things.</div>
@@ -215,7 +218,7 @@ special forms!
 (let [x 1] ; let is used local bindings
   (+ x 1))
 
-(do ; group multiple, possibly side-effecting functions together
+(do ; group multiple functions together
   (IO.println "hi")
   1)
 
@@ -449,7 +452,7 @@ of the “overflowing” parameters in a list. Let’s look at a few examples:
 
 (macro2 1 2 3 4 5) ; a=1, b=2, c=(3 4 5)
 ```
-<div class="figure-label">Fig. 15: Illustrative macros.</p>
+<div class="figure-label">Fig. 15: Illustrative macros.</div>
 
 As you can see, you can also have variadic macros that take a certain number
 of parameters, but then a variable number of extra ones. For the Lispers: it’s
