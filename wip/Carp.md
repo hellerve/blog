@@ -21,13 +21,12 @@ that utilizes type inference and a mechanism akin to
 Rust’s<sup><a href="#1">1</a></sup> borrow checker to produce a language that
 is both functional and fast. Due to its lack of a garbage collector it can be
 used for hard realtime systems while still not requiring the programmer to do
-manual memory allocations. Instead, the concepts the user has to think about
-are those of ownership and references versus values. Those are familiar
-concepts to systems programmers, even more so if they happen to have prior
-experience with Rust. It provides machinery we know and love from other modern
-programming languages, such as a module system and metaprogramming
-capabilities—in its infamous Lisp ways—, and, most delicious of all, it has
-near-seamless C interoperability.
+manual memory allocations. Instead, the user has to think about ownership and
+references versus values. Those are familiar concepts to systems programmers,
+even more so if they happen to have prior experience with Rust. It provides
+machinery we know and love from other modern programming languages, such as a
+module system and metaprogramming capabilities—in its infamous Lisp ways—, and,
+most delicious of all, it has near-seamless C interoperability.
 
 ```
 (defn main []
