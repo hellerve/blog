@@ -1,10 +1,10 @@
-As some of you might know, I recently got enamoured with a new programming
+As some of you might know, I recently became enamoured with a new programming
 language, [Carp](https://github.com/carp-lang/carp). While you might have caught
 me fawning over it already, in this post I want to give you a little
-introduction into the language and its concepts and maybe you’ll understand why
+introduction into the language and its concepts, and maybe you’ll understand why
 I decided to work on it. A little word of caution before we begin, though: the
 language is in a pre-alpha stage and is thus subject to change. The syntax and
-APIs I’m about to show you might change in the future and my post might become
+APIs I’m about to show you might change in the future, making my post
 obsolete. It won’t be the last time you’ll hear me talk about Carp anyway, so
 I suggest you be on the lookout for follow-ups.
 
@@ -12,7 +12,7 @@ I suggest you be on the lookout for follow-ups.
 language once you’ve read it, but feel free to skip the parts that you don’t
 care about. If you only care about how it works with memory, for instance, feel
 free to skip the language guide. If you plan on learning Carp, however, this is
-probably the most exhaustive resource out there at the time of writing.
+probably the most exhaustive resource in existence at the time of writing.
 
 ## A palatable fish from a reputable source
 
@@ -42,7 +42,7 @@ Carp compiles to C. This is an unusual design choice and seems almost
 anachronistic in a world where building a compiler more often than not means
 working with LLVM. It also likely doesn’t matter much, because chances are your
 machine has a C compiler<sup><a href="#2">2</a></sup>. What’s interesting about
-this, though, is that the C code that is produced is actually decent to look at.
+this, though, is that the C code produced is actually decent to read.
 
 ```
 int main() {
@@ -56,29 +56,28 @@ int main() {
   predefined function.
 </div>
 
-In the snippet above you can already see the borrow checker in use, if you’re
-looking at the treatment of the string: it is stack allocated, then
+In the snippet above you can already see the borrow checker in use, if you’re 
+looking at the treatment of the string; it is stack allocated, then
 dereferenced and passed to the function `IO_println`. Ownership is the simple
 idea on which the memory model of Carp is based: which function owns which
 references, and who’s in charge of cleaning them up. The Rust programmers among
 you will know what I mean.
 
 That’s not really what it’s about, though, at least not in our day-to-day
-business. So let’s talk a bit about the language proper.
+business. So let’s talk a bit about the language itself.
 
 ## Plating the meal
 
 In this part I want to give you a little overview of what Carp looks like
 and how one works with it. Alas, there is a lot of ground to cover and I
-probably won’t be able to give you anything more than a glimpse of what you
-can do with Carp. As I mentioned before, though, I plan on writing more about
-it in the future. When Carp is a bit less in flux and I have some downtime I’d
-like to write a good, exhaustive tutorial to get people started. Until then
-this will have to do.
+probably won’t be able to give you anything more than a glimpse of Carp's 
+potential. As I mentioned before, though, I plan on writing more about
+it in the future. Until Carp is a bit more stable, and I have the time 
+to write a good, exhaustive tutorial, this will have to do.
 
 ### The REPL
 
-The first thing you’ll want to do after installing will be playing around. When
+The first thing you’ll want to do after installing will be to play around. When
 you run `carp` with no arguments, you’ll be greeted by a slick
 REPL<sup><a href="#3">3</a></sup>. “Play with me”, it seems to say. If you do
 decide to play with it, however, you’re in for a surprise.
@@ -127,12 +126,12 @@ program was, in fact, compiled.<sup><a href="#4">4</a></sup> Lastly, we `run`
 it. Lo and behold, 1 and 10 do equal 11! Tamensi movetur!
 
 This marks the end of my introduction into Carp’s REPL. I suggest you play
-around with it some more on your own if you want. It is really quite different,
+around with it some more on your own (if you want). It is really quite different,
 but also quite fun.
 
 ### The language
 
-Carp is a Lisp, and as such it doesn’t have a lot of syntax. So, let’s forget
+Carp is a Lisp, and, as such, it doesn’t have a lot of syntax. So, let’s forget
 about the parens, and dive right into keywords. Just know that semicolons start
 line comments. There is also a [brief language
 guide](https://github.com/carp-lang/Carp/blob/master/docs/LanguageGuide.md) in
@@ -170,9 +169,9 @@ true    ;; Bool
 <div class="figure-label">Fig. 6: All data literals.</div>
 
 As you can see, there aren’t that many native data types. That’s alright,
-though, because we can define our own data types. They are similar to structs
-with a few autogenerated functions associated with them, meaning they can only
-have data. I personally like my data types like that.
+though, because we can define our own data types. They are similar to structs,
+and have a few autogenerated functions associated with them, meaning they can 
+only have data. That's how I personally like my data types to be.
 
 ```
 (deftype Point2D [x Int, y Int])
@@ -203,9 +202,9 @@ This mechanism is in best Lisp tradition: simple and powerful, versatile and
 elegant. Though, let me be frank with you here: when you are working with Carp
 for some time, you’ll likely discover bugs. A source of some of the more
 interesting bugs historically has been the combination of the module system
-with defining data types. I’m currently working on fixing some name mangling
-problems with types in modules, for instance. As I said, Carp is still in flux,
-and sometimes we have to get our hands dirty.
+with defining data types. For instance, I’m currently working on fixing 
+some name mangling problems with types in modules. As I said, Carp is 
+still in flux, and sometimes we have to get our hands dirty.
 
 #### Special forms
 
@@ -240,8 +239,8 @@ special forms!
 <div class="figure-label">Fig. 9: A few special forms.</div>
 
 That’s a lot! But all of these forms are quite essential for programming, and
-so I have to get them out of the way! If you looked at the official
-documentation, you’ll see that I have missed `ref` and added `for`. The reasons
+so I have to get them out of the way. If you look at the official
+documentation, you’ll see that I have omitted `ref` and added `for`. The reasons
 for this are simple: `for` is a macro, but super useful, and I’ll talk about
 `ref` later, when we talk about the memory model some more.
 [Hold your horses!](https://www.youtube.com/watch?v=bWqLiy9TLdg)
@@ -257,7 +256,7 @@ anyway.
 #### Modules
 
 Welcome back, traveler! I hope you’ve left weary and woe behind, ready to take
-on a new challenge. I certainly am excited to tell you about modules!
+on a new challenge. I am certainly excited to tell you about modules!
 
 ```
 (defmodule Math
@@ -309,8 +308,8 @@ signature. I think that merits a bit of illustration.
 ```
 <div class="figure-label">Fig. 12: Addition, complected.</div>
 
-Up until now I spared you the necessary `use` statements to avoid confusing
-you, but now that you’re learning to walk on your own you can look at all the
+Until now I've spared you the necessary `use` statements to avoid confusion. 
+But, now that you’re learning to walk on your own, you can look at all the
 previous figures and see that they’re full of lies. Whenever I used `+` or `-`
 or `inc` or `dec` I would have needed to either qualify it or `use` the
 appropriate modules. Sorry about that, but it was for your own good.
@@ -334,7 +333,7 @@ code is essentially only lists, we can easily rewrite it programmatically. Lisp
 macro systems exploit this fact; the compiler introduces a separate step into
 its compilation toolchain that evaluates macros and expands their use. It’s
 essentially a small interpreter that is geared towards rewriting Lisp forms
-into other forms. This enables to introduce interesting new syntax without
+into other forms. This enables us to introduce interesting new syntax without
 changing the language proper, and in fact that is how `for` and the threading
 macro `=>` are defined in Carp.
 
@@ -375,7 +374,7 @@ no function. Instead, the macro system will have transformed `(incr x)` into
 Maybe that just knocked you out of your knickers, but I know that back in the
 day before I knew Lisp macros, it would certainly not have impressed me very
 much. So, let’s look at a more involved example, and take advantage of all of
-the exciting features the Carp macro runtime has to over: infix math!
+the exciting features the Carp macro runtime has to offer: infix math!
 
 ```
 (defdynamic rewrite-infix [form]
@@ -408,38 +407,36 @@ that only work within them. Some of these functions are used in the snippet
 in Figure 14, like `car`, `cdr`, `cons`, `list`, `quote`—though we use the
 reader macro `'` instead—, and, somewhat surprisingly, `array`.
 
-At this point I expect all of the old Lisp hackers that have found this blog
-post to scream in terror. No `cons`, `car`, or `cdr`? The audacity! The
+At this point I expect all of the old Lisp hackers who have found this blog
+are screaming in terror, no `cons`, `car`, or `cdr`? The audacity! The
 blasphemy! I too had to squint at this in disbelief. But it makes sense:
-lists are replaced by random access arrays in Carp. Lists only exists during
+lists are replaced by random access arrays in Carp. Lists only exist during
 macro evaluation, where they are linked lists of code. Arrays, however, are
-random access data structures, like C arrays—Carp compiles to C, after all.
+random access data structures, like C arrays—Carp does compile to C, after all.
 This removes a bit of the beautiful abstraction of Lisp—one data structure
 to rule them all—and it makes runtime metaprogramming nigh impossible, but it
 does make sense for a language compiled to C. And, as seen in Figure 14, it’s
 not really that much harder to write a macro like that.
 
 For all of the people above who don’t know what `cons`, `car`, or `cdr` are
-and didn’t appreciate me going off on a tangent directed at only the
-enlightened few Lispers scoffing at me in their ivory
-tower<sup><a href="#6">6</a></sup>, these functions are the pinnacle of
-working with lists in Lisp. `car` takes a list and returns its first element,
-`cdr` takes the rest—i.e. everything but the first element—, and `cons` takes
-an element and a list and prepends the element onto the list. Those functions
-are incredibly handy for working with linked lists, but again, Carp works with
-array, and it really doesn’t make sense there.
+and didn’t appreciate my tangent directed at only the enlightened few Lispers 
+scoffing at me in their ivory tower<sup><a href="#6">6</a></sup>, these 
+functions are the pinnacle ofworking with lists in Lisp. `car` takes a list 
+and returns its first element,`cdr` takes the rest—i.e. everything but the 
+first element—, and `cons` takes an element and a list and prepends the element 
+onto the list. These functions are incredibly handy for working with linked 
+lists, but again, Carp works with array, and it really doesn’t make sense here.
 
-In general, all of the functions listed above are overly generic and not
-incredibly useful in the context of Carp. Including them certainly posed a
+In general, the functions listed above are overly generic and not
+incredibly useful in the context of Carp. Including them certainly poses a
 trade-off, and in my opinion the maintainers took the right step in allowing
 these constructs only where they made sense. Feel free to disagree.
 
 There is at least one more syntactic item we haven’t looked at yet, and that
 is `:rest`. This little beauty is, like its friends, not available in Carp
-proper. It signifies that this macro is variadic, that is it can have a
+proper. It signifies that this macro is variadic, that is, it can have a
 varying number of arguments. The symbol that comes after `:rest` will bind all
-of the “overflowing” parameters in a list. Let’s look at a few examples for
-that:
+of the “overflowing” parameters in a list. Let’s look at a few examples:
 
 ```
 ; none of this will compile
@@ -455,24 +452,24 @@ that:
 ```
 <div class="figure-label">Fig. 15: Illustrative macros.</p>
 
-As you can see, you can also have variadic macros that do take a certain number
+As you can see, you can also have variadic macros that take a certain number
 of parameters, but then a variable number of extra ones. For the Lispers: it’s
 equivalent to `(a b . c)`. For the Pythonistas: it’s equivalent to
 `(a, b, *c)`.
 
-This concludes our little—by which I mean approximately 3000 words—whirlwind
+This concludes our short—by which I mean approximately 3000 words—whirlwind
 tour of the language. This is enough to get you started, but Carp has more up
 its apparently very large sleeve: I’ve omitted type annotations and C interop,
 both of which I will cover in later posts.
 
-Next up we will talk about references and values!
+Next up we'll talk about references and values!
 
 ### The memory model: references & values
 
-Somewhere done the road in your programming career, you’ll have to think about
+Somewhere down the road in your programming career, you’ll have to think about
 memory, no matter the programming language you chose. Some of us choose
 languages that are very explicit about who owns what (like Rust), or even let
-you choose who has to allocate and free it (like C). Some others include a
+you choose who has to allocate and free it (like C). Others include a
 garbage collector (Python, Ruby, Go, JavaScript, and the like) to avoid the
 cognitive complexity manual memory management introduces. But memory will rear
 its ugly head sooner or later, be it through contention, corruption, races, or
@@ -503,11 +500,11 @@ reader macro, if you like—`&`. The two constructs `(ref "string")` and
 ```
 <div class="figure-label">Fig. 16: A simple use case of references.</div>
 
-This also explains the ampersand we used in Figure 4. I hope it all starts
+This also explains the ampersand we used in Figure 4. I hope it's all starting
 to make sense.
 
-The inverse of referencing is copying. It can either be used through `copy` or
-through the abbreviation `@`. Be aware that in the current iteration of Carp,
+The inverse of referencing is copying. This can either be used through `copy` or
+the abbreviation `@`. Be aware that in the current iteration of Carp,
 `copy` without a namespace—or `@`—will be interpreted as `String.copy`, and
 the type system will complain if you pass anything else. The current workaround
 is either `use`ing the type you’re copying, or referencing the fully qualified
@@ -534,14 +531,14 @@ Libraries are an integral part of any language. No programming language will
 get adoption without a proper ecosystem, no matter how well it is designed. And
 this is where things get sad in Carp. There is no dependency managment, no
 package manager. I plan on porting my package manager for zepto,
-[zeps](https://github.com/zeps-system/zeps), to Carp sooner or later, but this
-might take a while. There is also not much of a standard library yet, although
+[zeps](https://github.com/zeps-system/zeps), to Carp sooner or later, but that
+might take a while. Also, there's not much of a standard library yet, though
 the team and I are working on that too, having introduced a few hundred lines
-of new code to the system in the last few weeks. There is light at the end of
+of new code to the system in the last few weeks. There is a light at the end of
 the tunnel, sed ars longa, vita brevis.
 
 Nonetheless, I want to introduce you to at least a few libraries that exist
-right now, and how to use them. There is an emberassing scarcity of
+right now and show you how to use them. There is an emberassing scarcity of
 documentation, but we plan on changing that as well.
 
 Here is an exhaustive list of modules with a little bit of preliminary
@@ -552,7 +549,7 @@ information, in alphabetical order:
 * Bench: a simple benchmarking library, for testing the performance of small
          snippets of code. Modeled after Rust’s benchmarking tooling.
 * Bool: includes a few functions for working with boolean values.
-* Char: includes a few functions for working with and convering boolean values.
+* Char: includes a few functions for working with and converting boolean values.
 * Double: see above, but for Doubles. Also includes all mathematical functions
           from `math.h`.
 * Float: see above, but for Floats.
@@ -569,7 +566,7 @@ information, in alphabetical order:
 * String: includes all kinds of utilities for working with and converting
           strings.
 * System: includes a few functions for working with the OS, such as timing,
-          seeding the random number generator, and such.
+          seeding the random number generator, etc.
 * Test: includes a testing library.
 * Vector: includes an implementation of 2D, 3D, and n-dimensional vectors.
 
@@ -584,7 +581,7 @@ write about them specifically in future posts.
 
 ### Fin
 
-As promised, this post was fairly long. You’ve been warned. I hope it gave you
+As promised, this post was fairly long. You were warned. I hope it gave you
 a taste of what Carp is like. I’ll write a few more practical posts in the
 future, but I needed to help you understand the syntax to be comfortable with
 showing you the fun things we can do with Carp. I hope you agree.
@@ -610,5 +607,5 @@ showing you the fun things we can do with Carp. I hope you agree.
 
 <span id="6">6.</span> Where is that ivory tower, anyway? I’ve written
                        thousands of lines of Lisp and built some Lisps on my
-                       own, so I’d appreciate an invite, guys’n’gals, lest I
+                       own, so I’d appreciate an invite, guys n’ gals, lest I
                        doubt its existence.
