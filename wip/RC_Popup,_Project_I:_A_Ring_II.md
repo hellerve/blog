@@ -12,6 +12,7 @@ change the rendering from lines to curved vertices, which was fun, but didn’t
 feel very productive.
 
 ![](/assets/ring_ii.png)
+<div class="figure-label">Fig. 1: Now that looks like a ring!</div>
 
 I then updated my [art site](http://veitheller.de/art/) with some small
 projects, and prepared the next blog post on Carp, which will hopefully clear
