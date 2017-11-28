@@ -3,11 +3,11 @@ I talked about [yesterday](http://blog.veitheller.de/RC_Popup,_Project_I:_A_Ring
 and a quick note on some other tinkerings. I’ve not been able to make much
 headway today, because I still get a lot of e-mails after my blog post on
 [Carp](http://blog.veitheller.de/Carp.html) was on Hackernews and r/programming.
-I enjoy these messages, but they do take a toll on my productivity at the
+I enjoy these messages, but they are taking a toll on my productivity at the
 moment.
 
 I changed the torus form to be more ring-like, i.e. a band form. Now I’m
-experimenting with different thicknesses and sizes, and for that I had to
+experimenting with different thicknesses and sizes. For this I had to
 change the rendering from lines to curved vertices, which was fun, but didn’t
 feel very productive.
 
