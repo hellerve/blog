@@ -1,7 +1,7 @@
 When I was in third grade, I took part in a reading competition. Everyone was
 asked to bring a book they really liked and read it for the audience. We were
 then told who had won, without getting any feedback. I lost, and asked one of
-the teachers what was wrong with my reading. She told me that the book had been
+the teachers what was wrong with my reading. She told me the book was
 too dark. I was in third grade, but I knew that that was unjust.
 
 The book was about a young boy’s experiences on a slave ship from Africa to the
