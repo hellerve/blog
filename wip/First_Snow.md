@@ -1,4 +1,4 @@
-Koala rubbed her nose. She sneezed. SHe rubbed her nose again. “What _is_
+Koala rubbed her nose. She sneezed. She rubbed her nose again. “What _is_
 that?”, she exclaimed confusedly.
 
 “That’s the first snowflake of the year, and it landed directly on your nose.”,
