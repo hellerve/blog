@@ -2,8 +2,8 @@ Koala rubbed her nose. She sneezed. She rubbed her nose again. “What _is_
 that?”, she exclaimed confusedly.
 
 “That’s the first snowflake of the year, and it landed directly on your nose.”,
-answered Turtle with a smile on his face. He had seen the flake come down
-shortly before Koala had realized what had happened, and her reaction was just
+answered Turtle with a smile on his face. He saw the flake fall
+shortly before Koala realized what had happened, and her reaction was just
 too adorable.
 
 “Humpf”, grumbled Koala, “I don’t think I like it very much. It’s not very
