@@ -6,7 +6,7 @@ Carp; I wrote a [snake clone in it](https://github.com/hellerve/reptile); I
 produced an unusually torrentous amount of [art](https://veitheller.de/art);
 and I’ve been more active on this blog than I have been for a long time.
 
-But I haven’t made any progress on what I’ve set out to do: make a ring. I wnat
+But I haven’t made any progress on what I’ve set out to do: make a ring. I want
 to explore why that is in this blog post, for I think it’s a fairly common
 phenomenon in the projects I’m working on, and it’s entirely unhealthy, both
 for me and for the projects themselves.
@@ -52,7 +52,7 @@ and error required to _really_ get it to work.
 
 Right now I should be trying to get the 3D printer to work, to print some
 sketches, and then generate a good 3D model that my fiancée and I can wear to
-see whether what I did was a collossal failure. Instead I’m telling you about
+see if what I did was a collossal failure. Instead I’m telling you about
 my angst, making you complicit in this game of procrastination. How does that
 make you feel?
 
