@@ -65,6 +65,9 @@ healthy, and it is only getting worse. As my career progresses, and I’m slowly
 getting a reputation, and I’m building projects, I more and more get to pick
 and choose and I lose my ability to bear anything.
 
+(If a recruiter happens to read this: this is what you’re trying to sell your
+clients. Better stay back.)
+
 My parents didn’t spoil me, and I didn’t have a lot of money until I started
 working in tech. Now that I do, I can feel it corrupting me. But this is a
 story for another day.
