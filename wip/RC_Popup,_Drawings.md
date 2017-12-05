@@ -29,8 +29,8 @@ even the most masterful sleight of hand.
 ![](https://veitheller.de/static/square.png)
 
 I regularly abandon projects; they pile up behind me, not unlike lost lovers or
-estranged friends. My code is very close to me, they feel closer than some of
-my human relationships: when I leave them behind, it’s always a goodbye.
+estranged friends. My code is very close to me, it feels closer than some of
+my human relationships: when I leave it behind, it’s always a goodbye.
 
 That’s utterly unprofessional, and yet I cannot help it but think of the things
 I have begun and not finished, like I think of people I know from high school,
