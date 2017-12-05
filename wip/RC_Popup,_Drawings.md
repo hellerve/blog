@@ -52,7 +52,7 @@ and error required to _really_ get it to work.
 
 Right now I should be trying to get the 3D printer to work, to print some
 sketches, and then generate a good 3D model that my fiancée and I can wear to
-see if what I did was a collossal failure. Instead I’m telling you about
+see if what I did was a colossal failure. Instead I’m telling you about
 my angst, making you complicit in this game of procrastination. How does that
 make you feel?
 
