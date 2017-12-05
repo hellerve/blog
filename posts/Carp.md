@@ -295,7 +295,7 @@ between `import foo` and `from foo import *`.
 <div class="figure-label">Fig. 11: Using a module.</div>
 
 Now, this is all well and good, but there is another little twist to this.
-Modules also have some interesing properties for the type checker. Note, for
+Modules also have some interesting properties for the type checker. Note, for
 instance, that `+` is not generic. It is defined for every numerical type, and
 the typechecker then chooses the appropriate function according to its
 signature. I think that merits a bit of illustration.

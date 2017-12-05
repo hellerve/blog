@@ -17,7 +17,7 @@ grow big and important.
 
 Koala turned and followed the course of one of the snowflakes down to the
 ground. She even bent down to look at it melt on the not quite frozen ground.
-“Those are pretty!”, she exlaimed. “We don’t have those where I come from.
+“Those are pretty!”, she exclaimed. “We don’t have those where I come from.
 Maybe I do like them.”
 
 Now one landed on Turtle’s nose and he shook his head and sneezed. Koala
