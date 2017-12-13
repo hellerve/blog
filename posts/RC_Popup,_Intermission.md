@@ -46,7 +46,7 @@ has no good parts. Ever feel that way?
 ![](/assets/earth.png)
 
 I’m the only smoker in this group of computational artists. That’s weird to me.
-Maybe I have a weird view into the European art bòheme, but all of my artsy
+Maybe I have a weird view into the European art bohème, but all of my artsy
 friends smoke. Cigarettes are very cheap around here. We run on fumes. Good
 joke, everyone laughs.
 
