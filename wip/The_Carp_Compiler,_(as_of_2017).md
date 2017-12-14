@@ -142,13 +142,50 @@ somehow. Bottom line is that I sometimes think I know how it works, but I can’
 keep it in my head long enough to reason about it deeply. Sorry if that is a bit
 of a let-down.
 
-Dynamic functions are similar, but the actually evaluate their arguments before
+Dynamic functions are similar, but they actually evaluate their arguments before
 being applied. That simple idea makes them similar to dynamic functions and
 useful when applied recursively, and for proper metaprogramming.
 
 ### Type inference and checking
 
+We’ve worked with a dynamically typed AST thus far, but this won’t do for
+compilation. Instead, we’re now going to infer our types, based on only the
+type information that we have from the standard functions and any annotations
+the user might have left behind.
+
+The type system relies on a simple unification solver to infer the types that
+we need to set. Generic types are still valid at this point. The inference
+engine just annotates the objects it receives and, perhaps surprisingly, takes
+care of memory management information. It also returns any dependencies the
+inferred function might have from Concretization. If those last two tasks don’t
+make any sense to you, don’t worry, I’ll go over them in the following
+sections.
+
+The annotation procedure relies entirely on generating and then solving the
+contstraints. Generating constraints is simple, and it takes all that we know
+from our function types. Let me give you a simple example: given the statement
+`(= a b)`, we know that the type of `a` must be the same as `b`. We will
+generate this constraint for our solver. Should either one of the two variables
+be used in a non-generic setting somewhere we can solve the constraints, and
+assign both of the variables the same type. This simple yet powerful mechanism
+turns out to be surprisingly useful.
+
+Should the solver fail or find any typed holes<sup><a href="#4">4</a></sup>,
+the engine will produce an error, otherwise the solver will produce a
+`TypeMappings` object, which is just a mapping from generic to concrete types.
+The inference engine then assigns those types to the values, and goes on to
+Concretization and memory management.
+
 #### Concretization
+
+Concretization is a fairly large module again, but not nearly as big as the
+evaluator. It will take care of emitting multiple versions of the same
+polymorphic function with different concrete types, one for every usage in
+our code. If you define a function `sum` that takes a list of numbers and
+sums all of them, for instance, and then use them with `Double` and `Int`
+types, it will both generate the appropriate functions and symbols for the
+specialized code, as well as change the code to use the specialized names
+instead.
 
 #### Memory management
 
@@ -172,3 +209,8 @@ that sounds like an even more horrendous task to me. YMMV.
 <span id="3">3.</span> I would love to fix this when I’ve got both the time and
 the understanding of the current system that is required to build on top of it.
 I don’t think I’m quite there yet. Drop me a message if you want to team up!
+
+<span id="4">4.</span> Typed holes are a concept borrowed from other
+type-inferred languages. It enables the user to replace any statement with a
+special symbol. The constraint solver will then fail and tell you which type
+it inferred for the hole. This is useful when debugging type errors.
