@@ -142,9 +142,11 @@ somehow. Bottom line is that I sometimes think I know how it works, but I can’
 keep it in my head long enough to reason about it deeply. Sorry if that is a bit
 of a let-down.
 
-Dynamic functions are similar, but they actually evaluate their arguments before
-being applied. That simple idea makes them similar to dynamic functions and
-useful when applied recursively, and for proper metaprogramming.
+Dynamic functions are similar, but they actually evaluate their arguments
+before being applied. That simple idea makes them similar to normal functions
+and useful when applied recursively, and for proper metaprogramming. Macros are
+thus usually only useful for simple rewrites or as entry points to dynamic
+functions.
 
 ### Type inference and checking
 
@@ -187,13 +189,106 @@ types, it will both generate the appropriate functions and symbols for the
 specialized code, as well as change the code to use the specialized names
 instead.
 
+This is where the generation of dependencies kicks in; dependencies are
+returned from type inference if additional specialized functions need to be
+generated.
+
+This leads us to the last item on our list: memory management.
+
 #### Memory management
+
+The `ManageMemory` module is responsible for finding out if and when any
+destructors/deleters are needed. Like the type inference, concretizer, and
+evaluator, it is yet another tree walking function<sup><a href="#5">5</a>
+</sup>.
+
+Now, I haven’t actually worked on this module all that much yet, either, so
+you’ll have to do with what I observed and what I found out by having Erik
+explain its magic to me. Pardon if this is not as instructive as you’d hope.
+
+// TODO: actually talk about it.
 
 ## Emitting C
 
+While Erik would like the compiler to use an LLVM backend at one point I
+personally am a fan of the C backend. Partly this is because it emits fairly
+legible code and, all things considered, it is easier for me to read C than
+assembly or LLVM IR, and partly because it doesn’t lock us into the LLVM
+framework. Also, I’ve found the Haskell bindings to LLVM unbearable, and I’m
+not alone: when I gave an introductory workshop into LLVM while at the
+[Recurse Center](http://recurse.com/), I told people that using it might not be
+the best idea. One of the people there did not heed my advice and he emerged
+six weeks later, [battle-hardened and
+weary](https://jaseemabid.github.io/2017/07/04/compiler.html). But enough of
+the future, let’s talk about now!
+
+The emitted C code is all put into one file called `out/main.c`. This file is
+split into three acts, like any good piece of dramaturgy: first come the types,
+a dramatis personae of our play; then the declarations, like an overture,
+serving as an exposition of what is about to happen; and then the definitions
+show us what they got. All the file’s a stage, and all the definitions are
+mere players. Let me talk about types and declarations first, and then we will
+have a word about definitions.
+
+### Types & declarations
+
+For both types and declarations, the process—and indeed the function—we are
+using is the same: first we sort the bindings in the environment, ranking them
+based on their dependencies, then we will convert them to declarations. The
+only difference is what kind of environment we are operating on. For
+declarations this will be the regular environment `Env`, and for types the
+type environment `TypeEnv`.
+
+Sorting the bindings is relatively easy; all of the objects have a base score,
+where this base score is a bit higher for modules than for values. Type
+definitions and aliases are ranked based on their dependency depth, i.e. how
+many other types they have references to internally and how those, in turn,
+score. We then sort them lowest first and proceed to convert them to
+declarations.
+
+There are some nooks and crannies to the way how declarations are generated—we
+don’t generate anything for generic types for instance, because we already
+specialized—, but the basic idea is that for regular definitions we generate
+function heads for functions and left hand sides of assignments for value
+definitions.
+
+Types are a little more complex, because we generate both the struct and the
+`typedef` at the same time. There, we will go through the members one by one,
+get the type we inferred for it, convert it to C, and mangle the name of the
+member. Generally, whenever we emit a Lisp symbol in C, we will first mangle
+the name. Mangling is in this case just a simple string replacement that will
+replace certain characters that are not allowed in C names with their all-caps
+name, surrounded by underscores. This means, for instance, that the omnipresent
+dash `-` will become `_MINUS_`.
+
+That is all there is to emitting declarations and types. Let’s move on to
+definitions!
+
+### Definitions
+
+// TODO
+
 ## Compiling C
 
+// TODO
+
 ## Fin
+
+We talked about a lot of stuff today. While Carp certainly is a complex piece
+of machinery, it works msot of its magic in a surprisingly straightforward and
+concise way. The whole compiler is just under 5000 lines of code long, and you
+can definitely read through it yourself if you want or need to. Its simplicity
+both comes from a relatively simple—meaner spirits than I am might even call it
+limited—language design and the absence of—at this point surely
+premature—optimizations.
+
+I hope I’ve whetted your appetite to jump into Carp, or even to look around its
+compiler internals. If you need advice or just want to chat, you can find all
+of us on Gitter; alternatively, Erik is [on
+Twitter](https://twitter.com/e_svedang) and my e-mail address should be
+floating around here somewhere!
+
+See you around next time, when we talk about how to use Carp’s C interface!
 
 #### Footnotes
 
@@ -214,3 +309,8 @@ I don’t think I’m quite there yet. Drop me a message if you want to team up!
 type-inferred languages. It enables the user to replace any statement with a
 special symbol. The constraint solver will then fail and tell you which type
 it inferred for the hole. This is useful when debugging type errors.
+
+<span id="5">5.</span> You’d think that all of this AST traversal makes for a
+slow compiler, but in my experience the Carp compiler is reasonably fast—then
+again, no huge projects exist to benchmark Carp’s performance as of the time
+of this blog post.
