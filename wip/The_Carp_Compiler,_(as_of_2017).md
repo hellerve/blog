@@ -266,6 +266,81 @@ definitions!
 
 ### Definitions
 
+Emitting definitions is arguably the most important part of the compiler, and
+it makes sense that it’s thus also the most complex<sup><a href="#6">6</a>
+</sup>. Conceptually, the emitter is fairly simple: we take all the bindings
+in the environment, fold over them, weed out the ones that are not important
+to us, like external definitions and generic types, and emit the code for each
+binding.
+
+In the following I will walk you through a few of the most important pieces of
+machinery, but by no means all of them. A complete definition can be found in
+the function `toC` of the Emit module.
+
+#### Modules
+
+Modules are conceptually simple: they just add another level of recursion,
+because they are their own environment and we thus have to do the whole process
+again.
+
+#### Literals
+
+Literals are also straightforward; most of the primitive literals we have can
+be compiled to C without any changes. The only literals that need some extra
+attention are strings and arrays.
+
+For strings, we always emit two fresh variables and bind the string literal of
+type `char*` and its reference of type `char**` to those. This way we can have
+statically allocated strings in our binary, in a straightforward way. It might
+not be the best way going forward, but thus far has proved to be fairly
+reliable.
+
+Arrays are the most complex of the literals. This is due to two reasons: they
+are not just C arrays—I lied a little above—and they can contain any kind of
+statement in their definition.
+
+Carp arrays are a two-member struct of data and length. When we emit a struct
+literal, we first emit a struct literal; that’s trivial because the length is
+known at compile time. We then go through the list of array contents and emit
+a statement that assigns the contents of the array at the index to the
+statement at that index.
+
+```
+(let [x [1 2 (+ 3 4)]]
+  ;...
+)
+```
+<div class="figure-label">Fig. 1: An ordinary Carp array.</div>
+
+That means that the array definition depicted in Figure 1 would compile to the
+C code depicted in Figure 2. In the end, it comes down to a fairly
+straightforward mechanism. The temporary variables reduce the legibility a
+little bit, but it’s still relatively easy to look at the compilate and see
+what’s happening.
+
+```
+Array _11 = { .len = 3, .data = CARP_MALLOC(sizeof(int) * 3) };
+((int*)_11.data)[0] = 1;
+((int*)_11.data)[1] = 2;
+int _10 = Int__PLUS_(1, 2);
+((int*)_11.data)[2] = _10;
+Array__int x = _11;
+```
+<div class="figure-label">Fig. 2: The compilate of a Carp array.</div>
+
+#### Symbols
+
+The next item on our list are symbols. They are simple as well, because all we
+have to do is take their name and path—the path being the list of modules it is
+defined in—, mangle and concatenate everything, and we have a perfectly valid
+C symbol.
+
+#### Control Flow
+
+// TODO
+
+#### Functions and Variables
+
 // TODO
 
 ## Compiling C
@@ -314,3 +389,8 @@ it inferred for the hole. This is useful when debugging type errors.
 slow compiler, but in my experience the Carp compiler is reasonably fast—then
 again, no huge projects exist to benchmark Carp’s performance as of the time
 of this blog post.
+
+<span id="6">6.</span> Of course those properties aren’t always correlated, but
+very often I experience that the most important feature seems to have the most
+edge cases—or maybe that is just because I thought about it more deeply than
+the rest.
