@@ -277,6 +277,10 @@ In the following I will walk you through a few of the most important pieces of
 machinery, but by no means all of them. A complete definition can be found in
 the function `toC` of the Emit module.
 
+One magic detail that makes this work is that the recursive emitter always
+returns the name of the variable it bound the last statement to, so that the
+callers know what was last assigned in case they need it.
+
 #### Modules
 
 Modules are conceptually simple: they just add another level of recursion,
@@ -337,11 +341,65 @@ C symbol.
 
 #### Control Flow
 
-// TODO
+In Carp, the only control flow that is baked into the language proper is `if`
+and `while`. Both of these are present in the language we are compiling to, so
+it shouldn’t be too hard for us to translate from Carp to C.
+
+Regarding `if`, we have the additional restriction that it is always a
+two-branch form, due to the type checker. This makes emitting easy and regular:
+we create a fresh variable, and append it to the source code unless the type
+inference engine told us that the return type of this `if` expression is `Unit`
+in Carp-speak or `void` in C. We then visit the condition, and assign it to a 
+result variable—that is because the condition is less restricted than in C,
+possibly resulting in multiple C statements—, put the result variable into the
+head of the `if`, visit and generate code for both clauses of the expression,
+and, if the return type isn’t `void`, assign the return values of the clause
+bodies to the fresh variable we created. This works because as stated above
+visiting the body will tell us what we need to assign.
+
+`while` is a little bit more complex; because the head will possibly be
+executed multiple times, we put an declaration and initialization at the top,
+like in the `if`, and then reassign it at the bottom of the loop, running the
+same expression again.
+
+All of this requires a fair bit of machinery, but is in itself quite simple;
+as with most of the parts of the Carp compiler it can be a little tricky to
+keep it all in your head because it’s highly recursive, and that seems to
+trouble some people more than others.
 
 #### Functions and Variables
 
-// TODO
+You probably expect this to be the most hairy parts of the emitter, but they
+actually are quite straightforward; they build on the basic blocks we’ve
+already defined. Of course they are the most recursive, though.
+
+Let’s start with function definitions. We first need to get the declaration,
+but we already know how to do that from earlier; we then visit the body, see
+whether our return type is `void`, and if not, add a return statement that
+returns whatever our body did, again using the name of the last variable that
+`visit` returned.
+
+After this surprisingly brief definition, let’s look at variables. Normal
+`def`-style variables are easy: we have the type, name, and assignment
+expression, so all we need to do is convert the type to its C equivalent,
+mangle the name, and take the result of a quick visit of the expression.
+Then we stick all of that in a row and we have our value. Please note that this
+obviously is more restricted, because it doesn’t support multiple statement
+assignments; this is alright because `defn` is only used for top-level
+definitions and C is equally limited in having expressions on the top level.
+
+Our way of creating local variables is `let`. Carp’s version of let is
+comparable to `let*` in Scheme, which means that subsequent bindings can use
+prior bindings. That makes things simple. All we truly need to do is create
+a bunch of bindings one after the other inside a `{}` scope, visit the body of
+the expression, and assign it to a fresh variable that we again created prior,
+unless it is void, in which case we can skip that part.
+
+It is amazing that these simple building blocks are all that we need to have
+definitions, but that’s how it is. In a few dozen paragraphs, I was able to
+describe the code emitter, skipping over some parts, but not shying away from
+telling you about the more complex parts either. I hope that I won’t ever stop
+being amazed by this.
 
 ## Compiling C
 
