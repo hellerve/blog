@@ -345,7 +345,32 @@ C symbol.
 
 ## Compiling C
 
-// TODO
+Once we’ve arrived at a C file, we can compile it using one of the C compilers
+on the target machine. Although Carp aims to support all C compilers and
+doesn’t use any fancy or non-portable C features<sup><a href?"7">7</a></sup>,
+its default compiler is `clang`. Since early December, this can be changed
+by putting `(project-set! "compiler" "my-compiler")` somewhere either into
+the source or the compiling REPL session. My personal favorite behavior would
+be if Carp honored the `CC` environment flag, but that’s thus far not the case.
+
+Carp produces a fat binary from a single C file, which means that to my
+knowledge there is currently no mechanism to include another C file. Libraries
+can be linked to by adding a `libflag` or `cflag`, also with the `project-set!`
+command. Most binaries I personally produce have currently no dependencies
+except `libm`, which Carp itself depends on, and only use header-only C
+dependencies.
+
+That means that, by default, Carp artifacts are more like Go’s fat binaries
+that include everything, but this is not the only way to do things. You could
+just link to all kinds of libraries willy-nilly if you wanted to, Carp gives
+you this freedom. But I’d argue only to link to libraries if you have to, for
+instance if you wrap a big C library like OpenSSL; the default should always be
+largely self-contained binaries. But then again, that’s only because this is
+one of my favorite features of Go, and I’m biased. Carp is not, and you have
+the freedom to disagree.
+
+In the end, a binary will be produced and land in the `out` directory,
+conveniently named `a.out`.
 
 ## Fin
 
