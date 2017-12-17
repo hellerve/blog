@@ -6,15 +6,15 @@ be fairly interested in how the compiler works; miscommunication—possibly on m
 part—led to a confused picture of how it functions in some corners of the
 internet, and so I would like to give you some general information about it.
 
-One other thing; I’m not the original author of the language, nor am I it’s
-principal maintainer. I never claimed to be, but the pure fact that my blog
-post was what people read made people jump to conclusions; I do not want to
-usurp anyone else’s work, and so here is a shout-out to the brilliant and
-nice Swede [Erik Svedäng](), who you can usually find on the [Gitter
-channel](https://gitter.im/carp-lang/carp), which is our primary means of
-communication these days. He is the author of Carp and the person I bug with my
-questions. If you are interested in learning more about Carp or just hang
-around and chat, I suggest you go there.
+A quick disclaimer before we start: I’m not the original author of the
+language, nor am I it’s principal maintainer. I never claimed to be, but the
+pure fact that my blog post was what people read made them jump to conclusions;
+I do not want to usurp anyone else’s work, and so here is a shout-out to the
+brilliant and kind-hearted Swede [Erik Svedäng](), who you can usually find on
+the [Gitter channel](https://gitter.im/carp-lang/carp), which is our primary
+means of communication these days. He is the author of Carp and the person I
+bug with my questions. If you are interested in learning more about Carp or
+just hang around and chat, I suggest you go there.
 
 Now for the main event: let’s talk about the compiler, from front to back.
 
