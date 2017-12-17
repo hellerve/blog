@@ -29,8 +29,9 @@ use a parser combinator framework. I generally prefer parser combinators,
 although admittedly BNF grammars make for a nice specification of a language.
 It spits out an enriched AST—the regular AST is called `Obj`, the extended
 version `XObj`—that stores a little bit of additional information, such as
-where the node is coming from (line, column, and file information) and a unique
-identifier that we will need in the emitter.
+where the node is coming from (line, column, and file information), memory
+management info that we will talk about later, and a unique identifier that we
+will need in the emitter.
 
 The only thing that I consider of note here is that the reader macros `@` and
 `&`, which you can read about in my previous blog post, are defined in the
@@ -206,7 +207,33 @@ Now, I haven’t actually worked on this module all that much yet, either, so
 you’ll have to do with what I observed and what I found out by having Erik
 explain its magic to me. Pardon if this is not as instructive as you’d hope.
 
-// TODO: actually talk about it.
+All we need to do to find out where we need to take care of deleting is finding
+out which variables pertain to which scope. To achieve that, we walk through
+the AST, and doing something that Erik calls “abstract interpretation”—we
+mostly care about definitions, refs and copies, though. We take the set of
+variables that were defined before the scope and the set of variables that are
+defined at the end of the scope, and take the difference. This difference is
+what was created inside of the scope and needs to be deleted, so we add
+deleters for them—unless they’re unmanaged types, such as numbers, booleans,
+or characters.
+
+There are three special cases we need to handle there, though: function calls,
+loops, and conditionals. Function calls take ownership of the variables passed
+into them, unless they were passed as references, and we can remove them from
+our set. And if it is being passed as a references, we have to make sure it’s
+still in the set, otherwise it has been given away and we produce an error.
+
+`while` loops are interesting because we visit their conditions and bodies
+twice to simulate looping; this looks algorithmically crude, but it seems to
+work fine.<sup><a href="#6">6</a></sup>
+
+Conditions were the most surprisingöy complex to me: that is because they
+produce two interdependent scopes, one for each clause. Those need to be diffed
+to make sure that we clean up properly in all cases.
+
+When we’ve found out what we need to delete where, we put this information
+directly into our `XObj` for use by the emitter—which brings me to our most
+fun section: we get to emit some C!
 
 ## Emitting C
 
@@ -267,7 +294,7 @@ definitions!
 ### Definitions
 
 Emitting definitions is arguably the most important part of the compiler, and
-it makes sense that it’s thus also the most complex<sup><a href="#6">6</a>
+it makes sense that it’s thus also the most complex<sup><a href="#7">7</a>
 </sup>. Conceptually, the emitter is fairly simple: we take all the bindings
 in the environment, fold over them, weed out the ones that are not important
 to us, like external definitions and generic types, and emit the code for each
@@ -473,7 +500,11 @@ slow compiler, but in my experience the Carp compiler is reasonably fast—then
 again, no huge projects exist to benchmark Carp’s performance as of the time
 of this blog post.
 
-<span id="6">6.</span> Of course those properties aren’t always correlated, but
+<span id="6">6.</span> For the people reading the code: there is an interesting
+bit of fiddling to work around Haskell’s laziness in the `while` branch of the
+`walk` function.
+
+<span id="7">7.</span> Of course those properties aren’t always correlated, but
 very often I experience that the most important feature seems to have the most
 edge cases—or maybe that is just because I thought about it more deeply than
 the rest.
