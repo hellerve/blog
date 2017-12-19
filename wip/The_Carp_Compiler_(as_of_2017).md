@@ -10,11 +10,11 @@ A quick disclaimer before we start: I’m not the original author of the
 language, nor am I its principal maintainer. The pure fact that people read my
 blog post might have made them jump to conclusions; but
 I do not want to usurp anyone else’s work, and so here is a shout-out to the
-brilliant and kind-hearted Swede [Erik Svedäng](), who you can usually find on
-the [Gitter channel](https://gitter.im/carp-lang/carp), which is our primary
-means of communication these days. He is the author of Carp and the person I
-bug with my questions. If you are interested in learning more about Carp or
-just to hang around and chat, I suggest you go there.
+brilliant and kind-hearted Swede [Erik Svedäng](https://eriksvedang.com/), who
+you can usually find on the [Gitter channel](https://gitter.im/carp-lang/carp),
+which is our primary means of communication these days. He is the author of
+Carp and the person I bug with my questions. If you are interested in learning
+more about Carp or just to hang around and chat, I suggest you go there.
 
 Also, if this is too much for you that’s alright! I plan on writing more
 byte-sized updates from now on, but first I feel the need to get the overview
