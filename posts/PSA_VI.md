@@ -7,8 +7,8 @@ diatribes of yours truly, no strings attached.
 
 But of course I have some security-minded folks in my inner friend circle
 who’ve been wanting to read my blog through HTTPS, and as it really isn’t that
-much work to set it up—and, because of Let’s Encrypt, also free—I decided to
-give the people what they want.
+much work to set it up I decided to give the people what they want. Thanks to
+Let’s Encrypt, it’s also free for me.
 
 Anyway, I won’t force you to use HTTPS in the future and the HTTP version will
 still remain online, so there is something for everyone.
