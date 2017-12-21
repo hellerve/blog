@@ -1,8 +1,8 @@
 This post is going to be quite short, just a little update on the ring project
-I talked about [yesterday](http://blog.veitheller.de/RC_Popup,_Project_I:_A_Ring.html)
+I talked about [yesterday](//blog.veitheller.de/RC_Popup,_Project_I:_A_Ring.html)
 and a quick note on some other tinkerings. I’ve not been able to make much
 headway today, because I still get a lot of e-mails after my blog post on
-[Carp](http://blog.veitheller.de/Carp.html) was on Hackernews and r/programming.
+[Carp](//blog.veitheller.de/Carp.html) was on Hackernews and r/programming.
 I enjoy these messages, but they are taking a toll on my productivity at the
 moment.
 

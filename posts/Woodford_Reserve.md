@@ -11,7 +11,7 @@ Oaked, for reasons of price and availability.
 Let me tell you a little bit about Woodford Reserve, because I like their
 products a lot. I also visited their distillery last March, on the same trip
 during which I visited the [Jeptha Creed](http://jepthacreed.com/) distillery,
-an experience about which [I blogged before](http://blog.veitheller.de/Jeptha_Creed,_or:_How_I_Learned_to_Love_Vodka.html).
+an experience about which [I blogged before](//blog.veitheller.de/Jeptha_Creed,_or:_How_I_Learned_to_Love_Vodka.html).
 
 ## Damn old, yet so new
 

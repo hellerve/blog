@@ -326,9 +326,9 @@ macros! Are you excited? I’m excited!
 #### Macros
 
 If you’ve ever programmed in Lisp, you probably know about macros. I also
-wrote [a](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html)
-[series](http://blog.veitheller.de/Scheme_Macros_II:_Generics.html)
-[of](http://blog.veitheller.de/Scheme_Macros_III:_Defining_let.html) blog posts
+wrote [a](//blog.veitheller.de/Scheme_Macros_I:_Modules.html)
+[series](//blog.veitheller.de/Scheme_Macros_II:_Generics.html)
+[of](//blog.veitheller.de/Scheme_Macros_III:_Defining_let.html) blog posts
 about writing Lisp macros, but let me try to sum the most important ideas up
 for those of you who don’t have the time to do all of the research: since Lisp
 code is essentially only lists, we can easily rewrite it programmatically. Lisp

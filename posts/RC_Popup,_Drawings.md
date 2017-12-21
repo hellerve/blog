@@ -1,6 +1,6 @@
 I’ve been procrastinating. Don’t get me wrong, I’ve had a fairly productive
 couple of days: I solved all of [Advent of Code](http://adventofcode.com/) thus
-far, either in [Carp](http://blog.veitheller.de/Carp.html) or
+far, either in [Carp](//blog.veitheller.de/Carp.html) or
 [zepto](https://github.com/zepto-lang/zepto); I contributed a few things to
 Carp; I wrote a [snake clone in it](https://github.com/hellerve/reptile); I
 produced an unusually torrentous amount of [art](https://veitheller.de/art);

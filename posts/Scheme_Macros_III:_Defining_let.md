@@ -1,5 +1,5 @@
-After having explored how to implement a [module system](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html)
-and [generic functions](http://blog.veitheller.de/Scheme_Macros_I:_Generics.html)
+After having explored how to implement a [module system](//blog.veitheller.de/Scheme_Macros_I:_Modules.html)
+and [generic functions](//blog.veitheller.de/Scheme_Macros_I:_Generics.html)
 in Scheme macros, we’ll look this time at how to reimplement
 [let-style](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Lexical-Binding.html)
 local bindings. As a little extra, we’ll explore a way of defining them that
@@ -83,7 +83,7 @@ for...
 At this point, you might ask yourselves a simple question: why? Why don’t we
 make `letrec*` the default, if it’s the most capable of all of these
 constructs? This is where programming language history comes into play: Scheme
-is very old. If you’ve read [some of my earlier musings](http://blog.veitheller.de/Pattern_Matching,_A_Thing_Of_The_Past.html),
+is very old. If you’ve read [some of my earlier musings](//blog.veitheller.de/Pattern_Matching,_A_Thing_Of_The_Past.html),
 you’ll know that Scheme appeared in 1975. That makes it only slightly younger
 than C (1972, according to Wikipedia), the oldest programming language most of
 us still use. Back then, efficiency mattered. We say it matters now, but when

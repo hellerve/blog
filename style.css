@@ -238,7 +238,7 @@ ol li {
     max-width: 600px;
   }
   .aside h1 {
-    font-size: 60px;
+    font-size: 55px;
   }
   table {
     font-size: 30px;
@@ -248,7 +248,7 @@ ol li {
     font-size: 24px;
   }
   .figure-label {
-    font-size: 13px;
+    font-size: 16px;
   }
   table + .figure-label {
     margin-top: -0.5em;

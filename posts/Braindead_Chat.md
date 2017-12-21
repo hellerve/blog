@@ -1,8 +1,8 @@
 I want to present yet another little project of mine that explores how to make
 programming as naive as possible. In previous installments we have looked at [a
-terminal editor](http://blog.veitheller.de/Braindead_Editing.html) and [a data
+terminal editor](//blog.veitheller.de/Braindead_Editing.html) and [a data
 transformation
-library](http://blog.veitheller.de/Braindead_Data_Transformations.html). This
+library](//blog.veitheller.de/Braindead_Data_Transformations.html). This
 blog arguably is part of this tradition as well.
 
 What I want to talk about today is [a chat

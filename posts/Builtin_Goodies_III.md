@@ -1,7 +1,7 @@
 *This post is the third installment in an ongoing series on
 [GCC Builtins](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html).
-For parts I and II, click [here](http://blog.veitheller.de/Builtin_Goodies_I.html)
-and [here](http://blog.veitheller.de/Builtin_Goodies_II.html), respectively.*
+For parts I and II, click [here](//blog.veitheller.de/Builtin_Goodies_I.html)
+and [here](//blog.veitheller.de/Builtin_Goodies_II.html), respectively.*
 
 In this third post we will again learn to help our compiler figure out how our
 code should run. This in turn might help make our code more performant.

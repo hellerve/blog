@@ -1,6 +1,6 @@
 It is about time I write a second post on
 [GCC Builtins](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html). In
-[the last installment](http://blog.veitheller.de/Builtin_Goodies_I.html) we
+[the last installment](//blog.veitheller.de/Builtin_Goodies_I.html) we
 learned how to help our branch predictor figure out which branches to
 speculatively execute. This time we will learn about how to tell our
 compiler that a segment of code will never be reached if it cannot figure that
@@ -18,7 +18,7 @@ And now, without further ado, let's tell our compiler to look the other way!
 
 There are times when our compiler cannot possibly know about control flow.
 Consider the example of [`e`](https://github.com/hellerve/e), an editor [I wrote
-about previously](http://blog.veitheller.de/Braindead_Editing.html). The main
+about previously](//blog.veitheller.de/Braindead_Editing.html). The main
 event loop looks more or less like this:
 
 ```

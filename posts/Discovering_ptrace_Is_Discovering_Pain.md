@@ -99,7 +99,7 @@ hope I’ll never have the urge to support those.
 I guess the moral of the story is “be careful what you wish for”, because my
 timid wishes for a bit of modularity just landed me in `ifdef` purgatory. There
 is something to be learned even in Gehenna, though, and that’s something
-[I’ve written about before](http://blog.veitheller.de/On_API_Updates.html): I
+[I’ve written about before](//blog.veitheller.de/On_API_Updates.html): I
 like API updates. Some APIs need a thorough cleanup, and, much like people who
 change for the better, emerge as more productive members of society. I even
 applaud some updates that break my software, because they provide soothing

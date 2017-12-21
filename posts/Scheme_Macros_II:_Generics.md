@@ -1,4 +1,4 @@
-This is a continuation of [an earlier post](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html),
+This is a continuation of [an earlier post](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
 in which I talked about the power of Scheme macros in the context of modules.
 Modules aren’t the only use case of macros, though, and so this time I want to
 talk about generic functions as an another case study.
@@ -80,7 +80,7 @@ encounter when programming Lisp.
 
 We talked a lot about defining and implementing protocols above. If you squint,
 you might see some parallels to defining and importing modules, which I talked
-about [in a previous post](http://blog.veitheller.de/Scheme_Macros_I:_Modules.html).
+about [in a previous post](//blog.veitheller.de/Scheme_Macros_I:_Modules.html).
 This connection admittedly might not be obvious, and it only occurred to me in
 hindsight, but I’ll still use the connection to guide you through the
 implementation.

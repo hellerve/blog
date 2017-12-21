@@ -1,4 +1,4 @@
-In [one of my previous blog posts](http://blog.veitheller.de/Reading_%E2%80%94_The_First_Month.html)
+In [one of my previous blog posts](//blog.veitheller.de/Reading_%E2%80%94_The_First_Month.html)
 I told the tale of how I returned to reading after a long period of literary
 hibernation. I also hinted that I would revisit the theme when new trends emerged;
 since this month has seen changes to my reading habits, I thought an update

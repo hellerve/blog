@@ -13,8 +13,8 @@ the new highest position, while keeping the rest of the number intact.
 
 If you’re coming from C, you’re probably saying “But C does that automatically!”
 right around now. And that’s true for builtin types. But say you’re building
-your own numerical format, like I’ve done in [the](http://blog.veitheller.de/Binary_Coded_Decimal.html)
-[past](http://blog.veitheller.de/Fixed_Point_Arithmetic.html); then you’ll either need
+your own numerical format, like I’ve done in [the](//blog.veitheller.de/Binary_Coded_Decimal.html)
+[past](//blog.veitheller.de/Fixed_Point_Arithmetic.html); then you’ll either need
 to do that manually or rely on this beautifully elegant trick I’m about
 to show you.
 

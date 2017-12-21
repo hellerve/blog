@@ -1,4 +1,4 @@
-In [a previous post](http://blog.veitheller.de/Braindead_Editing.html) I talked
+In [a previous post](//blog.veitheller.de/Braindead_Editing.html) I talked
 about [an editor](https://github.com/hellerve/e) I built. It's become my
 primary editor now, but over the months I've become increasingly frustrated by
 its rigidity. This week I finally decided to do something about it, and added

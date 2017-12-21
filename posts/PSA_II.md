@@ -1,4 +1,4 @@
-A bit later than [previously announced](http://blog.veitheller.de/PSA_I.html) I found some time to add a RSS feed to the blog. It's still experimental but is supposed to work.
+A bit later than [previously announced](//blog.veitheller.de/PSA_I.html) I found some time to add a RSS feed to the blog. It's still experimental but is supposed to work.
 
 Let me talk about the implementation, because I've never written anything using RSS before. I wrote the feed generator in Python, because why not, and insisted on using tools that are not part of the Python standard distribution. I am famously opposed to drawing in external dependencies unless the project really requires that. Maybe that's just my Go experience leaking into other languages or me being surrounded by conservative IXP devops types, I don't really know. I am relatively happy with the code, though. It's fairly simple and kind of pretty for what it is. I just see it as another step towards my goal of making software braindead and simple. I would like to say “making it simple again”, but I'm not even sure software ever was simple, so I'm just leaving a footnote here that _maybe_ software used to be simple.
 

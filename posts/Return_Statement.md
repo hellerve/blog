@@ -91,7 +91,7 @@ of the people that I want to mention:
   happened to be the nicest, welcoming guy, and while we didn’t have nearly
   enough conversations, the ones we had were some of the most impactful of all
   of RC.
-- [Abe Hmiel](http://abehmiel.net): [I blogged about him before](http://blog.veitheller.de/Holistic_Wellness.html).
+- [Abe Hmiel](http://abehmiel.net): [I blogged about him before](//blog.veitheller.de/Holistic_Wellness.html).
   A man of many hats: physicist, programmer, musician, and all of them on a
   level that gives me anxiety. He’s also calm and funny, so that helped.
   Another one of these people that made RC a better place just with their
