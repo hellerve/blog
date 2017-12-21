@@ -11,6 +11,6 @@ much work to set it up—and, because of Let’s Encrypt, also free—I decided 
 give the people what they want.
 
 Anyway, I won’t force you to use HTTPS in the future and the HTTP version will
-still remain online, and so there is something for everyone.
+still remain online, so there is something for everyone.
 
 I also have two blog posts about Carp in the pipeline, so stay tuned!
