@@ -1,16 +1,16 @@
 I had a terrible idea yesterday: why not wrap SDL in Carp and make a
 half-baked, low-res version of a tiny fraction of what Processing does? As with
-all terrible ideas I decided to gave it a shot, and now I want to report back
+all terrible ideas I decided to give it a shot, and now I want to report back
 with my findings.
 
 ## All the lines are straight around here
 
-SDL’s 2D drawing capabilites are really not that great, it’s basically just
+SDL’s 2D drawing capabilites are not that great, it’s basically just
 points, straight lines, and rectangles. That’s really not a problem, though,
-because if you’ve looked at my [art works](https://veitheller.de/art) you’ve
-seen that I have a whole collection of drawings that are just lines.
+because if you’ve looked at my [art works](https://veitheller.de/art) you’ll
+know that I have a whole collection of drawings that are just lines.
 
-But of course that’s not nearly as powerful as what Processing does. I refused
+But of course that’s not nearly as powerful as Processing. I refused
 to give up, though, and instead implemented what I could with the meager means
 at hand. The result is [anima](https://github.com/hellerve/anima), something
 that I describe as a drawing microframework, with an emphasis on micro rather
@@ -40,7 +40,7 @@ minimizing both code size and magical API voodoo.
 </div>
 
 As visible above, the API is somewhat similar to Processing, with a few
-tweaks<sup><a href="#1">1</a></sup>. For one, we setup sketches with
+tweaks<sup><a href="#1">1</a></sup>. For one, we set up sketches with
 `defsketch`, where we provide a name, width, height, a draw function that will
 be called for every frame, and an optional setup function to start things.
 
@@ -55,7 +55,7 @@ easier to see which stroke is in which color.
 
 Simple enough, isn’t it?
 
-I want to talk a bit more about the API—which, as always is subject to change
+I want to talk a bit more about the API—which, as always, is subject to change
 and will probably break under scrutiny—and then we can try drawing something
 together!
 
@@ -65,7 +65,7 @@ Just how micro is anima? It’s less than 100 lines of code, and exposes just
 nine functions. We’ve seen a few of them, and some we have yet to explore. This
 is going to be a very quick overview before we dive into an example.
 
-The entry point for any sketch if `defsketch`. Here we define the meta
+The entry point for any sketch is `defsketch`. Here we define the meta
 information about the sketch and which functions to call.
 
 If we need to set things up, it will probably be the framerate, color, and
@@ -94,7 +94,7 @@ interesting pictures? Let’s try it out!
 
 When I was ready to take anima for its first test drive, I immediately looked
 through the back log of pictures that I had produced for suitable candidates.
-I found a few that I was able to reproduce, showcasing that while anima isn’t
+I found a few that I was able to reproduce, showcasing that, while anima isn’t
 a fully-fledged framework for animation, it’s also not completely useless.
 
 ![](https://veitheller.de/static/ferris.png)
@@ -124,9 +124,9 @@ with a little skeleton that just sets up an empty application:
 All we’re doing for now is defining a sketch with an empty setup and draw
 function and a size of 800 by 800 pixels.
 
-This sketch is already executable! Running `carp -x <name-of-the-file` will
+This sketch is already executable! Running `carp -x <name-of-the-file>` will
 open a pitch-black window that is the size we specified and wait for us to
-close it again. Not much interesting stuff yet, but it’s a start, just like
+close it again. Not very interesting yet, but it’s a start, just like
 a blank canvas.
 
 Alright, let’s get `setup` out of the way! This sketch is supposed to cycle
@@ -140,7 +140,7 @@ our call to `background` in the setup function.
 <div class="figure-label">Fig. 4: Limiting the framerate.</div>
 
 Now that we’ve got the setup out of the way, let’s take care of `draw`. For
-now, let’s set the background and strok color there and leave it at that.
+now, let’s set the background and stroke color there and leave it at that.
 
 ```
 (defn draw [app rend]
@@ -151,7 +151,7 @@ now, let’s set the background and strok color there and leave it at that.
 <div class="figure-label">Fig. 5: Getting ready to draw.</div>
 
 All of the iterations of the sketch thus far have been executable, and all of
-them looked and felt almost the same. Let’s try and figure out how to actually
+them have looked and felt almost the same. Let’s try and figure out how to actually
 draw things. The line effect in the picture above is achieved by drawing a lot
 of random lines, with a random start point and an endpoint based on one of the
 start point’s coordinates, in this case the X coordinate. We can try to draw
@@ -190,8 +190,7 @@ That’s kind of nice, but what about a whole bunch of lines?
 We’re almost there. We get one artwork per second, but they don’t look quite
 right. Letting the lines start anywhere overcrowds the picture, and one of the
 nice parts of the piece in Figure 2 is its margin. Negative space lets the
-whole composition breathe a little more. Let’s limit `x` and `y` a little
-more.
+whole composition breathe a little more. Let’s limit `x` and `y` a bit.
 
 ```
 (def margin 100)
@@ -213,7 +212,7 @@ whole `let` business a little less intuitive, but still fairly readable.
 
 And there you have it! That’s all the code we need to create a simple picture
 that looks like the cover artwork of a techno 12’ you found while digging in a
-dimly-light record store in Berlin.
+dimly-lit record store in Berlin.
 
 ## Fin
 
@@ -225,7 +224,7 @@ Constraint isn’t always bad. Sometimes it’s exactly what I need to be
 productive, but I talked about [my fetish for minimalism](http://blog.veitheller.de/Going_Static.html)
 before.
 
-I certainly also hope that you enjoyed getting a little insight into how I
+I also certainly hope that you enjoyed getting a little insight into how I
 create the little riffs that I sometimes grandiosly call “art”. I know I enjoy
 talking about the creative process, so if you’d like to hear about it more in
 the future, holler at me!
@@ -238,7 +237,7 @@ it a few years ago and am too afraid to look.
 
 <span id="2">2.</span> To be able to follow along, you’ll have to have Carp
 installed—read how to install it [here](https://github.com/carp-lang/Carp/blob/master/docs/Install.md)—
-and have downloaded anima. This is as simple as clonging the Git repository.
-The code I show you in this blog post assumes that the file `anima.carp` that
-is part of the repository is in the same directory as the code we’re going to
+and have downloaded anima. This is as simple as cloning the Git repository.
+The code I show you in this blog post assumes that the file `anima.carp`, which
+is part of the repository, is in the same directory as the code we’re going to
 write.
