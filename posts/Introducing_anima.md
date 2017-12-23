@@ -79,6 +79,26 @@ to define your colors in HSB, you can convert an HSB value into RGB using
 `hsb-to-rgb`, which takes any three HSB values from 0 to 1 as floats, and will
 return a three-element array of the corresponding RGB colors.
 
+```
+(defsketch name width height setup draw)
+
+(framerate frames-per-sec)
+
+(background app renderer greyscale)
+(background app renderer red green blue)
+(background app renderer red green blue opacity)
+(color app renderer greyscale)
+(color app renderer red green blue)
+(color app renderer red green blue opacity)
+
+(line app renderer start-x start-y end-x end-y)
+(rect app renderer start-x start-y width height)
+
+(random upper-bound)
+(random-between lower-bound upper-bound)
+```
+<div class="figure-label">Fig. 2: A complete recreation of the API.</div>
+
 For drawing we only have `line` and `rect` for now. We’ve seen `line` in action
 above, and `rect` is very similar: it takes a starting point as x and y
 coordinates, and a width and height. That’s all there is to drawing!
@@ -98,7 +118,7 @@ I found a few that I was able to reproduce, showcasing that, while anima isn’t
 a fully-fledged framework for animation, it’s also not completely useless.
 
 ![](https://veitheller.de/static/ferris.png)
-<div class="figure-label">Fig. 2: The picture we’re going to reproduce.</div>
+<div class="figure-label">Fig. 3: The picture we’re going to reproduce.</div>
 
 The piece above is interesting because it happened completely by accident, but
 I liked it enough to keep it. It’s incredibly simple, and still nice to look
@@ -119,7 +139,7 @@ with a little skeleton that just sets up an empty application:
   setup
   draw)
 ```
-<div class="figure-label">Fig. 3: A skeletal sketch.</div>
+<div class="figure-label">Fig. 4: A skeletal sketch.</div>
 
 All we’re doing for now is defining a sketch with an empty setup and draw
 function and a size of 800 by 800 pixels.
@@ -137,7 +157,7 @@ our call to `background` in the setup function.
 ```
 (defn setup [app rend] (framerate 1))
 ```
-<div class="figure-label">Fig. 4: Limiting the framerate.</div>
+<div class="figure-label">Fig. 5: Limiting the framerate.</div>
 
 Now that we’ve got the setup out of the way, let’s take care of `draw`. For
 now, let’s set the background and stroke color there and leave it at that.
@@ -148,7 +168,7 @@ now, let’s set the background and stroke color there and leave it at that.
     (background app rend 20)
     (color app rend 200)))
 ```
-<div class="figure-label">Fig. 5: Getting ready to draw.</div>
+<div class="figure-label">Fig. 6: Getting ready to draw.</div>
 
 All of the iterations of the sketch thus far have been executable, and all of
 them have looked and felt almost the same. Let’s try and figure out how to actually
@@ -166,7 +186,7 @@ one such line first:
           y (random size)]
       (line app rend x y x x))))
 ```
-<div class="figure-label">Fig. 6: Drawing a line.</div>
+<div class="figure-label">Fig. 7: Drawing a line.</div>
 
 This looks more like it! So what are we doing here? We get a random point by
 obtaining two random values between 0 and `size`, one for each coordinate. Then
@@ -185,7 +205,7 @@ That’s kind of nice, but what about a whole bunch of lines?
             y (random size)]
         (line app rend x y x x)))))
 ```
-<div class="figure-label">Fig. 7: Drawing many lines.</div>
+<div class="figure-label">Fig. 8: Drawing many lines.</div>
 
 We’re almost there. We get one artwork per second, but they don’t look quite
 right. Letting the lines start anywhere overcrowds the picture, and one of the
@@ -204,7 +224,7 @@ whole composition breathe a little more. Let’s limit `x` and `y` a bit.
             y (random-between margin (- size margin))]
         (line app rend x y x x)))))
 ```
-<div class="figure-label">Fig. 8: Constraining the lines.</div>
+<div class="figure-label">Fig. 9: Constraining the lines.</div>
 
 We introduce another global constant, `margin`, to constrain the X and Y
 coordinates. For that we use `random-between` instead of random, making the
