@@ -11,16 +11,16 @@ So how do I get to an RSS feed and a Twitter bot from there? Whenever I
 publish a post, I run [this
 script](https://github.com/hellerve/blog/blob/master/rsser/rsser.py). It
 looks at the date when the file was last modified and uses that as the
-RSS date. This isn't the best solution, of course, but it’s so simple and
-foolproof, and good enough for my setup where I write the posts once and
-don’t touch them again after publishing. Or at least that’s what I
+RSS date. This isn't the best solution, of course, but it’s simple and
+foolproof. It’s good enough for my setup in which I write the posts
+once and don’t touch them again after publishing. Or at least that’s what I
 thought.
-
-Of course nothing is ever as easy as you think it will be.
 
 The Twitter feed is generated in a similar way. It checks which posts are
 younger than a certain number of hours, and posts a notification on Twitter
 for my dearly beloved followers.
+
+Of course nothing is ever as easy as you think it will be.
 
 As detailed in [this PSA](//blog.veitheller.de/PSA_VI.html), I decided to
 roll out HTTPS after a few friends of mine asked me to. I wrote the PSA
@@ -30,10 +30,10 @@ Twitter feed generator, and wrote a sed expression to change each occurrence
 of “http://blog.veitheller.de” in my blog posts to “//blog.veitheller.de”.
 A quick fix, noone will know.
 
-Then I decided to write a quick blog post advertising the change, and posting
-it the same day; in less than an hour, I had it written, edited, and published.
+Then I decided to write a quick blog post advertising the change; in less
+than an hour, I had it written, edited, and published.
 I ran through the script, which took unusually long. I suspected that the
-Twitter API took a little to respond, that there was a connection error of some
+Twitter API was a bit slower than usual, that there was a connection error of some
 sort. Finally it was done. I looked at Twitter to verify that it had indeed been
 published; I saw nearly 70 new tweets.
 
