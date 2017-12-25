@@ -99,7 +99,7 @@ and zepto took over from there. It’s a simple idea, but fairly powerful.
 (zepto:implements-lang <my-fun> "my-language")
 ```
 <div class="figure-label">
-  Fig. 1: Hooking up a new parser can be so simple.
+  Fig. 1: Hooking up a new parser can be so easy.
 </div>
 
 On the other side of the implementation, I also planned—but never really
