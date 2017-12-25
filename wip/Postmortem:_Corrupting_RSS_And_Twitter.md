@@ -3,15 +3,15 @@ week. It’s an embarassing and cautionary tale, so it’s worth telling.
 
 First, a word about my setup. I wrote a simple static site generator that
 takes my markdown files and compiles them to HTML, inlining them into a
-layout file. That’s all that’s on the server, no database or anything of
-that sort. All of the software on my blog can be found
+layout file. That’s all that’s on the server, no database or anything like
+that. All of the software on my blog can be found
 [here](https://github.com/hellerve/blog).
 
 So how do I get to an RSS feed and a Twitter bot from there? Whenever I
 publish a post, I run [this
 script](https://github.com/hellerve/blog/blob/master/rsser/rsser.py). It
 looks at the date when the file was last modified and uses that as the
-RSS date. That’s not the best solution, of course, but it’s so simple and
+RSS date. This isn't the best solution, of course, but it’s so simple and
 foolproof, and good enough for my setup where I write the posts once and
 don’t touch them again after publishing. Or at least that’s what I
 thought.
@@ -23,7 +23,7 @@ younger than a certain number of hours, and posts a notification on Twitter
 for my dearly beloved followers.
 
 As detailed in [this PSA](//blog.veitheller.de/PSA_VI.html), I decided to
-roll out HTTPS after a few friends of mine asked me to. I wrote this PSA,
+roll out HTTPS after a few friends of mine asked me to. I wrote the PSA
 and then realized that I link to the HTTP version of this blog everywhere.
 “I know how to fix this”, I thought to myself, not thinking of the RSS or
 Twitter feed generator, and wrote a sed expression to change each occurrence
