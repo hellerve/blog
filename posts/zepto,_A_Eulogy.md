@@ -2,18 +2,20 @@ Almost exactly a year ago today I was in a small room in a venture capitalist’
 apartment, surrounded by 20 close friends and friends of friends, preparing to
 announce version 0.9.6 of [zepto](https://github.com/zepto-lang/zepto), the
 language’s first stable release. It was supposed to be a stable alpha that
-people could download and play around with. Version 0.9.7 was already in the works, 
+people could download and play around with. Version 0.9.7 was already in the works,
 with exciting things, like a more robust parser, a better
 traceback format, a faster hashmap implementation, and loads of other minor
 bugfixes. It never saw the light of day.
 
 The commits came less and less frequently until at last, two months later, I
 pronounced the project dead to me. I haven’t worked on it since, although some
-of my systems, such as the static site generator of this blog, the cowsay
-prompt that greets me every time I open a terminal, and some miscellaneous
+of my systems, such as the static site generator of this blog and some other
+websites, the fast stack-based calculator I use when in the terminal, a tool
+I use for generating documentation for my work, the cowsay prompt that greets
+me every time I open a terminal, and some miscellaneous
 scripts I use, still depend on it. The language still works, although some
 of the native extension that depend on outdated Haskell packages do not
-anymore.
+anymore. The bitrot set in quickly.
 
 Now, one year after my optimistic announcement, I want to tell you what zepto
 was, what it stood for, why it was great in many ways, and, most importantly,
@@ -40,8 +42,8 @@ ancestors, and, to a large extent, zepto itself. You can still tell: the
 Haskell code that fuels zepto is pretty terrible, and so are the early
 libraries that I wrote. It was a bad idea to incorporate those into the
 standard library, but I did, accumulating cruft from zepto’s inception.
-Starting out with code from the now-infamous [Write Yourself A Scheme in
-48 Hours](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours)
+Starting out with code from the now-infamous [“Write Yourself A Scheme in
+48 Hours”](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours)
 probably didn’t help either. [The new
 version](https://wespiser.com/writings/wyas/00_overview.html) wasn’t around
 back then.
@@ -92,7 +94,7 @@ the idiomatic ivory tower to see what the people on the bottom might need.
 
 Everything in zepto was malleable: it had `#lang` constructs similar to Racket,
 but much more primitive. Functions were able to hook themselves up into the
-system by providing a function that would translate the file into zepto’s AST,
+system by promising that they would translate the file into zepto’s AST,
 and zepto took over from there. It’s a simple idea, but fairly powerful.
 
 ```
@@ -140,22 +142,25 @@ and there are quite a few of those. These numbers are not gigantic, but enough
 where, after two years, you ask yourself “why am I doing this?”.
 
 And that gets to the heart of it: while in the beginning I was content to
-answer that question simply with “becuase it’s fun”, I realized that it got
+answer that question simply with “because it’s fun”, I realized that it got
 less fun as time dragged on. And it didn’t seem as if anyone would be
 interested in taking over the development of my little baby—I can’t blame them,
-what with the aforementioned cruft and all.
+what with the aforementioned cruft and all. I was hesitant to recommend using
+or trying it to anyone, because I know all of its ugly nooks and crannies, and
+there are oh so many. My sales pitches were plagued by insecurity.
 
 I got more serious and more ambitious over time, but I failed to meet most of
 the goals I set out for myself. Some of them were even at odds with each other.
 A nanopass compiler with pluggable backends, but also a foreign function
 interface? How’s that supposed to work exactly? And what about all of the
-complex data types zepto supports out of the box? Those questions never got an
-answer, even though I knew they needed one if I was to push forward.
+complex data types zepto supports out of the box? Do we release large preludes
+for every language we support? Those questions never got an answer, even though
+I knew they needed one if I was to push forward.
 
 Having everything be malleable didn’t help. It complicated every part of the
-design, and made the language more opaque. If everyone can have their language,
-noone has any way to communicate. I’m still not a fan of limiting a language
-just because a feature can be abused, instead hoping that people are
+design, and made the language more opaque. If everyone can have their own
+language, noone has any way to communicate. I’m still not a fan of limiting a
+language just because a feature can be abused, instead hoping that people are
 responsible, in the Kantian humanist sense<sup><a href="#1">1</a></sup>. But
 I’ll write about operator overloading and macros another time.
 
@@ -168,9 +173,10 @@ reach a state where the system was close to its Platonian idea.
 
 Maybe I gave up on zepto too soon; maybe a general regrouping and rewrite
 would’ve helped. But as readers of this blog know, I never lack ideas for side
-projects, and I’m currently in a love affair with Carp. I’m just grateful
-for the time I spent on zepto, for I learned a lot, and happy I have time to
-tackle other challenges again.
+projects, and I’m currently in a love affair with [Carp](http://github.com/carp-lang/carp),
+as you’ll realize if you scroll through my recent post output.
+I’m just grateful for the time I spent on zepto, for I learned a lot, and happy
+I have time to tackle other challenges again.
 
 ```
 (define (goodbye)
