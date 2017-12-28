@@ -1,5 +1,5 @@
 Technical Papers: 1144p (72 items) (3.13 pages per day, 0.20 items per day)
 Technical Books: 1343p (5 items) (3.68 pages per day, 0.01 items per day)
 Recreational Papers: 160p (13 items) (0.44 pages per day, 0.04 items per day)
-Recreational books: 2575p (14 items) (7.05 pages per day, 0.04 items per day)
+Recreational books: 2688p (15 items) (7.36 pages per day, 0.04 items per day)
 Total: 5222p (104 items) (14.31 pages per day, 0.28 items per day)
