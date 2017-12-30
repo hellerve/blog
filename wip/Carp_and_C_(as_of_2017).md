@@ -24,12 +24,12 @@ higher-order context. What I’m saying is “don’t do that, unless you’re v
 sure you know what you’re doing”<sup><a href="#2">2</a></sup>.
 
 ```
-typedef int my_int;
+typedef int MyInt;
 
-typedef struct my_structure {
-  my_int member1;
+typedef struct MyStructure {
+  MyInt member1;
   float member2;
-} my_structure;
+} MyStructure;
 ```
 <div class="figure-label">Fig. 1: A perfectly useless type definition.</div>
 
@@ -39,10 +39,10 @@ registration in Figure 2.
 
 ```
 ; registering an opaque type
-(register-type my_int)
+(register-type MyInt)
 
 ; registering a thin type
-(register-type my_structure [member1 my_int, member2 Float])
+(register-type MyStructure [member1 MyInt, member2 Float])
 ```
 <div class="figure-label">Fig. 2: The two ways of registering types.</div>
 
@@ -53,7 +53,7 @@ exposed to Carp. So what is the difference?
 
 Opaque types can only be used by the type system. No support structure will be
 generated for them and, even if they’re only aliases, you will not be able to
-use them as you used the aliased types, as is the case for `my_int` above.
+use them as you used the aliased types, as is the case for `MyInt` above.
 Integer addition will cease to work with them, and you’ll have to reimplement
 every operation you want to perform with them. And here’s the catch: as of the
 time of writing—the end of 2017—, you cannot define non-opaque type aliases.
@@ -67,15 +67,15 @@ retrieving, setting, and updating members in a structure. This makes them
 easier to work with, and useful on their own.
 
 ```
-int my_int_to_MINUS_int(my_int x) {
+int MyInt_to_MINUS_int(MyInt x) {
   return (int) x;
 }
 
-my_int my_int_inc(my_int x) {
+MyInt MyInt_inc(MyInt x) {
   return x + 1;
 }
 ```
-<div class="figure-label">Fig. 3: Making `my_int` less useless.</div>
+<div class="figure-label">Fig. 3: Making `MyInt` less useless.</div>
 
 The first thing you’ll notice in Figure 3 will be the somewhat awkward naming
 scheme of the functions. This is so because we mangle the names by hand, which
@@ -85,14 +85,14 @@ It will all start to make sense again when we look at Figure 4, in which we
 register the functions we’ve just created.
 
 ```
-(defmodule my_int
-  (register to-int (Fn [my_int] Int))
-  (register inc (Fn [my_int] my_int))
+(defmodule MyInt
+  (register to-int (Fn [MyInt] Int))
+  (register inc (Fn [MyInt] MyInt))
 )
 ```
 <div class="figure-label">Fig. 4: Modulizing C.</div>
 
-What we’re doing here is demangling the name: the prefix `my_int` will become
+What we’re doing here is demangling the name: the prefix `MyInt` will become
 the module name, the mangled symbol `_MINUS_` will become a dash, and so on.
 The isomorphism between Figure 3 and Figure 4 should still be somewhat
 apparent.
@@ -118,6 +118,8 @@ repository I linked to in the beginning.
 For the purposes of this blog post, let’s focus on `uint8_t`, the arithmetic
 operations that are defined on it, and its conversions to and from Strings
 and Ints.
+
+
 
 ## Packaging
 
