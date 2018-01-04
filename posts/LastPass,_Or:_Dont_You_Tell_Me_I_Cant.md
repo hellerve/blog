@@ -5,16 +5,16 @@ where I didn’t want to, but other than that the friction level is low.
 
 Today I want to talk to you about a promise that LastPass is making to their
 users—one that it cannot possibly keep—, and obviously breaks. Then let’s talk
-a bit about “regular users”, responsibility, and the thing I would want to
-change in my industry if I could only pick one.
+a bit about “regular users”, responsibility, and the one thing I would change
+in my industry if I could only pick one.
 
 ## “You are not permitted to view the password”
 
-LastPass is a password manager. It has a team feature, meaning that there are
-these things called “shared sites” that multiple people can have access to.
-This is well and good and old news.
+LastPass is a password manager. It has a team feature, meaning there are these
+things called “shared sites” that multiple people can have access to. This is
+well and good and old news.
 
-Some days ago, I needed to access a password for a service that uses the same
+A few days ago, I needed to access a password for a service that uses the same
 credentials on the command line as on the web, and I clicked on the appropriate
 account. I saw all of the info about the account, including a password text
 field with what was ostensibly my password in it, represented by a series of
@@ -45,7 +45,7 @@ know HTML to be taken seriously.
 ## You cannot handle the truth
 
 Our industry is used to coddling users. We don’t take them seriously; we treat
-them like toddlers and you don’t give toddlers power tools. So what we give
+them like toddlers, and you don’t give toddlers power tools. So what we give
 them are shiny things that make the appearance of working well—if there is an
 error, it is rarely propagated further up than into a console that is, by
 default, tucked away neatly into the nooks and crannies of the system. If it is
