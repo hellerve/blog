@@ -1,6 +1,6 @@
 One of my current clients is forcing me to use LastPass. I find it generally
 terrible, but I guess it makes sense for their use case. I had to deal with
-some unexpected from prefills that led me to log in with the company account
+some unexpected form prefills that led me to log in with the company account
 where I didn’t want to, but other than that the friction level is low.
 
 Today I want to talk to you about a promise that LastPass is making to their
@@ -87,6 +87,6 @@ know how it would, if done well, affect sales, but I do know that people have
 repeatedly told me they are grateful for the openness with which I
 communicate—without “openness” being used as a codeword for outright vitriol.
 
-Maybe that’s the big idea that I have, the one grand spark each of us gets and,
-if we find it, we spend our lives pursuing its adoption into the mainstream.
-And I threw it away by making it a sour blog post.
+Maybe that’s the big idea that I have, the one grand spark each of us gets,
+and, if we find it, we spend our lives pursuing its adoption into the
+mainstream. And I threw it away by making it a sour blog post.
