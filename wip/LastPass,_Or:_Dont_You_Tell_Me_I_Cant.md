@@ -22,7 +22,7 @@ dots—you know the type. There is an eye on the right side that reveals the
 password, and I clicked it. But LastPass told me that, with these credentials
 belonging to a shared site, I’ve lost my right to actually _see_ the password.
 
-![/assets/popup.png]()
+![](/assets/popup.png)
 <div class="figure-label">Fig. 1: Really?</div>
 
 This struck me as odd. With the password having to be prefilled into forms and
@@ -36,11 +36,11 @@ password. The promise they just made—that I was not permitted to view it—is
 broken.
 
 Of course this is not your CVE-level stuff. It turns out that the last item on
-their [FAQ for decurity reports](https://lastpass.com/support_security.php#securityfaqs)
+their [FAQ for security reports](https://lastpass.com/support_security.php#securityfaqs)
 tells me that this is known. It is telling that all of the truly
 customer-facing lingo is that of permissions and security, while their
 technical FAQ is a tad more factual. It is a little sad that you have to
-know HTML to be taken serious.
+know HTML to be taken seriously.
 
 ## You cannot handle the truth
 
@@ -51,10 +51,10 @@ error, it is rarely propagated further up than into a console that is, by
 default, tucked away neatly into the nooks and crannies of the system. If it is
 caught at all, that is.
 
-That is a decision that I find regrettable, because it is not empowering to the
+This is a decision that I find regrettable, because it is not empowering to the
 user, quite the opposite. But it is understandable, at least: we are faced with
 an onslaught of errors every day, and sometimes it is hard to differentiate
-between thise that are benign and those that are indicative of serious damage.
+between those that are benign and those that are indicative of serious damage.
 It would take an edifice akin to the human immune system to classify and tackle
 those problems and only show the users the kinds of problems that they might be
 interested in knowing about, such as severe engine failure. Ain’t nobody got
@@ -67,7 +67,7 @@ to sugarcoat. Outright lie is uncommon. If you look back at Figure 1, you will
 realize that while the popup says I’m “not permitted” to see the password, it
 doesn’t say I’m not able to. It creates a false sense of security, by playing
 an intuition about what the sentence _should_ mean against the reality of what
-it indeed does stand for. It’s a shame that we think we have to resort these
+it indeed does stand for. It’s a shame that we think we have to resort to these
 sorts of nasty tricks to make our products sell, instead of being upfront about
 what they can and cannot do.
 
@@ -79,7 +79,7 @@ tech-literate, though, you might be able to catch your tools pretending.
 
 I don’t know what this means. Be honest, I guess? When I write about systems,
 when I communicate ideas, one of my primary concerns is to talk about some of
-the drawbacks I thought about. What I want is to spread knowledge and get
+the drawbacks I can think of. What I want is to spread knowledge and get
 feedback, and if whatever I’m talking about is worth its salt, adoption. I
 would love to see the application of this principle in larger parts of the
 tech industry, and the market in general, even if that idea is mine. I don’t
