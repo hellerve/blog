@@ -17,7 +17,7 @@ very unscientific findings.
 <div class="figure-label">Fig. 1: An overview of the data as a nice little table.</div>
 
 I've calculated the page and item counts as well as how much reading that is per
-day. Then I split it up by topic: technical papers and books are those
+day. Then I split it up by topic: `technical papers` and `books` are those
 pertaining to Computer Science in a broad sense, whereas recreational reading
 is anything else. This year’s recreational papers were mostly psychological,
 which makes sense considering that I studied that for a year and still have a
@@ -25,12 +25,15 @@ lingering interest in the field. This year’s list of recreational books
 includes a fair amount of books that I felt I had to revisit, and not very many
 new ones.
 
-The bottom line is that the numbers are kind of embarassing. The only number
-that I find acceptable is the number of papers I read; the number of technical
-papers is acceptable for someone who is not part of academia in any sense of
-the word and the number of recreational papers I don’t really care about. Both
-technical and non-technical books I need to read more of, though, especially
-those meant for recreation.<sup><a href="#1">1</a></sup>
+The bottom line is that, for me, the numbers feel kind of embarassing. I’ve
+started approaching reading as a competition with myself—which is unhealthy,
+but yields good results—, and as far as I’m concerned, I’m losing. The only
+number that my OCD mind finds acceptable is the number of papers I read; the
+number of technical papers is pretty good for someone who is not part of
+academia in any sense of the word and the number of recreational papers I don’t
+really care about quantitatively. Both technical and non-technical books I need
+to read more of, though, especially those meant for
+recreation.<sup><a href="#1">1</a></sup>
 
 On the other hand, the nubers are kind of encouraging: I used to be an avid
 reader as a kid, and at one point just stopped, or at least that’s what it felt
