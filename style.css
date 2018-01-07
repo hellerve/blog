@@ -147,12 +147,16 @@ a:hover {
 
 pre {
   margin-bottom: 1em;
+  padding: 5px;
+  background: #d9e4ea;
+  overflow-x: scroll;
 }
 
 code {
   font-family: "triplicate", monospace;
   font-size: 90%;
   hyphens: none;
+  background: #d9e4ea;
 }
 
 .aside {
