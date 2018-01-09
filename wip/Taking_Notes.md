@@ -11,11 +11,8 @@ starting to take notes, because Peter said it better than I possibly could, but
 I will share the observations and insights I’ve gathered while writing the tool
 and using it for the first few days.
 
-I mostly work in my terminal, e-mail client, and browser. Lately
-[Rambox](http://rambox.pro/) has also been in my list of open applications,
-because it neatly separates the communication tools from the rest of the world
-and reduces the amount of tabs I have open, but that’s an implementation
-detail. Most ideas, flashes of inspirations, and frustrations happen in the
+I mostly work in my terminal, e-mail client, and browser<sup><a href="#1">1</a></sup>.
+Most ideas, flashes of inspirations, and frustrations happen in the
 terminal. That’s why I definitely need a tool that I can call on the command
 line, quickly, and that lets me quickly scribble up a note. Latency should be
 non-existent, and I should be able to compose both quick notes and longer, more
@@ -59,3 +56,9 @@ Or maybe I’m just very excited about having another productivity tool in my
 belt.
 
 Whatever it is, I thoroughly enjoy it.
+
+#### Footnotes
+<span id="1">1.</span>  Lately [Rambox](http://rambox.pro/) has also been in my
+list of open applications, because it neatly separates the communication tools
+from the rest of the world and reduces the amount of tabs I have open, but
+that’s an implementation detail.
