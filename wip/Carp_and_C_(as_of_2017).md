@@ -2,9 +2,9 @@ I’ve written a bunch of blog posts about Carp now that have proved to be
 surprisingly popular, and people have been demanding follow-ups on a
 variety of subjects. One of the features that has been the subject of multiple
 requests is C interoperability, which has been notably absent from my
-[whirlwind tour of the language](https://blog.veitheller.de/Carp.html), modtly
+[whirlwind tour of the language](https://blog.veitheller.de/Carp.html), mostly
 because the post was too long already. Today I want to fill that hole and show
-you both how C interop works and how to write packages with a clean interface.
+you both how C interop works, and how to write packages with a clean interface.
 To make it simple, I’ll use a package that I’ve already written which wraps
 [stdint](https://github.com/hellerve/stdint).
 
@@ -49,10 +49,10 @@ registration in Figure 2.
 As you can see in Figure 2, there are two ways of registering types: you can
 either register “opaque types”, i.e. types that are black boxes for Carp, or
 “thin types”<sup><a href="#3">3</a></sup>, i.e. types whose implementation is
-exposed to Carp. So what is the difference?
+exposed to Carp. So what's the difference?
 
 Opaque types can only be used by the type system. No support structure will be
-generated for them and, even if they’re only aliases, you will not be able to
+generated for them, and, even if they’re only aliases, you will not be able to
 use them as you used the aliased types, as is the case for `MyInt` above.
 Integer addition will cease to work with them, and you’ll have to reimplement
 every operation you want to perform with them. And here’s the catch: as of the
@@ -78,7 +78,7 @@ MyInt MyInt_inc(MyInt x) {
 <div class="figure-label">Fig. 3: Making `MyInt` less useless.</div>
 
 The first thing you’ll notice in Figure 3 will be the somewhat awkward naming
-scheme of the functions. This is so because we mangle the names by hand, which
+scheme of the functions.  This had to happen because we mangle the names by hand, which
 is a bit tedious, but, in my opinion, bearable<sup><a href="#4">4</a></sup>.
 
 It will all start to make sense again when we look at Figure 4, in which we
@@ -100,7 +100,7 @@ apparent.
 I know that the skin will crawl for some of you already. In our defense, we are
 well aware that nameclashes are perfectly possible with this mangling strategy,
 and [there is a Github issue](https://github.com/carp-lang/Carp/issues/120).
-Maybe you’ll undertand why we haven’t changed it yet when you read through it.
+Maybe you’ll understand why we haven’t changed it yet when you read through it.
 Spoiler: it has to do with the fact that we’re mangling by hand and that would
 be more complicated if we adopted C++ style name mangling. Also there are
 conflicting standards, because nothing is ever easy.
@@ -143,10 +143,10 @@ directory. I’ve put the C above in a file called `stdint_helper.h` inside
 <div class="figure-label">Fig. 6: Registering our type in Carp.</div>
 
 The `..` is necessary for now, because the compiler will put all of the build
-files into a directory called `out`. This is subject to change in the future,
+files into a directory called `out`. This is subject to change in the future;
 your mileage may vary.
 
-All right, let’s define some functions. Let’s start with converters from and to
+Alright, let’s define some functions, starting with converters from and to
 integers and the mathematical functions `+`, `-`, `*`, and `/`. While we’re at
 it, we can also define the comparison operations `=`, `>`, and `<`.
 
@@ -236,7 +236,7 @@ packaging and testing, let me have another word about allocations. Currently,
 Carp uses the system allocator. This means that on some embedded systems,
 using `CARP_MALLOC` will result in compilation errors. In these cases, our
 advice is to refrain from using it and compiling with `--no-core`, which will
-prevent from the core library getting loaded. Currently, there is no
+prevent the core library from getting loaded. Currently, there is no
 alternative drop-in replacement for embedded systems. We hope this will be
 resolved sooner or later, but it is not an immediate priority, and we request
 your patience.
@@ -261,7 +261,7 @@ many folders. Again, this is just my personal style, but it seems to work.
 The top level always stays the same in my Carp projects. I have a `README.md`
 with a—hopefully informative—outline of the project, what it does, and how to
 get it. Because Carp does not yet have a package manager, working with external
-packages involves currently a lot of cloning from Github.
+packages involves a lot of cloning from Github.
 
 I then provide you with three directories, of which two are optional. The
 `tests` directory is there, and it shouldn’t be optional—although I’ve been
@@ -312,8 +312,8 @@ for example through `carp -x tests/<filename>`.  This should pass, and leave a
 bit of hopeful green text for us to think of when our tests start to fail. From
 here, we can build up a more or less complete battery of tests like [this
 one](https://github.com/hellerve/stdint/blob/master/tests/uint8.carp). You’ll
-likely find less test cases than you would like in my test suites, but I take
-care to at least test all of the functions. You are most welcome to write more
+likely find fewer test cases than you would like in my test suites, but I take
+care to test all of the functions at least once. You are most welcome to write more
 than the bare minimum, though.
 
 ## Fin
