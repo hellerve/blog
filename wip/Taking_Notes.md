@@ -1,8 +1,8 @@
 I recently came across a [blog post](https://peterlyons.com/leveling-up)
 by fellow Recurser [Peter Lyons](https://peterlyons.com). The whole blog post
-resonated with me, but particularly the section about [taking
-notes](https://peterlyons.com/leveling-up#your-work-journal) left such a big
-impression that I decided to implement it right away. I wrote a [tiny
+resonated with me, but, the section about [taking
+notes](https://peterlyons.com/leveling-up#your-work-journal) in particular made
+such a big impression that I decided to implement it right away. I wrote a [tiny
 utility](https://github.com/hellerve/notes) for note-taking on the CLI, and
 I’ve been using it for the last few days.
 
@@ -18,15 +18,15 @@ and reduces the amount of tabs I have open, but that’s an implementation
 detail. Most ideas, flashes of inspirations, and frustrations happen in the
 terminal. That’s why I definitely need a tool that I can call on the command
 line, quickly, and that lets me quickly scribble up a note. Latency should be
-non-existant, and I should be able to compose both quick notes and longer, more
+non-existent, and I should be able to compose both quick notes and longer, more
 complex ideas. That’s why I settled on a simple command line interface that is
 mode-driven and intuitive.
 
-I think having a low-friction interface is key to developing a habit like that,
+I think having a low-friction interface is key to developing a habit like this,
 at least for me. I resorted to writing my own tool, because, as I detailed
 above, I yearned for a tool that is intuitive. In this case, this means
-intuitive _for me_, and because the tool is so simple I felt like I could
-comfortably write the tool I needed in one sitting.
+intuitive _for me_, and, because the tool is so simple, I felt like I could
+comfortably write the one I needed in one sitting.
 
 Quick notes should be the easiest to get to, because it’s likely that I compose
 them in a hurry. As such, any list of arguments whose first element is not a
@@ -44,11 +44,11 @@ Searching and dumping the logs will probably happen less frequently, and so I
 spent less time on those features. Because the logs are stored in a regular
 file, I can use any text wrangling tool that my shell and Operating System
 provide, and that should often be more than enough. Of course I included the
-features anyway, for completeness’ sake and because I was on a roll.
+features anyway, for completeness’s sake and because I was on a roll.
 
 All in all, my tool still suffers from feature envy when compared to Peter’s
-tooling, but for now it is about actually taking notes and developing a habit
-more than it is about having the perfect system. Like most of my private tools,
+tooling, but for now it's more about actually taking notes and developing a habit
+than having the perfect system. Like most of my private tools,
 including a lot of the scripts powering this blog, it is a work in progress.
 
 Why did I tell you all of this? Reading this blog post again, it pretty much
