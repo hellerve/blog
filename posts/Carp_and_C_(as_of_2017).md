@@ -265,7 +265,7 @@ packages involves a lot of cloning from Github.
 
 I then provide you with three directories, of which two are optional. The
 `tests` directory is there, and it shouldn’t be optional—although I’ve been
-known to break my own rules, especiall when I’m just dabbling. Depending on
+known to break my own rules, especially when I’m just dabbling. Depending on
 the complexity of the project, we will also want a `lib` directory for any C
 headers, and a `src` directory for any source file that our top level project
 file uses.
@@ -288,7 +288,7 @@ module like `Uint8` that is largely driven by already-working C code we at
 least need some smoke tests that tell us that everything is hooked up
 correctly. So, let’s write a few!
 
-`
+```
 (load "Test.carp")
 (use Test)
 
