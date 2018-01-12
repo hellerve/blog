@@ -224,7 +224,7 @@ To cut a few corners, we will just allocate 64 bytes. This will be plenty, even
 wasteful, but for our purposes it is good enough. We also define our format to
 be `Uint8(<data>)`, so that we know whether it is a regular `Int` or one of our
 types. This is not required, but I consider it good practice. An alternative
-way of writing that is with S-expressions, i.e. as `(Uint8 <data)`, but I seem
+way of writing that is with S-expressions, i.e. as `(Uint8 <data>)`, but I seem
 to default to the first one; maybe I’m just not a good Lisper after all.
 
 We can register that function like any other function in Carp. When we use it
