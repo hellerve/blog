@@ -1,7 +1,8 @@
 Today is the birthday of this blog. Exactly one year ago I wrote [my first
 post](//blog.veitheller.de/Dead_and_Reborn.html); in it I briefly wrote
-about my fear of being unable to write in a foreign language, abandoning this
-blog as quickly as I did with my last, Ghost-based solution.
+about my fear of being unable to write in a foreign language, and about
+fearing that I’d abandon this blog as quickly as I did with my last,
+Ghost-based solution.
 
 Now, 365 days and approximately 65,000 words later, I know that my fears were
 understandable, but unfounded. I feel comfortable with my setup and my writing,
