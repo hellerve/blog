@@ -7,7 +7,7 @@ Now, 365 days and approximately 65,000 words later, I know that my fears were
 understandable, but unfounded. I feel comfortable with my setup and my writing,
 even through [occasional
 mishaps](//blog.veitheller.de/Postmortem:_Corrupting_RSS_And_Twitter.html) and
-inexplicably popular posts that drive my anxiousness levels to the maximum.
+inexplicably popular posts that drive my anxiety levels to the maximum.
 I am happy you are here, together with approximately 4700 other IPs per month.
 I am grateful for my audience, a group of people open to non-technical
 and technical posts, occasional whining, and a lot of weirdly detailed writing
