@@ -25,6 +25,9 @@ most faithful readers. Thanks goes also to [Hacker
 News](https://news.ycombinator.com/), who was surprisingly friendly to my posts
 when they ended up there, and the
 [r/programminglanguages](https://reddit.com/r/programminglanguages) community,
-who has been putting up with a lot of my Carp rants lately.
+who has been putting up with a lot of my Carp rants lately. The biggest of all
+thank yous, however, goes out to my employer Port Zero, who has been supportive
+of every single one of my endeavours, even though most of them are very clearly
+not of business value for them.
 
 Thank you for this past year. It has been a wild ride.
