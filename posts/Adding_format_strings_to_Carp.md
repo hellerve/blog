@@ -35,7 +35,7 @@ clean API to the user. This is what I want to disccuss.
 
 As alluded to above [the final PR](https://github.com/carp-lang/Carp/pull/154)
 was fairly big, and it broke the behavior of some existing functionality. This
-particular beahvior wasn’t used—at least to our knowledge—, and so we consider
+particular behavior wasn’t used—at least to our knowledge—, and so we consider
 it okay to break things; Carp is currently versioned as `0.2`, and I would
 discourage anyone who would like to use it in a production
 context<sup><a href="#1">1</a></sup>.
