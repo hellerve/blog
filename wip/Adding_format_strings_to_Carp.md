@@ -1,7 +1,7 @@
 A few weeks ago I’ve added one of the more-often requested features to Carp:
 format strings. I’m quite proud of how they turned out, and I’d like to talk
-about their implementation quickly. As a little bonus, we get to talk about
-Carp macros while we’re at it.
+about their implementation quickly. As a little bonus, we'll also get to talk about
+Carp macros.
 
 ## Formatting, type-safely
 
@@ -29,7 +29,7 @@ An important consideration was that while `printf` exists, it is a type-unsafe
 variable-argument function, and we cannot express that in Carp—at least not
 yet. So we needed a type-safe alternative. A fitting interface was quickly
 found and implemented, and then we built a macro on top of it to deliver a
-clean API to the user. This is what I want to talk about.
+clean API to the user. This is what I want to disccuss.
 
 ## A hard day’s work
 
@@ -101,12 +101,12 @@ Let’s start with a skeleton and work our way up from there.
 (defmacro fmt [s :rest args]
   (fmt-internal s args))
 ```
-<div class="figure-label">Fig. 3: A `fmt` skeleton.</div>
+<div class="figure-label">Fig. 3: An `fmt` skeleton.</div>
 
-Alright, we have written a macro that calls a dynamic function, because we need
+Alright, now we've written a macro that calls a dynamic function, because we need
 recursion. The dynamic function checks only the base case for now: if there are
 no percent formatters in the string anymore we just return a copy of the
-string. So far, so good. The second easiest case is if we encounter an escaped
+string. So far, so good. The second easiest case is encountering an escaped
 percent sign, i.e. `%%`. Let’s take care of that.
 
 ```
@@ -130,7 +130,7 @@ percent sign and recurses into the next iteration of the dynamic function, with
 the rest of the string.<sup><a href="#2">2</a></sup>
 
 The next case is the last one: in it we intersperse an argument. If it’s the
-last one, we call `format` and be done with it. Let’s implement that.
+last one, we call `format` and are done with it. Let’s implement that.
 
 ```
 (defdynamic fmt-internal [s args]
