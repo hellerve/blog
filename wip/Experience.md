@@ -53,3 +53,34 @@ their careers would be delusional.
 So I’m going to continue ranting instead.
 
 ## Manufacturing experience
+
+It is hard for most of us to market ourselves. Even the word sounds icky. Once
+you reach the promised land, experience will speak for itself—or so we think. If
+you can articulate your experiences clearly and honestly, though, without over-
+or underselling it, your peers and your prospective employeers will be
+grateful. I’m in a lot of interviews and preliminary meetings where I have to
+explain myself—it comes with the territory as a consultant, I think—, and I
+learned to realize how important all of the skills surrounding our jobs are.
+
+I hate having to justify myself, but I’m very visibly young, and some people
+I work with do not jive well with that, especially if I am above them in
+hierarchy. Pure skills don’t help as much as I hoped early in my career; noone
+likes a whiz kid. You have to bank on emotional maturity, organization, and
+hard work—in yourself, not in others.
+
+That’s not a recipe for success. I hear stories of failure, even about outright
+bullying in the work place, from who I consider very mature and skilled people.
+But it helps, or so I hope.
+
+If you land a few lucky projects, you might gain experience and create a
+portfolio while doing it, like I did. That’s partially due to me being
+selective about the kinds of companies I work with, but mostly sheer chance.
+
+## I won’t tell you what to do
+
+I feel like this blog post is a bit of a mess. I’m hesitant to give anyone
+general advice; I’m just not cut out for that. But I wanted to write this
+anyway, because at the very least I believe you deserve to know who it is
+that you’re reading blog posts from.
+
+And who not to get career advice from.
