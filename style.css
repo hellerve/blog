@@ -258,7 +258,7 @@ ol li {
     margin-top: -0.5em;
   }
   pre {
-    font-size: 110%;
+    font-size: 130% !important;
   }
 }
 @media(max-width:880px){
@@ -267,4 +267,7 @@ ol li {
 @media(max-device-width:520px) {
   body > * {margin: 2rem;}
   .content {padding: 0;}
+  pre {
+    font-size: 200% !important;
+  }
 }
