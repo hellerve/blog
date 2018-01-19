@@ -20,7 +20,7 @@ find. His lack of fingers didn’t make weaving an easy task, and it had taken
 him many mornings to get it just right.
 
 “Would you marry me?”, he said. Koala’s eyes immediately filled with water. She
-sobbed and sniveled, she cried and whimpered, but finally she dried her furry
+sobbed and sniffled, she cried and whimpered, but finally she dried her furry
 face and said: “Yes, Turtle, yes of course.”
 
 Turtle helped her put the ring on one of her paws. She nibbled on it a bit.
