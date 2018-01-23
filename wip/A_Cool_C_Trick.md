@@ -6,7 +6,7 @@ committed the same error twice. Finally someone on Reddit’s wonderful
 [r/programminglanguages](https://reddit.com/r/programminglanguages) pointed me
 to a fix, and I want to share it with you. I’m sure most of the C programmers
 that read this blog already know of it, but I still want to document this bit
-of behaviour, because it’s useful and it was new to me.
+of behaviour, because it’s useful, and it was new to me.
 
 ## Generating cruft
 
@@ -32,7 +32,7 @@ string Int_format(string* str, int x) {
 
 ## Thank you, Reddit
 
-A redditor going under the name of
+A redditor known as 
 [u/basic-gongfu](https://www.reddit.com/user/basic-gongfu) gave me something
 much more useful: pointers on how to fix it.
 
@@ -65,15 +65,14 @@ exactly as much memory as we need.
 
 I want to thank basic-gongfu profusely for making me aware of this bit of
 behaviour. We’ve [incorporated](https://github.com/carp-lang/Carp/pull/172)
-this behaviour into Carp already, removing a bug that has been on our radar for
+it into Carp already, removing a bug that has been on our radar for
 a while and Carp’s memory footprint in one fell swoop.
 
 I’d like to think that, once again, being upfront about the shortcomings of my
 code has helped in getting feedback and help. Of course this fix it not largely
-attributable to me, and I don’t want to sound like it is, but I do think that
-an honest way of communicating the state of your projects helps people find a
-way to voice their concerns and help make your creations better with their
-experience.
+attributable to me, but I do think that an honest way of communicating the 
+state of your projects helps people find a way to voice their concerns and help 
+make your creations better with their experience.
 
 And you get to learn cool stuff in the process, so that’s nice.
 
