@@ -33,8 +33,9 @@ string Int_format(string* str, int x) {
 ## Thank you, Reddit
 
 A redditor known as 
-[u/basic-gongfu](https://www.reddit.com/user/basic-gongfu) gave me something
-much more useful: pointers on how to fix it.
+[u/basic-gongfu](https://www.reddit.com/user/basic-gongfu)—the creator of the
+[cixl](https://github.com/basic-gongfu/cixl) programming language, as it
+happens—gave me something much more useful: pointers on how to fix it.
 
 He told me that `snprintf` has a bit of useful behaviour: if you pass it a
 `NULL` pointer and `0` as the first two arguments, it will return the number
@@ -69,9 +70,9 @@ it into Carp already, removing a bug that has been on our radar for
 a while and Carp’s memory footprint in one fell swoop.
 
 I’d like to think that, once again, being upfront about the shortcomings of my
-code has helped in getting feedback and help. Of course this fix it not largely
-attributable to me, but I do think that an honest way of communicating the 
-state of your projects helps people find a way to voice their concerns and help 
+code has helped in getting feedback and help. Of course this fix is not largely
+attributable to me, but I do think that an honest way of communicating the
+state of your projects helps people find a way to voice their concerns and help
 make your creations better with their experience.
 
 And you get to learn cool stuff in the process, so that’s nice.
