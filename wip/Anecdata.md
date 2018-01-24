@@ -1,5 +1,5 @@
 I had a summer job at [Haldex](https://www.haldex.com/) when I was fourteen.
-For four weeks I was standing at a conveyor belt, manufacturing hydraulic
+For four weeks I stood at a conveyor belt, manufacturing hydraulic
 pumps. I like mindless work, and it was one of the best summer jobs I ever had,
 except maybe the summer that I spent with my father, chopping hundreds of cubic
 meters of wood and restoring houses.
@@ -11,7 +11,7 @@ assembling pumps and produced the least amount of broken pumps. Virtually all
 of his pumps survived the testing station, and if they didn’t, it was probably
 the cast.
 
-He frustrated me at first: whenever I worked with him, he told me to slow down.
+He frustrated me at first; whenever I worked with him, he told me to slow down.
 I didn’t want to make him wait, and so I hurried whenever I was in front of him
 at the conveyor belt. He would calmly tell me to work more slowly. I was
 annoyed, but I listened.
