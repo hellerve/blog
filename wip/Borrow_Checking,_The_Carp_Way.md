@@ -76,10 +76,10 @@ argument, it will take over ownership.
 ```
 <div class="figure-label">Fig. 1: `test` takes ownership.</div>
 
-In Figure 1, the function `test` will take ownership over the string that is
-being passed to it. This means that it now controls the memory associate to it,
-and it wouldn’t be safe for our main function to reuse it. Thus, `main` gives
-control over to `test`.
+In Figure 1<sup><a href="1">1</a></sup>, the function `test` will take
+ownership over the string that is being passed to it. This means that it now
+controls the memory associate to it, and it wouldn’t be safe for our main
+function to reuse it. Thus, `main` gives control over to `test`.
 
 ```
 ; test : (Fn [String] ())
@@ -144,7 +144,8 @@ mastered the conceptually simpler model in Carp.
 
 What I want to tell you with this addendum is that it’s completely normal if
 it takes you some time to develop an intuition about the concept of borrowing.
-What you get in return is programs that are very likely to be correct.
+What you get in return is programs that are very likely to be
+correct<sup><a href="#2">2</a></sup>.
 
 Don’t be scared of compiler errors. The Carp compiler is here to help you write
 better programs and guide you in the process of establishing a sound model of
@@ -168,7 +169,12 @@ to help you sort through the mess.
 
 #### Footnotes
 
-<span id="#1">1.</span> They might not be optimal, and a few tweaks in the
-                        model might result in fewer copies and thus more
-                        performant programs. But before worrying about
-                        optimality, we should worry about safety.
+<span id="1">1.</span> Why are string literals references, you might rightfully
+                       ask. Carp embeds string literals in the binary, and thus
+                       they don’t need to be handled by the borrow checker; they
+                       will never need to be freed.
+
+<span id="2">2.</span> They might not be optimal, and a few tweaks in the
+                       model might result in fewer copies and thus more
+                       performant programs. But before worrying about
+                       optimality, we should worry about safety.
