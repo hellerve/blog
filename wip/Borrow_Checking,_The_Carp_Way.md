@@ -76,7 +76,7 @@ argument, it will take over ownership.
 ```
 <div class="figure-label">Fig. 1: `test` takes ownership.</div>
 
-In Figure 1<sup><a href="1">1</a></sup>, the function `test` will take
+In Figure 1<sup><a href="#1">1</a></sup>, the function `test` will take
 ownership over the string that is being passed to it. This means that it now
 controls the memory associate to it, and it wouldn’t be safe for our main
 function to reuse it. Thus, `main` gives control over to `test`.
