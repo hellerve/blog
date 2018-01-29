@@ -128,12 +128,13 @@ lend out a piece of memory and then your scope ends, noone is in charge of it
 anymore. By definition, the ownership of return values must be handed over to
 the caller in the Carp model.
 
-There are some special cases to that rule, and I’m not proud of that. If you
-ever work with arrays in Carp, you’ll come across the indexing function `nth`.
-It returns a reference. How is that possible? It’s actually quite simple: the
+Unfortunately, there are some special cases to that rule, due to design choices
+surrounding Carp and its view on simplicity<sup><a href="#2">2</a></sup>. If
+you ever work with arrays, you’ll come across the indexing function `nth`. It
+returns a reference. How is that possible? It’s actually quite simple: the
 array element is still owned by the array. It is not a copy, and thus you
-cannot destroy it, because you would invalidate the array by doing so. That
-rule also holds for struct accessors, as of early 2018.
+cannot delete it, because you would invalidate the array by doing so. That rule
+also holds for struct accessors, as of early 2018.
 
 ## A tale of debugging
 
@@ -145,7 +146,7 @@ mastered the conceptually simpler model in Carp.
 What I want to tell you with this addendum is that it’s completely normal if
 it takes you some time to develop an intuition about the concept of borrowing.
 What you get in return is programs that are very likely to be
-correct<sup><a href="#2">2</a></sup>.
+correct<sup><a href="#3">3</a></sup>.
 
 Don’t be scared of compiler errors. The Carp compiler is here to help you write
 better programs and guide you in the process of establishing a sound model of
@@ -174,7 +175,12 @@ to help you sort through the mess.
                        they don’t need to be handled by the borrow checker; they
                        will never need to be freed.
 
-<span id="2">2.</span> They might not be optimal, and a few tweaks in the
+<span id="2">2.</span> Rust solves this problem using
+                       [lifetimes](https://doc.rust-lang.org/1.9.0/book/lifetimes.html),
+                       which Carp decided to omit. There is a possibility that
+                       they might be added in the future, though.
+
+<span id="3">3.</span> They might not be optimal, and a few tweaks in the
                        model might result in fewer copies and thus more
                        performant programs. But before worrying about
                        optimality, we should worry about safety.
