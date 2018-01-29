@@ -61,17 +61,17 @@ figure out the underlying theories in this domain as we have for typing.
 
 But let’s get back to the point, shall we? By default, things are owned by the
 scope they are enclosed in. Anything that is introduced by a `let` form, for
-isntance, is owned by that block. If you pass it to another function as an
+instance, is owned by that block. If you pass it to another function as an
 argument, it will take over ownership.
 
 ```
 ; test : (Fn [String] ())
-(defn test [x]
+(defn test [x] ; x : String
   (IO.println &x))
 
 (defn main []
   ; because string literals are of type &String
-  (let [a @"test"]
+  (let [a @"test"] ; a : String
       (test a)))
 ```
 <div class="figure-label">Fig. 1: `test` takes ownership.</div>
@@ -83,11 +83,11 @@ control over to `test`.
 
 ```
 ; test : (Fn [String] ())
-(defn test [x]
+(defn test [x] ; x : String
   (IO.println &x))
 
 (defn main []
-  (let-do [a @"test"]
+  (let-do [a @"test"] ; a : String
       (test a)
       (test a)))
 ```
@@ -107,11 +107,11 @@ is where references come in.
 
 ```
 ; test : (Fn [&String] ())
-(defn test [x]
+(defn test [x] ; x : &String
   (IO.println x))
 
 (defn main []
-  (let-do [a @"test"]
+  (let-do [a @"test"] ; a : String
       (test &a)
       (test &a)))
 ```
