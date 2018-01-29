@@ -65,6 +65,7 @@ isntance, is owned by that block. If you pass it to another function as an
 argument, it will take over ownership.
 
 ```
+; test : (Fn [String] ())
 (defn test [x]
   (IO.println &x))
 
@@ -81,6 +82,7 @@ and it wouldn’t be safe for our main function to reuse it. Thus, `main` gives
 control over to `test`.
 
 ```
+; test : (Fn [String] ())
 (defn test [x]
   (IO.println &x))
 
@@ -104,6 +106,7 @@ invalidated under our feet, because we probably also want to work with it. This
 is where references come in.
 
 ```
+; test : (Fn [&String] ())
 (defn test [x]
   (IO.println x))
 
