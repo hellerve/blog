@@ -121,6 +121,20 @@ The program in Figure 3 will compile. By handing over references to `test`—and
 changing the call to `println` accordingly—we essentially tell the compiler
 that we˚re not done with `a` just yet. We’ve only borrowed it to `test`.
 
+## Special cases and implications
+
+You cannot return references in Carp. This should make sense by now: if you
+lend out a piece of memory and then your scope ends, noone is in charge of it
+anymore. By definition, the ownership of return values must be handed over to
+the caller in the Carp model.
+
+There are some special cases to that rule, and I’m not proud of that. If you
+ever work with arrays in Carp, you’ll come across the indexing function `nth`.
+It returns a reference. How is that possible? It’s actually quite simple: the
+array element is still owned by the array. It is not a copy, and thus you
+cannot destroy it, because you would invalidate the array by doing so. That
+rule also holds for struct accessors, as of early 2018.
+
 ## A tale of debugging
 
 Especially in the beginning, I often felt like I just threw in random copies
