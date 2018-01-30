@@ -50,7 +50,7 @@ possible.
 
 References are a piece of that puzzle. They are similar to type annotations,
 but instead of helping the type checker figure out the types in your program,
-it operates on the memory level. It helps the borrow checker know who you
+it operates on the memory level. It helps let the borrow checker know who you
 think should own what. You then engage in a conversation with your compiler,
 effectively, working together to build a program with correct memory semantics.
 
@@ -151,7 +151,7 @@ correct<sup><a href="#3">3</a></sup>.
 Don’t be scared of compiler errors. The Carp compiler is here to help you write
 better programs and guide you in the process of establishing a sound model of
 the information and memory flow of your applications. Sure, all that red text
-looks scary, but it is more  an admission of failure on the compiler’s part
+looks scary, but it is more an admission of failure on the compiler’s part
 than an indictment.
 
 ## Fin
