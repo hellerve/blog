@@ -1,6 +1,6 @@
 A question that comes up every once in a while on the Carp chatroom and in
-Github issues is how memory management works. People who are not familiar with
-Rust especially have understandable trouble grasping how to program with
+Github issues is how memory management works. Especially people who are not
+familiar with Rust understandably have trouble grasping how to program with
 references, and why some functions take references while others don’t. Today,
 I will try to explain these concepts for my fellow Carpenters.
 
@@ -8,15 +8,15 @@ A fair note: while this blog post might be beneficial to your understanding of
 the Rust borrow checker, this is not my focus. I don’t know Rust very well, and
 it is entirely possible that it does things differently and I’m just confusing
 your understanding of how its machinery works. I therefore suggest that you
-don’t try to compare the two too much lest you fall prey to faulty assumptions.
+don’t try to compare the two too much, lest you fall prey to faulty assumptions.
 
 ## An unfortunate piece of syntax
 
 I have an inkling that at least some of the confusion surrounding references
 stems from the obvious comparison to references in more familiar languages such
-as C and Go. It’s not only the name that is reminiscent: even the syntax is
+as C and Go. Not only the names are similar: even the syntax is
 identical. Ampersands take a thing by reference, as has always been the case.
-Only that the semantics of “taking a thing by reference” are not the same at
+But the semantics of “taking a thing by reference” are not the same at
 all.
 
 In the languages mentioned above, taking a reference has direct implications on
@@ -43,14 +43,14 @@ Capitalist at heart, these languages obsess over the flows of property. This
 serves a simple goal: if you know who owns what at any given moment, you also
 know when you can get rid of it.
 
-The Carp compiler tries very hard to do as much as possible for you. It inferes
-almost any type, the occasional annotation nonwithstanding, for once. And in
+The Carp compiler tries very hard to do as much as possible for you. It infers
+almost any type, the occasional annotation nonwithstanding, for once. In
 the same vein, it tries to make memory management as simple and automatic as
 possible.
 
 References are a piece of that puzzle. They are similar to type annotations,
 but instead of helping the type checker figure out the types in your program,
-it operates on the memory level. It helps let the borrow checker know who you
+it operates on the memory level. It helps the borrow checker know who you
 think should own what. You then engage in a conversation with your compiler,
 effectively, working together to build a program with correct memory semantics.
 
@@ -123,7 +123,7 @@ that we˚re not done with `a` just yet. We’ve only borrowed it to `test`.
 
 ## Special cases and implications
 
-You cannot return references in Carp. This should make sense by now: if you
+You cannot return references in Carp. This hopefully makes sense by now: if you
 lend out a piece of memory and then your scope ends, noone is in charge of it
 anymore. By definition, the ownership of return values must be handed over to
 the caller in the Carp model.
@@ -151,13 +151,13 @@ correct<sup><a href="#3">3</a></sup>.
 Don’t be scared of compiler errors. The Carp compiler is here to help you write
 better programs and guide you in the process of establishing a sound model of
 the information and memory flow of your applications. Sure, all that red text
-looks scary, but it is more of an admission of failure on the compiler’s part
+looks scary, but it is more  an admission of failure on the compiler’s part
 than an indictment.
 
 ## Fin
 
 This has been a whirlwind tour of borrow checking in Carp. It has been fairly
-high-level, and not many of the implementation details have been talked about.
+high-level, and I didn't talk about many of the implementation details.
 If you want to know more about the inner workings of the Carp compiler, I
 suggest that you read my [blog post from late last
 year](https://blog.veitheller.de/The_Carp_Compiler_%28as_of_2017%29.html); it
