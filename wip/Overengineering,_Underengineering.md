@@ -1,8 +1,8 @@
 In my job as a consultant, I get to see a lot of different companies and teams.
 This is a big privilege; oftentimes they are struggling and need me to help
-them figure out how to get out of all kinds of unfortunate situations. But
-that’s not alway the case; I’ve worked with amazing teams that solved
-challenging problems.
+them figure out how to get out of all kinds of unfortunate situations. I’ve
+worked with amazing teams that solved challenging problems as well, don’t get
+me wrong, but it’s jsut not the norm.
 
 And then there are times when the collaboration is just magical. Today
 I want to talk about a particularly enjoyable experience.
