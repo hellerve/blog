@@ -41,7 +41,10 @@ comedians can even make people laugh at their dread. But: it won’t ever
 guide you into a space your mind has never been in before, and you won’t
 have any revolutionary ideas. I say that as if it was a fact, but of course
 it is mere opinion. More talented, more hardworking, and more accomplished
-creatives might feel differently about this.
+creatives might feel differently about this. Even John Cleese himself
+doesn’t seem to be entirely unconflicted about this, as seen in [this
+interview](https://www.youtube.com/watch?v=nL0dmBy5qTw) at around 42
+minutes in and in his book<sup><a href="#3">3</a></sup>.
 
 I know, however, what works for me and what doesn’t. And feeling anxious,
 although it is ever present in my life, doesn’t work for me.
@@ -58,3 +61,9 @@ although it is ever present in my life, doesn’t work for me.
                        I’ve ever heard of who wasn’t always full of
                        existential dread about their work. It is a kind of
                        fuel, but channeling it is hard.
+
+<span id="3">3.</span> I think he makes a distinction between extrinsic and
+                       intrinsic anxiety, but that would completely
+                       devastate my point, and so I will gloss over it.
+                       Didn’t I tell you I wanted to misrepresent his
+                       argument?
