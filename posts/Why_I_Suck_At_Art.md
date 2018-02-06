@@ -6,7 +6,7 @@ the process misrepresent Mr. Cleese’s point.
 
 As you might or might not know, I sometimes dabble [in generative
 art](https://veitheller.de/art) and [poetry](https://veitheller.de/poems).
-I also play the guitar, although not that often anymore. I objectively am
+I also play the guitar, although not that often anymore. I am
 not very good at any of them<sup><a href="#1">1</a></sup>. It doesn’t
 matter, though, because it is purely recreational, and I enjoy it.
 
