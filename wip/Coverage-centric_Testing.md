@@ -1,0 +1,105 @@
+Many of my clients keep test coverage scores for every commit or pull request,
+and they integrate appropriate tools—such as [codecov](https://codecov.io/)—into
+their code review. Coverage scores are often used as one of the primary
+indicators on the quality of a pull request, some even go as far as flagging a
+pull request as generally unfit for merging when it decreases code coverage.
+
+I generally agree with this practice, but it encourages a set of behaviors that
+I think are detrimental to code quality, and today I want to talk about those.
+
+## Why does coverage decrease?
+
+If a pull request comes in that decreases coverage, the first question I’d like
+to ask myself is: why does it do that? I tend to write tests while I write the
+code—I’m not always completely adherent to TDD, especially when I’m fleshing out
+a fresh idea—, so the coverage should at least stay the same, if not increase.
+If it doesn’t, that’s a bug in my workflow<sup><a href="#1">1</a><sup>.
+
+Instead of scrambling to write some tests after the fact, I’d like to think that
+I look at what I did wrong in this PR first. I don’t always do that, but I try
+to be as conscious as I can about it.
+
+After analyzing, I will spend some time writing tests. They’ll not be of the
+same quality as the tests I would’ve written if I had written them during the
+development of the feature, though, because the mindset is mostly to keep my
+pull request in the green. Not something I’m proud of, but more often the case
+than I’d like to admite. Although this is obviously wrong, I rarely get
+objections by the people who review my code, because this behavior is not as
+easy to spot as regular anti-patterns or simple bugs and get often lost in the
+noise.
+
+This brings me to the main point of my blog post: coverage-centrism.
+
+## Coverage-centrism
+
+I’ve seen people not write tests for code, because the lines introduced were
+already covered, and so they didn’t have to add anything. The pull request is
+approved, and the feature is merged.
+
+Note that I said “lines” above, not feature. This is not the same thing at all,
+and even though coverage tools will report that all is well, we just missed to
+test a new case. Consider the following Python
+code<sup><a href="#2">2</a></sup>:
+
+```
+def my_request_handler(request):
+  return HTTP_OK
+```
+<div class="figure-label">Fig. 1: A useful web request.</div>
+
+This is a simple method for a fantasy web framework. It will return a HTTP code
+of 200 on every incoming request. That’s easy to test, we just call the method
+with a mock request and assert that we always get the expected status code back.
+
+```
+def test_my_request_handler():
+  response = my_request_handler(mock_request())
+  assert(response.status, 200)
+```
+<div class="figure-label">Fig. 2: Testing our request handler.</div>
+
+Figure 2 is already imperfect, because we only test the function with one
+request. But let’s roll with it for now.
+
+Imagine then that someone decides that we should ratelimit some endpoints of our
+API, and `my_request_handler` is one of them. We introduce a new decorator,
+`rate_limit`, that automatically does that for us.
+
+```
+@rate_limit(num_requests=10, seconds=60)
+def my_request_handler(request):
+  return HTTP_OK
+```
+<div class="figure-label">Fig. 3: Adding a rate limiter.</div>
+
+Although we certainly introduced a new piece of behavior into our application,
+the coverage tools will report that all is well, because the decorator is
+applied when we define the function, and thus always executed.
+
+In the best case, we’ve tested our `rate_limit` decorator and thus can say with
+some confidence that it will work. But if I were to maintain this piece of
+software, I’d at least like to know whether that decorator has been applied in
+all the right places.
+
+Coverage-centric testing doesn’t make this necessary. The line is green, and
+that’s all that counts.
+
+## Fin
+
+I’m not saying that watching code coverage is bad. It can be a good first
+indicator on the quality of a contribution. But it isn’t the most important
+measure of quality, because there are so many ways to cheat at it, and so many
+ways to do it incorrectly. Manual review is still mostly necessary, and keeping
+an eye out for coverage-centric testing behaviors is especially valuable to
+keep the quality of your tests up.
+
+#### Footnotes
+
+<span id="1">1.</span> There are cases where I deliberately skip writing tests
+                       for various reasons, but they come so few and far in
+                       between that I will not spend time going into those
+                       cases.
+
+<span id="2">2.</span> The following examples require a cursory knowledge of
+                       Python, but apply more generally to all kinds of
+                       languages.
