@@ -5,27 +5,27 @@ indicators on the quality of a pull request, some even go as far as flagging a
 pull request as generally unfit for merging when it decreases code coverage.
 
 I generally agree with this practice, but it encourages a set of behaviors that
-I think are detrimental to code quality, and today I want to talk about those.
+I think are detrimental to code quality. Today I want to talk about these.
 
 ## Why does coverage decrease?
 
 If a pull request comes in that decreases coverage, the first question I’d like
-to ask myself is: why does it do that? I tend to write tests while I write the
-code—I’m not always completely adherent to TDD, especially when I’m fleshing out
+to ask myself is: why does it do that? I tend to write tests while writing the
+code itself—I’m not always completely adherent to TDD, especially when I’m fleshing out
 a fresh idea—, so the coverage should at least stay the same, if not increase.
 If it doesn’t, that’s a bug in my workflow<sup><a href="#1">1</a><sup>.
 
 Instead of scrambling to write some tests after the fact, I’d like to think that
 I look at what I did wrong in this PR first. I don’t always do that, but I try
-to be as conscious as I can about it.
+to be as conscious about it as I can.
 
 After analyzing, I will spend some time writing tests. They’ll not be of the
 same quality as the tests I would’ve written if I had written them during the
 development of the feature, though, because the mindset is mostly to keep my
 pull request in the green. Not something I’m proud of, but more often the case
-than I’d like to admite. Although this is obviously wrong, I rarely get
-objections by the people who review my code, because this behavior is not as
-easy to spot as regular anti-patterns or simple bugs and get often lost in the
+than I’d like to admit. Although this is obviously wrong, I rarely get
+objections from the people who review my code, because this behavior is not as
+easy to spot as regular anti-patterns or simple bugs and often gets lost in the
 noise.
 
 This brings me to the main point of my blog post: coverage-centrism.
@@ -47,7 +47,7 @@ def my_request_handler(request):
 ```
 <div class="figure-label">Fig. 1: A useful web request.</div>
 
-This is a simple method for a fantasy web framework. It will return a HTTP code
+This is a simple method for a fantasy web framework. It will return an HTTP code
 of 200 on every incoming request. That’s easy to test, we just call the method
 with a mock request and assert that we always get the expected status code back.
 
@@ -70,7 +70,7 @@ API, and `my_request_handler` is one of them. We introduce a new decorator,
 def my_request_handler(request):
   return HTTP_OK
 ```
-<div class="figure-label">Fig. 3: Adding a rate limiter.</div>
+<div class="figure-label">Fig. 3: Adding a ratelimiter.</div>
 
 Although we certainly introduced a new piece of behavior into our application,
 the coverage tools will report that all is well, because the decorator is
@@ -97,7 +97,7 @@ keep the quality of your tests up.
 
 <span id="1">1.</span> There are cases where I deliberately skip writing tests
                        for various reasons, but they come so few and far in
-                       between that I will not spend time going into those
+                       between that I'm not going not spend time going into those
                        cases.
 
 <span id="2">2.</span> The following examples require a cursory knowledge of
