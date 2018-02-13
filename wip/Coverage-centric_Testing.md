@@ -16,15 +16,15 @@ a fresh idea—, so the coverage should at least stay the same, if not increase.
 If it doesn’t, that’s a bug in my workflow<sup><a href="#1">1</a><sup>.
 
 Instead of scrambling to write some tests after the fact, I’d like to think that
-I look at what I did wrong in this PR first. I don’t always do that, but I try
+I look at what’s wrong with my PR first. I don’t always do that, but I try
 to be as conscious about it as I can.
 
 After analyzing, I will spend some time writing tests. They’ll not be of the
 same quality as the tests I would’ve written if I had written them during the
 development of the feature, though, because the mindset is mostly to keep my
 pull request in the green. Not something I’m proud of, but more often the case
-than I’d like to admit. Although this is obviously wrong, I rarely get
-objections from the people who review my code, because this behavior is not as
+than I’d like to admit. Although this is obviously wrong, the people who
+who review my code rarely object. I believe this is because this behavior is not as
 easy to spot as regular anti-patterns or simple bugs and often gets lost in the
 noise.
 
@@ -43,18 +43,18 @@ code<sup><a href="#2">2</a></sup>:
 
 ```
 def my_request_handler(request):
-  return HTTP_OK
+    return HTTP_OK
 ```
 <div class="figure-label">Fig. 1: A useful web request.</div>
 
-This is a simple method for a fantasy web framework. It will return an HTTP code
+This is a simple method using a fantasy web framework. It will return an HTTP code
 of 200 on every incoming request. That’s easy to test, we just call the method
 with a mock request and assert that we always get the expected status code back.
 
 ```
 def test_my_request_handler():
-  response = my_request_handler(mock_request())
-  assert(response.status, 200)
+    response = my_request_handler(mock_request())
+    assert(response.status, 200)
 ```
 <div class="figure-label">Fig. 2: Testing our request handler.</div>
 
@@ -68,7 +68,7 @@ API, and `my_request_handler` is one of them. We introduce a new decorator,
 ```
 @rate_limit(num_requests=10, seconds=60)
 def my_request_handler(request):
-  return HTTP_OK
+    return HTTP_OK
 ```
 <div class="figure-label">Fig. 3: Adding a ratelimiter.</div>
 
