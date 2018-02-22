@@ -11,7 +11,7 @@ your proposals!
 Our keynote speaker, Rachel Uwa from the [School of Machines, Making, And
 Make-Believe](http://schoolofma.org/), will tell us about what makes her
 excited, and deliver a little call to action. I’m especially excited about this
-part, because I’ve gotten to know Rachel briefly when I attended the [RC
+part; I got to know Rachel briefly when I attended the [RC
 Popup](https://www.recurse.com/blog/123-rc-pop-up-two-weeks-of-collaboration-and-focused-work-on-generative-art)
 in Berlin—[see also](//blog.veitheller.de/RC_Popup,_Project_I:_A_Ring.html)—,
 and found her to be an incredibly welcoming person with interesting ideas, and
