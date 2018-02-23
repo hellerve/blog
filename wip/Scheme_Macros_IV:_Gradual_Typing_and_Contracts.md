@@ -6,6 +6,20 @@ using macros. This time I want to write about gradual typing, and how we can use
 it to add some contracts to our code, without programming
 overhead<sup><a href="#1">1</a></sup>.
 
+As usual for the articles in this series, a basic understanding of Lisp is
+required. You should be able to follow along without being a proficient Lisp
+programmer, however.
+
+Let’s start by defining an API!
+
+## The API
+
+## Implementation
+
+## Recap
+
+## Fin
+
 #### Footnotes
 
 <span id="1">1.</span> Fun fact: I’ve wanted to write about gradual typing for
