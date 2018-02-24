@@ -41,6 +41,7 @@ For about a minute, anyway, until I had popped open a terminal, changed my MAC
 address, and reconnected.
 
 ```
+# last argument is an example mac address
 sudo ifconfig en0 ether 00:e1:e2:e3:e4:e5
 ```
 <div class="figure-label">Fig. 1: Changing your MAC address.</div>
