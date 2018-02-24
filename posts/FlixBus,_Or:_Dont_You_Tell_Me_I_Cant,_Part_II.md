@@ -1,6 +1,6 @@
 Some companies manage to annoy me enough with arbitrary restrictions for me to
 double down and not only try to overcome the problem, but also blog about it.
-Last time we looked at [Lastpass lying to us](https://blog.veitheller.de/LastPass,_Or:_Dont_You_Tell_Me_I_Cant.html).
+Last time we looked at [LastPass lying to us](https://blog.veitheller.de/LastPass,_Or:_Dont_You_Tell_Me_I_Cant.html).
 This time we’re going to look at a long distance bus company from Central
 Europe, [FlixBus](https://flixbus.com). If you’re from the US, just imagine I’m
 talking about Greyhound, sans social stigma.
