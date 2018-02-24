@@ -1,6 +1,6 @@
 Some companies manage to annoy me enough with arbitrary restrictions for me to
-double down and not only try to overcome them, but also blog about it. Last time
-we looked at [Lastpass lying to us](https://blog.veitheller.de/LastPass,_Or:_Dont_You_Tell_Me_I_Cant.html).
+double down and not only try to overcome the problem, but also blog about it.
+Last time we looked at [Lastpass lying to us](https://blog.veitheller.de/LastPass,_Or:_Dont_You_Tell_Me_I_Cant.html).
 This time we’re going to look at a long distance bus company from Central
 Europe, [FlixBus](https://flixbus.com). If you’re from the US, just imagine I’m
 talking about Greyhound, sans social stigma.
@@ -55,9 +55,9 @@ writing this blog post instead.
 ## Why do this?
 
 Of course it’s completely understandable why FlixBus does this: it keeps a
-large percentage of undesired traffic out. Sure, it also inconveniences regular
-users, and won’t keep sticklers like me from fighting their way to internet
-freedom, but it’s a complete success from the company’s viewpoint.
+large percentage of undesired traffic out. Sure, it inconveniences regular
+users, and won’t keep sticklers like me from messing with their system anyway,
+but it’s a complete success from the company’s viewpoint.
 
 Except it isn’t, because the story isn’t that simple. I’ve heard from a few of
 my friends that they have switched back to travelling by train, because the
@@ -67,7 +67,7 @@ making easier is [low-profile smuggling](https://www.swissinfo.ch/eng/cross-bord
 it seems, which might or might not be the reason I took the bus for the trip at
 hand. I just function better with pot, you see.
 
-Whether these migrations matter in the grand scheme of things I don’t know. I
+I don’t know whether these migrations matter in the grand scheme of things. I
 just care about being able to work whenever I want to. Maybe FlixBus isn’t the
 greatest choice for that anymore? Stay tuned for the next blog post when,
 inevitably, I’m fed up with the ICE train WiFi!
