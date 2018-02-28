@@ -14,7 +14,40 @@ Let’s start by defining an API!
 
 ## The API
 
+All we want to have in this system is a way of defining functions that get
+typechecked automatically. This means we only have to define a single point
+of entry. I’ll call it `define-typed` for now.
+
+```
+(define-typed (add-mul x y z)
+  (* (+ x y) z))
+```
+<div class="figure-label">Fig. 1: Defining a simple typed function.</div>
+
+This function looks like any function that we would define in Scheme. We
+literally only changed the `define` keyword.
+
+When we look at the function body it is pretty easy to figure out that this
+function expects numbers as input. But it is probably not as easy for the
+computer to figure out. Let’s try to help it figure out how to do this!
+
 ## Implementation
+
+We will have to write a macro to parse the head and body of the function. As
+is customary in my blog posts in this series, we will start out by creating a
+macro skeleton.
+
+```
+(define-syntax define-typed
+  (syntax-rules ()
+    ((_ head body)
+      ; TODO
+    )))
+```
+<div class="figure-label">Fig. 2: A macro skeleton.</div>
+
+Alright, we’ve already separated the head and the body of the function. So far,
+so good.
 
 ## Recap
 
