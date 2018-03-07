@@ -37,6 +37,31 @@ did I do it? I would like to answer that question in a backwards manner, and
 start by giving you the resulting API. Then I will give you a little bit of
 insight into where we are, and a quick overview of the nasty bits.
 
+```
+; finds the index of a regex inside another string
+find : (Fn [&String &String] Int)
+
+; returns the match groups in a match
+match : (Fn [&String &String] (Array String))
+
+; returns the match groups of all matches
+global-match : (Fn [&String &String] (Array (Array String)))
+
+; substitutes a pattern n times. Passing -1 will result
+; in substitution of every occurrence of the pattern.
+substitute : (Fn [&String &String &String Int] String)
+
+; will check whether there are any valid matches of
+; the regex in the string
+matches? : (Fn [&String &String] Bool)
+
+; will return the matched string
+match-str : (Fn [&String &String] String)
+```
+<div class="figure-label">Fig. 1: The API, as defined in the initial PR.</div>
+
+
+
 #### Footnote
 
 <span id="1">1.</span> I even asked for permission and gave it proper
