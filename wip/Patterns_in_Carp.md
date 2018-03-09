@@ -250,7 +250,7 @@ about that below.
 I’ve discovered a few errors while preparing my blog post and playing around
 with patterns and I assume you will, too. Such is life. I’m still working on
 them, though, and would appreciate any bug reports. My preferred medium for this
-is [the Carp issue tracker](http://github.com/carp-lang/carp/issues), but if for
+is [the Carp issue tracker](https://github.com/carp-lang/carp/issues), but if for
 one reason or another you’d prefer not to use it, notifying me through email or
 [Gitter](https://gitter.im/carp-lang/Carp) are fine, too. I will then file an
 issue myself.
@@ -278,8 +278,8 @@ input on that front, I’d definitely like to hear it as well!
 
 I’ve had a ton of fun working on my first fully-fledged pattern matching
 library. I’ve been surprised at how easy to implement the basic operations of
-regular expressions are [when I wrote about it last year](http://blog.veitheller.de/Regular_Expressions_Made_Simple.html).
-I also wrote about [a mostly forgotten pattern matching algorithm](http://blog.veitheller.de/Pattern_Matching,_A_Thing_Of_The_Past.html),
+regular expressions are [when I wrote about it last year](https://blog.veitheller.de/Regular_Expressions_Made_Simple.html).
+I also wrote about [a mostly forgotten pattern matching algorithm](https://blog.veitheller.de/Pattern_Matching,_A_Thing_Of_The_Past.html),
 and marveled at its clarity. This time was no exception.
 
 I’ve not worked on pattern matching engines a ton, let alone full-blown PCRE
