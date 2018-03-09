@@ -1,0 +1,4 @@
+(load "infer")
+(load "mul-add")
+
+;(write (mul-add 1 2 4))

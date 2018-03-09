@@ -1,0 +1,2 @@
+(define-typed (mul-add x y z)
+  (* (+ x y) z))
