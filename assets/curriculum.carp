@@ -1,0 +1,40 @@
+(use-all Array Pattern)
+
+(deftype Course [professor String
+                 name      String
+                 major     String
+                 number    Int])
+
+(deftype Curriculum [courses (Array Course)])
+
+(def pat #"([^:]+): ([^\(]+) \(([A-Z]+) (\d+)\)")
+
+(defn parse [curriculum]
+
+  ; we begin by defining an empty array of courses
+  ; and splitting out curriculum into lines
+  (let-do [courses []
+           lines (String.lines curriculum)]
+
+    ; for each line, we match our pattern (not
+    ; yet defined) and add it to our list
+    (for [i 0 (count &lines)]
+      (let [line (nth &lines i)
+            groups (match pat line)
+            prof @(nth &groups 0)
+            name @(nth &groups 1)
+            major @(nth &groups 2)
+            num (Int.from-string (nth &groups 3))
+            course (Course.init prof
+                                name
+                                major
+                                num)]
+        (set! courses (push-back courses course)))
+      )
+
+    ; now we wrap it into a curriculum, and we’re
+    ; done!
+    (Curriculum.init courses)))
+
+(defn main []
+  (IO.println &(Curriculum.str &(parse (IO.read-file "curriculum.txt")))))
