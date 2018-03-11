@@ -132,36 +132,29 @@ the name of the major, and the course number.
 Alright, we defined a type for our data. Let’s now get to parsing it!
 
 ```
+(defn parse-line [line]
+  ; for each line, we match our pattern (not
+  ; yet defined) and put the groups into a
+  ; Course struct
+  (let [groups (match pat line)
+        prof @(nth &groups 0)
+        name @(nth &groups 1)
+        major @(nth &groups 2)
+        num (Int.from-string (nth &groups 3))]
+    (Course.init prof name major num)))
+
 (defn parse [curriculum]
-
-  ; we begin by defining an empty array of courses
-  ; and splitting out curriculum into lines
-  (let-do [courses []
-           lines (String.lines curriculum)]
-
-    ; for each line, we match our pattern (not
-    ; yet defined) and add it to our list
-    (for [i 0 (count &lines)]
-      (let [line (nth &lines i)
-            groups (match pat line)
-            prof @(nth &groups 0)
-            name @(nth &groups 1)
-            major @(nth &groups 2)
-            num (Int.from-string (nth &groups 3))
-            course (Course.init prof
-                                name
-                                major
-                                num)]
-        (set! courses (push-back courses course)))
-    )
-
+  ; we begin by splitting curriculum into lines
+  (let [lines (String.lines curriculum)
+        ; then we go over the lines, parsing
+        ; each one. we'll end up with a list
+        ; of courses
+        courses (copy-map parse-line &lines)]
     ; now we wrap it into a curriculum, and we’re
     ; done!
     (Curriculum.init courses)))
 ```
-<div class="figure-label">
-  Fig. 3: Matching scaffolding<sup><a href="#2">2</a></sup>.
-</div>
+<div class="figure-label">Fig. 3: Matching scaffolding. </div>
 
 This is a big chunk of a program, but it doesn’t do much except pulling the data
 out of one representation and pushing it into another, the one we desire. The
@@ -198,7 +191,7 @@ now.
 
 Both of these are premature optimizations. We could just as easily use `.` to
 match anything instead of inverted groups, but that would probably slow us down
-quite a bit<sup><a href="#3">3</a></sup>.
+quite a bit<sup><a href="#2">2</a></sup>.
 
 Lastly, we match the parenthesized section. Because parentheses are reserved
 words in our pattern DSL we have to escape them (`\(` and `\)`, respectively).
@@ -213,11 +206,11 @@ The very last thing we want to match is the course number, which we encode as
 one or more digits (`\d+`). In our data-munging code in Figure 3 we then use
 `Int.from-string` to read it into a number. All match groups are always strings,
 no matter whether they could clearly something else. You’ll have to convert them
-yourself<sup><a href="#4">4</a></sup>.
+yourself<sup><a href="#3">3</a></sup>.
 
 And this brings us to the end of our program. If you want to test this out, be
 my guest! I’ve prepared a full listing of this code and an accompanying `main`
-function. You can find it [here](/assets/curriculum.carp)<sup><a href="#5">5</a></sup>.
+function. You can find it [here](/assets/curriculum.carp)<sup><a href="#4">4</a></sup>.
 
 ### Patterns versus regular expressions
 
@@ -313,22 +306,16 @@ See you next time!
 <span id="1">1.</span> I even asked for permission and gave it proper
                        attribution! The Lua mailing list rocks!
 
-<span id="2">2.</span> The parser loop could be more elegantly expressed as a
-                       `map` operation, but I decided against that for
-                       paedagogical reasons; it would require me to define
-                       another function, and, in my opinion, that would make the
-                       idea a bit harder to grasp.
-
-<span id="3">3.</span> This is because we will have to backtrack much more. In
+<span id="2">2.</span> This is because we will have to backtrack much more. In
                        general, if we have assumptions such as “The professor
                        name will never contain a colon” or “The course name
                        will never contain a parenthesized section”, it is
                        generally worth encoding them.
 
-<span id="4">4.</span> Hetereogeneous arrays are definitely one of the useful
+<span id="3">3.</span> Hetereogeneous arrays are definitely one of the useful
                        data structures that are missing from most strongly-typed
                        languages. Then again, you’re better off explicitly
                        defining a struct type anyway.
 
-<span id="5">5.</span> The program assumes that you’ve got the curriculum data
+<span id="4">4.</span> The program assumes that you’ve got the curriculum data
                        from Figure 2 stored in a file called `curriculum.txt`.

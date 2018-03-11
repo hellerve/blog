@@ -9,33 +9,23 @@
 
 (def pat #"([^:]+): ([^\(]+) \(([A-Z]+) (\d+)\)")
 
+(defn parse-line [line]
+  ; for each line, we match our pattern and
+  ; put the groups into a Course struct
+  (let [groups (match pat line)
+        prof @(nth &groups 0)
+        name @(nth &groups 1)
+        major @(nth &groups 2)
+        num (Int.from-string (nth &groups 3))]
+    (Course.init prof name major num)))
+
 (defn parse [curriculum]
-
-  ; we begin by defining an empty array of courses
-  ; and splitting out curriculum into lines
-  (let-do [courses []
-           lines (String.lines curriculum)]
-
-    ; for each line, we match our pattern (not
-    ; yet defined) and add it to our list
-    ;
-    ; this could be expressed as a map operation,
-    ; but i decided against that for paedagogical
-    ; reasons
-    (for [i 0 (count &lines)]
-      (let [line (nth &lines i)
-            groups (match pat line)
-            prof @(nth &groups 0)
-            name @(nth &groups 1)
-            major @(nth &groups 2)
-            num (Int.from-string (nth &groups 3))
-            course (Course.init prof
-                                name
-                                major
-                                num)]
-        (set! courses (push-back courses course)))
-      )
-
+  ; we begin by splitting curriculum into lines
+  (let [lines (String.lines curriculum)
+        ; then we go over the lines, parsing
+        ; every one. we'll end up with a list
+        ; of courses
+        courses (copy-map parse-line &lines)]
     ; now we wrap it into a curriculum, and we’re
     ; done!
     (Curriculum.init courses)))
