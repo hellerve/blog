@@ -18,6 +18,10 @@
 
     ; for each line, we match our pattern (not
     ; yet defined) and add it to our list
+    ;
+    ; this could be expressed as a map operation,
+    ; but i decided against that for paedagogical
+    ; reasons
     (for [i 0 (count &lines)]
       (let [line (nth &lines i)
             groups (match pat line)
