@@ -199,8 +199,8 @@ words in our pattern DSL we have to escape them (`\(` and `\)`, respectively).
 Now we make another assumption: identifiers for majors will always be one or
 more uppercase letters. This leads us to the group `[A-Z]`. If we wanted to
 match any letter character, we could use `\l` instead, which even respects the
-user’s locale. The downside is that this would make our pattern not a
-PCRE-compliant regular expression anymore. Now, we’ve matched `Professor Koala: A guide to eating eucalyptus (K`.
+user’s locale—the downside is that this would destroy the PCRE-compliance of
+our pattern. Anyway, now we’ve matched `Professor Koala: A guide to eating eucalyptus (K`.
 
 The very last thing we want to match is the course number, which we encode as
 one or more digits (`\d+`). In our data-munging code in Figure 3 we then use
