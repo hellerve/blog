@@ -2,7 +2,7 @@ A few days ago, [we landed string pattern matching in
 Carp](https://github.com/carp-lang/Carp/pull/192).
 This was borne of a long-standing desire to [wrap a regular expression library
 for the standard library](https://github.com/carp-lang/Carp/issues/118). For a
-long-time we weren’t sure which library to use, until late in February I looked
+long time, we weren’t sure which library to use, until late in February I looked
 into what Lua and Python use. Python’s implementation is unsurprisingly large
 and fairly complex. In fact, the matching function is about as large as Lua’s
 entire engine.
@@ -14,7 +14,7 @@ API that we could merge into Carp proper. Let me tell you about it!
 
 Before we get into the beauty that is Lua pattern matching, let me make a
 confession: I’ve never really programmed Lua. It is the scripting language in
-[my editor of choice](https://blog.veitheller.de/Editing_Revisited.html) and
+[my editor of choice](https://blog.veitheller.de/Editing_Revisited.html), and
 I’ve written a fair bit for my own configuration, but beyond that I’ve not
 really worked with it.
 
@@ -103,7 +103,7 @@ double escaping you have to perform in certain string-based APIs.
 
 Let’s try and break it down with an example. Imagine a Turtle and a Koala are
 running a university, and you are one of their students. Sadly they provide
-the curriculum in a format that reads a little clumsily, and you want to
+the curriculum in a format that reads a little clumsily, and you'll want to
 use Carp and its patterns to clean them up. This is the format:
 
 ```
@@ -159,7 +159,7 @@ Alright, we defined a type for our data. Let’s now get to parsing it!
 This is a big chunk of a program, but it doesn’t do much except pulling the data
 out of one representation and pushing it into another, the one we desire. The
 crucial part is `(match pat line)`, which does most of that work. But we
-haven’t actually defined `pat` yet! Let’s do that very quickly!
+haven’t actually defined `pat` yet! Let’s do that quickly!
 
 ```
 (def pat #"([^:]+): ([^\(]+) \(([A-Z]+) (\d+)\)")
@@ -205,8 +205,8 @@ PCRE-compliant regular expression anymore. Now, we’ve matched `Professor Koala
 The very last thing we want to match is the course number, which we encode as
 one or more digits (`\d+`). In our data-munging code in Figure 3 we then use
 `Int.from-string` to read it into a number. All match groups are always strings,
-no matter whether they could clearly something else. You’ll have to convert them
-yourself<sup><a href="#3">3</a></sup>.
+no matter whether or not they could clearly be something else. You’ll have to 
+convert them yourself<sup><a href="#3">3</a></sup>.
 
 And this brings us to the end of our program. If you want to test this out, be
 my guest! I’ve prepared a full listing of this code and an accompanying `main`
@@ -229,7 +229,7 @@ Luas’s engine is so small. The engine also implements some non-standard
 operators such as `\l` mentioned above, but alternation is definitely the big
 one.
 
-I don’t want to sugar-coat it: the lack of altenration is definitely a drawback.
+I don’t want to sugar-coat it: the lack of alternation is definitely a drawback.
 I’m not entirely sure whether Carp will eventually replace patterns with a PCRE
 library, for exactly this reason. Which brings me to the next point: where we
 currently are.
@@ -248,12 +248,12 @@ with patterns and I assume you will, too. Such is life. I’m still working on
 them, though, and would appreciate any bug reports. My preferred medium for this
 is [the Carp issue tracker](https://github.com/carp-lang/carp/issues), but if for
 one reason or another you’d prefer not to use it, notifying me through email or
-[Gitter](https://gitter.im/carp-lang/Carp) are fine, too. I will then file an
+[Gitter](https://gitter.im/carp-lang/Carp) is fine, too. I will then file an
 issue myself.
 
 One of the primary concerns I currently have is that Carp does not have a way
 to report errors to the user. This means that the modus operandi for erroring
-in patterns is printing to the standard output and returning `NULL`, currently,
+in patterns is printing to the standard output and returning `NULL`, right now,
 which is the worst possible solution.
 
 I am currently thinking about a pattern result type that has all the information
