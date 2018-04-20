@@ -12,8 +12,8 @@ Any cspfuck is comprised of multiple concurrent Brainfuck programs, or actors.
 In a source file you write them as multiple programs separated by an empty line.
 All of those actors will run as their own thread.
 
-Thus far all we have is a version of Brainfuck that let’s you execute multiple
-programs at once. While certainly useful for, you know, stuff, that’s not very
+Thus far all we have is a version of Brainfuck that lets you execute multiple
+programs at once. While certainly useful for, you know, stuff, it’s not very
 interesting. This is where my extra secret indgredient comes in: channels. Every
 actor can send data to other adjacent actors (the one above and the one below)
 using the new `^` and `v` primitives. These two primitives send the value
@@ -78,10 +78,10 @@ typedef struct {
 
 The first actor will not have an up channel, the last one doesn’t have a down
 channel. This is an arbitrary restriction since we could also connect the first
-and last channels to form a ring-like structure, but at this point I decided for
+and last channels to form a ring-like structure, but at this point I decided on
 whatever was simpler to implement.
 
-Writing to a channel is thus simple: it is just a matter of taking whatever is
+Writing to a channel is therefore simple: it's just a matter of taking whatever is
 in the current cell, stuffing it into the appropriate channel, and setting the
 flag to one.
 
@@ -95,7 +95,7 @@ flag to one.
 </div>
 
 Reading is a blocking operation: we wait until either the flag for the upper or
-lower channel is set to one, and then read from it, resetting it to zero. This
+lower channel is set to one and then read from it, resetting it to zero. This
 will avoid rereading the same value twice. It does mean that each channel is
 bidirectional, though, and each actor could possibly read what they wrote
 themselves. This could of course be rectified, but there is a whole class of
