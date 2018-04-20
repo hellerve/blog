@@ -108,5 +108,11 @@ As I said in the beginning, this is probably one of the worst ideas I ever had.
 As so very often with those ideas, though, I had more fun implementing it than
 I had programming in a long time.
 
-It is a nice way to leave programming for a while before the wedding, and I am
+It was a nice way to leave programming for a while before the wedding, and I am
 even more excited to take a break now.
+
+By the way, greetings from our honeymoon in Iceland!
+
+![](./assets/skoeldpadda.jpg)
+
+We’re having fun.
