@@ -225,7 +225,185 @@ basically implemented inheritance!
 Implementing the `class` form will be much more work, but in many ways it will
 be simpler, so do not despair at the walls of code that I’m about to throw at
 you! You might want to take a little breather before continuing, though, for I
-also took one before writing this part!
+also took one before writing this part. There’s a lot of ground to cover, and
+you might want to stretch your legs a little first.
+
+As before, we start with a simple skeleton to break the ice. The `class` macro
+takes a name and a number of forms.
+
+```
+(define-syntax class
+  (syntax-rules (properties functions)
+    ((_ name (properties props ...) (functions funs ...))
+      ; do something
+      )))
+```
+
+Okay, that doesn’t look too bad. So what do we do with these values now?
+Basically, we “just” have to define a few templates in which to insert the names
+and properties and then define the functions bound to the class we are looking
+at. That means we have to parse the `properties` and `functions` variables a
+bit<sup><a href="#4">4</a></sup>.
+
+Let’s go through those function templates one by one. All of these individual
+functions will be simple, I promise. All of the complexity will come from the
+composition of those building blocks.
+
+Let’s begin by defining two simple functions, the function that checks whether
+an object is an instance of the class we’re defining, and a function that
+returns the properties of the class.
+
+```
+(define-syntax class
+  (syntax-rules (properties functions)
+    ((_ name (properties props ...) (functions funs ...))
+      (with-environment env
+        (begin
+
+          ; the typechecking function
+          (eval `(define (,(->symbol name "?") obj)
+                  (and (hash? obj)
+                        (eq? (hash:keys obj) (quote ,'props))))
+                 env)
+
+          ; get-properties
+          (eval `(define (,(->symbol name ":get-properties"))
+                  (quote ,'props)) env)
+
+          ; ... to be continued
+          )))))
+```
+
+As before, we get the environment that we start out with, so that we can extend
+it. Then we begin evaluating templates. The name of the typechecking function
+will be that name of the class plus a question mark. It takes one argument and
+checks whether it is a hashmap and the keys are equal to the properties we
+received. This is a little primitive, but very simple.
+
+`get-properties` itself just returns the list of properties. Very simple, right?
+
+I think now we are ready to define our getters and setters.
+
+```
+(define-syntax class
+  (syntax-rules (properties functions)
+    ((_ name (properties props ...) (functions funs ...))
+      (with-environment env
+        (begin
+
+          ; ... type checking and get-properties
+
+          ; the setters
+          (map ($ (let ((% (if (list? %) (car %) %)))
+                (eval
+                    `(define (,(string->symbol
+                        (++ (->string 'name) ":get-"
+                            (->string (atom->symbol %)))) self)
+                                 (self ,%)) env)))
+               'props)
+
+          ; the getters
+          (map ($ (let ((% (if (list? %) (car %) %)))
+                (eval
+                    `(define (,(string->symbol
+                        (++ (->string 'name) ":set-"
+                            (->string (atom->symbol %)))) self val)
+                      (hash:set self ,% val)) env)))
+               'props)
+
+          ; to be continued
+          )))))
+```
+
+This is a little more involved, isn’t it? The good news is that they’re almost
+identical. The bad news is that even one of these forms is kind of complex.
+Let’s walk through the getters first.
+
+We map over the properties that we defined, because we have to create a getter
+for each of them. First, we check what form we have in front of us. If it’s
+a list, we assume that it’s a form with default value and take the first
+argument. Otherwise we just take the symbol as is.
+
+Then we enter a templated `eval` again. We stitch together a name from the
+type and property, and a body that will just look up the value in the hashmap.
+
+The only thing that changes in the setter is that, in the body, we set the
+value in the hashmap rather than getting it.
+
+Operationally, all of this is quite straightforward: we just wrap hashmap
+accessors. Of course all of it is a little complicated because we dynamically
+create these functions, but the fact remains that the core of our functionality
+is very slim.
+
+So, what’s missing? We have to define the initializer and the user-provided
+functions. Let’s start with the simpler part, the functions that the user
+defined.
+
+```
+(define-syntax class
+  (syntax-rules (properties functions)
+    ((_ name (properties props ...) (functions funs ...))
+      (with-environment env
+        (begin
+          ; a whole lot of functions
+
+          ; defining user functions
+          (map ($
+                (eval `(define
+                        ,(string->symbol (++ (->string 'name) ":"
+                                             (->string (car %))))
+                         ,(cadr %))
+                        env))
+               'funs)
+          ; to be continued
+          )))))
+```
+
+This is very similar to what we did with getters and setters. We map over the
+functions, stitch together a name, and bind the function to it as is. And that’s
+all we have to do for this part of the definition.
+
+Now all that is left for us to do is create an initializer. We’re going to make
+this easy on us and reuse another macro named `defkeywords`. I will talk about
+the implementation of this macro in another installment of this series, for now
+I’ll just give you a little tutorial on how to use it, and then we will see how
+we can use it to implement a simple initializer.
+
+```
+(defkeywords (mykeywordfn myregulararg) (:mykeywordarg default 0)
+  (+ myregulararg mykeywordarg))
+```
+
+In a nutshell, `defkeywords` adds another form to definitions that define optional arguments and their defaults. This is a very useful form in general,
+but you might have realized that it also is very similar to the form we use
+to define properties. We can use that to make the initializer implementation
+extremely simple.
+
+```
+(define-syntax class
+  (syntax-rules (properties functions)
+    ((_ name (properties props ...) (functions funs ...))
+      (with-environment env
+        (begin
+
+          ; all of our other functions ...
+
+          ; generating our initializer
+          (eval
+            (macro-expand
+              (list 'defkeywords (list 'name) (list:flatten 'props)
+                  (cons 'make-hash
+                      (list:flatten
+                        (map ($
+                          (if (list? %)
+                            (list (car %) (atom->symbol (car %)))
+                            (list % (atom->symbol %)))) 'props)))))
+            env))))))
+```
+
+This form, too, follows the general form of evaluating a template. But because
+`defkeyword` is a macro, we also manually have to call `macro-expand` in zepto.
+But what actually are we expanding and evaluating?
 
 TODO
 
@@ -252,6 +430,14 @@ Here is an unabridged list fit for crushing hopes and dreams:
   naming scheme. Anyone could inject functions into our unsuspecting environment
   that also fit this name. A class registry could fix this too, by making sure
   no extraneous functions end up in our class definitions.
+- The type checking primitive is both too simple—which can be solved, again,
+  with a class registry—and buggy. It doesn’t work with default values, because
+  we do not strip them out of the `props` value that we receive in the macro.
+  `get-properties` suffers from the same bug.
+- For the sake of brevity, we do no error checking whatsoever. What if we put
+  in numbers instead of symbols, or variables instead of function bodies? A
+  mature system should check for that and make sure that the user gets
+  actionable error messages.
 
 None of these problems are unsolvable. They might require a decent amount of
 work, but it’s worth reminding yourself that the system you are starting with is
@@ -265,6 +451,13 @@ class system, and then compared it to CLOS. Of course my system ended up being
 orders of magnitude more primitive and clunky, but it was a fun little exercise
 and taught me more about object-oriented programming than that dreaded third
 semester in college when I had to implement design patterns in Java.
+
+It also was an excuse for me to dive deeper into how a better function
+templating system could work. Above we mostly just interpolated `define` forms
+and pushed them into `eval`. This could very simply be abstracted into a neater
+API that better expresses your intent without having to wade through all of
+the boilerplate. Dynamically generating functions is fun, but maybe next time
+we’ll learn how we can have the cake and eat it, too.
 
 I hope you got as much out of reading this as I got out of writing it! See you
 very soon!
@@ -283,3 +476,13 @@ very soon!
 <span id="3">3.</span> Unquoting `parent-fun` would have a similar effect, I
                        just want to make sure we are not using an accidently
                        shadowed binding. Unlikely, but possible.
+
+<span id="4">4.</span> For those of you who aren’t as familiar with reserved
+                       words in `syntax-rules`, let me give you a brief idea:
+                       the first argument to `syntax-rules` is an optional list
+                       of reserved words that you can treat as literals in the
+                       pattern matching head. This makes it easier to define
+                       more complicated control structures, and is perfect for
+                       our use case. For more information I suggest you look at
+                       subchapter 3.3 of [this wiki
+                       page](http://www.shido.info/lisp/scheme_syntax_e.html).
