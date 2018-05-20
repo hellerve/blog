@@ -391,13 +391,16 @@ extremely simple.
           ; generating our initializer
           (eval
             (macro-expand
-              (list 'defkeywords (list 'name) (list:flatten 'props)
+              (list 'defkeywords (list 'name)
+                                 (list:flatten 'props)
                   (cons 'make-hash
                       (list:flatten
                         (map ($
                           (if (list? %)
-                            (list (car %) (atom->symbol (car %)))
-                            (list % (atom->symbol %)))) 'props)))))
+                            (list (car %)
+                                  (atom->symbol (car %)))
+                            (list % (atom->symbol %))))
+                        'props)))))
             env))))))
 ```
 
@@ -405,7 +408,38 @@ This form, too, follows the general form of evaluating a template. But because
 `defkeyword` is a macro, we also manually have to call `macro-expand` in zepto.
 But what actually are we expanding and evaluating?
 
-TODO
+What we want to end up with is a definition using `defkeywords` named after the
+class, with no regular arguments, and all of the properties as keyword
+arguments. This is what we do in Figure X above. The only work that we have to
+do to get to this point—other than concatenating the whole shebang—is flattening
+the properties list.
+
+The body of the function should just create hashmap from the given properties.
+For this we use the function `make-hash`. For the arguments we map over the
+properties once more and make key-value pairs, from the atoms that the macro
+was passed to the symbols that end up being defined in the function body.
+
+This is a little arcane, so let’s look at one example expansion:
+
+```
+(class MyClass
+  (properties
+    :mykey
+    (:myotherkey :default 0))
+  ; ...
+)
+
+; the initializer expands to:
+
+(defkeywords (MyClass) (:mykey
+                        :myotherkey :default 0)
+  (make-hash (list :mykey mykey) (list :myotherkey myotherkey)))
+```
+
+This should help clear things up a little.
+
+This concludes our implementation! Let’s think a little bit about whether it is
+any good and how you could improve it if you felt so inclined!
 
 ## Caveats
 
