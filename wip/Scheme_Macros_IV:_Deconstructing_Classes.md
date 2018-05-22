@@ -34,6 +34,7 @@ for now you know what they are.
     (->string (lambda (self)
       (++ "<A Person: " (->string (Person:get-mykey)) ">)))))
 ```
+<div class="figure-label">Fig. 1: Defining a simple class.</div>
 
 Okay, what’s going on here? We define a class, give it the name `MyClass`, and
 then separate properties from functions. Properties can optionally have
@@ -58,6 +59,7 @@ What functions get generated from this definition?
 ; we can get all the properties associated with a class
 (MyClass:get-properties) ; => [:mykey, :myotherkey]
 ```
+<div class="figure-label">Fig. 2: A whole lot of generated functions.</div>
 
 Wow, that’s a lot of generated code. Some of them are necessary to make classes
 useful, and some are just nice to have in there and interesting to implement.
@@ -71,6 +73,7 @@ more fun and interesting.
 ; the first argument is the parent class
 (inherits MyClass MyOtherClass)
 ```
+<div class="figure-label">Fig. 3: An interface for inheritance.</div>
 
 We will limit ourselves to single inheritance for two reasons. Firstly, I like
 it better that way. More importantly, though, it avoids a discussion we
@@ -107,6 +110,7 @@ macro.
       ; do something
       )))
 ```
+<div class="figure-label">Fig. 4: A skeleton for inheritance.</div>
 
 Okay, so we are getting the parent first, then the child. At this point, both
 of them have already been defined. We will thus reach into the environment and
@@ -133,6 +137,7 @@ implementation
           ; do something
         ))))
 ```
+<div class="figure-label">Fig. 5: An extended skeleton for inheritance.</div>
 
 Okay, this is a little weird, but I promise it is not as scary as it seems at
 first. First, we use `with-environemnt` to bind the current interpreter
@@ -162,6 +167,7 @@ make these functions work.
               ; ...
           (map (lambda (parent-fun) ...)  parent-funs))))))
 ```
+<div class="figure-label">Fig. 6: Mapping over functions.</div>
 
 Okay, this looks reasonable. We map over the parent functions, because we need
 to inherit those. But what do we need to do? First, we need to find out the
@@ -182,6 +188,9 @@ new name the function should have. Maybe we can just use string substitution?
                   )
                parent-funs))))))
 ```
+<div class="figure-label">
+  Fig. 7: Mapping over functions II: Electric Boogaloo.
+</div>
 
 Alright, this looks about yanky enough to be correct. Now we need to check
 whether we already have a function of that name in the class, and define the
@@ -202,6 +211,7 @@ new function otherwise.
                               env))))
                parent-funs))))))
 ```
+<div class="figure-label">Fig. 8: `eval` your way to freedom.</div>
 
 Don’t you just love the smell of `eval` in the morning? In this case we use it
 to define the new function in the environment we started at (the one we obtained
@@ -238,6 +248,7 @@ takes a name and a number of forms.
       ; do something
       )))
 ```
+<div class="figure-label">Fig. 9: A skeleton for `class`.</div>
 
 Okay, that doesn’t look too bad. So what do we do with these values now?
 Basically, we “just” have to define a few templates in which to insert the names
@@ -248,6 +259,8 @@ bit<sup><a href="#4">4</a></sup>.
 Let’s go through those function templates one by one. All of these individual
 functions will be simple, I promise. All of the complexity will come from the
 composition of those building blocks.
+
+#### Typechecking and getting properties
 
 Let’s begin by defining two simple functions, the function that checks whether
 an object is an instance of the class we’re defining, and a function that
@@ -273,6 +286,9 @@ returns the properties of the class.
           ; ... to be continued
           )))))
 ```
+<div class="figure-label">
+  Fig. 10: Defining the first functions on our object.
+</div>
 
 As before, we get the environment that we start out with, so that we can extend
 it. Then we begin evaluating templates. The name of the typechecking function
@@ -281,6 +297,8 @@ checks whether it is a hashmap and the keys are equal to the properties we
 received. This is a little primitive, but very simple.
 
 `get-properties` itself just returns the list of properties. Very simple, right?
+
+#### Getting and setting properties
 
 I think now we are ready to define our getters and setters.
 
@@ -314,6 +332,7 @@ I think now we are ready to define our getters and setters.
           ; to be continued
           )))))
 ```
+<div class="figure-label">Fig. 11: Getting and setting properties.</div>
 
 This is a little more involved, isn’t it? The good news is that they’re almost
 identical. The bad news is that even one of these forms is kind of complex.
@@ -334,6 +353,8 @@ Operationally, all of this is quite straightforward: we just wrap hashmap
 accessors. Of course all of it is a little complicated because we dynamically
 create these functions, but the fact remains that the core of our functionality
 is very slim.
+
+#### Instance functions
 
 So, what’s missing? We have to define the initializer and the user-provided
 functions. Let’s start with the simpler part, the functions that the user
@@ -358,10 +379,13 @@ defined.
           ; to be continued
           )))))
 ```
+<div class="figure-label">Fig. 12: Creating user-defined functions.</div>
 
 This is very similar to what we did with getters and setters. We map over the
 functions, stitch together a name, and bind the function to it as is. And that’s
 all we have to do for this part of the definition.
+
+#### The initializer
 
 Now all that is left for us to do is create an initializer. We’re going to make
 this easy on us and reuse another macro named `defkeywords`. I will talk about
@@ -373,6 +397,7 @@ we can use it to implement a simple initializer.
 (defkeywords (mykeywordfn myregulararg) (:mykeywordarg default 0)
   (+ myregulararg mykeywordarg))
 ```
+<div class="figure-label">Fig. 13: An example usage of `defkeywords`.</div>
 
 In a nutshell, `defkeywords` adds another form to definitions that define optional arguments and their defaults. This is a very useful form in general,
 but you might have realized that it also is very similar to the form we use
@@ -403,6 +428,9 @@ extremely simple.
                         'props)))))
             env))))))
 ```
+<div class="figure-label">
+  Fig. 14: Using `defkeywords` for our initializer.
+</div>
 
 This form, too, follows the general form of evaluating a template. But because
 `defkeyword` is a macro, we also manually have to call `macro-expand` in zepto.
@@ -410,7 +438,7 @@ But what actually are we expanding and evaluating?
 
 What we want to end up with is a definition using `defkeywords` named after the
 class, with no regular arguments, and all of the properties as keyword
-arguments. This is what we do in Figure X above. The only work that we have to
+arguments. This is what we do in Figure 14 above. The only work that we have to
 do to get to this point—other than concatenating the whole shebang—is flattening
 the properties list.
 
@@ -435,6 +463,7 @@ This is a little arcane, so let’s look at one example expansion:
                         :myotherkey :default 0)
   (make-hash (list :mykey mykey) (list :myotherkey myotherkey)))
 ```
+<div class="figure-label">Fig. 15: Expanding the initializer by hand.</div>
 
 This should help clear things up a little.
 
