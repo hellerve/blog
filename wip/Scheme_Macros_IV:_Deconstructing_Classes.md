@@ -1,15 +1,15 @@
 It’s time for another installation of my series on Scheme macros. Previously,
-we talked about defining [modules](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
+we've talked about defining [modules](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
 [generic functions](//blog.veitheller.de/Scheme_Macros_II:_Generics.html),
 and [local variable binding](//blog.veitheller.de/Scheme_Macros_III:_Defining_let.html)
-using macros. This time I want to write about classes, and how we can define an
+using macros. This time I want to write about classes and how we can define an
 interface for object-oriented programming. We will be going down a similar route
 as we did with both modules and generic functions, and if you read those posts,
 the definitions we explore here might come naturally to you. As always, the code
 is online, this time in form of [a zepto package](https://github.com/hellerve/bach)
 that I wrote a few years ago.
 
-As always, we will start by defining an API, then slowly walk through one
+As usual, we will start by defining an API, then slowly walk through one
 possible way of implementing it before wrapping up and concluding with caveats
 and possible extensions. Are you excited? I’m excited!
 
@@ -22,7 +22,7 @@ This time we’re going to rely on some of the metaprogramming APIs of the
 language, and a concept that I call atoms. Called `keywords` in some other
 Lisps, they are symbols prefixed with a colon, like `:this`. They always
 evaluate to themselves. I will cover why they are useful in another blog post,
-for now you know what they are.
+for now, you know what they are.
 
 ```
 (class MyClass
@@ -99,7 +99,7 @@ wrapping up.
 
 ### Implementing inheritance
 
-I’m saying all of this because we’re going to start with implementing the
+I’m saying all of this because we’re going to start by implementing the
 simpler part of our API: inheriting. As always, let’s start with a skeleton
 macro.
 
@@ -151,7 +151,7 @@ just a shorthand for `(lambda (%) ...)` to save typing.
 
 When we’re done with all that, we are ready to filter the environment for
 anything that starts with the name of the parent and a colon and the name of the
-child and a colon. We assume this to be the parent and child functions.<sup><a href="#2">2</a></sup>
+child and a colon. We assume these to be the parent and child functions.<sup><a href="#2">2</a></sup>
 
 Okay, so now we have the parent and child functions. What do we do with them?
 We call `map` on them, of course. That usually solves our problems. Let’s
@@ -216,7 +216,7 @@ new function otherwise.
 Don’t you just love the smell of `eval` in the morning? In this case we use it
 to define the new function in the environment we started at (the one we obtained
 using `env`). If we didn’t use that environment, this `define` would be local
-to the lambda we execute it in, and be basically useless. Important side note:
+to the lambda we execute it in, and basically useless. Important side note:
 remember that `funs` is the environment as a hashmap here. We can reach into
 that hashmap by calling it with a key, like so: `(hash key) ; => val`. We use
 this to get the actual function we are looking at from the name<sup><a href="#3">3</a></sup>.
@@ -226,14 +226,14 @@ and pick out all of the functions of parent and child. Then we go through the
 functions of the parent, rename them for the child, and if they are not defined
 in the child, we defined them using a templated `eval`.
 
-This approach is highly flawed, and I will talk a bit about why and how that is
+This approach is highly flawed, and I will talk a bit about why and how
 in the conclusion, but for now we can feel pretty good about ourselves: we
 basically implemented inheritance!
 
 ### Implementing `class`
 
 Implementing the `class` form will be much more work, but in many ways it will
-be simpler, so do not despair at the walls of code that I’m about to throw at
+be simpler, so don't despair at the walls of code I’m about to throw at
 you! You might want to take a little breather before continuing, though, for I
 also took one before writing this part. There’s a lot of ground to cover, and
 you might want to stretch your legs a little first.
@@ -292,7 +292,7 @@ returns the properties of the class.
 
 As before, we get the environment that we start out with, so that we can extend
 it. Then we begin evaluating templates. The name of the typechecking function
-will be that name of the class plus a question mark. It takes one argument and
+will be the name of the class plus a question mark. It takes one argument and
 checks whether it is a hashmap and the keys are equal to the properties we
 received. This is a little primitive, but very simple.
 
@@ -388,8 +388,8 @@ all we have to do for this part of the definition.
 #### The initializer
 
 Now all that is left for us to do is create an initializer. We’re going to make
-this easy on us and reuse another macro named `defkeywords`. I will talk about
-the implementation of this macro in another installment of this series, for now
+this easy on ourselves and reuse another macro named `defkeywords`. I will talk about
+the implementation of this macro in another installment of this series; for now
 I’ll just give you a little tutorial on how to use it, and then we will see how
 we can use it to implement a simple initializer.
 
@@ -399,10 +399,10 @@ we can use it to implement a simple initializer.
 ```
 <div class="figure-label">Fig. 13: An example usage of `defkeywords`.</div>
 
-In a nutshell, `defkeywords` adds another form to definitions that define optional arguments and their defaults. This is a very useful form in general,
-but you might have realized that it also is very similar to the form we use
-to define properties. We can use that to make the initializer implementation
-extremely simple.
+In a nutshell, `defkeywords` adds another form to definitions that define optional 
+arguments and their defaults. This is a very useful form in general, but you might have 
+realized that it also is very similar to the form we use to define properties. We can use 
+that to make the initializer implementation extremely simple.
 
 ```
 (define-syntax class
@@ -473,7 +473,7 @@ any good and how you could improve it if you felt so inclined!
 ## Caveats
 
 I alluded to multiple weaknesses in the class implementation we just built. Now
-is a time to review them, and to think about how to solve them. If this post
+it's time to review them, and to think about how to solve them. If this post
 excited you, I encourage you to try and come up with possible solutions for
 these problems; I’m happy to help you solve them if you shoot me a message!
 
@@ -502,13 +502,13 @@ Here is an unabridged list fit for crushing hopes and dreams:
   mature system should check for that and make sure that the user gets
   actionable error messages.
 
-None of these problems are unsolvable. They might require a decent amount of
+None of these problems is unsolvable. They might require a decent amount of
 work, but it’s worth reminding yourself that the system you are starting with is
-less than 50 lines of code, and is doing a whole lot of things for us already.
+less than 50 lines of code and is doing a whole lot of things for us already.
 
 ## Conclusion
 
-Two year ago, while working on zepto, I asked myself how CLOS worked. Instead of
+Two years ago, while working on zepto, I asked myself how CLOS worked. Instead of
 looking at the source right away, however, I tried implementing my own little
 class system, and then compared it to CLOS. Of course my system ended up being
 orders of magnitude more primitive and clunky, but it was a fun little exercise
@@ -518,7 +518,7 @@ semester in college when I had to implement design patterns in Java.
 It also was an excuse for me to dive deeper into how a better function
 templating system could work. Above we mostly just interpolated `define` forms
 and pushed them into `eval`. This could very simply be abstracted into a neater
-API that better expresses your intent without having to wade through all of
+API that better expresses intent without having to wade through all of
 the boilerplate. Dynamically generating functions is fun, but maybe next time
 we’ll learn how we can have the cake and eat it, too.
 
@@ -541,7 +541,7 @@ very soon!
                        shadowed binding. Unlikely, but possible.
 
 <span id="4">4.</span> For those of you who aren’t as familiar with reserved
-                       words in `syntax-rules`, let me give you a brief idea:
+                       words in `syntax-rules`, let me give you a brief intro:
                        the first argument to `syntax-rules` is an optional list
                        of reserved words that you can treat as literals in the
                        pattern matching head. This makes it easier to define
