@@ -11,8 +11,9 @@ When you first encounter this construct, you might not immediately recognize its
 value. After all, most languages have a concept that seems to fit the bill
 anyway; don’t strings provide the same basic functionality.
 
-Let’s look at a couple of different use cases for atoms—which is what I will call
-them in this blog post—, and explore why I think they are extremely useful.
+Let’s look at a couple of different use cases for atoms—which is what I will
+call them in this blog post—, and explore why I think they are extremely useful,
+especially for languages that have a less expressive or dynamic type system.
 
 ## The semantic argument
 
@@ -28,9 +29,111 @@ a piece of data that you want to apply some transformation on—say a compiler,
 linter, or even a HTTP request handler.
 
 One perfectly valid usecase of symbols is to use them for signalling between
-functions.
+functions. This makes for a cleaner interface: I can make sure everyone knows
+that this information is not intended to be processed or handed to the user: it
+only changes the behavior of the function.
+
+Some languages have identifiers that can be used as values—think of Lisp’s
+quoted values. There the distinction is not quite so clear. In Smalltalk and
+Ruby, in fact, a keyword—their notion of an atom, remember?–can be used in such
+a way that functions can be called, through a system those langauges call
+message-passing<sup><a href="#2">2</a></sup>.
+
+I would argue that it makes sense to have to separate constructs for the two,
+however. Some of it boils down to the performance argument that I will present
+in the next section, but semantically, too, it often makes sense to make clear
+whether a value is just itself or an identifier for a value stored in the
+environment. This is similar to my case on strings presented above: if you pass
+in a quoted variable instead, how will you be sure the function will not try to
+reach in and evaluate the symbol? I embrace semantic clarity, and this
+double-usage of a symbol as an alias and as itself feels quite dirty to me.
+
+Some of the Lisp people in the room might accuse me of not embracing the Lisp
+way right around now. But believe me or not, I do. I love the fact that I can
+treat data as code and vice versa. But I wish for the bulk of this to happen at
+the time of macro expansion, not evaluation. If it does have to happen—for
+instance when evaluating lazy expressions, a perfect example of this weird
+dichotomy—it should happen without the user knowing it through the
+interface<sup><a href="#3">3</a></sup>.
+
+## The performance argument
+
+If you settle on providing atoms as a fundamental type in your programming
+language, a whole world of possibilities open to you as an implementor. In most
+languages comparing symbols is much faster than comparing, say, strings or
+symbols<sup><a href="#4">4</a></sup>.
+
+This is because we know that the only meaning they have is themselves, and as
+such they only need to be IDs. In some languages, we can compile them to
+integers. If we want to be able to stringify them or get our original value
+back, we can keep track of them in a giant non-garbage-collected table, as
+for instance Erlang chooses to do, and have atoms themselves be just indices
+into that table. This makes them remarkably fast.
+
+Why can we do this? It turns out that if we have a data type that is expressly
+designed as a signal value, the most-frequently used operation will be comparing
+it to other such values.
+
+Thus, the performance argument ties back into the semantic argument, and become
+a more general one: the more we know about what our data types will be used for
+and the more narrow our scope of operations on it, the more we can optimize our
+type to support just those operations. This is especially true for collection
+types—think bags versus lists versus sets versus trees—, but it generally
+applies to all kinds of types, even the most basic ones.
+
+As a corollary we can also conclude that they are useful as keys in hashmaps,
+and are in fact often used as such. This is because they do not need to be
+hashed—they are “hashed” at compile time.
+
+## Fin
+
+In this blog post, I talked about how atoms, however you might call them, are an
+interesting if often glossed over data type for many languages. They are useful
+for a wide range of applications while having fairly limited functionality.
+
+I hope you enjoyed this blog post! See you soon!
 
 #### Footnotes
 
-<span id="1">1.</span> Admittedly, in many languages you would some kind of enum
-                       type for that.
+<span id="1">1.</span> Admittedly, in many languages you would have some kind
+                       of enum type for that. I will gloss over this detail for
+                       the purposes of this blog post, because admittedly I
+                       don’t have as strong a case for the fundamental
+                       difference of the two.
+
+<span id="2">2.</span> Sending messages is quite fundamental for both of these
+                       languages, and it’s what happens when you call a function
+                       on an object. This goes deep into the fundamentals of
+                       those languages, but it’s quite interesting, if not quite
+                       instrumental for this blog post.
+
+<span id="3">3.</span> Let me illustrate this point a little more:
+
+```
+; this is too simple to be sensible.
+; For a more complete definition of lazy look here:
+; https://github.com/zepto-lang/zepto-stdlib/blob/e324f2b4685f64827f9a6b05ef06aa7800166b73/delay.zp
+
+; lazy as a macro
+(define-syntax lazy-macro
+  (syntax-rules ()
+    ((_ expr)
+      (quote expr))))
+
+; lazy as a regular function
+(define (lazy-fun expr) expr)
+
+; force
+(define (force obj) (eval obj))
+
+(def thunk1 (lazy-macro (+ 1 2)))
+(def thunk2 (lazy-fun '(+ 1 2)))
+```
+<div class="figure-label">Fig. 1: Laziness as a function and macro.</div>
+
+Which of these interfaces is cleaner? Both of these are functionally equivalent,
+but creating a macro makes for a prettier API, as so very often for
+metaprogramming work.
+
+<span id="4">4.</span> Regrettably, my own little concoction zepto is not one
+                       of them, at least in interpreted mode.
