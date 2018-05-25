@@ -2,7 +2,7 @@ An exciting new feature landed in Carp a while ago, and it is perfect material
 for a tutorial-style blog post!
 
 The feature I’m talking about is generic types for structs, and in this blog
-post, we’ll be building a simple [hash
+post we’ll be building a simple [hash
 map](https://github.com/hellerve/hashmap). Hash maps are fun to write, and
 easy to implement inefficiently, and today we’re going to do just that!
 
@@ -11,7 +11,7 @@ and then we’ll try and implement the whole thing!
 
 ## An API
 
-A hashmap is usually used for storing and retrieving values, and so we need to
+A hashmap is usually used for storing and retrieving values, so we need to
 primarily be concerned with that. There are also a few convenience functions
 that we would like to have, but for the purposes of this blog post they’ll be
 left as an exercise to the reader. If you want you can also check out the
@@ -25,11 +25,11 @@ repository I linked to above where I implemented a more complete interface.
 ```
 <div class="figure-label">Fig. 1: A usage example for maps.</div>
 
-This is fairly sparse, but already provides a lot of the functionality we need.
+This is fairly sparse but already provides a lot of the functionality we need.
 
 Before going any further, let’s think about how we deal with getting keys that
 don’t exist. We’re in a statically typed language without any standard error
-mechanism—sorry about that—, and as such we need to opt for an implementation
+mechanism—sorry about that—, and as such, we need to opt for an implementation
 using defaults or opt for the interface `zero` that returns a zero value for all
 of the types it is defined in. In this implementation we’ll use zero and hope
 it is defined for all of the value types we will want to put into our map. This
@@ -51,7 +51,7 @@ Let’s get to coding!
 ## An implementation
 
 First, let’s define some types using our beautiful generic syntax. To be able to
-do that, we have to answer some questions as to how we want to our
+do that, we have to answer some questions as to how we want our
 implementation to work, so brace yourselves for some tradeoffs!
 
 ### The types
@@ -168,7 +168,7 @@ key and using a modulus operation to make it fit into the number of
 buckets<sup><a href="#1">1</a></sup>.
 
 We then grow this bucket—an operation we haven’t defined yet—, which will put
-the entry element into the bucket. And finally we write the result back into our
+the entry element into the bucket. And, finally, we write the result back into our
 `buckets` array.
 
 The meat of this function lies within `Bucket.grow`, which is surprisingly
@@ -239,11 +239,11 @@ But is it any good?
 There are a few things that make this hashmap implementation suboptimal.
 ALthough the Carp community was very excited when I first wrote this simple
 little library, I immediately cautioned against using it as our default hashmap
-implementation. This has a few reasons that I want to share with you, and maybe
+implementation. This is for a few reasons that I want to share with you, and maybe
 you can rectify some of its flaws and make it better!
 
 - I’m no expert in hashmaps. This might seem like a cop-out, but I’m not
-  particularly well-read in the literature surrounding their implementation and
+  particularly well-read in the literature surrounding their implementation, and
   I’m sure there are a million better basic hashmap algorithms out there that
   I’ve never heard of.
 - Even for the ones that I have in fact heard of, this one is not particularly
@@ -251,7 +251,7 @@ you can rectify some of its flaws and make it better!
   doesn’t hold a candle to the standard implementations in circulation today.
 - It does a lot of copies. Remember all of the weird `@` glyphs everyhwere?
   Every single one of those is a copy, and this can be super costly. I’m sure
-  they’re avoidable, but truth be told I haven’t invested a lot of time into
+  they’re avoidable, but, truth be told, I haven’t invested a lot of time into
   getting rid of them.
 - There’s no duplicate checking. Right now, when you insert the same key twice,
   the two entries will co-exist in the bucket. But only the one that was
