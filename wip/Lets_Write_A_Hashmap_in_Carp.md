@@ -59,7 +59,10 @@ implementation to work, so brace yourselves for some tradeoffs!
 What is a hashmap?
 
 ```
-(deftype (Map a b) [n-buckets Int buckets (Array (Bucket a b))])
+(deftype (Map a b) [
+  n-buckets Int
+  buckets (Array (Bucket a b))
+])
 ```
 <div class="figure-label">Fig. 3: A hashmap type.</div>
 
@@ -71,7 +74,10 @@ arguments to the type definition.
 So, what are buckets?
 
 ```
-(deftype (Bucket a b) [len Int, entries (Array (Entry a b))])
+(deftype (Bucket a b) [
+  len Int
+  entries (Array (Entry a b))
+])
 ```
 <div class="figure-label">Fig. 4: A bucket type.</div>
 
@@ -110,11 +116,11 @@ Let’s start with something simple, creating a map.
 
 ```
 (defmodule Map
-  (def default-number-of-buckets 256)
+  (def default-nbuckets 256)
 
   (defn create []
-    (init default-number-of-buckets
-          (repeat default-number-of-buckets Bucket.empty)))
+    (init default-nbuckets
+          (repeat default-nbuckets Bucket.empty)))
 )
 ```
 <div class="figure-label">Fig. 6: Creating an empty map.</div>

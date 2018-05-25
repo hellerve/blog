@@ -111,8 +111,8 @@ I hope you enjoyed this blog post! See you soon!
 
 ```
 ; this is too simple to be sensible.
-; For a more complete definition of lazy look here:
-; https://github.com/zepto-lang/zepto-stdlib/blob/e324f2b4685f64827f9a6b05ef06aa7800166b73/delay.zp
+; For a more complete definition of lazy follow
+; the link below
 
 ; lazy as a macro
 (define-syntax lazy-macro
@@ -129,7 +129,10 @@ I hope you enjoyed this blog post! See you soon!
 (def thunk1 (lazy-macro (+ 1 2)))
 (def thunk2 (lazy-fun '(+ 1 2)))
 ```
-<div class="figure-label">Fig. 1: Laziness as a function and macro.</div>
+<div class="figure-label">
+  Fig. 1: Laziness as a function and macro. [Link to an actual implementation
+  of laziness](https://github.com/zepto-lang/zepto-stdlib/blob/e324f2b4685f64827f9a6b05ef06aa7800166b73/delay.zp).
+</div>
 
 Which of these interfaces is cleaner? Both of these are functionally equivalent,
 but creating a macro makes for a prettier API, as so very often for
