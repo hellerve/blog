@@ -9,7 +9,7 @@ to some kind of unique identifier at compile time.
 
 When you first encounter this construct, you might not immediately recognize its
 value. After all, most languages have a concept that seems to fit the bill
-anyway; don’t strings provide the same basic functionality.
+anyway; don’t strings provide the same basic functionality?
 
 Let’s look at a couple of different use cases for atoms—which is what I will
 call them in this blog post—, and explore why I think they are extremely useful,
