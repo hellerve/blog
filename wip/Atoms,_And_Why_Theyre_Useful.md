@@ -17,7 +17,7 @@ especially for languages that have a less expressive or dynamic type system.
 
 ## The semantic argument
 
-I will try to make a case for them on a language semantic basis by comparing them
+I will try to make a case for atoms on a language semantic basis by comparing them
 to what we might already find in a language: strings and identifiers (in Lisp we
 call them symbols).
 
@@ -26,9 +26,9 @@ them for flags and signalling between functions in many applications written in
 languages that do not have atoms, this is not what they were made for<sup><a href="#1">1</a></sup>.
 A string should be used either for interfacing with the user of our system or as
 a piece of data that you want to apply some transformation on—say a compiler,
-linter, or even a HTTP request handler.
+linter, or even an HTTP request handler.
 
-One perfectly valid usecase of symbols is to use them for signalling between
+One perfectly valid usecase of symbols is to use them to signal between
 functions. This makes for a cleaner interface: I can make sure everyone knows
 that this information is not intended to be processed or handed to the user: it
 only changes the behavior of the function.
@@ -39,9 +39,9 @@ Ruby, in fact, a keyword—their notion of an atom, remember?–can be used in s
 a way that functions can be called, through a system those langauges call
 message-passing<sup><a href="#2">2</a></sup>.
 
-I would argue that it makes sense to have to separate constructs for the two,
+I would argue that it makes sense to have separate constructs for the two,
 however. Some of it boils down to the performance argument that I will present
-in the next section, but semantically, too, it often makes sense to make clear
+in the next section, but semantically, too, it often makes sense to clear up
 whether a value is just itself or an identifier for a value stored in the
 environment. This is similar to my case on strings presented above: if you pass
 in a quoted variable instead, how will you be sure the function will not try to
@@ -49,7 +49,7 @@ reach in and evaluate the symbol? I embrace semantic clarity, and this
 double-usage of a symbol as an alias and as itself feels quite dirty to me.
 
 Some of the Lisp people in the room might accuse me of not embracing the Lisp
-way right around now. But believe me or not, I do. I love the fact that I can
+way right around now. But believe you me, I do. I love the fact that I can
 treat data as code and vice versa. But I wish for the bulk of this to happen at
 the time of macro expansion, not evaluation. If it does have to happen—for
 instance when evaluating lazy expressions, a perfect example of this weird
@@ -59,7 +59,7 @@ interface<sup><a href="#3">3</a></sup>.
 ## The performance argument
 
 If you settle on providing atoms as a fundamental type in your programming
-language, a whole world of possibilities open to you as an implementor. In most
+language, a whole world of possibilities opens up to you as an implementer. In most
 languages comparing symbols is much faster than comparing, say, strings or
 symbols<sup><a href="#4">4</a></sup>.
 
@@ -74,9 +74,9 @@ Why can we do this? It turns out that if we have a data type that is expressly
 designed as a signal value, the most-frequently used operation will be comparing
 it to other such values.
 
-Thus, the performance argument ties back into the semantic argument, and become
-a more general one: the more we know about what our data types will be used for
-and the more narrow our scope of operations on it, the more we can optimize our
+Thus, the performance argument ties back into the semantic argument, and becomes
+a more general one: the more we know about what our data types will be used for,
+and the more narrow our scope of operations on it, the better we can optimize our
 type to support just those operations. This is especially true for collection
 types—think bags versus lists versus sets versus trees—, but it generally
 applies to all kinds of types, even the most basic ones.
@@ -87,8 +87,8 @@ hashed—they are “hashed” at compile time.
 
 ## Fin
 
-In this blog post, I talked about how atoms, however you might call them, are an
-interesting if often glossed over data type for many languages. They are useful
+In this blog post, I talked about how atoms, or whatever you call them, are an
+interesting, if often glossed-over data type for many languages. They are useful
 for a wide range of applications while having fairly limited functionality.
 
 I hope you enjoyed this blog post! See you soon!
@@ -96,7 +96,7 @@ I hope you enjoyed this blog post! See you soon!
 #### Footnotes
 
 <span id="1">1.</span> Admittedly, in many languages you would have some kind
-                       of enum type for that. I will gloss over this detail for
+                       of enum type for that. I will leave out this detail for
                        the purposes of this blog post, because admittedly I
                        don’t have as strong a case for the fundamental
                        difference of the two.
