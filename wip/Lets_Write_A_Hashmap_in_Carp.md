@@ -75,7 +75,6 @@ So, what are buckets?
 
 ```
 (deftype (Bucket a b) [
-  len Int
   entries (Array (Entry a b))
 ])
 ```
@@ -138,7 +137,7 @@ bucket.
 ```
 (defmodule Bucket
   (defn empty []
-    (Bucket.init 0 []))
+    (Bucket.init []))
 )
 ```
 <div class="figure-label">Fig. 7: Creating an empty bucket.</div>
@@ -177,15 +176,13 @@ simple as well. Have a look at it:
 ```
 (defmodule Bucket
   (defn grow [b e]
-    (=> @b
-        (set-entries (push-back @(entries b) e))
-        (update-len Int.inc)))
+    (set-entries b (push-back @(entries b) e)))
 )
 ```
 <div class="figure-label">Fig. 9: Putting things into a bucket.</div>
 
-All we have to do is take the bucket, push our new entry to the back of the
-array, and increment the bucket length. Simple housekeeping.
+All we have to do is take the bucket and push our new entry to the back of the
+array. Simple housekeeping.
 
 We’re only missing a final puzzle-piece, retrieval, to make our hashmap useful.
 
@@ -210,7 +207,7 @@ Next we need to implement `Bucket.get`.
 (defmodule Bucket
   (defn get [b k]
     (let-do [e (zero)
-             l @(len b)
+             l (length (entries b))
              es (entries b)]
       (for [i 0 l]
         (when (= (Entry.key (nth es i)) k)
