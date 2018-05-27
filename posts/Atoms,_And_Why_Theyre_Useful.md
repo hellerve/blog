@@ -60,7 +60,7 @@ interface<sup><a href="#3">3</a></sup>.
 
 If you settle on providing atoms as a fundamental type in your programming
 language, a whole world of possibilities opens up to you as an implementer. In most
-languages comparing symbols is much faster than comparing, say, strings or
+languages comparing atoms is much faster than comparing, say, strings or
 symbols<sup><a href="#4">4</a></sup>.
 
 This is because we know that the only meaning they have is themselves, and as
