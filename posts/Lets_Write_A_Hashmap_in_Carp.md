@@ -152,7 +152,7 @@ and figure out how to put stuff into it using `Map.put`.
   (defn put [m k v]
     (let [idx (Int.mod (hash k) @(n-buckets &m))
           bs (buckets &m)
-          b (nth b idx)
+          b (nth bs idx)
           e (Entry.init @k @v)]
       (set-buckets m (aset @bs
                            idx
