@@ -24,7 +24,8 @@ often find very convenient and can result in much cleaner APIs. Of course it
 can also be abused, as any powerful language feature can, but it more often than
 not improves readability and clarity.
 
-Let’s implement it in Scheme.
+Let’s implement it in Scheme. A complete implementation can be found in zepto’s
+[standard library](https://github.com/zepto-lang/zepto-stdlib/blob/master/keywords.zp).
 
 ## An API
 
@@ -50,7 +51,6 @@ try and figure how to implement this!
 As always, we’ll start with a simple macro skeleton.
 
 ```
-
 (define-syntax defkeywords
   (syntax-rules ()
     ((_ nargs kwargs body)
@@ -61,6 +61,20 @@ As always, we’ll start with a simple macro skeleton.
 
 As we saw in Figure 2 above, the macro will take three arguments, `nargs`,
 `kwargs`, and `body`. But what do we do with them?
+
+First let’s capture the environment so that we can add bindings to it. As we’ve
+seen before, in zepto we do this using `with-environment` and passing that into
+`eval`.
+
+```
+(define-syntax defkeywords
+  (syntax-rules ()
+    ((_ nargs kwargs body)
+      (with-environment env
+        ; definition goes here
+      ))))
+```
+<div class="figure-label">Fig. 4: Capturing the environment.</div>
 
 TODO
 
