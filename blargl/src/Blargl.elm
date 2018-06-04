@@ -4,6 +4,9 @@ import Html exposing (div, textarea, beginnerProgram, text, button)
 import Html.Attributes exposing (style, value, class, id)
 import Html.Events exposing (onInput)
 import Markdown exposing (toHtml)
+import Regex exposing (regex, split)
+import String exposing (trim)
+import List exposing (length)
 
 type Msg = Str String
 
@@ -19,6 +22,8 @@ view model =
                , class "input"
                ] []
     , toHtml [class "input", id "output"] model
+    , div [ class "wordcount" ]
+          [ text (toString (length (split Regex.All (regex "\\s+") (trim model)))) ]
   ]
 
 

@@ -24,6 +24,18 @@ html, body {
    font-family: monospace;
 }
 
+.wordcount {
+  position: absolute;
+  right: 2em;
+  bottom: 2em;
+  width: 4em;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: right;
+  background-color: #eee;
+  font-family: monospace;
+}
+
 #output {
   font-family: "charter";
   padding-top: 0;
