@@ -6,26 +6,26 @@ want to share why I wanted to move on, what I found, and where I ended up.
 
 ## Why?
 
-Some of the projects as of late have been a little underwhelming. I’ve felt
-little challenged, and was often at least slightly bored. As people familiar
-with my work will know I always find ways to keep myself busy, but sometimes I
+Some of the projects as of late have been a little underwhelming. I felt
+barely challenged and was often at least slightly bored. As people familiar
+with my work will know, I always find ways to keep myself busy, but sometimes I
 felt like I wasn’t as thrilled by my day job as I used to be.
 
-Relatedly, we did a bit of a shift into security rather than development, which
+Relatedly, we shifted a bit into security rather than development, which
 I don’t see as my core strength. This led to a few gigs where I wasn’t sure
-whether I was actually the right person for he job, which is terrible even for a
+whether I was actually the right person for the job, which is terrible even for a
 person who doesn’t have incredible performance anxiety, which I suffer from.
 
-Last, but most importantly, I was trying to get back into working remotely,
-because I’ve had good experiences with that mode of work. Less oversight and not
-being bound by office hours both get my creative juices flowing and make me more
-productive. We at Port Zero are not really in a position where we can pick and
-choose our clients however we want to, and so I wasn’t sure whether working
-remotely was even an option.
+Lastly, but most importantly, I was trying to get back into working remotely,
+because I’ve had good experiences with that mode of work. Both having less 
+oversight and not being bound by office hours get my creative juices flowing 
+and make me more productive. We at Port Zero are not really in a position where 
+we can pick and choose our clients however we want to, and so I wasn’t sure 
+whether working remotely was even an option.
 
 And this is where my introverted nature tripped me up: instead of talking about
-this with my CEO and personal friend Michael I handed in my notice. He wasn’t
-angry, but seemed upset. I offered to stay until our contract with my new client
+this with my CEO and personal friend, Michael, I handed in my notice. He wasn’t
+angry, but he did seem upset. I offered to stay until our contract with my new client
 would end—which is at the end of June—, and we agreed that this would probably
 be the best way forward. He asked me what I was missing, and I told him all of
 the things that I wrote above. I’m not very good at communicating when I don’t
@@ -37,11 +37,11 @@ I then contacted [the Recurse Center](https://www.recurse.com/).
 ## Looking for jobs
 
 The Recurse Center is, among many other things, great if you’re looking for
-work. It’s their primary means of funding themselves, and by now they have a few
-great partners assembled. That said, many of these jobs are only interesting if
+work. It’s their primary means of funding themselves, and by now they've 
+garnered a few great partners. That said, many of these jobs are only interesting if
 you either live in the US or are looking to relocate there soon. While it would
 be easier for me to do that than for many other people—what with my wife being a
-US citizen and all—she is not interested in moving back there and neither am
+US citizen and all—she is not interested in moving back there, and neither am
 I—no offense, US-based folks.
 
 Nonetheless, we workshopped my résumé a little—you can check it out
@@ -53,14 +53,14 @@ Interestingly, I didn’t find anything immediately appealing in Berlin.
 I was relatively laid back the entire time, because it turned out that my
 employer was not only open to keeping me, but also proposed that I could work
 remotely. At the time, it helped me to have a “fallback” plan in case noone
-would want to work with me.
+wanted to work with me.
 
 I interviewed with a couple of companies. A few ghosted me from the get-go, but
 that didn’t really faze me; it turns out that all kinds of sociopathic and rude
 behaviour is perfectly socially acceptable for companies these days. Wouldn’t
 want to work with them anyways<sup><a href="#1">1</a></sup>.
 
-The companies that did grace me with a response I got pretty far with, until the
+I got pretty far with the companies that did grace me with a response, until the
 second or third round (of almost exclusively three). It seems like the
 three-tiered phone call/video conference, then coding interview, then
 meet-the-team-at-the-office process has become standard practice in European
@@ -99,9 +99,9 @@ few facts that have changed since I went on my job-hunting journey a month ago.
 3. I am now a remote employee.  While I will come to the office whenever it’s productive and I feel like it, I have the freedom to go on little trips and just generally stay home when I feel like it. That’s exactly what my wife and I wanted, and we’re very thrilled to use this freedom soon.
 4. My current client provides me with all of what I was missing lately: I get to work on a Smalltalk—more specifically, Pharo—application with some of the brightest minds in Smalltalk. I’m a newbie surrounded by Xerox Parc-ies, Pharo Consortium members, and core developers. It is pretty fantastic!
 
-Point 3 and 4 are what’s most important. I love my company and coworkers, and
+Points 3 and 4 are what’s most important. I love my company and coworkers, and
 felt bad about leaving some of the smartest, weirdest, gentlest people I’ve ever
-met for a random company. We made it work, and I’m staying, and as you can
+met for some random company. We made it work, and I’m staying, and as you can
 probably tell by the chipper tone of this post, I am pretty happy about that.
 
 So I guess all that I have to tell you now is to 1) [apply to the Recurse
