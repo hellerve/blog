@@ -26,7 +26,7 @@ remotely was even an option.
 And this is where my introverted nature tripped me up: instead of talking about
 this with my CEO and personal friend Michael I handed in my notice. He wasn’t
 angry, but seemed upset. I offered to stay until our contract with my new client
-would end—which was at the end of June—, and we agreed that this would probably
+would end—which is at the end of June—, and we agreed that this would probably
 be the best way forward. He asked me what I was missing, and I told him all of
 the things that I wrote above. I’m not very good at communicating when I don’t
 understand something or when something is not right for me, so this conversation
