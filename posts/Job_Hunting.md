@@ -6,7 +6,7 @@ want to share why I wanted to move on, what I found, and where I ended up.
 
 ## Why?
 
-Some of the projects as of late have been a little underwhelming. I felt
+Some of the work projects as of late have been a little underwhelming. I felt
 barely challenged and was often at least slightly bored. As people familiar
 with my work will know, I always find ways to keep myself busy, but sometimes I
 felt like I wasn’t as thrilled by my day job as I used to be.
