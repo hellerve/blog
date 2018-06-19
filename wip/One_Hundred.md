@@ -3,9 +3,9 @@ It took me some time to realize, but [the rant about turning
 post. I’m never one to pass up an opportunity to celebrate a meaningless
 milestone, and although I’m sure you’d much rather read something about Lisp,
 Carp, programming languages, or anything technical really, I’ve decided to
-bother you as well.
+bother you with this celebration as well.
 
-Firstly, let me rave a little bit about this past one and a half years. It’s
+Firstly, let me rave a little bit about these past one and a half years. It’s
 been exciting seeing my audience grow to people I haven’t met, and hearing that
 people actually derive value from me writing about a topic. It’s certainly also
 been scary, but I’m usually okay with speaking in front of an audience, and
@@ -17,7 +17,7 @@ once!
 
 I also enjoy the things people value. My technical blog posts are often received
 in a more lukewarm manner, and that’s alright. If it doesn’t concern you in your
-every day life as a programmer it’s hard to get excited about some random
+every day life as a programmer, it can be hard to get excited about some random
 intricacy of a tool you’ve never used.
 
 In reality, there are only four aspects that people have expressed excitement
@@ -35,7 +35,7 @@ non-technical. They are:
   stories a lot.
 
 - My blog posts on Carp. People seem to want to know more about the language,
-  and for the time being my blog posts are probably the best documentation we
+  and for the time being, my blog posts are probably the best documentation we
   have. This should change soon, though (but I’ve been saying that for a while
   now).
 
@@ -65,7 +65,7 @@ the keyservers.
 
 And lastly, I currently live in Berlin, and if you’d like to go out for coffee,
 beers, a meal, or an all-night rave in an abandoned industrial complex, you can
-reach out to me as well!
+reach out as well!
 
 #### Footnotes
 
