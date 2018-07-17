@@ -12,6 +12,10 @@ idea how to read Carp’s type signatures, that might help as well, but is
 definitely not required as I aim to make the post understandable without their
 help!
 
+We’re going to learn how to read Carp function signatures, work with strings and
+arrays, and how to program imperatively in a mostly functional language when in
+a pinch.
+
 As always, we’ll start by defining an API, then go through an implementation of
 the library, and then finish things up by looking at some of the caveats and
 trade-offs that I made while writing this, and how you could go about making it
@@ -25,16 +29,22 @@ of room for customization if you stick to the standard character set, so our
 functions will be almost trivial to look at:
 
 ```
-; Base64.encode : (Fn [&String] String)
+; Base64.encode : (Fn [&(Array Int)] String)
+(Base64.encode [2 3 4]) ; => "AgME"
+
+; Base64.encode-str : (Fn [&String] String)
 (Base64.encode "hello world!") ; => "aGVsbG8gd29ybGQh"
 
-; Base64.decode : (Fn [&String] String)
+; Base64.decode : (Fn [&(Array Int)] String)
+(Base64.decode "AgME") ; => [2 3 4]
+
+; Base64.decode-str : (Fn [&String] String)
 (Base64.decode "aGVsbG8gd29ybGQh") ; => "hello world!"
 ```
 <div class="figure-label">Fig. 1: A Base64 API.</div>
 
-The composition of the two functions is isomorphic, meaning that if we encode
-and then decode—or the other way around—we should get the original string
+The composition of the functions is isomorphic, meaning that if we encode
+and then decode—or the other way around—we should get the original datum
 back<sup><a href="#1">1</a></sup>.
 
 We can construct it so that supplying different character sets is almost free,
@@ -43,11 +53,11 @@ characters that we will supply as the first argument, so the functions we define
 will end up looking like this:
 
 ```
-; Base64.encode-using : (Fn [&(Array Char) &String] String)
+; Base64.encode-using : (Fn [&(Array Char) &(Array Int)] String)
 (Base64.encode Base64.mime-charset
                "hello world!") ; => "aGVsbG8gd29ybGQh"
 
-; Base64.decode-using : (Fn [&(Array Char) &String] String)
+; Base64.decode-using : (Fn [&(Array Char) &String] (Array Int))
 (Base64.decode Base64.mime-charset
                "aGVsbG8gd29ybGQh") ; => "hello world!"
 ```
@@ -82,6 +92,15 @@ Why is that? The encoding is simple: We take three bytes of the source string
 (that’s 24 bits), group it into four six bit groups, and look up the
 corresponding characters. This means that we end up with four ASCII characters
 per three that we put in, plus any padding.
+
+Why is a format like that useful? Firstly, it’s important to realize that this
+is an encoding, not a compression. This means that we do not really care about
+the size, but about the character set. Typically, Base64 will be applied to
+binary data, although you often see it used to encode texts on the web. What’s
+important is that we want to limit the data representation to “safe” characters,
+i.e. characters that cannot corrupt anything or will not be corrupted by a
+system. Think of `NUL` bytes or, if that doesn’t tell you anything, strings in
+URLs.
 
 Padding is necessary because we always take groups of three bytes. Thus, if the
 length of the input text is not divisible by three, we append `=` to signify
@@ -131,6 +150,8 @@ Moving on, we have to implement `decode-using` and `encode-using`. The former
 is a little simpler, so we should probably start with that one. While we’re at
 it, I’ll also introduce you to another new companion called `sig`, which lets
 you optionally specify the types of functions should you want to.
+
+#### `decode-using`
 
 ```
 (defmodule Base64
@@ -194,12 +215,124 @@ function called `suffix-array`. This is half of what we need. Now we actually
 need to figure out how to stitch the original message back together.
 Bit-fiddling time!
 
+We will have to slice the bytes since each of them only represents six bits of
+information. Thus we end up with three characters rebuilt like this:
+
+- The first character is the first six bits together with the first two bits of
+  the next byte.
+- The second character is the last four bits of the second byte and the first
+  four bits of the third byte.
+- The third character is the last two bits of the third byte and the full fourth
+  byte.
+
+If that didn’t make any sense whatsoever, don’t fret! There is a nice little
+abstraction that helps you think about it: think of our input bytes as a stream,
+each of those bytes having only six bits of information (forget about the other
+two, they will be zeroed out anyway), and our encoding being a sliding window
+over them. Thus, a simplified run of our decoder looks like this:
+
+```
+/* First iteration: full first byte + 2 bits */
+| 110011 | 010101 | 001101 | 101001 |
+  ^ Window  ^
+=> 11001101
+
+/* Second iteration: Rest of second byte + 4 bits */
+| 110011 | 010101 | 001101 | 101001 |
+             ^ Window  ^
+=> 11001101 | 01010011
+
+/* Third iteration: The rest */
+| 110011 | 010101 | 001101 | 101001 |
+                        ^ Window  ^
+=> 11001101 | 01010011 | 01101001
+```
+<div class="figure-label">Fig. 6: A sliding window.</div>
+
+Hopefully, this little illustration helps you understand what I’m getting at a
+little better. It might also make clearer why we chose to take four bytes: it’s
+the lowest common denominator in a 3->4 encoding (three bytes input, four bytes
+output). Otherwise we would have to keep track of half bytes across iterations
+and that gets super ugly really quickly.
+
+```
+(defmodule Base64
+  (defn decode-using [charset str]
+      (let-do ; setup gunk
+        ; ...
+        (set! decoded
+          (Array.push-back decoded
+                           (bit-or (bit-shift-left b0 2)
+                                   (bit-shift-right b1 4))))
+        (when (< b2 64)
+          (set! decoded
+            (Array.push-back decoded
+                             (bit-or (bit-shift-left b1 4)
+                                     (bit-shift-right b2 2)))))
+        (when (< b3 64)
+          (set! decoded
+                (Array.push-back decoded
+                                 (bit-or (bit-shift-left b2 6)
+                                         b3))))
+      )
+      ; what to return?
+)
+```
+<div class="figure-label">Fig. 7: A sliding window, unrolled.</div>
+
+Once again, that’s a lot of code, but most of it should be fairly clear. There
+is one thing that we haven’t talked about however: padding. I used a little
+hack to deal with it already, though, and it has to do with those `when` guards
+that might have confused you: we add the padding to the charset as the last
+character and check whether our third or fourth byte are that character (which
+will be at index 65). If they are, we just ignore the second-to-last or last
+windows (or both). It turns out that that just works, and it’s kind of a cute
+way to deal with that, or at least I think so.
+
+So, what will we return now? We have a bunch of integers that we first have to
+convert to characters and then create a string from that array. Sounds like a
+job for `map`.
+
+```
+(defmodule Base64
+  (defn from-int-ref [x] (Char.from-int @x))
+
+  (defn decode-using [charset str]
+    (let-do ; I’ve got 99 problems
+            ; but my encoding ain’t one
+      (let [ndecoded (copy-map from-int-ref &decoded)]
+        (from-chars &ndecoded))))
+)
+```
+<div class="figure-label">Fig. 8: Done with decoding!</div>
+
+Turns out we have to deal with a bunch of ownership things: Firstly, we want to
+use `copy-map`. Also, we have an array of references to integers. We need to
+copy that integer (that’s what the `@` character is for) before being able to
+call `Char.from-int`, which will create a character from an integer (assuming
+ASCII encoding). This leaves us with an array of characters called `ndecoded`
+out of which we create the string to return. And we’re done!
+
+I suggest you take a deep breath and walk around for a while before moving on.
+You just conquered Base64, and that deserves a little celebration! Once you’re
+done and feeling ready for more, we’re going to move on to encoding, which sadly
+manages to be even more involved.
+
+#### `encode-using`
+
+So, why is encoding more involved than decoding? Because I won’t use smart
+arithmetic this time, but rather a simple, naive way to encode anything that
+make
+
+```
+```
+
 #### Footnotes
 
-<span id="1">1. </span> This is not strictly true if we assert that ownership is
-                        a piece of that puzzle. Both of these functions take
-                        references and return owned strings, which means that
-                        we cannot just stick them together and we will end up
-                        with an owned string instead of a reference. If we do
-                        not care about these semantics, however, the two
-                        functions are indeed isomorphic.
+<span id="1">1.</span> This is not strictly true if we assert that ownership is
+                       a piece of that puzzle. Both of these functions take
+                       references and return owned strings, which means that
+                       we cannot just stick them together and we will end up
+                       with an owned string instead of a reference. If we do
+                       not care about these semantics, however, the two
+                       functions are indeed isomorphic.
