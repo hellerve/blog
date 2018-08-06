@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'charter';
-  src: url('charter_regular-webfont.eot');
-  src: url('charter_regular-webfont.woff') format('woff');
+  src: url('//blog.veitheller.de/charter_regular-webfont.eot');
+  src: url('//blog.veitheller.de/charter_regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'charter';
-  src: url('charter_italic-webfont.eot');
-  src: url('charter_italic-webfont.woff') format('woff');
+  src: url('//blog.veitheller.de/charter_italic-webfont.eot');
+  src: url('//blog.veitheller.de/charter_italic-webfont.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'triplicate';
-  src: url('triplicate_code_regular.eot');
-  src: url('triplicate_code_regular.woff') format('woff');
+  src: url('//blog.veitheller.de/triplicate_code_regular.eot');
+  src: url('//blog.veitheller.de/triplicate_code_regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -116,33 +116,20 @@ p, li {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);
+  background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);
+  -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
+  background-position: 0% 93%, 100% 93%, 0% 93%;
 }
 
-.content a:active {
-  color: #777;
-}
-
-.content a:after {
-  position: relative;
-  content: "*";
-  margin-left: 0.10em;
-  font-size: 90%;
-  top: -0.10em;
-  color: #933;
-}
-
-a:hover {
-  border-bottom: 2px solid #933;
-}
-
-.content .imglink:after {
-  content: "";
-}
-
-.content .imglink:hover {
-  border-bottom: none;
+sup a {
+  background: 0;
 }
 
 pre {
