@@ -469,9 +469,9 @@ of bits and bytes.
 #### Footnotes
 
 <span id="1">1.</span> This is not strictly true if we assert that ownership is
-                       a piece of that puzzle. Both of these functions take
-                       references and return owned strings, which means that
+                       a piece of that puzzle. All of these functions take
+                       references and return owned data, which means that
                        we cannot just stick them together and we will end up
-                       with an owned string instead of a reference. If we do
+                       with an owned datum instead of a reference. If we do
                        not care about these semantics, however, the two
                        functions are indeed isomorphic.
