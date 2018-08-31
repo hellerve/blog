@@ -5,12 +5,12 @@ write something that’s useful while still not exceeding a few hours worth of
 programming and debugging, and I think it worked!
 
 In this blog post I want to walk you through how you Base64 works, and how you
-could go about implementing it in Carp. An ability to read Lisp is required,
+could go about implementing it in Carp. The ability to read Lisp is required,
 and if you want to truly understand what’s going on, reading [my introductory
 blog post](/Carp.html) on Carp probably wouldn’t hurt either. If you have some
-idea how to read Carp’s type signatures, that might help as well, but is
-definitely not required as I aim to make the post understandable without their
-help!
+idea how to read Carp’s type signatures—they’re very similar to Haskell’s—,
+that might help as well, but is definitely not required as I aim to make the
+post understandable without their help!
 
 We’re going to learn how to read Carp function signatures, work with strings and
 arrays, and how to program imperatively in a mostly functional language when in
@@ -33,13 +33,13 @@ functions will be almost trivial to look at:
 (Base64.encode [2 3 4]) ; => "AgME"
 
 ; Base64.encode-str : (Fn [&String] String)
-(Base64.encode "hello world!") ; => "aGVsbG8gd29ybGQh"
+(Base64.encode-str "hello world!") ; => "aGVsbG8gd29ybGQh"
 
 ; Base64.decode : (Fn [&(Array Int)] String)
 (Base64.decode "AgME") ; => [2 3 4]
 
 ; Base64.decode-str : (Fn [&String] String)
-(Base64.decode "aGVsbG8gd29ybGQh") ; => "hello world!"
+(Base64.decode-str "aGVsbG8gd29ybGQh") ; => "hello world!"
 ```
 <div class="figure-label">Fig. 1: A Base64 API.</div>
 
@@ -53,13 +53,15 @@ characters that we will supply as the first argument, so the functions we define
 will end up looking like this:
 
 ```
-; Base64.encode-using : (Fn [&(Array Char) &(Array Int)] String)
-(Base64.encode Base64.mime-charset
-               "hello world!") ; => "aGVsbG8gd29ybGQh"
+; Base64.encode-using : (Fn [&(Array Char) Char &(Array Int)] String)
+(Base64.encode-using Base64.mime-charset
+                     Base64.mime-padding
+                     [2 3 4]) ; => "AgME"
 
-; Base64.decode-using : (Fn [&(Array Char) &String] (Array Int))
+; Base64.decode-using : (Fn [&(Array Char) Char &String] (Array Int))
 (Base64.decode Base64.mime-charset
-               "aGVsbG8gd29ybGQh") ; => "hello world!"
+               Base64.mime-padding
+               "AgME") ; => [2 3 4]
 ```
 <div class="figure-label">Fig. 2: A Base64 API, extended.</div>
 
@@ -99,11 +101,11 @@ the size, but about the character set. Typically, Base64 will be applied to
 binary data, although you often see it used to encode texts on the web. What’s
 important is that we want to limit the data representation to “safe” characters,
 i.e. characters that cannot corrupt anything or will not be corrupted by a
-system. Think of `NUL` bytes or, if that doesn’t tell you anything, strings in
-URLs.
+system. Think of `NUL` bytes or, if that doesn’t tell you anything, escaping
+strings in URLs.
 
 Padding is necessary because we always take groups of three bytes. Thus, if the
-length of the input text is not divisible by three, we append `=` to signify
+length of the input text is not divisible by three, we append `=` to signal
 that there are missing characters. We will always end up with between zero and
 two `=` characters as padding. Why that is is left as an exercise to the reader.
 
@@ -123,24 +125,30 @@ As I wrote above when we talked about the API of the library, `encode` and
     \A \B \C \D \E \F \G \H \I \J \K \L \M \N \O \P \Q
     \R \S \T \U \V \W \X \Y \Z \a \b \c \d \e \f \g \h
     \i \j \k \l \m \n \o \p \q \r \s \t \u \v \w \x \y
-    \z \0 \1 \2 \3 \4 \5 \6 \7 \8 \9 \+ \/ \=
+    \z \0 \1 \2 \3 \4 \5 \6 \7 \8 \9 \+ \/
   ])
+
+  (doc mime-padding "The Base64 padding as specified by MIME.")
+  (def mime-padding \=)
 
   ; encode-using and decode-using will go here
 
   (doc decode "Decodes a base64-encoded string using mime-charset.")
-  (defn decode [str]
-    (decode-using &mime-charset str))
+  (defn decode [data]
+    (decode-using &mime-charset mime-padding data))
 
   (doc encode "Encodes a string into base64 using mime-charset.")
   (defn encode [str]
-    (encode-using &mime-charset str))
+    (encode-using &mime-charset mime-padding data))
+
+  ; decode-str and encode-str are left as an exercise to
+  ; the reader
 )
 ```
 <div class="figure-label">Fig. 3: Defining encoding and decoding.</div>
 
 The functions and definitions for the character set are almost trivial. We just
-call our omniscient parent functions. What is `doc`, though? Well, you can
+call our omniscient `*-using` functions. What is `doc`, though? You can
 document functions in Carp from your source code and autogenerate documentation
 from it, similar to “docstrings” in languages like Ruby and Python. The main
 difference to these languages is that the documentation generator is part of
@@ -155,17 +163,15 @@ you optionally specify the types of functions should you want to.
 
 ```
 (defmodule Base64
-  (doc decode-using "Decodes a base64-encoded string using a user-supplied character set.")
-  (sig decode-using (Fn [&(Array Char) &String] String))
-  (defn decode-using [charset str]
-    (let-do [bytes (chars str)
-             decoded []]
-      (while (/= (length &bytes) 0)
-        ; what to do here?
-      )
-      ; what to return?
-    )
-  )
+    (doc decode-using "Decodes a base64-encoded datum using a user-supplied character set.")
+  (sig decode-using (λ [&(Array Char) Char &String] (Array Int)))
+  (defn decode-using [charset padding str]
+      (let-do [bytes (chars str)
+            decoded []]
+        (while (/= (length &bytes) 0)
+          ; do something
+        )
+        decoded))
 )
 ```
 <div class="figure-label">Fig. 4: A skeleton for `decode-using`.</div>
@@ -180,7 +186,8 @@ arrays of characters, to make the type signature explicit and informative.
 
 What do we do in the function, though? First, we define `bytes` to be an array
 of characters, created from the input string—please note that we assume the text
-to be ASCII in there. We also define an empty array called `decoded`, which will
+to be ASCII in there (remember that it’s a Base64-encoded string, so ASCII is
+hopefully fine). We also define an empty array called `decoded`, which will
 be the result of our fiddling. Then we go through the bytes until they’re empty.
 All of this suggests a mutation-based approach that is not very functional, but
 presumably fairly fast.
@@ -196,13 +203,15 @@ per iteration!
       (while (/= (length &bytes) 0)
         (let-do [b0 (index-of charset @(nth &bytes 0))
                  b1 (index-of charset @(nth &bytes 1))
-                 b2 (index-of charset @(nth &bytes 2))
-                 b3 (index-of charset @(nth &bytes 3))]
+                 third @(nth &bytes 2)
+                 b2 (index-of charset third)
+                 fourth @(nth &bytes 3)
+                 b3 (index-of charset fourth)]
           (set! bytes (suffix-array &bytes 4))
           ; now what?
         )
       )
-      ; what to return?
+      decoded
     )
   )
 )
@@ -211,8 +220,10 @@ per iteration!
 
 Okay, so now we get the index of our individual characters in the character set,
 and then we remove the four characters from the byte array using a handy array
-function called `suffix-array`. This is half of what we need. Now we actually
-need to figure out how to stitch the original message back together.
+function called `suffix-array`. For some reason—this will be clearer in a
+minute—we also bind the third and fourth byte in the array to a variable. Thi
+is half of what we need. Now we actually need to figure out how to stitch the
+original message back together.
 Bit-fiddling time!
 
 We will have to slice the bytes since each of them only represents six bits of
@@ -258,24 +269,32 @@ and that gets super ugly really quickly.
 ```
 (defmodule Base64
   (defn decode-using [charset str]
-      (let-do ; setup gunk
-        ; ...
-        (set! decoded
-          (Array.push-back decoded
-                           (bit-or (bit-shift-left b0 2)
-                                   (bit-shift-right b1 4))))
-        (when (< b2 64)
-          (set! decoded
-            (Array.push-back decoded
-                             (bit-or (bit-shift-left b1 4)
-                                     (bit-shift-right b2 2)))))
-        (when (< b3 64)
-          (set! decoded
-                (Array.push-back decoded
-                                 (bit-or (bit-shift-left b2 6)
-                                         b3))))
-      )
-      ; what to return?
+      ; setup stuff
+        (while (/= (length &bytes) 0)
+          ; more setup stuff...
+
+          (set! bytes (suffix-array &bytes 4))
+          ; ((b0 & 63) << 2) | (b1 >> 4)
+          (set! decoded (Array.push-back decoded
+                          (bit-or
+                            (bit-shift-left (bit-and b0 63)
+                                            2)
+                            (bit-shift-right b1 4))))
+          ; ((b1 & 15) << 4) | (b2 >> 2)
+          (when (/= third padding)
+            (set! decoded (Array.push-back decoded
+                            (bit-or
+                              (bit-shift-left (bit-and b1 15)
+                                              4)
+                              (bit-shift-right b2 2)))))
+          ; ((b2 & 3) << 6) | b3
+          (when (/= fourth padding)
+            (set! decoded (Array.push-back decoded
+                            (bit-or
+                              (bit-shift-left (bit-and b2 3)
+                                              6)
+                              b3)))))
+      ; ...
 )
 ```
 <div class="figure-label">Fig. 7: A sliding window, unrolled.</div>
@@ -283,49 +302,169 @@ and that gets super ugly really quickly.
 Once again, that’s a lot of code, but most of it should be fairly clear. There
 is one thing that we haven’t talked about however: padding. I used a little
 hack to deal with it already, though, and it has to do with those `when` guards
-that might have confused you: we add the padding to the charset as the last
-character and check whether our third or fourth byte are that character (which
-will be at index 65). If they are, we just ignore the second-to-last or last
-windows (or both). It turns out that that just works, and it’s kind of a cute
-way to deal with that, or at least I think so.
+that might have confused you: we check whether either of the last two bytes are
+padding bytes and if not, we work on them. Otherwise, we ignore them.
 
-So, what will we return now? We have a bunch of integers that we first have to
-convert to characters and then create a string from that array. Sounds like a
-job for `map`.
+If bitt fiddling in Lisp land confuses you—I know it confused me in the
+beginning!—, refer to the comments that i added above the individual operations
+that tell you what exactly we are doing to the bytes. Depending on how
+experienced you are at bit-masking and such, this might come natural to you or
+not. If it’s not quite clear yet, refer back to Figure 6, and try to understand
+how we build the sliding window.
 
-```
-(defmodule Base64
-  (defn from-int-ref [x] (Char.from-int @x))
-
-  (defn decode-using [charset str]
-    (let-do ; I’ve got 99 problems
-            ; but my encoding ain’t one
-      (let [ndecoded (copy-map from-int-ref &decoded)]
-        (from-chars &ndecoded))))
-)
-```
-<div class="figure-label">Fig. 8: Done with decoding!</div>
-
-Turns out we have to deal with a bunch of ownership things: Firstly, we want to
-use `copy-map`. Also, we have an array of references to integers. We need to
-copy that integer (that’s what the `@` character is for) before being able to
-call `Char.from-int`, which will create a character from an integer (assuming
-ASCII encoding). This leaves us with an array of characters called `ndecoded`
-out of which we create the string to return. And we’re done!
-
-I suggest you take a deep breath and walk around for a while before moving on.
-You just conquered Base64, and that deserves a little celebration! Once you’re
-done and feeling ready for more, we’re going to move on to encoding, which sadly
-manages to be even more involved.
+Anyway, we’re done with decoding! Take a deep breath, for we are about to tackle
+its inverse operation: encoding. It’s a little more complex that decoding, so
+you might want to take a break before attacking this beast!
 
 #### `encode-using`
 
-So, why is encoding more involved than decoding? Because I won’t use smart
-arithmetic this time, but rather a simple, naive way to encode anything that
-make
+So, why is encoding more involved than decoding? First of all, encoding is
+always a mess, especially if the two formats aren’t of the same length. We have
+to check for padding to make sure we don’t overrun the source string at every
+iteration, we have to accumulate and shift bits right and left—it’s not the most
+comfortable place to be in.
+
+To make it simple, we will ignore the [DRY
+principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) today and put
+all of our eggs in the duplication basket. Carp is a Lisp, and there are loads
+of roads you could take to reduce duplication and make the code more elegant,
+but it’s easier to read and reason about if we see the structures laid bare in
+front of us—or at least I believe that to be the case.
+
+Let’s build a skeleton of the encoding function and go from there, shall we?
 
 ```
+(defmodule Base64
+  (doc encode-using "Encodes a base64-encoded datum using a user-supplied character set.")
+  (sig encode-using (λ [&(Array Char) Char &(Array Int)] String))
+  (defn encode-using [charset pad s]
+    (let-do [l (length s)
+             idx 0
+             enc @""]
+      (while (> l idx)
+        ; do something
+      )
+      enc)
+  )
+)
 ```
+<div class="figure-label">Fig. 8: An encoding skeleton.</div>
+
+The basic structure of this function looks pretty similar to what we’ve built in
+`decode-using`. The signature hints at the inversion: the last argument and the
+return type are swapped. In the beginning of the function, we bind the length of
+the datum to a variable, get an index variable going, and an accumulator, which
+is a string this time.
+
+We will iterate as long as the index is smaller than the length of the array we
+pass in and return the accumulator at the end. So far, so sensible.
+
+But what happens at each iteration?
+
+First, we should make sure that we aren’t at a point where we have to pad the
+string. Thus, we should somehow check the length, and do some work if we still
+have a ways to go.
+
+```
+(defmodule Base64
+  (defn encode-using [charset pad s]
+    ; setup
+    (while (> l idx)
+      (let-do [b0 @(nth s idx)]
+        (case (- l idx)
+          1
+            ; we have to add two padding characters
+          2
+            ; we have to add one padding character
+          ; else
+          (let-do [b1 @(nth s (inc idx))
+                   b2 @(nth s (+ idx 2))
+                   c0 (nth charset (bit-shift-right b0 2))
+                   c1 (nth charset
+                        (bit-or
+                          (bit-shift-left (bit-and b0 3) 4)
+                          (bit-shift-right b1 4)))
+                   c2 (nth charset
+                        (bit-or
+                          (bit-shift-left (bit-and b1 15) 2)
+                          (bit-shift-right b2 6)))
+                   c3 (nth charset (bit-and b2 63))
+                   ]
+            (set! enc (str* enc @c0 @c1 @c2 @c3))
+            (set! idx (+ idx 3))))))
+    ; return
+  )
+)
+```
+<div class="figure-label">Fig. 9: A bit more meat on the encoding bones.</div>
+
+Once again: that’s a lot! But once you understand this, everything what’s to
+come is a breeze, so bear with me.
+
+We decided to do the switch for padding using a `case` statement, which is
+similar to a `switch` in C, only a bit more capable. We ignore the padding cases
+for now and focus on a “regular” iteration. During a regular iteration, we will
+get three bytes (we always get at least one, `b0`, so we factor this out of the
+`case`), `b0` to `b2`. We will split them into four characters, using the
+inverse of the unrolled sliding window operation we used in the decoder,
+resulting in the characters `c0` to `c3`. We then add that to our accumulator
+`enc` and increment the index by three.
+
+That’s one full cycle of the encoding operation that makes four characters from
+three. Our cycle with padding is similar, but simpler, since we don’t need to
+do the whole dance. I’m going to show you how it looks for the first
+case—resulting in two padding characters being appended—, and leave the last
+case to you to mull over.
+
+```
+(defmodule Base64
+  (defn encode-using [charset pad s]
+    ; setup
+    (while (> l idx)
+      (let-do [b0 @(nth s idx)]
+        (case (- l idx)
+          1
+            (let-do [c0 (nth charset (bit-shift-right b0 2))
+                     c1 (nth charset
+                            (bit-shift-left (bit-and b0 3)
+                                            4))]
+              (set! enc (str* enc @c0 @c1 pad pad))
+              (break))
+          2
+            ; we have to add one padding character
+          ; else case
+    ; return
+  )
+)
+```
+<div class="figure-label">Fig. 10: A cycle with padding.</div>
+
+As we can see, all we are doing is splitting our single byte into two characters
+and appending those—along with the padding—to our accumulator. We then break out
+of the loop.
+
+And that’s it! We can encode Base64 data now!
+
+## Caveats
+
+This Base64 encoder is imperative rather than functional. Carp supports both
+functional and imperative programming, and I usually prefer functional code.
+The route we’ve gone down today, however, is very explicit, which I prefer for
+teaching you the basics.
+
+If you have a soft spot for functional programming, you might want to revisit
+this codebase and try out different approaches for how to make this a little
+more elegant.
+
+## Fin
+
+As always, it’s been a pleasure writing for you. This article has been
+challenging to write, and I had to revisit both the code and the writing a
+couple of times to make it more understandable.
+
+Bit fiddling can seem hard and daunting, and I hope this article has helped a
+little bit in showing you ways of how to navigate the complexity and weirdness
+of bits and bytes.
 
 #### Footnotes
 
