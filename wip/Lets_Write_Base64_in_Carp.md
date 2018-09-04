@@ -1,16 +1,16 @@
 In an effort to check how painful it would be to do low-level bit-fiddling in
-Carp I recently implemented an implementation of [Base64
+Carp, I recently built an implementation of [Base64
 encoding](https://github.com/hellerve/base64.carp) in Carp. My goals were to
-write something that’s useful while still not exceeding a few hours worth of
+write something that’s useful while not exceeding a few hours worth of
 programming and debugging, and I think it worked!
 
-In this blog post I want to walk you through how you Base64 works, and how you
+In this blog post I want to walk you through how Base64 works and how you
 could go about implementing it in Carp. The ability to read Lisp is required,
 and if you want to truly understand what’s going on, reading [my introductory
-blog post](/Carp.html) on Carp probably wouldn’t hurt either. If you have some
-idea how to read Carp’s type signatures—they’re very similar to Haskell’s—,
+blog post](/Carp.html) on Carp probably wouldn’t hurt either. If you sort of 
+understand how to read Carp’s type signatures—they’re very similar to Haskell’s—,
 that might help as well, but is definitely not required as I aim to make the
-post understandable without their help!
+post graspable without their help!
 
 We’re going to learn how to read Carp function signatures, work with strings and
 arrays, and how to program imperatively in a mostly functional language when in
@@ -66,8 +66,8 @@ will end up looking like this:
 <div class="figure-label">Fig. 2: A Base64 API, extended.</div>
 
 The MIME character set that we expose in Figure 2 is the standard charset most
-of us think about when we think about Base64-encoded text. This has the nice
-property that both `encode` and `decode` are just specializations of
+of us think about when we think about Base64-encoded text. This is somewhat 
+interesting, because both `encode` and `decode` are just specializations of
 `encode-using` and `decode-using` with the MIME character set.
 
 And that’s about all we need to define the interface of a useful Base64 library!
@@ -84,8 +84,8 @@ section!
 
 There is something magic about the number 64. It is a power of two, namely
 `2^6`. This is interesting for us, because it means that we can represent any
-character of the character set using only 6 bits. This is 2 bits per character
-less than ASCII, meaning that we use three fourths of the space we would be
+character of the character set using only six bits. This is two bits per character
+fewer than ASCII, meaning that we use three fourths of the space we would be
 using if we represented our text in ASCII. Notably, this doesn’t necessarily
 mean that Base64-encoded text is only three fourths as long as ASCII, in fact
 it is approximately 1.37 times the original size.
@@ -106,7 +106,7 @@ strings in URLs.
 
 Padding is necessary because we always take groups of three bytes. Thus, if the
 length of the input text is not divisible by three, we append `=` to signal
-that there are missing characters. We will always end up with between zero and
+that there are missing characters. We will always end up with between zero and 
 two `=` characters as padding. Why that is is left as an exercise to the reader.
 
 Now that we have a basic intuition of how Base64 works internally, let’s wrap
@@ -157,7 +157,7 @@ the compiler, so you only have one tool for everything. Kind of neat, huh?
 Moving on, we have to implement `decode-using` and `encode-using`. The former
 is a little simpler, so we should probably start with that one. While we’re at
 it, I’ll also introduce you to another new companion called `sig`, which lets
-you optionally specify the types of functions should you want to.
+you optionally specify the types of functions, should you want to.
 
 #### `decode-using`
 
@@ -180,9 +180,10 @@ As we can glean from Figure 4, `sig` takes the name and signature of a function.
 Usually you don’t need to do that and the compiler will infer a type for you,
 but sometimes those are too general or you want to be extra explicit. In this
 case, as we’ll see later, Carp will assume that the type of `charset` can be
-anything, because we only use interface functions on it that could be defined
-by a variety of types. It is prudent, however, that we restrict the inputs to
-arrays of characters, to make the type signature explicit and informative.
+an array containing any type, because we only use interface functions on it
+that could be defined by a variety of types. It is prudent, however,  
+to restrict the inputs to arrays of characters, to make the type signature 
+explicit and informative.
 
 What do we do in the function, though? First, we define `bytes` to be an array
 of characters, created from the input string—please note that we assume the text
@@ -221,10 +222,9 @@ per iteration!
 Okay, so now we get the index of our individual characters in the character set,
 and then we remove the four characters from the byte array using a handy array
 function called `suffix-array`. For some reason—this will be clearer in a
-minute—we also bind the third and fourth byte in the array to a variable. Thi
-is half of what we need. Now we actually need to figure out how to stitch the
-original message back together.
-Bit-fiddling time!
+minute—we also bind the third and fourth byte in the array to a variable. This
+is half of what we need. Now we actually have to figure out how to stitch the
+original message back together. Bit-fiddling time!
 
 We will have to slice the bytes since each of them only represents six bits of
 information. Thus we end up with three characters rebuilt like this:
@@ -305,15 +305,15 @@ hack to deal with it already, though, and it has to do with those `when` guards
 that might have confused you: we check whether either of the last two bytes are
 padding bytes and if not, we work on them. Otherwise, we ignore them.
 
-If bitt fiddling in Lisp land confuses you—I know it confused me in the
-beginning!—, refer to the comments that i added above the individual operations
+If bit fiddling in Lisp land confuses you—I know it confused me in the
+beginning!—, refer to the comments that I added above the individual operations
 that tell you what exactly we are doing to the bytes. Depending on how
 experienced you are at bit-masking and such, this might come natural to you or
 not. If it’s not quite clear yet, refer back to Figure 6, and try to understand
 how we build the sliding window.
 
 Anyway, we’re done with decoding! Take a deep breath, for we are about to tackle
-its inverse operation: encoding. It’s a little more complex that decoding, so
+its inverse operation: encoding. It’s a little more complex than decoding, so
 you might want to take a break before attacking this beast!
 
 #### `encode-using`
