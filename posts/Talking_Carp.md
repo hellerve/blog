@@ -2,10 +2,11 @@ On the 15th of September, I gave my first recorded talk on Carp at clojuTRE 2018
 I had a lot of fun, and now the recording is online. I want to talk a bit about
 my experience, but first I’ll share the talk itself with you!
 
-<iframe width="560" height="315"
+<iframe width="100%" height="400"
         src="https://www.youtube.com/embed/BQeG6fXMk28" frameborder="0"
         allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+<div class="figure-label">Fig. 1: Me, babbling.</div>
 
 With that out of the way, let’s talk a bit about the parts you can’t see in this
 video. It was my first talk at a major conference—to me, that means more than
@@ -62,7 +63,7 @@ on my focus when answering questions. While some of the tangents I went into
 might have been interesting, they ended up obscuring the actual answers.
 
 I should also have mentioned where the code actually lies, and that there is a
-Gitter channel that people can join if they are interested. Oh well, hindisght
+Gitter channel that people can join if they are interested. Oh well, hindsight
 is 20/20.
 
 I’m looking forward to applying all of these ideas to my next talk on Carp! If
