@@ -1,4 +1,4 @@
-On the 15th of September I gave my first recorded talk on Carp at clojuTRE 2018.
+On the 15th of September, I gave my first recorded talk on Carp at clojuTRE 2018.
 I had a lot of fun, and now the recording is online. I want to talk a bit about
 my experience, but first I’ll share the talk itself with you!
 
@@ -9,15 +9,15 @@ my experience, but first I’ll share the talk itself with you!
 
 With that out of the way, let’s talk a bit about the parts you can’t see in this
 video. It was my first talk at a major conference—to me, that means more than
-100 people—and I was scared appropriately. My slot was the first one after
+100 people—and I was accordingly scared. My slot was the first one after
 lunch, and I decided not to eat in order to be at my full mental capacity. I
 walked around the entire conference venue, controlled my breathing, chatted a
 little with other people, that kind of stuff.
 
-All in all, I think it went well. I would have preferred if I wouldn’t have used
+All in all, I think it went well. I would have preferred if I hadn't used
 so many filler words, especially in the beginning. I’ll work on it. I also
 didn’t answer the questions as well as I could have. Some I didn’t answer at
-all, because I went off on a tangent instead, and that’s not great. I did talk
+all; I went off on a tangent instead, and that’s not great. I did talk
 to a few of the askers afterwards and gave better answers, but they are not
 recorded. In case you want to know what I would like to add to my answers in
 retrospect, here goes:
@@ -33,7 +33,7 @@ structures that share parts, like lists that share their tail or something like
 that. So how does that work in Carp and if it doesn’t, who in their right mind
 would make a Lisp with borrow checking?
 
-*Answer:* As to the “who would do that” part, well—yours truly. As for the data
+*Answer:* As to the “who would do that” part, well, yours truly. As for the data
 structures, we don’t have them, so that answer is true, but it’s certainly not
 impossible to have them. Carp does a bunch of internal safe mutability based on
 borrowing semantics instead, which do not enable some of the “undo” semantics of
