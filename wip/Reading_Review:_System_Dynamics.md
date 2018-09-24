@@ -1,3 +1,7 @@
+*A big thank you goes to [Sumana Harihareswara](https://www.harihareswara.net/)
+for, among other things, giving her okay to be named here and reviewing the
+blog post thoroughly before it was published.*
+
 A while ago, I asked a question on the [Zulip](https://zulipchat.com/) instance
 hosted by the [Recurse Center](https://recurse.com). It boiled down to this:
 “Are most system dynamics races to the bottom?”
