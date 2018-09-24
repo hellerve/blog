@@ -24,13 +24,17 @@ illustration for economic dynamics, and a whole lot of other things.
 Most notably, I was sent on a journey of reading and thinking by [Sumana
 Harihareswara](https://harihareswara.net), who correctly noted that maybe I
 should stop pretending I could ignore the social sciences, to which the
-question belongs. I want to talk a bit about the suggestions she made,
-blatantly quoting a reading list she kindly gave me, verbatim.
+question belongs. Her exact words were: “You might want to consider reading
+these pieces on various kinds of system dynamics”.
+
+I want to talk a bit about the suggestions she made, blatantly quoting a
+reading list she kindly gave me, verbatim.
 
 Before going through the list I want to say that I’ve not finished any of the
 books yet—life got in the way, and I was already reading a couple of other
 books I wanted to complete first—, but have read all of the articles, and you
-should too.
+should too. Or rather, you might want to consider reading these pieces on
+various kinds of system dynamics.
 
 Let’s start with the articles:
 
@@ -86,7 +90,7 @@ about in my own words, and instead just quote Sumana:
   be a bit more rigorous than not rigorous at all with my research methods in
   social sciences.
 
-Or, in other words, I have a new stack of books next to my bed.
+In other words, I have a new stack of books next to my bed.
 
 All of the things I linked above—the ones I’ve read, anyway—are worth a read,
 no matter whether you are interested in the original question or not. If you
