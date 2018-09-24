@@ -31,7 +31,7 @@ should too.
 Let’s start with the articles:
 
 - [Public broadcasting: Its past and its future](https://www.knightfoundation.org/public-media-white-paper-2017-gardner)
-  is a long essay/whitepaper by Sue Garnder that examines the evolution of
+  is a long essay/whitepaper by Sue Gardner that examines the evolution of
   public broadcasting—mostly the BBC—and how the world changed around it, and
   it was in turn changed by the world, and how it’s maybe time to rethink
   public broadcasting, and stop defunding it. It’s a lovely, insightful, well
@@ -50,12 +50,13 @@ Let’s start with the articles:
   probably has some interesting insights into resistance against regimes that
   are worth talking about, so this article does just that.
 - [Open Source Archetypes: A Framework For Purposeful Open Source](https://blog.mozilla.org/blog/2018/05/15/whats-your-open-source-strategy-here-are-10-answers/)
-  is a paper commissioned and partially (?) written by Mozilla—the exact
-  authorship is not quite clear to me, though they talk about it in the
-  preface. It gives an overview of different Open Source governance models and
-  the tradeoffs one has to make when deciding on a governance model for a
-  project. It was immediately valuable to me not only intellectually, but also
-  practically.
+  is a paper commissioned by Mozilla and written by [Open Tech
+  Strategies](https://opentechstrategies.com/). It gives an overview of
+  different Open Source governance models and the tradeoffs one has to make
+  when deciding on a governance model for a project. It was immediately
+  valuable to me not only intellectually, but also practically—it helped me
+  figure out and articulate what kind of governance models I prefer to have in
+  the spaces I contribute to.
 
 And then there are the books I haven’t read, so I won’t tell you what they are
 about in my own words, and instead just quote Sumana:
@@ -70,8 +71,8 @@ about in my own words, and instead just quote Sumana:
 - [What's Yours is Mine](https://www.orbooks.com/catalog/whats-mine-tom-slee-2nd-ed/)
   by *Tom Slee* “on AirBnB, Uber, Lyft, Taskrabbit, open source software, and
   related economics”.
-- [Perfecting Sound Forever: An Aural History of Recorded Music](http://www.wordyard.com/2010/08/04/perfecting-sound-forever-great-book-on-history-of-recording/) by *Greg Milner*, where I have to read the section on the “loudness
-  war”, apparently.
+- [Perfecting Sound Forever: An Aural History of Recorded Music](http://www.wordyard.com/2010/08/04/perfecting-sound-forever-great-book-on-history-of-recording/) by *Greg Milner*, where Sumana particularly recommends that I read
+  the section on the 'loudness war'.
 - “Doing Interview-based Qualitative Research: A Learner's Guide” by *Eva
   Magnusson and Jeanne Marecek* and
 - “Shane, The Lone Ethnographer: A Beginner's Guide to Ethnography” by *Sally
