@@ -65,7 +65,8 @@ about in my own words, and instead just quote Sumana:
 - **Democracy for Realists** by *Christopher H. Achen and Larry M. Bartels* is
   “a survey of the political science literature that aims to figure out what is
   actually going on in peoples' heads when they vote”—this is me quoting Sumana
-  quoting her spouse who recommended it.
+  quoting her spouse who recommended it (and even named it his [book of the
+  year 2017](https://www.crummy.com/2018/01/10/0)).
 - **The Greatest Benefit to Mankind: A Medical History of Humanity** by *Roy
   Porter* “includes interesting changes in the quality of medical care over
   time”.
