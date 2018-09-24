@@ -18,10 +18,10 @@ asked the question. On the way, I learned about the works—and existance—of
 illustration for economic dynamics, and a whole lot of other things.
 
 Most notably, I was sent on a journey of reading and thinking by [Sumana
-Harihareswara](harihareswara.net), who correctly noted that maybe I should stop
-pretending I could ignore the social sciences, to which the question belongs. I
-want to talk a bit about the suggestions she made, blatantly quoting a reading
-list she kindly gave me, verbatim.
+Harihareswara](https://harihareswara.net), who correctly noted that maybe I
+should stop pretending I could ignore the social sciences, to which the
+question belongs. I want to talk a bit about the suggestions she made,
+blatantly quoting a reading list she kindly gave me, verbatim.
 
 Before going through the list I want to say that I’ve not finished any of the
 books yet—life got in the way, and I was already reading a couple of other
@@ -46,9 +46,10 @@ Let’s start with the articles:
 - [Julian Assange and the Computer Conspiracy; “To destroy this invisible government”](https://zunguzungu.wordpress.com/2010/11/)
   is a long meditation by Aaron Bady on Julian Assange and his views on regimes,
   authoritarianism, and how to oppose it. He praises Julian Assange, and that
-  probably won’t jive well with everyone—I’m not really a fan myself—, but he
-  probably has some interesting insights into resistance against regimes that
-  are worth talking about, so this article does just that.
+  probably won’t jive well with everyone—I’m not really a fan myself, and
+  neither is Sumana—, but he probably has some interesting insights into
+  resistance against regimes that are worth talking about, so this article does
+  just that.
 - [Open Source Archetypes: A Framework For Purposeful Open Source](https://blog.mozilla.org/blog/2018/05/15/whats-your-open-source-strategy-here-are-10-answers/)
   is a paper commissioned by Mozilla and written by [Open Tech
   Strategies](https://opentechstrategies.com/). It gives an overview of
