@@ -15,7 +15,7 @@ although it completely mischaracterizes the nature of the question.
 
 Anyway, I was sent down a whole lot of rabbit holes through this discussion,
 out of which I emerged only about a week ago—almost exactly a month after I had
-asked the question. On the way, I learned about the works—and existance—of
+asked the question. On the way, I learned about the works—and existence—of
 [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann), was sent to
 [Slate Star Codex](http://slatestarcodex.com/) a number of times, heard about
 [the Red Queen’s race](https://en.wikipedia.org/wiki/Red_Queen%27s_race) as an
