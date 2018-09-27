@@ -7,7 +7,7 @@ hosted by the [Recurse Center](https://recurse.com). It boiled down to this:
 “Are most system dynamics races to the bottom?”
 
 Now, this question is obviously too broad and general to answer, and I wanted to
-know whether other Recurser had good resources and/or insights into the nature
+know whether other Recursers had good resources and/or insights into the nature
 of societal dynamics and what forms they take on. The discussion was fun,
 generally productive, and completely off-topic—I posted it in a stream called
 “small question”, because no other general question-asking channel exists,
@@ -42,12 +42,12 @@ Let’s start with the articles:
   is a long essay/whitepaper by Sue Gardner that examines the evolution of
   public broadcasting—mostly the BBC—and how the world changed around it, and
   it was in turn changed by the world, and how it’s maybe time to rethink
-  public broadcasting, and stop defunding it. It’s a lovely, insightful, well
-  researched piece.
+  public broadcasting, and stop defunding it. It’s a lovely, insightful, 
+  well-researched piece.
 - [China Makes, The World Takes](https://www.theatlantic.com/magazine/archive/2007/07/china-makes-the-world-takes/305987/)
   by James Fallows takes a long and hard look into China’s manufacturing. It’s
   from 2007, and I wish there was something comparable that was a little more
-  up-to-date—if you know about such a piece, please tell me! Nevertheless, it
+  up-to-date—if you know of such a piece, please tell me! Nevertheless, it
   changed my view of how manufacturing in China works—a view that is not
   particularly informed, and doesn’t pretend to be—, and the article is worth
   reading for that alone.
