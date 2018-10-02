@@ -49,6 +49,30 @@ Malleability can be as beautiful as it is dangerous. We *can* add a carwash to a
 bridge when it’s halfway built, and it doesn’t even have to be messy. How to do
 this is left as an exercise to the reader.
 
+## Guilt
+
+Of course this is not primarily what people are concerned with when they tell us
+to be more like civil engineers. What people want us to be is disciplined, and
+willingn to take blame for when things go awry, as civil engineers do. And I
+think this is very useful, especially in emergent fields that interact with the
+world, like self-driving cars or AI-powered robotic surgery.
+
+These fields scare me, because I know myself and my field, and it’s easy to make
+fun of us for being sloppy, not least because we actually are<sup>[6](#6)</sup>.
+We will probably always screw up.
+
+But changing that requires more than just a change in the general programmer
+mindset, which is hard enough in itself. It would mean that we have to either
+give up on malleability, or getting rapidly better at producing systems that can
+deal with fundamental change. We’d have to produce ecosystems rather than
+organisms—an environment will outlive most of the species it produces. But the
+kind of programs we write are organisms, and they have a lifetime. We are
+[seeing like a state](https://en.wikipedia.org/wiki/Seeing_Like_a_State).
+
+Somewhere here there is an idea, and I can’t quite grasp it yet. Instead, all I
+have to offer is bleak: a refutation of an oft-cited argument that is woefully
+inadequate to fight a very real problem.
+
 ## Fin
 
 Zach Tellman asserts that one of the fundamental problems of software is how to
@@ -56,9 +80,13 @@ deal with change, and I agree. But that we can deal with change in the first
 place, and shift our universe so that it accomodates these new facts and
 requirements, is one of the most beautiful things about software developments.
 
+The question is: how do we keep this property without sacrificing stability?
+
 In my opinion, the people that know most about what we do are artists,
-philosophers, and mathematicians, no matter how often you’ll call me an
-engineer.
+philosophers, and mathematicians, no matter how often I’ll be called an
+engineer. That is the best I can do for now. Maybe in the future, we can become
+engineers, but then our discipline won’t look like it looks now, and probably
+not for the reasons that the people who call me an engineer imagine.
 
 #### Footnotes
 
@@ -92,3 +120,8 @@ engineer.
                        make a better decision, this could have been the reason.
                        I’ll talk about legacy software at one point on this
                        blog, I promise.
+
+<span id="6">6.</span> There are a lot stories about errors in programming
+                       leading to catastrophic failures out there—think [Therac-25](https://blog.bugsnag.com/bug-day-race-condition-therac-25/)
+                       or [Ariane 5](https://blog.bugsnag.com/bug-day-ariane-5-disaster/)—that
+                       are part of our lore, and none of them are fun.
