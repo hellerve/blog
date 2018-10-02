@@ -1,6 +1,6 @@
 Time and again we hear that software engineers should behave more like civil
 engineers. We’re careless, our projects often fail, and all in all we’re lacking
-professionalism. All of this is true, and yet I disagree.
+professionalism. All of this is true, and yet I disagree with the conclusion.
 
 To me, software engineering is nothing like civil engineering. We’re mostly
 unencumbered by the rules of the real world. There is no physical environment
@@ -57,7 +57,8 @@ place, and shift our universe so that it accomodates these new facts and
 requirements, is one of the most beautiful things about software developments.
 
 In my opinion, the people that know most about what we do are artists,
-philosophers and mathematicians, no matter how often you’ll call me an engineer.
+philosophers, and mathematicians, no matter how often you’ll call me an
+engineer.
 
 #### Footnotes
 
