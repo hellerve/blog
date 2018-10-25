@@ -1,0 +1,44 @@
+(define (my-true x y) (x))
+
+(define (my-false x y) (y))
+
+(define-syntax my-if
+  (syntax-rules ()
+    ((_ condition tbody fbody)
+      (condition (lambda () tbody) (lambda () fbody)))))
+
+(my-if my-true (write "Hi") (write "Bye"))
+
+(define-syntax my-cond
+  (syntax-rules (else)
+    ((_ (else result))
+     ((lambda () result)))
+    ((_ (test result))
+     (if test (result)))
+    ((_ (test result)
+           clause1 clause2 ...)
+     (if test
+       result
+       (my-cond clause1 clause2 ...)))))
+
+(my-cond ((eq? 1 2) (write "yay")) (else (write "nay")))
+(my-cond ((eq? 1 1) (write "yay")) (else (write "nay")))
+
+(define-syntax my-case
+  (syntax-rules (else)
+    ((_ key
+       (else result))
+     (if #t result))
+    ((_ key
+       ((atoms ...) result))
+     (if (in? '(atoms ...) key)
+       result1))
+    ((_ key
+       ((atoms ...) result)
+       clause clauses ...)
+     (if (in? '(atoms ...) key)
+       result
+       (my-case key clause clauses ...)))))
+
+(my-case 1 ((2 3) (write "yay")) (else (write "nay")))
+(my-case 1 ((1 2) (write "yay")) (else (write "nay")))
