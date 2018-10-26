@@ -102,8 +102,16 @@ body > * {
   background: #000;
 }
 
+.spoiler code {
+  background: #000;
+}
+
 .spoiler:hover {
   background: #fff;
+}
+
+.spoiler:hover code {
+  background: #d9e4ea;
 }
 
 img {
