@@ -32,19 +32,22 @@ can implement as macros on top of that, and that’s just what we’ll do! Enter
 
 ```
 ; cond is a multi-clause if
+; n.b. in scheme you’d have an extra set of
+;      parentheses around the condition-clause
+;      pairs
 (cond
-  (condition1 clause1)
-  (condition2 clause2)
+  condition1 clause1
+  condition2 clause2
   ; ...
-  (conditionN clauseN)
-  (else else-clause))
+  conditionN clauseN
+  else else-clause)
 
 ; case is a switch statement
 (case expr-to-switch-on
-  ((comparator1 ... comparatorN) body)
-  ((comparator1 ... comparatorN) body2)
+  (comparator1 ... comparatorN) body
+  (comparator1 ... comparatorN) body2
   ; ...
-  (else else-clause))
+  else else-clause)
 ```
 <div class="figure-label">Fig. 2: The archetypes of `cond` and `case`.</div>
 
@@ -139,18 +142,82 @@ reimplemented to return the two new boolean functions; if you want to go for
 something like this in your language, you have to integrate it more deeply with
 your language and libraries, so that they return the right version of booleans.
 
-### Implementing `case` and `cond`
+### Implementing `cond` and `case`
 
 While this was fun, we’re going to step back for a second now and use regular
 `if` statements for the rest of this blog post. The reason for this is simple:
 we will use functions that return old-style booleans, and we would have to
 reimplement all of those to leverage our new macro.
 
-Let’s start with `case`.
-
-#### `case`
+Let’s start with `cond`.
 
 #### `cond`
+
+On a fundamental level, `cond` is fairly simple. It is fairly similar to
+`if-elif-else` in a lot of other languages—Scheme just uses different
+terminology according to its tradition.
+
+With that in mind, all we have to do is to implement a macro that rewrites the
+`cond` expression to be nested `if` special forms.
+
+Let’s `start with a skeleton:
+
+```
+(define-syntax my-cond
+  (syntax-rules (else)
+    ; cases
+  )
+)
+```
+<div class="figure-label">Fig. 6: A skeleton for `cond`.</div>
+
+So far, so simple. All we have to do is catch `else` as a keyword, because we
+will be using it as a literal.
+
+Now we’ll implement our base cases, namely the `else` case or the last pair of
+condition and clause. Both of these can be at the end of our macro, so we’ll
+have to handle them.
+
+```
+(define-syntax my-cond
+  (syntax-rules (else)
+    ((_ else result) result)
+    ((_ test result) (if test result))
+    ; recursive case
+  )
+)
+```
+<div class="figure-label">Fig. 7: `cond` with base cases implemented.</div>
+
+Alright, that’s still pretty straightforward. All we do in the case of `else` is
+fill in the `result` we’re given, because it will always execute. In the case of
+a final conditional, we’ll make this a single-branched `if`. But what about the
+case when there are still multiple branches to go? We’ll have to use recursion!
+
+```
+(define-syntax my-cond
+  (syntax-rules (else)
+    ; base cases
+
+    ((_ test result
+        rest ...)
+     (if test
+       result
+       (my-cond rest ...)))
+  )
+)
+```
+<div class="figure-label">
+
+That isn’t so bad! We’re compiling the recursive case into an `if` form were the
+conditional is—well—the conditional, and the first clause is the clause that we
+paired with it. The other clause will be determined by the recursive expansion
+from the next call to `my-cond`.
+
+Phew, that was fun! Now on to `case`, which is a little more complex, but—at
+least in theory—fairly similar.
+
+#### `case`
 
 ## Notes
 

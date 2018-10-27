@@ -7,38 +7,38 @@
     ((_ condition tbody fbody)
       (condition (lambda () tbody) (lambda () fbody)))))
 
-(my-if my-true (write "Hi") (write "Bye"))
+(my-if my-true (write "yay") (write "nay"))
 
 (define-syntax my-cond
   (syntax-rules (else)
-    ((_ (else result))
+    ((_ else result)
      ((lambda () result)))
-    ((_ (test result))
-     (if test (result)))
-    ((_ (test result)
-           clause1 clause2 ...)
+    ((_ test result)
+     (if test result))
+    ((_ test result
+        rest ...)
      (if test
        result
-       (my-cond clause1 clause2 ...)))))
+       (my-cond rest ...)))))
 
-(my-cond ((eq? 1 2) (write "yay")) (else (write "nay")))
-(my-cond ((eq? 1 1) (write "yay")) (else (write "nay")))
+(my-cond (eq? 1 2) (write "nay") else (write "yay"))
+(my-cond (eq? 1 1) (write "yay") else (write "nay"))
 
 (define-syntax my-case
   (syntax-rules (else)
     ((_ key
-       (else result))
+       else result)
      (if #t result))
     ((_ key
-       ((atoms ...) result))
+       (atoms ...) result)
      (if (in? '(atoms ...) key)
        result1))
     ((_ key
-       ((atoms ...) result)
+       (atoms ...) result
        clause clauses ...)
      (if (in? '(atoms ...) key)
        result
        (my-case key clause clauses ...)))))
 
-(my-case 1 ((2 3) (write "yay")) (else (write "nay")))
-(my-case 1 ((1 2) (write "yay")) (else (write "nay")))
+(my-case 1 (2 3) (write "nay") else (write "yay"))
+(my-case 1 (1 2) (write "yay") else (write "nay"))
