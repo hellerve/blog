@@ -1,6 +1,7 @@
 It’s time for another blog post on Scheme macros! This time we’re going to look
 at conditionals, and as a bonus I’ll show you a cool trick on how to simulate
-`if`.
+`if`. If you want to go back to the list of posts on Scheme macros that have
+been written, [check out this list](/scheme-macros/)!
 
 The structure should by now be familiar: we think of an API, then we implement
 it, and then we reflect on what we just did. The code we will be writing will be
@@ -160,7 +161,7 @@ terminology according to its tradition.
 With that in mind, all we have to do is to implement a macro that rewrites the
 `cond` expression to be nested `if` special forms.
 
-Let’s `start with a skeleton:
+Let’s start with a skeleton:
 
 ```
 (define-syntax my-cond
@@ -207,7 +208,7 @@ case when there are still multiple branches to go? We’ll have to use recursion
   )
 )
 ```
-<div class="figure-label">
+<div class="figure-label">Fig. 8: The recursive case of `cond`.</div>
 
 That isn’t so bad! We’re compiling the recursive case into an `if` form were the
 conditional is—well—the conditional, and the first clause is the clause that we
@@ -219,9 +220,120 @@ least in theory—fairly similar.
 
 #### `case`
 
+At a first glance, `case` looks similar to the more well-known `switch`
+statements in other languages, sans `break` and with arbitray types. Our
+variation on the theme will always work with lists of comparators, to make
+implementing it a little more straightforward<sup><a href="#2">2</a></sup>.
+Extending it to single-value comparators is left as an exercise to the reader.
+
+We’ll start with a skeleton that looks remarkably similar to the one that we
+made for `cond` in Figure 6.
+
+```
+(define-syntax my-case
+  (syntax-rules (else)
+    ; ...
+  )
+)
+```
+<div class="figure-label">Fig. 9: A skeleton for `case`.</div>
+
+Only the name of the macro has changed. If we go look at the base cases,
+however, we will already notice a few differences:
+
+```
+(define-syntax my-case
+  (syntax-rules (else)
+    ((_ key
+       else result)
+      result)
+    ((_ key
+       (atoms ...) result)
+     (if (in? '(atoms ...) key)
+       result1))
+    ; recursive case ...
+  )
+)
+```
+<div class="figure-label">Fig. 10: The base cases for `case`.</div>
+
+The rule for `else` has hardly changed, we’ve merely added the `key`. The other
+base case now checks whether `key` is in the list of `atoms` that we’ve been
+passed. The function `in?` is an addition by zepto that works on any collection,
+the equivalent in Scheme would be `member`.
+
+With that out of the way, we can look at the recursive case again, which is
+really just the second base case with a little bit of recursion mixed in,
+similar to what we did in `cond`.
+
+```
+(define-syntax my-case
+  (syntax-rules (else)
+    ; base cases
+
+    ((_ key
+       (atoms ...) result
+       clause clauses ...)
+     (if (in? '(atoms ...) key)
+       result
+       (my-case key clause clauses ...)))
+  )
+)
+```
+<div class="figure-label">Fig. 11: The recursive case for `case`.</div>
+
+All we’re doing differently in this case is, again, recursion. What’s different
+this time is that we keep passing down the `key` we’ve been given.
+
+This was pretty simple! But with these two small macros we’ve added multi-branch
+conditionals and `switch`-style branching, which are fairly powerful constructs.
+Exciting!
+
 ## Notes
 
+Now it is time to dampen the excitement a little. While it’s true that we’ve
+added very powerful constructs to our arsenal with this post, it’s important to
+realize that, as shown in this post, they are actually incomplete.
+
+First of all, none of them do any error checking! If the wrong number of
+arguments are passed, we probably get very confusing errors—it’s hard to
+generate good errors from within the macro expander, and very few Lisp
+implementations do.
+
+More importantly, there are a few subtle flaws. The way it is written right now,
+`case` will re-evaluate whatever is passed into it as `key` for every branch,
+for example. This is trivially fixable, but it’s not the only flaw that’s
+lurking in there. There are [better, more powerful implementations](https://github.com/zepto-lang/zepto-stdlib/blob/master/extra.zp#L3)
+in the wild that you should probably review before rolling your own solution.
+The implementations above are great as pedagogical tools, but maybe not for your
+next production system.
+
+Similarly, you should evaluate what it means for your system to implement `if`
+in the way described above. I find it to be conceptually neat, but it might come
+at a runtime cost, depending on the system you build this on. It also means that
+you need to update all of your primitives that return booleans to return either
+of the functions we’ve defined above—there are a lot of moving parts involved
+in replacing a fundamental value like this.
+
+That being said, noone says you can’t have fun with these constructs. Try adding
+to them! Some of the missing functionality was talked about above, and maybe you
+can think of more features to add to your new favorite conditionals!
+
+You can also play around with syntax. As I noted above, `case` and `cond`
+usually have an extra set of parentheses around the condition-clause pairs.
+Maybe that’s not your thing, but you’d like to add `=>` between them to add
+visual grouping? Or maybe you’d like to throw out the `else` special keyword,
+because strictly speaking it’s not necessary? All of that is possible, and not
+very hard to implement. Try it out and see for yourself!
+
 ## Fin
+
+In this blog post, we’ve implemented a bunch of conditionals, something that we
+might have thought of fundamental and necessarily provided by the language. With
+the power of macros, this needn’t be true. We can add our own abstractions, even
+on the boolean plane.
+
+See you soon, and happy hacking!
 
 #### Footnotes
 
@@ -231,3 +343,6 @@ least in theory—fairly similar.
                        Smalltalk often feel similar, with one being very
                        functional/macro-oriented and the other doing everything
                        with objects.
+
+<span id="2">2.</span> This is similar to writing a `switch` with multiple
+                       `case` labels leading to one execution path.
