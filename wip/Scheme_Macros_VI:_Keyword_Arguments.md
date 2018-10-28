@@ -236,8 +236,33 @@ in just under 40 lines of code. Isn’t that pretty awesome? Yay us!
 
 ## Notes
 
-TODO
+As always in this series, this implementation of keyword arguments is not
+exactly complete. We didn’t add any sort of error handling, and the API is
+fairly limited.
+
+If you want to extend the functionality of this code, the best way to start
+would probably be to add some good, simple error messages so that your users
+actually understand what’s going on. To write good error messages, you’ll have
+to play around with the code a lot and figure out what messages would help you
+most if you miss something. What happens if the list of keyword arguments is
+malformed? What happens if the call to the keyword function tries to pass
+non-existant arguments? How about adding argument type
+checking<sup><a href="#1">1</a></sup>?
+
+There’s a lot you could potentially add, but I think a simple clean abstraction
+with a good API is worth more than a giant macro that does it all—YMMV. Just go
+wild!
 
 ## Fin
 
-TODO
+In this blog post, we implemented a fairly concise macro that adds keyword
+argument handling to your functions, similar in its API to many other languages,
+but not with much code at all!
+
+I hope you enjoyed this installation of my little series! See you next time!
+
+#### Footnotes
+
+<span id="1">1.</span> We’ll be writing a contract system in the next blog post
+                       of this series and it will do pretty similar things, so
+                       stay tuned!
