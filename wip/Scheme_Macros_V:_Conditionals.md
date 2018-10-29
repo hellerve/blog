@@ -64,7 +64,7 @@ And that’s all we will be doing today. Let’s jump right in!
 If we want our own conditionals, we should probably start by implementing our
 own form of `if`.
 
-### Implementing ìf`
+### Implementing `if`
 
 Today I want to show you a weird way of defining `if`. To do this, we first
 need to implement our own boolean values, because we will mostly rely on those
@@ -82,7 +82,7 @@ in our conditional. Behold our alternative booleans:
 Alright, so this is already weird. Both booleans are functions that take two
 values, where `true` executes the first and throws away the second, and `false`
 does the inverse—and for collision avoidance purposes we prefix these names with
-`if`. This might not make any sense yet, so let’s immediately follow them up
+`my-`. This might not make any sense yet, so let’s immediately follow them up
 with a macro implementing `if`, again prefixed:
 
 ```
