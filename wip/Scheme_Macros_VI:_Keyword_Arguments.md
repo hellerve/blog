@@ -4,8 +4,8 @@ going to examine how to implement keyword argument functions in a single macro.
 Keyword arguments are a very prominent feature of many programming languages,
 including Ruby, Python, Clojure, Julia, and OCaml (where they are called labeled
 arguments). If you don’t know any of these, think of keyword arguments as a way
-to name arguments on the call site, and optionally provide defaults for them
-should the caller not specify them. Let me illustrate it using Python:
+to name arguments on the call site, and optionally provide defaults 
+should the caller not specify them. Let me illustrate this using Python:
 
 ```
 def my_kw_fun(a, b, c=0):
@@ -19,8 +19,8 @@ my_kw_fun(3, 10, c=4) # => 43
 ```
 <div class="figure-label">Fig. 1: Using keyword arguments in Python.</div>
 
-This is a very concise way to offer default values for some arguments, which I
-often find very convenient and can result in much cleaner APIs. Of course it
+This is a very concise way to offer default values for some arguments––which I
+often find very convenient––and can result in much cleaner APIs. Of course it
 can also be abused, as any powerful language feature can, but it more often than
 not improves readability and clarity.
 
@@ -52,8 +52,8 @@ Let’s try and figure how to implement this!
 
 Today we’ll try to write a single, big macro. Most of this section—except a
 brief aside for a helper function—will be about `defkeywords`, so buckle up!
-Don’t forget to take breaks and think through all of the steps we take; don’t
-be afraid to go back at any point if you lose track of anything at all.
+Don’t forget to take breaks and think through all of the steps; don’t
+be afraid to go back at any point if you lose track of anything.
 
 As always, we’ll start with a simple macro skeleton.
 
@@ -85,7 +85,7 @@ and passing the constructed value into `eval`.
 <div class="figure-label">Fig. 4: Capturing the environment.</div>
 
 We’ll now do two things: we’ll need to generate the function from the
-information we’re given, and into this weave the keyword handling somehow. Let’s
+information we’re given, and somehow weave the keyword handling into it. Let’s
 try and build a function first, and see what extra work is required to get to
 the keyword arguments:
 
@@ -115,13 +115,13 @@ end of that function we’ll call the actual function body, so we can add that
 already. But what in the world is that `reduce` expression?
 
 Well, what we need to have is a dotted list with rest arguments. In plain
-english, this means that if our function signature looked like
+English, this means that if our function signature looked like
 `(my-kw-fun a b)` before, we need to rewrite it to `(my-kw-fun a b . args)` to
 catch all of the extra arguments that the keyword function caller might pass
 into our function. To this end, we need to rewrite the list into a dotted
-list. In zepto, you construct dotted list with one-valued `cons`, in this case
-with `(cons 'args)`, which will give us this `( . args)` we’re after. Then,
-we’re prepending the arguments in reverse order until we arrive at our original
+list. In zepto, you construct dotted lists with one-valued `cons`, in this case
+with `(cons 'args)`, which will give us the `( . args)` we’re after. Then,
+we'll prepend the arguments in reverse order until we arrive at our original
 list, but with a new element and a new type. This is all just a very fancy way
 of saying there are multiple weird list types in zepto, and it’s sometimes a
 little awkward to transform one list into another.
@@ -207,7 +207,7 @@ we’ve defined in the header.
 This is actually all we need to do. At this point we’ll just let the body of the
 function run, and everything will be in place as we need it to be. Awesome!
 
-For completeness’ sake, let’s look at `treat-keywords`:
+For completeness’s sake, let’s look at `treat-keywords`:
 
 ```
 (defne (treat-keywords args)
