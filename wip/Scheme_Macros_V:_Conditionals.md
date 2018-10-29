@@ -66,7 +66,7 @@ own form of `if`.
 
 ### Implementing ìf`
 
-Today I want to show you a weird way of defining `if`, and for that we first
+Today I want to show you a weird way of defining `if`. To do this, we first
 need to implement our own boolean values, because we will mostly rely on those
 in our conditional. Behold our alternative booleans:
 
@@ -106,7 +106,7 @@ functions. Wait, what?
 
 Basically, what we’re doing here is outsourcing the behaviour of `if` to the
 booleans themselves<sup><a href="#1">1</a></sup>. This might still be a little
-puzzling, so let’s think of how we would use this and what this would do.
+puzzling, so let’s think of how we could use this and what it would do.
 
 ```
 ; what we would write:
@@ -123,13 +123,13 @@ puzzling, so let’s think of how we would use this and what this would do.
   Fig. 5: `my-if` before and after macro expansion.
 </div>
 
-Remember, all that booleans are are functions that take two other functions and
+Remember, booleans are just functions that take two other functions and
 pick which one to execute. This actually works out just fine!
 
-It should also make a little more sense at this point why we wrap the bodies in
-lambdas. If we didn’t do this, both of the calls to `write` would be executed
-when we pass it into the booleans rather than, as we prefer, deferred until we
-know which of them to execute.
+The reason for wrapping the bodies in lambdas should also make a little more 
+sense at this point. If we didn’t do this, both of the calls to `write` would 
+be executed when we pass it into the booleans rather than, as we prefer, 
+deferred until we know which of them to execute.
 
 That was not a lot of code, but it’s fairly profound—or at least I felt that way
 when I first discovered this trick. So you might want to step back and think
@@ -141,7 +141,7 @@ One important caveat needs to be discussed before we move on: this version of
 `if` by itself is nifty, but useless. All of the comparators need to be
 reimplemented to return the two new boolean functions; if you want to go for
 something like this in your language, you have to integrate it more deeply with
-your language and libraries, so that they return the right version of booleans.
+your language and libraries so that they return the right version of booleans.
 
 ### Implementing `cond` and `case`
 
@@ -210,7 +210,7 @@ case when there are still multiple branches to go? We’ll have to use recursion
 ```
 <div class="figure-label">Fig. 8: The recursive case of `cond`.</div>
 
-That isn’t so bad! We’re compiling the recursive case into an `if` form were the
+That isn’t so bad! We’re compiling the recursive case into an `if` form in which the
 conditional is—well—the conditional, and the first clause is the clause that we
 paired with it. The other clause will be determined by the recursive expansion
 from the next call to `my-cond`.
@@ -296,7 +296,7 @@ added very powerful constructs to our arsenal with this post, it’s important t
 realize that, as shown in this post, they are actually incomplete.
 
 First of all, none of them do any error checking! If the wrong number of
-arguments are passed, we probably get very confusing errors—it’s hard to
+arguments is passed, we'll probably get very confusing errors—it’s hard to
 generate good errors from within the macro expander, and very few Lisp
 implementations do.
 
