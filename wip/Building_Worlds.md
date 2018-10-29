@@ -53,7 +53,7 @@ this is left as an exercise to the reader.
 
 Of course this is not primarily what people are concerned with when they tell us
 to be more like civil engineers. What people want us to be is disciplined, and
-willingn to take blame for when things go awry, as civil engineers do. And I
+willing to take blame for when things go awry, as civil engineers do. And I
 think this is very useful, especially in emergent fields that interact with the
 world, like self-driving cars or AI-powered robotic surgery.
 
@@ -83,10 +83,10 @@ requirements, is one of the most beautiful things about software developments.
 The question is: how do we keep this property without sacrificing stability?
 
 In my opinion, the people that know most about what we do are artists,
-philosophers, and mathematicians, no matter how often I’ll be called an
-engineer. That is the best I can do for now. Maybe in the future, we can become
+philosophers, and mathematicians, no matter how often we’ll be called engineers.
+That is the best I can do for now. Maybe in the future, we can become
 engineers, but then our discipline won’t look like it looks now, and probably
-not for the reasons that the people who call me an engineer imagine.
+not for the reasons that the people who call us engineers imagine.
 
 #### Footnotes
 
