@@ -135,6 +135,13 @@ That was not a lot of code, but it’s fairly profound—or at least I felt that
 when I first discovered this trick. So you might want to step back and think
 about this for a while before continuing.
 
+*UPDATE:* I knew that I couldn’t possibly have been the first person to come up
+with this, and, embarassingly enough, it’s actually quite a famous encoding, as
+pointed out by Reddit user [ghkbrew](https://www.reddit.com/r/ProgrammingLanguages/comments/9sf02m/conditionals_as_scheme_macros/e8o9oxh/):
+it’s the [Church encoding](https://en.wikipedia.org/wiki/Church_encoding#Church_Booleans)!
+I’m a little bummed that I didn’t recognize this, but oh well—you live and you
+learn.
+
 #### Caveat
 
 One important caveat needs to be discussed before we move on: this version of
