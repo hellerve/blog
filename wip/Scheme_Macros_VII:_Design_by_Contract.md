@@ -31,7 +31,10 @@ ever programmed in it myself—, you might be able to grasp this particular bit
 of code: adding strictly positive numbers.
 
 Let’s try and implement this in a Scheme macro! As per usual, the code is
-written in zepto and [online](https://github.com/hellerve/dbc).
+written in zepto and [online](https://github.com/hellerve/dbc). This installment
+should be pretty simple for you if you’ve gone through the series sequentially.
+It mostly serves to solidify some of the concepts and intuitions involved in
+macro hackery.
 
 ## An API
 
@@ -67,7 +70,80 @@ I think it’s time we try our hands at this, shall we?
 
 ## An Implementation
 
-TODO
+First of all, let’s observe that some contract functions might have both pre-
+and post-conditions, some might only have either, and some might have none, even
+if a contract function without any contracts might not be obviously useful.
+
+This means that we’ll have to add forms for all of these. Let’s build a skeleton
+that accomodates all possibilities:
+
+```
+(define-syntax defcontract
+  (syntax-rules (pre post)
+    ((_ nforms body)
+      ; form 1
+    )
+    ((_ nforms (pre cls ...) body)
+      ; form 2
+    )
+    ((_ nforms (post cls ...) body)
+      ; form 3
+    )
+    ((_ nforms (pre precls ...) (post postcls ...) body)
+      ; main form
+    )
+  ))
+```
+<div class="figure-label">Fig. 3: A big skeleton for `defcontract`.</div>
+
+That’s a little too much boilerplate for my tastes, but sometimes utility beats
+my sensibilities.
+
+The easiest way to derive the simplified forms is probably to base them on the
+most general form, i.e. the one with both pre- and postconditions. Then we can
+just add an empty set of whatever set of conditions we do not use.
+
+This might be a little obtuse a description, so here it is in code form:
+
+```
+(define-syntax defcontract
+  (syntax-rules (pre post)
+    ((_ nforms body)
+      (defcontract nforms (pre) (post) body))
+    ((_ nforms (pre cls ...) body)
+      (defcontract nforms (pre cls ...) (post) body))
+    ((_ nforms (post cls ...) body)
+      (defcontract nforms (pre) (post cls ...) body))
+    ((_ nforms (pre precls ...) (post postcls ...) body)
+      ; TODO
+    )
+  ))
+```
+<div class="figure-label">
+  Fig. 4: A big skeleton with deferred responsibilities.
+</div>
+
+All we’re doing here is providing default arguments for our implementation. No
+actual work has been done yet, all of that may happen in our last special form.
+We already have a nice API, though, and that’s pretty great!
+
+Now we’re ready to do the grunt work. As so very often in this series, we’ll
+have to define a function dynamically, so we’ll start by capturing the
+environment and adding our macro-expansion/evaluation pipeline.
+
+```
+(define-syntax defcontract
+  (syntax-rules (pre post)
+    ; our other forms
+
+    ((_ nforms (pre precls ...) (post postcls ...) body)
+      (with-environment env
+        (eval
+          (macro-expand
+            ; what to expand here?
+          env)))))
+```
+<div class="figure-label">Fig. 5: We’re almost at the good stuff.</div>
 
 ## Notes
 
