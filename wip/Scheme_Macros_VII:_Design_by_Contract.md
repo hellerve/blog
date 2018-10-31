@@ -36,6 +36,10 @@ should be pretty simple for you if you’ve gone through the series sequentially
 It mostly serves to solidify some of the concepts and intuitions involved in
 macro hackery.
 
+I’d also like to add that this project and blog post are inspired by [the work
+of a dear friend of mine](https://github.com/ds2643/dbc), who implemented a
+Design-By-Contract macro in Common Lisp and wants to port it to Carp. Way to go!
+
 ## An API
 
 Ideally, we’d like to have regular functions augmented with a declarative way of
@@ -145,10 +149,112 @@ environment and adding our macro-expansion/evaluation pipeline.
 ```
 <div class="figure-label">Fig. 5: We’re almost at the good stuff.</div>
 
+Okay, now that we have an environment and an evaluator in place, we need to
+start to actually think about what our generated functions needs to do. Before
+doing any of its actual work, it needs to check all of the preconditions. Then
+we need to evaluate the body and check the postconditions, and then we’re done.
+Sounds about right? All right, let’s try that!
+
+
+```
+(define-syntax defcontract
+  (syntax-rules (pre post)
+    ; our other forms
+
+    ((_ nforms (pre precls ...) (post postcls ...) body)
+      (with-environment env
+        (eval
+          (macro-expand
+            `(define nforms
+              (begin
+                ,@(map ($ (list 'assert %)) 'precls)
+                body
+                ,@(map ($ (list 'assert %)) 'postcls)))
+          )
+          env)))))
+```
+<div class="figure-label">Fig. 6: Templating our function.</div>
+
+Okay, so we create a template, filling in the information—`nforms` and
+`body`—that we’ve been given by the caller. Before and after executing `body`,
+we insert our conditions, wrapping them in `assert` and wrapping that whole list
+of expressions in `unquote-splicing`—the reader macro that we use is `,@`—,
+which will flatten the list into our template. [This is a good overview of
+different forms of quoting](https://8thlight.com/blog/colin-jones/2012/05/22/quoting-without-confusion.html),
+if this confuses you—I know it confused me in the beginning!
+
+But we’re not quite done. The return value of the functions will be wrong! In
+particular, it will be the result of the last `assert` form that we spliced in.
+We can fix that and the problem that the variable `*ret*` that we wanted to
+provide to our users isn’t in place yet in the same minor refactor. I’ll only
+show the templated function body in this next snippet:
+
+```
+`(define nforms
+  (begin
+    ,@(map ($ (list 'assert %)) 'precls)
+    (let ((*ret* body))
+      (begin
+        ,@(map ($ (list 'assert %)) 'postcls)
+        *ret*))))
+```
+<div class="figure-label">Fig. 7: The final function template.</div>
+
+Okay, this is a little more complex, but basically all we did was use a local
+binding to bind the result of `body` to the appropriate variable name and return
+it at the very end. Perfect! We’re done!
+
+That wasn’t too bad! In exactly 20 lines, we added a very capable macro for
+design by contract emulation.
+
+Before we move on to the notes, however, let me quickly acknowledge that
+`assert` isn’t present in all Lisps—in fact, it isn’t even present in zepto!
+For this, you can add a polyfill, expressed in yet another macro:
+
+```
+(define-syntax assert
+  (syntax-rules ()
+    ((_ form)
+      (if (not form)
+        (begin
+          (error "Assertion" 'form "failed!")
+          (exit 1))))))
+```
+<div class="figure-label">Fig. 8: An `assert` polyfill.</div>
+
 ## Notes
 
-TODO
+This small macro is capable, but fairly limited. The most obvious thing that’s
+missing for people who are coming from Eiffel is probably Invariants. Invariants
+are similar to contracts, but they operate on a value level and check that
+variables can only hold a certain set of values, and that functions respect
+that. You can read about invariants some more [here](https://en.wikipedia.org/wiki/Class_invariant).
+Invariants are historically mostly interesting to object-oriented languages,
+but they need not be.
+
+An interesting macro that I could think of would be something like this:
+
+```
+(definvariant x ((< x 40) (> x -10)) 10)
+```
+<div class="figure-label">Fig. 9: Another fun macro.</div>
+
+Ideally, this variable would check whether the value it’s assigned is valid
+given the constraints. Implementing this is left as an exercise to the
+reader—but please note that this might be way more involved than the little
+macro that we talked about today, and don’t be frustrated if you don’t arrive at
+a suitable implementation. Sometimes pondering about problems is much more fun
+than actually solving them!
 
 ## Fin
 
-TODO
+The philosophy of design by contract is much more than the simple macro that
+we’ve built here, and I don’t want to do it injustice by presenting our results
+as if we just reimplemented Eiffel.
+
+Design by contract in particular is of interest because it adds a certain type
+of error checking capabilities to a language that, at least in Lisp, smell like
+a crutch for avoiding static types.
+
+Thus, in our next blog post, we’ll explore gradual typing, contracts, and how to
+add more crutches to our system! Stay tuned!
