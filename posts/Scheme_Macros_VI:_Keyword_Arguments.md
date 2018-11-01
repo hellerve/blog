@@ -1,4 +1,4 @@
-In the fifth installment of [my series on Scheme macros](/scheme-macros), we’re
+In the sixth installment of [my series on Scheme macros](/scheme-macros), we’re
 going to examine how to implement keyword argument functions in a single macro.
 
 Keyword arguments are a very prominent feature of many programming languages,
