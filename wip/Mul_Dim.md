@@ -68,15 +68,15 @@ serious!” Their eyes were wide now. “How is this not in the canon?”
 “I know, right?”, Dizz looked like a kid that had just discovered that Santa
 actually exists, unbeknownst to parents worldwide. “She figured it out, all on
 her own! She wrote papers about it, and if you follow the chain, she even got
-quoted by the people behind Neumann and squeal and all of the early mul-sim
+quoted by the people behind Neumann and squeal and all of the early mul-dim
 format compiler writers!“ They forced the presentation inside Angia again, and
 showed them a few select papers, and the references back to Maya’s work.
 
 “I think it is because she chose to write those papers in the canon and not
 publish them in journals—I think that that was some lowkey act of defiance, a
 stick-it-to-the-gal kind of thing. Anyway, she apparently was a small celebrity
-among mul-sim format researchers and compiler writers for a while, and
-eventually even got a mul-sim compiler done in a mul-sim language—in a text
+among mul-dim format researchers and compiler writers for a while, and
+eventually even got a mul-dim compiler done in a mul-dim language—in a text
 editor.”
 
 Angia chucked. Dizz often reminded them that back in the day, people programmed
@@ -99,7 +99,7 @@ The profile: a clunky representation of a life slaved away on tools so much
 inferior than anything Angia had ever touched, and yet obviously Maya had
 wrestled them and prevailed, and co-authored one of the main strands of the
 canon. And then the transpiled code, a beautiful mess of obviously
-machine-translated mul-sim code, into a format only Dizz could really navigate.
+machine-translated mul-dim code, into a format only Dizz could really navigate.
 But the intricacy and preciousness of the artifact, small as it was, was still
 there. Somehow, after hundreds of years, the beauty of this piece of the canon
 was still apparent.
