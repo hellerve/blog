@@ -100,14 +100,14 @@ that accomodates all possibilities:
 ```
 <div class="figure-label">Fig. 3: A big skeleton for `defcontract`.</div>
 
-That’s a little too much boilerplate for my tastes, but sometimes utility beats
-my sensibilities.
+That’s a little too much boilerplate for my taste, but sometimes utility wins 
+out.
 
 The easiest way to derive the simplified forms is probably to base them on the
 most general form, i.e. the one with both pre- and postconditions. Then we can
 just add an empty set of whatever set of conditions we do not use.
 
-This might be a little obtuse a description, so here it is in code form:
+This description might be a little obtuse, so here it is in code form:
 
 ```
 (define-syntax defcontract
@@ -150,7 +150,7 @@ environment and adding our macro-expansion/evaluation pipeline.
 <div class="figure-label">Fig. 5: We’re almost at the good stuff.</div>
 
 Okay, now that we have an environment and an evaluator in place, we need to
-start to actually think about what our generated functions needs to do. Before
+start to actually think about what our generated function needs to do. Before
 doing any of its actual work, it needs to check all of the preconditions. Then
 we need to evaluate the body and check the postconditions, and then we’re done.
 Sounds about right? All right, let’s try that!
@@ -242,8 +242,8 @@ An interesting macro that I could think of would be something like this:
 Ideally, this variable would check whether the value it’s assigned is valid
 given the constraints. Implementing this is left as an exercise to the
 reader—but please note that this might be way more involved than the little
-macro that we talked about today, and don’t be frustrated if you don’t arrive at
-a suitable implementation. Sometimes pondering about problems is much more fun
+macro that we talked about today, so don’t be frustrated if you don’t arrive at
+a suitable implementation. Sometimes pondering problems is much more fun
 than actually solving them!
 
 ## Fin
