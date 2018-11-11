@@ -1,4 +1,4 @@
-Turtle closed his eyes in concentration, his brows furrowed. “Was it ‘Twila’?”,
+Turtle closed his eyes in concentration, his brows furrowed. “Was it ‘Twyla’?”,
 he said, opening his eyes again. The Koalas did an enthusiastic little dance
 around him. There were so many! “You got it!”, his Koala said, touching his
 nose gently with her paw. “He got all of our names right”, one of the other
@@ -6,7 +6,7 @@ Koalas whispered, “he’s doing so great!”
 
 It was a little overwhelming. Koala had such a big family, and while none of
 them expected him to know all the names, he remembered most of them—and he
-didn’t want to offend anyone in particular. Koala’s fifteen cousins all lined up
+didn’t want to offend anyone in particular. Koala’s eleven cousins all lined up
 in a row to sing a little Koala tune while the elder Koala bears took care of
 the food—eucalyptus wrapped in eucalyptus, with eucalyptus dressing. It was
 quite the party.
