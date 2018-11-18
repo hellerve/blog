@@ -227,6 +227,11 @@ ol li {
   height: 50px;
 }
 
+.rc-scout__text > .rc-scout__link:link, .rc-scout__link:visited, .rc-scout__link:hover {
+  color: #222 !important;
+  text-decoration: none;
+}
+
 @media(max-device-width:960px){
   html {font-size: 23px;}
   .aside {
