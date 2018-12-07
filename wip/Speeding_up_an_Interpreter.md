@@ -10,7 +10,7 @@ explore [direct threading for VMs once more](https://en.wikipedia.org/wiki/Threa
 I had worked on direct threading [about a year earlier](https://github.com/hellerve/VVM/pull/1),
 in the context of another silly VM that I play with when I want to try out new
 optimization techniques for virtual machines, but it didn’t change much back
-then. But then I saw a talk by [Adrien Lamarque]() at [Enthusiasticon](https://blog.veitheller.de/Enthusiasticon.html)
+then. But then I saw a talk by Adrien Lamarque at [Enthusiasticon](https://blog.veitheller.de/Enthusiasticon.html)
 about speeding up interpreter loops where he spent some time discussing exactly
 this topic and I decided that I’d give it another go.
 
