@@ -145,13 +145,13 @@ others—as I do in Carp—to get this part to work.
 At some point on my journey, I remembered an unfortunate exchange that I had at
 [Never Graduate Week 2018](https://www.recurse.com/blog/114-never-graduate-week-2017-how-we-planned-and-ran-our-annual-alumni-week),
 a yearly alumni get-together at the [Recurse Center](https://www.recurse.com/)
-(go apply!). I talked to [Liuda Nikolaeva]() about compilers, a topic that she
-recently became interested in. She was mostly interested in compiler
-optimizations, and I was overly dismissive about her attitude, which I
-immediately regretted. In a way, I’m sure that this exchange played a role in
-my wanting to go down that route, and it made me understand her desire more. So
-I have to thank Liuda and apologize to her at the same time, and also thank
-Adrien for sending me down that path!
+(go apply!). I talked to [Liuda Nikolaeva](https://twitter.com/LiudaNikolaeva)
+about compilers, a topic that she recently became interested in. She was mostly
+interested in compiler optimizations, and I was overly dismissive about her
+attitude, which I immediately regretted. In a way, I’m sure that this exchange
+played a role in my wanting to go down that route, and it made me understand
+her desire more. So I have to thank Liuda and apologize to her at the same
+time, and also thank Adrien for sending me down that path!
 
 If you’re interested in learning about any part of CSPfuck or its
 implementation, I’d like to encourage you to play around with it! Both the
