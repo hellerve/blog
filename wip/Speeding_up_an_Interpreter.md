@@ -12,7 +12,7 @@ in the context of another silly VM that I play with when I want to try out new
 optimization techniques for virtual machines, but it didn’t change much back
 then. But then I saw a talk by Adrien Lamarque at [Enthusiasticon](https://blog.veitheller.de/Enthusiasticon.html)
 about speeding up interpreter loops where he spent some time discussing exactly
-this topic and I decided that I’d give it another go.
+this topic, and I decided that I’d give it another go.
 
 This is the tale of how I got my silly virtual machine to speed up by a lot. I
 started out with a VM that would render Mandelbrot in about 29 seconds, and I
@@ -44,7 +44,7 @@ removed the need for an extra check in addition and subtraction of the Brainfuck
 tape head. I also removed launching a `pthread` if our program is
 single-threaded, because execution can just be handed to the evaluation loop and
 finish there. To my dismay, this didn’t lead to a major speedup, but it shaved
-off another second of execution time. For those of you who keep track at home,
+off another second of execution time. For those of you who are keeping track at home,
 we’re now at 13 seconds.
 
 This is where I talked to Adrien, showing off my work. He seemed interested in
@@ -91,7 +91,7 @@ cover in our implementation.
 
 The next three blog posts in the series are concerned with Just-In-Time
 compilation, first by hand and then using LLVM. I was not interested in adding
-the huge dependency that is LLVM to my tiny explorative project, so I just stuck
+the huge dependency that is LLVM to my tiny explorative project, so I stuck
 with emitting x86 machine code by hand to the very end.
 
 It took a lot of time for me to get everything right. I had the blueprint that
@@ -117,7 +117,7 @@ time was magical!
 Most of my process is articulated much better than I could in [Eli Bendersky’s
 second blog post in the series](https://eli.thegreenplace.net/2017/adventures-in-jit-compilation-part-2-an-x64-jit/),
 though by leaving the optimizations in I was able to beat his simple handrolled
-JIT by more than 2x. The most novel and thus interesting part in my
+JIT by more than 2x. The most novel and interesting part in my
 implementation is the part where I actually do inter-thread communication,
 though.
 
@@ -149,7 +149,7 @@ a yearly alumni get-together at the [Recurse Center](https://www.recurse.com/)
 about compilers, a topic that she recently became interested in. She was mostly
 interested in compiler optimizations, and I was overly dismissive about her
 attitude, which I immediately regretted. In a way, I’m sure that this exchange
-played a role in my wanting to go down that route, and it made me understand
+played a role in my wanting to go that route, and it made me understand
 her desire more. So I have to thank Liuda and apologize to her at the same
 time, and also thank Adrien for sending me down that path!
 
