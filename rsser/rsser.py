@@ -1,6 +1,9 @@
 import os
+import time
 
 from datetime  import datetime, timedelta
+from email import utils
+import urllib
 from xml.etree import ElementTree as E
 from xml.dom   import minidom
 
@@ -35,15 +38,16 @@ def read_index():
     return posts
 
 
-def post_elem(name, stats, url, idx):
+def post_elem(name, stats, url):
     elem = E.Element("item")
+    uri = "{}/{}".format(config.blog, urllib.parse.quote_plus(url))
 
     subelems = {
         "title": name,
         "description": name,
-        "link": "{}/{}".format(config.blog, url),
-        "pubDate": str(datetime.fromtimestamp(stats.st_mtime)),
-        "guid": str(idx),
+        "link": uri,
+        "pubDate": utils.formatdate(stats.st_mtime),
+        "guid": uri,
     }
 
     for name, val in subelems.items():
@@ -53,27 +57,18 @@ def post_elem(name, stats, url, idx):
     return elem
 
 
-def renumerate(l):
-    """
-    Reverse index enumeration.
-    We have to force it to be a list, though, bummer.
-    """
-    l   = list(l)
-    idx = len(l) - 1
-
-    for elem in l:
-        yield idx, elem
-        idx -= 1
-
-
 def build(posts):
     tree = E.parse(config.feed_tpl)
     channel = tree.find("channel")
-    channel.append(E.Element('lastBuildDate', text=str(datetime.now())))
+    e = E.Element('lastBuildDate')
+    t = datetime.now().timetuple()
+    t = time.mktime(t)
+    e.text = utils.formatdate(t)
+    channel.append(e)
 
-    for idx, (name, url) in renumerate(posts):
+    for name, url in posts:
         stats = os.stat(url)
-        channel.append(post_elem(name, stats, url, idx))
+        channel.append(post_elem(name, stats, url))
 
     return tree
 
@@ -93,7 +88,7 @@ def main():
 
     prettyprint(tree)
 
-    tweet(posts)
+    #tweet(posts)
 
 
 if __name__ == "__main__":
