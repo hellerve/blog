@@ -121,8 +121,8 @@ and relatives, partly because of work. Back when I first attended RC, I was very
 awkward. I had this feeling of being trapped in a social [uncanny
 valley](https://en.wikipedia.org/wiki/Uncanny_valley)—the US functions mostly
 the same as Germany culture-wise, but sometimes just different enough that
-there was some friction that was hard for the foreign person. One of
-the best decisions I made was to [write about
+there was some friction that made it difficult for the foreign person to express
+themselves feely. One of the best decisions I made was to [write about
 it](https://blog.veitheller.de/Awkwardness.html), as open and as vulnerable as
 I dared to be. The reception was unequivocally positive, and a lot of
 international people shared similar feelings. It felt great to know that I
