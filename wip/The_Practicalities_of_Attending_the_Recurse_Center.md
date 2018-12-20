@@ -166,7 +166,11 @@ okay, and if it hadn’t been, I’d probably have looked somewhere else.
 
 If you have the means or are mobile enough, you might also think about bringing
 your partner along; RC’s social events are often +1-friendly, and you will
-likely have a better time at RC than you would without them.
+likely have a better time at RC than you would without them. Depending on what
+your partner does, however, it can be a pretty isolating experience for them,
+as you’ll likely make connections to people that she doesn’t know and has no
+immediate relation with—and doesn’t have as easy access to as you do. Your
+mileage may vary.
 
 ## Fin
 
