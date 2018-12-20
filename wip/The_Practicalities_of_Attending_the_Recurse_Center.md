@@ -77,7 +77,11 @@ $1100-1500 over three months.
 
 Another important expense that you shouldn’t forget budgeting for is the MTA
 subway pass. The monthly pass costs $121, which means that you’ll probably spend
-at least $364 on that as well.
+at least $364 on that as well. [Christian Ternus]() also kindly pointed out that
+it takes 46.8 rides in one month to make this ticket cheaper than a regular
+subway pass or an auto-refilling Metro card; it’s likely that you’ll hit this
+limit, but if you plan your rides carefully, you might be able to shave off a
+few extra bucks by doing that instead!
 
 There are also a few social outings at RC, some of which include food and drinks
 provided by RC, some of which are bring-your-own-stuff. Depending on your
@@ -89,8 +93,8 @@ pack in NYC, and don’t even come in hand-chiseled packaging.
 
 The bottom line is that if you are on a tighter budget, you might need to look
 at your lifestyle and habits and see what you can do to minimize hidden costs.
-I was lucky enough to not have to do that, though, and won’t tell you what to do.
-If you have a more generous budget, you might want to think about what’s
+I was lucky enough to not have to do that, though, and won’t tell you what to
+do. If you have a more generous budget, you might want to think about what’s
 important to you: do you want a short commute? Close to any particular landmark?
 Do you want to live in Manhattan, Brooklyn, New Jersey, or elsewhere? And are
 you interested in trying out some of the best restaurants that the city has to
@@ -143,10 +147,31 @@ I’ve never attended, but I feel like that would be a great place to start bein
 vulnerable while still not being quite as public about it as I decided to be, a
 good middleground.
 
+## Your private life
+
+There are probably also some concerns about your private life that you’ll have
+to think about going into RC. Recursers will often do a lot of social activities
+together, and it’s usually not too hard to find a group of people to do these
+activities with, or even make friends. But leaving friends and family can be
+taxing in its own right. I know it was hard for me, even though my wife and I
+spend more time apart than other couples usually do<sup><a href="#3">3</a></sup>.
+
+You might want to account for phone calls or video chats with the people you
+love in your schedule, or even invite them over if you can afford it and your
+landlord or roommate permits it. Some landlords are not as open about you
+inviting friends, and you should check with them if you plan on doing that, as
+early as possible. I checked to see whether that’s okay before I got my
+appartment, I even made it part of my initial message to the landlord. It was
+okay, and if it hadn’t been, I’d probably have looked somewhere else.
+
+If you have the means or are mobile enough, you might also think about bringing
+your partner along; RC’s social events are often +1-friendly, and you will
+likely have a better time at RC than you would without them.
+
 ## Fin
 
 It’s been almost one and a half years since I never graduated from
-RC<sup><a href="#3">3</a></sup>. In a way, this blog post comes a little late,
+RC<sup><a href="#4">4</a></sup>. In a way, this blog post comes a little late,
 but then again I was at least able to give that extra bit of tax advice!
 
 I hope this blog post helps you figure out how to make it possible for you to
@@ -174,6 +199,13 @@ See you soon!
                        not have to shy away from spending more money when I
                        wanted.
 
-<span id="3">3.</span> Never Graduating is a play on words about RC culture, it
+<span id="3">3.</span> I’d like to emphasize that this is not because we can’t
+                       stand each other, quite the opposite—I miss her very much
+                       whenever I’m not around her, and I think she feels the
+                       same way. But sometimes there are very interesting things
+                       going on that require either of us to leave for some
+                       time, and that’s okay.
+
+<span id="4">4.</span> Never Graduating is a play on words about RC culture, it
                        doesn’t mean that I dropped out (which is what I assumed
                        when I first read it in the wild).
