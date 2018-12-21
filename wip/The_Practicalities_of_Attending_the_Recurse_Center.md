@@ -168,9 +168,9 @@ If you have the means or are mobile enough, you might also think about bringing
 your partner along; RC’s social events are often +1-friendly, and you will
 likely have a better time at RC than you would without them. Depending on what
 your partner does, however, it can be a pretty isolating experience for them,
-as you’ll likely make connections to people that she doesn’t know and has no
-immediate relation with—and doesn’t have as easy access to as you do, because
-she can’t be at RC during its regular hours. Your mileage may vary.
+as you’ll likely make connections to people that they don’t know and have no
+immediate relation with—and don’t have as easy access to as you do, because
+they can’t be at RC during its regular hours. Your mileage may vary.
 
 ## Fin
 
