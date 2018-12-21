@@ -26,14 +26,14 @@ the Recurse Center. This is especially true for 12-week batchlings. It wasn’t,
 however, true for me, although I attended RC for 12 weeks as well. I have a
 pretty good relationship with my company, and we’re small enough to plan
 together, so I was able to throw the idea at my boss and ask him whether he’d
-be open to let me go on unpaid leave for three months, and, if so, when
-might be a good time. He was open to it, and in fact very excited about the
+be open to letting me go on unpaid leave for three months, and, if so, when
+might be a good time. He was in fact open to it, and in fact very excited about the
 idea! Chances are that you can talk to your boss as well, especially if you 
 don't work in a very big company. This was important for me, because it removed
 at least some of the uncertainty of moving halfway across the world for three
 months for some me-time. It also meant that I didn’t have to go through the
-hassle of going on unemployment, which meant dealing with German bureaucracy and
-my insurance and employee benefits were not going to have to take a
+hassle of going on unemployment, which would mean dealing with German bureaucracy 
+and my insurance and employee benefits were not going to have to take a
 hit<sup><a href="#1">1</a></sup>.
 
 If you are not as fortunate, you might want to think about spending some time at
@@ -42,7 +42,7 @@ offers excellent recruiting services, which I can report both as an applicant
 interviewing through RC and as an employer hiring from them!
 
 I will not tell you to quit your job to go, of course. RC was one of the most
-transformative experiences that I had in my life as a developer, but it might not
+transformative experiences that I have had in my life as a developer, but it might not
 be worth giving up your livelihood for, even temporarily.
 
 ## Financial advice
@@ -75,7 +75,7 @@ tighter budget. The Recurse Center wiki has a lot of information on good food
 options, and you could aim for a daily budget of $12-16, which would amount to
 $1100-1500 over three months.
 
-Another important expense that you shouldn’t forget budgeting for is the MTA
+Another important expense that you shouldn’t forget to budget in is the MTA
 subway pass. The monthly pass costs $121, which means that you’ll probably spend
 at least $364 on that as well. [Christian Ternus]() also kindly pointed out that
 it takes 46.8 rides in one month to make this ticket cheaper than a regular
@@ -83,7 +83,7 @@ subway pass or an auto-refilling Metro card; it’s likely that you’ll hit thi
 limit, but if you plan your rides carefully, you might be able to shave off a
 few extra bucks by doing that instead!
 
-There are also a few social outings at RC, some of which include food and drinks
+There are also a few social outings, some of which include food and drinks
 provided by RC, some of which are bring-your-own-stuff. Depending on your
 preferred level of liquid libations, this can be quite costly. Bars are usually
 at least twice as expensive as in Berlin, for instance, and grocery store beer
@@ -133,11 +133,11 @@ international people shared similar feelings. It felt great to know that I
 wasn’t alone. Chances are that you’ll be very nervous for quite some time in the
 beginning. There are a lot of new people around you, some of whom you might
 already know and admire. I felt out of place at times, and like I didn’t belong.
-But after a while I was able to relax more, met nice people, connected with
-them, and almost exclusively had positive interactions.
+But after a while I was able to relax more, meet nice people, connect with
+them, and have almost exclusively positive interactions.
 
 What I want to say is this: depending on where you're coming from, there might
-be a bit of a cultural gap, but you’re not the only person from another country,
+be a bit of a cultural gap. But you’re not the only person from another country,
 and certainly not the only person who is overwhelmed by NYC. Admitting that you
 feel overwhelmed might help a lot.
 
