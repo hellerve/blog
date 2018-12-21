@@ -69,11 +69,10 @@ But, as with time budgets, my spending seems to always fill up however much I
 allocate, so I could’ve been able to sustain myself on much less than that. I
 wanted to enjoy myself, though, and so I erred on the side of having a little
 too much money set aside. Just keep in mind that if you are not able to invest
-that kind of money in what essentially ended up feeling like a three-month
-vacation in the time leading up to my actual batch, you can live on a much
-tighter budget. The Recurse Center wiki has a lot of information on good food
-options, and you could aim for a daily budget of $12-16, which would amount to
-$1100-1500 over three months.
+that kind of money in what might feel like planning a three-month vacation, you
+can live on a much tighter budget. The Recurse Center wiki has a lot of
+information on good food options, and you could aim for a daily budget of
+$12-16, which would amount to $1100-1500 over three months.
 
 Another important expense that you shouldn’t forget to budget in is the MTA
 subway pass. The monthly pass costs $121, which means that you’ll probably spend
