@@ -10,4 +10,4 @@ and their trust level.
 It was both livestreamed and recorded, and the result can be seen in its full
 glory here.
 
-<iframe width="1024" height="576" src="https://media.ccc.de/v/dg-96/oembed" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="400" src="https://media.ccc.de/v/dg-96/oembed" frameborder="0" allowfullscreen></iframe>
