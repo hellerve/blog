@@ -7,7 +7,7 @@ night, and we were having a nice dinner in a restaurant near the hotel.
 Suddenly, the mood shifted. My mom had something to tell me. The insurance
 office she had worked at for years would be closing, and she might lose her job.
 They offered her a job in Hamburg—their headquarters!—, a well-paid, prestigious
-position. But it would mean that she would 500 kilometers away for at least a
+position. But it would mean that she would be 500 kilometers away for at least a
 year. Naturally I started bawling my eyes out at the mere thought of that
 happening.
 
