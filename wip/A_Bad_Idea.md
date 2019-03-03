@@ -156,8 +156,8 @@ class Finder:
 
 That’s a bit of a mouthful, but it’s mostly comments, and while the code uses
 some lesser known functions of the Python standard library, it should be
-somewhat straightforward. `sys.path` is a list of the directories that Python
-looks into when you import a module.
+somewhat straightforward. [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path)
+is a list of the directories that Python looks into when you import a module.
 
 There are two things in the code in Figure 4 that we need to implement before
 we’re done. Firstly, we need to check for the directive and then we need to

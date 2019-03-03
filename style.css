@@ -154,6 +154,10 @@ code {
   background: #d9e4ea;
 }
 
+a code {
+  text-shadow: none;
+}
+
 .aside {
   margin: 0;
   float: left;
