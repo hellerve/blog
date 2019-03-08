@@ -8,17 +8,17 @@ system level—oftentimes language-level threads can switch much faster.
 Implementing green threads in Scheme is not hard, but it requires a somewhat
 firm grasp of [continuations](https://en.wikipedia.org/wiki/Continuation). As
 this series is first and foremost about macros, I won’t have time to explain
-continuations from the ground up. I’ll try to give you an intuition about what
-they are as we start to work with them, and gradually fill in any gaps that
-we’ll need to fill in order to understand the code. But this is probably not a
-very good introductory text on continuations, and definitely not exhaustive.
+continuations from the ground up. I’ll try to help you develop an intuition 
+for what they are as we start to work with them, and gradually fill in any gaps that
+we’ll need to fill in order to understand the code. This is probably not a
+very good introductory text on continuations, and it's definitely not exhaustive.
 
-With all of that out of the way, let’s start implementing some green threads!
+With all that out of the way, let’s start implementing some green threads!
 As always, the code for this blog post is [on Github](https://github.com/hellerve/pi).
 
 ## An API
 
-As always, we start by defining an interface. Our scheduling will be based on
+As per usual, we start by defining an interface. Our scheduling will be based on
 [cooperative multitasking](https://en.wikipedia.org/wiki/Cooperative_multitasking),
 which means that threads will voluntarily—and explicitly—give up control by
 calling `yield`. They will communicate via channels, which are basically
@@ -60,7 +60,7 @@ Let’s think about the control flow in Figure 1 a bit. First we create a global
 channel and two forked threads. Then our main thread gives up control. Our
 scheduling is using a [round robin](https://en.wikipedia.org/wiki/Round-robin_scheduling)
 algorithm, which is a fancy way of saying “first come first served”. That means
-that the first thread that we created will also be the first one to gain
+that the first thread we created will also be the first one to gain
 control. It writes to the standard output and then tries to take a value from
 the channel. Because there is no value in the channel yet, the thread will
 give up control. This will activate the second thread, which will also print
@@ -69,7 +69,7 @@ again, take from the channel, print, and exit. Then our main channel will exit
 as well.
 
 It is important to note that all of this happens concurrently—i.e. tasks will
-overlap—, but not in parallel—nothing will ever happen at the same time. If
+overlap—, but not parallel—nothing will ever happen at the same time. If
 we had a facility that allows us to run different continuations in different
 operating system threads, we could potentially also add parallelism. But we’ll
 not open that can of worms, partly because it would complicate the
@@ -108,9 +108,9 @@ implementing that thing right now, so let’s get crackin!
 
 ## An Implementation
 
-Our implementation has roughly two parts: the core of the execution engine,
-which yields, forks, and schedules, and the channel part, which passes messages
-around.
+Our implementation can be divided roughly into two parts: the core of the 
+execution engine, which yields, forks, and schedules, and the channel part, 
+which passes messages around.
 
 ### Forking, scheduling, yielding
 
@@ -133,7 +133,7 @@ serve as the list of threads that are ready to execute. To fork, we’ll have to
 append to that list. We cannot simply append the function `fn` that we are given
 in `fork`, however. We’ll have to wrap that function in a unary lambda that
 ignores its argument—we’ll explain why that is in a second. The lambda will
-execute our user-defined function and then call `sched`, a function which we
+execute our user-defined function and then call `sched`, a function that we
 haven’t defined yet, but which will serve as a kind of book-keeping function.
 
 Let’s look at `sched` next to get a more complete picture of what happens when
@@ -167,13 +167,13 @@ in a lot of ways, and many of them have to do with control flow.
 What makes Scheme continuations even more interesting is that you can call them.
 When calling them, you essentially resume execution where you left off when you
 generated the continuation value. If we’re thinking about the interpreter state
-again, it’s basically telling your interpreter that the state that we cached is
+again, it’s basically telling your interpreter that the state we cached is
 now its current state.
 
 This is tremendously powerful, and a little mind-boggling when you hear about it
 for the first time. It’s also completely normal to have a little trouble with
-the concept in the beginning. Let’s look at them in use to solidify some of our
-intuitions!
+the concept in the beginning. Let’s look at the continuations in use to solidify 
+some of our intuitions!
 
 ```
 (define (yield)
@@ -195,19 +195,19 @@ again, after all of the other things that were scheduled before are executed.
 
 Calling continuations in zepto requires exactly one argument, which will be the
 return value of the continuation. `c` is thus a unary function, and because we
-don’t want the scheduler to care whether the thread it’s awakening is a
+don’t want the scheduler to care whether the thread it’s waking is a
 function—which happens when we `fork`—or a continuation—which happens when we
 `yield`—we need to provide exactly one dummy argument.
 
 At this point, we’re done with implementing green threads themselves, and it
-took us around 15 lines of admittedly a little dense code. We could stop here
-and call it a day, except that we haven’t written a single macro yet, and we
+took us around 15 lines of–admittedly–a little dense code. We could stop here
+and call it a day, except we haven’t written a single macro yet, and we
 want to have message passing as well. So let’s look at channels, and see whether
-we get to write a few macros there.
+we can write a few macros there.
 
 ### Channels
 
-We have a bunch of low-hanging fruits to harvest in our representation of
+We have a bunch of low-hanging fruit to harvest in our representation of
 channels also, so let’s implement those first.
 
 At the very core, a channel is a list of messages that need to be processed in
@@ -286,7 +286,7 @@ If on the other hand the channel is not empty, we remove the first element from
 the contents and return it.
 
 We could conceivably stop here, but the macros we’ve seen thus far have been
-relatively tame, and I believe that’s not why you are here. So, as our pièce de
+relatively tame, and I don't believe that’s why you're here. So, as our pièce de
 résistance we will now implement `chan:select`, by far the most complex macro
 of this session.
 
@@ -295,8 +295,8 @@ of this session.
 `chan:select` will need to be recursive, both right away and on-demand; call
 other macros; and have multiple rules. Before we start I want to acknowledge
 that it is quite a bit of code—about 30 lines—, and it took me a while to write
-it and get it right. There is nothing wrong with you if you take some time to
-understand it—I banged my head against it for quite a bit of time.
+it and get it right. There is nothing wrong if you take some time to
+understand it—I banged my head on it for quite a while.
 
 Let’s start with our simplest case: having just one channel and a corresponding
 function to execute.
@@ -312,7 +312,7 @@ function to execute.
 ```
 <div class="figure-label">Fig. 10: `chan:select` with simple case.</div>
 
-That isn’t too bad. We’re simply calling the function with the result of
+This isn’t too bad. We’re simply calling the function with the result of
 `chan:take`. We can at this point even ignore that `chan:take` is a macro!
 
 Next, let’s tackle the recursive case, which comes at the very bottom of the
