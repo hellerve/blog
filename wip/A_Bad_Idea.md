@@ -6,18 +6,18 @@ In the summer of 2016, I flew to Bilbao to attend EuroPython. I was [still
 working](/zepto,_A_Eulogy.html) on [zepto](https://github.com/zepto-lang/zepto),
 and used some of my downtime to mull over some of the concepts that I wanted to
 put in the language, or had already implemented. I told a lot of people about
-it, too, and many seemed very interested in it, if only for all the ideas that
+it, too, and many seemed very interested, if only in all the ideas that
 I had.
 
 Naturally, I eventually started to think about how I could get some of the
-concepts into Python in the hopes that people would then have an easier time
+concepts down in Python in the hopes that people would then have an easier time
 understanding what they meant. Most of the features seemed impossible to graft
 onto the language without touching the interpreter itself, which would make it
 both tedious to implement and for the curious to build.
 
 Then I thought of one of my favorite talks at the time, in which [David Beazley
 talks about metaprogramming in Python for three hours](https://www.youtube.com/watch?v=sPiWg5jSoZI).
-Among other things he builds a loader and importer for XML files that follow
+Among other things, he builds a loader and importer for XML files that follow
 a certain schema, like a declarative way to define classes. While this is
 certainly at least a little silly, in my mind I connected that to a feature that
 zepto “borrowed” from Carp: the `#lang` reader shorthand.
@@ -33,7 +33,7 @@ that you can plug in your own parser before Racket’s!
 That was super cool to me, and I added a simplified version in zepto. Because
 the [procedure that loads source files](https://github.com/zepto-lang/zepto/blob/master/zepto/load.zp)
 is written in zepto itself, I was able to just add a quick check to the loader
-that sees whether the source file starts with a `#lang` directive and whether
+that sees whether the source file starts with a `#lang` directive and if
 any function is registered that promises to be able to transform that code. It
 is then passed onto the function, which is expected to return regular
 S-expressions—another lisp-y construct—that we can then expand and evaluate as
@@ -72,14 +72,14 @@ a_bad_idea.add_implementation("json", json_parser)
 ```
 <div class="figure-label">Fig. 1: A simple JSON loader.</div>
 
-Note that the module that we get back in this case would have one definition in
+Note that the module we get back in this case would have one definition in
 it named `value`, which is a little weird, but could potentially be convenient.
 Imagine having a configuration file in JSON that you want to read in; just
 importing it would be so much simpler, right?
 
-We will also check that the file extension matches the name in the directive as
-well. This might seem redundant, but while we’re at it and are learning about
-the black magic of metaclasses, why not do some extra credit work, right?
+We will also check that the file extension matches the name in the directive. 
+This might seem redundant, but while we’re learning about the black magic of 
+metaclasses, why not do some extra credit work, right?
 
 ## The code
 
@@ -124,7 +124,7 @@ versions. If you want to make this a little prettier, you could also implement
 `find_spec` and just pass the arguments on to `find_module`.
 
 Now we need to make our finder actually do things. It will need to go through
-all the directories in the path, find the first module that is elligible, and
+all the directories in the path, find the first module that is eligible, and
 return it. If we don’t find anything, Python will resort to the other loaders
 in the list.
 
@@ -177,9 +177,9 @@ def _get_lang(filename):
 ```
 <div class="figure-label">Fig. 5: Checking for the directive.</div>
 
-As we alluded to earlier, this step is basically redundant, and just there for
+As we suggested earlier, this step is basically redundant, and just there for
 show. We’re also not parsing anything yet, operating at a level of files and
-strings, which might come as a surprise to you.
+strings, which might come as a surprise.
 
 Now let’s fiddle with some modules, shall we?
 
@@ -239,7 +239,7 @@ def _get_code(filename):
 <div class="figure-label">Fig. 7: Preparing our source code.</div>
 
 And that’s it! In just over 50 lines of code, we added a plugin-based parser
-system to Python! Now all that’s left to do is writing some parsers, but I’ll
+system to Python! Now all that’s left to do is write some parsers, but I’ll
 leave that as an exercise to my beloved readers.
 
 ## Fin
