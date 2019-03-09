@@ -13,7 +13,7 @@ Naturally, I eventually started to think about how I could get some of the
 concepts down in Python in the hopes that people would then have an easier time
 understanding what they meant. Most of the features seemed impossible to graft
 onto the language without touching the interpreter itself, which would make it
-both tedious to implement and for the curious to build.
+both tedious for me to implement and for the curious to build.
 
 Then I thought of one of my favorite talks at the time, in which [David Beazley
 talks about metaprogramming in Python for three hours](https://www.youtube.com/watch?v=sPiWg5jSoZI).
