@@ -20,7 +20,7 @@ talks about metaprogramming in Python for three hours](https://www.youtube.com/w
 Among other things, he builds a loader and importer for XML files that follow
 a certain schema, like a declarative way to define classes. While this is
 certainly at least a little silly, in my mind I connected that to a feature that
-zepto “borrowed” from Carp: the `#lang` reader shorthand.
+zepto “borrowed” from Racket: the `#lang` reader shorthand.
 
 This concept blew my mind when I first encountered it: by writing `#lang <name>`
 at the top of any Racket file, you tell Racket to first pass the contents of
