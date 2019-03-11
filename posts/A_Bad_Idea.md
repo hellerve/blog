@@ -45,7 +45,7 @@ project and moved on.
 
 A few days ago I realized that this project might actually make an interesting
 instructional blog post, however, and here we are. What we’re going to do is
-add a few Python metaclasses that will enable us to have a crude version of the
+write a few Python classes that will enable us to have a crude version of the
 `#lang` directive for Python files!
 
 The source code for this project is [on
@@ -79,7 +79,7 @@ importing it would be so much simpler, right?
 
 We will also check that the file extension matches the name in the directive. 
 This might seem redundant, but while we’re learning about the black magic of 
-metaclasses, why not do some extra credit work, right?
+importers, why not do some extra credit work, right?
 
 ## The code
 
