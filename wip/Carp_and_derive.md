@@ -6,10 +6,10 @@ Firstly, a little context is in order. Haskell has a concept called [type
 classes](https://en.wikibooks.org/wiki/Haskell/Classes_and_types), which is a
 way of defining generic functions that different types can implement. An example
 for that would be `Eq`, the equality typeclass. All types that need to be able
-to compared for equality using `==` have to implement this type class and supply
+to be compared for equality using `==` have to implement this type class and supply
 a definition of that function. This is similar to how interface functions in
 Carp work—interfaces are functions that can have multiple specialized
-implementations. In fact, the definition of equality look relatively similar in
+implementations. In fact, the definitions of equality look relatively alike in
 Haskell and Carp.
 
 Look at the Haskell version:
@@ -118,7 +118,7 @@ probably a better fit. So let’s defer to such a function inside the macro.
 And that’s it for `derive`!
 
 Of course we’re just getting started. The actual meat of the mechanism happens
-inside `derive-internal`. Well, as it turns out that’s also not true.
+inside `derive-internal`. Well, as it turns out, that’s also not true.
 `derive-internal` will be a trampoline for the real recursive function, and its
 sole job will be to gather the members of the type. So, how do we get at them?
 Luckily, Carp has a compile-time function called `members` that returns an array
@@ -137,7 +137,7 @@ Alright, this is starting to look interesting! We have the functions we want to
 derive, and the members of the type we need to work on. That’s good! Now it’s
 time to think about the actual body of such a generated function. We could
 define it imperatively, updating one member after the other, resetting a result
-value. This might come naturally to those that come to Carp from C or even Rust.
+value. This might come naturally to those coming to Carp from C or even Rust.
 
 ```
 (defn inc-imperative [o]
