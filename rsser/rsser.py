@@ -33,7 +33,10 @@ def read_index():
     posts = []
 
     for post in tree.findall(".//li[@class='post']"):
-        posts.append((post[0].text, post[0].attrib["href"][1:]))
+        posts.append(
+            # a pair of the text of the element and its link
+            (E.tostring(post[0], method="text"), post[0].attrib["href"][1:])
+        )
 
     return posts
 
