@@ -227,6 +227,10 @@ ol li {
   padding-left: 0.5em;
 }
 
+ul ul {
+  margin-left: 1em;
+}
+
 .rc-scout {
   height: 50px;
 }
