@@ -210,9 +210,9 @@ And the code that should be generated looks like this:
 
 (defmodule MyType3Builder
   ; we’re adding setters that accept direct values
-  (defn build-i [b i] (set-i b (Maybe.Just i)))
-  (defn build-l [b l] (set-l b (Maybe.Just l)))
-  (defn build-m [b m] (set-m b (Maybe.Just m)))
+  (defn build-i [b e] (set-i b (Maybe.Just e)))
+  (defn build-l [b e] (set-l b (Maybe.Just e)))
+  (defn build-m [b e] (set-m b (Maybe.Just e)))
 
   ; we also build a generator
   (defn emit [b]
@@ -245,7 +245,7 @@ its work to dynamic functions, and will thus be relatively simple.
     (cons 'defmodule
       (cons (generate-builder-name t)
         (cons (generate-emitter t)
-              (generate-setters t))))
+              (generate-setters (members t)))))
     (generate-type-builders t))
 )
 ```
@@ -255,10 +255,10 @@ The structure of this macro closely follows the structure of the generated code
 in Figure 9, so it should be relatively easy to figure out which function does
 what.
 
-We’re going to go through the helper functions in order of complexity rather
-than in the order that they appear in `builder-for`, so let’s start with
-`generate-builder-name`. We did something similar above in the map and string
-builders, so generating the name should be fairly simple. Let’s take a look:
+We’re going to go through the helper functions in order of appearance, but
+immediately break that rule by starting with `generate-builder-name`. We did
+something similar above in the map and string builders, so generating the name
+should be fairly simple. Let’s take a look:
 
 ```
 (defndynamic generate-builder-name [t]
@@ -307,7 +307,7 @@ one that recurses over the members.
 ```
 (defndynamic generate-emitter [t]
   (list 'defn 'emit (array 'b)
-    (list (Symbol.prefix t 'init)
+    (cons (Symbol.prefix t 'init)
       (generate-emitter-body (members t)))))
 ```
 <div class="figure-label">Fig. 14: The `generate-emitter` macro.</div>
@@ -315,3 +315,75 @@ one that recurses over the members.
 While this is a little bit more involved than the type shim, there is no magic
 involved. We’re using a new function, `Symbol.prefix`, that adds a module to
 a function—e.g. `(Symbol.prefix 'Maybe 'apply)` would evaluate to `Maybe.apply`.
+
+The function that generates the emitter body looks a lot like
+`generate-builder-type-body` in Figure 13. They both go through the members
+recursively, and generate some code. The code is arguably even simpler, though.
+
+```
+(defndynamic generate-emitter-body [ms]
+  (if (= (length ms) 0)
+    ()
+    (cons (list 'Maybe.or-zero (list (caar ms) 'b))
+          (generate-emitter-body (cdr ms)))))
+```
+<div class="figure-label">Fig. 15: The `generate-emitter-body` macro.</div>
+
+These two functions are all we need to generate the emitter body. We have the
+type and the emitter, now we just need to emit the setters and finally the type
+builders.
+
+### Generating the setters
+
+You know the drill by now. We’re going through the members and generate some
+code.
+
+```
+(defndynamic generate-setters [ms]
+  (if (= (length ms) 0)
+    ()
+    (cons
+      (list 'defn (Symbol.join ['build- (caar ms)])
+                  ['b 'e]
+            (list (Symbol.join ['set- (caar ms)])
+                  'b
+                  '(Maybe.Just e)))
+      (generate-setters (cdr ms)))))
+```
+<div class="figure-label">Fig. 16: The `generate-setters` macro.</div>
+
+No news here. The emitter pattern is a little more complex, but other than that
+we’re not doing anything new.
+
+### Generating the type builders
+
+Alright, the last element on our list, and we’re mixing it up a little, too!
+For this part we’re going to have to check the type and only emit things when
+we encounter types we know how to treat.
+
+```
+(defndynamic generate-type-builders [t]
+  (generate-type-builder t (members t)))
+```
+<div class="figure-label">Fig. 17: The `generate-type-builders` macro.</div>
+
+```
+(defndynamic generate-type-builder [t ms]
+  (if (= (length ms) 0)
+    ()
+    (cons (generate-type-builder-for t (caar ms) (cadar ms))
+          (generate-type-builder t (cdr ms)))))
+```
+<div class="figure-label">Fig. 18: The `generate-type-builder` macro.</div>
+
+```
+(defndynamic generate-type-builder-for [t m typ]
+  (if (list? typ)
+    (if (= (car typ) 'Map)
+      (list 'map-builder t m)
+      (if (= (car typ) 'Array)
+        (list 'array-builder t m)
+        ()))
+    ()))
+```
+<div class="figure-label">Fig. 19: The `generate-type-builder-for` macro.</div>
