@@ -48,8 +48,10 @@ Carp provides us is something like this:
 (defn main []
   (println*
     &(=> (MyType2.init [] {})
-         (MyType2.update-l (fn [l] (Array.push-back l @"elem")))
-         (MyType2.update-m (fn [m] (Map.put @"key" @"value")))
+         (MyType2.update-l
+           (fn [l] (Array.push-back l @"elem")))
+         (MyType2.update-m
+           (fn [m] (Map.put @"key" @"value")))
      )
   )
 )
@@ -70,7 +72,7 @@ Ideally, we’ll end up with this:
   l (Array a),
   m (Map b c),
 ])
-(builder-for MyType3)
+(builder-for 'MyType3)
 
 (defn main []
   (println*
@@ -135,7 +137,7 @@ Now that we have an API and a template, let’s get to generating!
                 (array 'obj 'e)
       (list 'Array.push-back! (list prop 'obj) 'e))))
 ```
-<div class=figure-label">Fig. 6: The `map-builder` macro, in full.</div>
+<div class="figure-label">Fig. 6: The `map-builder` macro, in full.</div>
 
 I decided to show you the whole code rather than building it up iteratively as I
 usually do, just because we have so much material to get through. If you look
@@ -156,7 +158,7 @@ extremely similar.
                 (array 'o 'e)
       (list 'Array.push-back! (list prop 'o) 'e))))
 ```
-<div class=figure-label">Fig. 7: The `array-builder` macro, in full.</div>
+<div class="figure-label">Fig. 7: The `array-builder` macro, in full.</div>
 
 And that’s all the code we need for making the API of array and map building
 better! If you want a bit of a deeper dive into this piece of code, look at
@@ -169,7 +171,7 @@ So, where are we at? We can already make code like this work now:
 ```
 (defn main []
   (println*
-    &(=> (MyType3.init)
+    &(=> (MyType3.init 0 [] {})
          (MyType3.add-to-m @"key @"value")
          (MyType3.add-to-l @"elem"))))
 ```
@@ -177,3 +179,139 @@ So, where are we at? We can already make code like this work now:
 
 This is a huge improvement, but I think we can do better! Let’s look at how to
 emit a builder for the entire type!
+
+## Rummaging through types
+
+We’ll have to go through the type’s members, similar to what we did in [my blog
+post about `derive`](https://blog.veitheller.de/Carp_and_derive.html). As I
+explained there as well, we’ll have to use `members` to get the member names and
+types, but, unlike last time, we’re actually going to use the type this time.
+
+But before we get ahead of ourselves, we should probably dream up an API again.
+We want to emit a new module for each type that we hand to the macro, emitting
+the code we need to incrementally create that type. So the API looks a little
+like this:
+
+```
+(builder-for 'MyType3)
+```
+<div class="figure-label">Fig. 9: Our ideal builder API.</div>
+
+And the code that should be generated looks like this:
+
+```
+; this type should be the same as the original,
+; but all fields are optional
+(deftype MyType3Builder [
+  i (Maybe Int),
+  l (Maybe (Array a)),
+  m (Maybe (Map b c)),
+])
+
+(defmodule MyType3Builder
+  ; we’re adding setters that accept direct values
+  (defn build-i [b i] (set-i b (Maybe.Just i)))
+  (defn build-l [b l] (set-l b (Maybe.Just l)))
+  (defn build-m [b m] (set-m b (Maybe.Just m)))
+
+  ; we also build a generator
+  (defn emit [b]
+    (MyType3.init
+      (Maybe.get-or-zero (i b))
+      (Maybe.get-or-zero (l b))
+      (Maybe.get-or-zero (m b))
+    )
+  )
+)
+
+; we’ll also emit type builders if applicable
+(array-builder MyType3 l)
+(map-builder MyType3 m)
+```
+<div class="figure-label">Fig. 10: A large pile of generated code.</div>
+
+That’s a lot of code to generate, but most of it is fairly formulaic. Let’s
+build a macro that generates that code!
+
+### The main macro
+
+The main macro is the glue that holds everything together. It will defer most of
+its work to dynamic functions, and will thus be relatively simple.
+
+```
+(defmacro builder-for [t]
+  (do
+    (generate-builder-type t)
+    (cons 'defmodule
+      (cons (generate-builder-name t)
+        (cons (generate-emitter t)
+              (generate-setters t))))
+    (generate-type-builders t))
+)
+```
+<div class="figure-label">Fig. 11: The `builder-for` macro.</div>
+
+The structure of this macro closely follows the structure of the generated code
+in Figure 9, so it should be relatively easy to figure out which function does
+what.
+
+We’re going to go through the helper functions in order of complexity rather
+than in the order that they appear in `builder-for`, so let’s start with
+`generate-builder-name`. We did something similar above in the map and string
+builders, so generating the name should be fairly simple. Let’s take a look:
+
+```
+(defndynamic generate-builder-name [t]
+  (Symbol.join [t 'Builder]))
+```
+<div class="figure-label">Fig. 12: The `generate-builder-name` macro.</div>
+
+This will generate the name `MyType3Builder` from `MyType3`.
+
+Next up: generating the builder type.
+
+### Generating the builder type
+
+Generating the builder type should be fairly straighforward as well. We can
+reuse the `generate-builder-name` helper function to generate the type name, and
+then iterate through the original members to get our new members.
+
+```
+(defndynamic generate-builder-type [t]
+  (list 'deftype (generate-builder-name t)
+    (generate-builder-type-body (members t))))
+```
+<div class="figure-label">Fig. 13: The `generate-builder-type` macro.</div>
+
+Once again we defer to a helper to generate the members. It should recursively
+build an array of members, wrapping the old members inside `Maybe`.
+
+```
+(defndynamic generate-builder-type-body [ms]
+  (if (= (length ms) 0)
+    []
+    (append [(caar ms) (list 'Maybe (cadar ms))]
+            (generate-builder-type-body (cdr ms)))))
+```
+<div class="figure-label">Fig. 13: The `generate-builder-type-body` macro.</div>
+
+And we just generated a type! One down, three to go!
+
+### Generating the emitter
+
+The emitter is also relatively simple. We need to go through the members again,
+this time wrapping each of them in a function call, in order. As before, we’re
+going to use a combinatiom of two dynamic functions, one for the skeleton and
+one that recurses over the members.
+
+```
+(defndynamic generate-emitter [t]
+  (list 'defn 'emit (array 'b)
+    (list (Symbol.prefix t 'init)
+      (generate-emitter-body (members t)))))
+```
+<div class="figure-label">Fig. 14: The `generate-emitter` macro.</div>
+
+While this is a little bit more involved than the type shim, there is no magic
+involved. We’re using a new function, `Symbol.prefix`, that adds a module to
+a function—e.g. `(Symbol.prefix 'Maybe 'apply)` would evaluate to `Maybe.apply`.
