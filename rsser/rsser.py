@@ -91,7 +91,7 @@ def main():
 
     prettyprint(tree)
 
-    #tweet(posts)
+    tweet(posts)
 
 
 if __name__ == "__main__":
