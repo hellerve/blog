@@ -76,14 +76,16 @@ body > * {
 .content h2 {
   font-size: 125%;
   font-weight: 500;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
   padding-left: 1em;
 }
 
 .content h3 {
   font-size: 110%;
   font-weight: 500;
-  padding-bottom: 0.25em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
   padding-left: 1em;
 }
 
@@ -206,6 +208,10 @@ table th {
   line-height: 1.05;
   border: 1px solid #ccc;
   border-bottom: 2px solid #999;
+}
+
+h1, h2, h3, h4 {
+  margin: 
 }
 
 .figure-label {
