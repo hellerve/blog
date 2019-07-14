@@ -361,11 +361,18 @@ Alright, the last element on our list, and we’re mixing it up a little, too!
 For this part we’re going to have to check the type and only emit things when
 we encounter types we know how to treat.
 
+Firstly, we write an entrypoint that extracts the members and calls our recursive
+function. You know the deal by now.
+
 ```
 (defndynamic generate-type-builders [t]
   (generate-type-builder t (members t)))
 ```
 <div class="figure-label">Fig. 17: The `generate-type-builders` macro.</div>
+
+In our recursive function we’re going to call a helper called `generate-type-builder-for`
+for each element in the list. In the end we’re going to return an empty list, and `cons`
+everything together. So far, this is pretty similar to what we did before.
 
 ```
 (defndynamic generate-type-builder [t ms]
@@ -375,6 +382,11 @@ we encounter types we know how to treat.
           (generate-type-builder t (cdr ms)))))
 ```
 <div class="figure-label">Fig. 18: The `generate-type-builder` macro.</div>
+
+The function `generate-type-builder-for` is the only original piece of plumbing. It will
+match on the type of the member and generate a builder for it if we know how to do that.
+In this blog post, we’ve only looked at how to generate builders for maps and arrays, so
+that’s what we’re matching on.
 
 ```
 (defndynamic generate-type-builder-for [t m typ]
@@ -388,6 +400,22 @@ we encounter types we know how to treat.
 ```
 <div class="figure-label">Fig. 19: The `generate-type-builder-for` macro.</div>
 
+And, finally, all of our code works! We’re able to generate the entire `MyType3Builder`
+module, and it works as expected!
+
 ## Review
 
+What we did in this blog post was generate a lot of very straightforward code by going
+through a type definition. This is what macros excel at, and we were able to cover a lot
+of ground in only very little code. And the macros don’t have to be incredibly clever to
+be useful either!
+
+Generally, using macros to reduce the amount of boilerplate is a prime use case, and
+you’ll be able to create a lot of APIs that would otherwise be tedious to write using
+this technique, and learn a lot in the process!
+
 ## Fin
+
+As always, I hope you’ve enjoyed digging into macros with me. If you have any suggestions
+for future blog posts—no matter whether they’re macro-related or not—, please [let me
+know](https://github.com/hellerve/blog/issues)!
