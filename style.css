@@ -271,9 +271,6 @@ ul ul {
   table + .figure-label {
     margin-top: -0.5em;
   }
-  pre {
-    font-size: 130% !important;
-  }
 }
 @media(max-width:880px){
   html {font-size: 21px;}
@@ -281,7 +278,4 @@ ul ul {
 @media(max-device-width:520px) {
   body > * {margin: 2rem;}
   .content {padding: 0;}
-  pre {
-    font-size: 200% !important;
-  }
 }
