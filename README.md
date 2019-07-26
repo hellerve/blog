@@ -8,6 +8,10 @@ written in Elm, and a [RSS-feed generator and twitter bot (from `index.html`)](h
 The generators are tailored to my specific needs, but the Markdown
 editor could be useful for more people. [See it in action here](http://blog.veitheller.de/blargl).
 
+If you really want to go ther, you can look at the things that [I’m currently
+working on](/wip) and the [posts I’ve abandoned or that were just no
+good](/trashbin).
+
 The software is unlicensed and thus you’re free to do whatever you want with
 it. The posts themselves are not subject to this license, and you are not
 free to reuse them in any context unless given my explicit permission.
