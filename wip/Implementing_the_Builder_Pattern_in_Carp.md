@@ -8,7 +8,7 @@ for functional languages; in fact, today I’m going to talk about it in the
 context of Carp!
 
 We’re going to look at how building complex data types works in idiomatic Carp,
-and how we can make it even better using macros. Sounds good? Alright, let’s go!
+and how we can make it even better using macros. Sound good? Alright, let’s go!
 
 ## Building things in Carp
 
@@ -89,12 +89,12 @@ Ideally, we’ll end up with this:
 As always with my blog posts, the solution to this problem is based on macros.
 First, we’re going to write macros that create setters for arrays and maps, as
 a kind of warm-up exercise. Once we’ve gotten this to work, we’ll try and write
-a macro that when it’s passed a datatype emits a builder for it.
+a macro emits a builder for a datatype passed to it. 
 
 ## Emitting setters
 
 For the sake of this blog post, we’re only going to emit array and macro
-updaters that adds items. If you want to try your hands on a little challenge
+updaters that add items. If you want to try your hands on a little challenge
 later, you can try to add removal or transmutation functions yourself.
 
 What should the interface look like? The way that would lead to the simplest
@@ -144,7 +144,7 @@ usually do, just because we have so much material to get through. If you look
 at the code we want to emit in Figure 5, however, it should be pretty clear
 what this macro does: it is basically just a template.
 
-For completeness’ sake, let’s look at `array-builder` as well, although it is
+For the sake of completion, let’s look at `array-builder` as well, although it is
 extremely similar.
 
 ```
@@ -231,7 +231,7 @@ And the code that should be generated looks like this:
 <div class="figure-label">Fig. 10: A large pile of generated code.</div>
 
 That’s a lot of code to generate, but most of it is fairly formulaic. Let’s
-build a macro that generates that code!
+build a macro that generates this code!
 
 ### The main macro
 
@@ -301,7 +301,7 @@ And we just generated a type! One down, three to go!
 
 The emitter is also relatively simple. We need to go through the members again,
 this time wrapping each of them in a function call, in order. As before, we’re
-going to use a combinatiom of two dynamic functions, one for the skeleton and
+going to use a combination of two dynamic functions, one for the skeleton and
 one that recurses over the members.
 
 ```
