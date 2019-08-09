@@ -144,8 +144,8 @@ usually do, just because we have so much material to get through. If you look
 at the code we want to emit in Figure 5, however, it should be pretty clear
 what this macro does: it is basically just a template.
 
-For the sake of completion, let’s look at `array-builder` as well, although it is
-extremely similar.
+For the sake of completeness, let’s look at `array-builder` as well, although it
+is extremely similar.
 
 ```
 (defmacro array-builder [md prop]
