@@ -5,3 +5,6 @@ blargl.js
 
 # my private deploy script
 deploy.sh
+
+# folder for under-the-wraps stuff
+priv/
