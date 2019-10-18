@@ -12,9 +12,9 @@ with an office and official procedures for just about everything, all while
 still being mostly a group of friends, has been extremely rewarding. Now, after
 about 5 years of mutual growth, it is time to let go.
 
-If this all sounds a little grandiose, it is because it feels like a big thing,
-and because I truly want the company to continue being as great as I found it to
-be.
+If this all sounds a little over the top, it is because it feels like a big
+thing, and because I truly want the company to continue being as great as I
+found it to be.
 
 The question remains, though: why am I leaving? As always with emotional things
 the answer isn’t simple or easy to explain, but I’ll try anyway.
