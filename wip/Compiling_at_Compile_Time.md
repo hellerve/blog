@@ -24,7 +24,7 @@ it, though I’d really like to recommend you read [a more comprehensive
 resource](https://en.wikipedia.org/wiki/Brainfuck).
 
 Brainfuck is a language that emulates a tape, composed of a number of cells
-containing numbers, and a tape head that looks at a given cell at a time—very
+containing numbers, and a tape head that looks at one cell at a time—very
 similar to a classic [Turing
 machine](https://en.wikipedia.org/wiki/Turing_machine). Programs control the
 tape head. The head can move forwards and backwards on the tape, increment and
@@ -148,15 +148,15 @@ body that was closed<sup>[1](#1)</a></sup>.
 
 If none of the premature exit conditions apply, we compile the character using
 `brainfuck-compile-instruction`. This will return a pair of an incrementor
-value that will tell us by how much we have to advance the index—that will be
+values that will tell us by how much we have to advance the index—that will be
 explained in more depth shortly—, and the compiled isntructions. We
 desconstruct that pair using the `car` and `cadr` list operations, and recurse
-into the next instruction. That way we’llincrementally build our instructions
+into the next instruction. That way we'll incrementally build our instructions
 until we end up with a full program.
 
 At this point it might seem like we haven’t done an awful lot of compiling,
 which is true. Most of the raw translation work happens in
-`brainfuck-compile-instruction`, which is, at it’s core, extremely simple.
+`brainfuck-compile-instruction`, which is, at its core, extremely simple.
 Let’s take a look, shall we?
 
 ```
@@ -205,7 +205,7 @@ The incrementor that we return also falls into place now: since we’re taking
 care of loops in a bulk, we need the higher level to jump past that loop when
 we go back.
 
-By noew we’re mostly done, but what about `search-matching-bracket`? It will
+By now we’re mostly done, but what about `search-matching-bracket`? It will
 just hunt for the index of the matching bracket that closes our loop, and
 return its index. It’s mostly plumbing, but I’ll dump it here anyway:
 
@@ -237,7 +237,7 @@ things as good errors or proper function names instead of compiling everything
 into `main`. There is a lot to be desired here, but you can start from a
 working prototype!
 
-The compiler is also not exactly fast. The compile-time Carp evaluator is a
+The compiler is also not terribly fast. The compile-time Carp evaluator is a
 simple tree-walking interpreter, and it’s not optimized for speed. Still there
 are some low-hanging fruits in speeding this up, like avoiding rescanning the
 string when looking for closing loop parentheses. You can have pretty good fun
