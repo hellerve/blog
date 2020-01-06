@@ -140,6 +140,9 @@ a {
 
 sup a {
   background: 0;
+}
+
+sup a:hover {
   color: #8e2300;
 }
 
