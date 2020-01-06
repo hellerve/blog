@@ -96,7 +96,7 @@ Terry Pratchett, and Walter Moers, to name a few.
 
 #### Footnotes at the end of the chapter
 
-Some authors<span>[2](#2)</span> seem to prefer putting their footnotes at the
+Some authors<sup>[2](#2)</sup> seem to prefer putting their footnotes at the
 end of the chapter. While this provides a natural grouping, I find it to be
 tremendously frustrating to search for the end of the chapter every time I want
 to see what a footnote has to say—or at least the first time for every chapter.
