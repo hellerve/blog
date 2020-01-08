@@ -1,4 +1,4 @@
-’m a huge fan of footnotes, both in print and on the web. I use them all the
+I’m a huge fan of footnotes, both in print and on the web. I use them all the
 time on this blog, and I have a ton of opinions about how to do them right,
 though I don’t think I’ve ever spoken about them, let alone justified them.
 This blog post intends to do just that.
@@ -11,7 +11,7 @@ speak for or against anything I say in this post, please reach out!
 ## Why Footnotes?
 
 The obvious use for footnotes in more or less academic—or, at least,
-well-researched—writing is to create a place where the authors can put their
+well-researched writing is to create a place where the authors can put their
 references without cluttering the flow of the text. While this is a perfect
 use case for footnotes, it’s not what I’m concerned with primarily: I don’t
 write papers, and my work is of the more light-hearted variety<sup>[1](#1)</sup>.
@@ -38,7 +38,7 @@ though, I want to talk about an alternative: sidenotes.
 ### A side note on sidenotes
 
 I personally enjoy sidenotes—some call them marginalia—very much. They’re
-unobtrusive, but close enough to the text to not break coherence. My personal
+unobtrusive but close enough to the text to not break coherence. My personal
 gold standard in books are the books by [Edward
 Tufte](https://www.edwardtufte.com/), and my personal favorite is [Beautiful
 Evidence](https://www.edwardtufte.com/tufte/books_be). Edward Tufte is a bit of
@@ -55,7 +55,7 @@ his work, [you might want to consider supporting
 him](https://practicaltypography.com/how-to-pay-for-this-book.html).
 
 You might have noticed that I don’t use sidenotes on this blog. There’s a good
-reason for that: making sidenotes resposnive is not easy. Matthew Butterick puts
+reason for that: making sidenotes responsive is not easy. Matthew Butterick puts
 his sidenotes in boxes after the annotated paragraph starting at a certain
 screen width, but personally I’m not a fan of that solution, since then we’re
 back to breaking up the flow of the main text.
@@ -70,9 +70,9 @@ people might have different priorities, and that’s okay.
 So, where should we put our footnotes then? If we’re talking about the web, the
 answer to that question is simple: on the bottom of the page, connected to the
 body through a hyperlink. Some people put return links at the end of their
-footnotes, I usually don’t, hoping that the “back” button behaves as it should.
-Either way, your notes are nicely hidden to those of our readers who don’t want
-to read our non-topical musings, and still easily accessible to those who do.
+footnotes; I usually don’t, hoping that the “back” button behaves as it should.
+Either way, your notes are nicely hidden to those of your readers who don’t want
+to read non-topical musings, and still easily accessible to those who do.
 
 In books, this question is a little more complex. The three major types of
 footnotes I’ve seen are
@@ -100,7 +100,7 @@ Some authors<sup>[2](#2)</sup> seem to prefer putting their footnotes at the
 end of the chapter. While this provides a natural grouping, I find it to be
 tremendously frustrating to search for the end of the chapter every time I want
 to see what a footnote has to say—or at least the first time for every chapter.
-This might be less of a problem for those of your readers who don’t want to read
+This might be less of a problem for those among your readers who don’t want to read
 them—being a sort of inverse of the bottom-of-the-page design—, but as a lover of
 footnotes I find this to be just rude.
 
@@ -110,7 +110,7 @@ Having your footnotes at the end of the book, ideally grouped by chapter, is
 probably the best compromise: it doesn’t disturb the flow of the page, but
 provides a canonical location for all footnotes. We can accomodate both long,
 meandering footnotes and short references there. Though this brings me to another
-point of greaf for me: mixing footnotes and references.
+point of grief for me: mixing footnotes and references.
 
 #### A personal pet peeve
 
