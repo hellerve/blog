@@ -4,8 +4,9 @@ a novel SARS-like virus.
 
 All of us are currently battling on many different fronts. Some of us are
 struggling to maintain social distance when they work in customer service. Some
-of us have to figure out what to do with their children when the daycare
-closes. Some of us have to learn how to cope with being alone at home.
+of us have to figure out what to do with their children when daycare is
+closing and noone knows for how long. Some of us have to learn how to cope with
+being alone at home.
 
 Because all of this is happening, I wanted to make sure that all of my friends,
 acquaintences, and everyone else in my tiny readership know: if you need
@@ -18,5 +19,5 @@ Stay safe, stay calm, stay healthy<sup><a href="#1">1</a></sup>.
 
 #### Footnotes
 
-<span id="1">1.</span> If anyone has any idea how to get the unintentioal subtle
-                       able-ism out of that sentence, let me know.
+<span id="1">1.</span> If anyone has any idea how to get the unintentional
+                       subtle able-ism out of that sentence, let me know.
