@@ -9,7 +9,7 @@ closing and noone knows for how long. Some of us have to learn how to cope with
 being alone at home.
 
 Because all of this is happening, I wanted to make sure that all of my friends,
-acquaintences, and everyone else in my tiny readership know: if you need
+acquaintences, and everyone else in my tiny readership knows: if you need
 someone to talk to, to drink a beer with remotely, or to just chat with briefly
 to fight away anxieties and loneliness, I’m here. I have a wide variety of
 interests, I like to talk about almost anything, and I’m happy to just sit and
