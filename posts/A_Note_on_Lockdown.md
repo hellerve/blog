@@ -15,9 +15,4 @@ to fight away anxieties and loneliness, I’m here. I have a wide variety of
 interests, I like to talk about almost anything, and I’m happy to just sit and
 listen.
 
-Stay safe, stay calm, stay healthy<sup><a href="#1">1</a></sup>.
-
-#### Footnotes
-
-<span id="1">1.</span> If anyone has any idea how to get the unintentional
-                       subtle able-ism out of that sentence, let me know.
+Stay safe, stay calm, take care of your health.
