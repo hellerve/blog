@@ -3,8 +3,8 @@ triplicate_*
 elm-stuff/
 blargl.js
 
-# my private deploy script
-deploy.sh
-
 # folder for under-the-wraps stuff
 priv/
+
+# haskell build stuff
+dist-newstyle
