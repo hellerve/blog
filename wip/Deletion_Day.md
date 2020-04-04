@@ -43,7 +43,7 @@ Happy deletion day, everyone!
 
 #### Footnotes
 
-<span id="1">1</span> Having a fairly uncommon name further complicates things,
-                      but I like my name a lot and wouldn’t want to change it
-                      ever. Every name comes with its own benefits and
-                      drawbacks, I suppose.
+<span id="1">1.</span> Having a fairly uncommon name further complicates things,
+                       but I like my name a lot and wouldn’t want to change it
+                       ever. Every name comes with its own benefits and
+                       drawbacks, I suppose.
