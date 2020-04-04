@@ -13,10 +13,10 @@ and the internet reminds me of that<sup><a href="#1">1</a></sup>.
 
 So what am I doing for this deletion day?
 
-Github and its community has been good to me. I’ve gotten a lot of support and
+Github and its community have been good to me. I’ve gotten a lot of support and
 friendly messages about my work over the years, and I don’t intend to
 significantly scale down my activity there. But sometimes curating this profile
-does feel lie a chore, like an obligation. In an effort to counter that I set
+does feel like a chore, an obligation. In an effort to counter that I set
 up [my own instance of Gitea](https://veitheller.de/git). Most of my Carp
 libraries already have their main home there, and Github only has mirrors of
 these repositories. Over the course of this year, I’d like to make that true
