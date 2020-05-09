@@ -5,13 +5,13 @@ of good exciting things have landed in the core compiler and standard library.
 With all of that in mind, I’d like to start a little series about design
 patterns and current best practices in Carp that I’ve been using for my own
 projects. They are definitely not set in stone and things are in flux quite a
-bit at a ll times, but I’ve found that a few things just work for me, and I
+bit at all times, but I’ve found that a few things just work for me, and I
 want to share those!
 
 To kick things off I want to talk about documentation, a topic I have very
 strong feelings about: I love to write, and I love to build APIs, and making
 a cohesive document that explains how things fit together and why the design
-is how it is is exciting to me.
+is how it is excites me.
 
 ## Starting off
 
@@ -33,7 +33,7 @@ functions are one page, and they might refer to each other, as is the case with
 [`absolute?`](https://veitheller.de/path/#absolute?) and
 [`relative?`](https://veitheller.de/path/#relative?).
 
-This sort of configuration can be achieved by setting the following setting in
+This sort of configuration can be achieved by setting the following in
 `gendocs.carp`:
 
 ```
@@ -52,11 +52,15 @@ libhydrogen](https://veitheller.de/hydrogen/). There we have a nice short high
 level description of the goals of the library, a little usage example, and a
 list of links to the right that will let us inspect all the modules.
 
-This can be achieved by not setting the configuration flag in Figure 1, and
-instead setting the `docs-prelude` switch. Here’s what that looks like:
+This can be achieved by not setting the configuration flag we looked at in
+Figure 1, and instead setting the `docs-prelude` switch. Here’s what that looks
+like:
 
 ```
-(Project.config "docs-prelude" "This my **awesome** package.")
+(Project.config
+  "docs-prelude"
+  "This is my **awesome** package."
+)
 ```
 <div class="figure-label">Fig. 2: It sure is!</div>
 
@@ -83,7 +87,7 @@ functions is using the `doc` command.
 <div class="figure-label">Fig. 3: Documenting a trivial function.</div>
 
 `doc` takes the name of the function to document, and a string (also referred
-to as `docstring`). That docstring will also be added when rendering your
+to as “docstring”). That docstring will also be added when rendering your
 documentation, and if you ask for information about a function in the repo
 using the `info` function or the `:i` shorthand, the documentation will also
 be displayed there. You can write markdown in your docstring, and it will be
@@ -110,18 +114,21 @@ mark it as `hidden`—and possibly as `private`, to enforce that rule.
 
 ```
 (defmodule MyModule
-  (private my-private-fn) ; enforces no cross-module use
-  (hidden my-private-fn)  ; hides the binding from the outside
-  (defn my-private-fn [] (println* "I do hidden stuff"))
+  ; enforces no cross-module use
+  (private my-private-fn)
+  ; hides the binding from the outside
+  (hidden my-private-fn)
+  (defn my-private-fn []
+    (println* "I do secret stuff"))
 )
 ```
 <div class="figure-label">Fig. 5: Marking an internal function.</div>
 
-And that’s all 
+And that’s all!
 
 ### How does `doc` work, anyway?
 
-**This is a bit of an internal aside, feel free to skip it.**
+*This is a bit of an technical aside, feel free to skip it.*
 
 Carp has a very powerful meta system. Every symbol has a hashmap associated
 with it from which every macro and dynamic function—and the compiler!—can read,
