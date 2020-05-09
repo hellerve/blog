@@ -116,7 +116,7 @@ body > * {
   background: #d9e4ea;
 }
 
-img {
+img, video {
   width: 100%;
 }
 
