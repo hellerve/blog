@@ -1,4 +1,4 @@
-In a continuation of a video from earlier this week on [lenses](/Lets_Build_Lenses_in_Carp.html)
+In a sequel to a video from earlier this week on [lenses](/Lets_Build_Lenses_in_Carp.html)
 we’re going to look at how to extend our library to work with prisms, and find
 out what prisms are in the process.
 
@@ -7,7 +7,7 @@ before diving into this video, because we’re going to build on the library we
 started there and extend it.
 
 I left my references on the bottom of the page if you want to dig a little
-deeper—it’s the same resources I linked to the last time.
+deeper—they are the same resources I linked to the last time.
 
 <video controls><source src="https://veitheller.de/static/prisms.mp4" type="video/mp4"></video>
 
