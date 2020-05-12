@@ -2,11 +2,11 @@ I’ve had the opportunity to spend a lot of quality time with Carp lately, and
 it has been very fun! The community has been buzzing with activity, and a lot
 of good exciting things have landed in the core compiler and standard library.
 
-With all of that in mind, I’d like to start a little series about design
-patterns and current best practices in Carp that I’ve been using for my own
-projects. They are definitely not set in stone and things are in flux quite a
-bit at all times, but I’ve found that a few things just work for me, and I
-want to share those!
+With all of that in mind, I’d like to start [a little series](carp-patterns)
+about design patterns and current best practices in Carp that I’ve been using
+for my own projects. They are definitely not set in stone and things are in
+flux quite a bit at all times, but I’ve found that a few things just work for
+me, and I want to share those!
 
 To kick things off I want to talk about documentation, a topic I have very
 strong feelings about: I love to write, and I love to build APIs, and making
