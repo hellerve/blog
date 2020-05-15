@@ -43,14 +43,14 @@ codes and signal conditions with it.
 ### Structuring your tests
 
 I like putting all of my tests together, as a large battery. As the number of
-tests increases and their scope broadens this might get unwieldy, though. I
+tests increases and their scope broadens this might get unwieldy. I
 have two go-to methods to rectify this.
 
 If I want to split up my tests by module, I usually put the tests in different
 files. This ensures that I can easily trigger just the tests that target the
 module that I’m currently working on.
 
-Inside these files, I can split up my test functions in multiple groups. I
+Inside these files, I can split up my test functions into multiple groups. I
 move from using `deftest` to `with-test`, like this:
 
 ```
@@ -98,7 +98,7 @@ test cases failed, making sure CI notices.
 Realistically, writing any of this by hand should not be necessary, but the
 `Test` module hasn’t been touched in a while, and noone has come up with a
 nicer API. I guess a macro that generates a bunch of the repetitive code in
-the test functions and another one that gather all of the test functions by
+the test functions and another one that gathers all of the test functions by
 looking for the prefix `test-` could be enough for me, but I’ll leave this as
 an exercise for the reader.
 
@@ -122,7 +122,7 @@ better, even with little effort. Try it!
 
 This second installment of my series on patterns for Carp development again
 didn’t have much to do with actually writing code, but don’t fret! Next time
-we’re going to take a look at macros: how to write good, idiomatic, maintanable
+we’re going to take a look at macros: how to write good, idiomatic, maintainable
 code that uses Carp’s powerful compile time system to the fullest!
 
 Stay tuned!
