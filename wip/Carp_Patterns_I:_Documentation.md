@@ -11,7 +11,7 @@ me, and I want to share those!
 To kick things off I want to talk about documentation, a topic I have very
 strong feelings about: I love to write, and I love to build APIs, and making
 a cohesive document that explains how things fit together and why the design
-is how it is excites me.
+as it is excites me.
 
 ## Starting off
 
