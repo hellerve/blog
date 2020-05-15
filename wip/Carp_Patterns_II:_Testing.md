@@ -99,8 +99,25 @@ Realistically, writing any of this by hand should not be necessary, but the
 `Test` module hasn’t been touched in a while, and noone has come up with a
 nicer API. I guess a macro that generates a bunch of the repetitive code in
 the test functions and another one that gathers all of the test functions by
-looking for the prefix `test-` could be enough for me, but I’ll leave this as
-an exercise for the reader.
+looking for the prefix `test-` could be enough for me personally, but I’ll
+leave this as an exercise for the reader.
+
+### A note on running your tests
+
+Finally, I’ll leave you with a pattern that some in the community use to speed
+up their development workflow: they use file watchers to recompile and run the
+tests when a Carp file changes. If you have `nodemon` installed, for instance,
+you can use this spell to conjure up such a watcher process:
+
+```
+nodemon -e carp -x "carp -x --log-memory tests.carp || exit 1"
+```
+<div class="figure-label">
+  Fig. 3: Executing your tests every time a file changes.
+</div>
+
+There are many such file watchers around, so you can just use whichever you
+prefer.
 
 ## An Unfinished Story
 
