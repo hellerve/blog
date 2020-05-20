@@ -1,5 +1,5 @@
 In the second installment of [my series on my personal view on current best
-practices in Carp](/carp-pattens), we’re going to talk about testing! This is
+practices in Carp](/carp-patterns), we’re going to talk about testing! This is
 one of my favorite topics, right after [documentation](/Carp_Patterns_I:_Documentation.html).
 
 The standard library of Carp comes with a testing framework that is good enough
