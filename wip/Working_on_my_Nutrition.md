@@ -5,7 +5,7 @@ Gladiators”](https://www.urbangladiators.de/)—, and got hooked
 immediately<sup><a href="#1">1</a></sup>. If you’re in Berlin I encourage you
 to check this gym out<sup><a href="#2">2</a></sup>!
 
-As a kid and teenager I did karate somewhat seriously, and I used to be lean
+As a kid and teenager I did Karate somewhat seriously, and I used to be lean
 and able to do the front and middle splits. I lost most of this flexibility
 and gained weight over the course of my adult life, but I wanted to get it
 back. So I started working out a few times a week.
