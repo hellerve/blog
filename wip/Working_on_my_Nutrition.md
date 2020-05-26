@@ -1,6 +1,6 @@
 One of my goals for this year is improving my general fitness and health. I
 didn’t make it a new year’s resolution or anything like that; in fact I just
-followed my wive into the gym one day—the somewhat [scarily called “Urban
+followed my wive into the gym one day—the somewhat [scarily named “Urban
 Gladiators”](https://www.urbangladiators.de/)—, and got hooked
 immediately<sup><a href="#1">1</a></sup>. If you’re in Berlin I encourage you
 to check this gym out<sup><a href="#2">2</a></sup>!
