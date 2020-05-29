@@ -1,6 +1,6 @@
 One of my goals for this year is improving my general fitness and health. I
 didn’t make it a new year’s resolution or anything like that; in fact I just
-followed my wive into the gym one day—the somewhat [scarily named “Urban
+followed my wife into the gym one day—the somewhat [scarily named “Urban
 Gladiators”](https://www.urbangladiators.de/)—, and got hooked
 immediately<sup><a href="#1">1</a></sup>. If you’re in Berlin I encourage you
 to check this gym out<sup><a href="#2">2</a></sup>!
@@ -115,22 +115,22 @@ up<sup><a href="#8">8</a></sup>!
 
 <span id="1">1.</span> My somewhat contrarian tendencies didn’t allow me to
 admit that at the time, so I pretended to just be
-exhauster and annoyed at myself—which I was. The truth
+exhausted and annoyed at myself—which I was. The truth
 is that it felt right to work out.
 
 <span id="2">2.</span> Full disclosure: One of my friends is a trainer there,
 and having her mentor me during the first few workouts
 definitely helped—though I think all the trainers are
-extremely good at helping you get to a better form!
+extremely good at helping you work on your form!
 
 <span id="3">3.</span> I’m not really the type of person to record progress
-pictures, I’d rather have anxiety-fueled self-hate
+pictures; I’d rather have anxiety-fueled self-hate
 sessions in front of the mirror, thank you very much!
 
 <span id="4">4.</span> For those of you who are into Yoga or Calisthenics, I’m
 also proud to report that I have a very stable crow and side crow, a somewhat
 stable crane, and an L-sit, though it’s fairly wobbly. There are more things,
-of course, but tose are the ones that felt like big a-ha moments!
+of course, but those are the ones that felt like big a-ha moments!
 
 <span id="5">5.</span> I say this just two days after baking [amazing
 tahini-swirl brownies](https://www.bonappetit.com/recipe/gluten-free-chocolate-tahini-brownies).
