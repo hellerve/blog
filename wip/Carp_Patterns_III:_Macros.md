@@ -4,7 +4,7 @@ code more generally.
 
 There are many different opinions when it comes to macros, when to use them,
 and how to organize them. Different Lisp communities have different best
-practices, and they all have good reasons for them. While the use of macros is
+practices, and each has good reasoning behind them. While the use of macros is
 somewhat discouraged in Clojure, for instance, they are ubiquituous and widely
 embraced by the Common Lisp community.
 
@@ -20,7 +20,7 @@ hints and guidelines that I wish I would have had when I started out writing
 macros in Carp. To this end, we will look at the REPL and how it facilitates
 development, dynamic functions and macros and what makes them different from
 each other, and when to use either. After having read this blog post, you
-should feel ready to write your first own macro, simple or complex.
+should feel ready to write your own first macro, simple or complex.
 
 For those of you that don’t know: I also wrote [a series of blog posts on
 Scheme macros](https://blog.veitheller.de/scheme-macros). Scheme’s macro system
@@ -60,7 +60,7 @@ they different from regular functions? How are they different from macros? And
 when do I use what?
 
 Dynamic functions are functions that run at compile time. They evaluate their
-arguments, which is contrast to macros, and they are untyped and interpreted,
+arguments, which contrasts to macros, and they are untyped and interpreted,
 which makes them different from regular functions. Let’s look at an example:
 
 ```
@@ -92,7 +92,7 @@ other expressions.
 Dynamic functions, then, are a way to program at compile time. This can be used
 for plumbing in macros, but also to generate source code. The main difference
 is that any expressions that you passed in are evaluated first and thus you
-can’t pass in S-expressions directly without quoting them first.
+can’t pass in S-expressions directly without first quoting them.
 
 I usually use macros when meta-programming, and dynamic functions for plumbing.
 I can always use `eval` if I end up needing to evaluate something. This keeps
