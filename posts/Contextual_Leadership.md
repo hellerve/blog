@@ -73,7 +73,7 @@ responsibilites and information flow, which is why I call it “leadership”.
 
 ## So this is about diagrams, yeah?
 
-All of this build-up jut for a couple of diagrams? Well, yes and no. I don’t
+All of this build-up just for a couple of diagrams? Well, yes and no. I don’t
 think the diagrams themselves are important—as you might have been able to
 deduce from my drawings I’m not a very visual thinker. What’s important is the
 idea of thinking about leadership as something contextual and flowing rather
