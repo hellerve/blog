@@ -4,7 +4,7 @@ task that I enjoy quite a bit.
 
 What I want to do in this post is share a few opinions and insights into what
 I believe a good hiring process looks like, for applicants and interviewers
-alike. Because I’m a technologist my bias will be towards hiring other
+alike. Because I’m a technologist, my bias will be towards hiring other
 technologists. Maybe you will be able to take something away from this if you
 are hiring for other departments, but I can’t promise anything.
 
@@ -22,8 +22,8 @@ onboarding process, but that’s a story for another post.
 
 Being a small team—less than 20 people for most of my stint there—, most of
 the colleagues I interviewed and eventually onboarded were part of the tech
-team, but I was involved in all hiring decisions, just because we were all
-connected and we all needed to get along<sup><a href="#1">1</a></sup>.
+team. I was involved in all hiring decisions, though, because we were all
+connected, and we all needed to get along<sup><a href="#1">1</a></sup>.
 
 I wrote an internal guide that I’m still quite proud of. Many of the ideals
 I still have made it into the guide, and most of them were not my ideas, but
@@ -124,7 +124,7 @@ applicant into doing it instead.
 ### The second interview: let’s talk about technology
 
 The second interview is a technical assessment. I don’t like algorithmic
-whiteboard assessments, and I have the same objections against them as everyone
+whiteboard assessments, and I have the same objections to them as everyone
 else has. I do believe that a practical problem is most often required. To
 solve this dichotomy, I like to make the problem a pairing problem: the
 interviewer and interviewee can work on something together, like refactoring
@@ -135,7 +135,7 @@ This solves my most important gripes with traditional puzzle questions: it
 makes them less adversarial through collaboration, serves as an important
 indicator of whether the applicant can work with the rest of the team, and it
 more closely resembles how a well-functioning organization might tackle
-problems. It might also alleviate some anxiety in the interviewee by making
+problems. It might also alleviate some anxiety for the interviewee by making
 them feel less like a target and more as part of a team, but I think this is
 different across personality types and not really a cure-all.
 
@@ -176,12 +176,12 @@ as quickly as possible.
 Up until now I’ve written exclusively about the happy path: the right candidate
 applies for the right position, they make it all the way through the process,
 and they’re eventually hired. For every hire you’ll make, you will have to
-reject some people, however, and I want you to do that with integrity and
+reject some people, however, and ideally that can be done with integrity and
 grace, and with the candidate’s dignity intact.
 
 Firstly, the candidate should be notified of the rejection as quickly as
 possible. If it takes you more than a few days to get back to them after you
-made up your mind you dropped the ball. Don’t worry, I’ve also dropped the
+made up your mind, you dropped the ball. Don’t worry, I’ve also dropped the
 ball. It happens, but it shouldn’t. Tell them about your decision.
 
 I usually don’t include any reasons for the rejection in the e-mail, but I like
@@ -189,7 +189,7 @@ to offer to give the applicant feedback if they so desire and I have the time.
 In my experience, most people won’t actually ask for feedback, and the few that
 do really want to know how they could do better, and who am I to deny them
 that. But this is a double-edged sword: the reasons you are rejecting a
-candidate for might be the same reasons they excel at other places. Make sure
+candidate might be the same reasons they excel at other places. Make sure
 to keep that in mind when delivering your feedback, and don’t make the
 candidate feel bad about it. Delivering good feedback is hard, and a skill in
 itself that needs to be practiced. If you’re not sure you can do it in a way
@@ -215,17 +215,17 @@ just haven’t written it yet. Stay tuned.
                        with them for a long time”? I don’t believe that the
                        focus should be whether you would go have drinks with
                        this person after work—it’s great if you are able to be
-                       friends as well as colleagues, but what happens inside
+                       friends as well as colleagues–, but what happens inside
                        the office, emnotional and professional, is what you
                        need to optimize for.
 
                        On the other hand, I believe that if you think your
                        colleagues’ personalities shouldn’t matter, and everyone
-                       should just get your act together and get over
-                       themselves you don’t know how humans work. A good work
+                       should just get their act together and get over
+                       themselves, you don’t know how humans work. A good work
                        place is good precisely because it has a personality,
                        not for the lack of it—anything else would be inhuman.
-                       You’ll seomtimes need to think about the culture you
+                       You’ll sometimes need to think about the culture you
                        have and the culture you want, and how to get from the
                        one to the other, even if you don’t want to; humans are
                        messy like that.
