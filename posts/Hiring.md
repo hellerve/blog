@@ -219,16 +219,16 @@ just haven’t written it yet. Stay tuned.
                        the office, emnotional and professional, is what you
                        need to optimize for.
 
-                       On the other hand, I believe that if you think your
-                       colleagues’ personalities shouldn’t matter, and everyone
-                       should just get their act together and get over
-                       themselves, you don’t know how humans work. A good work
-                       place is good precisely because it has a personality,
-                       not for the lack of it—anything else would be inhuman.
-                       You’ll sometimes need to think about the culture you
-                       have and the culture you want, and how to get from the
-                       one to the other, even if you don’t want to; humans are
-                       messy like that.
+On the other hand, I believe that if you think your
+colleagues’ personalities shouldn’t matter, and everyone
+should just get their act together and get over
+themselves, you don’t know how humans work. A good work
+place is good precisely because it has a personality,
+not for the lack of it—anything else would be inhuman.
+You’ll sometimes need to think about the culture you
+have and the culture you want, and how to get from the
+one to the other, even if you don’t want to; humans are
+messy like that.
 
 <span id="2">2.</span> As such, it is very much tailored towards Port Zero. The
                        truth is that most good interview guidelines I’ve seen
