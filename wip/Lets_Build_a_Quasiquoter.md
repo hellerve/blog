@@ -1,6 +1,8 @@
 For a very long time, Carp didn’t have a mechanism for [quasiquotation](https://courses.cs.washington.edu/courses/cse341/04wi/lectures/14-scheme-quote.html).
 As a macro writer, this frustrated me to no end, until, finally, I broke down
-and wrote an implementation of quasiquotation, in macros.
+and wrote an implementation of quasiquotation, in macros. It received a lot of
+helpful feedback from the community, and everyone was very excited when it got
+merged!
 
 In this blog post I want to both explain what quasiquotation is and how it is
 useful, and build a mechanism for quasiquotation with you. While I was
