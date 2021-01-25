@@ -58,7 +58,7 @@ a function without arguments, and you will see what I mean:
 
 While the code in Figure 3 isn’t terrible, all the calls to `list` get in the
 way of understanding the final structure of the code we emit. It doesn’t at all
-look like what we want to produce, and it’s ver verbose. Still, this is as good
+look like what we want to produce, and it’s very verbose. Still, this is as good
 as it gets if we use `quote`, because it’s an all-or-nothing situation: either
 this is code, or it’s data.
 
