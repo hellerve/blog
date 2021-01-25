@@ -17,7 +17,7 @@ Let’s get this party started!
 If you’ve ever talked to anyone who likes Lisp, you’ve probably heard that its
 killer feature is that “code is data”. If your eyes—or ears—start to glaze over
 when someone tries to explain the concept, you’re not alone. Still, let me try
-and make up a short introduction:
+and make a short introduction:
 
 ```
 (defn adder [x y] (+ x y))
@@ -42,7 +42,7 @@ macro in Lisp is just building a list like that and telling the environment to
 evaluate it. We can programmatically generate code!
 
 To do that, however, we often need to make some sections of the structrue
-fixed, and others flexible. Let’s think of a macro that creates an alias for
+fixed and others flexible. Let’s think of a macro that creates an alias for
 a function without arguments, and you will see what I mean:
 
 ```
