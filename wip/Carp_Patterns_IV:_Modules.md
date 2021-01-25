@@ -4,7 +4,7 @@ of the fundamental ways in which we structure our code.
 
 I’m going to try to give an overview of how you might want to design your
 modules. I understand that the structure of your code and the design patterns
-you use more broadly feed into each other, and that I can only give you the
+you use more broadly feed into each other, and I can only give you the
 patterns that best fit my use cases. I want you to go out and experiment with
 different ways of layering and structuring your code if you’re excited to play
 around a bit after this!
@@ -17,7 +17,7 @@ First, let’s look at when and where we create modules to modularize our code.
 
 ### Types and implicit modules
 
-Every time you define a type, a module is conceived also. This module will
+Every time you define a type, a module is also conceived. This module will
 share the type’s name and contain a constructor, getters and setters, and
 other utility functions.
 
