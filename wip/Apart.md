@@ -12,5 +12,5 @@ in her pouch to look for the tiny but beautiful life growing within her.
 it’s like to miss it.”
 
 On the other side of the world, Turtle retracted deeper into his shell,
-dreaming of his fluffy-eared companion. Maybe there was even a smile on his
+dreaming of his fluffy-eared companion. Maybe there even was a smile on his
 face.
