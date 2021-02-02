@@ -72,7 +72,7 @@ third argument. In the implementation of `zero`, it just goes through the list
 of the type’s members and emits a call to `zero` for each of them, wrapping the
 result in one call to the type’s initializer.
 
-All in all, this makes for a clear and simple API, but how does it work? Let’s
+All in all, this makes for a clear and simple API. But how does it work? Let’s
 take a look!
 
 ## Implementing `derive`
@@ -83,7 +83,7 @@ sense: this state is part of the state of the system at compile time, and it is
 mutable, much like function or type definition change the state of the
 compiler.
 
-The best data structure to use for this state would probably a hashmap, but
+The best data structure to use for this state would probably be a hashmap, but
 since we are at macro expansion time and only have lists and arrays to work
 with, an association list will have to do<sup><a href="#1">1</a></sup>.
 
@@ -92,7 +92,7 @@ with, an association list will have to do<sup><a href="#1">1</a></sup>.
 ```
 <div class="figure-label">Fig. 3: An empty list of derivers.</div>
 
-Now I’d like to dial in expectations: we’re going to build a fully functional
+Now I’d like to dial down expectations: we’re going to build a fully functional
 version of the derive mechanism in Carp, exactly as it works in Carp. But it
 won’t have any of the bells or whistles, and it will be completely implemented
 in the global space. If you want to check out the implementation Carp actually
@@ -112,7 +112,7 @@ It will look up the deriver and call it.
 
 At this point we’re missing two important pieces: `get-deriver`, which will
 return the pair from the association list that matches the interface name—that’s
-why we call `cadr` on it to get the actual derivation function, as it’s the
+why we call `cadr` on it to get the actual derivation function, as it's the
 second element of the pair—, and the code that defines derivers. Since the
 lookup shouldn’t be too hard, it looks like we’ll have to spend some time
 wrapping our heads around how registration works. It does all the actual heavy
@@ -176,7 +176,7 @@ that’s what `derive` will call.
 
 And that’s all we need! We’re done!
 
-I understand if all of this seems like a sleight of hand. It seems like we just
+I understand if all of this seems like sleight of hand. It seems like we just
 wrote a bunch of connector code, and suddenly we were done. But that’s actually
 all that `derive` does: it provides a faciliating mechanism and an API.
 Providing types and implementations for interfaces is left to the users of that
