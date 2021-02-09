@@ -80,12 +80,12 @@ take a look!
 In order to register derivers, we need a piece of mutable global state to save
 them to. While I’m generally wary of adding global state, in this case it makes
 sense: this state is part of the state of the system at compile time, and it is
-mutable, much like function or type definition change the state of the
+mutable, much like functions or type definitions change the state of the
 compiler.
 
 The best data structure to use for this state would probably be a hashmap, but
 since we are at macro expansion time and only have lists and arrays to work
-with, an association list will have to do<sup><a href="#1">1</a></sup>.
+with, an association list will have to do<sup><a href="#1">1</a></sup><sup><a href="#3">3</a></sup>.
 
 ```
 (defdynamic derivers '())
@@ -104,7 +104,7 @@ It will look up the deriver and call it.
 ```
 (defmacro derive [t f]
   (let [deriver (get-deriver f derivers)]
-    (if (empty? deriver)
+    (if (nil? deriver)
       (macro-error "no deriver found for interface!")
       (eval ((cadr deriver) t)))))
 ```
@@ -123,7 +123,7 @@ But, first things first, here’s `get-deriver`:
 ```
 (defndynamic get-deriver [f derivers]
   (if (empty? derivers)
-    '()
+    nil
     (if (= (caar derivers) f)
       (car derivers)
       (get-deriver f (cdr derivers)))))
@@ -131,7 +131,7 @@ But, first things first, here’s `get-deriver`:
 <div class="figure-label">Fig. 5: Looking up derivers.</div>
 
 All this function does is go through the list of pairs linearly, checking the
-key at each step. If it doesn’t find anything, `'()` is returned.
+key at each step. If it doesn’t find anything, `nil` is returned.
 
 Only one piece of the puzzle missing! We’ll have to implement `make-deriver`.
 Let’s take care of the boilerplate first!
@@ -203,3 +203,5 @@ can anyone need<sup><a href="#2">2</a></sup>?
 <span id="2">2.</span> This is the footnote I will link to in a couple years’
 time when someone comes into the chat to complain that their 500 derivable
 interfaces blow up compile times.
+
+<span id="3">3.</span> Dynamic hashmaps are [currently in the works](https://github.com/carp-lang/Carp/pull/1168).
