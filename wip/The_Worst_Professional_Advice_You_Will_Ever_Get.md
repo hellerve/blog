@@ -55,10 +55,10 @@ wrong, which is a good thing.
 
 I had to unlearn bullshit confidence. At its best, it’s a life hack to make
 people think you’re smarter than you are. At its worst, it’s a codified
-component of toxic masculinity. Making yourself vulnerable by saying you don’t
-know is not an invitation to belittle you. You’re not going seem like less of
-an expert. In my experience, it goes one of two ways: either people do not
-even notice, or they appreciate your honesty.
+component of toxic masculinity<sup><a href="#3">3</a></sup>. Making yourself
+vulnerable by saying you don’t know is not an invitation to belittle you.
+You’re not going seem like less of an expert. In my experience, it goes one of
+two ways: either people do not even notice, or they appreciate your honesty.
 
 Long story short: if someone tells you that you need to seem more confident in
 your answer, tell them “no, thanks”.
@@ -73,3 +73,12 @@ consultants face. I don’t actually think so. I think there is one important
 difference: consultants project this image of “the all-knowing expert” onto
 themselves, engineering their own downfall (or becoming a guru, which is
 arguably even worse for everyone involved).
+
+<span id="3">3.</span> I should expand on this: bullshit confidence is not
+inherently a male trait, nor is it inherently toxic. Still, a part of what I
+identify as “toxic masculinity”–overly performative masculinity without any
+substance that is, at the end of the day, as fragile as its shaky foundations
+and tends to lash out when challenged—is the idea that “you have to be a leader
+and give others directions” taken to the extreme by people who don’t actually
+know how to lead. It’s a recipe for disaster, and unearned confidence is one of
+its building blocks.
