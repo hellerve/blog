@@ -6,8 +6,8 @@ that I don’t even think the title of this blog post is clickbait.
 it or you don’t. Project confidence.”
 
 I have a tendency to overqualify things because I’m acutely aware when I’m not
-completely certain something is true. My wfie is the same way. Throughout our
-schooling in Germany, this advice would be given to us over and over
+completely certain something is true. My wife is the same way. Throughout our
+schooling in Germany, this advice is be given to us over and over
 again<sup><a href="#1">1</a></sup>, despite the fact that it is, in my opinion,
 really bad advice. There is exactly one situation where it might be useful: in
 an exam, when you need to bullshit your way through a question. Weasel-y
@@ -37,13 +37,13 @@ external actor, I had to learn that just because people hired an expert that
 doesn’t mean they expect them to know everything. Take a deep breath. Say it
 with me. “Let me get back to you on this.”
 
-My wife works in healthcare. I have never interacted with that business but as
+My wife works in healthcare. I have never interacted with that business, but as
 a patient and partner of someone who works there, and I don’t want to make any
 sweeping indictments. I know, however, that some of the doctors she
 encounters—and, I would argue, some of the doctors each of us encounter in our
 lives—are so used to tell people what they think confidently that they cannot
 ever not be sure about something externally, even if internally they might not
-be so sure. It’s not necessarily their fault: we are used for doctors to know
+be so sure. It’s not necessarily their fault: we are used to doctors knowing
 what’s up right away. We project knowledge onto them, and they have to own
 it<sup><a href="#2">2</a></sup>.
 
