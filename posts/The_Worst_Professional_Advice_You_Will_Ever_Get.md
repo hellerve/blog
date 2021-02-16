@@ -7,7 +7,7 @@ it or you don’t. Project confidence.”
 
 I have a tendency to overqualify things because I’m acutely aware when I’m not
 completely certain something is true. My wife is the same way. Throughout our
-schooling in Germany, this advice is be given to us over and over
+schooling in Germany, this advice has been given to us over and over
 again<sup><a href="#1">1</a></sup>, despite the fact that it is, in my opinion,
 really bad advice. There is exactly one situation where it might be useful: in
 an exam, when you need to bullshit your way through a question. Weasel-y
