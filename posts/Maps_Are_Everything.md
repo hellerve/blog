@@ -194,7 +194,7 @@ folding, filtering, and mapping.
 First, let’s rip apart the cult of λ and take their favorite spell, whose
 names gleam in the night: `car` and `cdr`. Through alchymical experiments no
 calculus should ever endure, we bind them to `this` and `next`. `this` gives
-us the first entry in a map, `next` gives us the rest. Calling `this` on again
+us the first entry in a map, `next` gives us the rest. Calling `this` again
 on the result of `this` will give us the key, calling `next` will give us the
 value. Such is the name of the beast of our creation.
 
