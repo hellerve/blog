@@ -258,8 +258,9 @@ You awake, sweating. You realize you wanted to write, but you cannot remember
 what it was you meant to say. There is a tome in front of you, written in your
 hand.
 
-On your computer, there are two tabs open, one telling the tale of “the thing on
-the doorstep”, and the other of job interviews and database consistency.
+On your computer, there is a browser window with two tabs open, one telling
+the tale of “the thing on the doorstep”, and the other of job interviews and
+database consistency.
 
 Your eyes feel heavy, and your heart feels empty. What the fuck just happened?
 
