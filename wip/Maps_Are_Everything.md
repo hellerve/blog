@@ -5,7 +5,7 @@ computation and data structures in terms of maps, and I wrote [a prototype of
 a programming language](https://github.com/hellerve/mae) to see what it would
 look like. I mostly left it alone after that.
 
-I had a vague idea that one could make something akin to a lambda calculus with
+I roughly thought that one could make something akin to a lambda calculus with
 maps, but at this point computation (as functions) was a separate concept from
 data (as maps). I shared the language with a few esolang-minded friends from the
 [Recurse Center](https://recurse.com/), and gave a little lightning talk about
@@ -17,7 +17,7 @@ I realized that, if I wanted to, I could define a (pure) function as simply a
 possibly infinite, lazy set that maps inputs to outputs by computation. In
 fact, this is not even that much of a mind-bending idea.
 
-Equipped with the knowledge that would enable me to reconciliate the
+Equipped with the knowledge that would enable me to reconcile the
 differences between functions and maps, I got to work again, and produced a
 version of mae that simply had finite data maps, and infinite computation
 maps. Well, and names. And an incidental Lisp syntax, because it is easy to
@@ -122,7 +122,7 @@ We now have booleans and a way of working with them.
 
 ## `{{} {}}`
 
-Even deeper in the eldritch deeps lurk numbers. They have a convenient way of
+Even further in the eldritch deeps lurk numbers. They have a convenient way of
 being summoned through literals, but do not let their form deceive you: numbers
 are maps.
 
@@ -185,8 +185,8 @@ Our spellbook needs a last chapter. Let us fill it with control structures:
 folding, filtering, and mapping.
 
 First, let’s rip apart the cult of λ and take their favorite spell, whose
-names gleam in the night: `car` and `cdr`. Through alchymical experiments no
-calculus should ever endure we bind them to `this` and `next`. `this` gives
+names gleam in the night: `car` and `cdr`. Through alchemical experiments no
+calculus should ever endure, we bind them to `this` and `next`. `this` gives
 us the first entry in a map, `next` gives us the rest. Calling `this` on again
 on the result of `this` will give us the key, calling `next` will give us the
 value. Such is the name of the beast of our creation.
