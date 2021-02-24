@@ -80,9 +80,11 @@ With booleans out of the way, let’s define conditionals. `if` should be enough
 to be worthwhile.
 
 ```
-; if takes a condition, a then and an else branch and produces
-; the result of either branch
-(def if {(cond then else) -> ({true then false else} cond)})
+; if takes a condition, a then and an else branch
+; and produces the result of either branch
+(def if
+  {(cond then else) ->
+    ({true then false else} cond)})
 ```
 <div class="figure-label">Fig. 3: `if` as a map.</div>
 
@@ -95,7 +97,9 @@ compute the branches when it takes them. We can  rectify this by summoning
 another set of our trusty parentheses.
 
 ```
-(def if {(cond then else) -> (({true then false else} cond))})
+(def if
+  {(cond then else) ->
+    (({true then false else} cond))})
 ```
 <div class="figure-label">Fig. 4: lazy `if` as a map.</div>
 
@@ -104,8 +108,8 @@ even try to explain it:
 
 ```
 ; prn soils our beautiful pure garden by cementing
-; the pillar of outputting values (“printing”) in its
-; middle
+; the pillar of outputting values (“printing”) in
+; its middle
 
 ; old: it will print both true and false
 (if true (prn true) (prn false))
@@ -156,7 +160,8 @@ To work with numbers, we need to be able to increment them and decrement them.
 ; one lesser by removing the entry that, when
 ; removed, is equal to the map
 (def dec
-  {(n) -> (filter {(k v) -> (neg (= (rem n k) k))} n)})
+  {(n) ->
+    (filter {(k v) -> (neg (= (rem n k) k))} n)})
 ```
 <div class="figure-label">Fig. 7: Incrementing and decrementing.</div>
 
@@ -172,7 +177,8 @@ powers of folding and filtering, let’s use them to grow and shrink our numbers
 (def +
   {(m n) -> (foldr {(k v acc) -> (inc acc)} m n)})
 
-; a sleight of the other hand, and we have subtraction
+; a sleight of the other hand, and we have
+; subtraction
 (def -
   {(m n) -> (foldr {(k v acc) -> (dec acc)} m n)})
 ```
@@ -228,7 +234,8 @@ Click your tongue one last time, and `map` and `filter` flicker into existence.
 ```
 ; map transforms
 (def map
-  {(f m) -> (foldr {(k v m) -> (add m (f k v))} {} m)})
+  {(f m) ->
+    (foldr {(k v m) -> (add m (f k v))} {} m)})
 
 ; filter takes away
 (def filter
