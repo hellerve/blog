@@ -59,7 +59,7 @@ system, you end up with a shitty democratic system.
 
 We can go further than this, and examine Decentralized Finance on its value
 proposition of creating a better financial market. I want to be clear that I’m
-at this point not talking about your regular run-off-the-mill Coin market, which
+at this point not talking about your regular run-of-the-mill Coin market, which
 emulates the most mundane financial operation: commodity trading in a vacuum.
 People get excited by the amounts of money thrown around, yes, but it is
 important to keep in mind that exchanging a thing for another does not create
