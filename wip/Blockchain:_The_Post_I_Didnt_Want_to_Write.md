@@ -36,15 +36,15 @@ oppose it, lie in the fundamental societal assumptions surrounding its value
 proposition. Let me explain.
 
 I would describe the act of democratizing finance by making the market a direct
-action, grass-roots system as a fundamentally anarcho-capitalist endeavour. A
-lot of people probably shy away from using that term, because it is
-controversial, but I think it captures the essence like no other: you are moving
-away from statism, and you do so by appointing the famous “invisible hand of the
-market” as your god-like oracle.
+action, grass-roots system as a fundamentally anarcho-capitalist
+endeavour<sup><a href="#2">2</a></sup>. A lot of people probably shy away from
+using that term, because it is controversial, but I think it captures the
+essence like no other: you are moving away from statism, and you do so by
+appointing the famous “invisible hand of the market” as your god-like oracle.
 
 This is where my first critique starts: if “the hand of the market” is a god, it
 is a Lovecraftian blind idiot god. It is not an intelligent creator, it knows
-not what it builds and destroys<sup><a href="#2">2</a></sup>.
+not what it builds and destroys<sup><a href="#3">3</a></sup>.
 
 Democratization is always a Promethean act. This sounds pretentious, but it
 gives us a good metaphor to follow: Prometheus took the fire from the gods to
@@ -73,7 +73,7 @@ is also, currently, where it becomes the most absurd. The systems, both
 technical and organizational, that people come up with are either more or less
 obviously broken or become so byzantine so quickly (see, for instance, [the
 structure of
-MakerDAO](https://docs.makerdao.com/#the-maker-protocol-smart-contract-modules-system)<sup><a href="#3">3</a></sup>)
+MakerDAO](https://docs.makerdao.com/#the-maker-protocol-smart-contract-modules-system)<sup><a href="#4">4</a></sup>)
 that we have come full circle: a new beast is born that can only be managed by the
 appointed few, not by the unwashed masses. Again, the market did not create, it
 merely redistributed.
@@ -107,17 +107,21 @@ change is good, or that the only way is up.
 #### Footnotes
 
 <span id="1">1.</span> This blog is my personal blog, yes, but it’s also linked
-                       to my professional identity. It’s difficult to speak
-                       freely about any particular issue when your livelihood
-                       is on the line.
+to my professional identity. It’s difficult to speak freely about any particular
+issue when your livelihood is on the line.
 
-<span id="2">2.</span> You will have to live with my colourful metaphors for a
+<span id="2">2.</span> One of the people I asked to review this blog post asked
+me whether I meant that to be a good or bad thing. I didn’t intend this to be a
+value judgement: the label is just a descriptor. It is useful to note that I’m
+not a proponent of anarcho-capitalism myself.
+
+<span id="3">3.</span> You will have to live with my colourful metaphors for a
                        while. I promise they all lead somewhere. If the
                        narrative of my imagery is offensive to you, I
                        apologize. Feel free to rebutt in an equally off-kilter
                        tone.
 
-<span id="3">3.</span> I’ve tried to verify that the MakerDAO modules work as
+<span id="4">4.</span> I’ve tried to verify that the MakerDAO modules work as
 claimed, but my ignorance of the ecosystem—[why is there a magic value
 there?](https://github.com/dapphub/ds-chief/blob/master/src/chief.sol#L96)
 [Why are the log events implemented in assembly?](https://github.com/makerdao/median/blob/master/src/median.sol#L29-L45)—made
