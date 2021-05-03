@@ -83,9 +83,9 @@ then, aren’t the existing financial markets also meritocracies, ruled by those
 that understand finance and law, rather than tech and a little bit of finance?
 Maybe, maybe not. But to me, it doesn’t feel like an accident that
 Decentralized Finance proponents slowly learn all the little reasons for the
-rules and regulations that are in play in finance. The Byzantine Empire has a
-bad reputation, [but maybe that’s more due to ignorance than through any fault
-of its own](https://aleteia.org/2018/11/13/why-are-complex-things-called-byzantine/).
+rules and regulations that are in play in finance<sup><a href="#5">5</a></sup>.
+The Byzantine Empire has a bad reputation, [but maybe that’s more due to
+ignorance than through any fault of its own](https://aleteia.org/2018/11/13/why-are-complex-things-called-byzantine/).
 
 The tune of tech’s hubris and its desire to reinvent everything from first
 principles without consulting domain experts is an old one, but I can only play
@@ -126,3 +126,7 @@ claimed, but my ignorance of the ecosystem—[why is there a magic value
 there?](https://github.com/dapphub/ds-chief/blob/master/src/chief.sol#L96)
 [Why are the log events implemented in assembly?](https://github.com/makerdao/median/blob/master/src/median.sol#L29-L45)—made
 this impossible in the limited time I wanted to give it.
+
+<span id="5">5.</span> For a little taster of the things we manage to mess up
+with the new-fangled stuff that used to be solved problems and fun with finance
+in general, I recommend [Matt Levine’s column “Money Stuff” on Bloomberg](https://www.bloomberg.com/opinion/articles/2021-01-12/don-t-forget-your-bitcoins).
