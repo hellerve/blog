@@ -11,7 +11,7 @@ identity. Maybe I will succeed in making them interesting to technologists, or
 maybe it will remain idle thought. Maybe I will flesh them out at some point,
 or maybe I won’t. I’m content with either.
 
-What I cannot do, and will not attempt, is capturing the essence of identity as
+What I cannot do, and will not attempt, is capture the essence of identity as
 a concept. I’m not a philosopher, and even if I were, giving definitive answers
 is not something I am very good at.
 
@@ -63,7 +63,7 @@ it as “the number that comes after 4”<sup><a href="#2">2</a></sup> or “the
 prime number after 3”, among other things. Both are exact, and they only overlap
 in the fact that they describe the number 5.
 
-As such, identity is dictated by context, and can change as they change. While
+As such, identity is dictated by context, and can change as it changes. While
 I might only care that an `Option` is non-empty in one function, the next
 function I pass it to might need to inspect the value it contains.
 
@@ -88,10 +88,10 @@ thought.
 
 As with all highly abstract, fundamental ideas it is easy to get lost in them.
 “Zen and the Art of Motorcycle Maintenance” stylizes this as “the high country
-of thought”, and the book tells a vivd story of what can go wrong if you lose
+of thought”, and the book tells a vivid story of what can go wrong if you lose
 your way.
 
-Personally, I like to dip in and out of that “hight country of thought”, just
+Personally, I like to dip in and out of that “high country of thought”, just
 for a bit to entertain myself and maybe bring back something of value for the
 rest of my life. Sometimes that works, sometimes I feel like my inquiries are
 too shallow to provide real value.
