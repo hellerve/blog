@@ -91,13 +91,13 @@ As with all highly abstract, fundamental ideas it is easy to get lost in them.
 of thought”, and the book tells a vivid story of what can go wrong if you lose
 your way.
 
-Personally, I like to dip in and out of that “high country of thought”, just
-for a bit to entertain myself and maybe bring back something of value for the
-rest of my life. Sometimes that works, sometimes I feel like my inquiries are
-too shallow to provide real value.
+Even if you are not a philosopher thinking about the fundamentals of human
+existence all the time, dipping in and out of that high country, taking in what
+you can, and trying to learn from the millenia of thought contained there, can
+be rewarding and actually useful, contrary to popular belief<sup><a href="4">4</a></sup>.
 
-In the end, all that matters to me is finding new ways to think about what I
-do for a living, and my life at large.
+Or maybe it’s just that I have a soft spot for working through opaque texts and
+the sense of accomplishment when you finally “get” it.
 
 #### Footnotes
 
@@ -115,3 +115,6 @@ your life.
 <span id="3">3.</span> Locking mechanisms are weird and wonderful that way. If
 you dig deep enough, [you might find keys that open all sorts of
 things](https://www.youtube.com/watch?v=a9b9IYqsb_U).
+
+<span id="4">4.</span> My personal ventures into that high country have at times
+be enlightening, at times frustrating. And I’ve only ever scratched the surface.
