@@ -6,7 +6,7 @@ and discipline.
 
 It’s easy to forget that my life has changed: I work more, I have a wife and a
 newborn to take care of, I have other hobbies (for a few months early this year
-I did twelve workouts a week on a six day split).
+I did twelve workouts a week, taking one day off).
 
 Another fact that I refused to acknowledge for the longest time is that the
 velocity at which I was working simply wasn’t sustainable, at least not with my
