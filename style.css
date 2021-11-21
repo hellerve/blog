@@ -57,20 +57,19 @@ body {
   -o-font-feature-settings: 'liga' 1;
   -ms-font-feature-settings: 'liga' 1;
   font-feature-settings: 'liga' 1;
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
 }
 
 body > * {
   font-size: 100%;
-
-  margin-left: 11.5rem;
-  margin-right: 2.5rem;
 }
 
 .content {
   display: block;
-  padding: 2rem 0 0 0;
   hyphens: auto;
   text-align: justify;
+  padding-top: 2em;
 }
 
 .content h2 {
@@ -166,7 +165,6 @@ a code {
 
 .aside {
   margin: 0;
-  float: left;
   padding-top: 5em;
   max-width: 200px;
   min-width: 100px;
