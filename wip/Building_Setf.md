@@ -123,7 +123,7 @@ As such, let’s look at a naïve implementation first:
 
 ```
 (defmacro setf [place val]
-   (let [setter (Setf.get-place (car place))]
+   (let [setter (get-place (car place))]
       (setter (cons-last val (cdr place)))))
 ```
 
@@ -141,7 +141,7 @@ or `(sym <variable>)` and register `set!` as a `simple-place`, meaning that
 ```
 (defmacro setf [place val]
   (let [place (if (symbol? place) `(sym %place) place)
-        setter (Setf.get-place (car place))]
+        setter (get-place (car place))]
     (setter (cons-last val (cdr place)))))
 ```
 
@@ -152,7 +152,7 @@ we give a good error message when a place isn’t known:
 (defmacro setf [place val]
   (let [place (if (symbol? place) `(sym %place) place)
         key (car place)
-        setter? (Setf.get-place key)]
+        setter? (get-place key)]
     (if (= nil setter?)
         (macro-error (list "I didn’t find a `setf` place for " key ". Is it defined?"))
         (setter? (cons-last val (cdr place))))))
@@ -170,7 +170,7 @@ deal with: garbage input.
         key (if (and (list? place) (not (empty? place)) (symbol? (car place)))
                (car place)
                malformed)
-        setter? (Setf.get-place key)]
+        setter? (get-place key)]
     (cond
       (= key malformed)
         (macro-error (list "The `setf` place " place " is malformed. A list or symbol was expected."))
