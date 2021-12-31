@@ -106,3 +106,92 @@ In the end, we just iterate over the members of the type and use
 `register-simple-place` to tie together the getters and setters that the
 compiler autogenerates for us. For a `Vector` type with an `x` coordinate,
 for instance, the appropriate pair will be `Vector.x` and `Vector.set-x`.
+
+For convenience, we define a function to get a place from the map:
+
+```
+(defndynamic get-place [n]
+    (Map.get places n))
+```
+
+This is really just a simple wrapper around map retrieval.
+
+Now that we have all the plumbing for registration in place, we can finally
+implement the main event, i.e. the `setf` macro. It is the most intricate
+part of the puzzle, but most of its complexity comes from error handling.
+As such, let’s look at a naïve implementation first:
+
+```
+(defmacro setf [place val]
+   (let [setter (Setf.get-place (car place))]
+      (setter (cons-last val (cdr place)))))
+```
+
+We get the setter function, and then apply it to the rest of the form, with
+the new value appended. This means that `(setf (nth &x 1) 10)` will be given
+to the setter registered under `nth` as `(&x 1 10)`. This happens to match
+the signature of `Array.aset!` perfectly, so we can register it as a
+pass-through, i.e. a `simple-place`.
+
+Now, to enable setting variables, we use a trick: we transform it into a list
+or `(sym <variable>)` and register `set!` as a `simple-place`, meaning that
+`(setf x 10)` will first be transformed to `(setf (sym x) 10)`, and then to
+`(set! x 10)`. To enable that behavior, we have to change `setf` a little:
+
+```
+(defmacro setf [place val]
+  (let [place (if (symbol? place) `(sym %place) place)
+        setter (Setf.get-place (car place))]
+    (setter (cons-last val (cdr place)))))
+```
+
+Alright, all that’s left is handling errors gracefully. First, let’s make sure
+we give a good error message when a place isn’t known:
+
+```
+(defmacro setf [place val]
+  (let [place (if (symbol? place) `(sym %place) place)
+        key (car place)
+        setter? (Setf.get-place key)]
+    (if (= nil setter?)
+        (macro-error (list "I didn’t find a `setf` place for " key ". Is it defined?"))
+        (setter? (cons-last val (cdr place))))))
+```
+
+Since `Map.get` will return `nil` when the key doesn’t exist, we can just check
+for that and move on. Now there is only one error case left that we have to
+deal with: garbage input.
+
+```
+(defdynamic malformed (gensym-with 'place-malformed))
+
+(defmacro setf [place val]
+  (let [place (if (symbol? place) `(sym %place) place)
+        key (if (and (list? place) (not (empty? place)) (symbol? (car place)))
+               (car place)
+               malformed)
+        setter? (Setf.get-place key)]
+    (cond
+      (= key malformed)
+        (macro-error (list "The `setf` place " place " is malformed. A list or symbol was expected."))
+      (= nil setter?)
+        (macro-error (list "I didn’t find a `setf` place for " key ". Is it defined?"))
+        (setter? (cons-last val (cdr place))))))
+```
+
+We introduce a special symbol to signal that the place that was put in was not
+a non-empty list that starts with a symbol. Any non-empty list that has a
+symbol as its first element could potentially be a valid place, anything else
+is invalid.
+
+And that’s all we need to do to define `setf`!
+
+## Fin
+
+If you followed my [`derive`](https://blog.veitheller.de/Carp_and_derive_II:_This_Time_Its_Personal.html)
+journey, a lot of the ground we covered today was familiar territory. If you
+didn’t—and also if you did!—, I hope you enjoyed our little journey, maybe
+learned a thing or two, and got inspired to play around with the concepts a bit
+on your own time.
+
+See you soon!
