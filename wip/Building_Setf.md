@@ -1,5 +1,5 @@
-A while back I had the opportunity to work with Common Lisp professionally for
-a while. As many others before and after me, many of the powerful features of
+A while back I had the opportunity to work with Common Lisp professionally.
+As has happened to many before and after me, a lot of the powerful features of
 Common Lisp and its implementations made me a little drunk on power for a
 while, but I quickly recovered.
 
@@ -189,7 +189,7 @@ And that’s all we need to do to define `setf`!
 ## Fin
 
 If you followed my [`derive`](https://blog.veitheller.de/Carp_and_derive_II:_This_Time_Its_Personal.html)
-journey, a lot of the ground we covered today was familiar territory. If you
+journey, a lot of the ground we covered today should be familiar territory. If you
 didn’t—and also if you did!—, I hope you enjoyed our little journey, maybe
 learned a thing or two, and got inspired to play around with the concepts a bit
 on your own time.
