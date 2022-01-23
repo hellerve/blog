@@ -3,7 +3,7 @@ As has happened to many before and after me, a lot of the powerful features of
 Common Lisp and its implementations made me a little drunk on power for a
 while, but I quickly recovered.
 
-Some things stuck with me, however. Among them was [`setf](http://www.lispworks.com/documentation/HyperSpec/Body/m_setf_.htm#setf),
+Some things stuck with me, however. Among them was [`setf`](http://www.lispworks.com/documentation/HyperSpec/Body/m_setf_.htm#setf),
 which feels similar yet different to another concept that I quite adore: [Lenses](https://blog.veitheller.de/Lets_Build_Lenses_in_Carp.html).
 
 As with lenses and many other concepts before them, I decided to try to
@@ -154,7 +154,10 @@ we give a good error message when a place isn’t known:
         key (car place)
         setter? (get-place key)]
     (if (= nil setter?)
-        (macro-error (list "I didn’t find a `setf` place for " key ". Is it defined?"))
+        (macro-error
+          (list
+            "I didn’t find a `setf` place for " key
+            ". Is it defined?"))
         (setter? (cons-last val (cdr place))))))
 ```
 
@@ -167,15 +170,23 @@ deal with: garbage input.
 
 (defmacro setf [place val]
   (let [place (if (symbol? place) `(sym %place) place)
-        key (if (and (list? place) (not (empty? place)) (symbol? (car place)))
+        key (if (and (list? place)
+                     (not (empty? place))
+                     (symbol? (car place)))
                (car place)
                malformed)
         setter? (get-place key)]
     (cond
       (= key malformed)
-        (macro-error (list "The `setf` place " place " is malformed. A list or symbol was expected."))
+        (macro-error
+          (list
+            "The `setf` place " place
+            " is malformed. Expected a list or symbol."))
       (= nil setter?)
-        (macro-error (list "I didn’t find a `setf` place for " key ". Is it defined?"))
+        (macro-error
+          (list
+            "I didn’t find a `setf` place for " key
+            ". Is it defined?"))
         (setter? (cons-last val (cdr place))))))
 ```
 
