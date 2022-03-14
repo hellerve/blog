@@ -28,7 +28,7 @@ Depending on your sensibilities, you can donate to unpolitical or political
 charities. If it fits your sensibilities, you can even donate to the Ukrainian
 military directly. I haven’t done that. I personally donated to the [Anarchist
 Black Cross Dresden](https://abcdd.org/en/2022/03/02/donation-page-for-solidarity-with-anarchist-and-anti-authoritarian-activist-from-ukraine/).
-As the name suggest, this is a political organization and might not fit your
+As the name suggests, this is a political organization and might not fit your
 sensibilities, in which case you’ll have to do your own research.
 
 ### Material
@@ -97,3 +97,9 @@ come to grips with this, I decided to help where I was, and however I could.
 For some of us, getting active like this is giving energy. For some of us, it’s
 draining energy. Only give however much you have to give, and don’t burn
 yourself out. But please, at least get started.
+
+UPDATE: an important thing to mention is that my wife is way more active than I
+am, and for most of the organizing, planning, and executing the credit goes to
+her. It’s a deeply troubling situation when the woman in the relationship takes
+care of most of the emotional and care work, and I want to at least acknowledge
+that. I hope that I succeed in at least pulling my weight.
