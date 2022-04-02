@@ -63,7 +63,7 @@ We end up with something like this for the example above:
   `(addr2 4 3)` and so on.
 
 And that’s the gist of it. If you want to support optional arguments with
-default values, too, you can look [at my implementation over there](https://github.com/carpentry-org/defmulti),
+default values, too, you can look [at my implementation over here](https://github.com/carpentry-org/defmulti),
 since that makes everything a little more messy, but is perfectly possible.
 
 ## An Implementation
@@ -74,8 +74,8 @@ the time, but how would we even get started?
 
 ### Part I: Book-Keeping
 
-Well, first off let’s take care of the definition part. We need somewhere to
-register our variants in. For that, we’re going to use a map.
+Well, first off, let’s take care of the definition part. We need somewhere to
+register our variants. For that we’re going to use a map.
 
 ```
 (defdynamic *defmulti-registry* {})
@@ -138,7 +138,7 @@ But what about the call sites?
 
 To cut the Gordian knot, all we have to do is define a macro inside our macro.
 Macro-defining macros have featured prominently in this blog before, because I
-think they are an underappreciated and udnerstudied area of macro-wrangling.
+think they are an underappreciated and understudied area of macro-wrangling.
 They are also sometimes a nightmare to wrap your head around, and those two
 factoids might possibly be related.
 
@@ -187,7 +187,7 @@ should be. And that’s it!
 
 ## Caveats
 
-Okay, okay, that was cool, and weird, and maybe your head spins a little bit.
+Okay, okay, that was cool, and weird, and maybe your head is spinning a little bit.
 Mine certainly did when I stumbled upon this technique.
 
 Now there are two important caveats with this version of the code:
