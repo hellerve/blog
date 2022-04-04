@@ -56,6 +56,7 @@ rewrite rule (in a macro system, we define a macro dynamically) that is called
 at the call site and replaces the call to the one that is found in the mapping.
 
 We end up with something like this for the example above:
+
 - In our definition we define `addr0`, `addr1`, and `addr2`, and a macro
   `addr`.
 - At the call site the macro `addr` looks at the number of arguments it’s being
