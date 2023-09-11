@@ -58,8 +58,6 @@ body {
   -o-font-feature-settings: 'liga' 1;
   -ms-font-feature-settings: 'liga' 1;
   font-feature-settings: 'liga' 1;
-  display: grid;
-  grid-template-columns: minmax(150px, 25%) 1fr;
 }
 
 body > * {
@@ -166,9 +164,7 @@ a code {
 
 .aside {
   margin: 0;
-  padding-top: 5em;
-  max-width: 200px;
-  min-width: 100px;
+  padding-top: 2em;
   font-weight: 500;
 }
 
@@ -256,7 +252,6 @@ ul ul {
     float: none;
     margin-left: 2em;
     margin-top: 2em;
-    max-width: 600px;
   }
   .aside h1 {
     font-size: 55px;
