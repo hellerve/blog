@@ -548,7 +548,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This page doesn’t link to any other pages, but our exporter doesn’t know that, so we need a bulder for these links. It will collect all the links we need for the page to work. In our case, it will only contain one page link: the one to the page we are working with."
+				"string" : "This page doesn’t link to any other pages, but our exporter doesn’t know that, so we need a builder for these links. It will collect all the links we need for the page to work. In our case, it will only contain one page link: the one to the page we are working with."
 			},
 			{
 				"__type" : "pharoSnippet",
