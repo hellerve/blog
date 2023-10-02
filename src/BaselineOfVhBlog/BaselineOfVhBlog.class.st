@@ -4,16 +4,8 @@ Class {
 	#category : #BaselineOfVhBlog
 }
 
-{ #category : #baseline }
-BaselineOfVhBlog >> baseline: spec [
-	<baseline>
-		^ spec for: #common do: [
-			spec package: 'VhBlog'
-		]
-]
-
 { #category : #accessing }
-BaselineOfVhBlog >> loadLepiter [
+BaselineOfVhBlog class >> loadLepiter [
 	IceRepository registry  
 		detect: [ :aRepository |
 			aRepository name = 'blog' ]
@@ -25,4 +17,12 @@ BaselineOfVhBlog >> loadLepiter [
 			defaultDatabase reload ]
 		ifNone: [
 			self inform: 'Repository not found.' ]
+]
+
+{ #category : #baseline }
+BaselineOfVhBlog >> baseline: spec [
+	<baseline>
+		^ spec for: #common do: [
+			spec package: 'VhBlog'
+		]
 ]
