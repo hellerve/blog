@@ -41,7 +41,7 @@ VhBlogExporter >> export: aPage [
 	aContext := LeHtmlContext new
 			page: aPage;
 			pageLinks: pageLinks;
-			date: (Date today printFormat: #(1 2 3 $/ 1 1));
+			date: Date today;
 			sequencer: sequencer.
 	anExporter := LeHtmlPageExporter new
 			context: aContext;
@@ -59,7 +59,7 @@ VhBlogExporter >> export: aPage [
 	self blogDirectory
 		/ ((aPage title asString copyReplaceAll: ' ' with: '_') , '.html')
 		writeStreamDo: [ :aStream | aStream nextPutAll: htmlString ].
-		
+
 	^ anExporter
 ]
 
