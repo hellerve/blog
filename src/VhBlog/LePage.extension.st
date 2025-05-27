@@ -1,6 +1,16 @@
 Extension { #name : #LePage }
 
 { #category : #'*VhBlog' }
+LePage >> gtMarkdownActionFor: anAction [
+	<lePageAction>
+	^ anAction button
+		tooltip: 'Blog Post as Markdown';
+		priority: 1;
+		label: 'Markdown' ;
+		action: [ :aButton | aButton phlow spawnObject: self asMarkdownPage ]
+]
+
+{ #category : #'*VhBlog' }
 LePage >> gtPublishBlogActionFor: anAction [
 	<lePageAction>
 	^ anAction button
