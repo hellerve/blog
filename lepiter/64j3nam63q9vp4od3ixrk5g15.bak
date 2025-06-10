@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:16:21.411408+02:00"
+						"dateAndTimeString" : "2025-05-27T00:24:37.004613+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "GitHub tells me that it has been 1.5 years and a bit over 700 commits since I’ve started work on [gt4llm](https://github.com/feenkcom/gt4llm), the Large Language Model workbench inside Glamorous Toolkit. Time truly flies."
+				"string" : "GitHub tells me that it has been 1.5 years, a bit over 700 commits, and around 15,000 lines of code since I’ve started work on [gt4llm](https://github.com/feenkcom/gt4llm), the Large Language Model workbench inside Glamorous Toolkit. Time truly flies."
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:10:40.389758+02:00"
+						"dateAndTimeString" : "2025-06-09T21:39:16.912772+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:12:50.752565+02:00"
+						"dateAndTimeString" : "2025-06-09T21:40:21.893403+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I haven’t written much about the workbench outside of the Glamorous Toolkit book, and if you want to learn more about it, [I suggest reading there](https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti). It has all the context I know to talk about<sup><a href=\"#1\">1</a></sup>."
+				"string" : "I’ve written about my work on gt4llm a bit [here](https://blog.veitheller.de/LlmL.html), and I won’t be doing that again. I promised a more philosophical blog post, and this is my attempt at doing so."
 			},
 			{
 				"__type" : "textSnippet",
@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:14:56.431061+02:00"
+						"dateAndTimeString" : "2025-06-09T21:41:01.271694+02:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Today, I want to talk about something much deeper, something that begins before we talk about any technological consideration, though it informs it. I want to talk about how I see most people using LLMs, and why I think they’re doing it wrong, and how they could do it better."
+				"string" : "I want to talk about something much deeper than LLMs and their whimsical implementations, something that begins before we talk about any technological consideration, though it informs it. I want to talk about how I see most people using LLMs, and why I think they’re doing it wrong, and how they could do it better. I also want to talk about why LLMs work differently than people think they do."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:45:16.2902+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:46:15.66348+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "KzRWjorzDQCAAbROBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As a disclaimer: I heavily use em-dashes and always have. Still, I want to assert that this should not be taken to mean that this article has been written by a machine. It would have probably done a better job, as I’m a terrible waffler."
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +177,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:15:06.149344+02:00"
+						"dateAndTimeString" : "2025-06-09T21:40:02.433465+02:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +187,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "### A blind oracle of hegemony"
+				"string" : "### I: A blind oracle of hegemony"
 			},
 			{
 				"__type" : "textSnippet",
@@ -166,7 +203,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:15:12.966335+02:00"
+						"dateAndTimeString" : "2025-06-09T21:51:50.359391+02:00"
 					}
 				},
 				"editEmail" : {
@@ -177,7 +214,192 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:15:12.966335+02:00"
+						"dateAndTimeString" : "2025-06-09T21:55:13.335803+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "hTnTpYrzDQCcuy5eBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "LLMs are nothing if not addicted to the average. This is by design, as a good statistical model is always centered—figuratively and literally—around the average. And so, if you ask a middle-of-the-road question, you will get a middle-of-the-road answer, since an LLM, unless explicitly prompted to do so, will not randomly decide to become agent provocateur and challenge all your ideas about the world. Usually, that is a good idea."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:55:32.531941+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:58:18.666807+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MQD0sYrzDQConoATBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Why is this important? In most settings now, I see people approach the LLM as an all-knowing oracle, because in some respects it almost is. They hand it their problem (usually relatively sizable), and expect it to be solved. If you do not believe me that anyone would just go into an interaction so unprepared, just watch people vibe code."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:58:27.832374+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T22:00:15.789784+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "h1ggvYrzDQCzq7X4BRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What people do not realize, though, is that the oracle is mostly concerned with averages, and so it will give you a middle-of-the-road solution, if it is a functional solution at all. It was trained to be middle-of-the-road. Being middle-of-the-road is usually a good enough answer, even if noone wants to be described as such, for equally good reason."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T22:00:17.597001+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T22:00:37.22918+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "AA8PxIrzDQC7sXKWBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "TO DO: HERE BE DRAGONS, NOTES:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T22:00:38.036914+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T22:00:49.710522+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lPJGxYrzDQC8VQ8WBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "if you base your business plan on the statistical averages of business plans, you won’t come up with a good company that is able to innovate and execute. if you build your software application on the statistical average of software applications, you’ll get slop, because most software is slop. and, as we have by now mostly agreed (thank god), if you create a picture based on the statistical average of pictures, you don’t get art. you still get a sensible-looking, middle of the road system. but if you value your work and the work of the professionals working in the fields you are currently automating, then you know that’s not good enough.\n\nand i think that’s why everyone wants to automate everyone else’s work but not their own. because they know enough about their own field to think or even know that they are not so easily replacable, that there is nuance and taste and the quality without a name (TM: christopher alexander) involved. but if you look at work you’re not familiar with, you don’t have this nuance. you don’t have taste. you are an idiot in any field you haven’t explored deeply, and that’s when you think it would be easy to automate the work you don’t know how to do. it sounds stupid because it is stupid, but it’s also a deeply human thing to think."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:41:06.527666+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:41:13.467781+02:00"
 					}
 				},
 				"uid" : {
@@ -187,7 +409,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "### II: The great hyperstition"
 			},
 			{
 				"__type" : "textSnippet",
@@ -203,7 +425,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:12:52.138207+02:00"
+						"dateAndTimeString" : "2025-06-09T21:41:43.896565+02:00"
 					}
 				},
 				"editEmail" : {
@@ -214,17 +436,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:12:56.531811+02:00"
+						"dateAndTimeString" : "2025-06-09T21:42:21.113152+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "3nho/HLyDQCmqRk4CBR5Zw=="
+					"uidString" : "nFWtgYrzDQCxSGfIBRKL7w=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "##### Footnotes"
+				"string" : "So, where does this disconnect between how people (in my opinion) *should* work with LLMs, and how they actually *do*?"
 			},
 			{
 				"__type" : "textSnippet",
@@ -240,7 +462,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:12:56.661077+02:00"
+						"dateAndTimeString" : "2025-06-09T21:41:24.287851+02:00"
 					}
 				},
 				"editEmail" : {
@@ -251,7 +473,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-05-27T00:13:33.244343+02:00"
+						"dateAndTimeString" : "2025-06-09T23:25:24.009009+02:00"
 					}
 				},
 				"uid" : {
@@ -261,7 +483,229 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "<span id=\"1\">1.</span> If you find anything missing, do not hesitate to contact me or [file an issue](https://github.com/feenkcom/gtoolkit/issues/)!"
+				"string" : "I believe most of the mismatch comes from a great hyperstition, and where people sit in the big cult chamber of the LLM. Those that are “in the know” tend to perceive the current state as a given, and talk of LLMs in terms of their value accretion potential, its paradigms, and the things it could fundamentally enable—even if it currently sucks at them. Those that are “outsiders” cannot easily distinguish between what works and what doesn’t, and take the hyperstituous, futuristic aspect of the technology as its current state<sup><a href=\"1\">1.</a></sup>. It doesn’t help that we mix tech and product demos into a pasty slop that requires us to test every feature we see online to know whether it truly works as advertised or not."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:47:42.949057+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:50:43.159573+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "sQoUl4rzDQCLXniLBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In the end, this hyperstition is also what wills the AI/LLM industry into existence by treating it as a foregone conclusion. Just like it was clear that we would once conquer the skies while people still dropped like paperweights, it is clear that AI is going to replace you (but, of course, not me, for my work *is too important to be replaced by machines). It just doesn’t make for very good products, because polish is bad for velocity—you know what I’m talking about if you’ve ever survived a gruelling set of sprints."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:50:44.600666+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:50:48.48785+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HNPnoYrzDQCXtBPCBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Fin"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:50:49.060118+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:51:37.034381+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Rd8roorzDQCX23C5BRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Now I’ve run out of ideas, and want to end it there. As usual, I take no time to truly dive deep into any of my ideas in writing; I throw them over the fence and whatever you catch, you can keep."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:51:39.353315+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T21:51:48.206633+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tUorpYrzDQCb6mvwBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I hope none of it landed in your eye."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T23:25:28.02718+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T23:25:31.13667+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gwWq9IvzDQC9A+XUBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#### Footnotes"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T23:25:31.302707+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-06-09T23:26:11.047932+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "XgXc9IvzDQC9TZ4xBRKL7w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "<span id=\"1\">1.</span> This whole sentiment has been talked about much more fluently than I ever could by [the indomitab"
 			}
 		]
 	},
