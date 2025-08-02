@@ -259,22 +259,12 @@ code {
 }
 
 .code-snippet {
-  border-left: 10px solid #d9e4ea;
-  background: #d9e4ea;
   font-family: "triplicate", monospace;
-  padding-left: 10px;
-  border-radius: 0 0 0 5px;
-  tab-size: 4;
-  margin-top: -2px;
   overflow-y: scroll;
 }
 
 .code-snippet code {
     font-family: "triplicate", monospace;
-    color: inherit;
-    white-space: pre;
-    display: block;
-    margin-block-end: 1rem;
 }
 
 @media(max-device-width:960px){
