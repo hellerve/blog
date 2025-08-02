@@ -18,7 +18,7 @@
         font-display: swap;
       }
       .content {
-        max-width: 800px;
+        max-width: 500px;
         margin-left: 10vw;
         font-size: 20px;
         font-family: 'charterregular';
@@ -26,10 +26,6 @@
       h1 {
         font-weight: 500;
         font-size: 30px;
-        display: inline-block;
-      }
-      .header {
-        width: 100%;
       }
       ul {
         list-style-type: none;
@@ -44,13 +40,6 @@
       a:hover {
         border-bottom: 2px solid #d6dde3;
       }
-      #filter {
-        margin-left: 5em;
-        margin-bottom: 1em;
-        padding: 0.2em;
-        font-size: 1em;
-        font-family: inherit;
-      }
       .bottom a {
         border-bottom: 2px solid #d6dde3;
       }
@@ -59,14 +48,16 @@
         border-bottom: 2px solid #d6dde3;
         text-decoration: none;
       }
+      @media all and (max-width:1000px) {
+        .content {
+          max-width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="content">
-      <div class="header">
-        <h1>Veit's Blog</h1>
-        <input id="filter" type="search" placeholder="Search" />
-      </div>
+      <h1>Veit's Blog</h1>
       <ul>
         <li class="post"><a href="/News_from_The_Ministry_of_Bad_Ideas,_or:_Delayed_F-Strings.html">News from The Ministry of Bad Ideas, or: Delayed F-Strings</a></li>
         <li class="post"><a href="/Waves,_inspired_by_Hokusai_sketches.html">Waves, inspired by Hokusai sketches</a></li>
@@ -252,17 +243,6 @@
       <p class="bottom"><a href="/open_invite.html">Open Invitation</a></p>
       <p class="bottom"><a href="/imprint.html">Imprint</a></p>
       <p class="bottom"><a href="/gdpr_notice.html">GDPR Notice</a></p>
-      <script>
-        const filter = document.getElementById('filter');
-        if (filter) {
-          filter.addEventListener('input', () => {
-            const term = filter.value.toLowerCase();
-            document.querySelectorAll('li.post').forEach(li => {
-              li.style.display = li.textContent.toLowerCase().includes(term) ? '' : 'none';
-            });
-          });
-        }
-      </script>
       <div class="rc-scout"></div>
       <script async="" defer="" src="https://www.recurse-scout.com/loader.js?t=3f214b4d8605308d27685ebd4548905e"></script>
     </div>
