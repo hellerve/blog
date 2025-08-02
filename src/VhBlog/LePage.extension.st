@@ -6,8 +6,12 @@ LePage >> gtMarkdownActionFor: anAction [
 	^ anAction button
 		tooltip: 'Blog Post as Markdown';
 		priority: 1;
-		label: 'Markdown' ;
-		action: [ :aButton | aButton phlow spawnObject: self asMarkdownPage ]
+		label: 'Markdown';
+		action: [ :aButton | 
+			aButton phlow
+				spawnObject: (GtLlmPageExporter new
+						page: self;
+						export) ]
 ]
 
 { #category : #'*VhBlog' }
