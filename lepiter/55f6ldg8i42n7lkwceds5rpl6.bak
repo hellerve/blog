@@ -681,6 +681,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-05T11:02:41.870857+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-05T11:06:01.887137+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MNVEOfz3DQCZlIxxB8qc7A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "All code examples in the coming blog posts will be Python and Lisp, not because I think those are the most elegant languages, but because they illustrate two REPL philosophies that are just different enough. If I left out your favorite kind of REPL, I’m very sorry. I would have loved to talk a bit about Haskell, OCaml, Julia, or any other language that does interesting, unique things, but I fear these blog posts would have gotten much too long if I would have included every cool thing I’ve seen over the years."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-08-04T13:10:31.386619+02:00"
 					}
 				},
@@ -692,7 +729,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-04T13:19:55.782552+02:00"
+						"dateAndTimeString" : "2025-08-05T11:02:41.50537+02:00"
 					}
 				},
 				"uid" : {
@@ -766,7 +803,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-04T13:47:24.433883+02:00"
+						"dateAndTimeString" : "2025-08-04T13:47:37.328642+02:00"
 					}
 				},
 				"uid" : {
@@ -776,7 +813,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "<span id=\"1\">1.</span> I mentioned Smalltalk above, but I believe it’s worth mentioning here that it’s an outlier in this regard: despite its emphasis on liveness and introspection, it does not have a culture of REPLs, instead focusing on fully integrated IDEs that make the state of the art of other languages look like"
+				"string" : "<span id=\"1\">1.</span> I mentioned Smalltalk above, but I believe it’s worth mentioning here that it’s an outlier in this regard: despite its emphasis on liveness and introspection, it does not have a culture of REPLs, instead focusing on fully integrated IDEs that make the state of the art of other languages look like flint axes."
 			}
 		]
 	},
