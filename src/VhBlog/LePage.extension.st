@@ -9,7 +9,7 @@ LePage >> gtMarkdownActionFor: anAction [
 		label: 'Markdown';
 		action: [ :aButton | 
 			aButton phlow
-				spawnObject: (GtLlmPageExporter new
+				spawnObject: (GtLlmLepiterContentExporter new
 						page: self;
 						export) ]
 ]
