@@ -226,15 +226,15 @@ table + .figure-label {
 
 ol li {
   margin-left: 1em;
-}
-
-ol li {
   border-left: 2px solid;
   padding-left: 0.5em;
 }
 
-ul ul {
-  margin-left: 1em;
+ul li {
+  margin-left: 0.5em;
+  border-left: 2px solid;
+  padding-left: 0.5em;
+  list-style: none;
 }
 
 code {
