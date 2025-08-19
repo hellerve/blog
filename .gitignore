@@ -8,3 +8,5 @@ priv/
 
 # haskell build stuff
 dist-newstyle
+
+*.html
