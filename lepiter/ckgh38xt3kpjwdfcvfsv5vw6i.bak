@@ -1,0 +1,1260 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:08:39.545475-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:07:52.228772-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3MD7oyv5DQCMiw8HDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Threat modeling is weird. Depending on how you approach it, it’s either supremely boring security theater or a fun tabletop game where your team can play the bad guys and also gain valuable insights into the fundamental assumptions about your product."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:12:08.623823-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:13:38.850693-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uPMyxiv5DQCUlgiLDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The reason for this is quite simple: to make it fun, you have to prioritize it, and truly care. If you dive into the process wanting to produce another document for your ISMS, you won’t have a very good time."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:13:42.244036-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:08:05.20608-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YTtnzSv5DQCa1f/XDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Not all organizations need the full [STRIDE](https://en.wikipedia.org/wiki/STRIDE_model) monty, either, especially if they make a threat model for their own benefit rather than a certification. There are other options, and you might be well served just doing [attack path analysis](https://www.rapid7.com/fundamentals/attack-path-analysis/) on demand when you develop your system’s boundaries."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:18:18.788593-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:19:33.500638-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0gzr3Cv5DQChAPUHDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In the end, what methodology you choose doesn’t matter. What you want is to answer the four questions posed in [the threat modeling manifesto](https://www.threatmodelingmanifesto.org/):"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:19:44.453578-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:20:01.615555-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xvWJ4iv5DQCk2C8mDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "1. What are we working on?\n2. What can go wrong?\n3. What are we going to do about it?\n4. Did we do a good enough job?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:20:02.990654-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:20:52.701069-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+/UY5Cv5DQClkMB0DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As long as you can answer these questions confidently, you’ve done a good job."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:20:53.225997-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:22:50.346517-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "AoAX5yv5DQCnGrK7DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In this blog post, I’ll try to give some pointers about how to implement threat modeling in an organisation in a way that is lightweight while still being useful and hopefully can generate some buy-in by your team."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:22:51.357882-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:40:39.993952-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rAwi7iv5DQCtqVJBDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## On modeling techniques"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:23:07.001329-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:24:52.415387-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "er8Q7yv5DQCucFaWDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "STRIDE is probably the industry standard, pioneered by Microsoft and quasi-standardized across the security community. It’s a great way to think about threats, and many gamifying techniques exist to make fun workshops for your team, either internally or led by a consultant. I’ve done multiple of these workshops, and they’re always a good time."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:29:27.143674-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:08:26.617653-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gj65BSz5DQCGrDBSDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The thing is that a full STRIDE assessment is very heavyweight and extending the model as you go can be a pain, especially if the initial creation has been guided by an expert who made the process effortless for you. Many consultants have their own tools at hand to help you; they will provide threat model delta templates for you that you can attach to PRs, add a section to your user story that details the user story, and so on."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:24:55.366923-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:29:44.584526-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HkaG9Sv5DQC2bG65DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "That’s all well and good, but not what true ownership looks like. In the worst case you’ll end up with a single photo of the threat model you came up with during a workshop five years ago, and dozens or even hundreds of delta documents that amend it. Good luck trying to understand your current threat landscape at a glance."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:35:33.638707-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:39:28.5798-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uu/LBiz5DQCIJOqqDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Before I go into what I recommend I also want to mention that STRIDE is not the be-all-end-all. Other frameworks exist, from [PASTA](https://threat-modeling.com/pasta-threat-modeling) to [OCTAVE Allegro](https://www.sei.cmu.edu/library/introducing-octave-allegro-improving-the-information-security-risk-assessment-process/) and MITRE’s [ATT&CK](https://attack.mitre.org/). There is even a [NIST guide on threat modeling](https://csrc.nist.gov/pubs/sp/800/154/ipd). The literature and practice is deep, and I don’t want to pretend that I understand or even know it all. My point, however, is that you don’t need to know all of the ideology to create a process that is valuable for your system."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:39:32.39455-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:40:48.977316-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Z6ifKSz5DQCTEyQ/DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## The process"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:41:46.096133-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:42:45.163771-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dKdjLiz5DQCTxi7ADwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "With all of the preliminaries out of the way, let’s start sketching a process. Here’s the CliffsNotes version:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:42:46.665746-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:09:05.902239-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0PxgNSz5DQCYFl3ODwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "1. Assess the status quo. You can make it a fun workshop with your team, either self-guided or mediated by a professional. Just ensure that the deliverable in the end is a document that is in some way extensible. Not just a screenshot that lives on your Wiki for all eternity.\n2. Do a lightweight re-assessment for feature PRs that change inputs, auth, or data flow. Produce a threat model delta.\n3. After the PR was merged, play the delta back into the model proper."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:04.941819-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:23.960957-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vg2lPyz5DQCh0xdHDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "To make this fully actionable, we’ll expand each of these points in turn."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:24.243436-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:33.150105-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "LfhYQiz5DQCliOhJDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Initial assessment"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:48:58.623861-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:49:56.38794-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1Z+MSyz5DQCnR/Y+DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "This one is probably the most effort, but it also shouldn’t need to happen very often. I’d do it once initially, and then again if the need arises, i.e. when developing a new service or if a major redesign is being tackled."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:50:15.937979-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:58:41.777483-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "prYTTyz5DQCr2AB9DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The path most traveled here is probably to do STRIDE using some gamified techniques. There are [card games](https://www.microsoft.com/en-us/download/details.aspx?id=20303), “user stories” for attackers, red/blue/green roleplays (attacker/defender/product), and more. These days, even asking an LLM for an agenda for a workshop might lead to good results. There are also many security professionals that are happy to help here."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:57:26.613117-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:59:19.767093-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6O7TaSz5DQCymYvvDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The end result should be captured in an extensible document, however. In the case of STRIDE, this can be a simple page on your wiki that contains a table of threats, like so:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:59:21.841639-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:00:52.207493-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "liyycCz5DQC4EIUNDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n**diagram goes here** [client] -> [service] -> [store]\n**boundaries we defined:**\n**assets at risk:**\n\n| id | category | risk | asset/boundary | likelihood | impact | mitigation | proof (test/monitor) | owner |\n|----|----------|------|----------------|------------|--------|------------|----------------------|-------|\n| S1 | Spoofing |      |                | M          | H      |            |                      |       |\n| S2 | Tampering|      |                |            |        |            |                      |       |\n| S3 | Repudiation |   |                |            |        |            |                      |       |\n| S4 | Info Disclosure | |             |            |        |            |                      |       |\n| S5 | DoS      |      |                |            |        |            |                      |       |\n| S6 | Elevation|      |                |            |        |            |                      |       |\n\n**non-actions:** we accepted the risk that the government might MitM all of our traffic\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:00:56.165407-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:17:53.681826-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FHFRdiz5DQC6twiKDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The format of this deliverable depends on the methodology used and your documentation software, of course, so YMMV. This document should have a clearly defined owner, e.g. your CISO or Head of Security. If you don’t have dedicated security personnel, favor someone with technical expertise as owner of this document."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:34.238476-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:43.482457-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jXzxQiz5DQCmLDdDDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Re-assessment on features"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:55:37.857794-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:56:43.646666-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rQsppiz5DQC9aA28DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "When a feature is being worked on that touches anything security-related (think authentication, PII, network configurations, and the like), a small re-assessment should be part of the PR flow."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:56:52.415981-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:57:21.692884-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jppE6y75DQCWl9I+DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Once again the format depends on your tools and framework, but it could look like this:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:57:23.359535-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:59:37.839385-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mjJd7S75DQCY+E3DDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n**data touched:** PII? secrets? network? tokens?\n\n### risks introduced\n\n| id | risk | stride | likelihood | impact | mitigation | proof | owner |\n|----|------|--------|------------|--------|------------|-------|-------|\n| S1 |      |        | M          | H      |            |       |       |\n| S2 |      |        |            |        |            |       |       |\n\n### risks obsoleted\n\n| id | risk | reasoning |\n|----|------|--------|\n| S1 | request spoofing | we no longer do any network requests |\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T08:57:27.430313-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:00:12.638718-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "aFGb7S75DQCZC6c1DwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "These should be reviewed—and challenged—like any other part of the PR."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:46:44.311833-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T05:47:15.451731-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UjGLQyz5DQCmweTGDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Delta to model"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:16:26.464328-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:20:32.94759-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "W63ErSz5DQC9bMXrDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Someone has to do the dirty work. In this case, it should be the person who owns the initial document created in step 1. You may decide the update cadence of the document yourself, but I favor short feedback loops. If you work in an agile environment, you can do it as part of each sprint or cycle, but you can even do it on merge of each PR that contains a threat model delta."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T06:20:47.046688-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:00:16.054468-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "QdhMvSz5DQCNFdcGDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Keep a changelog and a version of the page for each shipped version of your software (i.e. one list for V1, one vor V1.1, etc.). These may rely on the versioning of your documentation software, but it’s important that it’s there."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:00:16.394883-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:00:19.511244-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iIOt9y75DQCfCQdUDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Fin"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:01:18.555763-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:02:47.90447-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Y/Pg+i75DQCi/hfsDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I firmly believe that a simple process that is being followed and has buy in is better than a complex process that will get you through your next audit, and hopefully this little walkthrough inspires you to introduce your own, or overhaul your existing ones if they don’t work for you."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:02:51.80413-06:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-08-20T09:03:10.047882-06:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gN7wAC/5DQCowP6bDwtL1A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "You shouldn’t need me to get this off the ground and running, but if you do, I’m here."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-08-20T05:02:19.558823-06:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-08-20T06:18:32.613865-06:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Threat Modeling For the Rest of Us"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "aa35fba3-2bf9-0d00-8c8a-65460f0b4bd4"
+	}
+}
