@@ -325,7 +325,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-20T05:24:52.415387-06:00"
+						"dateAndTimeString" : "2025-08-21T02:46:27.309101-06:00"
 					}
 				},
 				"uid" : {
@@ -335,7 +335,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "STRIDE is probably the industry standard, pioneered by Microsoft and quasi-standardized across the security community. It’s a great way to think about threats, and many gamifying techniques exist to make fun workshops for your team, either internally or led by a consultant. I’ve done multiple of these workshops, and they’re always a good time."
+				"string" : "STRIDE is probably the industry standard, pioneered by Microsoft and quasi-standardized across the security community. It’s a great way to think about threats, and many gamifying techniques exist to make fun workshops for your team, either internally or led by a consultant. I’ve hosted and taken part in many of these workshops, and they’re always a good time."
 			},
 			{
 				"__type" : "textSnippet",
@@ -362,7 +362,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-20T09:08:26.617653-06:00"
+						"dateAndTimeString" : "2025-08-21T02:47:04.8587-06:00"
 					}
 				},
 				"uid" : {
@@ -372,7 +372,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The thing is that a full STRIDE assessment is very heavyweight and extending the model as you go can be a pain, especially if the initial creation has been guided by an expert who made the process effortless for you. Many consultants have their own tools at hand to help you; they will provide threat model delta templates for you that you can attach to PRs, add a section to your user story that details the user story, and so on."
+				"string" : "The thing is that a full STRIDE assessment is very heavyweight and extending the model as you go can be a pain, especially if the initial creation has been guided by an expert who made the process effortless for you. Many consultants have their own tools at hand to help you; they will provide threat model delta templates for you that you can attach to PRs, add a section to your user story that details the threat implications, and so on."
 			},
 			{
 				"__type" : "textSnippet",
@@ -399,7 +399,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-20T05:29:44.584526-06:00"
+						"dateAndTimeString" : "2025-08-21T02:47:13.226226-06:00"
 					}
 				},
 				"uid" : {
@@ -409,7 +409,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "That’s all well and good, but not what true ownership looks like. In the worst case you’ll end up with a single photo of the threat model you came up with during a workshop five years ago, and dozens or even hundreds of delta documents that amend it. Good luck trying to understand your current threat landscape at a glance."
+				"string" : "That’s all well and good, but it’s no. In the worst case you’ll end up with a single photo of the threat model you came up with during a workshop five years ago, and dozens or even hundreds of delta documents that amend it. Good luck trying to understand your current threat landscape at a glance."
 			},
 			{
 				"__type" : "textSnippet",
@@ -1102,7 +1102,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-20T09:00:16.054468-06:00"
+						"dateAndTimeString" : "2025-08-20T09:09:24.413528-06:00"
 					}
 				},
 				"uid" : {
@@ -1112,7 +1112,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Keep a changelog and a version of the page for each shipped version of your software (i.e. one list for V1, one vor V1.1, etc.). These may rely on the versioning of your documentation software, but it’s important that it’s there."
+				"string" : "Keep a changelog and a version of the page for each shipped version of your software (i.e. one list for V1, one for V1.1, etc.). These may rely on the versioning of your documentation software, but it’s important that it’s there."
 			},
 			{
 				"__type" : "textSnippet",

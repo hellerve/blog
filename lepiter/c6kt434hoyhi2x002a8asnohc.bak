@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:51:27.808996-05:00"
+						"dateAndTimeString" : "2025-08-21T02:40:13.764212-06:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Software Bills of Materials (SBOM) are something I rarely think about actively. It’s useful, yes, but for most projects I just make it part of my CI/CD pipeline (mostly because it’s in my templates) along with some sanity checks, and forget about it."
+				"string" : "Software Bills of Materials (SBOM) are something I rarely think about actively. They’re useful, yes, but for most projects I just make it part of my CI/CD pipeline (mostly because it’s in my templates) along with some sanity checks, and forget about it."
 			},
 			{
 				"__type" : "textSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:50:07.29658-05:00"
+						"dateAndTimeString" : "2025-08-21T02:40:48.077375-06:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This year, however, is different. I’ve been living through this weird phase of [frequency illusion](https://en.wikipedia.org/wiki/Frequency_illusion) where the topic seemed to come up in every project I touch. A lot of the due diligence (DD) projects I’ve been involved this year had some major or minor hiccups related to them, and I have to think about them in my role as Security Consultant for the [CIVITAS/Core project](https://docs.core.civitasconnect.digital/), and so I decided to document some best practices and fundamentals while they’re fresh in my mind."
+				"string" : "This year, however, is different. I’ve been living through this weird phase of [frequency illusion](https://en.wikipedia.org/wiki/Frequency_illusion) where the topic seems to come up in every project I touch. A lot of the due diligence (DD) projects I’ve been involved this year have had some major or minor hiccups related to them, and I have to think about them in my role as Security Consultant for the [CIVITAS/Core project](https://docs.core.civitasconnect.digital/), so I decided to document some best practices and fundamentals while they’re fresh in my mind."
 			},
 			{
 				"__type" : "textSnippet",
@@ -177,7 +177,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:18:42.7292-05:00"
+						"dateAndTimeString" : "2025-08-21T02:40:54.85351-06:00"
 					}
 				},
 				"uid" : {
@@ -187,7 +187,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "All is not lost, however. Many code hosting platforms have some builtin facilities for working with SBOMs. [GitLab, for instance, has some dependency scanning capabilities](https://docs.gitlab.com/user/application_security/dependency_scanning/), including helping you find vulnerabilities in your dependencies. [GitHub can even generate SBOMs for you](https://github.blog/enterprise-software/governance-and-compliance/introducing-self-service-sboms/). You should probably invest some time into finding out what’s there for your platform if you want to get the most out of them for you and your project. At the very least it can help you perform a license check every once in a while to help you sleep at night."
+				"string" : "All is not lost, however. Many code hosting platforms have some built in facilities for working with SBOMs. [GitLab, for instance, has some dependency scanning capabilities](https://docs.gitlab.com/user/application_security/dependency_scanning/), including helping you find vulnerabilities in your dependencies. [GitHub can even generate SBOMs for you](https://github.blog/enterprise-software/governance-and-compliance/introducing-self-service-sboms/). You should probably invest some time into finding out what’s there for your platform if you want to get the most out of them for you and your project. At the very least it can help you perform a license check every once in a while to help you sleep at night."
 			},
 			{
 				"__type" : "textSnippet",
@@ -214,7 +214,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:17:38.589953-05:00"
+						"dateAndTimeString" : "2025-08-21T02:41:08.468667-06:00"
 					}
 				},
 				"uid" : {
@@ -224,7 +224,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Apart from that, though, it’s also often required for compliance reasons, and is often asked for in Due Diligence processes (for instance by yours truly). It’s just good to have them at hand when someone asks for them, even if you don’t really use them yourself (even though you really should)."
+				"string" : "Apart from that, though, it’s also often required for compliance reasons, and is often asked for in DD processes (for instance by yours truly). It’s just good to have them at hand when someone asks for them, even if you don’t really use them yourself (even though you really should)."
 			},
 			{
 				"__type" : "textSnippet",
@@ -251,7 +251,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:19:19.757545-05:00"
+						"dateAndTimeString" : "2025-08-21T02:41:22.832429-06:00"
 					}
 				},
 				"uid" : {
@@ -261,7 +261,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "And no, it’s probably not a good idea to produce this list manually, or to scramble it together ad-hoc when someone asks for it. They will be able to tell, and your list will probably be incomplete. It’s neither useful nor a good look."
+				"string" : "And no, it’s probably not a good idea to produce this list manually, or to jumble something together ad-hoc when someone asks for it. They will be able to tell, and your list will probably be incomplete. It’s neither useful nor a good look."
 			},
 			{
 				"__type" : "textSnippet",
@@ -325,7 +325,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:21:08.882657-05:00"
+						"dateAndTimeString" : "2025-08-21T02:41:35.556806-06:00"
 					}
 				},
 				"uid" : {
@@ -335,7 +335,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "SBOMs are usually pretty straightforward, but there are some general rules I usually abide by when dealing with them, and I want to share them with you."
+				"string" : "SBOMs are usually pretty straightforward, but there are some general rules I usually abide by when dealing with them."
 			},
 			{
 				"__type" : "textSnippet",
@@ -399,7 +399,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:46:39.203584-05:00"
+						"dateAndTimeString" : "2025-08-21T02:42:24.250801-06:00"
 					}
 				},
 				"uid" : {
@@ -409,7 +409,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "What should be included? While this depends on the project, I’d say by default only what makes it to production. If you have build and test dependencies, you can include them with a special flag, but it likely will only produce unwanted noise and be a nuisance (which will lower the value provided by the tool). If you ship containers or infrastructure, include the base images and their package lists as well. That will make sure that you get nudged when it’s time to update."
+				"string" : "What should be included? While this depends on the project, I’d say by default only what makes it to production. If you have build and test dependencies, you can include them with a special flag, but it likely will only produce unwanted noise and be a nuisance (which will lower the value provided by the tool). If you ship containers or infrastructure, include the base images and their package lists as well. That will ensure that you get nudged when it’s time to update."
 			},
 			{
 				"__type" : "textSnippet",
@@ -473,7 +473,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:50:30.670386-05:00"
+						"dateAndTimeString" : "2025-08-21T02:43:05.779719-06:00"
 					}
 				},
 				"uid" : {
@@ -483,7 +483,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "There are other things you can think about when you are really truly bored, like [serial numbers, Package URLs (purls)](https://cyclonedx.org/docs/1.6/xml/), [SLSA provenance attestations](https://slsa.dev/spec/v1.0/provenance), general signatures and [in-toto attestations](https://docs.sigstore.dev/cosign/verifying/attestation/) in particular, and many more things, but I’d hope that the tool of your choice does most of this for you, and ships defaults that let you sleep at night. I certainly don’t want to have to think about any of it."
+				"string" : "There are other things you can think about when you are really truly bored, like [serial numbers, Package URLs (purls)](https://cyclonedx.org/docs/1.6/xml/), [SLSA provenance attestations](https://slsa.dev/spec/v1.0/provenance), general signatures and [in-toto attestations](https://docs.sigstore.dev/cosign/verifying/attestation/) in particular, and many more things, but I’d hope that your tool of choice does most of this for you and ships defaults that let you sleep at night. I certainly don’t want to have to think about any of it."
 			},
 			{
 				"__type" : "textSnippet",
@@ -732,7 +732,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T15:55:15.442688-05:00"
+						"dateAndTimeString" : "2025-08-21T02:43:17.537674-06:00"
 					}
 				},
 				"uid" : {
@@ -742,7 +742,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I said above that how you set things up will depend on your technologies, ecosystems, and platforms, but I don’t like to keep things fully theoretical, so I decided to at least leave you with a minimum example."
+				"string" : "I said above that how you set things up will depend on your technologies, ecosystems, and platforms, but I don’t like to keep things fully theoretical, so I thought I’d provide at least"
 			},
 			{
 				"__type" : "textSnippet",
@@ -991,7 +991,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-18T16:03:49.381331-05:00"
+						"dateAndTimeString" : "2025-08-18T16:03:56.922194-05:00"
 					}
 				},
 				"uid" : {
@@ -1001,7 +1001,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "It’s a non-negligible amount of YAML, but it’s pretty trivial, and by setting `artifacts` above, you will also be able to use GitLab’s security reports."
+				"string" : "It’s a non-negligible amount of YAML, but it’s pretty trivial, and by setting `artifacts` above, you will also be able to use GitLab’s security reports and general SBOM UI."
 			},
 			{
 				"__type" : "textSnippet",
