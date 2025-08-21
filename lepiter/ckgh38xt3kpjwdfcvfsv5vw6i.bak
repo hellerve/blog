@@ -399,7 +399,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T02:47:13.226226-06:00"
+						"dateAndTimeString" : "2025-08-21T02:47:24.469678-06:00"
 					}
 				},
 				"uid" : {
@@ -409,7 +409,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "That’s all well and good, but it’s no. In the worst case you’ll end up with a single photo of the threat model you came up with during a workshop five years ago, and dozens or even hundreds of delta documents that amend it. Good luck trying to understand your current threat landscape at a glance."
+				"string" : "That’s all well and good, but it’s not true ownership. In the worst case you’ll end up with a single photo of the threat model you came up with during a workshop five years ago, and dozens or even hundreds of delta documents that amend it. Good luck trying to understand your current threat landscape at a glance."
 			},
 			{
 				"__type" : "textSnippet",
