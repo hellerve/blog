@@ -362,7 +362,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T05:59:19.185553-06:00"
+						"dateAndTimeString" : "2025-08-21T05:38:08.318343-06:00"
 					}
 				},
 				"uid" : {
@@ -372,7 +372,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Relatedly, noise is lower: I don’t have to configure things every time and, worst case, screw it up. I can rest easy knowing that things are made correct for me."
+				"string" : "Relatedly, noise is lower: I don’t have to configure things to be set up every time and, worst case, screw it up. I can rest easy knowing that things are made correct for me."
 			},
 			{
 				"__type" : "textSnippet",
