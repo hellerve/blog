@@ -871,14 +871,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T18:24:41.95527-06:00"
+						"dateAndTimeString" : "2025-08-21T18:24:37.037854-06:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "QWQstxH5DQC1v5LbB+THzQ=="
 				},
-				"code" : "from sentence_transformers import CrossEncoder\n\nclass Reranker:\r\t# initialize a cross-encoder. again, a reasonable\r\t# default\n    def __init__(self,\r    \tmodel_name=\"cross-encoder/ms-marco-MiniLM-L-6-v2\"):\n        self.model_name = model_name\n        self.model = CrossEncoder(model_name)\n\r    # select the columns we want to place emphasis on for\r    # each row. this should be a method on the row, but i\r    # didn’t want to spoil it for you\n    @staticmethod\n    def _rerank_str(r, columns):\n        parts = []\n        for c in columns:\n            v = getattr(r, c, \"\")\n            if v:\n                parts.append(f\"{c}: {v}\")\n        return \"\\n\".join(parts)\n\r    # take the candidates an reranke them based on the\r    # columns we provide\n    def rerank(self,\r    \tquery_text,\r    \tcandidate_rows,\r    \tcolumns_to_rerank):\n        pairs = []\n        for r in candidate_rows:\n            doc_str = self._rerank_str(r, columns_to_rerank)\n            pairs.append([query_text, doc_str])\r        # higher is better\n        scores = self.model.predict(pairs, batch_size=16)\n        order = np.argsort(-np.asarray(scores))\n        return [candidate_rows[i] for i in order]\n\nreranker = Reranker()"
+				"code" : "from sentence_transformers import CrossEncoder\n\nclass Reranker:\r\t# initialize a cross-encoder. again, a reasonable\r\t# default\n    def __init__(self,\r    \tmodel_name=\"cross-encoder/ms-marco-MiniLM-L-6-v2\"):\n        self.model_name = model_name\n        self.model = CrossEncoder(model_name)\n\r    # select the columns we want to place emphasis on for\r    # each row. this should be a method on the row, but i\r    # didn’t want to spoil it for you\n    @staticmethod\n    def _rerank_str(r, columns):\n        parts = []\n        for c in columns:\n            v = getattr(r, c, \"\")\n            if v:\n                parts.append(f\"{c}: {v}\")\n        return \"\\n\".join(parts)\n\r    # take the candidates an reranke them based on the\r    # columns we provide\n    def rerank(self,\r    \tquery_text,\r    \tcandidate_rows,\r    \tcolumns_to_rerank):\n        pairs = []\n        for r in candidate_rows:\n            doc_str = self._rerank_str(r, columns_to_rerank)\n            pairs.append([query_text, doc_str])\n        scores = self.model.predict(pairs, batch_size=16)\n        order = np.argsort(-np.asarray(scores))\n        return [candidate_rows[i] for i in order]\n\nreranker = Reranker()"
 			},
 			{
 				"__type" : "textSnippet",
