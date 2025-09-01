@@ -173,6 +173,7 @@ a code {
   border-left: 3px solid black;
   padding-left: 0.2em;
   font-size: 32px;
+  display: inline;
 }
 
 .aside a {
@@ -254,7 +255,7 @@ ul ul {
     margin-top: 2em;
   }
   .aside h1 {
-    font-size: 55px;
+    font-size: 35px;
   }
   table {
     font-size: 30px;

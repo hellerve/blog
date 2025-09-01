@@ -182,6 +182,7 @@ a code {
   border-left: 3px solid black;
   padding-left: 0.2em;
   font-size: 32px;
+  display: inline;
 }
 
 .aside a {
@@ -285,7 +286,8 @@ code {
     max-width: 600px;
   }
   .aside h1 {
-    font-size: 55px;
+    font-size: 35px;
+    display: inline;
   }
   table {
     font-size: 30px;
