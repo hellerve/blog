@@ -221,7 +221,7 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-figcaption {
+figcaption, .figure-label {
   text-align: center;
   font-size: 80%;
   margin-bottom: 1.5em;
