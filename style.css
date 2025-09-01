@@ -43,7 +43,7 @@ body {
   margin-left:auto;
   margin-right:auto;
   width:100%;
-  max-width:1000px;
+  max-width:800px;
   min-height: 100%;
   text-rendering: optimizeLegibility;
   -moz-font-feature-settings: 'kern=1';
@@ -64,6 +64,10 @@ body > * {
   font-size: 100%;
 }
 
+.snippet {
+  width: 100%;
+}
+
 .content {
   display: block;
   hyphens: auto;
@@ -81,6 +85,14 @@ body > * {
 
 .content h3 {
   font-size: 110%;
+  font-weight: 500;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 1em;
+}
+
+.content h4 {
+  font-size: 100%;
   font-weight: 500;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
@@ -149,9 +161,6 @@ pre {
   padding: 5px;
   background: #d9e4ea;
   overflow-x: scroll;
-}
-
-code {
   font-family: "triplicate", monospace;
   font-size: 90%;
   hyphens: none;
@@ -164,16 +173,14 @@ a code {
 
 .aside {
   margin: 0;
-  padding-top: 2em;
+  padding-top: 1em;
   font-weight: 500;
+  border-bottom: 3px solid black;
 }
 
 .aside h1 {
-  border-bottom: 3px solid black;
-  border-left: 3px solid black;
   padding-left: 0.2em;
   font-size: 32px;
-  display: inline;
 }
 
 .aside a {
@@ -211,10 +218,10 @@ table th {
 }
 
 h1, h2, h3, h4 {
-  margin: 
+  margin: 0;
 }
 
-.figure-label {
+figcaption {
   text-align: center;
   font-size: 80%;
   margin-bottom: 1.5em;
@@ -226,36 +233,59 @@ table + .figure-label {
 
 ol li {
   margin-left: 1em;
-}
-
-ol li {
   border-left: 2px solid;
   padding-left: 0.5em;
 }
 
-ul ul {
-  margin-left: 1em;
+ul li {
+  margin-left: 0.5em;
+  border-left: 2px solid;
+  padding-left: 0.5em;
+  list-style: none;
 }
 
-.rc-scout {
-  height: 50px;
+code {
+  font-size: 90%;
+  font-family: "triplicate", monospace;
 }
 
-.rc-scout__text > .rc-scout__link:link, .rc-scout__link:visited, .rc-scout__link:hover {
-  color: #222 !important;
-  text-decoration: none;
+.expandable-annotation-label {
+  background: #d9e4ea;
+  cursor: pointer;
+}
+.expandable-annotation-label:hover {
+  background: #adb6bb;
+}
+
+.expanded-annotation-view {
+    display: block;
+}
+
+.collapsed-annotation-view {
+    display: none;
+}
+
+.code-snippet {
+  font-family: "triplicate", monospace;
+  overflow-y: scroll;
+}
+
+.code-snippet code {
+    font-family: "triplicate", monospace;
 }
 
 @media(max-device-width:960px){
-  html {font-size: 23px;}
+  html {font-size: 20px;}
   .aside {
     padding-top: 0;
     float: none;
     margin-left: 2em;
     margin-top: 2em;
+    max-width: 600px;
   }
   .aside h1 {
-    font-size: 35px;
+    font-size: 25px;
+    display: inline;
   }
   table {
     font-size: 30px;
@@ -272,7 +302,7 @@ ul ul {
   }
 }
 @media(max-width:880px){
-  html {font-size: 21px;}
+  html {font-size: 18px;}
 }
 @media(max-device-width:520px) {
   body > * {margin: 2rem;}
