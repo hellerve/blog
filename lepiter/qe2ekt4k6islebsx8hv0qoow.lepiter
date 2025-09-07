@@ -584,7 +584,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-06T22:02:22.094644-05:00"
+						"dateAndTimeString" : "2025-09-06T23:07:10.238262-05:00"
 					}
 				},
 				"uid" : {
@@ -594,7 +594,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "```\nz2v(0, _).\nz2v(N, N) :- integer(N), N > 0.\n\nrows_from_zeros(PZero, Rows) :- maplist(maplist(z2v), PZero, Rows).\n```"
+				"string" : "```\nz2v(0, _).\nz2v(N, N) :- integer(N), N > 0.\n\nrows_from_zeros(PZero, Rows) :-\n\tmaplist(maplist(z2v), PZero, Rows).\n```"
 			},
 			{
 				"__type" : "textSnippet",
