@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:07:33.290091-05:00"
+						"dateAndTimeString" : "2025-09-06T21:24:14.011764-05:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "In this istallment we will focus on an implementation in Common Lisp using the SBCL runtime, which is the one I am most familiar with. The dialects are not very far from each other, but the deeper you go into the stack, the more little hang-ups you will have, so I recommend following along using SBCL rather than another Common Lisp runtime."
+				"string" : "In this installment we will focus on an implementation in Common Lisp using the SBCL runtime, which is the one I am most familiar with. The dialects are not very far from each other, but the deeper you go into the stack, the more little hang-ups you will have, so I recommend following along using SBCL rather than another Common Lisp runtime."
 			},
 			{
 				"__type" : "textSnippet",
@@ -214,7 +214,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:13:25.295882-05:00"
+						"dateAndTimeString" : "2025-09-06T21:24:27.730139-05:00"
 					}
 				},
 				"uid" : {
@@ -224,7 +224,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I have a bit of a bias towards the Lisps and Smalltalks of the planet. Putting that aside, I do think it’s very instructive to see how a \"high level\" language with very many abstractions can still get very nitty gritty and optimized when the need arises, and how a good runtime encapsulates this such that it doesn’t feel like an escape hatch to a quasi-FFI."
+				"string" : "I have a bit of a bias towards the Lisps and Smalltalks of the world. Putting that aside, I do think it’s very instructive to see how a \"high level\" language with very many abstractions can still get very nitty gritty and optimized when the need arises, and how a good runtime encapsulates this such that it doesn’t feel like an escape hatch to a quasi-FFI."
 			},
 			{
 				"__type" : "textSnippet",
@@ -425,7 +425,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:37:05.338118-05:00"
+						"dateAndTimeString" : "2025-09-06T21:25:15.944822-05:00"
 					}
 				},
 				"editEmail" : {
@@ -436,7 +436,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:38:40.61516-05:00"
+						"dateAndTimeString" : "2025-09-06T21:25:53.101742-05:00"
 					}
 				},
 				"uid" : {
@@ -446,7 +446,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I know I promised that every time we’d work with a two-dimensional arrays of numbers, and strictly speaking, that is what I plug into the main solver, but by the time it reaches `solve`, we’ve already transformed it into a grid of bitmasks inside typed arrays instead."
+				"string" : "Our main data structure is still a two-dimensional array of numbers. In fact, we describe the type as `(simple-array (unsigned-byte 4) (9 9))`. In SBCL, specialized arrays are contiguous and unboxed, so indexing is fast and cache-friendly. It will likely pack into bytes, not bits, but that’s already quite good."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-06T21:25:59.346406-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-06T21:26:39.85447-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1n9Kh476DQC3V39rB7nhlA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "But this implementation comes with an optimization. Instead of storing candidates in a set, we store them as a small bitmask of 9 bits."
 			},
 			{
 				"__type" : "textSnippet",
@@ -499,43 +536,6 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:40:22.777314-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:41:47.93805-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "Oo3gvnT6DQCNhF0sB7nhlA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "Instead, we can use a specialized array type of the shape `(simple-array (unsigned-byte 4) (9 9))`. In SBCL, specialized arrays are contiguous and unboxed, so indexing is fast and cache-friendly. It will likely pack into bytes, not bits, but that’s already quite good."
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-09-05T14:41:48.629601-05:00"
 					}
 				},
@@ -547,7 +547,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T14:43:21.463174-05:00"
+						"dateAndTimeString" : "2025-09-06T21:27:05.504763-05:00"
 					}
 				},
 				"uid" : {
@@ -557,7 +557,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Now, what do we use the mask for? Well, instead of using a set of up to 9 members, we just use a set of 9 bits that we can turn off and on individually to mark whether a candidate is in the set or not. We can then implement all set operations as a single expression of very few mathematical operations:"
+				"string" : "We can then implement all set operations as a single expression of very few mathematical operations:"
 			},
 			{
 				"__type" : "textSnippet",
