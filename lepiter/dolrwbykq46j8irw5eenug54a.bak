@@ -1,0 +1,1482 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:42:28.770945-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:43:00.991763-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0EgXQeT6DQCB2GuTAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "You know what time it is: puzzlin’ time! In case you are new here, this is a series about building six different Sudoku solvers in six different programming languages. [Check the first part](https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_I:_Python_(Reference).html) for more information on the algorithm as well as a reference implementation."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:42:18.909938-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:16:21.523315-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BdGAQOT6DQCB1ys/AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "It is time to get **efficient** with Rust. We’re going to try for minimal allocations, use zero-cost abstractions, and absolute performance without sacrificing legibility (looking at you, [Haskell](https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_IV:_Haskell.html))."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:45:37.247014-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:45:44.259785-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "aC9TTOT6DQCHr0qFAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Why Rust?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:45:46.38867-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:46:47.411382-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "eLfCTOT6DQCH+YkxAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The value proposition of Rust is pretty well-established compared to other languages in this roster, I’d say. Still, let’s list some of the things we can leverage for Sudoku:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:46:48.439859-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:16:08.823664-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "u4GRUOT6DQCL5VraAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- **Affine types and static compilation**. No GC and an optimized binary make your algorithms go zip!\n- **Rich ecosystem of good container types**. Today, we’ll only really use arrays, but it’s good to know we have vectors, trees, ropes, and more specialized data types in our back pocket when we need them, through the standard or high-quality third-party packages (crates).\n- **Fine-grained controls**. Between annotations such as `#[inline]`, using fast intrinsic operations, and a myriad of compiler flags, we can make the compiler optimize exactly what we want to."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:50:45.9939-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:50:54.938204-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GUy6XuT6DQCVa510AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## The implementation"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:50:55.484884-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:51:25.085055-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zBpLX+T6DQCV2JG2AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "By now, you should be familiar with the structure: outside in, solver first. But before we do that, we’ll work on the representation."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:51:25.708295-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:53:01.940162-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "KUoYYeT6DQCYfw9IAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Like in our previous adventure in [Common Lisp](https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_II:_Common_Lisp.html), we’ll be using bitmasks to do our dirty work. Brush up on what we did then over in the Common Lisp article, because I’ll take some of the background information as given here."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:53:02.579228-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:53:33.094446-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "N2zeZuT6DQCdVkQ9AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\ntype Board = [[u8; 9]; 9];\ntype Mask  = u16;\nconst ALL: Mask = 0x1FF;\n\n#[derive(Clone, Copy)]\nstruct State {\n    b:   Board,\n    row: [Mask; 9],\n    col: [Mask; 9],\n    bx:  [Mask; 9],\n}\n\n#[inline] fn bit(d: u8) -> Mask { 1 << (d - 1) }\n#[inline]\nfn box_idx(i: usize, j: usize) -> usize { \n\t(i / 3) * 3 + (j / 3)\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:53:46.315796-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:54:40.455567-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ha0paeT6DQCdr8ndAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I’m leaving the types and helpers here for reference. Most of them should be pretty clear; what exactly `box_idx` is doing will be cleared up later."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:54:41.802838-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:54:45.541782-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SXTIbOT6DQChDxrRAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### The solver"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:54:50.29006-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:17:00.477248-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cJYRbeT6DQChWTolAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We’ll go into the entry point first, but we’ll have to take another quick detour. In our Rust solution, we’re not working with `Board`s only, we also work with `State`s. And we need a function to get from a board to a state (`init_state`) . Since this is mostly housekeeping, I’m eliding it here. If you want to check it out, [check out the repository version](https://github.com/hellerve/sudoku/blob/main/sudoku.rs)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:49:35.024965-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:59:12.854368-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gGV/WuT6DQCSGiGyAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nfn solve(mut s: State) -> Option<Board> {\n    if !propagate(&mut s) { return None; }\n    if solved(&s) { return Some(s.b); }\n    let (i, j, mut m) = find_mrv(&s)?;\n    while m != 0 {\n        let lb = m & (!m + 1);\n        let v = 1 + lb.trailing_zeros() as u8;\n        let mut t = s;\n        assign(&mut t, i, j, v);\n        if let Some(sol) = solve(t) { return Some(sol); }\n        m ^= lb;\n    }\n    None\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T03:59:14.663952-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:00:42.662629-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9foLfeT6DQCptJzRAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We’ll again be a bit more explicit about our return values. Like in our Haskell version, we’ll use `Option` (there, we used `Maybe`, but it’s the same concept) to signify the presence or absence of a solution."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:00:51.057158-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:02:22.789843-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+LZzguT6DQCuCSaGAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As with all our algorithms, we go through a step of propagation. If it fails, the Sudoku is unsolvable and we return `None`. If it is solved, we return the value. Otherwise, we find candidates and go into our depth-first search loop. The loop body looks a little different than what we are used to, though."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:02:23.984944-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:09:20.739942-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dMtUiOT6DQC0uze3AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We iterate by going over each bit in the mask, stopping until we’ve tried each candidate (i.e. each set bit). We get our candidate by getting the lowest set bit (`lb`) and finding the trailing zeros (remember, this is a bitmask, so a digit is basically the “index” of the bit), making a stack copy (`t`, no heap allocation!), mutating it, and passing it to `solve`. If we don’t get a solution to return, we flip the bit in the mask, and do it again (or exit the loop if the mask is now `0`)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:10:41.757101-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:15:50.670028-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0CwApuT6DQCEPAwDAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Note that `trailing_zeros` is going to end up unrolling into an intrinsic, meaning it is extremely fast."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:08:28.083116-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:22.98586-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "I30InuT6DQC/vnp0AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So far, so good. Let’s dive deeper. Before we move on, I want you to notice `assign`, and remember that we have a state that keeps track of the bitmasks for rows, columns, and boxes. We will have to take a look at that."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:23.326055-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:26.998356-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SjqqyOT6DQCWRMCGAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#### Assignment"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:27.983513-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:23:01.122914-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "30zxyOT6DQCWk3XLAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Assignment is not just updating the cells, it’s also taking care of keeping the state bitmasks updated."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:23:02.241607-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:23:36.483169-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Zxcj0uT6DQCeOIsQAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n#[inline]\nfn assign(s: &mut State, i: usize, j: usize, v: u8) {\n    s.b[i][j] = v;\n    let m = bit(v);\n    s.row[i] |= m;\n    s.col[j] |= m;\n    s.bx[box_idx(i,j)] |= m;\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:23:28.887306-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:25:11.383472-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "E6K50+T6DQCeczOVAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We do the update, then we update the row, column and box mask by setting our bit. The helpers `bit` and `box_idx` we defined above are becoming helpful here. Notice that `#[inline]` is pretty much filling the same gap as using macros to ensure inlining did when we were working on Common Lisp."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:08:41.946941-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:08:46.490133-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UAncnuT6DQCAmY7rAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Propagation"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:08:47.438785-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:09:09.977433-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cdQvn+T6DQCA6CfYAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nfn propagate(s: &mut State) -> bool {\n    loop {\n        let mut changed = false;\n        for i in 0..9 {\n            for j in 0..9 {\n                if s.b[i][j] == 0 {\n                    let m = cand_mask(s, i, j);\n                    if m == 0 { return false; }\n                    if m.count_ones() == 1 {\n                        let v = 1 + m.trailing_zeros() as u8;\n                        assign(s, i, j, v);\n                        changed = true;\n                    }\n                }\n            }\n        }\n        if !changed { return true; }\n    }\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:09:23.512935-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:10:23.517872-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "AkZWoeT6DQCBm9tXAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We’re opting for an unchecked `loop` here, breaking out once the board doesn’t change anymore."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:10:24.206748-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:10.494009-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "D2b0pOT6DQCDwK/3AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In each pass, we iterate over the board and get our candidate mask for each unfilled cell. If it is `0`, the board is unsolvable. Otherwise, we use another fast intrinsic, `count_ones()`, to check the number of candidates (equal to the number of bits set). If it is `1`, we have a solution, so we set it and move on."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:11.091872-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:42.815112-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FYDIwOT6DQCOY5zGAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "This is all about as fast as you can be. It uses integer or bit operations and does nothing but blaze over a data structure that easily fits into any cache."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:44.149667-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:55.251936-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "f+rAwuT6DQCReDRvAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#### Computing candidates"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:18:55.75003-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:58.272201-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Z+1xw+T6DQCSA8hFAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Since we have our bitmasks set, candidates aren’t so much computed as combined."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:20:59.323673-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:21:03.808814-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "wYLPyuT6DQCYBBm+AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nfn cand_mask(s: &State, i: usize, j: usize) -> Mask {\n    ALL ^ (s.row[i] | s.col[j] | s.bx[box_idx(i, j)])\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:21:04.467668-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:19:08.950163-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kv4dy+T6DQCYMP9EAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "All we have to do is a medium-sized logical operation to combine the taken row, column, and box values and flip them (since the candidates are their inverse). We can rely on XOR because we’re only using 9 bits, otherwise we could generalize to `AND NOT`. Pretty slick, right?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:32:34.022368-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:32:46.807348-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "88M39OT6DQClfyUIAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "All we still have to do is find MRV candidates."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:32:47.626223-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:33:13.762251-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+1kH9eT6DQCmtBxwAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Finding search candidates"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T04:33:15.364815-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:17:49.214289-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1pqu9uT6DQCnU6o6AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nfn find_mrv(s: &State) -> Option<(usize, usize, Mask)> {\n    let mut best: Option<(usize, usize, Mask, u32)> = None;\n    for i in 0..9 {\n        for j in 0..9 {\n            if s.b[i][j] == 0 {\n                let m = cand_mask(s, i, j);\n                let k = m.count_ones();\n                if k == 1 { return Some((i, j, m)); } \n                if best.map_or(true, |(_,_,_,bk)| k < bk) {\n                    best = Some((i, j, m, k));\n                    if k == 1 { break; }\n                }\n            }\n        }\n    }\n    best.map(|(i,j,m,_)| (i,j,m))\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:01:41.347357-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:04:24.6488-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kmYL9+T6DQCnf6PLAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We’re extremely explicit here in searching for our best candidate. We do not keep any intermediate lists, since we want to be efficient. Instead, we keep the recent best in a variable, iterate over the board, and check for each field how many candidates we have there and whether that’s better than what’s in our previous best candidate. It’s simple, it’s imperative, it’s efficient."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:04:25.717429-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:05:07.291632-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "v+wpZuX6DQCxfsLjAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And just like that, we’ve built our fastest solver yet with the lowest allocation overhead!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:05:07.55852-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:05:09.219844-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "clqoaOX6DQC0u8lZAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Fin"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:05:09.720398-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:06:19.288897-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TlvJaOX6DQC03XeyAFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We’ve written pretty efficient code today, and it wasn’t even a painful experience. Such is the magic of Rust. It proves that writing “low-level” code doesn’t have to be a gruelling experience, and can actually be quite fun!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:06:19.970818-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T05:07:56.222718-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "P0j5bOX6DQC5zfu2AFYh5w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We could even parallelize things using something like [Rayon](https://docs.rs/rayon/latest/rayon/), but here, we might instead reach for another tool... The next—and last—programming language we’re going to look at: Elixir! Stay tuned!"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-11T03:42:28.763112-05:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-11T03:42:28.763112-05:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Six Simple Sudoku Solvers V: Rust"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ea778040-e4fa-0d00-81d6-6459005621e7"
+	}
+}
