@@ -917,7 +917,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T04:10:23.517872-05:00"
+						"dateAndTimeString" : "2025-09-11T05:19:28.153023-05:00"
 					}
 				},
 				"uid" : {
@@ -927,7 +927,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "We’re opting for an unchecked `loop` here, breaking out once the board doesn’t change anymore."
+				"string" : "We’re opting for an unconditional `loop` here, breaking out once the board doesn’t change anymore."
 			},
 			{
 				"__type" : "textSnippet",
