@@ -1250,7 +1250,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T05:17:49.214289-05:00"
+						"dateAndTimeString" : "2025-09-11T05:22:22.903693-05:00"
 					}
 				},
 				"uid" : {
@@ -1260,7 +1260,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "```\nfn find_mrv(s: &State) -> Option<(usize, usize, Mask)> {\n    let mut best: Option<(usize, usize, Mask, u32)> = None;\n    for i in 0..9 {\n        for j in 0..9 {\n            if s.b[i][j] == 0 {\n                let m = cand_mask(s, i, j);\n                let k = m.count_ones();\n                if k == 1 { return Some((i, j, m)); } \n                if best.map_or(true, |(_,_,_,bk)| k < bk) {\n                    best = Some((i, j, m, k));\n                    if k == 1 { break; }\n                }\n            }\n        }\n    }\n    best.map(|(i,j,m,_)| (i,j,m))\n}\n```"
+				"string" : "```\nfn find_mrv(s: &State) -> Option<(usize, usize, Mask)> {\n    let mut best: Option<(usize, usize, Mask, u32)> = None;\n    for i in 0..9 {\n        for j in 0..9 {\n            if s.b[i][j] == 0 {\n                let m = cand_mask(s, i, j);\n                let k = m.count_ones();\n                if best.map_or(true, |(_,_,_,bk)| k < bk) {\n                    best = Some((i, j, m, k));\n                    if k == 1 { break; }\n                }\n            }\n        }\n    }\n    best.map(|(i,j,m,_)| (i,j,m))\n}\n```"
 			},
 			{
 				"__type" : "textSnippet",

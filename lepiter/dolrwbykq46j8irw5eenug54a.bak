@@ -1139,7 +1139,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T05:19:08.950163-05:00"
+						"dateAndTimeString" : "2025-09-11T05:21:48.723528-05:00"
 					}
 				},
 				"uid" : {
@@ -1149,7 +1149,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "All we have to do is a medium-sized logical operation to combine the taken row, column, and box values and flip them (since the candidates are their inverse). We can rely on XOR because we’re only using 9 bits, otherwise we could generalize to `AND NOT`. Pretty slick, right?"
+				"string" : "All we have to do is a medium-sized logical operation to combine the taken row, column, and box values and flip them (since the candidates are their inverse). Pretty slick, right?"
 			},
 			{
 				"__type" : "textSnippet",
