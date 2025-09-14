@@ -1,0 +1,1038 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:21:52.833453-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:56:47.877053-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tpxxGBz7DQCrokJZDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Both giving and receiving feedback well are hard skills to learn in business and life. I know I used to struggle with it, and still do, especially with the “receiving” part (such is life when you put yourself out there)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:22:40.95585-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:48:52.423451-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GpHuIhz7DQCwO9YYDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I do think that the more people learn how to give good feedback, the less people have to learn how to receive sub-par feedback and try to spin it into something productive. So today I want to talk a bit about how I try to make my own feedback-giving better."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:24:31.386387-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:26:27.012847-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "7YM/KRz7DQC1K480Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I don’t want to make this post disclaimer-heavy, but I do want to be very upfront in saying that I am not a communications expert. I am someone who used to struggle a lot with both sides of the feedback coin, and now I struggle less, so I want to share some strategies to make it easier for others."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:26:27.70346-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:28:18.010988-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "NndyMBz7DQC+7i+sDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Oh, and one more thing: I’m talking about professional contexts here. I might take a page from my professional feedback book when I’m trying not to be unfair to my toddler, but I would never dream of talking to him as I would to a colleague or business partner."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:28:19.561425-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:28:28.949516-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "C0gdNxz7DQCGLPnCDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## The basics: SBI+R"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:28:43.979431-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:57:19.985304-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TYnJNxz7DQCGnkrHDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The basic pattern I try to adhere to is **Situation-Behavior-Impact**, and I mix in a **Request** to make it actionable. I’m not groundbreaking here, it’s a well-known technique for feedback. It goes like this:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:31:33.316492-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:40:33.212876-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "72FgQhz7DQCLcMilDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- **Situation**: This is the where/when. “Yesterday in the customer meeting”, “During Sprint Review today”, etc.\n- **Behavior**: What you observed. We try to be objective, but we acknowledge we will fall short, and our impression does not perfectly capture reality. Focus on what happened, not why you think it happened. “You were able to quickly identify a problem I have been grappling with all week”, “You told the contributor ‘this is just terrible code’ without elaborating”\n- **Impact**: Why it matters to people, users, the product, etc. “It unblocked me within minutes.”, “It stalled code review and we were unable to move the PR forward”"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:38:04.434764-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:39:21.326533-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oL75WRz7DQCdL5BjDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Now, I find that the **Request** helps me actually get to the point of why I’m saying what I’m saying, especially when it’s not positive. Usually I’d like to invite behavior change (or invite more of that behavior!), so I want to make that explicit."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:39:24.533116-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:39:31.337727-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3/C/Xhz7DQCiH6ilDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "A few examples:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:39:31.683774-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:41:57.806302-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "og0tXxz7DQCieBqhDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "“In today’s incident call (11:00) (**Situation**), you paused the rollback debate and listed the three options and risks (**Behavior**). That got us to a decision in 2 minutes (**Impact**). Please keep doing this in any call that drifts (**Request**).”"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:40:21.631653-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:57:38.37465-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MjInYhz7DQCj6dk9Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "“During Sprint Planning today (**Situation**), you said no one in the team knows how to estimate tickets anyway (**Behavior**). The planning got derailed and we didn’t make it to our backlog (**Impact**). Next time, let’s discuss this in a 1:1 first and find a suitable forum for a methodology discussion (**Request**).”"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:43:40.206569-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:52:58.512678-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "szD9bRz7DQCtwLUCDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## When and how to do it"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:43:48.322574-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:53:10.219003-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CQ95bhz7DQCuPNymDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I have a few heuristics on how and when I want to give feedback. In no particular order:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:44:26.33521-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:39:49.381252-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BRO9cBz7DQCw/AXADp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- I give it within 48 hours of the event while details are fresh but I had enough time to emotionally distance myself.\n- I give it in private by default; public praise is fine if the culture fits. It can always be put out publicly after being given in private.\n- I try to focus on one thing. Often, multiple things line up in the same situation. Still, I want to focus on the biggest item in order to give it the space it needs.\n- If we’re both super busy (or either of us is), I might book the quickest of meeting slots (usually 15 minutes) to give it a bit more breathing room, since it might derail the rest of the day, especially if it is critical or I’m not certain it will land.\n- I ask for permission and consent before barging in. “Is now a good time?” and “May I give you some feedback?” go a long way."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:48:13.280421-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:49:16.876709-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Cv5Dfhz7DQC/eUm5Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What I try not to do:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:49:18.1343-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:29:45.404044-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "65Qhghz7DQCAn/o/Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- The dreaded “shit sandwich”. People know what you are doing, and the “good parts” feel forced and stale.\n- Drive-by feedback. I try to give it a bit of time and anticipate a follow-up discussion. I don’t just drop a statement into the void and disappear.\n- Pull out stuff from last month. I want to give the feedback quickly after I’m sure I’ve emotionally digested it myself.\n- Hide behind “we”. “I” have the request, and “you” should do something. I’m not going to use “we” to make it sound like I’m speaking for the whole company, or to hedge."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:29:46.347347-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:41:04.908466-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+e8NniT7DQCwOq7YDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And finally, when it breaks down:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:29:53.600568-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:42:21.966346-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "G558niT7DQCw94kuDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- There is a power imbalance. There are real risks involved in giving a more senior person negative feedback, for instance. Some of these situations are thus better dealt with through the company structure, and not through personal feedback, as sad as that is. It’s better to escalate via manager/HR or use a facilitated forum.\n- The disagreement is on policy, code, or other professional matters. This is not personal feedback, and should not be communicated as such, so we move it to the appropriate forum (code review, RFC, etc.)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:52:48.146508-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:54:09.41586-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WBemjhz7DQCMVgw7Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Oh, and if I cannot emotionally detach myself, I’m not going there, at least not with this format. It’s just going to lead to drama. Chances are that the issue needs a deeper resolution than a single bit of feedback, especially on my side."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:15:51.303561-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:26:02.585789-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9S5IbCT7DQCbzsolDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### A quick trick for introverts"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:16:22.505119-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:34:40.036846-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "m0YkbiT7DQCdA8ufDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you are introverted or have trouble with this framework at first—like I did—but are a big systematizer, it might make sense to consider a template. Here is what I used the first few times to structure my thoughts:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:17:26.705585-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:32:51.873342-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "X+f3cST7DQChUzRdDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nSituation: when?\nBehavior: what happened? *Be precise, try to explain what happened, no intent or psychology.*\nImpact: what did it do?\nRequest: what do I want?\n--\nResult/Agreement: what did we end up agreeing to?\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:17:46.201772-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:34:47.79192-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JmEhcyT7DQCiR4p6Dp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "This seems simplistic, but it helped me structure my thoughts and ensure I stay on topic and don’t stray from the path. Your template might look different, and that’s okay!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:26:17.282754-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-14T08:27:50.658721-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "y96XkST7DQCpOLmHDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "After a while, I didn’t use it anymore, as things came more naturally to me, but I used it for quite a while. And while I have this bias that communication should be natural and at least a little bit from the gut, sometimes writing my thoughts down before sharing them helps calm and collect them if nothing else."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:54:10.713258-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:54:12.980645-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "svqRkxz7DQCRc1AFDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Fin"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:54:13.547792-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:55:10.790512-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uDy9kxz7DQCRlR0xDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And that’s it! Nothing groundbreaking, but I wanted to share it in case you are in any way similar to me: somewhat addicted to harmony, and unable to be blunt but remain kind."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:55:15.531797-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-13T22:55:32.915346-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rAJvlxz7DQCVzAnHDp1zVw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Try it out if you will and do tell me how it went!"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-13T22:19:56.624605-05:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-13T22:56:34.929609-05:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Feedback Sans Sandwiches"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "43557018-1cfb-0d00-aba1-bdd60e9d7357"
+	}
+}
