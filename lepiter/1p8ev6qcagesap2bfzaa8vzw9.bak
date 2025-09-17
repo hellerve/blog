@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T12:29:26.534839-05:00"
+						"dateAndTimeString" : "2025-09-16T15:31:24.44762-05:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I’ve seen 1:1s (read: one-on-ones, short meetings between between a manager and their direct report) in various capacities over the years—I’ve been the report, the manager, and the outsider who got the juicy details from both sides and kept his mouth shut."
+				"string" : "I’ve seen 1:1s (read: one-on-ones, short meetings between a manager and their direct report) in various capacities over the years—I’ve been the report, the manager, and the outsider who got the juicy details from both sides and kept his mouth shut."
 			},
 			{
 				"__type" : "textSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T12:03:13.106405-05:00"
+						"dateAndTimeString" : "2025-09-16T15:30:56.331463-05:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Now, I’m in no position to give you a primer on 1:1s. [Other, more qualified people](https://randsinrepose.com/archives/the-update-the-vent-and-the-disaster/) [have written](https://larahogan.me/blog/first-one-on-one-questions/) [so much good material](https://handbook.tts.gsa.gov/18f/how-18f-works/one-on-ones/) about the concept, and I bring nothing new to the table. Still, there is an implicit assumption that some of the basics are done right, and I’ve seen a lot of seemingly small issues over the years that repeat themselves enough to warrant a word of caution. And that is what I intend to provide in this blog post."
+				"string" : "Now, I’m in no position to give you a primer on 1:1s. [Other, more qualified people](https://randsinrepose.com/archives/the-update-the-vent-and-the-disaster/) [have written](https://larahogan.me/blog/first-one-on-one-questions/) [so much good material](https://handbook.tts.gsa.gov/18f/how-18f-works/one-on-ones/) about the concept, and I bring nothing new to the table. Still, there is an implicit assumption that some of the basics are done right, and I’ve seen a lot of seemingly small issues over the years that repeat themselves enough to warrant a word of caution. And that is what I intend to provide in this blog post. The stakes are high: if you don’t run 1:1s well, you learn about team problems only when they hit production or HR."
 			},
 			{
 				"__type" : "textSnippet",
@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T12:30:40.426929-05:00"
+						"dateAndTimeString" : "2025-09-16T15:30:51.86109-05:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "f any or all of these seem like “who in their right mind would do that?”, good. You’re already doing it right, and you’d probably be shocked how often people fumble these seemingly obvious things."
+				"string" : "If any or all of these seem like “who in their right mind would do that?”, good. You’re already doing it right, and you’d probably be shocked how often people fumble these seemingly obvious things."
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T12:29:34.011993-05:00"
+						"dateAndTimeString" : "2025-09-16T15:30:38.996668-05:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +150,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "And, as this is naturally a personal, maybe even emotional topic, if any of this doesn’t sit right with you and you make a conscious choice to do something differently, no hard feelings. You know your situation and your team better than I do."
+				"string" : "And, as this is naturally a personal, often emotional topic, if any of this doesn’t sit right with you and you make a conscious choice to do something differently, no hard feelings. You know your situation and your team better than I do."
 			},
 			{
 				"__type" : "textSnippet",
@@ -251,7 +251,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T12:30:28.376179-05:00"
+						"dateAndTimeString" : "2025-09-16T15:33:26.963007-05:00"
 					}
 				},
 				"uid" : {
@@ -261,7 +261,81 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "- **Only meeting with the “senior officers”. **Most teams will have more senior and junior people. Your job is to meet with all of them. You want to amplify the quiet voices, and hear everyone out. This is not a product or architecture session; we’re having a check-in.\n- **Substituting 1:1s for pairing or product sessions.** Regular pair-programming or product sessions are great, but they are focused on something else; you can still get a feeling for how the other person is doing, but they won’t suddenly start airing their grievances about their deskmate’s loud keyboard and the fact that they saw someone else’s payslip and the difference hit them like a haymaker. You’re working on the product, and there is limited room for other topics.\n- **Holding on tightly to the agenda.** Setting an agenda is important, but the report’s topics are always more important. This is not a space for corporate box-ticking.\n- **Trying to unify the process across team members.** People are different. Some people will need a while to warm up, some people will get stuck into it from the get-go. Some people need the same structure every time, some people need the freedom to let their thoughts flow. All of it is okay, and can easily be accommodated.\n- **Talking too much.** This is the one point where I personally disagree with some of the sources I shared above. The report should get ample talking room; the manager gets to listen. 25–35% talking time is plenty, most of the time should be spent listening."
+				"string" : "- **Only meeting with the “senior officers”.** Most teams will have more senior and early-career folks. Your job is to meet with all of them. You want to amplify the quiet voices, and hear everyone out. This is not a product or architecture session; we’re having a check-in.\n- **Substituting 1:1s for pairing or product sessions.** Regular pair-programming or product sessions are great, but they are focused on something else; you can still get a feeling for how the other person is doing, but they won’t suddenly start airing their grievances about their deskmate’s loud keyboard and the fact that they saw someone else’s payslip and the difference hit them like a haymaker. You’re working on the product, and there is limited room for other topics.\n- **Holding on tightly to the agenda.** Setting an agenda is important, but the report’s topics are always more important. This is not a space for corporate box-ticking.\n- **Trying to unify the process across team members.** People are different. Some people will need a while to warm up, some people will get stuck into it from the get-go. Some people need the same structure every time, some people need the freedom to let their thoughts flow. All of it is okay, and can easily be accommodated.\n- **Talking too much.** This is the one point where I personally disagree with some of the sources I shared above. The report should get ample talking room; the manager gets to listen. 25–35% talking time is plenty, most of the time should be spent listening. The TTS Handbook linked above proposes a 10-10-10 (report-manager-future) split, but the manager shouldn’t need to monologue for ten minutes (they will have plenty of opportunity to speak during most of the other meetings on the schedule)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-16T15:24:22.415272-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-16T15:24:46.063847-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "N1x3pFL7DQCT20g+A16TMw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And some non-negotiables of what to do and not to compromise on:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-16T15:24:47.120672-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-16T15:34:37.802025-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "01XwpVL7DQCVR1dsA16TMw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- **Never skip twice**. If you must cancel, you reschedule within the week—no exceptions except prolonged vacation or leave.\n- **No status updates**. Do these as standups or in a team forum. This time is not for product matters.\n- **1:1s are private**. Nothing is shared without (preferably written) consent.\n- **Time discipline**. I’m not very good at being on time, but when meeting with reports, showing that you care about them and their time is paramount"
 			},
 			{
 				"__type" : "textSnippet",
