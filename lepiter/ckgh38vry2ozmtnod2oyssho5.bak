@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T04:51:50.41125-06:00"
+						"dateAndTimeString" : "2025-09-19T09:27:32.848337-05:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Now, don’t get me wrong, I love writing, and good documentation is worth its weight in gold—be it onboarding handbooks, architecture drafts, or design documents. But I’m not a big fan of checking boxes for compliance, and I believe neither are most good auditors. I believe most of the players in the industry are acting in good faith, and that required ISMS documentation is derived from useful documentation that can help make a system more resilient."
+				"string" : "Now, don’t get me wrong, I love writing, and good documentation is worth its weight in gold—whether for  onboarding handbooks, architecture drafts, or design documents. But I’m not a big fan of checking boxes for compliance, and I believe neither are most good auditors. I believe most of the players in the industry are acting in good faith, and that required ISMS documentation is derived from useful documentation that can help make a system more resilient."
 			},
 			{
 				"__type" : "textSnippet",
@@ -362,7 +362,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T05:38:08.318343-06:00"
+						"dateAndTimeString" : "2025-08-21T05:59:19.185553-06:00"
 					}
 				},
 				"uid" : {
@@ -372,7 +372,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Relatedly, noise is lower: I don’t have to configure things to be set up every time and, worst case, screw it up. I can rest easy knowing that things are made correct for me."
+				"string" : "Relatedly, noise is lower: I don’t have to configure things every time and, worst case, screw it up. I can rest easy knowing that things are made correct for me."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:17:56.391468-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:18:31.178639-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "o2CF34n7DQCrcY+0CbuOQA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "At the same time, they are not prisons. You can override them if you need to, you just need to be explicit about why and provide a good reason for it, and those are good things."
 			},
 			{
 				"__type" : "textSnippet",
@@ -473,7 +510,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T05:38:46.504232-06:00"
+						"dateAndTimeString" : "2025-09-19T09:29:49.100152-05:00"
 					}
 				},
 				"uid" : {
@@ -483,7 +520,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "1. RBAC should be set up to be least-privilege. There should ideally be no wildcards and per-service roles. If you need a “god-mode” admin, protect it accordingly.\n2. TLS is on by default. We exclusively use modern ciphers, refuse plaintext, and have a defined rotation path.\n3. We log aggressively and always with redactions (for instance using a denylist + patterns).\n4. We have defined input bounds as they pertain to size, timeout, content types, and so on.\n5. We use dependency pinning for everything we can pin (using both lockfiles and image digests etc.).\n6. All of our containers run non-root and read-only, and our templates enforce that (they drop caps and perform health probes)."
+				"string" : "1. RBAC should be set up to be least-privilege. There should ideally be no wildcards and per-service roles. If you need a “god-mode” admin, protect it accordingly.\n2. TLS is on by default. We exclusively use modern ciphers, reject plaintext, and have a defined rotation process.\n3. We log aggressively and always with redactions (for instance using a denylist + patterns).\n4. We have defined input bounds as they pertain to size, timeout, content types, and so on.\n5. We use dependency pinning for everything we can pin (using both lockfiles and image digests etc.).\n6. All of our containers run non-root and read-only, and our templates enforce that (they drop caps and perform health probes)."
 			},
 			{
 				"__type" : "textSnippet",
@@ -558,6 +595,154 @@
 					"__type" : "textStyle"
 				},
 				"string" : "Overriding these defaults should be costly and it should be obvious: we should be alerted if an unpinned dependency is introduced or a new container does not use our defined baseline. These overrides should be the focus of a periodic audit and should naturally be placed under even greater scrutiny than the rest of the system."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:18:51.91228-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:25:12.61697-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cY7U4on7DQCvgMauCbuOQA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### The economics of trade-offs"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:19:04.755765-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:30:00.203949-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "n4yY44n7DQCwUWNhCbuOQA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What we are doing here is trading off people-time (working on docs, keeping them healthy and up to date, training) for machine-time (keeping everything in line automatically). People resources are scarce and expensive, compute is cheap."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:20:43.518841-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:30:10.462302-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BI176Yn7DQC1I1SDCbuOQA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Of course, it is not a one-to-one switch. You still need to maintain your automation stack, and a page of docs does not translate to an automated check in your pipeline. It is, however, worth keeping these costs in mind when considering your options."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:22:47.792979-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T09:25:06.258596-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2tLj8In7DQC7TXgsCbuOQA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The hierarchy of controls goes from defaults and guardrails to manuals and training. The higher you step, the more expensive and less scalable the control. All of the rungs of this heirarchy are important and should be used, but the choice should be explainable."
 			},
 			{
 				"__type" : "textSnippet",
