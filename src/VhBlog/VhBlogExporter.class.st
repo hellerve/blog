@@ -57,8 +57,12 @@ VhBlogExporter >> export: aPage [
 		save.
 
 	self blogDirectory
-		/ ((aPage title asString copyReplaceAll: ' ' with: '_') , '.html')
-		writeStreamDo: [ :aStream | aStream nextPutAll: htmlString ].
+		/ ((aPage title asString copyReplaceAll: ' ' with: '_') , '.md')
+		writeStreamDo: [ :aStream | 
+			aStream
+				nextPutAll: (GtLlmLepiterContentExporter new
+						page: self;
+						export) ].
 
 	^ anExporter
 ]
