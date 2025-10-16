@@ -26,7 +26,7 @@ approaches work very well together, so I’ve decided to support both of them.
 ## Finally
 
 If you know of other charities that you want to share with me, [let me
-know](charities@veitheller.de)! Of course you can also write to me if you think
+know](mailto:charities@veitheller.de)! Of course you can also write to me if you think
 that I might be missing something about the charities I am already donating to.
 
 I will update this blog post if and when the set of charities I’m supporting
