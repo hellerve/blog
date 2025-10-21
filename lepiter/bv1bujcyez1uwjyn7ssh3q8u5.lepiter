@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-18T19:58:25.64585-05:00"
+						"dateAndTimeString" : "2025-10-21T16:04:35.689593-05:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I look at a lot of architecture diagrams. Most of them are not about systems I personally shepherd, and I have no control over what is presented to me. But boy, do I have opinions."
+				"string" : "nI look at a lot of architecture diagrams. Most of them are not about systems I personally shepherd, and I have no control over what is presented to me. But boy, do I have opinions."
 			},
 			{
 				"__type" : "textSnippet",

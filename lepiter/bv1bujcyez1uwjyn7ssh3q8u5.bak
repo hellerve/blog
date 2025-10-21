@@ -1176,7 +1176,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-18T19:45:02.714679-05:00"
+						"dateAndTimeString" : "2025-09-18T20:02:56.321169-05:00"
 					}
 				},
 				"uid" : {
@@ -1187,43 +1187,6 @@
 					"__type" : "textStyle"
 				},
 				"string" : "I hope you were able to take something useful away from this blog post that will elevate the usefulness of your diagrams. They are the first view into your system, and they are what you’ll see when you close my eyes to think about your architecture."
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-18T20:02:22.37574-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-18T20:02:31.066405-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "lRlawn77DQCKHXy5DqFdyA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "If you want help "
 			}
 		]
 	},
