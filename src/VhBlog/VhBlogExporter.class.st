@@ -61,7 +61,7 @@ VhBlogExporter >> export: aPage [
 		writeStreamDo: [ :aStream | 
 			aStream
 				nextPutAll: (GtLlmLepiterContentExporter new
-						page: self;
+						page: aPage;
 						export) ].
 
 	^ anExporter

@@ -1,0 +1,557 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:44:08.336161-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:48:59.514331-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2OpxUhH+DQCN+b8IALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "7 years ago, I had an idea for [a JIT compiler](https://github.com/hellerve-pl-experiments/cj/) in C for x86 architectures with a completely auotgenerated backend based on machine-readable information on the instructions. Sounds cool, right?!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:42:28.517242-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:48:01.828126-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FtJ+TBH+DQCHt1MPALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I immediately built the hand-written parts of [a byte buffer I could turn into an executable function](https://github.com/hellerve-pl-experiments/cj/blob/master/src/ctx.c#L54-L87) and all the infrastructure needed for two instructions, NOP and RET, the minimum I needed to prove it worked. Then I found a JS library that [contains the instruction information I need](https://www.npmjs.com/package/asmdb), covering all of the x86 ISA (thanks, [asmjit](https://github.com/asmjit/asmjit)!). I would work with Node.js, no problem, I can just write an emitter struct!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:47:38.167688-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:50:28.358299-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "abLzXhH+DQCV3o8VALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And then I abandoned the project. I got a bit of a writer’s block, priorities shifted, and I ignored the idea for a few years ago, until last month. I was moving repositories around and the project was resurfaced. I realized my writer’s block had gone and I was actually quite eager to attack it again. So I did!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:50:29.124612-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:56:59.65153-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "t0skaRH+DQCeynlzALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Over the course of around two weeks, I reworked the project to semi-autogenerate the x86 ISA ([the code](https://github.com/hellerve-pl-experiments/cj/blob/master/codegen/x86_encoder.js) is still full of warts and special cases, because I had trouble finding the right abstraction at first and just kept going). I then found [mra_tools](https://github.com/alastairreid/mra_tools), which provides a machine-readable spec for ARM, so I also [added a backend generator for that architecture](https://github.com/hellerve-pl-experiments/cj/blob/master/codegen/arm64_encoder.js) (full disclosure: I had an LLM program the specification extractor for me, because I couldn’t figure out the project layout quickly and figured it would be easy enough; I also let it write code comments for me, and they’re probably hilariously wrong). The JS code is admittedly brutally messy, but hopefully one doesn’t have to touch it all that much anymore (famous last words)!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:55:00.097759-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:57:11.663657-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "PAVLeRH+DQCuPIQoALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Anyway, what we ended up with looks somewhat like this:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:57:13.901498-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:58:14.009849-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vbNEgRH+DQCyVQ31ALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n// x86 version of a tri-number calculator\n#include <stdio.h>\n#include \"ctx.h\"\n#include \"op.h\"\n\nint main(void) {\n  cj_ctx* cj = create_cj_ctx();\n  cj_operand rax = cj_make_register(\"rax\");\n  cj_operand rdi = cj_make_register(\"rdi\");  // n (argument)\n  cj_operand rcx = cj_make_register(\"rcx\");  // loop counter\n  cj_operand zero = cj_make_constant(0);\n  cj_operand one = cj_make_constant(1);\n\n  cj_mov(cj, rax, zero);         // sum = 0\n  cj_mov(cj, rcx, one);          // i = 1\n  cj_label loop = cj_create_label(cj);\n  cj_label done = cj_create_label(cj);\n  cj_mark_label(cj, loop);\n  cj_cmp(cj, rcx, rdi);          // if (i > n) break;\n  cj_jg(cj, done);\n  cj_add(cj, rax, rcx);          // sum += i;\n  cj_add(cj, rcx, one);          // ++i;\n  cj_jmp(cj, loop);              // loop;\n  cj_mark_label(cj, done);\n  cj_ret(cj);                    // result already in rax\n\n  typedef int (*tri_fn)(int);\n  tri_fn fn = (tri_fn)create_cj_fn(cj);\n  printf(\"tri(10) = %d\\n\", fn(10));  // prints 55\n\n  destroy_cj_fn(cj, (cj_fn)fn);\n  destroy_cj_ctx(cj);\n  return 0;\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:57:50.625712-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:58:57.104616-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2ulYgxH+DQCylNT2ALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Already quite good! We can basically handroll assembly at run-time, make it generate a function, and then jump in."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:58:57.627268-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T13:59:59.881886-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "b2dzhxH+DQC233sLALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "There are some limitations, however. Firstly, it’s not portable yet. The backend is detected automatically, but the register names and most of the instructions are still different, much like when we write assembly."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:00:01.640961-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:01:11.903482-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "hDJEixH+DQC8gzz6ALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I then decided I would at least work on a few very simple “high-level” abstractions to also show how we could build out the JIT compiler to allow for backend-independent code:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:01:13.014751-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:01:24.588163-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "IEiFjxH+DQCAEFDyALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n#include <stdio.h>\n#include \"builder.h\"\n\ntypedef int (*sum_fn)(int);\n\nint main(void) {\n  cj_ctx* cj = create_cj_ctx();\n  cj_builder_frame frame;\n  cj_builder_fn_prologue(cj, 0, &frame);\n\n  cj_operand n = cj_builder_arg_int(cj, 0);\n  cj_operand sum = cj_builder_scratch_reg(0);\n  cj_operand i = cj_builder_scratch_reg(1);\n  cj_operand one = cj_make_constant(1);\n\n  cj_builder_assign(cj, sum, cj_builder_zero_operand());\n\n  cj_builder_for_loop loop = cj_builder_for_begin(cj, i, one, n, one, CJ_COND_GE);\n  cj_builder_add_assign(cj, sum, i);\n  cj_builder_for_end(cj, &loop);\n\n  cj_builder_return_value(cj, &frame, sum);\n\n  sum_fn fn = (sum_fn)create_cj_fn(cj);\n  printf(\"tri(5) = %d\\n\", fn ? fn(5) : -1);\n\n  destroy_cj_fn(cj, (cj_fn)fn);\n  destroy_cj_ctx(cj);\n  return 0;\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:01:27.183296-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:02:29.969894-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MnZdkBH+DQCAVYgfALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As you can see above, the code is playing at a whole other level of abstraction! We have for-loops and calling conventions and register names do not concern us anymore."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:03:52.058394-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:03:52.058394-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ExcAmRH+DQCKO8UAALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "For now, I do not intend to move much further into building this out. The concept has more than been proven, and I can already feel the all-encompassing obsession consume me. Instead, I leave it as an artifact to play with as-is."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:02:34.819203-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:05:00.288765-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dJEklBH+DQCEjBcCALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I’m quite proud of it. It took me seven years, but in the end I accomplished much of what I set out to do: understand the x86 ISA (and now ARM too!) and build a JIT in the process! Even if it’s just a toy, it’s a powerful toy, and it required a lot of fiddling to get it (hopefully somewhat) right."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:05:04.452237-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:06:23.779599-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "VrhQnRH+DQCPvpFwALYjSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So, what do I intend to do with it? To be honest, I’m not quite sure yet. I time-budgeted a timeboxed prorotype of a simple Forth for myself to see how language implementation in this framework would feel. From there, we will see where things take us. If I do end up finishing the Forth, you can look forward to another post!"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T10:36:19.805985-05:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T10:36:19.805985-05:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "cj: Making a minimal, complete JIT"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "170736b1-0efe-0d00-87b5-ca3b00b6234b"
+	}
+}
