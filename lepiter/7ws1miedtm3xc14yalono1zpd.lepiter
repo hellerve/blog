@@ -1,0 +1,2703 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:03:51.590256-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:16:29.011109-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "wNVEiUD+DQCrL6ejB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In [my last blog post](https://blog.veitheller.de/cj:_Making_a_minimal,_complete_JIT.html), I unveiled [cj](https://github.com/hellerve-pl-experiments/cj), a small, dependency-free JIT compiler framework in C. In the post, I discussed the idea of implementing a small programming language in it."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:16:30.575309-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:19:02.219735-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "swKCtkD+DQCwd7oQB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Of course, once I had had the idea, [my fingers couldn’t stop typing until it was done](https://github.com/hellerve-pl-experiments/cj/blob/master/examples/minilang.c). So now we have a small, Lisp-y (admittedly by syntax only) language implemented using `cj`, in a total of around 400 lines of C, 300 of which are the parser and AST."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:19:08.450794-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:21:10.242625-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "hvzqv0D+DQC2JQFfB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Since building a JIT-compiled language in less than 100 lines is cool in any language, today I want to walk you through how the implementation works. A few caveats before we begin, however: we won’t be looking at the parser, since it’s trivial, ugly, and inconsequential to our domain. We also won’t do any error handling, because errors are the spice of life, and defensive programming gets in the way of a good story, especially in foot gun central, also known as the C programming language."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:21:11.042681-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:21:30.455287-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Hps5x0D+DQCBUM0lB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So, let’s dive right in!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:21:31.393233-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:25:13.279899-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YyBwyED+DQCBzMGFB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Prelude: A language and an AST"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:21:42.773577-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:32:57.698936-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "EckdyUD+DQCCYbysB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I know I said we wouldn’t be looking at the parser code, but we at least need to know the data structure we will be working with once parsing is done. So for the purposes of this blog post we will pretend that there is a magical function called `parse_expr(input_string)` that gives us back an AST. We also probably want to know what the language that we are working on looks like."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:26:06.319658-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:26:13.955041-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+eHz1UD+DQCKWnsSB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here is an example of our little language:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:25:29.118114-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:29:51.246687-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Voab1kD+DQCLcWUxB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n# main is our entry point, call calls other functions\n(def main (x) (sub (call inc x) 15))\n\n# add and sub do math, all functions are unary\n(def inc (x) (add x 2))\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:22:58.17831-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:27:25.591863-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1V6czUD+DQCJMUHAB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Quite simple! What does our AST for this language look like?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:23:05.948049-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:27:29.199577-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FO0SzkD+DQCJxqWhB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\ntypedef enum { NODE_NUM, NODE_PARAM, NODE_ADD, NODE_SUB, NODE_CALL } node_kind;\ntypedef struct node node;\nstruct node {\n  node_kind kind;\n  int value;\n  int target;\n  char name[32];\n  node *left;\n  node *right;\n  node *arg;\n};\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:27:32.241266-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:30:10.410406-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Qjvy3UD+DQCRFbrBB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So we have numbers, parameters, and calls, and because we are lazy we also bake the `add` and `sub` primitives in as special tokens. A `node` then has that token type and a bunch of other things we don’t know about yet, as well as some children (`left`, `right`, and `arg`)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:30:11.523383-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:32:18.509505-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "e0tk50D+DQCXpE96B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "All of these values are filled conditionally: `value` is filled if we have a number, `name` if we have a parameter, `left` and `right` if we are dealing with an `add` or `sub` node. Calling is a little special: it has an `arg` (simple because all functions are unary), but it also has a `target`, which is the label we are going to jump to. More about that later, since that part is on us, not the parser."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:32:19.428943-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:32:36.192904-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1V8Q70D+DQCgGO/OB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And that concludes what we need to know about the AST!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:33:35.969501-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:33:52.854511-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nEig80D+DQCiYxqZB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Prelude 2: Electric `def`aloo"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:33:02.717745-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T22:34:10.800716-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "f+Ck8UD+DQChjek7B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Actually, hold on. None of this deals with functions yet. We need to add a nother wrinkle to this."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:48:00.566912-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:49:00.491371-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "eXvH9UD+DQCkKcJJB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I designed the parser to parse one expressions at a time. This is normal, but it’s also an incomplete grammar. Our example above has at least two expressions (two functions), and we need to be able to deal with that."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:49:05.748751-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:50:01.899452-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "d48e50z+DQCp9V3nB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We also do not have an AST node for functions. This is odd, since functions are definitely part of the AST, but in our minimal language where functions are always the top-level concept, we can get away with something simpler:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:50:03.144143-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:50:36.517313-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "wFiK6kz+DQCwFrWNB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\ntypedef struct {\n  char name[32];\n  char param[32];\n  node *body;\n  cj_label entry;\n  int (*fn)(int);\n} function;\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:50:59.772525-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:52:11.825562-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "w2zq7Uz+DQCwQoVPB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Alright. The function structure is mostly self-explanatory: we keep the name and parameter, and the expression that consitutes the function body. These are compile-time concepts."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:52:12.355021-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:53:32.223086-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SfQ98kz+DQC2dm9GB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And because I am lazy, I didn’t introduce a second structure for this minimal language’s “backend”. Instead, the function that we emit as well as the label we assign it—more on that later—get inserted directly into the same structure. Not clean, but it serves us well."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:53:55.132168-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:54:26.139907-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "NQkj90z+DQC8JLixB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We are now ready to sketch a quick and dirty main function:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:56:11.688668-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:56:11.688668-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YuOBAE3+DQCAatRnB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nint main(void) {\n  static const char *input = \"(def main (x) (sub (call inc x) 15))\\n\"\n                                    \"(def inc (x) (add x 2))\\n\";\n  function functions[MAX_FUN];\n  int function_count = 0;\n\n  while (<input end condition>) functions[function_count++] = parse_function(input);\n  \n  // ... here goes the rest\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:57:58.493635-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:57:58.493635-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "M5rfBk3+DQCF2pHOB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The [actual parser](https://github.com/hellerve-pl-experiments/cj/blob/fa7405823721187454a01e071421fdbe40179e20/examples/minilang.c#L281-L293) has a lexer and is generally a bit more fiddly, but none of this matters for this tutorial."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:54:26.384725-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:58:00.956748-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0hQ7+kz+DQC+NZnRB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Let’s take a quick peek at how we parse the function to see what we start with, and then we can get started with the compiler for real:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:58:01.196778-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:00:05.71937-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "G9oIB03+DQCF6puIB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nstatic function parse_function(input) {\n  function fn;\n  memset(&fn, 0, sizeof(fn));\n  \n  fn.name = parse_function_head(input);\n  fn.param = parse_function_param(input);\n  fn.body = parse_expr(input);\n  \n  return fn;\n}\n\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T12:59:58.511567-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:02:25.176235-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cuwGDk3+DQCH9v68B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So by the time we get our grubby little hands on the function, the parse-y bits have been filled, but the compile-y bits are still TBD."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:02:25.489007-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:02:29.280718-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "z6DJFk3+DQCLkl4OB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Now our job begins!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:02:32.699403-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:02:40.325304-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HAMOF03+DQCL9WC1B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Part I: Compiling functions"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:29:36.700223-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:30:47.357528-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qJSXTk7+DQCY6HrIB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "A note before we begin: it’s important to remember that what we are doing here during the compile process is essentially filling a buffer. A lot of this code looks similar to be an interpreter, but none of the code actually gets executed here. Instead, we just push all of the code into a big buffer, and then generate a function from it later. Keep this in mind as we move along."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:03:28.15176-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:05:39.046237-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TnG0F03+DQCMqKUZB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Before we actually emit code for the functions, we need to assign a to for each of them. You can think of a label as a place for us to jump to from a GOTO, only in machine code. So go ahead and do this really quickly in our main function:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:05:40.755281-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:06:55.004106-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6idtIk3+DQCSalA6B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nint main(void) {\n  static const char *input = \"(def main (x) (sub (call inc x) 15))\\n\"\n                                    \"(def inc (x) (add x 2))\\n\";\n  function functions[MAX_FUN];\n  \n  // parse-y bits ...\n  \n  cj_ctx *cj = create_cj_ctx();\n  for (int i = 0; i < function_count; i++) functions[i].entry = cj_create_label(cj);\n  \n  // ... here goes the rest\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:07:00.339734-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:12:23.040174-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "QhjxJk3+DQCTNkohB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What we do here is create a cj context (the bits that store all of its state), and then we assign a label to each of the functions. We will use these in our backend when calling the functions."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:12:24.915051-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:13:03.867244-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "hyaEOk3+DQCZIMIZB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So one half of the functions struct is filled. We need to fill the other half, and generate the callable version of the function."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:13:05.913763-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:43:32.138637-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8L31PE3+DQCc1QGyB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\ntypedef struct {\n  cj_ctx *cj;\n  function *functions;\n  cj_builder_scratch scratch;\n} codegen;\n\nint main(void) {\n  static const char *input = \"(def main (x) (sub (call inc x) 15))\\n\"\n                                    \"(def inc (x) (add x 2))\\n\";\n  function functions[MAX_FUN];\n  \n  // setup ...\n  \n  codegen cg = {.cj = cj, .functions = functions};\n  for (int i = 0; i < function_count; i++) emit_function(&cg, &functions[i]);\n\n  \n  // ... here goes the rest\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:14:23.670656-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:44:12.677827-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zNt8QU3+DQCdKcsrB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In our main function, we just wrap the context and the list of functions in a single structure for ease of access (and tuck in a `cj_builder_scratch`, which we will learn about later), and call `emit_function` on each of our functions. What does `emit_function` look like, then?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:15:02.055121-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:22:29.037565-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "c+rhQ03+DQChW9rgB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nstatic void emit_function(codegen *cg, function *fn) {\n  cj_builder_scratch_init(&cg->scratch);\n  cj_mark_label(cg->cj, fn->entry);\n  cj_builder_frame frame;\n  cj_builder_fn_prologue_with_link_save(cg->cj, 0, &frame);\n  cj_operand result = emit_expr(cg, fn->body);\n  cj_builder_return_value(cg->cj, &frame, result);\n  cj_builder_scratch_release(&cg->scratch);\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:22:29.843434-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:23:37.044853-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vp6SXk3+DQChr5c8B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What a simple function, right?! Nonetheless, it’s doing some very complicated book-keeping and we should probably go through it line-by-line."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:23:38.216703-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:54:11.749903-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zeOlYk3+DQCluYXZB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "First we initialize the `cj_builder_scratch` thingie we created. We have to do this anew for every functions, so it’s in this context. We then set the label of the function our emitted code; when the function is called, we jump there. We then make a frame for our function and emit a prologue."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T13:54:12.433157-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:00:03.307218-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yNX5z03+DQCx1Lc8B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What is a prologue? Basically, each architecture has a different calling convention, and there are common chores we have to do when initializing a frame, initializing registers and stack pointers and so on. The “high level” API of `cj` abstracts this for us. Well, kind of. We still need to do some special work for arm64, which is expressed by the `with_link_save` part of the function. It basically saves the previous caller’s information on the stack before we begin."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:00:11.361519-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:01:18.946413-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WqNe5U3+DQC9LGBZB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We then are ready to emit the function body, calling `emit_expr`. It will return the value of the last expression (a `cj_operand`) that we can then mark as the return value, release the scratch thingie, and we’re done."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:01:20.652604-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:14:30.001933-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZvN/6U3+DQCB5RO4B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So, what is the scratch, actually? It’s one of `cj`s high-level concepts for acquiring new registers. Register names and purposes are backend-dependent, and I wanted to build a way to get to registers when I need them without having to think about any of that."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:14:33.569603-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:16:38.791905-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CubCGE7+DQCIzkL+B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What we explicitly do not do is manage the registers for you, doing full [register allocation](https://en.wikipedia.org/wiki/Register_allocation). I might get there in the future, but currently `cj` does not provide this."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:38:31.72481-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:38:43.678153-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TWV7bk7+DQC6ZwjtB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Part II: Compiling expressions"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:23:48.602248-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:39:05.835289-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "RSJPIE7+DQCMppDJB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "So, how do we actually compile this AST now? Let’s look at `emit_expr` to figure it out!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:24:08.893351-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:24:38.427864-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "u6UNO07+DQCPEZicB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nstatic cj_operand emit_expr(codegen *cg, node *n) {\n  switch (n->kind) {\n  case NODE_NUM: {\n    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);\n    cj_builder_assign(cg->cj, dst, cj_make_constant((uint64_t)(uint32_t)n->value));\n    return dst;\n  }\n  case NODE_PARAM: {\n    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);\n    cj_builder_assign(cg->cj, dst, cj_builder_arg_int(cg->cj, 0));\n    return dst;\n  }\n  case NODE_ADD:\n  case NODE_SUB: {\n    cj_operand lhs = emit_expr(cg, n->left);\n    cj_operand rhs = emit_expr(cg, n->right);\n    if (n->kind == NODE_ADD)\n      cj_add(cg->cj, lhs, rhs);\n    else\n      cj_sub(cg->cj, lhs, rhs);\n    cj_builder_scratch_release(&cg->scratch);\n    return lhs;\n  }\n  case NODE_CALL: {\n    cj_operand arg = emit_expr(cg, n->arg);\n    return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);\n  }\n  }\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:24:40.141807-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:25:46.029164-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "pHTqPE7+DQCPfQh4B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "That one is a lot, so we’ll go through all the cases in turn. For now we just  focus on perceiving that we have a big `switch` statement for each of the AST nodes we have defined."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:25:47.278591-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:25:59.698214-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "QeHqQE7+DQCTfTiVB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Let’s start with the number node."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:26:00.680844-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:26:11.521002-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zWO3QU7+DQCUMNjfB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n  case NODE_NUM: {\n    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);\n    cj_builder_assign(cg->cj, dst, cj_make_constant((uint64_t)(uint32_t)n->value));\n    return dst;\n  }\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:26:48.718911-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:29:07.78897-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZIdgQk7+DQCUdcREB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here we’re using our scratch to create a register and then assign the constant in our node to it (this boils down to a `MOV` instruction)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:31:06.205331-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:31:14.135569-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3octU07+DQChGxFOB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Parameters work similarly:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:31:20.092354-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:31:28.167485-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "/DfBVE7+DQCh+6d7B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n  case NODE_PARAM: {\n    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);\n    cj_builder_assign(cg->cj, dst, cj_builder_arg_int(cg->cj, 0));\n    return dst;\n  }\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:31:53.43217-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:34:40.911284-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1mOjVU7+DQCiNuHMB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The key difference between this and the number code is that we put the argument value in the register instead of a constant. `cj` takes care of handling these arguments for us by respecting the platform’s calling convention, locating the appropriate register, and returning it as an operand we can pass into the assignment."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:34:42.107897-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:35:28.660925-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fbzLYE7+DQCrgDDLB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Addition and subtraction are the first recursive cases:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:35:17.662335-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:35:22.938864-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "aT/qYk7+DQCtSyk3B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n  case NODE_ADD:\n  case NODE_SUB: {\n    cj_operand lhs = emit_expr(cg, n->left);\n    cj_operand rhs = emit_expr(cg, n->right);\n    if (n->kind == NODE_ADD)\n      cj_add(cg->cj, lhs, rhs);\n    else\n      cj_sub(cg->cj, lhs, rhs);\n    cj_builder_scratch_release(&cg->scratch);\n    return lhs;\n  }\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:35:31.884044-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:38:00.787401-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Uj7DY07+DQCtwicaB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We emit our left and right arguments (since they are expressions themselves), and then emit either an `ADD` or a `SUB` expression. Then we can release one of our scratch arguments, and return the left-hand side expression. Why the left-hand side expression? Both `ADD` and `SUB` will store the result of their respective operation in the register on the left, so that is the one we will return. This also explains why we release one argument only: the right-hand side can be forgotten about, but the left needs to be preserved."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:38:02.52235-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:39:18.049648-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+c+9bE7+DQC5g3q/B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The final trick is calling:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:38:12.75024-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:39:30.508334-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jOBZbU7+DQC6VOgLB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n  case NODE_CALL: {\n    cj_operand arg = emit_expr(cg, n->arg);\n    return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);\n  }\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:39:33.016905-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:44:27.755112-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YaQick7+DQC8c3iEB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We emit our argument first, then emit a call to the function we want to call. The high-level API of `cj` takes care of this for us once again, taking care of argument initialization, calling labels, and cleaning up after the call. One final complication is that we need to know the label of what we’ll call. In this expression, we just use the node’s `target` field we defined above, but we didn’t actually fill that field yet! Let’s go back and fix that!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:44:29.674492-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:44:43.577932-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "PEbRg07+DQCHXdO4B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Part III: Resolving calls"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:44:45.039644-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:45:49.129501-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Ar27hE7+DQCH8h9CB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As it turns out, we need to resolve function calls before we can get into this loop. Between parsing and creating labels, we insert a call to a function named `resolve_calls()` that looks like this:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:45:49.973262-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:48:27.90811-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bY2aiE7+DQCMAbnDB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nstatic int find_function(function *fns, int count, const char *name) {\n  for (int i = 0; i < count; i++) {\n    if (strcmp(fns[i].name, name) == 0) return i;\n  }\n  return -1;\n}\n\nstatic void resolve_calls(node** all_nodes, int num_nodes, function *fns, int count) {\n  for (int i = 0; i < num_nodes; i++) {\n    node *n = &all_nodes[i];\n    if (n->kind == NODE_CALL) n->target = find_function(fns, count, n->name);\n  }\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:48:30.965313-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:49:36.593414-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bRYzkk7+DQCNwvXCB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "This is relatively trivial code as it turns out: we iterate over all the nodes we parsed (you can check how we do that in the full implementation), find all call nodes, and fix up its target. It’s not the cleanest or most performant code, but for our simple example, it is good enough."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:49:37.236084-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:50:47.217215-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zE4mlk7+DQCTV/slB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We now have everything in place, and can generate code and call it!"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:49:58.927262-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:50:44.429263-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "e0hxl07+DQCVNnjuB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Part IV: Execution"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:00.613402-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:13.394529-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qDNqmk7+DQCWfxd+B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "As a reminder, this is the code we want to generate:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:14.689954-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:18.967784-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zFX1m07+DQCYWYwvB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:36.61544-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:52.144283-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+8VFnE7+DQCYimXaB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We now have generated all the code and are ready to call our JIT-compiled function:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:51:53.125187-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:59:27.119188-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nMU/nk7+DQCa9UsiB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```\nint main(int argc, char **argv) {\n  // all of our setup\n\n  cj_fn module = create_cj_fn(cj);\n\n  int main_idx = find_function(functions, function_count, \"main\");\n  int (*main_fn)(int) = cj_resolve_label(cj, module, functions[main_idx].entry);\n  int result = main_fn(55);\n  printf(\"main(55) = %d\\n\", result); // will print 42\n  \n  // cleanup goes here\n}\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:56:52.865487-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:59:38.288718-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "AXYdsE7+DQCbwaleB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "All we do is generate all of our code, find the offset of our main function, and call it! If this seems like magic, it kind of is: `create_cj_fn` tells the machine that this buffer is not code anymore but data instead. The call to `resolve_label` calculates the offset into that buffer that leads us to our label and gives us the pointer to it. By casting it to a function pointer, we can then just call it."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T14:59:53.096546-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T15:00:35.468373-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3w5Tuk7+DQClYSdIB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And that’s it! In just over 90 lines of code, we compiled a non-trivial program and executed it, *all at runtime*. Pretty cool, right?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T15:00:38.800917-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T15:00:40.776869-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "I/eUvU7+DQCpcHfPB0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Fin"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T15:00:53.187766-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-24T15:03:22.63264-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lvXFvU7+DQCpklY6B0uehQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "This was a lot, certainly. Admittedly, even with the “high level” helpers, building anything with `cj` is still very low-level (by design). I still hope it is somewhat accessible for all, and that, if you so desire, you explore the [other examples](https://github.com/hellerve-pl-experiments/cj/tree/master/examples) `cj` ships with. See you around!"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-23T22:14:37.105967-05:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-24T15:03:56.005842-05:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Building a small language with cj"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "01ff4389-40fe-0d00-ab2e-9edc074b9e85"
+	}
+}
