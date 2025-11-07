@@ -77,7 +77,6 @@ body > * {
 
 .content h2 {
   font-size: 125%;
-  font-weight: 500;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
   padding-left: 1em;
@@ -85,7 +84,6 @@ body > * {
 
 .content h3 {
   font-size: 110%;
-  font-weight: 500;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
   padding-left: 1em;
@@ -93,7 +91,6 @@ body > * {
 
 .content h4 {
   font-size: 100%;
-  font-weight: 500;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
   padding-left: 1em;
