@@ -1,6 +1,6 @@
-In [my last blog post](https://blog.veitheller.de/cj:_Making_a_minimal,_complete_JIT.html),
+In [a recent blog post](https://blog.veitheller.de/cj:_Making_a_minimal,_complete_JIT.html),
 I unveiled [cj](https://github.com/hellerve-pl-experiments/cj), a small,
-dependency-free JIT compiler framework in C. In the post, I discussed the idea
+dependency-free JIT compiler framework in C. In theat post, I discussed the idea
 of implementing a small programming language in it.
 
 Of course, once I had had the idea, [my fingers couldn’t stop typing until it was
@@ -28,8 +28,8 @@ So, let’s dive right in!
 #### Prelude: An API and an AST
 
 Before we implement anything, let me give you a quick rundown of the `cj`
-functions we will be using today. Jump back here if you need clarification on
-any of the bits we’re using!
+functions we will be using today. This is intended as a reference, jump
+back here if you need clarification on any of the bits we’re using!
 
 ```
 // Our main CJ context that we’ll carry around
@@ -96,6 +96,7 @@ So, what does our AST for the simple language we defined above look like?
 
 ```
 typedef enum { NODE_NUM, NODE_PARAM, NODE_ADD, NODE_SUB, NODE_CALL } node_kind;
+
 typedef struct node node;
 struct node {
   node_kind kind;
@@ -118,7 +119,8 @@ number, `name` if we have a parameter, `left` and `right` if we are dealing with
 an `add` or `sub` node. Calling is a little special: it has an `arg` (simple
 because all functions are unary), but it also has a `target`, which is the label
 we are going to jump to. More about that later, since that part is on us, not
-the parser.
+the parser. This AST also serves as our intermediate representation, so it mixes
+parse- and compile-level concepts for the sake of simplicity.
 
 The AST for our example program would look something like this:
 
@@ -160,14 +162,12 @@ typedef struct {
 } function;
 ```
 
-Alright. The function structure is mostly self-explanatory: we keep the name and
-parameter, and the expression that constitutes the function body. These are
-compile-time concepts.
-
-And because I am lazy, I didn’t introduce a second structure for this minimal
-language’s “backend”. Instead, the function that we emit as well as the label we
-assign it—more on that later—get inserted directly into the same structure. Not
-clean, but it serves us well.
+The function structure is mostly self-explanatory: we keep the name and
+parameter, and the expression that constitutes the function body. And once
+again we do not create a separate intermediate representation; instead, the
+function that we emit as well as the label we assign it—more on that
+later—get inserted directly into the same structure. Not clean, but it serves
+us well.
 
 Our functions from above would thus look like this:
 
@@ -220,8 +220,8 @@ Now our real job begins!
 #### Part I: Resolving calls
 
 The first thing we need to do is to resolve function calls first so we can jump
-between things later. After parsing, we insert a call to a function named
-`resolve_calls()` that looks like this:
+between things later. After parsing, we call a function named `resolve_calls()`
+that looks like this:
 
 ```
 static int find_function(function *fns, int count, const char *name) {
@@ -239,10 +239,9 @@ static void resolve_calls(node** all_nodes, int num_nodes, function *fns, int co
 }
 ```
 
-This is relatively trivial code as it turns out: we iterate over all the nodes
-we parsed (you can check how we do that in the full implementation), find all
-call nodes, and fix up its target. It’s not the cleanest or most performant
-code, but for our simple example, it is good enough.
+This is relatively trivial code: we iterate over all the nodes we parsed (you
+can check how we do that in the full implementation), find all call nodes, and
+fix up its target. For our simple example, this is good enough.
 
 It completes our nodes and sets the target of all calls correctly, ensuring
 that we can jump to them correctly when time comes.
@@ -253,7 +252,7 @@ Next up: compiling functions!
 
 A note before we begin: it’s important to remember that what we are doing here
 during the compile process is essentially filling a buffer. A lot of this code
-looks similar to be an interpreter, but none of the code actually gets executed
+looks similar to an interpreter, but none of the code actually gets executed
 here. Instead, we just push all of the code into a big buffer, and then generate
 a function from it later. Keep this in mind as we move along.
 
@@ -267,17 +266,17 @@ int main(void) {
   static const char *input = "(def main (x) (sub (call inc x) 15))\n"
                                     "(def inc (x) (add x 2))\n";
   function functions[MAX_FUN];
-  
-  // parse-y bits ...
-  
+
+  // parse-y and resolve-y bits ...
+
   cj_ctx *cj = create_cj_ctx();
   for (int i = 0; i < function_count; i++) functions[i].entry = cj_create_label(cj);
-  
+
   // ... here goes the rest
 }
 ```
 
-What we do here is create a cj context (the bits that store all of its state),
+What we do here is create a `cj` context (the bits that store all of its state),
 and then we assign a label to each of the functions. We will use these in our
 backend when calling the functions.
 
@@ -295,21 +294,21 @@ int main(void) {
   static const char *input = "(def main (x) (sub (call inc x) 15))\n"
                                     "(def inc (x) (add x 2))\n";
   function functions[MAX_FUN];
-  
+
   // setup ...
-  
+
   codegen cg = {.cj = cj, .functions = functions};
   for (int i = 0; i < function_count; i++) emit_function(&cg, &functions[i]);
 
-  
   // ... here goes the rest
 }
 ```
 
 In our main function, we just wrap the context and the list of functions in a
-single structure for ease of access (and tuck in a `cj_builder_scratch`, which
-we will learn about later), and call `emit_function` on each of our functions.
-What does `emit_function` look like, then?
+single structure called `codegen` for ease of access (and tuck in a
+`cj_builder_scratch`, which we will learn about later), and call
+`emit_function` on each of our functions. What does `emit_function` look like,
+then?
 
 ```
 static void emit_function(codegen *cg, function *fn) {
@@ -326,30 +325,24 @@ static void emit_function(codegen *cg, function *fn) {
 What a simple function, right?! Nonetheless, it’s doing some very complicated
 book-keeping and we should probably go through it line-by-line.
 
-First we initialize the `cj_builder_scratch` thingie we created. We have to do
-this anew for every functions, so it’s in this context. We then set the label of
-the function our emitted code; when the function is called, we jump there. We
-then make a frame for our function and emit a prologue.
+First we initialize the `cj_builder_scratch` thingie we created. This structure
+gives us fresh registers for a frame, so we re-initialize it for every function;
+we will see it in action below<sup><a href="#1">1</a></sup>.
 
-What is a prologue? Basically, each architecture has a different calling
-convention, and there are common chores we have to do when initializing a frame,
-initializing registers and stack pointers and so on. The “high level” API of
-`cj` abstracts this for us. Well, kind of. We still need to do some special work
-for arm64, which is expressed by the `with_link_save` part of the function. It
-basically saves the previous caller’s information on the stack before we begin.
+We then set the label of the function our emitted code using `cj_mark_label`;
+when the function is called, we jump there.
 
-We then are ready to emit the function body, calling `emit_expr`. It will return
-the value of the last expression (a `cj_operand`) that we can then mark as the
-return value, release the scratch thingie, and we’re done.
+Next, we emit a prologue. What is a prologue? Basically, each architecture has
+a different calling convention, and there are common chores we have to do when
+initializing a frame, initializing registers and stack pointers and so on. The
+“high level” API of `cj` abstracts this for us. Well, kind of. We still need to
+do some special work for arm64, which is expressed by the `with_link_save` part
+of the function. It basically saves the previous caller’s information on the
+stack before we begin (only on arm64).
 
-So, what is the scratch, actually? It’s one of `cj`s high-level concepts for
-acquiring new registers. Register names and purposes are backend-dependent, and
-I wanted to build a way to get to registers when I need them without having to
-think about any of that.
-
-What we explicitly do not do is manage the registers for you, doing full
-[register allocation](https://en.wikipedia.org/wiki/Register_allocation). I
-might get there in the future, but currently `cj` does not provide this.
+Then we finally are ready to emit the function body, calling `emit_expr`. It
+will return the value of the last expression (a `cj_operand`) that we can then
+mark as the return value and release the scratch.
 
 #### Part III: Compiling expressions
 
@@ -373,10 +366,10 @@ static cj_operand emit_expr(codegen *cg, node *n) {
   case NODE_SUB: {
     cj_operand lhs = emit_expr(cg, n->left);
     cj_operand rhs = emit_expr(cg, n->right);
-    if (n->kind == NODE_ADD)
-      cj_add(cg->cj, lhs, rhs);
-    else
-      cj_sub(cg->cj, lhs, rhs);
+
+    if (n->kind == NODE_ADD) cj_add(cg->cj, lhs, rhs);
+    else cj_sub(cg->cj, lhs, rhs);
+
     cj_builder_scratch_release(&cg->scratch);
     return lhs;
   }
@@ -395,11 +388,11 @@ nodes we have defined.
 Let’s start with the number node.
 
 ```
-  case NODE_NUM: {
-    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);
-    cj_builder_assign(cg->cj, dst, cj_make_constant((uint64_t)(uint32_t)n->value));
-    return dst;
-  }
+case NODE_NUM: {
+  cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);
+  cj_builder_assign(cg->cj, dst, cj_make_constant((uint64_t)(uint32_t)n->value));
+  return dst;
+}
 ```
 
 Here we’re using our scratch to create a register and then assign the constant
@@ -408,33 +401,34 @@ in our node to it (this boils down to a `MOV` instruction).
 Parameters work similarly:
 
 ```
-  case NODE_PARAM: {
-    cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);
-    cj_builder_assign(cg->cj, dst, cj_builder_arg_int(cg->cj, 0));
-    return dst;
-  }
+case NODE_PARAM: {
+  cj_operand dst = cj_builder_scratch_acquire(&cg->scratch);
+  cj_builder_assign(cg->cj, dst, cj_builder_arg_int(cg->cj, 0));
+  return dst;
+}
 ```
 
 The key difference between this and the number code is that we put the argument
 value in the register instead of a constant. `cj` takes care of handling these
 arguments for us by respecting the platform’s calling convention, locating the
 appropriate register, and returning it as an operand we can pass into the
-assignment.
+assignment, all in `cj_builder_arg_int`, which returns an operand based on the
+parameter index.
 
 Addition and subtraction are the first recursive cases:
 
 ```
-  case NODE_ADD:
-  case NODE_SUB: {
-    cj_operand lhs = emit_expr(cg, n->left);
-    cj_operand rhs = emit_expr(cg, n->right);
-    if (n->kind == NODE_ADD)
-      cj_add(cg->cj, lhs, rhs);
-    else
-      cj_sub(cg->cj, lhs, rhs);
-    cj_builder_scratch_release(&cg->scratch);
-    return lhs;
-  }
+case NODE_ADD:
+case NODE_SUB: {
+  cj_operand lhs = emit_expr(cg, n->left);
+  cj_operand rhs = emit_expr(cg, n->right);
+
+  if (n->kind == NODE_ADD) cj_add(cg->cj, lhs, rhs);
+  else cj_sub(cg->cj, lhs, rhs);
+
+  cj_builder_scratch_release(&cg->scratch);
+  return lhs;
+}
 ```
 
 We emit our left and right arguments (since they are expressions themselves),
@@ -448,17 +442,17 @@ can be forgotten about, but the left needs to be preserved.
 The final trick is calling:
 
 ```
-  case NODE_CALL: {
-    cj_operand arg = emit_expr(cg, n->arg);
-    return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);
-  }
+case NODE_CALL: {
+  cj_operand arg = emit_expr(cg, n->arg);
+  return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);
+}
 ```
 
 We emit our argument first, then emit a call to the function we want to call.
 The high-level API of `cj` takes care of this for us once again, taking care of
 argument initialization, calling labels, and cleaning up after the call. One
 final complication is that we need to know the label of what we’ll call. In this
-expression, we just use the node’s `target` field we defined above.
+expression, we just use the node’s `target` field we defined above in Part I.
 
 We now have everything in place, and can generate code and call it!
 
@@ -487,7 +481,7 @@ int main(int argc, char **argv) {
   int (*main_fn)(int) = cj_resolve_label(cj, module, functions[main_idx].entry);
   int result = main_fn(55);
   printf("main(55) = %d\n", result); // will print 42
-  
+
   // cleanup goes here
 }
 ```
@@ -509,3 +503,12 @@ building anything with `cj` is still very low-level (by design). I still hope it
 is somewhat accessible for all, and that, if you so desire, you explore the
 [other examples](https://github.com/hellerve-pl-experiments/cj/tree/master/examples)
 `cj` ships with. See you around!
+
+#### Footnotes
+
+<span id="1">1.</span> Register names and purposes are backend-dependent, and
+I wanted to build a way to get to registers when I need them without having to
+think about any of that. What we explicitly do not do is manage the registers
+for the user, doing full [register
+allocation](https://en.wikipedia.org/wiki/Register_allocation). I might get
+there in the future, but currently `cj` does not provide this.
