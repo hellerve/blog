@@ -133,7 +133,7 @@ node FIFTEEN = (node){ .kind=NODE_NUM, .value=15 };
 
 node INC_BODY  = (node){ .kind=NODE_ADD, .left=&X, .right=&TWO };
 
-node CALL_INC  = (node){ .kind=NODE_CALL, .name="inc", .arg=&X }; // target set later
+node CALL_INC  = (node){ .kind=NODE_CALL, .name="inc", .arg=&X };
 node MAIN_BODY = (node){ .kind=NODE_SUB,  .left=&CALL_INC, .right=&FIFTEEN };
 ```
 
@@ -375,7 +375,9 @@ static cj_operand emit_expr(codegen *cg, node *n) {
   }
   case NODE_CALL: {
     cj_operand arg = emit_expr(cg, n->arg);
-    return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);
+    return cj_builder_call_unary(
+        cg->cj, &cg->scratch, cg->functions[n->target].entry, arg
+    );
   }
   }
 }
@@ -444,7 +446,9 @@ The final trick is calling:
 ```
 case NODE_CALL: {
   cj_operand arg = emit_expr(cg, n->arg);
-  return cj_builder_call_unary(cg->cj, &cg->scratch, cg->functions[n->target].entry, arg);
+  return cj_builder_call_unary(
+    cg->cj, &cg->scratch, cg->functions[n->target].entry, arg
+  );
 }
 ```
 
