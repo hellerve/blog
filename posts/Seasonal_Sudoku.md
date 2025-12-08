@@ -11,5 +11,5 @@ languages in season two, but thinking about some of the implementations for
 season three gives me sweaty fingers already, which is more than exciting.
 
 Take a look at the list and [let me know what you think](mailto:veit@veitheller.de)!
-Did I forget anything? D you have any favorite languages I should add? Will we
+Did I forget anything? Do you have any favorite languages I should add? Will we
 need a fourth season? Who will make it through this entire series with me?
