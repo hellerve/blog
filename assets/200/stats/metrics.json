@@ -1,0 +1,11 @@
+{
+  "posts": 199,
+  "words_total": 166834,
+  "median_words": 705,
+  "p90_words": 1601,
+  "max_days_between_posts": 563,
+  "median_days_between_posts": 5,
+  "mean_days_between_posts": 16,
+  "first_post": "2017-02-01T00:00:00",
+  "last_post": "2025-12-17T00:00:00"
+}

@@ -1,0 +1,44 @@
+/* Make charts responsive and theme-aware */
+[data-plot] svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+[data-plot] {
+  margin: 1.2rem 0;
+  color: currentColor;
+}
+[data-plot] figcaption {
+  font-size: 0.95em;
+  opacity: .8;
+  margin-top: .6rem;
+  text-align: center;
+}
+
+/* Style grid lines and axes */
+[data-plot] svg g[aria-label="y-grid"] line {
+  stroke: color-mix(in oklab, currentColor 40%, transparent);
+}
+
+/* Style tick marks and labels */
+[data-plot] svg g[aria-label="x-axis"] line,
+[data-plot] svg g[aria-label="y-axis"] line {
+  stroke: color-mix(in oklab, currentColor 20%, transparent);
+}
+[data-plot] svg text {
+  fill: currentColor;
+}
+
+/* Rotate x-axis labels for bucketed histograms */
+[data-plot][data-type="bar-rotate"] svg g[aria-label="x-axis"] text {
+  transform: rotate(-45deg);
+  text-anchor: end;
+}
+
+/* Tables */
+.hub-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.hub-table th, .hub-table td { padding: .4rem .5rem; border-bottom: 1px solid color-mix(in oklab, currentColor 20%, transparent); }
+.hub-table .num { text-align: right; width: 4.5rem; }
+
+.orphans summary { cursor: pointer; margin: .5rem 0; }
+.metrics { margin: .8rem 0 0 0; padding-left: 1.1rem; }
