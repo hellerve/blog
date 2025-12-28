@@ -111,12 +111,20 @@ body > * {
   background: #000;
 }
 
+.spoiler a {
+  text-shadow: none;
+}
+
 .spoiler code {
   background: #000;
 }
 
 .spoiler:hover {
   background: #fff;
+}
+
+.spoiler:hover a {
+  text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
 }
 
 .spoiler:hover code {
