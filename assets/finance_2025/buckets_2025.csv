@@ -1,0 +1,7 @@
+bucket,revenue,person_days,eur_per_day,revenue_share_pct,time_share_pct
+Due Diligence,44000,32,1375.0,29.3,21.3
+R&D,40000,60,666.67,26.7,40.0
+Security (Operational & Technical),24000,21,1142.86,16.0,14.0
+Software Development,20000,17,1176.47,13.3,11.3
+Network Automation,12000,12,1000.0,8.0,8.0
+Management,10000,8,1250.0,6.7,5.3

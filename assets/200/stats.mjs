@@ -18,6 +18,20 @@ async function fetchJSON(url) {
   return r.json();
 }
 
+function domainInDataOrder(data, key) {
+  const seen = new Set();
+  const domain = [];
+  for (const d of data) {
+    const v = d[key];
+    if (v == null) continue;
+    if (!seen.has(v)) {
+      seen.add(v);
+      domain.push(v);
+    }
+  }
+  return domain;
+}
+
 const fmt = new Intl.NumberFormat(undefined, {maximumFractionDigits: 0});
 const escape = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 
@@ -41,7 +55,8 @@ function renderPlot(el, data) {
     x: {
       tickFormat: d => String(d),
       line: true,
-      label: humanize(x)
+      label: humanize(x),
+      tickRotate: type === "bar-rotate" ? -10 : 0,
     },
     y: {
       grid: true,
@@ -50,6 +65,8 @@ function renderPlot(el, data) {
     },
     color: {legend: false}
   };
+
+  base.x.domain = domainInDataOrder(data, x);
 
   let marks = [];
   const tipOpts = {format: {x: false, y: true}};
