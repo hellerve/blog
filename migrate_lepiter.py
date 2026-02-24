@@ -31,8 +31,17 @@ def snippet_to_md(item):
 
     if t == "textSnippet":
         text = item.get("string", "")
-        text = text.replace("\r\n", "\n").replace("\r", "\n")
-        return text
+        # Lepiter uses \r as line separator within a text snippet
+        lines = text.replace("\r\n", "\r").replace("\n", "\r").split("\r")
+        # Ensure a blank line before any run of list items that immediately
+        # follows non-list text (otherwise pandoc folds them into a <p>)
+        result = []
+        LIST_RE = re.compile(r"^\s*[-*+] |^\s*\d+[.)]\s")
+        for i, line in enumerate(lines):
+            if i > 0 and LIST_RE.match(line) and result and result[-1].strip() and not LIST_RE.match(result[-1]):
+                result.append("")  # blank line before first list item
+            result.append(line)
+        return "\n".join(result)
 
     if t in LANG_MAP:
         lang = LANG_MAP[t]

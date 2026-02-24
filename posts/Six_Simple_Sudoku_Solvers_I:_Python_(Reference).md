@@ -6,6 +6,7 @@ date: 2025-09-08
 A few weeks ago, I saw a random post on LinkedIn in which someone showed off a simple Sudoku solver written in C++, and I realized that I’ve never attempted to write one myself. Instead of even reading the blog post, I got to work, and implemented a simple solver. It solved Sudokus, but would get stuck on harder puzzles, so I implemented branching and backtracking, and now here I am, two weeks later, having written six different Sudoku solvers in six different programming languages as a puzzle.
 
 In this blog post series, I’ll walk you through each of them in turn, showcasing some fun unique features about every language (well almost). We will go through:
+
 - Python, the reference implementation. Simple, imperative, and thus perfect as our baseline.
 - SBCL (Common Lisp). We will utilize bitsets, macros, and optimizations hints, to show how we can make the solver both expressive and performant.
 - SWI-Prolog. We will leave the whole backtracking and solving business to Prolog. The least amount of code, the most magical.

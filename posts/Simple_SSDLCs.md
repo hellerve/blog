@@ -29,9 +29,9 @@ As part of your SSDLC, you will also think about the implications of any change 
 
 Assuming you already have a threat model, you can adopt a simple SSDLC in two to three weeks (or sprints, or cycles, or whatever your preferred unit of measurement is). Let me try to formalize it, but do adjust to your needs:
 
-Phase 1: Add security implications and threat model delta to issue/user story template and MR/PR template; define your list of approved cryptography (defer to an authority like BSI or NIST if possible).
-Phase 2: Add your CI steps to generate an SBOM and sign your artifacts ([read my post](/Some_notes_about_SBOMs.html)); pin your base images (by digest) and whatever else can be pinned. Add as many CI automations as possible ([syft](https://github.com/anchore/syft), [trivy](https://trivy.dev/latest/), [gitleaks](https://github.com/gitleaks/gitleaks), [semgrep](https://semgrep.dev/), [renovate](https://github.com/renovatebot/renovate), [cosign](https://github.com/sigstore/cosign), etc.), but not more than you will actually use and maintain, noone likes looking at stale Dependabot alerts.
-Phase 3: Turn on CI; add a few smoke tests (covering, for instance, log redaction).
+1. Phase 1: Add security implications and threat model delta to issue/user story template and MR/PR template; define your list of approved cryptography (defer to an authority like BSI or NIST if possible).
+2. Phase 2: Add your CI steps to generate an SBOM and sign your artifacts ([read my post](/Some_notes_about_SBOMs.html)); pin your base images (by digest) and whatever else can be pinned. Add as many CI automations as possible ([syft](https://github.com/anchore/syft), [trivy](https://trivy.dev/latest/), [gitleaks](https://github.com/gitleaks/gitleaks), [semgrep](https://semgrep.dev/), [renovate](https://github.com/renovatebot/renovate), [cosign](https://github.com/sigstore/cosign), etc.), but not more than you will actually use and maintain, noone likes looking at stale Dependabot alerts.
+3. Phase 3: Turn on CI; add a few smoke tests (covering, for instance, log redaction).
 
 What I wouldn’t include from the get-go includes everything from super heavyweight docs, manual gates, or bespoke “security reviews”. If it can’t be automated or proven, it probably won’t happen unless an auditor is looking<sup><a href="#1">1</a></sup>.
 

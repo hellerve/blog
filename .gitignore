@@ -6,6 +6,7 @@ blargl.js
 # folder for under-the-wraps stuff
 priv/
 wip/
+out/
 
 # haskell build stuff
 dist-newstyle
