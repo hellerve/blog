@@ -1,3 +1,8 @@
+---
+title: "Talking Carp"
+date: 2018-09-23
+---
+
 On the 15th of September, I gave my first recorded talk on Carp at clojuTRE 2018.
 I had a lot of fun, and now the recording is online. I want to talk a bit about
 my experience, but first I’ll share the talk itself with you!

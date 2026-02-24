@@ -1,3 +1,8 @@
+---
+title: "A Better Calculator"
+date: 2017-06-01
+---
+
 Some of you might have heard of
 [`bc`](https://en.wikipedia.org/wiki/Bc_%28programming_language%29) before. I
 know that the people who attended my lightning talk at Recurse Center last

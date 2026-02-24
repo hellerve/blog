@@ -1,3 +1,8 @@
+---
+title: "A Cool C Trick"
+date: 2018-01-23
+---
+
 I sinned. In my last two blog posts on Carp, in which I talked about [Carp and
 C interop](http://blog.veitheller.de/Carp_and_C_%28as_of_2017%29.html) and
 [Carp’s format

@@ -1,3 +1,8 @@
+---
+title: "Why I Suck At Art"
+date: 2018-02-06
+---
+
 I listened to [John Cleese’s Google talk](https://www.youtube.com/watch?v=2-p44-9S4O0)
 a while ago. There are a whole lot of profound ideas in there, but the most
 important thought for me personally comes up around 45 minutes in, during

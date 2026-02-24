@@ -1,3 +1,8 @@
+---
+title: "CXXVI"
+date: 2021-08-17
+---
+
 <style>
 .poem p {
   text-indent: -2em;

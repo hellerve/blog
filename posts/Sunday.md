@@ -1,3 +1,8 @@
+---
+title: "Sunday"
+date: 2017-07-16
+---
+
 The light signals me to walk. I stand. My cigarette has a few drags left, and
 if I cross now I’ll have to dispose of it. The last wastebasket on my way to
 the laundromat is on that other side. I don’t want to stand next to it and

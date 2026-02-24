@@ -1,3 +1,8 @@
+---
+title: "zepto, A Eulogy"
+date: 2017-12-26
+---
+
 Almost exactly a year ago today I was in a small room in a venture capitalist’s
 apartment, surrounded by 20 close friends and friends of friends, preparing to
 announce version 0.9.6 of [zepto](https://github.com/zepto-lang/zepto), the

@@ -1,3 +1,8 @@
+---
+title: "Enthusiasticon"
+date: 2018-02-22
+---
+
 As a few of you know, I’m co-organizing [Enthusiasticon](http://enthusiasticon.de/)
 this year. If you don’t know already, however, this blog post is for you.
 

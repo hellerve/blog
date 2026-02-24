@@ -1,3 +1,8 @@
+---
+title: "A Bad Idea"
+date: 2019-03-11
+---
+
 *TL;DR because the introduction is a bit long: We’re going to play around with
 Python’s metaprogramming facilities to build a plug-in system for Python’s
 parser!*

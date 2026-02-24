@@ -1,3 +1,8 @@
+---
+title: "Blockchain: The Post I Didnt Want to Write"
+date: 2021-05-03
+---
+
 **Note:** If you don’t feel the need to talk about blockchain things with
 everyone you meet, this blog post is probably not for you. It wasn’t for me,
 either.

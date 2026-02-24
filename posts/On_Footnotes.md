@@ -1,3 +1,8 @@
+---
+title: "On Footnotes"
+date: 2020-01-08
+---
+
 I’m a huge fan of footnotes, both in print and on the web. I use them all the
 time on this blog, and I have a ton of opinions about how to do them right,
 though I don’t think I’ve ever spoken about them, let alone justified them.

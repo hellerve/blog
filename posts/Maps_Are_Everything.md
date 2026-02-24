@@ -1,3 +1,8 @@
+---
+title: "Maps Are Everything"
+date: 2021-02-24
+---
+
 About 3 months ago, I woke up with an idea in my head:
 maps<sup><a href="#1">1</a></sup>, as they are often used in programming, are
 frozen computation. I had a vague idea how to represent various types of

@@ -1,3 +1,8 @@
+---
+title: "Seasonal Sudoku"
+date: 2025-12-09
+---
+
 As many of you know I recently concluded a six-part series on Sudoku solvers in
 which we implemented Sudoku solvers in six different programming languages. I had
 a ton of fun with the series, but it left me feeling like I barely scratched the surface. There are so many cool languages out there that I want to get my grubby

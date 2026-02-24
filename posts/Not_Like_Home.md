@@ -1,3 +1,8 @@
+---
+title: "Not Like Home"
+date: 2017-12-27
+---
+
 Koala and Turtle looked around in awe. The forest was lush and green, and the
 leaves swayed gently in the wind. "It's beautiful here", sighed Koala, and her
 ears wiggled a bit.

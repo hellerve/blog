@@ -1,3 +1,8 @@
+---
+title: "Editing Revisited"
+date: 2017-07-12
+---
+
 In [a previous post](//blog.veitheller.de/Braindead_Editing.html) I talked
 about [an editor](https://github.com/hellerve/e) I built. It's become my
 primary editor now, but over the months I've become increasingly frustrated by

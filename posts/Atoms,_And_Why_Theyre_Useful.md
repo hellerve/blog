@@ -1,3 +1,8 @@
+---
+title: "Atoms, And Why Theyre Useful"
+date: 2018-05-27
+---
+
 Today I want to talk about a programming language feature that goes by many
 different names. Elixir, Erlang, and [zepto](http://github.com/zepto-lang/zepto)
 call them atoms. Common Lisp and Clojure call them keywords. Smalltalk and Ruby

@@ -1,3 +1,8 @@
+---
+title: "On Replaceability: Craft, Taste, and AI"
+date: 2026-01-27
+---
+
 I don’t know about you, but lately I’ve been sensing a lot of anxiety about how
 AI is going to replace us. Software engineers are posting worried takes all
 over LinkedIn and in private forums, while product-focused people understandably

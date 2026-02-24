@@ -1,3 +1,8 @@
+---
+title: "The Last Straw"
+date: 2017-01-16
+---
+
 I decided to abandon Firefox. This decision was harder for me than
 it probably should have been, because I know most of my peers have
 already migrated to Chrome. I'm late to the party. But my reasoning

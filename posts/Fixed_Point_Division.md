@@ -1,3 +1,8 @@
+---
+title: "Fixed Point Division"
+date: 2017-08-12
+---
+
 A few days back, I wrote a [blog post](//blog.veitheller.de/Fixed_Point_Arithmetic.html)
 on a library—dubbed `silly`—that implements Fixed Point Arithmetic.
 At that point I wasn’t sure how to properly implement division—i.e.

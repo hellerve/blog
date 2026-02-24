@@ -1,3 +1,8 @@
+---
+title: "Variable Arity through Macros"
+date: 2022-04-04
+---
+
 First off I’d like to apologize for the scary title, but I didn’t have anything
 snappy at hand.
 

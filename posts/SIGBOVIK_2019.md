@@ -1,3 +1,8 @@
+---
+title: "SIGBOVIK 2019"
+date: 2019-04-15
+---
+
 I always imagined my first published paper would be the work of many hours of hard
 Computer Science research, winding into the wee hours of the night, compiled into a piece
 of writing of stellar quality. Of course life got in the way, and instead my

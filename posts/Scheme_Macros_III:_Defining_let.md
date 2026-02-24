@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros III: Defining let"
+date: 2017-09-20
+---
+
 After having explored how to implement a [module system](//blog.veitheller.de/Scheme_Macros_I:_Modules.html)
 and [generic functions](//blog.veitheller.de/Scheme_Macros_I:_Generics.html)
 in Scheme macros, we’ll look this time at how to reimplement

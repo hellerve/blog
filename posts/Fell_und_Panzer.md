@@ -1,3 +1,8 @@
+---
+title: "Fell und Panzer"
+date: 2017-12-21
+---
+
 “What did you say it is called?”, said the turtle, its tiny head poking out of
 the hole, “I find its rather pleasant to sit in indeed.”
 

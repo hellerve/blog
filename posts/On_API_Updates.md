@@ -1,3 +1,8 @@
+---
+title: "On API Updates"
+date: 2017-03-07
+---
+
 Sometimes API changes make my day, namely when they enable me to refactor a
 historically gnarly bit of code to a cleaner, more efficient, and shorter
 version of itself. Alas, library maintainers do not always agree with me in

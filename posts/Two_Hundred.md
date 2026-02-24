@@ -1,3 +1,8 @@
+---
+title: "Two Hundred"
+date: 2025-12-28
+---
+
 <link rel="stylesheet" href="./assets/200/stats.css">
 <script type="module" src="./assets/200/stats.mjs"></script>
 

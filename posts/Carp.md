@@ -1,3 +1,8 @@
+---
+title: "Carp"
+date: 2017-11-25
+---
+
 As some of you might know, I recently became enamoured with a new programming
 language, [Carp](https://github.com/carp-lang/carp). While you might have caught
 me fawning over it already, in this post I want to give you a little

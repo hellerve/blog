@@ -1,3 +1,8 @@
+---
+title: "Deletion Day"
+date: 2020-04-04
+---
+
 One of my fellow [Recurse Center](https://recurse.com/) alums shared a
 wonderful idea—which shouldn’t be a surprise, considering that the Recurse
 Center community is probably the most inspired community I know. For a few

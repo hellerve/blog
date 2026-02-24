@@ -1,3 +1,8 @@
+---
+title: "Datengarten"
+date: 2019-01-09
+---
+
 This blog post is meant as a quick one to tide you over the ever longer periods
 between blog posts.
 

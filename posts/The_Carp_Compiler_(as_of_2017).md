@@ -1,3 +1,8 @@
+---
+title: "The Carp Compiler (as of 2017)"
+date: 2017-12-22
+---
+
 Today I want to talk to you about the Carp compiler. After [my last blog
 post](http://blog.veitheller.de/Carp.html) spent some time on the front page
 of various internet forums and incited healthy and not so healthy discussions,

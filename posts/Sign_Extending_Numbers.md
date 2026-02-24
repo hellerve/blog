@@ -1,3 +1,8 @@
+---
+title: "Sign Extending Numbers"
+date: 2017-10-18
+---
+
 This will be a fairly short blog post about a neat trick that I found today
 that makes sign extending numbers in C correctly trivial. It is based on the
 version found in this [great list of bit hacks](http://graphics.stanford.edu/~seander/bithacks.html),

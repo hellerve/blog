@@ -1,3 +1,8 @@
+---
+title: "Carp Patterns I: Documentation"
+date: 2020-05-15
+---
+
 I’ve had the opportunity to spend a lot of quality time with Carp lately, and
 it has been very fun! The community has been buzzing with activity, and a lot
 of good exciting things have landed in the core compiler and standard library.

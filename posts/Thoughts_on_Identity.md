@@ -1,3 +1,8 @@
+---
+title: "Thoughts on Identity"
+date: 2021-05-23
+---
+
 Identity is a complex thing. Philosophers have been thinking about it for
 millenia, it lies at the heart of such fields as semantics and ontology, and
 I’d argue that everyone has, at some point, thought about it.

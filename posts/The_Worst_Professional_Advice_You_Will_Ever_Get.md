@@ -1,3 +1,8 @@
+---
+title: "The Worst Professional Advice You Will Ever Get"
+date: 2021-02-16
+---
+
 There is one piece of advice that you get a lot when you go through the German
 school and university system, and it happens to be very bad. So bad, in fact,
 that I don’t even think the title of this blog post is clickbait.

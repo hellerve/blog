@@ -1,3 +1,8 @@
+---
+title: "The First Day"
+date: 2017-05-23
+---
+
 The first day. Breathe. You made it. Everyone is nice. You've found potential
 pairing partners. You did not make a complete ass of yourself, hopefully.
 

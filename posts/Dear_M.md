@@ -1,3 +1,8 @@
+---
+title: "Dear M"
+date: 2022-08-29
+---
+
 Dear M,
 
 We haven’t talked in so long. I haven’t taken the time to write. I’ve been

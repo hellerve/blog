@@ -1,3 +1,8 @@
+---
+title: "Overengineering, Underengineering"
+date: 2018-02-04
+---
+
 In my job as a consultant, I get to see a lot of different companies and teams.
 This is a big privilege; oftentimes they are struggling and need me to help
 them figure out how to get out of all kinds of unfortunate situations. I’ve

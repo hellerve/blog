@@ -1,3 +1,8 @@
+---
+title: "Builtin Goodies I"
+date: 2017-02-26
+---
+
 Large swaths of the computer science community—the part I know, anyway—equate the C programming language with speed. C is almost half a century old and the compilers we typically use are battle-hardened beasts, highly optimizing and very smart. Of course writing your code in C does not automatically result in performant programs. We need a good knowledge of our problem domain, choose appropriate algorithms and datastructures, benchmark, audit, and test. But that's not what I want to write about this time. What I want to tell you about, over a series of blog posts, are some internal intrinsics of your compiler that help you make the most of your code and highly optimize certain sections of your program. I suggest you go through the “benchmark, test, and audit” step first and make sure that your algorithms and data structures are truly appropriate before resorting to what I am about to show you, though. They are also local to one specific C compiler—GCC—, so if you are using Clang or ICC or whatever the cool kids are using these days, you're out of luck here. With this little *caveat lector* out of the way, let me take you to the world of GCC's [builtin functions](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html).
 
 ## A second warning and a let-down

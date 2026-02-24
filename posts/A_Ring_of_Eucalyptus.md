@@ -1,3 +1,8 @@
+---
+title: "A Ring of Eucalyptus"
+date: 2018-01-19
+---
+
 Turtle’s heart was racing. His voice was very tiny when he finally managed to
 say something. “Koala?” He tried to kneel, but he had no knees on his flippers,
 and that made it very hard. In the end, he shuffled into a position that might

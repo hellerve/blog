@@ -1,3 +1,8 @@
+---
+title: "Back In Berlin"
+date: 2017-09-18
+---
+
 Dear Michael,
 
 It’s been a bit more than a month since I’ve returned to Berlin, and I’ve

@@ -1,3 +1,8 @@
+---
+title: "Taking Notes"
+date: 2018-01-09
+---
+
 I recently came across a [blog post](https://peterlyons.com/leveling-up)
 by fellow Recurser [Peter Lyons](https://peterlyons.com). The whole blog post
 resonated with me, but, the section about [taking

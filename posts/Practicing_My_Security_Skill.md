@@ -1,3 +1,8 @@
+---
+title: "Practicing My Security Skill"
+date: 2026-02-04
+---
+
 In my life as a programmer, I’ve always had a side project. Something that
 interested me and kept me sharp. Conversely, I’ve had a harder time practicing my
 security skills; the projects often felt weird and artificial, and the practice

@@ -1,3 +1,8 @@
+---
+title: "RC Popup, Project I: A Ring"
+date: 2017-11-27
+---
+
 First, some news: I’m currently at the Recurse Center again. Well, kind of. RC
 launched a little experiment called “popups” a short while ago in which they
 organize little—i.e. two weeks long—thematically grouped RC-like retreats. I’m

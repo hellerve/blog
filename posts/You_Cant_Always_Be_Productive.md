@@ -1,3 +1,8 @@
+---
+title: "You Cant Always Be Productive"
+date: 2021-07-06
+---
+
 I haven’t felt truly productive in a long time, not like I used to. Sometimes,
 when I look back at all the mountains of things I used to build and tinker with
 I’m in awe of my past self’s productivity, especially because it was so random:

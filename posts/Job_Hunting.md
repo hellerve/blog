@@ -1,3 +1,8 @@
+---
+title: "Job Hunting"
+date: 2018-06-04
+---
+
 Unbeknownst to anyone but a tiny fraction of my friends and my employer I went
 hunting for a new job in May, because I was unsure whether my current position
 at [Port Zero](https://port-zero.com/) was what I truly wanted. In this post I

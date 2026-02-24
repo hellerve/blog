@@ -1,3 +1,8 @@
+---
+title: "String Patterns in Carp"
+date: 2018-03-13
+---
+
 A few days ago, [we landed string pattern matching in
 Carp](https://github.com/carp-lang/Carp/pull/192).
 This was borne of a long-standing desire to [wrap a regular expression library

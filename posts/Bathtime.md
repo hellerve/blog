@@ -1,3 +1,8 @@
+---
+title: "Bathtime"
+date: 2021-05-18
+---
+
 Tuala’s flipper-paws flapped in the water. “Agoo?”, he squeaked. “Yes, that’s
 right”, said Turtle, paddling through the water on his back, Tuala propped up
 on his plastron just enough so his head was above the water level. “Though I

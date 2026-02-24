@@ -1,3 +1,8 @@
+---
+title: "Working on my Nutrition"
+date: 2020-05-29
+---
+
 One of my goals for this year is improving my general fitness and health. I
 didn’t make it a new year’s resolution or anything like that; in fact I just
 followed my wife into the gym one day—the somewhat [scarily named “Urban

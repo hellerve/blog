@@ -1,3 +1,8 @@
+---
+title: "Mul Dim"
+date: 2018-11-04
+---
+
 Angia finally found Dizz on the porch, reclining on what looked like a really
 rough sketch of a hammock, doing some kind of research. “I found something
 interesting about the 2-ohs”, Dizz said without even looking at them, “Have a

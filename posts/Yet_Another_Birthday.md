@@ -1,3 +1,8 @@
+---
+title: "Yet Another Birthday"
+date: 2019-06-12
+---
+
 I’m turning 26 today<sup><a href="#1">1</a></sup>.
 
 Thank you to everyone who’s been with me for the past year, especially to those

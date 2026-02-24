@@ -1,3 +1,8 @@
+---
+title: "Carp and C (as of 2017)"
+date: 2018-01-12
+---
+
 I’ve written a bunch of blog posts about Carp now that have proved to be
 surprisingly popular, and people have been demanding follow-ups on a
 variety of subjects. One of the features that has been the subject of multiple

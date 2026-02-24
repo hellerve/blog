@@ -1,3 +1,8 @@
+---
+title: "Postmortem: Corrupting RSS And Twitter"
+date: 2017-12-25
+---
+
 As some of you might have noticed, I corrupted my RSS and Twitter feed last
 week. It’s an embarassing and cautionary tale, so it’s worth telling.
 

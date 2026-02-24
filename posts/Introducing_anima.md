@@ -1,3 +1,8 @@
+---
+title: "Introducing anima"
+date: 2017-12-23
+---
+
 I had a terrible idea yesterday: why not wrap SDL in Carp and make a
 half-baked, low-res version of a tiny fraction of what Processing does? As with
 all terrible ideas I decided to give it a shot, and now I want to report back

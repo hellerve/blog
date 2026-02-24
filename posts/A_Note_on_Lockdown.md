@@ -1,3 +1,8 @@
+---
+title: "A Note on Lockdown"
+date: 2020-03-18
+---
+
 As most of you will know, a lot of Europe is currently under lockdown, partly
 voluntarily, partly state-imposed. This is due to [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019),
 a novel SARS-like virus.

@@ -2,10 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <atom:link href="https://blog.veitheller.de/feed.rss" rel="self" type="application/rss+xml" />
- <title>Veit's Blog</title>
- <description>The RSS feed for Veit's personal blog</description>
- <link>http://blog.veitheller.de/</link>
- <pubDate>Thu, 16 Feb 2017 14:25:34 +0100 </pubDate>
- <ttl>1800</ttl>
+  <title>Veit's Blog</title>
+  <description>The RSS feed for Veit's personal blog</description>
+  <link>https://blog.veitheller.de/</link>
+  <lastBuildDate>{{date}}</lastBuildDate>
+  <ttl>1800</ttl>
+  {{#posts}}
+  <item>
+    <title>{{title}}</title>
+    <description>{{title}}</description>
+    <link>https://blog.veitheller.de/{{out_file}}</link>
+    <pubDate>{{date_and_time}}</pubDate>
+    <guid>https://blog.veitheller.de/{{out_file}}</guid>
+  </item>
+  {{/posts}}
 </channel>
 </rss>

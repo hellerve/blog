@@ -1,3 +1,8 @@
+---
+title: "Reading Review: System Dynamics"
+date: 2018-09-27
+---
+
 *A big thank you goes to [Sumana Harihareswara](https://www.harihareswara.net/)
 for, among other things, giving her okay to be named here and reviewing the
 blog post thoroughly before it was published.*

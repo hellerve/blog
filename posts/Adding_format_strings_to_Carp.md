@@ -1,3 +1,8 @@
+---
+title: "Adding format strings to Carp"
+date: 2018-01-16
+---
+
 A few weeks ago I’ve added one of the more-often requested features to Carp:
 format strings. I’m quite proud of how they turned out, and I’d like to talk
 about their implementation quickly. As a little bonus, we'll also get to talk about

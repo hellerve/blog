@@ -1,3 +1,8 @@
+---
+title: "Reading, The First Year"
+date: 2018-01-04
+---
+
 A year ago, I decided I wanted to read. I made a [public reading list](https://github.com/hellerve/ptolemy)
 and wrote multiple [blog](http://blog.veitheller.de/Reading_%E2%80%94_The_First_Month.html)
 [posts](blog.veitheller.de/Reading_—_An_Update.html) about it evaluating my

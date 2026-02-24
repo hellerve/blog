@@ -1,3 +1,8 @@
+---
+title: "My Revenue in 2025"
+date: 2026-01-12
+---
+
 <link rel="stylesheet" href="./assets/200/stats.css">
 <script type="module" src="./assets/200/stats.mjs"></script>
 

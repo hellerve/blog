@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros VII: Design by Contract"
+date: 2018-11-12
+---
+
 In this edition of [my series on Scheme
 macros](http://blog.veitheller.de/scheme-macros/), we’re going to take a look
 at [Eiffel](https://en.wikipedia.org/wiki/Eiffel_%28programming_language%29);

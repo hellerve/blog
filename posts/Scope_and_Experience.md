@@ -1,3 +1,8 @@
+---
+title: "Scope and Experience"
+date: 2026-01-05
+---
+
 **Fair warning:** this is about as broad as the range of my posts, so expect a wild
 flow of ideas across various domains.
 

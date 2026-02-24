@@ -1,3 +1,8 @@
+---
+title: "Saying Goodbye"
+date: 2020-01-24
+---
+
 Today I attended my great-grandmother’s wake. We weren’t particularly
 close, not in the last few years at least. I was there because I thought it is
 important to show that the time we did spend together meant something to me,

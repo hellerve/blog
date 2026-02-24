@@ -1,3 +1,8 @@
+---
+title: "Lets Build Lenses in Carp, Part II: Prisms"
+date: 2020-05-09
+---
+
 In a sequel to a video from earlier this week on [lenses](/Lets_Build_Lenses_in_Carp.html)
 we’re going to look at how to extend our library to work with prisms, and find
 out what prisms are in the process.

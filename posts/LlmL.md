@@ -1,0 +1,127 @@
+---
+title: "LlmL"
+date: 2025-05-29
+---
+
+For a while now, one of my biggest responsibilities in [Glamorous Toolkit](https://gtoolkit.com) has been to develop [gt4llm](https://github.com/feenkcom/gt4llm), a workbench for large language models that is intended to help develop assistants and also comes with a set of integrated assistants for code, prose, and other subsystems with GT.
+
+I haven’t written much about the workbench outside of the Glamorous Toolkit book, and if you want to learn more about it, [I suggest reading there](https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti). It has all the context I know to talk about<sup><a href="#1">1</a></sup>.
+
+Instead, today I want to talk about a silly little idea that I had a long while back, and finally realized using the workbench: LlmL, the language that lets you shell out to an LLM when you don’t know how to solve a problem<sup><a href="#2">2</a></sup>. Let’s start by looking at the language, and then talk a bit about the implementation, and see what we can learn from it. Beware that the implementation bit is written in GT-specific Smalltalk, but the code should be short and simple enough that the idea can get across.
+
+###  A really dumb language meets a really dumb idea
+
+The language "design" of LlmL was primarily shaped by the one hour timebox I set for myself when working on this project. As such, It only has numbers as types, and it uses an S-expression-based syntax (for ease of parsing).
+
+Here is a sample:
+
+```
+(def x
+	(fn (n)
+		(* n 2)))
+		
+(+ (x 10) 3)
+```
+
+This should result in `23`.
+
+So far, so simple. We have a language with functions, variables and numbers, using an S expression syntax. So, what is different?
+
+Well, consider factorial. How would you usually write factorial in a language like that? Here is one way:
+
+```
+(def factorial
+	(fn (n)
+		(if (= n 0)
+			1
+			(* n (factorial (- n 1))))))
+			
+(factorial 5)
+```
+
+Except this wouldn’t work, because we don’t have `if` and conditionals and all that jazz. Instead of trying to implement all of that using Church encodings and fancy lambda calculus things<sup><a href="#3">3</a></sup>, we can instead just call `infer`.
+
+```
+(def factorial (infer))
+(factorial 5)
+```
+
+And it will give us the right answer, 120!
+
+So, how does that work? Well, the basic idea was that in the age of just blindly copying a bunch of code that a language model generates and putting that in our code base, how about we just cut out the middleman and just ask it for the answer at runtime instead?
+
+So, we give the LLM the name of the function as well as the arguments it was called with and ask it to generate an answer, and then pass that back into the interpreter. Cool, right?
+
+I think we just accidentally stumbled into the future, where solving problems is outsourced in real-time.
+
+### How do LlmL do?
+
+Now that we’ve talked about *what* LlmL is, let’s talk about how it works.
+
+The parser uses a framework called SmaCC that is used for virtually every parser in GT. It’s a parser generator framework and it’s quite awesome. Once you know how to wield it (which might take a bit), it takes something like 5-10 minutes to write a parser for something like LlmL that produces a neat little AST.
+
+From there, we build a simple evaluator that is just a tree-walking interpreter that keeps track of the variables in an environment and allows for environments to be pushed and popped as needed.
+
+Really the only novel and mildly interesting bit is inside the evaluation for the `infer` primitive, which in turn happens in a class called {{gtClass:LlmlInfer}}.  Its method {{gtMethod:LlmlInfer>>#evaluate:in:}} is the key to the LLM connection.
+
+It uses [structured outputs](https://openai.com/index/introducing-structured-outputs-in-the-api/) to guarantee that we always get a well-formed result. For those not in the know, it’s basically a way to make the LLM to adhere to a user-controlled JSON schema in the output.
+
+To transcribe it as a snippet and annotate, it basically does this:
+
+```smalltalk
+"A provider holds onto all the low-level bits and is different for every LLM API.
+Currently we support Ollama, OpenAI, Anthropic, and Google Gemini.
+These providers also understand how to add a structured output format to the API call."
+provider := self connection buildProvider format: self format.
+
+"Then we create a chat and send a message."
+chat := GtLlmChat new provider: provider.
+chat sendMessage: 'Provide the output of the following expression: '
+				, aLlmlEvaluator callStack last source. "We get the last section from the callstack here. It also has the arguments."
+
+"These executions happen asynchronously, so we force synchronicity by waiting."
+chat provider executions last wait.
+
+"We get the result from the JSON we got back and just confidently convert it to a number."
+(chat messages last contentJson at: 'result') asNumber
+```
+
+Usually in `gt4llm`, the format that we would use would be autogenerated by a higher level schema, but I didn’t want to bother with it, so I just wrote a simple structured output format by hand:
+
+```smalltalk
+{'type' -> 'object'.
+	'properties' -> {'result' -> {'type' -> 'number'} asDictionary} asDictionary.
+	'required' -> {'result'}.
+	'additionalProperties' -> false} asDictionary
+```
+
+This won’t work with all providers because they are ever so slightly different in how they want their schema to be formatted. It does work with Ollama and OpenAI, though, and that was good enough for me here. For anything more, resort to the higher level.
+
+Still, the core of the system works with all providers we’ve provided in `gt4llm`, so whatever you set up as your default connection will be used by the evaluator by default. You can also override it to inject your own models or providers per evaluation:
+
+```smalltalk
+LlmlEvaluator new
+	connection: (GtLlmConnection new
+			provider: GtOllamaProvider;
+			model: 'llama3.2');
+	evaluate: (LlmlParser
+			parse: '(def factorial (infer)) (factorial 4)')
+```
+
+And I think that’s all of it!
+
+### Fin
+
+I hope you enjoyed this little tour of my groundbreaking new research in programming language design!
+
+Okay, admittedly, LlmL is silly, but maybe not as silly as one might think at first glance: when people copy-paste code they found online or that an LLM spit out, what they actually want, at the heart of it, is an *oracle*. Someone to just tell them the answer. And instead of generating an algorithm that won’t be reviewed anyway, this just gives you the answer right away. But it’s also a reductio ad absurdum of this idea that, somehow, this will solve our problems, because it will not. It just creates the ultimate black box.
+
+I really wanted to write a more philosophical article about LLMs, but I thought you deserved a bit of technical whimsy before that. I hope you liked the appetizer, the main course is to follow!
+
+##### Footnotes
+
+<span id="1">1.</span> If you find anything missing, do not hesitate to contact me or [file an issue](https://github.com/feenkcom/gtoolkit/issues/)!
+
+<span id="2">2.</span> For a more manual way of approaching problem solving, [read my last blog post](https://blog.veitheller.de/On_starting_hard_things.html).
+
+<span id="3">3.</span> You couldn’t actually do that, either, because you’d have to start with a Church encoding instead of numbers to get to equality. If you have equality, it’s all smooth sailing from there.

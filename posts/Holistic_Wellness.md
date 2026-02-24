@@ -1,3 +1,8 @@
+---
+title: "Holistic Wellness"
+date: 2017-07-04
+---
+
 Today I found out that one of my fellow Recursers makes music. No, that's not
 entirely true: today I found out he makes _awesome_ music. He performs under
 the moniker [Holistic Wellness](https://holisticwellness.bandcamp.com/album/what-time-does-the-shock-arrive-at-the-top-of-the-pipe),

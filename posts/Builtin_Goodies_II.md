@@ -1,3 +1,8 @@
+---
+title: "Builtin Goodies II"
+date: 2017-06-07
+---
+
 It is about time I write a second post on
 [GCC Builtins](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html). In
 [the last installment](//blog.veitheller.de/Builtin_Goodies_I.html) we

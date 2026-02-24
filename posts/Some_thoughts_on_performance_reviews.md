@@ -1,3 +1,8 @@
+---
+title: "Some thoughts on performance reviews"
+date: 2025-11-30
+---
+
 I’ve never experienced a company with a completely healthy performance review
 culture. To be fair, it’s quite likely that my sample size is just skewed.
 Still, [giving feedback well is tricky](https://blog.veitheller.de/Feedback_Sans_Sandwiches.html),

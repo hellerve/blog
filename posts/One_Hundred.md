@@ -1,3 +1,8 @@
+---
+title: "One Hundred"
+date: 2018-06-19
+---
+
 It took me some time to realize, but [the rant about turning
 25](/A_Quarter_of_a_Century.html) that I posted last week marks my 100th blog
 post. I’m never one to pass up an opportunity to celebrate a meaningless

@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros I: Modules"
+date: 2017-07-14
+---
+
 One of the most powerful—and, for a large part of the programmer community,
 most dreaded—features of Lisp is its metaprogramming. In this series I'll
 attempt to give a few interesting cases for how we can level up our code

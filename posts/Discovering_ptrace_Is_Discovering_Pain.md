@@ -1,3 +1,8 @@
+---
+title: "Discovering ptrace Is Discovering Pain"
+date: 2017-09-17
+---
+
 One of my latest projects is writing [a debugger](http://github.com/hellerve/d).
 How hard can it be, I thought, I’m basically just wrapping system calls. So,
 to make things a bit more interesting, I decided to support both Linux and OS

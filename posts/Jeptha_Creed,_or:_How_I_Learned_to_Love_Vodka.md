@@ -1,3 +1,8 @@
+---
+title: "Jeptha Creed, or: How I Learned to Love Vodka"
+date: 2017-07-15
+---
+
 Vodka is odor- and flavorless, and it’s made from potatoes. At least that’s
 what Smirnoff tried to make us believe when it was bought by Heublein in 1939.
 “White Whiskey” without smell or taste was a great marketing strategy for the

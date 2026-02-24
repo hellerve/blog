@@ -1,3 +1,8 @@
+---
+title: "A Quarter of a Century"
+date: 2018-06-10
+---
+
 *DISCLAIMER: Sorry for the profanity.*
 
 I’m turning a quarter of a century next Tuesday—that’s the 12th of June, for all

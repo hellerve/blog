@@ -1,3 +1,8 @@
+---
+title: "A quick apology to Dyalog APL"
+date: 2026-01-31
+---
+
 Today I get to do something that’s exceedingly fun for me: “well, actually” my old self.
 In this case, I get to post a correction to my recent Dyalog APL Sudoku solver.
 

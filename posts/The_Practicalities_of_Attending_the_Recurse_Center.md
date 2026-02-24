@@ -1,3 +1,8 @@
+---
+title: "The Practicalities of Attending the Recurse Center"
+date: 2018-12-21
+---
+
 Every once in a while I get asked what attending the [Recurse
 Center](https://www.recurse.com/) is like, either because people read about it 
 on my blog or it comes up in conversation with my programming-affiliated friends. 

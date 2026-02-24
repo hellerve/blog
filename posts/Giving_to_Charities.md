@@ -1,3 +1,8 @@
+---
+title: "Giving to Charities"
+date: 2019-12-11
+---
+
 When I [announced my new work as an independent technologist](https://blog.veitheller.de/Spirited_Away.html),
 I also presented [my new rates](https://veitheller.de/at-large/#rates). Most
 notably, I will be giving 100€ of my 800€ daily rate for open source projects

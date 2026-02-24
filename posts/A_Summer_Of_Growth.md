@@ -1,3 +1,8 @@
+---
+title: "A Summer Of Growth"
+date: 2017-01-23
+---
+
 Many of you know that I have applied for a spot at [the Recurse Center](https://recurse.com)
 this summer. For those of you who don't, let me give you a brief outline of what it is:
 it's a retreat for programmers, meaning that you spend a certain, predefined

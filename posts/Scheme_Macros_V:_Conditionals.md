@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros V: Conditionals"
+date: 2018-10-30
+---
+
 It’s time for another blog post on Scheme macros! This time we’re going to look
 at conditionals, and as a bonus I’ll show you a cool trick on how to simulate
 `if`. If you want to go back to the list of posts on Scheme macros that have

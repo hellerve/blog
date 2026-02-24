@@ -1,3 +1,8 @@
+---
+title: "Carp Patterns IV: Modules"
+date: 2021-02-02
+---
+
 Welcome (back) to the fourth installment of [Carp Patterns](/carp-patterns), my
 series on how to structure Carp code! Today we’re going to look at modules, one
 of the fundamental ways in which we structure our code.

@@ -1,3 +1,8 @@
+---
+title: "First Snow"
+date: 2017-12-05
+---
+
 Koala rubbed her nose. She sneezed. She rubbed her nose again. “What _is_
 that?”, she exclaimed confusedly.
 

@@ -1,3 +1,8 @@
+---
+title: "Impostor"
+date: 2017-06-30
+---
+
 I had a lovely dinner with a few fellow Recursers yesterday. During our
 conversation, we talked about “guessers”—i.e. people who only ask for
 something when they think they will most likely get it—versus askers—people

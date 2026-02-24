@@ -1,3 +1,8 @@
+---
+title: "A New Home"
+date: 2020-10-14
+---
+
 The deep blue and green waters of the pond, reflecting the sun, lush trees and prickly
 shrubbery and undergrowth perfect for rolling around in it and looking up at the stars: it
 felt right.

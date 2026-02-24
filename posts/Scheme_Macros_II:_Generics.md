@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros II: Generics"
+date: 2017-08-05
+---
+
 This is a continuation of [an earlier post](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
 in which I talked about the power of Scheme macros in the context of modules.
 Modules aren’t the only use case of macros, though, and so this time I want to

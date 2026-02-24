@@ -1,3 +1,8 @@
+---
+title: "PSA V"
+date: 2017-09-30
+---
+
 It is time for a new installment of my beloved PSAs! This time I’ll quickly
 tell you about a nice new way of keeping track of my writings: [a Twitter
 bot](https://twitter.com/veit_blog_bot).

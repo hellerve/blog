@@ -1,3 +1,8 @@
+---
+title: "Dear Will"
+date: 2017-07-17
+---
+
 Dear Will,
 
 I've been drinking too much. That sentence sounds more dramatic than the

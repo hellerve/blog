@@ -1,3 +1,8 @@
+---
+title: "Coverage-centric Testing"
+date: 2018-02-13
+---
+
 Many of my clients keep test coverage scores for every commit or pull request,
 and they integrate appropriate tools—such as [codecov](https://codecov.io/)—into
 their code review. Coverage scores are often used as one of the primary

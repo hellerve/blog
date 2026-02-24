@@ -1,3 +1,8 @@
+---
+title: "Brainfuck and Actors"
+date: 2018-04-20
+---
+
 I know that [in my last blog post](http://blog.veitheller.de/An_Update.html) I
 said I wouldn’t write for a while, but four days before my marriage I had one
 of the worst ideas I’ve ever had: why not fuse CSP and Brainfuck. Naturally I

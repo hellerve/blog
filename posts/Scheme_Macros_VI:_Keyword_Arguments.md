@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros VI: Keyword Arguments"
+date: 2018-10-31
+---
+
 In the sixth installment of [my series on Scheme macros](/scheme-macros), we’re
 going to examine how to implement keyword argument functions in a single macro.
 

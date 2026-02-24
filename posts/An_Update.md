@@ -1,3 +1,8 @@
+---
+title: "An Update"
+date: 2018-04-02
+---
+
 Hey! How are y’all doing? We haven’t talked in a while!
 
 As you might have realized my posts haven’t been as frequent as usual. I want

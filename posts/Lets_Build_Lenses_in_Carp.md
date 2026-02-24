@@ -1,3 +1,8 @@
+---
+title: "Lets Build Lenses in Carp"
+date: 2020-05-08
+---
+
 Today I want to try something a little bit different: I want to share a
 screencast with you! I’ve never done this, but I’ve always had a passion for
 live coding during my talks<sup><a href="#1">1</a></sup>, and I don’t feel like

@@ -1,3 +1,8 @@
+---
+title: "Feenk"
+date: 2022-01-24
+---
+
 Since October, I’ve been working at [feenk](https://feenk.com) as a “DX
 crafter”—DX standing for “Developer Experience”. That means that I build tools,
 and help people and companies reason about their assets and themselves.

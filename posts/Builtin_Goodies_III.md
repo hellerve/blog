@@ -1,3 +1,8 @@
+---
+title: "Builtin Goodies III"
+date: 2017-06-22
+---
+
 *This post is the third installment in an ongoing series on
 [GCC Builtins](https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html).
 For parts I and II, click [here](//blog.veitheller.de/Builtin_Goodies_I.html)

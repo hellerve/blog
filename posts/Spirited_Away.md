@@ -1,3 +1,8 @@
+---
+title: "Spirited Away"
+date: 2019-10-18
+---
+
 I will leave [Port Zero](https://port-zero.com) at the beginning of 2020.
 I intend to work independently from then on. This is a big step and it raises
 a lot of questions, and I intend to answer them in this blog post.

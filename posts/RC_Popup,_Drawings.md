@@ -1,3 +1,8 @@
+---
+title: "RC Popup, Drawings"
+date: 2017-12-05
+---
+
 I’ve been procrastinating. Don’t get me wrong, I’ve had a fairly productive
 couple of days: I solved all of [Advent of Code](http://adventofcode.com/) thus
 far, either in [Carp](//blog.veitheller.de/Carp.html) or

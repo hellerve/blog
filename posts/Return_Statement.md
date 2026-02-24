@@ -1,3 +1,8 @@
+---
+title: "Return Statement"
+date: 2017-08-29
+---
+
 It’s been almost three weeks since I never graduated from Recurse Center.<sup>
 <a href="#1">1</a></sup> I’ve been meaning to write a blog post about—or any
 blog post, really—for these weeks, but somehow writing it didn’t seem right.

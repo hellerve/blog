@@ -1,3 +1,8 @@
+---
+title: "Going Static"
+date: 2017-01-12
+---
+
 I have been doing a lot of web development in the past three years.
 I am a backend-centric fullstack developer, which means that if you
 hold me at gunpoint I can probably come up with a website that doesn't

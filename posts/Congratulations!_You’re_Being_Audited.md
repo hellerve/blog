@@ -1,3 +1,8 @@
+---
+title: "Congratulations! You’re Being Audited"
+date: 2017-09-28
+---
+
 I’ve been back at my job from my brief stint at the [Recurse Center](https://www.recurse.com/scout/click?t=3f214b4d8605308d27685ebd4548905e)
 for over a month now and have largely settled back into a regular work week.
 For those of you who don’t know, [I work at Port Zero](http://port-zero.com/),

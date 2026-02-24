@@ -1,3 +1,8 @@
+---
+title: "Awkwardness"
+date: 2017-05-26
+---
+
 This week I've been feeling more socially awkward than I have ever before. Don't
 get me wrong: it has been a great week in most respects. But I've also spent
 time crying in the bathroom a few hours ago because I get everything wrong.

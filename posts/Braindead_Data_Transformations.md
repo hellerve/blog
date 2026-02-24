@@ -1,3 +1,8 @@
+---
+title: "Braindead Data Transformations"
+date: 2017-01-19
+---
+
 I released a stupid but potentially [useful tool](http://github.com/hellerve/manipulator)
 today. It might be a bad idea—I'm not completely sure yet—but the idea was
 so intriguing that I just couldn't resist building it. It's a simple data

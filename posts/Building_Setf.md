@@ -1,3 +1,8 @@
+---
+title: "Building Setf"
+date: 2022-01-23
+---
+
 A while back I had the opportunity to work with Common Lisp professionally.
 As has happened to many before and after me, a lot of the powerful features of
 Common Lisp and its implementations made me a little drunk on power for a

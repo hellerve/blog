@@ -1,3 +1,8 @@
+---
+title: "Ah, Records!"
+date: 2017-03-29
+---
+
 One of the last projects I was working on before leaving for the US was
 [hi](https://github.com/hellerve/hi), a minimal, performant chat system.
 I'll talk about this in a later post, but right now I want to focus on a bug

@@ -1,3 +1,8 @@
+---
+title: "Bourbon Country"
+date: 2017-03-23
+---
+
 _This post is on my ability to communicate in English. Oddly enough, I felt
 like my writing was not quite on point for the entirety of its conception.
 Enthralled by the irony, I decided to leave it like that. I blame Woodford

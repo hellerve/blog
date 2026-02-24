@@ -1,3 +1,8 @@
+---
+title: "More Turtle and Koala Stories"
+date: 2018-01-22
+---
+
 I don’t know how many people are still reading my Turtle and Koala stories.
 Those of you who do can rest assured that they will keep coming, though, and
 that I have no intention to stop making this blog a friendlier place by writing

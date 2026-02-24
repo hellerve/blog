@@ -1,3 +1,8 @@
+---
+title: "Borrow Checking, The Carp Way"
+date: 2018-01-30
+---
+
 A question that comes up every once in a while on the Carp chatroom and in
 Github issues is how memory management works. Especially people who are not
 familiar with Rust understandably have trouble grasping how to program with

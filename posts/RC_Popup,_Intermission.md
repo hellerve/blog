@@ -1,3 +1,8 @@
+---
+title: "RC Popup, Intermission"
+date: 2017-12-01
+---
+
 When I was in third grade, I took part in a reading competition. Everyone was
 asked to bring a book they really liked and read it for the audience. We were
 then told who had won, without getting any feedback. I lost, and asked one of

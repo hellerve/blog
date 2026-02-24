@@ -1,3 +1,8 @@
+---
+title: "Williamsburg"
+date: 2017-05-22
+---
+
 This post is just meant as a quick update for everyone who follows this blog.
 Sorry I've been so inactive lately, I was really busy preparing for the Recurse
 Center. This meant finalizing all of the cooperations with my clients—handovers,

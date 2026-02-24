@@ -1,3 +1,8 @@
+---
+title: "Fixed Point Arithmetic"
+date: 2017-07-31
+---
+
 *Update:* I realized that my format actually makes sense and I intuitively
 implemented it correctly. This means the lower half is a bit wonky. Sorry about
 that.

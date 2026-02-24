@@ -1,3 +1,8 @@
+---
+title: "Abstractions"
+date: 2017-06-04
+---
+
 I had an epiphany a while back. It was one of those observations that seems
 obvious in hindsight, one I think I knew on a subconscious level. Pinning it
 down and formulating it in actual words helped make it more of an actionable

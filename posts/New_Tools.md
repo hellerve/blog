@@ -1,3 +1,8 @@
+---
+title: "New Tools"
+date: 2017-05-26
+---
+
 After having spent two days working at the Recurse Center—the intro day doesn't
 really count here—, I feel like I should comment on my experience again. I have had
 an amazing time thus far. I have seldom been as productive as I am right now—maybe

@@ -1,3 +1,8 @@
+---
+title: "On Barewords"
+date: 2017-02-15
+---
+
 Elixir introduced a very controversial change in version 1.4. They deprecated “barewords”. The mechanism of barewords is basically a fundamental part of Elixir's behaviour where, when a function is called without parameters, you can omit the parentheses. You can read about the change [here](https://github.com/elixir-lang/elixir/issues/3268). But let me give you a little motivating example. I'll try to make it very simple, so even those of you who have never programmed in Elixir will understand what this means:
 
 ```elixir

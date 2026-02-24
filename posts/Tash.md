@@ -1,3 +1,8 @@
+---
+title: "Tash"
+date: 2017-04-10
+---
+
 It's time for sharing music again. Interestingly I only feel like writing about
 music when it's something I normally wouldn't enjoy but still find intriguing.
 Let's see if that trend continues.

@@ -1,3 +1,8 @@
+---
+title: "Simple Sudoku Solvers SII, EI: Dyalog APL"
+date: 2026-01-20
+---
+
 Welcome to the first post of the second season of [Simple Sudoku Solvers](https://blog.veitheller.de/sss/)!
 If you are unfamiliar with the series, I suggest you start with [the first
 post](https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_I:_Python_(Reference).html),

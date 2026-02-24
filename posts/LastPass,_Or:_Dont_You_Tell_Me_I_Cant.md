@@ -1,3 +1,8 @@
+---
+title: "LastPass, Or: Dont You Tell Me I Cant"
+date: 2018-01-04
+---
+
 One of my current clients is forcing me to use LastPass. I find it generally
 terrible, but I guess it makes sense for their use case. I had to deal with
 some unexpected form prefills that led me to log in with the company account

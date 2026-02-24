@@ -1,3 +1,8 @@
+---
+title: "Braindead Editing"
+date: 2017-04-18
+---
+
 I've had the urge to do some programming close to the
 metal again lately and was looking for a useful project
 that I could work on in C. Inspired by antirez's

@@ -1,3 +1,8 @@
+---
+title: "Lets Write Base64 in Carp"
+date: 2018-09-04
+---
+
 In an effort to check how painful it would be to do low-level bit-fiddling in
 Carp, I recently built an implementation of [Base64
 encoding](https://github.com/hellerve/base64.carp) in Carp. My goals were to

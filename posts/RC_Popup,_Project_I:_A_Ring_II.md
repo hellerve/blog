@@ -1,3 +1,8 @@
+---
+title: "RC Popup, Project I: A Ring II"
+date: 2017-11-28
+---
+
 This post is going to be quite short, just a little update on the ring project
 I talked about [yesterday](//blog.veitheller.de/RC_Popup,_Project_I:_A_Ring.html)
 and a quick note on some other tinkerings. I’ve not been able to make much

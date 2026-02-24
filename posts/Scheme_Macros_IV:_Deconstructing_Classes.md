@@ -1,3 +1,8 @@
+---
+title: "Scheme Macros IV: Deconstructing Classes"
+date: 2018-05-23
+---
+
 It’s time for another installation of my series on Scheme macros. Previously,
 we've talked about defining [modules](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
 [generic functions](//blog.veitheller.de/Scheme_Macros_II:_Generics.html),

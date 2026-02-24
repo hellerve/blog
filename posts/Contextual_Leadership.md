@@ -1,3 +1,8 @@
+---
+title: "Contextual Leadership"
+date: 2020-12-22
+---
+
 About a week ago, I attended an all-hands meeting at a client of mine. It was
 generally meant for catching up with other team members—the company is pretty
 small, and it’s a good way to feel connected as a remote workforce.

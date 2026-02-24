@@ -1,3 +1,8 @@
+---
+title: "Binary Coded Decimal"
+date: 2017-07-25
+---
+
 Today I spent some of my day writing [a toy library](http://github.com/hellerve/nibbles)
 for [Binary Coded Decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal).
 I’m reading through [Write Great Code](https://www.amazon.com/Write-Great-Code-Understanding-Machine/dp/1593270038),

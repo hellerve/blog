@@ -1,3 +1,8 @@
+---
+title: "Speeding up an Interpreter"
+date: 2018-12-14
+---
+
 Earlier this year, I wrote an interpreter for [a version of Brainfuck that
 supports CSP-style message
 passing](http://blog.veitheller.de/Brainfuck_and_Actors.html). I didn’t touch it

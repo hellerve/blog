@@ -1,3 +1,8 @@
+---
+title: "One Foot in Management"
+date: 2018-07-29
+---
+
 Hi folks! Once again I have to apologize for not writing in a while. I guess I
 have no obligation to write, but I feel bad whenever I leave you without at
 least a short blog post every once in a while.

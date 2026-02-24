@@ -1,3 +1,8 @@
+---
+title: "RC Popup, Reprise"
+date: 2017-12-07
+---
+
 This is my last essay at the RC Popup. I failed at what I set out to do, but
 slowly, acceptance has settled in. I will display these essays at the art show,
 a chronology of failure. If you’re reading this at the show, come say hi to me.

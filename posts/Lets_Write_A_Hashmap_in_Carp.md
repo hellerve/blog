@@ -1,3 +1,8 @@
+---
+title: "Lets Write A Hashmap in Carp"
+date: 2018-05-27
+---
+
 An exciting new feature landed in Carp a while ago, and it is perfect material
 for a tutorial-style blog post!
 

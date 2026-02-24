@@ -1,3 +1,8 @@
+---
+title: "Braindead Chat"
+date: 2017-06-08
+---
+
 I want to present yet another little project of mine that explores how to make
 programming as naive as possible. In previous installments we have looked at [a
 terminal editor](//blog.veitheller.de/Braindead_Editing.html) and [a data

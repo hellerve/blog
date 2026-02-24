@@ -1,3 +1,8 @@
+---
+title: "Compiling at Compile Time"
+date: 2019-10-27
+---
+
 This is a blog post about [a cute hack I threw together on a long train
 ride](https://github.com/hellerve/compfuck). The gist of it is that I wrote a
 Brainfuck compiler that emits Carp code, in Carp. It’s entirely based on macros

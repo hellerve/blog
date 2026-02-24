@@ -1,3 +1,8 @@
+---
+title: "Mom"
+date: 2019-02-21
+---
+
 I’m 100% certain my mom is the strongest person in the world. Growing up I
 always felt like I had a say, was taken seriously, and was cared for, and my mom
 is at the roots of all of those feelings.

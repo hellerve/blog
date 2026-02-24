@@ -1,3 +1,8 @@
+---
+title: "PSA VI"
+date: 2017-12-21
+---
+
 I’m pleased to announce that I introduced HTTPS to my blog today! From now on
 you can read my blog posts through the comfort of a secure connection, powered
 by [Let’s Encrypt](https://letsencrypt.org/). I didn’t deploy it any sooner

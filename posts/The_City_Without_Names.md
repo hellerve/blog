@@ -1,3 +1,8 @@
+---
+title: "The City Without Names"
+date: 2018-06-09
+---
+
 And in the city everyone had forgotten the names of things. It was as if a
 mysterious disease had befallen everyone in the night, and when they awoke in
 the morning, they didn't know what the people lying with them were called, or

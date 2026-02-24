@@ -1,3 +1,8 @@
+---
+title: "What, How, Why"
+date: 2017-04-05
+---
+
 I don't know how many people read my blog. Sometimes that's a bit frustrating,
 because I don't know which posts people like and why, but I've come to realize
 that that's a good thing; I'm not driven by metrics, but by my wandering

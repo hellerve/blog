@@ -1,3 +1,8 @@
+---
+title: "EnthusiastiCon 2019"
+date: 2019-04-09
+---
+
 I’ve got great news for all of you: [EnthusiastiCon](https://blog.veitheller.de/Enthusiasticon.html)
 is back in 2019! [The website](https://www.enthusiasticon.de/) is looking
 sharper than ever and [the CFP](https://www.enthusiasticon.de/cfp/) is open for

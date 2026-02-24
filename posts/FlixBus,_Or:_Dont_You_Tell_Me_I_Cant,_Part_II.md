@@ -1,3 +1,8 @@
+---
+title: "FlixBus, Or: Dont You Tell Me I Cant, Part II"
+date: 2018-02-24
+---
+
 Some companies manage to annoy me enough with arbitrary restrictions for me to
 double down and not only try to overcome the problem, but also blog about it.
 Last time we looked at [LastPass lying to us](https://blog.veitheller.de/LastPass,_Or:_Dont_You_Tell_Me_I_Cant.html).

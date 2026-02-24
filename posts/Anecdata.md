@@ -1,3 +1,8 @@
+---
+title: "Anecdata"
+date: 2018-01-24
+---
+
 I had a summer job at [Haldex](https://www.haldex.com/) when I was fourteen.
 For four weeks I stood at a conveyor belt, manufacturing hydraulic
 pumps. I like mindless work, and it was one of the best summer jobs I ever had,

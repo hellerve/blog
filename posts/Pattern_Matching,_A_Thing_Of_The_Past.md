@@ -1,3 +1,8 @@
+---
+title: "Pattern Matching, A Thing Of The Past"
+date: 2017-06-20
+---
+
 When I started my [reading list](https://github.com/hellerve/ptolemy)
 in January of this year, I decided to give rereading the
 [Lambda Papers](http://library.readscheme.org/page1.html)

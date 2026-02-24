@@ -1,3 +1,8 @@
+---
+title: "Dead and Reborn"
+date: 2017-01-11
+---
+
 I have abandoned my blog for a long time. This might be due to
 my sub par writing skills in English, a lack of time or—most
 likely—a mixture of both. I would like to change that, though,

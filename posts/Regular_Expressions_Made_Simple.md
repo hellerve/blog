@@ -1,3 +1,8 @@
+---
+title: "Regular Expressions Made Simple"
+date: 2017-06-21
+---
+
 Because I enjoyed writing [my last blog post](//blog.veitheller.de/Pattern_Matching,_A_Thing_Of_The_Past.html)
 so much, I decided to give this format another shot. One of the reviewers
 pointed me to [a chapter of Beautiful Code](http://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html)

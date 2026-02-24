@@ -1,3 +1,8 @@
+---
+title: "Building a PostgreSQL extension for fun and absolutely no profit"
+date: 2025-12-17
+---
+
 A few months ago, [I built my first PostgreSQL extension, `pg_ddate`](https://github.com/hellerve/pg_ddate/).
 I mostly wanted to learn how PostgreSQL extensions work, and make a simple
 but feature-complete extensions with custom data types, operators, and

@@ -1,3 +1,8 @@
+---
+title: "Less Alone"
+date: 2017-10-03
+---
+
 Maybe I’m too small, thought Koala. She was on the hunt for a new place to rest
 her head after one of the big mean Koala guys kicked her out of her favorite
 tree again. Maybe small Koalas shouldn’t climb trees.

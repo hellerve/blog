@@ -1,3 +1,8 @@
+---
+title: "Building a small language with cj"
+date: 2025-11-09
+---
+
 In [a recent blog post](https://blog.veitheller.de/cj:_Making_a_minimal,_complete_JIT.html),
 I unveiled [cj](https://github.com/hellerve-pl-experiments/cj), a small,
 dependency-free JIT compiler framework in C. In theat post, I discussed the idea

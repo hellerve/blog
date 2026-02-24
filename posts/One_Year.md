@@ -1,3 +1,8 @@
+---
+title: "One Year"
+date: 2018-01-15
+---
+
 Today is the birthday of this blog. Exactly one year ago I wrote [my first
 post](//blog.veitheller.de/Dead_and_Reborn.html); in it I briefly wrote
 about my fear of being unable to write in a foreign language, and about

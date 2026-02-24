@@ -1,3 +1,8 @@
+---
+title: "us, sorted"
+date: 2017-06-26
+---
+
 It is hard to be apart from you. Sometimes I'm whiny, sometimes I'm creative,
 sometimes I'm both at the same time.
 

@@ -1,3 +1,8 @@
+---
+title: "Carp and derive II: This Time Its Personal"
+date: 2021-02-09
+---
+
 About one and a half years ago, [I wrote a blog
 post](https://blog.veitheller.de/Carp_and_derive.html) about a Carp macro that
 enables deriving interfaces for arbitrary types based on their members.
