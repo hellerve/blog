@@ -19,7 +19,7 @@ Prolog is not the right tool for all programming problems. But when it is, it’
 
 ## The implementation
 
-As always, we will be following the outside-in path and go from the solver to its constitutent parts. Today, those parts will look a little different than they usually do, however, since we do not need to do any candidate selection ourselves.
+As always, we will be following the outside-in path and go from the solver to its constituent parts. Today, those parts will look a little different than they usually do, however, since we do not need to do any candidate selection ourselves.
 
 ### The solver
 
