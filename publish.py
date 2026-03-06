@@ -92,8 +92,10 @@ def get_post(filename):
 
 
 def get_posts():
+    today = date.today()
     filenames = [f for f in os.listdir(POSTS_DIR) if f.endswith(".md")]
     posts = [get_post(f) for f in filenames]
+    posts = [p for p in posts if p["_date_obj"] <= today]
     posts.sort(key=lambda p: p["_date_obj"], reverse=True)
     return posts
 
