@@ -42,7 +42,7 @@ Here’s why I enjoyed work with it:
   I gave a few years ago I talked about abstractions and how comments are implemented in
   Forth, because it’s a nice mind-bender.
 - **Real-world power.** Forth has been used in embedded systems, spacecraft (it ran on
-  [the Philae lander](https://www.youtube.com/live/EkbcI3KgUuY?t=8360s)), telescopes, and
+  [the Philae lander](https://en.wikipedia.org/wiki/Philae_(spacecraft))), telescopes, and
   boot loaders. It’s a language that punches well above its weight class in terms of what
   you can do with it.
 
