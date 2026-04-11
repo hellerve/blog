@@ -100,6 +100,7 @@ body > * {
   padding-top: 1em;
   border-top: 1px solid blacK;
   font-size: 90%;
+  overflow: hidden;
 }
 
 .date {
