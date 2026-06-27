@@ -13,12 +13,14 @@ Each post must have a YAML frontmatter block with at least:
     ---
 """
 
+import json
 import os
 import re
 import sys
 
 from email import utils
 from datetime import datetime, date, timezone
+from xml.sax.saxutils import escape as xml_escape
 
 import pystache
 import pypandoc
@@ -27,6 +29,8 @@ import yaml
 
 POSTS_DIR = "posts"
 OUT_DIR = "out"
+SITE_URL = "https://blog.veitheller.de"
+EXCERPT_LEN = 155
 FM_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
 
@@ -70,6 +74,33 @@ def rfc2822(d):
     return utils.format_datetime(dt)
 
 
+def make_excerpt(body, limit=EXCERPT_LEN):
+    """Plain-text excerpt of a markdown body for meta descriptions."""
+    text = pypandoc.convert_text(body, "plain", format="md")
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" .,;:—-")
+    return cut + "…"
+
+
+def build_jsonld(title, description, url, post_date):
+    """schema.org BlogPosting as a script-tag-safe JSON string."""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": description,
+        "url": url,
+        "mainEntityOfPage": url,
+        "datePublished": post_date.isoformat(),
+        "author": {"@type": "Person", "name": "Veit Heller", "url": "https://veitheller.de"},
+        "publisher": {"@type": "Person", "name": "Veit Heller", "url": "https://veitheller.de"},
+    }
+    # Escape "<" so the payload can never break out of the <script> element.
+    return json.dumps(data, ensure_ascii=False).replace("<", "\\u003c")
+
+
 def get_post(filename):
     path = os.path.join(POSTS_DIR, filename)
     with open(path) as f:
@@ -79,11 +110,16 @@ def get_post(filename):
 
     post_date = to_date(meta["date"]) if "date" in meta else date.fromtimestamp(os.stat(path).st_mtime)
     title = meta.get("title") or stem(filename).replace("_", " ")
+    description = meta.get("description") or make_excerpt(body)
+    url = f"{SITE_URL}/{out_file(filename)}"
 
     return {
         "filename": filename,
         "out_file": out_file(filename),
         "title": title,
+        "description": description,       # meta description / OG / RSS
+        "url": url,                       # canonical URL
+        "jsonld": build_jsonld(title, description, url, post_date),
         "date": str(post_date),           # YYYY-MM-DD, used in post template
         "date_and_time": rfc2822(post_date),  # RFC 2822, used in RSS
         "post": pypandoc.convert_text(body, "html", format="md"),
@@ -123,6 +159,29 @@ def render_feed(tpl, posts):
         f.write(xml)
 
 
+def render_sitemap(posts):
+    entries = [(f"{SITE_URL}/", date.today())]
+    entries += [(p["url"], p["_date_obj"]) for p in posts]
+    urls = "\n".join(
+        f"  <url>\n    <loc>{xml_escape(loc)}</loc>\n"
+        f"    <lastmod>{lastmod.isoformat()}</lastmod>\n  </url>"
+        for loc, lastmod in entries
+    )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{urls}\n</urlset>\n"
+    )
+    with open(os.path.join(OUT_DIR, "sitemap.xml"), "w+") as f:
+        f.write(xml)
+
+
+def render_robots():
+    txt = f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n"
+    with open(os.path.join(OUT_DIR, "robots.txt"), "w+") as f:
+        f.write(txt)
+
+
 # ---------------------------------------------------------------------------
 # Entry points
 # ---------------------------------------------------------------------------
@@ -146,6 +205,12 @@ def build_all():
         feed_tpl = f.read()
     render_feed(feed_tpl, posts)
     print("  feed.rss written")
+
+    render_sitemap(posts)
+    print("  sitemap.xml written")
+
+    render_robots()
+    print("  robots.txt written")
 
 
 def build_one(target):

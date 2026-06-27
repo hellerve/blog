@@ -10,7 +10,7 @@
   {{#posts}}
   <item>
     <title>{{title}}</title>
-    <description>{{title}}</description>
+    <description>{{description}}</description>
     <link>https://blog.veitheller.de/{{out_file}}</link>
     <pubDate>{{date_and_time}}</pubDate>
     <guid>https://blog.veitheller.de/{{out_file}}</guid>

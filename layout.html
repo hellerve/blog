@@ -1,13 +1,26 @@
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="{{title}} | The personal blog of Veit Heller">
+    <meta name="description" content="{{description}}">
     <meta name="author" content="Veit Heller">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}} | Veit's Blog</title>
+    <link rel="canonical" href="{{url}}">
+    <link rel="alternate" type="application/rss+xml" title="Veit's Blog" href="https://blog.veitheller.de/feed.rss">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{url}}">
+    <meta property="og:site_name" content="Veit's Blog">
+    <meta property="article:published_time" content="{{date}}">
+    <meta property="article:author" content="Veit Heller">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script type="application/ld+json">{{{jsonld}}}</script>
     <script defer data-domain="blog.veitheller.de" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
   </head>
   <body lang="en">
