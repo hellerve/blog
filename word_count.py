@@ -1,127 +1,176 @@
 #!/usr/bin/env python3
-# pip install requests beautifulsoup4
+"""Honest word/code analysis of the published blog, straight from source.
+
+Reads posts/*.md (same set publish.py builds: frontmatter date <= today) and,
+for each post, strips frontmatter, fenced + inline code, images and HTML tags
+before counting words. So "prose" is what a human actually reads, and "code"
+is tracked separately rather than silently inflating the total.
+
+    python word_count.py            # full report
+    python word_count.py --csv      # per-post table as CSV on stdout
+
+No third-party dependencies.
+"""
+import csv
+import os
 import re
-import time
-from urllib.parse import urljoin, urlparse
-import requests
-from bs4 import BeautifulSoup
+import statistics
+import sys
+from datetime import date
 
-START_URL = "https://blog.veitheller.de/"   # index page
-DOMAIN = urlparse(START_URL).netloc
-PAUSE_S = 0.6                                # be polite to the server
-MAX_INDEX_PAGES = 200                        # safety cap
+POSTS_DIR = "posts"
 
-# Treat words as sequences of letters/digits possibly joined by ' or -
-WORD_RE = re.compile(r"[0-9A-Za-zÀ-ÖØ-öø-ÿ]+(?:[-'][0-9A-Za-zÀ-ÖØ-öø-ÿ]+)*", re.UNICODE)
+FM_RE    = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+DATE_RE  = re.compile(r"^date:\s*(\d{4}-\d{2}-\d{2})", re.MULTILINE)
+TITLE_RE = re.compile(r'^title:\s*"?(.*?)"?\s*$', re.MULTILINE)
+FENCE_RE = re.compile(r"^\s*(`{3,}|~{3,})")
+WORD_RE  = re.compile(r"[0-9A-Za-zÀ-ɏ]+(?:[-'’][0-9A-Za-zÀ-ɏ]+)*")
+INLINE_CODE_RE = re.compile(r"`[^`\n]+`")
+MD_IMG_RE  = re.compile(r"!\[[^\]]*\]\([^)]*\)")
+MD_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+HTML_TAG_RE = re.compile(r"<[^>]+>")
 
-def get(url):
-    r = requests.get(url, headers={"User-Agent": "word-count/1.0 (+https://example.org)"}, timeout=20)
-    r.raise_for_status()
-    return r.text
 
-def find_next_index_page(soup, base_url):
-    # Prefer rel="next" (many themes use "next" for "older posts")
-    link = soup.find("a", rel=lambda v: v and "next" in v.lower())
-    if link and link.get("href"):
-        return urljoin(base_url, link["href"])
+def split_frontmatter(md):
+    m = FM_RE.match(md)
+    return (md[:m.end()], md[m.end():]) if m else ("", md)
 
-    # Fallback: anchor with "older" in text (cover en/de variations if needed)
-    for a in soup.find_all("a"):
-        if a.get("href") and ("older" in a.get_text(strip=True).lower() or "ältere" in a.get_text(strip=True).lower()):
-            return urljoin(base_url, a["href"])
-    return None
 
-def extract_index_post_links(soup, base_url):
-    links = set()
+def analyze(path):
+    with open(path, encoding="utf-8") as f:
+        raw = f.read()
+    fm, body = split_frontmatter(raw)
+    dm, tm = DATE_RE.search(fm), TITLE_RE.search(fm)
+    d = date.fromisoformat(dm.group(1)) if dm else None
+    title = tm.group(1) if tm else os.path.basename(path)[:-3].replace("_", " ")
 
-    # Best guess: article headers often hold the canonical post link
-    for a in soup.select("article h1 a[href], article h2 a[href]"):
-        links.add(urljoin(base_url, a["href"]))
+    # Separate fenced code blocks from prose, line by line.
+    prose_lines, code_lines = [], []
+    in_fence, fence_char = False, ""
+    for line in body.splitlines():
+        fence = FENCE_RE.match(line)
+        if not in_fence and fence:
+            in_fence, fence_char = True, fence.group(1)[0]
+        elif in_fence and fence and fence.group(1)[0] == fence_char:
+            in_fence = False
+        elif in_fence:
+            code_lines.append(line)
+        else:
+            prose_lines.append(line)
 
-    # Fallback: any link under <article>
-    for a in soup.select("article a[href]"):
-        links.add(urljoin(base_url, a["href"]))
+    prose = "\n".join(prose_lines)
 
-    # Last resort: any on-domain .html link that isn't obviously a non-post page
-    for a in soup.select("a[href]"):
-        href = a["href"]
-        url = urljoin(base_url, href)
-        if urlparse(url).netloc != DOMAIN:
+    # Inline code counts as code, not prose.
+    inline_spans = INLINE_CODE_RE.findall(prose)
+    inline_code_words = sum(len(WORD_RE.findall(s)) for s in inline_spans)
+    prose = INLINE_CODE_RE.sub(" ", prose)
+
+    # Drop images, keep link text (drop URLs), strip remaining HTML.
+    prose = MD_IMG_RE.sub(" ", prose)
+    prose = MD_LINK_RE.sub(r"\1", prose)
+    prose = HTML_TAG_RE.sub(" ", prose)
+
+    return {
+        "title": title,
+        "date": d,
+        "file": os.path.basename(path),
+        "prose_words": len(WORD_RE.findall(prose)),
+        "code_lines": len(code_lines),
+        "code_words": sum(len(WORD_RE.findall(l)) for l in code_lines),
+        "inline_code_words": inline_code_words,
+    }
+
+
+def load_posts(today):
+    posts = []
+    for fn in os.listdir(POSTS_DIR):
+        if not fn.endswith(".md"):
             continue
-        if not url.endswith(".html"):
-            continue
-        low = url.lower()
-        if any(bad in low for bad in ("/index.html", "/archives", "/archive", "/tags", "/tag/", "/category", "/categories", "/about")):
-            continue
-        links.add(url)
+        a = analyze(os.path.join(POSTS_DIR, fn))
+        if a["date"] is None or a["date"] <= today:
+            posts.append(a)
+    posts.sort(key=lambda p: (p["date"] or date.min), reverse=True)
+    return posts
 
-    return sorted(links)
 
-def extract_article_text_words(html):
-    soup = BeautifulSoup(html, "html.parser")
+def emit_csv(posts):
+    w = csv.writer(sys.stdout)
+    w.writerow(["date", "title", "prose_words", "code_lines", "code_words", "inline_code_words", "file"])
+    for p in posts:
+        w.writerow([p["date"], p["title"], p["prose_words"], p["code_lines"],
+                    p["code_words"], p["inline_code_words"], p["file"]])
 
-    # Prefer the main article; otherwise fall back to <main>, then body
-    main = soup.select_one("article") or soup.select_one("main") or soup.body
-    if main is None:
-        main = soup
 
-    # Strip code + obvious non-article chrome
-    for sel in ["pre", "code", ".highlight", "[class*=code]", "script", "style", "nav", "header", "footer", "aside"]:
-        for el in main.select(sel):
-            el.decompose()
+def report(posts):
+    n = len(posts)
+    prose = [p["prose_words"] for p in posts]
+    total_prose = sum(prose)
+    total_code_lines = sum(p["code_lines"] for p in posts)
+    total_code_words = sum(p["code_words"] for p in posts)
+    total_inline = sum(p["inline_code_words"] for p in posts)
+    with_code = [p for p in posts if p["code_lines"] > 0]
+    dates = [p["date"] for p in posts if p["date"]]
 
-    text = " ".join(main.stripped_strings)
-    return WORD_RE.findall(text)
+    print(f"Published posts:            {n}")
+    print(f"Date range:                 {min(dates)}  ->  {max(dates)}")
+    print()
+    print("== PROSE (code / images / html / frontmatter excluded) ==")
+    print(f"Total prose words:          {total_prose:,}")
+    print(f"Average per post:           {statistics.mean(prose):,.0f}")
+    print(f"Median per post:            {statistics.median(prose):,.0f}")
+    print(f"Std dev:                    {statistics.pstdev(prose):,.0f}")
+    print(f"Shortest / Longest:         {min(prose):,} / {max(prose):,}")
+    print(f"Est. reading time @200wpm:  {total_prose/200/60:.1f} hours total")
+    print()
+    print("== CODE ==")
+    print(f"Posts containing code:      {len(with_code)} of {n} ({len(with_code)/n*100:.0f}%)")
+    print(f"Total fenced code lines:    {total_code_lines:,}")
+    print(f"Total code words (fenced):  {total_code_words:,}")
+    print(f"Inline code words:          {total_inline:,}")
+    if with_code:
+        print(f"Avg code lines / post:      {total_code_lines/n:.1f} (all)   "
+              f"{total_code_lines/len(with_code):.1f} (code posts only)")
+    print()
+    print("== TOP 15 LONGEST (prose words) ==")
+    for p in sorted(posts, key=lambda p: p["prose_words"], reverse=True)[:15]:
+        print(f"{p['prose_words']:>6}  {p['date']}  {p['title']}")
+    print()
+    print("== 10 SHORTEST ==")
+    for p in sorted(posts, key=lambda p: p["prose_words"])[:10]:
+        print(f"{p['prose_words']:>6}  {p['date']}  {p['title']}")
+    print()
+    print("== TOP 15 MOST CODE (fenced lines) ==")
+    for p in sorted(posts, key=lambda p: p["code_lines"], reverse=True)[:15]:
+        print(f"{p['code_lines']:>6} lines  {p['prose_words']:>5} words  {p['title']}")
+    print()
+    buckets = [(0, 300, "micro (<300)"), (300, 700, "short (300-700)"),
+               (700, 1500, "medium (700-1500)"), (1500, 3000, "long (1500-3000)"),
+               (3000, 10**9, "epic (3000+)")]
+    print("== LENGTH DISTRIBUTION ==")
+    for lo, hi, name in buckets:
+        c = sum(1 for w in prose if lo <= w < hi)
+        print(f"{name:<20} {c:>4}  {'#'*c}")
+    print()
+    print("== BY YEAR ==")
+    years = {}
+    for p in posts:
+        if p["date"]:
+            years.setdefault(p["date"].year, []).append(p)
+    for y in sorted(years):
+        ps = years[y]
+        w = sum(x["prose_words"] for x in ps)
+        cl = sum(x["code_lines"] for x in ps)
+        print(f"{y}: {len(ps):>3} posts  {w:>7,} words  {w//len(ps):>5} avg  {cl:>5} code lines")
 
-def collect_all_post_urls():
-    urls = set()
-    seen_index_pages = set()
-
-    index_url = START_URL
-    for _ in range(MAX_INDEX_PAGES):
-        if not index_url or index_url in seen_index_pages:
-            break
-        seen_index_pages.add(index_url)
-
-        html = get(index_url)
-        soup = BeautifulSoup(html, "html.parser")
-        for u in extract_index_post_links(soup, index_url):
-            urls.add(u)
-
-        next_page = find_next_index_page(soup, index_url)
-        index_url = next_page
-        time.sleep(PAUSE_S)
-
-    return sorted(urls)
 
 def main():
-    print(f"Gathering post URLs from index starting at {START_URL} …")
-    posts = collect_all_post_urls()
-    print(f"Found {len(posts)} candidate posts.")
+    today = date.today()
+    posts = load_posts(today)
+    if "--csv" in sys.argv[1:]:
+        emit_csv(posts)
+    else:
+        report(posts)
 
-    total = 0
-    per_post = []
-
-    for i, url in enumerate(posts, 1):
-        try:
-            html = get(url)
-            words = extract_article_text_words(html)
-            count = len(words)
-            total += count
-            per_post.append((url, count))
-            print(f"[{i:>3}/{len(posts)}] {count:>6} words — {url}")
-            time.sleep(PAUSE_S)
-        except Exception as e:
-            print(f"[ERR] {url}: {e}")
-
-    print("\n==== Summary ====")
-    print(f"Posts counted: {len(per_post)}")
-    print(f"Total words (excluding code): {total}")
-    if per_post:
-        top = sorted(per_post, key=lambda x: x[1], reverse=True)[:10]
-        print("\nTop 10 by word count:")
-        for url, cnt in top:
-            print(f"{cnt:>6}  {url}")
 
 if __name__ == "__main__":
     main()
