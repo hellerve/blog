@@ -4,9 +4,9 @@ date: 2026-09-02
 ---
 
 The notes for this blog post have been sitting in my drafts folder for half
-a year now. I’ve done a little work on NumPy itself int the past year. Nothing
+a year now. I’ve done a little work on NumPy itself in the past year. Nothing
 notable, but enough to have to find my way around the source. That gave me the
-idea to write this, but then, as other oblgations overshadowed my NumPy
+idea to write this, but then, as other obligations overshadowed my NumPy
 contributions, it just started rotting quietly. One or two NumPy releases
 later I finally picked it up again, retraced my steps, and here we are.
 
@@ -122,7 +122,7 @@ ufunc_generic_fastcall(PyUFuncObject *ufunc,
 Parse, check for overrides, pick a loop, run it, wrap the result. Looks like
 we have a plan! Now for the interesting parts.
 
-## The polite escape hatch
+## An escape hatch
 
 Before NumPy commits to doing any work, it asks the arguments whether they’d
 rather do it themselves (always a good modus operandi).
@@ -181,9 +181,10 @@ float64_array)` has no `if->?` loop, so a promoter rewrites the requested
 types to `dd->d` and dispatch runs again.
 
 And the cache in step 2 matters a lot! The full resolution only happens the
-first time you call a ufunc with a given combination of types. Every later call
-with the same types is a single hash lookup on the DType classes. It’s pure
-machinery, but it’s useful.
+first time you call a ufunc with a given combination of types. For an
+ordinary cacheable case like ours, every later call with the same types is a
+single hash lookup on the DType classes. It’s pure machinery, but it’s
+useful.
 
 To understand what we now have, we have to engage in some archaeology and
 word-slinging.
@@ -285,19 +286,32 @@ do {
 ```
 
 The iterator hands the loop one contiguous-ish chunk at a time and advances
-the pointers in between. Dust of your hands, you’re done.
+the pointers in between. Dust off your hands, you’re done.
 
 But: both paths also share two bits of bookkeeping worth knowing about. First,
 unless the loop needs the Python API (our `float64` loop doesn’t, the `object`
 dtype loop does), NumPy releases the GIL around the whole thing, using a
 threshold so tiny arrays don’t pay the overhead. Second, floating-point status
-lags are cleared before and checked after the loop, which is where our old
+flags are cleared before and checked after the loop, which is where our old
 trusty `RuntimeWarning: overflow encountered in add` comes from. The inner loop
 itself never checks anything, it just computes and sets CPU flags.
 
-Whether you land on the trivial path matters, and we can see it from
-Python. Same number of elements, same operation, but one version strides
-over every second element:
+One caveat before we descend further (it bit me in a benchmark for this post).
+Strides alone don’t evict you from the trivial path. The trivial loop accepts
+any 1-D array and simply hands the actual stride to the inner loop, so even
+`a[::2]` is handled in a single call, no iterator in sight. I rebuilt NumPy
+with its ufunc tracing enabled to check, and only a non-contiguous N-D view
+(think `base[:, ::2]`) makes it print “Making iterator”. Hold that thought,
+it’ll matter in a minute.
+
+We’re in the central room of the cave now. Hushed whispers only, the ceiling
+is very fragile.
+
+## The loop itself
+
+Before we look at the inner loop, let’s give it something to chew on. Same
+number of elements, same operation, but one version strides over every
+second element:
 
 ```python
 n = 10_000_000
@@ -309,16 +323,12 @@ np.add(contig_a, contig_b, out=contig_out)     # 3.30 ms per call
 np.add(strided_a, strided_b, out=strided_out)  # 8.58 ms per call
 ```
 
-A factor of 2.6 on my machine, for the same number of additions. Part of
-that is memory bandwidth—the strided version touches twice the memory!—,
-but the iterator machinery and the less SIMD-friendly access pattern
-contribute too, I’m guessing. Admittedly not the most principled benchmark
-in the world, but you can fudge your own and see where it takes you.
-
-We’re in the central room of the cave now. Hushed whispers only, the ceiling
-is very fragile.
-
-## The loop itself
+A factor of 2.6 on my machine, for the same number of additions. And we know
+from the last section that both calls arrive here the same way. The trivial
+path, one call into the inner loop, real strides and all (that’s the thought
+you were supposed to hold, at ease now). So whatever explains the gap has to
+live inside `DOUBLE_add` itself. Part of it is memory bandwidth—the strided
+version touches twice the memory!—, but let’s see about the rest.
 
 So what does `DOUBLE_add` actually look like? Here I have to disappoint you
 first, because there is no file in the repository containing a function called
@@ -372,6 +382,13 @@ loop_scalar:
         *((@type@*)dst) = a @OP@ b;
     }
 ```
+
+And there’s the rest of our 2.6x performance gap. The SIMD specializations all
+guard on their operands being contiguous or scalar, so the strided call from
+our benchmark fails every check and spends its whole life in this scalar
+branch, while the contiguous call gets the vectorized one. What’s left of
+the gap after the bandwidth tax is the price of ending up down here in the
+sad loop.
 
 All this way down, and at the bottom of NumPy there’s a pointer-bumping
 `for` loop adding two doubles. We’re all just fumbling in the dark after all.
