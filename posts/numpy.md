@@ -69,10 +69,15 @@ It’s an instance of `numpy.ufunc`, a C-defined type<sup><a href="#2">2</a></su
 
 A ufunc is, at its core, a bundle of inner loops. One small C function per
 supported type signature, plus metadata about how many inputs and outputs
-there are. `np.add` ships 22 of them. The one we’re chasing today is
+there are. `np.add` ships 22 of them, though I should say that `types` only
+lists the classic ones: loops registered the modern way (more on that
+distinction later) live in an internal mapping on the ufunc that Python
+never sees. The one we’re chasing today is
 `dd->d`: double, double, to double. The whole rest of this post is
 about how NumPy gets from your call to that one entry, and what happens once
 it’s found. Other paths may vary, it’s a big piece of kit!
+
+Let’s dive into the cave.
 
 ## Into the C
 
@@ -121,6 +126,8 @@ ufunc_generic_fastcall(PyUFuncObject *ufunc,
 
 Parse, check for overrides, pick a loop, run it, wrap the result. Looks like
 we have a plan! Now for the interesting parts.
+
+The light is getting dim in our cave.
 
 ## An escape hatch
 
@@ -176,9 +183,13 @@ steps:
 
 A few translations are in order. The `signature` is what you fix explicitly
 when you call `np.add(a, b, dtype=...)`; in our call it’s empty. A “promoter”
-is what handles the cases where no loop matches directly: `np.add(int32_array,
-float64_array)` has no `if->?` loop, so a promoter rewrites the requested
-types to `dd->d` and dispatch runs again.
+is a registered helper that handles cases where no loop matches directly by
+rewriting the requested types and letting dispatch run again. Confusingly, the
+everyday mixed case, `np.add(int32_array, float64_array)`, doesn’t even use
+one: when dispatch comes up empty there, it falls back to the ufunc’s _old_
+type resolution machinery (`PyUFunc_AdditionTypeResolver`, in our case) to
+pick the common types, and then re-enters dispatch with those, landing on
+`dd->d`.
 
 And the cache in step 2 matters a lot! The full resolution only happens the
 first time you call a ufunc with a given combination of types. For an
@@ -223,7 +234,7 @@ pointers, an element count, a stride per operand, and an opaque payload. Every
 builtin numeric loop in NumPy still has this shape. Everything above it exists
 to line up memory so that calling it is correct<sup><a href="#4">4</a></sup>.
 
-We are deep in the cave now. The light is dim.
+We are deep in the cave now. It’s almost entirely dark.
 
 ## To iterate or not to iterate
 
@@ -255,7 +266,7 @@ return execute_ufunc_loop(&context, 0,
 The fast path comes first: if the shapes match, nothing needs broadcasting or
 casting, and every operand is 1-D or contiguous,
 [`try_trivial_single_output_loop`](https://github.com/numpy/numpy/blob/v2.5.2/numpy/_core/src/umath/ufunc_object.c#L869)
-calls the inner loop *once* over the entire data. No iterator is
+calls the inner loop once over the entire data. No iterator is
 constructed at all. For the everyday `np.add(a, b)` of two well-behaved
 same-shape arrays, this is the path you’re on.
 
@@ -300,8 +311,12 @@ One caveat before we descend further (it bit me in a benchmark for this post).
 Strides alone don’t evict you from the trivial path. The trivial loop accepts
 any 1-D array and simply hands the actual stride to the inner loop, so even
 `a[::2]` is handled in a single call, no iterator in sight. I rebuilt NumPy
-with its ufunc tracing enabled to check, and only a non-contiguous N-D view
-(think `base[:, ::2]`) makes it print “Making iterator”. Hold that thought,
+with its ufunc tracing enabled to check, and it takes something the trivial
+path actually rejects, like a non-contiguous N-D view (think `base[:, ::2]`)
+or an `out=` that overlaps an input unsafely, to make it print “Making
+iterator”. (The overlap check is finer than you’d guess: `out=a[1:]` reading
+from `a[:-1]` spins up the iterator, while the other direction, where the
+write safely trails the read, does not). Hold that thought,
 it’ll matter in a minute.
 
 We’re in the central room of the cave now. Hushed whispers only, the ceiling
@@ -441,7 +456,8 @@ per interesting CPU feature set (the file suffix `.dispatch.c.src` tells the
 build system to do this). Which compiled variant actually gets installed into
 the table is decided at import time by a macro that expands to a chain of
 runtime CPU checks. The [documentation in the build config](https://github.com/numpy/numpy/blob/v2.5.2/meson_cpu/main_config.h.in#L226)
-shows the expansion:
+shows the shape of the expansion with a made-up example (illustrative only,
+the features are per-loop and there is no AVX-512 variant of our `add`):
 
 ```c
 NPY_CPU_DISPATCH_CALL(func = add);
@@ -452,9 +468,12 @@ func = NPY_CPU_HAVE(AVX512_SKX) ? add_AVX512_SKX :
                add);  // baseline
 ```
 
-So the `DOUBLE_add` pointer sitting in the table has already been chosen for
-your particular CPU, once, when `numpy` was imported. You can even ask
-NumPy which variant you got:
+The real targets for each loop family live in `meson.build`. For
+`loops_arithm_fp` they are `X86_V3, X86_V2, ASIMD, NEON`, where `X86_V3` is
+the `x86-64-v3` microarchitecture level, which is to say AVX2. So the
+`DOUBLE_add` pointer sitting in the table has already been chosen for
+your particular CPU when `numpy` was imported. You can even ask NumPy which
+variant you got:
 
 ```python
 >>> from numpy.lib import introspect
@@ -464,8 +483,7 @@ NumPy which variant you got:
 ```
 
 On my ARM-based Mac there’s only one candidate, since NEON is unconditionally
-available, on an x86 machine you’d probably see the AVX512/AVX2 ladder from the
-example above.
+available. On an x86 machine you’d see the `X86_V3`/`X86_V2` ladder instead.
 
 Okay, okay, time to jumar back up. It’s getting spooky in here.
 
@@ -492,16 +510,20 @@ But the old strata aren’t frozen in place, and I have evidence, because I
 stumbled into it. I read the source on the main branch first and then
 re-verified everything against the 2.5.2 tag before quoting it, and one of
 my searches failed, because the legacy loop lookup from earlier has already
-been refactored on main. Instead of scanning the `types` table every time a
-loop is set up, the loop is now cached on the `ArrayMethod` when it’s
-registered. The old selector even carries a TODO comment asking for exactly
-this kind of improvement (“There needs to be a loop selection acceleration
-structure, like a hash table”), and main cashed in that check, albeit by
-removing the lookup rather than accelerating it (nothing faster than not
-doing the work). Somebody looked at one of the most-executed codepaths in
-numerical Python, decades in, battle-proven if anything ever was, and decided
-it was still worth improving. The oldest layer is still being reworked, even
-with all the deposits on top. It’s beautiful.
+been refactored on main. Instead of the selector scanning the `types` table
+every time a loop is set up, the scan now runs once, when the `ArrayMethod`
+is registered, and the found loop is cached on it. The selector, and its
+`TODO` comment wishing for “a loop selection acceleration structure, like a
+hash table”, both live on, they just do their work once instead of on every
+call now.
+
+The motive is the best part: this belongs to a family of changes preparing
+NumPy for free-threaded Python, where lazily initialized global state turns
+from a code smell into a real problem<sup><a href="#5">5</a></sup>. Somebody
+looked at one of the most-executed codepaths in numerical Python, decades in,
+battle-proven if anything ever was, and reworked it, because the world had 
+changed. The oldest layer is still being tended to, even with all the deposits
+on top. It’s beautiful.
 
 I hope you enjoyed the descent! If this post made you want to go further,
 building NumPy from source and putting a breakpoint in
@@ -511,8 +533,8 @@ beverage at hand. See you around!
 #### Footnotes
 
 <span id="1">1.</span> I mean it! Part of the machinery described in this
-post is already gone from NumPy’s main branch, as we’ll see in the Fin.
-People still hack on `np.add` between releases.
+post has already been reworked on NumPy’s main branch, as we’ll see in the
+Fin. People still hack on `np.add` between releases.
 
 <span id="2">2.</span> Specifically, it lives in the C extension module
 `numpy._core._multiarray_umath`. The unwieldy name is, apparently, a
@@ -533,5 +555,18 @@ lesson in itself.
 <span id="4">4.</span> Nothing about the ArrayMethod layer requires
 wrapping old-style loops, it exists just so that new dtypes can
 register loops natively. The string dtype work in NumPy 2.0 is an
-example of modern loops. For the builtin numeric types, though, the “legacy”
+example of modern loops: [here is where `StringDType` registers its `add`
+loop](https://github.com/numpy/numpy/blob/v2.5.2/numpy/_core/src/umath/stringdtype_ufuncs.cpp#L2732),
+and it never appears in `np.add.types`, which only reflects the classic
+table. That mapping I mentioned at the top, the one Python never sees, is
+where such loops live. For the builtin numeric types, though, the “legacy”
 interface remains the real thing.
+
+<span id="5">5.</span> This came to me by way of a NumPy core developer
+reviewing a draft of this post (thank you!). One example from the same
+family: [a fix](https://github.com/numpy/numpy/commit/c412bedf8e4b0b14f455d3b2cee8034899543e85)
+moving reduction-initial-value setup from call time to ufunc
+initialization, motivated by multithreaded reductions. The dispatch cache
+itself, a `PyArrayIdentityHash`, also recently got a concurrency-minded
+overhaul, described in Quansight’s [“Scaling NumPy on free-threaded
+Python”](https://labs.quansight.org/blog/scaling-numpy-on-free-threaded-python).
