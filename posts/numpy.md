@@ -530,6 +530,9 @@ building NumPy from source and putting a breakpoint in
 `ufunc_generic_fastcall` is a surprisingly pleasant afternoon. Just keep a
 beverage at hand. See you around!
 
+*Thank you [Nathan Goldbaum](https://github.com/ngoldbaum) for reviewing this
+blog post!*
+
 #### Footnotes
 
 <span id="1">1.</span> I mean it! Part of the machinery described in this
@@ -562,9 +565,9 @@ table. That mapping I mentioned at the top, the one Python never sees, is
 where such loops live. For the builtin numeric types, though, the “legacy”
 interface remains the real thing.
 
-<span id="5">5.</span> This came to me by way of a NumPy core developer
-reviewing a draft of this post (thank you!). One example from the same
-family: [a fix](https://github.com/numpy/numpy/commit/c412bedf8e4b0b14f455d3b2cee8034899543e85)
+<span id="5">5.</span> This came to me by way of NumPy core developer
+[Nathan Goldbaum](https://github.com/ngoldbaum) reviewing a draft of this post
+(thank you!). One example from the same family: [a fix](https://github.com/numpy/numpy/commit/c412bedf8e4b0b14f455d3b2cee8034899543e85)
 moving reduction-initial-value setup from call time to ufunc
 initialization, motivated by multithreaded reductions. The dispatch cache
 itself, a `PyArrayIdentityHash`, also recently got a concurrency-minded
