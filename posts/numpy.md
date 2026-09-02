@@ -530,7 +530,7 @@ building NumPy from source and putting a breakpoint in
 `ufunc_generic_fastcall` is a surprisingly pleasant afternoon. Just keep a
 beverage at hand. See you around!
 
-*Thank you [Nathan Goldbaum](https://github.com/ngoldbaum) for reviewing this
+*Thanks to [Nathan Goldbaum](https://github.com/ngoldbaum) for reviewing this
 blog post!*
 
 #### Footnotes
