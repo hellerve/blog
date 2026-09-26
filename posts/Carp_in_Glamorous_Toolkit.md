@@ -11,7 +11,7 @@ The first version had a parser, syntax highlighting, a custom Lepiter snippet,
 and the beginnings of a project browser. I gave a talk about it in 2022 and
 [posted the recording](https://blog.veitheller.de/Implementing_an_IDE_in_GT.html)
 the following year. The repository was labelled “heavy WIP” for, I believe, its
-entire existance, even though there was no progress on the work for a few years.
+entire existence, even though there was no progress on the work for a few years.
 The booklet that explains how I built the custom language integration had some
 interested readers, though.
 
@@ -39,7 +39,9 @@ to be had. Let’s have a look!
 The project in this screenshot is Metacarp itself. We’re looking at its
 parser, and there’s a small example open called `Surface.a-parsed-module`.
 
-[![Browsing a parser example, evaluating it in the project playground, and inspecting the resulting surface forms.](/assets/gt4carp/browser.png)](/assets/gt4carp/browser.png)
+![](/assets/gt4carp/browser.png)
+
+<div class="figure-label">Fig. 1: Browsing a parser example, evaluating it in the project playground, and inspecting the resulting value.</div>
 
 The example parses a little bit of Carp:
 
@@ -93,7 +95,7 @@ on an ordinary function:
 ```
 
 The browser figures out what an example belongs to from the types involved
-both return types and body). The one above is an example of `SurfaceModule`
+(both return types and body). The one above is an example of `SurfaceModule`
 because it returns one. It’s also an example of the functions it calls,
 including `Surface.parse`. I don’t have to maintain another hierarchy, which is
 good because I would forget, and I frequently did when working on GT (sorry,
@@ -158,10 +160,11 @@ An inspector can also outlive its host if another evaluation replaces it. But
 when it works, a Carp value inspects like a Pharo object, and I think that is
 somewhat magical.
 
-![A live Carp value with program-defined views in the GT inspector.](/assets/gt4carp/value.png)
+![](/assets/gt4carp/value.png)
+<div class="figure-label">Fig. 2: A live Carp value with program-defined views in the GT inspector.</div>
 
 Of course, there is also a Pharo side to the object, and that one can be
-verwritten and have its own views, too. I have a whole declarative layer on
+overwritten and have its own views, too. I have a whole declarative layer on
 the Pharo side to decide which class represents which Carp data type. It’s
 very flexible, but also well-trodden ground. [Phlow for
 Python](https://book.gtoolkit.com/phlow-for-python-dyl98a2rcczf8f4tdf7e1pstj)
@@ -193,7 +196,8 @@ inferred when the session started, so every little expression does not drag
 the whole standard library through the compiler again. This way we manage
 millisecond compile times for simple snippets, even in huge contexts.
 
-![A gt4carp notebook page with inferred types and diagnostics.](/assets/gt4carp/snippets.png)
+![](/assets/gt4carp/snippets.png)
+<div class="figure-label">Fig. 3: A `gt4carp` notebook page with inferred types and diagnostics.</div>
 
 A small server written in Carp sits between GT and Metacarp. It keeps one warm
 session per page or project and speaks a simple length-prefixed JSON protocol.
@@ -229,7 +233,8 @@ get one wrong and the debugger stops in `_dyld_start` and stares blankly at me.
 
 Native debugging is hard, y’all.
 
-![A Carp program stopped in its source in the native debugger.](/assets/gt4carp/debugger.png)
+![](/assets/gt4carp/debugger.png)
+<div class="figure-label">Fig. 4: A Carp program stopped in its source in the native debugger.</div>
 
 Luckily there’s also a macro-level debugger that’s been there since 2022 (I’ve
 since completely rewritten it), and it’s much more straightforward. Also much
@@ -255,7 +260,7 @@ semantics are, quite frankly, a bit undercooked as of yet.
 Warm state can degrade when the server cannot mirror a definition or load. It
 then takes slower compiler paths so that evaluation, annotation, and completion
 continue to agree. This is correct and occasionally mysterious from the outside,
-because the slowdown is intrasparent and somewhat jarring. GT currently handles
+because the slowdown is intransparent and somewhat jarring. GT currently handles
 the degradation indicator by not showing it to you and just freezing, which is
 lovely, but not quite what I envision.
 
@@ -294,5 +299,5 @@ now?”, to which I had to reply nothing. Well, David, it took me 8 years, but
 we’ve made it, baby!
 
 <span id="2">2.</span> There’s a weird flicker sometimes where we start in C
-before switching to Carp that I haven’t quite figure out. I’m sure I’ll get
+before switching to Carp that I haven’t quite figured out. I’m sure I’ll get
 there.
