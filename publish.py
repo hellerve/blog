@@ -17,9 +17,11 @@ import json
 import os
 import re
 import sys
+import unicodedata
 
 from email import utils
 from datetime import datetime, date, timezone
+from urllib.parse import quote
 from xml.sax.saxutils import escape as xml_escape
 
 import pystache
@@ -57,6 +59,10 @@ def stem(filename):
 
 def out_file(filename):
     return stem(filename) + ".html"
+
+
+def url_path(filename):
+    return "/" + quote(unicodedata.normalize("NFC", out_file(filename)), safe="")
 
 
 def to_date(value):
@@ -111,11 +117,13 @@ def get_post(filename):
     post_date = to_date(meta["date"]) if "date" in meta else date.fromtimestamp(os.stat(path).st_mtime)
     title = meta.get("title") or stem(filename).replace("_", " ")
     description = meta.get("description") or make_excerpt(body)
-    url = f"{SITE_URL}/{out_file(filename)}"
+    post_url_path = url_path(filename)
+    url = f"{SITE_URL}{post_url_path}"
 
     return {
         "filename": filename,
         "out_file": out_file(filename),
+        "url_path": post_url_path,
         "title": title,
         "description": description,       # meta description / OG / RSS
         "url": url,                       # canonical URL

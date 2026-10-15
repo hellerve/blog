@@ -11,7 +11,7 @@
   <item>
     <title>{{title}}</title>
     <description>{{description}}</description>
-    <link>https://blog.veitheller.de/{{out_file}}</link>
+    <link>{{url}}</link>
     <pubDate>{{date_and_time}}</pubDate>
     <guid>https://blog.veitheller.de/{{out_file}}</guid>
   </item>
