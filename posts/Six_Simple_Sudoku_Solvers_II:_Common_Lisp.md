@@ -52,7 +52,7 @@ Before we start, a bit of ceremony.
 
 ```
 
-This tells the compiler to optimize for speed and throw everything else out of the window, as well as defining some types. Already we’re looking at bits, so you know it’ll be good!
+This tells the compiler to optimize for speed and throw everything else out of the window, as well as defining some types. Already we’re looking at bits, so you know it’ll be good! *Update (October 2026): As it turns out, the optimization settings were considerably less important than some type declarations and inlining I missed. See the addendum below.*
 
 ### The solver
 
@@ -183,6 +183,21 @@ More than that, however, I also use macros for little functions to ensure inlini
 ```
 
 These all could be functions, but this way I ensure things are inlined but I still retain the abstraction. This is definitely a matter of preference, but for this article I decided to go for it just to show you what is possible.
+
+### Addendum (October 2026)
+
+As [a reader on Reddit](https://www.reddit.com/r/Common_Lisp/comments/1qwlbf3/comment/o41cr70/) pointed out, I
+missed a rather important optimization here, which is to givie SBCL enough type information to actually generate
+efficient code.
+
+Adding type declarations to `candidates-mask` and inlining `row-mask`, `col-mask`, and `box-mask` makes the
+solver roughly **four times faster, even with safety enabled**. Interestingly, neither change does much on its
+own. It's their combination that matters: inlining allows the compiler to use the type information inside the
+helper functions, where the actual work happens.
+
+In other words, telling the compiler to optimize aggressively is much less useful than giving it the information
+it needs. A good lesson, even if embarassing after I waxed poetically about
+optimizations here, and thanks to the reviewer for catching it.
 
 ## MRV candidate selection
 
