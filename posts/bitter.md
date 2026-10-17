@@ -22,19 +22,19 @@ identified.
 ```
 <div class="figure-label">Fig. 1: Knuth, unabridged-ish.</div>
 
-The argument is about where to spend effort. Don’t waste your time on code that
-doesn’t matter, find the code that does, and then optimize the hell out of it.
-In the very next sentence he explains how you find it. Of course you measure,
-because “the universal experience of programmers who have been using
+The argument is about where to spend your effort. Don’t waste your time on code
+that doesn’t matter, find the code that does, and then optimize the hell out of
+it. In the very next sentence he explains how you find it. Of course you
+measure, because “the universal experience of programmers who have been using
 measurement tools has been that their intuitive guesses fail”<sup><a
 href="#1">1</a></sup>.
 
 That’s not what the sentence turned into, of course. Culturally, “premature
 optimization” became shorthand for “don’t optimize”, and the word *premature*
 becomes irrelevant. Someone suggests making a thing faster, someone else recites
-the sentence, and the conversation is over without anyone having established
-that the optimization was premature, or what premature means (presumably we’ll
-get to it when the first requests start timing out).
+the sentence, and the conversation is over. This happens without anyone having
+established that the optimization was premature, or what premature means
+(presumably we’ll get to it when the first requests start timing out).
 
 This post is not about that, though. Instead, look at it as a historical
 precedent, because I think the Bitter Lesson is going through the same thing
@@ -56,8 +56,8 @@ and by a large margin.
 He walks through chess, Go, speech recognition, and computer vision. Each time,
 researchers built what they knew about the domain into their systems. It
 helped in the short term, then it plateaued, and eventually it lost to methods
-that leaned on ever-cheaper computation. “The two methods that seem to scale
-arbitrarily in this way are search and learning.”
+that leaned on ever-cheaper computation. His verdict: “The two methods that seem
+to scale arbitrarily in this way are search and learning.”
 
 It’s a good essay, and I agree with most of it, begrudgingly. But a few
 things are worth pointing out, because, again, the nuance tends to get lost.
@@ -78,23 +78,24 @@ general systems, as if they were the same thing. A general learning method can
 produce a very narrow model. A general model can be used to train a
 specialist, for instance by fine-tuning it on a single task, or by using it as
 a teacher for a model that only ever sees that task. And none of this says
-anything about whether the hardware it runs on should be general, so each of
-those steps needs its own argument.
+anything about whether the hardware it runs on should be general. That would
+required quite a different argument.
 
-The essay also isn’t a theory of cost. It doesn’t tell you whether to run a
-large generative model when a small classifier does the job. It doesn’t tell
-you how to weigh one training run against the billions of inferences that come
-after it, or when the cost of keeping a system general starts to exceed what
-you get out of it, or when engineering effort pays for itself in operating
-cost. This is hard, bespoke work.
+The essay also isn’t a theory of cost. It doesn’t tell you to run a large
+generative model when a small classifier does the job. It doesn’t tell you how
+to weigh one training run against the billions of inferences that come after
+it, or when the cost of keeping a system general starts to exceed what you get
+out of it, or when engineering effort pays for itself in operating cost. This
+is hard, bespoke work, and only tangentially related to engineering (though it
+can be influenced by it).
 
 A method that scales better is not necessarily a system that’s cheaper to run.
 A general method might be the right way to find a solution, and a specialized
-system might be the right way to deploy it.
+system might be the right way to deploy and run it!
 
-I’d argue that the choice between the two is mostly an economic one. Generality
+I’d argue that the choice between the two is mostly economic. Generality
 saves you from engineering each solution separately. Specialization can save
-you recurring cost. That saving matters more as a workload becomes predictable
+you recurring cost. That matters more as a workload becomes predictable
 and its volume grows, because the engineering cost gets amortized. This is true
 for software, for models, and for physical machines, with very different
 numbers attached to each, many of which I don’t know, because my expertise is
@@ -125,7 +126,7 @@ fine-tuning [...]
 ```
 <div class="figure-label">Fig. 3: swyx, around 41:07.</div>
 
-Nobody flinches. But Ma’s reasons are about developing the capability, and
+Nobody reacts, but Ma’s reasons are about developing the capability, and
 swyx’s summary is about the machine. And the important part, I think, gets
 dropped, namely what it costs to operate a general-purpose robot at a napkin
 station, day after day, for years, with many of its actuators and sensors
@@ -149,13 +150,12 @@ the process that produces the machine rather than in the machine itself.
 
 ## Just scale it
 
-This is the part that actually bothers me. The conversation I keep running into
-goes something like this: someone points out an inefficiency or a limitation of
-an architecture, and proposes looking into a different approach. Someone else
-says “just scale it”, or “hand-engineering doesn’t work”, or simply “we’re
-Bitter-Lesson-pilled” (I’m way too old for this, by the way). From there, the
-conversation is dead in the water. Throw in some Knuth if you want to, we’re
-arguing from authority from here on out.
+This is, then, what actually bothers me. Someone points out an inefficiency or
+a limitation of an architecture, and proposes looking into a different
+approach. Someone else says “just scale it”, or “hand-engineering doesn’t
+work”, or simply “we’re Bitter-Lesson-pilled” (I’m way too old for this, by
+the way). From there, the conversation is dead in the water. Throw in some
+Knuth if you want to, we’re arguing from authority from here on out.
 
 These statements borrow authority from a historical observation without
 showing why it applies to the problem at hand. And they invert the burden of
