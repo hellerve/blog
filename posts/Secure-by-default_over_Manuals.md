@@ -3,7 +3,7 @@ title: "Secure-by-default over Manuals"
 date: 2025-09-19
 ---
 
-My last few posts on [SSDLCs](/Simple_SSDLs.html), [SBOMs](/Some_notes_about_SBOMs.html), and [Threat Modeling](/Threat_Modeling_for_the_Rest_of_Us.html) showed a clear personal bias that I’m aware of but have never really spoken much about publicly: I don’t like pushing paper.
+My last few posts on [SSDLCs](/Simple_SSDLCs.html), [SBOMs](/Some_notes_about_SBOMs.html), and [Threat Modeling](/Threat_Modeling_for_the_Rest_of_Us.html) showed a clear personal bias that I’m aware of but have never really spoken much about publicly: I don’t like pushing paper.
 
 Now, don’t get me wrong, I love writing, and good documentation is worth its weight in gold—whether for  onboarding handbooks, architecture drafts, or design documents. But I’m not a big fan of checking boxes for compliance, and I believe neither are most good auditors. I believe most of the players in the industry are acting in good faith, and that required ISMS documentation is derived from useful documentation that can help make a system more resilient.
 

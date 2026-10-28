@@ -3,7 +3,7 @@ title: "Simple SSDLCs"
 date: 2025-09-01
 ---
 
-[Like with SBOMs](/Some_notes_about_SBOMs.html), another thing that appeared weirdly frequently in my work this year is the [Secure Software (or System) Development Lifecycle (SSDLC)](https://its.ny.gov/secure-system-development-life-cycle-standard). It’s a loosely defined concept, but it basically describes a set of documents describing how security is embedded in your software and systems development and architecture process. As such, it’s a successor in spirit to Microsoft’s SDL, revitalized by our many recent security screw-ups and concomitant legislation (e.g. EU NIS2, US EO 14028).
+[Like with SBOMs](/Some_notes_about_SBOMs.html), another thing that appeared weirdly frequently in my work this year is the [Secure Software (or System) Development Lifecycle (SSDLC)](https://snyk.io/articles/secure-sdlc/). It’s a loosely defined concept, but it basically describes a set of documents describing how security is embedded in your software and systems development and architecture process. As such, it’s a successor in spirit to Microsoft’s SDL, revitalized by our many recent security screw-ups and concomitant legislation (e.g. EU NIS2, US EO 14028).
 
 I personally like to look for one in due diligence (DD) work when the system’s security is in any way interesting or certifications such as ISO-27001 are important. It gives me a good overview of the software development process—usually at least, more on that later. I scan for reproducible builds, SBOMs, and signed artifacts; if they’re absent, the risk goes up.
 
