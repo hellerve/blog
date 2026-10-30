@@ -17,7 +17,7 @@ Processing, before eventually thinking about how to create a model that I can
 3D print or have 3D printed in metal. This is a tale of half a day spent on
 something that resembles a ring but probably won’t look very much like the
 finished product. You can check out the—very, very rough—code
-[here](https://github.com/hellerve/ring)—caveat lector!
+[here](https://git.veitheller.de/hellerve/ring)—caveat lector!
 
 ## Space Colonization
 
@@ -129,7 +129,7 @@ is closest, and link them. That’s it!
 This leads to possible duplicate links, but also ensures that all of them are
 linked at least once. There’s probably better ways of doing this, but I’m not
 aware of any similar algorithms and, as such, was operating in an
-algorithm-theoretic vaccuum and wanted to get it done by tonight. This is a
+algorithm-theoretic vacuum and wanted to get it done by tonight. This is a
 perfect solution for that.
 
 ## Fin
@@ -137,4 +137,4 @@ perfect solution for that.
 I only had half a day to sketch out a first idea for a ring, and I think this
 is okay for what it is. I expect to go through my ideas and iteratively adapt
 and refine them as I go, so stay tuned for updates! In the meantime, you can
-always look at [the repository on Github](github.com/hellerve/ring).
+always look at [the repository on Github](https://git.veitheller.de/hellerve/ring).

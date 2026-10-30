@@ -148,7 +148,7 @@ The standard library already knows how to decide equality of naturals (`≟`),
 ordering (`≤?`), whether every element of a list or vector satisfies a
 decidable property (`all?`), and whether a list has duplicates (`unique?`).
 It also knows how to combine decisions with `×?` and `⊎?`. So our decision
-procedure is the specification again, just slightly more machinistic.
+procedure is the specification again, just slightly more mechanistic.
 
 For the purposes of this post, that’s the entire proof effort. We never write
 a proof term by hand. The checker runs, and if it says `yes`, the proof is

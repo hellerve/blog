@@ -89,7 +89,7 @@ Cumulative revenue
 </figcaption>
 </figure>
 
-Cumulatively, the jump from February to March was the most noticable, and the one that
+Cumulatively, the jump from February to March was the most noticeable, and the one that
 reassured me most. Around then is when I went from almost-panic mode into a more relaxed
 mindset.
 

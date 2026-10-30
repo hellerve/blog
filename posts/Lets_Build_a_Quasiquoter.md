@@ -46,7 +46,7 @@ usually do with our data! This is exciting, because it means that writing a
 macro in Lisp is just building a list like that and telling the environment to
 evaluate it. We can programmatically generate code!
 
-To do that, however, we often need to make some sections of the structrue
+To do that, however, we often need to make some sections of the structure
 fixed and others flexible. Let’s think of a macro that creates an alias for
 a function without arguments, and you will see what I mean:
 
@@ -283,11 +283,11 @@ list handling function, and stick our magic bit at the end:
 ```
 <div class="figure-label">Fig. 11: Quasiquoting a list in full.</div>
 
-The two error cases we’re dealing with is when we find a lone
+The two error cases we’re dealing with are when we find a lone
 `unquote-splicing`, in which we report that it needs to be part of a list,
-and a malformed one, similar to how dealt with `unquote` above.
+and a malformed one, similar to how we dealt with `unquote` above.
 
-And that’s it! We can `quasiquote` and `unquote` all we like! Pretty excting,
+And that’s it! We can `quasiquote` and `unquote` all we like! Pretty exciting,
 huh?
 
 ## Fin
@@ -306,8 +306,8 @@ macros](https://blog.veitheller.de/scheme-macros/) is for you!
 
 <span id="2">2.</span> I most recently used it to understand how one would
 implement something like Datalog (spoiler: it’s almost the same as miniKanren),
-and went through [the Racket implementation](github.com/racket/datalog). It’s
+and went through [the Racket implementation](https://github.com/racket/datalog). It’s
 a fantastically simple little implementation of Datalog, and it took away all
 the fear and doubt that I had. In fact, just a week later I gave a one hour
-wealkthrough of the implementation to a paper reading group that got pretty
+walkthrough of the implementation to a paper reading group that got pretty
 good feedback!

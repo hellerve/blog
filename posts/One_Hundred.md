@@ -22,7 +22,7 @@ once!
 
 I also enjoy the things people value. My technical blog posts are often received
 in a more lukewarm manner, and that’s alright. If it doesn’t concern you in your
-every day life as a programmer, it can be hard to get excited about some random
+everyday life as a programmer, it can be hard to get excited about some random
 intricacy of a tool you’ve never used.
 
 In reality, there are only four aspects that people have expressed excitement
@@ -53,7 +53,7 @@ Something that’s interesting about this is that I don’t have a good idea wha
 people actually care about. I don’t run Google Analytics on this blog post, or
 really any analytics for that matter. I don’t want to do that, because I want
 you to be able to feel just as vulnerable reading my blog posts as I am writing
-them, and I don’t want you to think that you’re behavior is being monitored.
+them, and I don’t want you to think that your behavior is being monitored.
 It’s just you, and a little note left behind by me.
 
 But, marking the 100th blog post, I’d like to invite you to [email

@@ -8,7 +8,7 @@ A few weeks ago, I saw a random post on LinkedIn in which someone showed off a s
 In this blog post series, I’ll walk you through each of them in turn, showcasing some fun unique features about every language (well almost). We will go through:
 
 - Python, the reference implementation. Simple, imperative, and thus perfect as our baseline.
-- SBCL (Common Lisp). We will utilize bitsets, macros, and optimizations hints, to show how we can make the solver both expressive and performant.
+- SBCL (Common Lisp). We will utilize bitsets, macros, and optimization hints, to show how we can make the solver both expressive and performant.
 - SWI-Prolog. We will leave the whole backtracking and solving business to Prolog. The least amount of code, the most magical.
 - Haskell. Datatypes and fancy functional magic to make the solver elegant if slightly impenetrable.
 - Rust. PERFORMANCE. Minimal allocations and copying.
@@ -97,9 +97,9 @@ def propagate(board):
 
 Again, this is not the most straightforward code, but I’ll break it down for you.
 
-We iterate until we cannot change anything in the board anymore (that is what `changed` represents). We set it to true to begin with to kick off the loop, and then set it to false at the start of every loop. When we fill anything out, it gets flipped again and we can go over the board once more. This will repeat until we went over the whole baord once without changing anything, our stop condition.
+We iterate until we cannot change anything in the board anymore (that is what `changed` represents). We set it to true to begin with to kick off the loop, and then set it to false at the start of every loop. When we fill anything out, it gets flipped again and we can go over the board once more. This will repeat until we went over the whole board once without changing anything, our stop condition.
 
-Inside that loop, we have another nested loop that goes over each cell. For each cell that if not filled out, we will calculate suitable candidates using `candidates()` (more below). If we do not find one, it means that the puzzle is unsolvable in its current state, and we return `False`. If we find a single candidate, we set the board to it (ignore the call to `list()`, that’s just ceremony), and signal that we should iterate again.
+Inside that loop, we have another nested loop that goes over each cell. For each cell that is not filled out, we will calculate suitable candidates using `candidates()` (more below). If we do not find one, it means that the puzzle is unsolvable in its current state, and we return `False`. If we find a single candidate, we set the board to it (ignore the call to `list()`, that’s just ceremony), and signal that we should iterate again.
 
 And that’s basically it! But how do we find suitable candidates?
 

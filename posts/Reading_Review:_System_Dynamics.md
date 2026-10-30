@@ -43,7 +43,7 @@ various kinds of system dynamics.
 
 Let’s start with the articles:
 
-- [Public broadcasting: Its past and its future](https://www.knightfoundation.org/public-media-white-paper-2017-gardner)
+- [Public broadcasting: Its past and its future](https://web.archive.org/web/20180916041618/https://knightfoundation.org/public-media-white-paper-2017-gardner)
   is a long essay/whitepaper by Sue Gardner that examines the evolution of
   public broadcasting—mostly the BBC—and how the world changed around it, and
   it was in turn changed by the world, and how it’s maybe time to rethink

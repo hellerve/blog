@@ -3,7 +3,7 @@ title: "Binary Coded Decimal"
 date: 2017-07-25
 ---
 
-Today I spent some of my day writing [a toy library](http://github.com/hellerve/nibbles)
+Today I spent some of my day writing [a toy library](https://git.veitheller.de/hellerve/nibbles)
 for [Binary Coded Decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal).
 I’m reading through [Write Great Code](https://www.amazon.com/Write-Great-Code-Understanding-Machine/dp/1593270038),
 and they were explained in chapter two<sup><a href="#1">1</a></sup>.
@@ -21,7 +21,7 @@ loved every second of working on it. In fine “Write Great Code” tradition mo
 of the code is an abominable mix of bitmasking and shifting hacks, but it gets
 the job done. One of the main restrictions of the library is that it currently
 only supports 8–64 bits precision, though it would be fairly trivial to make it
-infinte precision. It’s left as an exercise to the reader, let’s say.
+infinite precision. It’s left as an exercise to the reader, let’s say.
 
 Before I leave you, let me give you a loop, slightly more obfuscated than in
 my library. I owe the people who find out what it does without reading the

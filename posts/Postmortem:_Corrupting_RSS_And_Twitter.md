@@ -4,7 +4,7 @@ date: 2017-12-25
 ---
 
 As some of you might have noticed, I corrupted my RSS and Twitter feed last
-week. It’s an embarassing and cautionary tale, so it’s worth telling.
+week. It’s an embarrassing and cautionary tale, so it’s worth telling.
 
 First, a word about my setup. I wrote a simple static site generator that
 takes my markdown files and compiles them to HTML, inlining them into a
@@ -14,7 +14,7 @@ that. All of the software on my blog can be found
 
 So how do I get to an RSS feed and a Twitter bot from there? Whenever I
 publish a post, I run [this
-script](https://github.com/hellerve/blog/blob/master/rsser/rsser.py). It
+script](https://github.com/hellerve/blog/blob/95ef0b1dd78093747b7cb97c80fc503750ca5d80/rsser/rsser.py). It
 looks at the date when the file was last modified and uses that as the
 RSS date. This isn't the best solution, of course, but it’s simple and
 foolproof. It’s good enough for my setup in which I write the posts
@@ -42,7 +42,7 @@ Twitter API was a bit slower than usual, that there was a connection error of so
 sort. Finally it was done. I looked at Twitter to verify that it had indeed been
 published; I saw nearly 70 new tweets.
 
-I knew what had happenend immediately. It’s weird how I hadn’t thought about it
+I knew what had happened immediately. It’s weird how I hadn’t thought about it
 before, but once I saw what had happened, I knew what was wrong in the blink of
 an eye: `sed` had touched every file, and my scripts thought they were all new.
 

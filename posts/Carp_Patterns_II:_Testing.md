@@ -92,7 +92,7 @@ move from using `deftest` to `with-test`, like this:
 ```
 <div class="figure-label">Fig. 2: Testing a URI library.</div>
 
-Basically, you have a bunch of functions that run tests, and maybe the print
+Basically, you have a bunch of functions that run tests, and maybe they print
 out information about the test name in the beginning. But what is the
 `Array.sum` in `main` doing? I’ve found it to be a neat trick to set the exit
 status of failing test suites appropriately: since `with-test` returns the

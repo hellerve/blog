@@ -7,7 +7,7 @@ A few weeks ago, [GitHub changed its home feed](https://github.com/orgs/communit
 
 So, what do I want in a home feed? Broadly speaking, I want two things: I want to see activity in repositories I’m watching, and see if and how people interact with my repositories.
 
-Unfortunately, the only way that I saw to reclaim some sort of utility in my feed was to unstar all the repositories that I had starred, and to unfollow everyone I’ve been following. That’s a bit of a bummer, because it takes the joy out of the GitHub experience; a part of following and starring is just to give props to a person or project. Mostly what I want to express with either of those action is: “Hey, that’s pretty cool! You’re doing a great job!” It’s nice to be complimented.
+Unfortunately, the only way that I saw to reclaim some sort of utility in my feed was to unstar all the repositories that I had starred, and to unfollow everyone I’ve been following. That’s a bit of a bummer, because it takes the joy out of the GitHub experience; a part of following and starring is just to give props to a person or project. Mostly what I want to express with either of those actions is: “Hey, that’s pretty cool! You’re doing a great job!” It’s nice to be complimented.
 
 So I want to apologize to all the people I’ve basically shafted in that way and robbed of their well-deserved compliments. It’s a fundamentally selfish thing to do, but it became somewhat important to me.
 
@@ -15,9 +15,9 @@ Phew. Now that that is out of the way, let’s dive into how I did it, shall we?
 
 ## A dive into the GitHub API
 
-GitHub has [a reasonable, well-documented REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28) that I’ve used before and decided to use again. The first thing I always forget is how to generate an API token (hint: [this is how you do it](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)). They have two flavors, ”fine-grained” and “classic”, and as an aging developer and overall purist of course I chose the classic option (and definitely not because I couldn’t for the life of me figure out what scopes I needed to select in the fine-grained version).
+GitHub has [a reasonable, well-documented REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28) that I’ve used before and decided to use again. The first thing I always forget is how to generate an API token (hint: [this is how you do it](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)). They have two flavors, “fine-grained” and “classic”, and as an aging developer and overall purist of course I chose the classic option (and definitely not because I couldn’t for the life of me figure out what scopes I needed to select in the fine-grained version).
 
-Anyway, we end up with a token in our clipboard that we can copy into a variable..
+Anyway, we end up with a token in our clipboard that we can copy into a variable.
 
 ```smalltalk
 aToken := Clipboard clipboardText

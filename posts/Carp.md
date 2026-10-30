@@ -346,15 +346,15 @@ macro `=>` are defined in Carp.
 
 This tremendous power is easily abused and indeed macros have for a long time
 had the reputation of being too powerful and leading to programmers writing
-their own languages on top of their implemenation Lisp that only they
+their own languages on top of their implementation Lisp that only they
 themselves understand. [I renounce any catalogue of
-despair](https://kar.kent.ac.uk/33611/7/paper.pdf). It is perfectly feasible to
-write maintainable and understandable macros, and tying the programmers hands
+despair](https://web.archive.org/web/20170922050645/https://kar.kent.ac.uk/33611/7/paper.pdf). It is perfectly feasible to
+write maintainable and understandable macros, and tying the programmer’s hands
 to avoid bad code isn’t exactly what I want my language to do. But this is a
 topic for another day. For now I will show you how to write macros in Carp, and
 you can make up your own mind as to whether you want your code to make use of
 them. Yet another caveat before we begin, though: I’m planning on rewriting the
-macro system to a full-featured, hygienic piece of craftmanship. These things
+macro system to a full-featured, hygienic piece of craftsmanship. These things
 take time, however, and for now I’m going to show you the current state of the
 art.
 
@@ -369,7 +369,7 @@ functions. The main difference is the body, which constructs a list instead of
 applying the `+` function. Please note that the `list` keyword can only be used
 within macros, and it is used to make a list from everything following it. The
 `+` function is also quoted, which is a fancy Lisp term for saying that instead
-of looking up the value of symbol right now, the runtime will just pass it as
+of looking up the value of the symbol right now, the runtime will just pass it as
 is, not caring whether it’s actually defined or not.
 
 So what is the value of doing that here? Doing this enables us to write
@@ -428,11 +428,11 @@ not really that much harder to write a macro like that.
 For all of the people above who don’t know what `cons`, `car`, or `cdr` are
 and didn’t appreciate my tangent directed at only the enlightened few Lispers 
 scoffing at me in their ivory tower<sup><a href="#6">6</a></sup>, these 
-functions are the pinnacle ofworking with lists in Lisp. `car` takes a list 
-and returns its first element,`cdr` takes the rest—i.e. everything but the 
+functions are the pinnacle of working with lists in Lisp. `car` takes a list 
+and returns its first element, `cdr` takes the rest—i.e. everything but the 
 first element—, and `cons` takes an element and a list and prepends the element 
 onto the list. These functions are incredibly handy for working with linked 
-lists, but again, Carp works with array, and it really doesn’t make sense here.
+lists, but again, Carp works with arrays, and it really doesn’t make sense here.
 
 In general, the functions listed above are overly generic and not
 incredibly useful in the context of Carp. Including them certainly poses a
@@ -536,7 +536,7 @@ need it.
 
 Libraries are an integral part of any language. No programming language will
 get adoption without a proper ecosystem, no matter how well it is designed. And
-this is where things get sad in Carp. There is no dependency managment, no
+this is where things get sad in Carp. There is no dependency management, no
 package manager. I plan on porting my package manager for zepto,
 [zeps](https://github.com/zeps-system/zeps), to Carp sooner or later, but that
 might take a while. Also, there's not much of a standard library yet, though
@@ -545,7 +545,7 @@ of new code to the system in the last few weeks. There is a light at the end of
 the tunnel, sed ars longa, vita brevis.
 
 Nonetheless, I want to introduce you to at least a few libraries that exist
-right now and show you how to use them. There is an emberassing scarcity of
+right now and show you how to use them. There is an embarrassing scarcity of
 documentation, but we plan on changing that as well.
 
 Here is an exhaustive list of modules with a little bit of preliminary

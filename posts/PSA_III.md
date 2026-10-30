@@ -9,7 +9,7 @@ In this third installment I just want to tell you that I added two new
 subsites to my website, now linked to on my homepage. The first one is [a
 website for my latest exploits in computer-generated art](https://veitheller.de/art),
 which I've now shown quite a lot of people already, but might be of interest
-anyway. Most of the happened in the last week, and I'm pretty excited to share
+anyway. Most of that happened in the last week, and I'm pretty excited to share
 it.
 
 The other I'm not quite so sure about. It's [a website for my

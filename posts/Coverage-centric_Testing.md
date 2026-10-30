@@ -28,7 +28,7 @@ After analyzing, I will spend some time writing tests. They’ll not be of the
 same quality as the tests I would’ve written if I had written them during the
 development of the feature, though, because the mindset is mostly to keep my
 pull request in the green. Not something I’m proud of, but more often the case
-than I’d like to admit. Although this is obviously wrong, the people who
+than I’d like to admit. Although this is obviously wrong, the people
 who review my code rarely object. I believe this is because this behavior is not as
 easy to spot as regular anti-patterns or simple bugs and often gets lost in the
 noise.
@@ -102,7 +102,7 @@ keep the quality of your tests up.
 
 <span id="1">1.</span> There are cases where I deliberately skip writing tests
                        for various reasons, but they come so few and far in
-                       between that I'm not going not spend time going into those
+                       between that I'm not going to spend time going into those
                        cases.
 
 <span id="2">2.</span> The following examples require a cursory knowledge of

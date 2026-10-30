@@ -25,5 +25,5 @@ Turtle deflated defeatedly. “Koala, am I bad at this?” Koala smiled at him,
 still kissing Tuala’s forehead. “No, you’re great at this. Next time I will
 need your help you will remember this moment, and we will both understand how
 it is to feel helpless, and how it is to feel helpful.” Turtle slowly nodded
-his scaly head, not quite convincend, but not quite unconvinced, either. He
+his scaly head, not quite convinced, but not quite unconvinced, either. He
 nestled up against his family, and in an instant, they all fell back asleep.

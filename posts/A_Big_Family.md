@@ -29,7 +29,7 @@ everybody loves you! I’m so happy Koala and you found each other!”
 Turtle blushed a little, his face taking on an almost earthen color. “Thank you!
 I’m very happy to be part of your family. Everyone is so nice!”, he said, a
 little quieter than he would have liked. He shuffled on his back flippers
-slightly embarassedly. He truly was happy here, but he still felt a little like
+slightly embarrassedly. He truly was happy here, but he still felt a little like
 an alien on a strange planet.
 
 He looked around for his Koala in the sea of fluffy ears. There she was, pretty

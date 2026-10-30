@@ -35,7 +35,7 @@ I definitely feel the weight of responsibility, and I feel like if I go
 down the road of being a manager, even in a company as small as Port Zero, it
 will, without a doubt, wear on me. I’m 26, and maybe my youth is part of why
 the responsibility of leadership is hard on me. Maybe it’s the fact that I’m
-managing my friends, and I’m working hard for them to happy. In the end all I
+managing my friends, and I’m working hard for them to be happy. In the end all I
 know is that in my current position I’m no longer cut out for the role I’m
 filling at Port Zero.
 
@@ -51,7 +51,7 @@ So I decided to work as an independent technologist for a while. I might
 collaborate with Port Zero for a while though, to tie up any open knots, and
 to work with the clients that are used to working with me. I don’t intend to
 poach any clients, and anyone who’s working with me through Port Zero will be
-inelligible to collaborate with me independently.
+ineligible to collaborate with me independently.
 
 ## What’s next for you
 
@@ -60,7 +60,7 @@ responsible for myself, so that’s exactly what I’m going to do. I have some
 experience of working as a freelancer, and it’s been mostly positive. Now, a few
 years later, I expect it to be just as enjoyable.
 
-I’ve [overhauled my website](https://veitheller.de/at-large), and I will make
+I’ve [overhauled my website](https://veitheller.de/), and I will make
 this site my main site as soon as I’m independent. The most important bits about
 my plans for the future are explained there, but I’ll summarize them here.
 
@@ -71,7 +71,7 @@ the more customary alternative titles like “freelancer”, “consultant”, o
 about what I’m doing, and that I value my freedom.
 
 My services are not very specific. This is due to the fact that I don’t think it
-helps much to rattle of a list of technologies I’m familiar with, and if people
+helps much to rattle off a list of technologies I’m familiar with, and if people
 want to know what I have experience with, they can always look at my Github
 account.
 
@@ -83,7 +83,7 @@ of my clients as well.
 
 It’s also important to me to support open source projects, and by lowering my
 rates for those projects and advertising that, I hope my clients have an
-incentive to think about which of their projects, libraries, or application they
+incentive to think about which of their projects, libraries, or applications they
 could open source.
 
 Apart from work, I intend to spend some more time on personal research on
@@ -99,7 +99,7 @@ if you want to work with me, of course.
 This is an exciting time in my life, and I hope I can share some of my work
 with you in the coming weeks and months! Wish me luck!
 
-P.S.: Port Zero and I are still looking for [the next CTO](https://port-zero.com/jobs/cto)
+P.S.: Port Zero and I are still looking for [the next CTO](https://web.archive.org/web/20191114034504/https://port-zero.com/jobs/cto/)
 that will help shape the company in the coming years. If you feel like that
 could be you, [contact me](mailto:veit.heller@port-zero.com) or [the company
 directly](mailto:jobs@port-zero.com)! And if you’re a Recurser, there’s the

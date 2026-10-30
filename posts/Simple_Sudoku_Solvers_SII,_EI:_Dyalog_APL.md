@@ -210,7 +210,7 @@ I don’t really know much about APL, but I think we did a pretty good job of st
 to how you can work with it. I probably missed a whole bunch of things that are obvious to
 more experienced sigil slingers, but the easy immutable updating using `@`, incredibly simple
 candidate selection, and very declarative search algorithm (despite the scary syntax, it felt
-like just describing “solve map over candidates, then pick first non-empty“) really did
+like just describing “solve map over candidates, then pick first non-empty”) really did
 resonate with me.
 
 Thank you for tuning in for the first part of the second season of our little Sudoku solver

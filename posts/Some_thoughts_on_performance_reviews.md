@@ -76,7 +76,7 @@ number of positive or negative reviews. We’re not doing curve-fitting here.
 Secondly, we should keep the number of goals manageable. 20 tiny goals will lead
 to less overall change than 3-5 big ticket items. And of course all of them
 should be explicit; hidden criteria that only pop up once review rolls around are
-embarrassingly common and directly lead to frustration and, consequentially, a
+embarrassingly common and directly lead to frustration and, consequently, a
 loss of valuable team members.
 
 Finally, we should look at “non-primary” work as well, and reward it. Mentoring,
@@ -149,7 +149,7 @@ into our performance review and whether we reached our goals. I can tell you,
 however, that it doesn’t go without saying.
 
 <span id="2">2.</span> I’ve seen a lot of places that have roles without
-descriptions what they actually mean (i.e., staff, senior, and junior handled at
+descriptions of what they actually mean (i.e., staff, senior, and junior handled at
 the discretion of the manager). Don’t do that. You don’t have to spell out every
 single metric, but having expectations for your roles makes everyone’s lives
 easier: managers know what to expect, and reports know what to strive for to

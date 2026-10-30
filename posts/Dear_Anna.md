@@ -12,7 +12,7 @@ feels like a chore these days, played out as this sentiment might read to you.
 I feel fragmented. There is no oneness in any of my feelings, they all feel
 disjointed. It's as if there's a diorama somewhere, and around it stand all of
 these people, all of them me, and all of them look at the diorama from different
-angles. They can never agree on aynthing, and so they go to lunch often, to ease
+angles. They can never agree on anything, and so they go to lunch often, to ease
 the tension.
 
 Maybe that's normal, maybe we all feel that, maybe we all feel that but don't
@@ -22,7 +22,7 @@ you'll think I'm a total nutjob—I know you don't like this word, but what do y
 think anyone who's not as sympathetic as you are would call me when I told them
 how I feel?
 
-I'm sorry, Anna. I don't want so seem confrontational. I've had a few good days.
+I'm sorry, Anna. I don't want to seem confrontational. I've had a few good days.
 I've had bad days as well, but they're not worth talking about. On bad days I
 just feel like I'm chewing on stones when I talk, eroding my teeth, chipping
 them and swallowing them and swallowing the stones and the blood and not saying
@@ -31,7 +31,7 @@ the way of my words.
 
 How long will you be in the city next month? It would be nice to catch up.
 Getting a coffee would be nice. The place around the corner shut down, but I'm
-sure we'll find another good coffee shops. If Brooklyn was a pasture, coffee
+sure we'll find another good coffee shop. If Brooklyn was a pasture, coffee
 shops would be the grass.
 
 I really wish Brooklyn was a pasture. The city takes its toll. I know that's why

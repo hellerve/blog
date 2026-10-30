@@ -36,7 +36,7 @@ It’s not the first time I've let you down. I hope that you can forgive me in
 time.  You’re my friend, and I hate doing business with you, because all of the
 moves that have an impact on our business relationship feel like they could
 damage our friendship. I don’t want to let you down constantly. You know you
-have my utmost loyality. But I feel like loyality is not the path to take right
+have my utmost loyalty. But I feel like loyalty is not the path to take right
 now.
 
 The coffee around here is pretty good. I haven’t really sat in a coffee shop

@@ -34,7 +34,7 @@ real terms, 212 Kilobytes. So, while this is a significant investment, it
 is also rather negligible if you consider the size of any comparable editor
 today<a href="#1"><sup>1</sup></a>. And this doesn't even take into account
 that I haven't done any optimizations for binary size, which makes this whole
-calulation rather pointless to begin with.
+calculation rather pointless to begin with.
 
 I decided to vendor the latest version of Lua. While this is not the prettiest
 solution for a variety of reasons, it ensures that I can keep the build

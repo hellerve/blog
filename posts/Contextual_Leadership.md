@@ -42,7 +42,7 @@ companies, it will be more complicated, too complicated for me to want to
 draw it.
 
 ![A hierarchical organizational chart](/assets/hierarchy.png)
-<div class="figure-label">Fig. 1: A hierarchical organiztional chart.</div>
+<div class="figure-label">Fig. 1: A hierarchical organizational chart.</div>
 
 This is great if you want to know the general structure of an organization, but
 it doesn’t make sense when you need to know how a specific process works. Let
@@ -74,7 +74,7 @@ capture responsibilities, support channels and process:
 
 This diagram is not helpful outside this particular process, which is why I
 call it “contextual”, and it’s not about hierarchies, but it is about
-responsibilites and information flow, which is why I call it “leadership”.
+responsibilities and information flow, which is why I call it “leadership”.
 
 ## So this is about diagrams, yeah?
 
@@ -87,7 +87,7 @@ organization of a certain size<sup><a href="#1">1</a></sup>, but they don’t
 capture the essence of leadership, at least not always.
 
 If leadership were static, individual autonomy and motivation would be taken
-away, and the only way to have any say about aynthing at all would be climbing
+away, and the only way to have any say about anything at all would be climbing
 the ladder of hierarchy rung by rung, and who would want to work in a company
 like that?
 

@@ -67,12 +67,12 @@ remember how it felt to talk to all of you; memory is weird that way. I might
 work with a client in New York in the near (?) future, which would mean that
 I’d come back occasionally. I would love that.
 
-Where are you right now? How’s live been treating you? Has your hair grown
+Where are you right now? How’s life been treating you? Has your hair grown
 back to that delightfully shaggy form? You know how sad I was when it was gone.
 
 I cut my hair again, because my head has been worse lately. I don’t know
 whether it was a topic when we were at Recurse, but I have some form of genetic
-eczema that currently plague my scalp. It wasn’t always my head, but it’s been
+eczema that currently plagues my scalp. It wasn’t always my head, but it’s been
 the problematic area numero uno for the last few years. I always look like I
 have bad dandruff, but it’s just my eczema. Yum.
 

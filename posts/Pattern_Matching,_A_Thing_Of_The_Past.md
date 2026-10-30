@@ -5,7 +5,7 @@ date: 2017-06-20
 
 When I started my [reading list](https://github.com/hellerve/ptolemy)
 in January of this year, I decided to give rereading the
-[Lambda Papers](http://library.readscheme.org/page1.html)
+[Lambda Papers](https://web.archive.org/web/20170608194706/http://library.readscheme.org:80/page1.html)
 a shot. To the uninitiated: in the latter half of the 1970s, Guy Steele and
 Gerald J. Sussman worked on Scheme. This was an extremely productive time for
 both of them, and they published a series of now-famous papers collectively
@@ -18,7 +18,7 @@ I remembered—maybe even more so now that I've gathered a fair amount of knowle
 of what makes a Scheme and how to program in it. But most importantly I've
 gained an appreciation for sections that went unappreciated when I first read
 the papers. Today I want to talk about one of them, found in
-[“Scheme, an Interpreter for Extended Lambda Calculus”, pages 10–12](http://repository.readscheme.org/ftp/papers/ai-lab-pubs/AIM-349.pdf).
+[“Scheme, an Interpreter for Extended Lambda Calculus”, pages 10–12](https://web.archive.org/web/20170515044231/http://repository.readscheme.org/ftp/papers/ai-lab-pubs/AIM-349.pdf).
 This paper is startling for a bunch of reasons, the most anxiety-inducing of
 which is that Guy Steele was 21 years old when this paper was published, and
 it is ground-breaking in more than one respect.
@@ -33,7 +33,7 @@ follow along using a slightly more modernized version, you can download
 [an attempt at a transcript into zepto](/assets/patternmatch.zp). Excuse the
 plug, but I like to put my language to use every once in a while. If you're
 familiar with Racket and prefer to look at things from a test-driven angle,
-you might want to check out [this repository](https://github.com/carld/lambda-papers-match),
+you might want to check out [this repository](https://web.archive.org/web/20201021143822/https://github.com/carld/lambda-papers-match),
 where Carl Douglas and I re-explored the algorithm step by step through testing.
 
 ## Consumer information
@@ -91,7 +91,7 @@ B=X Y
 ```
 <div class="figure-label">Fig. 2: The match groups.</div>
 
-For now, let's try to decypher the return values. It gives us back a two-element
+For now, let's try to decipher the return values. It gives us back a two-element
 list, the first element of which is another list. The second element is a
 continuation that we'll ignore for now. The nested list represents the matched
 captured groups and contains pairs of names and the matched values. It will
@@ -107,7 +107,7 @@ substituting E: (A X Y Q Q X Y Z Z X Y Q Q X Y R) == input
 ```
 <div class="figure-label">Fig. 3: Rebuilding the input from the matches.</div>
 
-Now, let's look at that continuation business. The contiunation will actually
+Now, let's look at that continuation business. The continuation will actually
 give us the facilities to try the same algorithm again, and try to match
 different values. If that's possible, calling the continuation will give us
 the next possible match. In case of failure it will return `nil`.
@@ -136,7 +136,7 @@ generally useful. The helper functions are `nfirst` and `nrest`, respectively,
 which people familiar with functional languages may know as `take` and `drop`.
 Everyone else will be happy to hear that these algorithms, given a list and a
 number `n`, just take the first `n` elements of the input list, or drop them
-and return the rest. I'll give to alternative implementations of each, one from
+and return the rest. I'll give two alternative implementations of each, one from
 the paper, and one in zepto.
 
 ```
@@ -232,7 +232,7 @@ and for good reason. While the gain might not be immediately obvious, for now
 just think about it like this: it's easier to make everything a tail call if
 we carry around the state in arguments, while it also makes initializing the
 state we might need obvious. In this case, we initialize the result list to
-be an empty list—passed as `res`—andt the continuation to return as a simple
+be an empty list—passed as `res`—and the continuation to return as a simple
 function that returns `nil`, passed as `cont`. The latter makes it easy to
 tell the user there are no more valid matches: remember that when all the
 possible patterns have been returned, we want to return `nil`.
@@ -433,11 +433,11 @@ suited to simplify the code—hash maps come to mind, for which even a
 [SRFI](https://srfi.schemers.org/srfi-69/srfi-69.html) with reference
 implementations exists. I limited myself to pure Scheme as specified in the
 R5RS standard, though—except for the helper functions, where I took some
-liberties. It would be a worthwile exercise to transcribe the algorithm into a
+liberties. It would be a worthwhile exercise to transcribe the algorithm into a
 more modern version of Scheme. I'm positive it would make the code more
 readable, and quite certainly more performant.
 
-Other worthwile exercises I could think of:
+Other worthwhile exercises I could think of:
 
 * supporting arbitrarily deeply nested match expressions
 * adding head-tail patterns to the nested expressions, although a valid

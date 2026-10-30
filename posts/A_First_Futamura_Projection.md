@@ -25,7 +25,7 @@ a working compiler, that’s fair! The useful case is when we have an interprete
 and no compiler yet, or when the manual solution we reached for before is not
 as easily available as in Brainfuck. `compfuck` gives us something small and
 familiar on which to work through the idea, even if we already have a
-perfectly valid execution environment..
+perfectly valid execution environment.
 
 I’ll assume a little familiarity with Carp macros and Brainfuck. My
 [original post](/Compiling_at_Compile_Time.html) introduces both, and even
@@ -249,7 +249,7 @@ along with the cursor bindings omitted there.
 
 ## Putting it back together
 
-We can now pull ot the interpreter body and specialize it with a known
+We can now pull out the interpreter body and specialize it with a known
 program and starting position:
 
 ```clojure

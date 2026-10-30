@@ -5,7 +5,7 @@ date: 2025-08-25
 
 Databricks recently published [their reranker](https://www.databricks.com/blog/reranking-mosaic-ai-vector-search-faster-smarter-retrieval-rag-agents) for Vector Search in RAGs. I probably wouldn’t have heard of it, but a friend of mine from a different life worked on it and posted about it.
 
-It got me curious. I wrote [the embedding registry](https://book.gtoolkit.com/using-the-embedding-registry-a6rybg6oen349pdk6uf3vsipw) for [gt4llm](https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti) as a simple local testing tool that behaves like a vector database, but that’s pretty much where my experience ends.
+It got me curious. I wrote [the embedding registry](https://book.gtoolkit.com/using-the-embedding-registry-a6rybg6oen349pdk6uf3vsipw) for [gt4llm](https://web.archive.org/web/20250529165107/https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti) as a simple local testing tool that behaves like a vector database, but that’s pretty much where my experience ends.
 
 Still, I was determined to understand what a reranker is, and how it works, and to see if I could recreate one locally. And now that I’ve done that, let me share it with you! And, as a little two-for-one-deal, it also doubles as a primer on how retrieval works!
 
@@ -13,7 +13,7 @@ Still, I was determined to understand what a reranker is, and how it works, and 
 
 A reranker basically inserts between the regular vector search and you. After the vector search has found the most relevant entries in your database using a nearest-neighbor search (and it does so very quickly!), the reranker then goes more deeply (and slowly) into the candidates and  determines which ones are actually relevant, re-ordering them.
 
-And that’s basically it! The basic use case is extremely simple. All the magic lie in the algorithms and math. As such, it was a bit scary for me to approach. Despite being comfortable with deep technical topics of all shapes and sizes, inherently mathematical problems still scare me.
+And that’s basically it! The basic use case is extremely simple. All the magic lies in the algorithms and math. As such, it was a bit scary for me to approach. Despite being comfortable with deep technical topics of all shapes and sizes, inherently mathematical problems still scare me.
 
 Let’s approach the problem top-down then, notebook-style, and see where we end up.
 
@@ -116,7 +116,7 @@ Ideally we wouldn’t write this ourselves but rely on a vector search engine of
 
 ### The reranker
 
-The next step, and the point of this blog post, is writing a reranker that will be inserted after the retriever has down its work, and do a more thorough analysis of our document.
+The next step, and the point of this blog post, is writing a reranker that will be inserted after the retriever has done its work, and do a more thorough analysis of our document.
 
 ```python
 from sentence_transformers import CrossEncoder

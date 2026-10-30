@@ -34,7 +34,7 @@ factor.
 
 If it’s only one module, as with [my path package](https://veitheller.de/path/),
 I like to have the documentation on a single page. All of the relevant
-functions are one page, and they might refer to each other, as is the case with
+functions are on one page, and they might refer to each other, as is the case with
 [`absolute?`](https://veitheller.de/path/#absolute?) and
 [`relative?`](https://veitheller.de/path/#relative?).
 
@@ -133,7 +133,7 @@ And that’s all!
 
 ### How does `doc` work, anyway?
 
-*This is a bit of an technical aside, feel free to skip it.*
+*This is a bit of a technical aside, feel free to skip it.*
 
 Carp has a very powerful meta system. Every symbol has a hashmap associated
 with it from which every macro and dynamic function—and the compiler!—can read,

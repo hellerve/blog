@@ -6,7 +6,7 @@ date: 2019-03-13
 In this eighth installment of [my series of blog posts on scheme
 macros](https://blog.veitheller.de/scheme-macros/), we’re going to look at a
 feature that is increasingly common in modern languages: [green threads](https://en.wikipedia.org/wiki/Green_threads).
-In a nutshell, greenthreads are a lightweight threading facility removed from
+In a nutshell, green threads are a lightweight threading facility removed from
 operating system threads to save the cost of context switching on the operating
 system level—oftentimes language-level threads can switch much faster.
 

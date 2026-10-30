@@ -37,7 +37,7 @@ bottles back home.
 ## Get to the point already
 
 Back to the vodka. Because the distillery is so young and needs to get its
-foot in the door, it currently mostly sell moonshine and vodka, with its
+foot in the door, it currently mostly sells moonshine and vodka, with its
 bourbon being sold out a lot and, to my knowledge, only available in Kentucky.
 The guide started with a big bottle of their signature vodka, telling us that
 it might not taste like the vodka we know. Boy, was that an understatement. It

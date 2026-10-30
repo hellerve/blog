@@ -10,7 +10,7 @@ with my findings.
 
 ## All the lines are straight around here
 
-SDL’s 2D drawing capabilites are not that great, it’s basically just
+SDL’s 2D drawing capabilities are not that great, it’s basically just
 points, straight lines, and rectangles. That’s really not a problem, though,
 because if you’ve looked at my [art works](https://veitheller.de/art) you’ll
 know that I have a whole collection of drawings that are just lines.
@@ -250,7 +250,7 @@ productive, but I talked about [my fetish for minimalism](http://blog.veitheller
 before.
 
 I also certainly hope that you enjoyed getting a little insight into how I
-create the little riffs that I sometimes grandiosly call “art”. I know I enjoy
+create the little riffs that I sometimes grandiosely call “art”. I know I enjoy
 talking about the creative process, so if you’d like to hear about it more in
 the future, holler at me!
 

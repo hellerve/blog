@@ -158,7 +158,7 @@ It can bend, for instance.
 <div class="figure-label">Fig. 5: A more interesting effect.</div>
 
 This drives the signal hard and squashes it back into the range `[-1, 1]`, then
-I make it even smaller to pull th mixer out of the red. Quiet samples get
+I make it even smaller to pull the mixer out of the red. Quiet samples get
 louder, loud ones flatten out. As such, it’s a soft clipper, which is
 distortion in a nutshell.
 

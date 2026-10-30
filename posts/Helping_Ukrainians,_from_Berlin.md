@@ -41,7 +41,7 @@ sensibilities, in which case you’ll have to do your own research.
 Material donations are also appreciated. We’ve donated clothes (though most
 places do not accept regular clothes anymore), a laptop, and a stroller.
 
-[The Polish Institute Berlin](https://instytutpolski.pl/berlin/2022/02/28/sammlung-von-sachspenden-fur-gefluchtete-aus-der-ukraine-hilfefurdieukraine-pomagamukrainie/)
+[The Polish Institute Berlin](https://web.archive.org/web/20220313062421/https://instytutpolski.pl/berlin/2022/02/28/sammlung-von-sachspenden-fur-gefluchtete-aus-der-ukraine-hilfefurdieukraine-pomagamukrainie/)
 is one of a few places that accept every-day items (some places are looking
 for items such as combat tourniquets or bullet-proof vests, which I don’t
 suppose most of us have lying around). Scroll down for the English version.

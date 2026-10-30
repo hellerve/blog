@@ -58,7 +58,7 @@ But I realize not all people function that way, especially in relation to their 
 And this is where, perhaps most ridiculously of all, I’m reminded of [a recent interview](https://www.youtube.com/watch?v=YFjfBk8HI5o) with Peter Steinberger of OpenClaw fame. In conversation with Lex Fridman, when questioned about why OpenClaw succeeded against its competitors, he said something (accidentally?) metaphysically profound.
 
 
-“It’s hard to compete against someone who’s just there to have fun“
+“It’s hard to compete against someone who’s just there to have fun”
 
 
 This is the full chain from deep metaphysics to motivational poster to grindset capitalism, and to everyone’s surprise, they all say fundamentally the same thing. Once the process is the endgame, failure doesn’t lose its bark, but it loses its bite. I’ve written so many terrible programs, I’ve failed at so many of my projects. But I would not change a thing. I accidentally got sucked into a thing I truly love doing, and you cannot take that away from me.

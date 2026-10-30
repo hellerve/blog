@@ -327,7 +327,7 @@ In this blog post, I hopefully gave you enough of a taste of what it’s like to
 write a Carp module, with C extensions or not, to build up confidence so that
 you can also try experimenting. While most of the work on Carp is contributed
 back to the compiler or standard library these days, this is by far not the
-only way to get started with it. You can write own projects and experiments in
+only way to get started with it. You can write your own projects and experiments in
 Carp, and even structure them in such a way that makes it easy for other
 Carpenters to reuse them.
 

@@ -13,7 +13,7 @@ My goal is for us to build a parallel solver without even noticing; we’ll buil
 
 Elixir is a pretty language to look at. It’s both approachable and powerful, and it can be (and is) used to solve real-world problems quickly and well. But since that doesn’t tell us very much yet, let’s look at some concrete language features that make Elixir interesting:
 
-- **Effortless concurrency**. We can use the BEAM and its abstraction to spawn low-overhead threads and use messages passing to communicate between them (and is network-transparent!).
+- **Effortless concurrency**. We can use the BEAM and its abstraction to spawn low-overhead threads and use message passing to communicate between them (and is network-transparent!).
 - **The Open Telecom Platform (OTP)**. The OTP is, strictly speaking, the whole Erlang distribution, but nowadays more often than not refers to the extensive library of abstractions for parallel applications that Erlang (and thus Elixir) ships with. Servers, state management, monitoring, supervisors, and others are all readily available as components, and have proven quite robust over decades of use in anger.
 - **Excellent tooling and libraries**. Package management and build tooling through hex and mix, even documentation generation are all pleasurable experiences. And with modern frameworks such as Phoenix (a full-service web framework in the lineage of Ruby on Rails) working with Elixir feels not just productive but extremely ergonomic.
 

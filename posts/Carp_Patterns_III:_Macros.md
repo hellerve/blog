@@ -10,7 +10,7 @@ code more generally.
 There are many different opinions when it comes to macros, when to use them,
 and how to organize them. Different Lisp communities have different best
 practices, and each has good reasoning behind them. While the use of macros is
-somewhat discouraged in Clojure, for instance, they are ubiquituous and widely
+somewhat discouraged in Clojure, for instance, they are ubiquitous and widely
 embraced by the Common Lisp community.
 
 It’s no surprise, therefore, that most of the literature on the craft of macros

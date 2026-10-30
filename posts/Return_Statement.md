@@ -27,12 +27,12 @@ good thing. I got to work with so many interesting people, and build so many
 interesting projects, that I couldn’t be happier. Here’s an incomplete list of
 the things I did while attending RC:
 
-- Built [a reimplementation](http://github.com/hellerve/bc) of [bc](https://en.wikipedia.org/wiki/Bc_%28programming_language%29) in Haskell.
+- Built [a reimplementation](https://git.veitheller.de/pl/bc) of [bc](https://en.wikipedia.org/wiki/Bc_%28programming_language%29) in Haskell.
 - Added UTF-8 support and Lua scripting to [my editor](http://github.com/hellerve/e).
 - Paired with another Recurser on a collaborative text editor in OCaml. We
   didn’t get very far, but it was fun, and the person rebuilt the project in
   Python.
-- Built a [silly compiler](https://github.com/hellerve/micro) in OCaml in an
+- Built a [silly compiler](https://git.veitheller.de/pl/micro) in OCaml in an
   all-nighter.
 - Gave a presentation about LLVM for the interested.
 - Gave a lecture series on security, a great RC tradition, together with
@@ -45,15 +45,15 @@ the things I did while attending RC:
 - Wrote [poems](https://veitheller.de/poems).
 - Worked on a VST plugin with a dear friend.
 - Gave four lightning talks.
-- [Implemented](http://github.com/hellerve/silly) [a bunch of](http://github.com/hellerve/silleee)
-  [numerical systems](http://github.com/hellerve/nibbles).
+- [Implemented](http://github.com/hellerve/silly) [a bunch of](https://git.veitheller.de/hellerve/silleee)
+  [numerical systems](https://git.veitheller.de/hellerve/nibbles).
 - Learned an incredible amount while pairing with amazing people; see below.
 - I’m sure I forgot half of the good stuff already.
 
 ![](/assets/pedal.jpeg)
 <div class="figure-label">Fig 1: My beautiful first effect pedal.</div>
 
-But that was only a tiny fraction of all the good stuff that happend while
+But that was only a tiny fraction of all the good stuff that happened while
 I attended RC. The best part was, of course, the community. Let’s talk about
 that.
 
@@ -70,7 +70,7 @@ Again, because I made this an opt-in thing, the list is considerably smaller
 than the one that I have in my head, but here, in no particular order, are some
 of the people that I want to mention:
 
-- [Jaseem Abid](https://jaseemabid.github.io): This guy is always on. Because
+- [Jaseem Abid](https://web.archive.org/web/20170622214746/http://jaseemabid.github.io:80/): This guy is always on. Because
   he was working on a compiler for a considerable fraction of his batch we
   spent a lot of our time talking about that. But whatever we talked about, he
   was engaged, knowledgeable, and opinionated, and I enjoyed that.
@@ -81,7 +81,7 @@ of the people that I want to mention:
   way to bond. Always calm and ready to abandon whatever cool project she was
   working on to drink and chat, she was one of the people that made RC livable
   for me.
-- [Sabelo Mhlambi](http://http://sabelo.io/): A nightowl like me, Sabelo
+- [Sabelo Mhlambi](https://web.archive.org/web/20170716050847/http://sabelo.io/): A nightowl like me, Sabelo
   happened to work on the most interesting projects in C during the calm that
   is afterhour RC. We paired on a few projects in the early morning, when I
   felt like I couldn’t get anything done anymore, and Sabelo managed not only
@@ -92,7 +92,7 @@ of the people that I want to mention:
   programmers I had the pleasure of meeting. Every once in a while we paired,
   and I pretended to contribute, but mostly his mind worked so much faster
   towards the goal anyway that I was a mere spectator. I’m not usually a fan of
-  spectator sports, but this was pure craftmanship in action. Of course he also
+  spectator sports, but this was pure craftsmanship in action. Of course he also
   happened to be the nicest, welcoming guy, and while we didn’t have nearly
   enough conversations, the ones we had were some of the most impactful of all
   of RC.

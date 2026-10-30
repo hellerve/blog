@@ -61,7 +61,7 @@ elaborate.
 I read the transcript of [a talk](http://unitscale.com/mb/reversing-the-tide/)
 given by Matthew Butterick at TYPO today. There, he rightfully laments
 how our expectations of typography are lowered by bad engineering—or
-rather, wrong priorities in the development of embarassingly typographical
+rather, wrong priorities in the development of embarrassingly typographical
 technology. He advises the listener to put their money where their mouth
 is, and act on their convictions. That rang true with me, which makes it
 even more ironic that while reading the transcript I discovered a bug

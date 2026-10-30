@@ -13,7 +13,7 @@ talking about Greyhound, sans social stigma.
 I frequently take the public transport for short and long distances, as you
 should be able to in a civilized country. Sometimes I take the train,
 sometimes the bus. In Germany, FlixBus operates with an approximate market
-share of 93% percent of long distance bus travel. This means that I often board
+share of 93% of long distance bus travel. This means that I often board
 their lime green vehicles. It also conveniently excuses me from having to
 justify why I still use their services although I’m unhappy with them: they’re
 simply the only real player. Monopolies work that way.
@@ -31,7 +31,7 @@ ride from Berlin to Dortmund.
 ## Fighting windmills
 
 I’m not one of those scary internet pirates, I want to work on the bus. So when
-I realized  blocked access to YouTube, Spotify, and Bandcamp, I was mildly
+I realized they blocked access to YouTube, Spotify, and Bandcamp, I was mildly
 annoyed, but still understanding. So I got to work without music.
 
 I accessed the AWS console, and performed some minor chores on my EC2 and S3

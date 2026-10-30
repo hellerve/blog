@@ -84,7 +84,7 @@ and post-conditions, some might only have either, and some might have none, even
 if a contract function without any contracts might not be obviously useful.
 
 This means that we’ll have to add forms for all of these. Let’s build a skeleton
-that accomodates all possibilities:
+that accommodates all possibilities:
 
 ```
 (define-syntax defcontract

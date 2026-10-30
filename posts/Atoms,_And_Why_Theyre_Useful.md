@@ -41,7 +41,7 @@ only changes the behavior of the function.
 Some languages have identifiers that can be used as values—think of Lisp’s
 quoted values. There the distinction is not quite so clear. In Smalltalk and
 Ruby, in fact, a keyword—their notion of an atom, remember?–can be used in such
-a way that functions can be called, through a system those langauges call
+a way that functions can be called, through a system those languages call
 message-passing<sup><a href="#2">2</a></sup>.
 
 I would argue that it makes sense to have separate constructs for the two,

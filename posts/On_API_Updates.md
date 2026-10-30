@@ -150,7 +150,7 @@ as well:
 
 1. We multiply every element in the array with 255 to get a value that fits in a byte: `[e*255 for e in l]`
 2. We cast it to an integer to actually make this a byte (will work approximately): `[int(e*255) for e in l]`
-3. We pass unpack that list into a format string (we can also use `str.join` to avoid repetition if we
+3. We unpack that list into a format string (we can also use `str.join` to avoid repetition if we
 first remove alpha): `"#{}{}{}".format(*[int(e*255) for e in l])`
 4. We tell the format string to format it as a two character hexadecimal value: `"#{:02X}{:02X}{:02X}".format(*[int(e*255) for e in l])`
 

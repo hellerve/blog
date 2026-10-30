@@ -9,9 +9,9 @@ I'll talk about this in a later post, but right now I want to focus on a bug
 that really took me by surprise. It has nothing to do with software development
 and everything with operations.
 
-## The Three Investigators in The Secret of the Mising Header
+## The Three Investigators in The Secret of the Missing Header
 
-While I was on vacation my hosting provider [Webfaction](http://webfaction.com/)
+While I was on vacation my hosting provider [Webfaction](https://web.archive.org/web/20170321045703/https://www.webfaction.com/)
 informed me that they would need to perform a VM migration, which meant my sites
 would be unavailable for the duration of the maintenance and the IP address
 would change. Fair enough, I thought. The migration came and went, and I

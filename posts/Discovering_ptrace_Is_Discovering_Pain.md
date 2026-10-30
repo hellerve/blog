@@ -3,7 +3,7 @@ title: "Discovering ptrace Is Discovering Pain"
 date: 2017-09-17
 ---
 
-One of my latest projects is writing [a debugger](http://github.com/hellerve/d).
+One of my latest projects is writing [a debugger](https://git.veitheller.de/degrowth/d).
 How hard can it be, I thought, I’m basically just wrapping system calls. So,
 to make things a bit more interesting, I decided to support both Linux and OS
 X. Some of you—the poor souls who’ve tried writing a debugger yourselves—might
@@ -40,7 +40,7 @@ uint64_t get_instruction_pointer(pid_t pid) {
 </div>
 
 To my surprise, working with `ptrace` actually isn’t as painful as I made it
-sound. After understanding its idiosyncracies, it’s actually quite pleasurable.
+sound. After understanding its idiosyncrasies, it’s actually quite pleasurable.
 Sure, the names of the requests are different on BSD and Linux, but that’s nothing
 a few cleverly placed `define` statements can’t fix, right? At least the rest of
 the interface is the same.

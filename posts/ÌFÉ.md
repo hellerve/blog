@@ -12,7 +12,7 @@ quite enjoy the record, so what the heck.
 <iframe src="https://www.npr.org/player/embed/520995327/520999948" width="100%" height="290" frameborder="0" scrolling="no" title="NPR embedded audio player"></iframe>
 
 Don't be fooled by the first song, though, not all the material on the
-album is so radical and unconpromising. Some of the songs are actually
+album is so radical and uncompromising. Some of the songs are actually
 a little bland, but the rhythm is infallible and often a bit
 spicier than what you might find in other projects; delicious spring
 soul food to wake up your tired limbs.

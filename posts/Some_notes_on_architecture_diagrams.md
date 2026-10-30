@@ -3,7 +3,7 @@ title: "Some notes on architecture diagrams"
 date: 2025-11-18
 ---
 
-nI look at a lot of architecture diagrams. Most of them are not about systems I personally shepherd, and I have no control over what is presented to me. But boy, do I have opinions.
+I look at a lot of architecture diagrams. Most of them are not about systems I personally shepherd, and I have no control over what is presented to me. But boy, do I have opinions.
 
 In this blog post, I outline some principles I see as immutable, regardless of system shape, and explain why I hold these beliefs. I explain what views I—and probably you—need. And finally, we talk a bit about how to produce it while acknowledging that this is dependent on which technologies you use.
 
@@ -19,7 +19,7 @@ Below is a quick list of my principles. If you do most of these, we can be frien
 - **Make it text-first.** This makes the diagram diffable over time. You see what components were added, removed, changed, moved. It’s awesome.
 - **Timestamp it.** Embed some meta-information (commit hash, generation time, etc.) in the diagram.
 - **Regenerate it on change.** Whenever the architecture changes, the diagram has to change. Ideally after CI has run (I always love to see a `doc` stage in CI definitions).
-- **Use redactions to make it publishable.** If you want to share it somewhere, you can redact sensible information first (easy when you generate a bunch of data in a sensible format!). This way you can share it on external documentation or during DDs (thank you!).
+- **Use redactions to make it publishable.** If you want to share it somewhere, you can redact sensitive information first (easy when you generate a bunch of data in a sensible format!). This way you can share it on external documentation or during DDs (thank you!).
 - **Multiple views over the model.** A model can encapsulate the whole system, but a view cannot. Give me multiple pictures (see below for a list of views).
 
 Now, if we had a tool [that made it easy and cheap to create views of your system](https://gtoolkit.com/), this would all be so simple...

@@ -11,7 +11,7 @@ dependencies, and clear opinions about whitespace and formatting? What would we
 have to give up, and would the result still be useful? Would it spark joy?
 
 The project has been sitting on [my self-hosted git
-instance](https://blog.veitheller.de/Git,_self-hosted.html) since then,
+instance](https://blog.veitheller.de/Git_self_hosted.html) since then,
 untouched since mid-2021, and I never wrote about it. Until now: meet
 [`cfg`](https://git.veitheller.de/degrowth/cfg), a spartan configuration language
 that answers the question above with “quite a lot”, “maybe”, and “definitely”.

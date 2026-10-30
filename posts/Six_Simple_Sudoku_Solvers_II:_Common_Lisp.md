@@ -21,7 +21,7 @@ And I like macros.
 
 Okay, I’ll explain less about the solver’s algorithm this time. If you need a refresher, refer to the first part and check what we did there.
 
-I’ll also hide a few functions that are only there for housekeeping (like copying boards, etc.). If you want to see them, check out [the repository](https://github.com/hellerve/sudoku). The full algorithm is around 130 lines with a Sudoku puzzles baked in, despite our best efforts to optimize the heck out of it.
+I’ll also hide a few functions that are only there for housekeeping (like copying boards, etc.). If you want to see them, check out [the repository](https://github.com/hellerve/sudoku). The full algorithm is around 130 lines with a Sudoku puzzle baked in, despite our best efforts to optimize the heck out of it.
 
 ### A primer on bitmasks
 
@@ -96,7 +96,7 @@ Well, as we explained above in this solution we are working with bitmasks to rep
  )
  ```
 
-This would be roughly equivalent, but it would be slow. Instead, the macros above implements a branchless walk that is faster. Doing it without a macro would result in something like this:
+This would be roughly equivalent, but it would be slow. Instead, the macro above implements a branchless walk that is faster. Doing it without a macro would result in something like this:
 
 ```
 (do ((mm m (logand mm (1- mm)))) ((zerop mm))
@@ -187,7 +187,7 @@ These all could be functions, but this way I ensure things are inlined but I sti
 ### Addendum (October 2026)
 
 As [a reader on Reddit](https://www.reddit.com/r/Common_Lisp/comments/1qwlbf3/comment/o41cr70/) pointed out, I
-missed a rather important optimization here, which is to givie SBCL enough type information to actually generate
+missed a rather important optimization here, which is to give SBCL enough type information to actually generate
 efficient code.
 
 Adding type declarations to `candidates-mask` and inlining `row-mask`, `col-mask`, and `box-mask` makes the
@@ -196,7 +196,7 @@ own. It's their combination that matters: inlining allows the compiler to use th
 helper functions, where the actual work happens.
 
 In other words, telling the compiler to optimize aggressively is much less useful than giving it the information
-it needs. A good lesson, even if embarassing after I waxed poetically about
+it needs. A good lesson, even if embarrassing after I waxed poetically about
 optimizations here, and thanks to the reviewer for catching it.
 
 ## MRV candidate selection

@@ -19,7 +19,7 @@ an exam, when you need to bullshit your way through a question. Weasel-y
 language will make you seem more suspicious, so you take the plunge and say
 whatever you kinda sorta know with the most confidence and hope it goes well.
 
-Is that a good strategy anywhere else, in industry or acaedmia? Is it somehow
+Is that a good strategy anywhere else, in industry or academia? Is it somehow
 problematic to admit that you do not, in fact, know all there is to know in the
 field, or even in your area of expertise? I would argue that this is only
 important when your ego is out of control. Take a deep breath. Say it with me.
@@ -46,7 +46,7 @@ My wife works in healthcare. I have never interacted with that business, but as
 a patient and partner of someone who works there, and I don’t want to make any
 sweeping indictments. I know, however, that some of the doctors she
 encounters—and, I would argue, some of the doctors each of us encounter in our
-lives—are so used to tell people what they think confidently that they cannot
+lives—are so used to telling people what they think confidently that they cannot
 ever not be sure about something externally, even if internally they might not
 be so sure. It’s not necessarily their fault: we are used to doctors knowing
 what’s up right away. We project knowledge onto them, and they have to own
@@ -62,7 +62,7 @@ I had to unlearn bullshit confidence. At its best, it’s a life hack to make
 people think you’re smarter than you are. At its worst, it’s a codified
 component of toxic masculinity<sup><a href="#3">3</a></sup>. Making yourself
 vulnerable by saying you don’t know is not an invitation to belittle you.
-You’re not going seem like less of an expert. In my experience, it goes one of
+You’re not going to seem like less of an expert. In my experience, it goes one of
 two ways: either people do not even notice, or they appreciate your honesty.
 
 Long story short: if someone tells you that you need to seem more confident in

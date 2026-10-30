@@ -17,7 +17,7 @@ could be described with fewer bits.
 Fixed point numbers are less scary than floating point numbers insofar as I can
 grok how to do simple arithmetic on them, or so I thought. To prove that to
 myself, I wrote another [toy library in C](https://github.com/hellerve/silly),
-akin to the one I wrote [for binary-coded decimals](/Binary_Coded_Decimals.html),
+akin to the one I wrote [for binary-coded decimals](/Binary_Coded_Decimal.html),
 on a quiet Saturday on the Greyhound bus from New York City to Washington.
 
 Of course I ran into way more problems than I anticipated, because I’m apparently
@@ -84,7 +84,7 @@ exist, and it wasn’t immediately obvious how to emulate that behaviour; for
 now the “library” only supports integer precision division.<sup><a href="#2">2</a></sup>
 
 This was a fun little exercise in computational mathematics and really
-foundational. In hindisght I’m a bit bummed I didn’t get to do things like
+foundational. In hindsight I’m a bit bummed I didn’t get to do things like
 these in university, because I think those exercises are simple and
 have a big return on investment. If I go back to university and work as a
 TA, my students might have to trudge through horrible exercises like these.

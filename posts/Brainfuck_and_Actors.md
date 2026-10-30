@@ -19,7 +19,7 @@ All of those actors will run as their own thread.
 
 Thus far all we have is a version of Brainfuck that lets you execute multiple
 programs at once. While certainly useful for, you know, stuff, it’s not very
-interesting. This is where my extra secret indgredient comes in: channels. Every
+interesting. This is where my extra secret ingredient comes in: channels. Every
 actor can send data to other adjacent actors (the one above and the one below)
 using the new `^` and `v` primitives. These two primitives send the value
 currently under the “tape head” to the other actors. Receiving a value is

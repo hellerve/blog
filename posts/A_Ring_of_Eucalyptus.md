@@ -20,7 +20,7 @@ single syllable: “wudumarimi?”
 Koala scratched her head. “What did you say, Turtle?”
 
 Turtle breathed in deeply, then he got a little something from his shell. It
-was a tiny green ring, weaved from the sturdiest eucalyptus leave he could
+was a tiny green ring, weaved from the sturdiest eucalyptus leaf he could
 find. His lack of fingers didn’t make weaving an easy task, and it had taken
 him many mornings to get it just right.
 

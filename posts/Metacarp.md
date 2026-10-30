@@ -186,7 +186,7 @@ without breaking the preceding cells.
 Against the real Core on my machine, the first cell takes around a second and a
 warm cell around 60 milliseconds. The equivalent emit-C, invoke-Clang, and run
 path takes around 380 milliseconds per cell. This is all local and the numbers
-are probably garbarge, but the trend absolutely isn’t.
+are probably garbage, but the trend absolutely isn’t.
 
 This is the magical part for me. The compiler is written in Carp. The compiler
 session and JIT driver are written in Carp. The program being compiled is Carp.

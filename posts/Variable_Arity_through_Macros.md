@@ -94,7 +94,7 @@ register our variants. For that we’re going to use a map.
 ```
 <div class="figure-label">Fig. 3: Defining the skeleton of `defmulti`.</div>
 
-We have an entry point. The map `*defmulti-registry` is going to be where we
+We have an entry point. The map `*defmulti-registry*` is going to be where we
 put all the information that we have about the forms. Inside `defmulti`, we’re
 just going to initialize that value and call a registration function. That
 function will mangle the forms into a digestible form.

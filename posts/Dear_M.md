@@ -22,11 +22,11 @@ moves again, and my life is in balance.
 I just wanted you to know that I’m doing better than I ever have. I feel
 perhaps less joy than when I last wrote, but that, too, is entirely my choice.
 I have a will for improvement, and a will to perfection that is never going to
-be satisfied. Nothing is important than to push on, and become a better person,
+be satisfied. Nothing is more important than to push on, and become a better person,
 every day more so than the day before.
 
 I hope you’re okay, and I hope you still feel as tenderly towards me as I feel
 towards you. Sometimes I miss you. I hope we talk again soon. I think we will.
-I feel like I can talk again, now tha I know what I have to say.
+I feel like I can talk again, now that I know what I have to say.
 
 V

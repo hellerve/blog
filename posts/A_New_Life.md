@@ -4,7 +4,7 @@ date: 2021-05-02
 ---
 
 On the 2nd of May, 2021, my first child was born. My wife was a freaking star.
-She is, undeoubtedly, the strongest most impressive person I’ll ever meet. I
+She is, undoubtedly, the strongest most impressive person I’ll ever meet. I
 don’t know that I can describe the whole thing, and I don’t know that I want
 to.
 

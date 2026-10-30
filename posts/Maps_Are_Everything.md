@@ -170,7 +170,7 @@ To work with numbers, we need to be able to increment them and decrement them.
 ```
 <div class="figure-label">Fig. 7: Incrementing and decrementing.</div>
 
-The structure of our number sigils draw the magic circles that transform them.
+The structure of our number sigils draws the magic circles that transform them.
 
 Our powers include arithmetic now. Because I gave you a glimpse of our full
 powers of folding and filtering, let’s use them to grow and shrink our numbers.

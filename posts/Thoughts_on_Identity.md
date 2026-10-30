@@ -4,7 +4,7 @@ date: 2021-05-23
 ---
 
 Identity is a complex thing. Philosophers have been thinking about it for
-millenia, it lies at the heart of such fields as semantics and ontology, and
+millennia, it lies at the heart of such fields as semantics and ontology, and
 I’d argue that everyone has, at some point, thought about it.
 
 In computer science, and logic at large, identity is a fundamental topic, and
@@ -37,7 +37,7 @@ In some programming languages, values are defined by where in memory they lie.
 They are mutable. A complex object stays the same object, even if a property
 changes. For smaller objects this might not be as clear: if I change a
 coordinate of a two-dimensional vector, even if it is in place, is it still the
-same vector? This might be a clash of the conceptul vector, and the vector
+same vector? This might be a clash of the conceptual vector, and the vector
 object as it exists in the “real”, or in this case virtual, world, or it might
 be an indication that something about my definition of identity is not quite
 adequate<sup><a href="#1">1</a></sup>.
@@ -85,7 +85,7 @@ that make no sense, is an artifact of its identity, its use case.
 
 This is often described as the model, the interface, and the environment. Some
 systems thinkers think about the model and the interface, and argue that the
-environment should not matter. But the model does not exist in a vaccuum, and
+environment should not matter. But the model does not exist in a vacuum, and
 making that assumption leads to brittle design. It is, in essence, sloppy
 thought.
 
@@ -98,7 +98,7 @@ your way.
 
 Even if you are not a philosopher thinking about the fundamentals of human
 existence all the time, dipping in and out of that high country, taking in what
-you can, and trying to learn from the millenia of thought contained there, can
+you can, and trying to learn from the millennia of thought contained there, can
 be rewarding and actually useful, contrary to popular belief<sup><a href="4">4</a></sup>.
 
 Or maybe it’s just that I have a soft spot for working through opaque texts and
@@ -106,7 +106,7 @@ the sense of accomplishment when you finally “get” it.
 
 #### Footnotes
 
-<span id="1">1.</span> Another exmple to drive the point home: think of an
+<span id="1">1.</span> Another example to drive the point home: think of an
 collection of objects in memory. If I need to change the location of the
 collection because I needed to grow it in size and find a new contiguous block
 of memory for it, does the identity of the elements it contains change? Their
@@ -122,4 +122,4 @@ you dig deep enough, [you might find keys that open all sorts of
 things](https://www.youtube.com/watch?v=a9b9IYqsb_U).
 
 <span id="4">4.</span> My personal ventures into that high country have at times
-be enlightening, at times frustrating. And I’ve only ever scratched the surface.
+been enlightening, at times frustrating. And I’ve only ever scratched the surface.

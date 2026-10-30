@@ -4,9 +4,9 @@ date: 2019-12-11
 ---
 
 When I [announced my new work as an independent technologist](https://blog.veitheller.de/Spirited_Away.html),
-I also presented [my new rates](https://veitheller.de/at-large/#rates). Most
+I also presented [my new rates](https://cyberwitchery.com/#consulting). Most
 notably, I will be giving 100€ of my 800€ daily rate for open source projects
-to charities. The obvious questions is which charities I will support using
+to charities. The obvious question is which charities I will support using
 your money, and this blog post is an attempt to answer that question.
 
 ## Give Well

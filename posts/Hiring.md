@@ -54,7 +54,7 @@ cynicism talking, but if the job description mostly consists of bullet points
 describing the requirements the candidate will need to meet in order to be
 considered, it is not a job worth applying for<sup><a href="#3">3</a></sup>.
 
-A good job desription tells me something about the company I’m applying for.
+A good job description tells me something about the company I’m applying for.
 A good mix of “hard” (what is our mission?, how big are we?, are we
 seed-funded? Post-IPO? Self-funded? Employee-owned?, etc.) and “soft” (what
 kind of workspace do we want to create? Does an individual contributor have
@@ -221,7 +221,7 @@ just haven’t written it yet. Stay tuned.
                        focus should be whether you would go have drinks with
                        this person after work—it’s great if you are able to be
                        friends as well as colleagues–, but what happens inside
-                       the office, emnotional and professional, is what you
+                       the office, emotional and professional, is what you
                        need to optimize for.
 
 On the other hand, I believe that if you think your
@@ -252,7 +252,7 @@ messy like that.
 <span id="4">4.</span> Landlords notwithstanding.
 
 <span id="5">5.</span> Remember: happiness increases productivity. Finally a
-                       goal coddled millenials and cut-throat capitalists can
+                       goal coddled millennials and cut-throat capitalists can
                        agree on.
 
 <span id="6">6.</span> Optional. Sick leave should be limitless, but I know

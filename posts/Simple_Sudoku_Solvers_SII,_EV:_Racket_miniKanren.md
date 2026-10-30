@@ -42,7 +42,7 @@ again, but different?
   and µKanren shrinks that library to its bones: unification, goals, and streams.
   Nothing is magic, because there is no room for magic in so few lines, but the
   code definitely feels a little witch-y.
-- **Owning the engine has its perkes.** Because the solver and the engine live
+- **Owning the engine has its perks.** Because the solver and the engine live
   in the same file, the solver is allowed to peek into the engine’s internals.
   We’ll use that liberally, and I’d argue it makes for a nicer solver than any
   off-the-shelf logic library would. It also requires you to understand both

@@ -14,8 +14,8 @@ an embeddable version of the radio player. Here’s mine:
 <iframe src="https://api.radio4000.com/embed?slug=artisanal-cheeseburgers" width="100%" height="500" frameborder="0"></iframe>
 <div class="figure-label">Fig. 1: The best radio in the world, curated by yours truly.</div>
 
-It’s really easy to embed. The nice folks at [internet4000](https://internet4000.com/)
-built [a tool](https://github.com/internet4000/radio4000-player) that lets you
+It’s really easy to embed. The nice folks at [internet4000](https://web.archive.org/web/20171014055356/https://internet4000.com/)
+built [a tool](https://web.archive.org/web/20180612233634/https://github.com/internet4000/radio4000-player) that lets you
 create an embeddable player pretty easily. They really did a great job on that
 front, but that shouldn’t surprise anyone who is familiar with their work.
 And of course it is open source! This is all the code you need:

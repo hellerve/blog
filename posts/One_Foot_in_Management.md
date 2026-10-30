@@ -47,7 +47,7 @@ want to join us, let me know.
 
 <span id="1">1.</span> The other two things that I wanted to learn were Ruby and
                        Kubernetes, by the way. [One
-                       down](https://github.com/hellerve/rlox).
+                       down](https://git.veitheller.de/hellerve/rlox).
 
 <span id="2">2.</span> And sorry for the lack of technical content in this blog
                        post. There’s a lot of technical stuff in the pipeline,

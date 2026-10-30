@@ -11,7 +11,7 @@ are almost always the same, and the solutions are well-documented (the [Google
 SRE book](https://sre.google/sre-book/being-on-call/) alone covers most of the
 fundamentals).
 
-As I keep seeing the same things, though, I figured I’d write them down. if you
+As I keep seeing the same things, though, I figured I’d write them down. If you
 see different failure modes, let me know.
 
 ## What on-call is

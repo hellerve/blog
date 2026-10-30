@@ -16,7 +16,7 @@ Haskell is mostly known for being a language with an advanced type system and fo
 Apart from that, however, it also has more substantive qualities that lend themselves well to algorithms like Sudoku solvers:
 
 - **Laziness**. Haskell expressions only get evaluated when they’re actually used. This is cool, powerful, and sometimes a nightmare to debug. In this case, we will use it to short-circuit our backtracking once we’ve found a solution, and I just think that’s awesome.
-- **Algebraic combinators**. Haskell is combinator-heavy. This one is somewhat hard to explain, but it’s abundance of algebraic combinators make it easy to express things like searches and constraints, and we’ll make lots of use of it.
+- **Algebraic combinators**. Haskell is combinator-heavy. This one is somewhat hard to explain, but its abundance of algebraic combinators makes it easy to express things like searches and constraints, and we’ll make lots of use of it.
 - **Applicatives, Monads, Category Theory**. We’ll use both Applicatives and Monads today—for control flow and state, respectively—, and that’s only the tip of the iceberg! These concepts are scary and the names don’t help, but they are definitely worth a look, and I’ll try my best to demystify the small bits we’ll be using today.
 
 I hope those things are enough to make a compelling case for why Haskell is worth a look. And, once again, our solver will be less than 100 lines of code (we could golf it down more, but that would defeat the purpose).
@@ -56,7 +56,7 @@ First we’ll call our usual propagation (by now you should have an idea what th
 
 Now, this is our first bit of magic. How do we iterate over them? How do we short-circuit? What is this whole fold line?
 
-I already teased laziness in the beginning, and this is where it get’s crucial. For every candidate, we insert it (`set b i j v`) and plug it into `solve`. This is a list comprehension akin to what you might find, for instance, in Python. We then take the resulting list and plug it into `foldr`, using `<|>`  as a fold function, and `empty` (which is implemented by `Maybe` as `Nothing`) as a first accumulator.
+I already teased laziness in the beginning, and this is where it gets crucial. For every candidate, we insert it (`set b i j v`) and plug it into `solve`. This is a list comprehension akin to what you might find, for instance, in Python. We then take the resulting list and plug it into `foldr`, using `<|>`  as a fold function, and `empty` (which is implemented by `Maybe` as `Nothing`) as a first accumulator.
 
 What does `<|>` do? It is the choice operator, and it comes from the `Alternative` type class, which is “a monoid on applicative functors”—in our case, simply a thing we can combine with other instances of that thing. You can think of it like this:
 
@@ -90,7 +90,7 @@ propagate b0 = runST $ do
   if not ok then pure Nothing else Just <$> freezeBoard a
 ```
 
-Again with the magic. This time we do it for performance reasons, however. We get internal mutation inside a monad called `ST` (State Threads) that we let execute with runST, so the outside world stays pure. I will, for the purposes of this post, ignore `thawBoard` and `freezeBoard`. They simple transform our nice little board into a dirty, mutable array encapsulated in said monad and back, so we can do our unclean mutations. If you do want to check it out, you can do so [by looking at the repo version](https://github.com/hellerve/sudoku/blob/main/sudoku.hs) or by going to the documentation of [`STUArray`](https://hackage.haskell.org/package/array-0.5.8.0/docs/Data-Array-Base.html#t:STUArray) directly. Our actual work happens in `fixpoint`, which will, as is tradition, mutate the board in place and return a marker whether the board is solvable.
+Again with the magic. This time we do it for performance reasons, however. We get internal mutation inside a monad called `ST` (State Threads) that we let execute with runST, so the outside world stays pure. I will, for the purposes of this post, ignore `thawBoard` and `freezeBoard`. They simply transform our nice little board into a dirty, mutable array encapsulated in said monad and back, so we can do our unclean mutations. If you do want to check it out, you can do so [by looking at the repo version](https://github.com/hellerve/sudoku/blob/main/sudoku.hs) or by going to the documentation of [`STUArray`](https://hackage.haskell.org/package/array-0.5.8.0/docs/Data-Array-Base.html#t:STUArray) directly. Our actual work happens in `fixpoint`, which will, as is tradition, mutate the board in place and return a marker whether the board is solvable.
 
 ```
 fixpoint :: STUArray s (Int,Int) Int -> ST s Bool

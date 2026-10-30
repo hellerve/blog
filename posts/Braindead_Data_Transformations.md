@@ -3,7 +3,7 @@ title: "Braindead Data Transformations"
 date: 2017-01-19
 ---
 
-I released a stupid but potentially [useful tool](http://github.com/hellerve/manipulator)
+I released a stupid but potentially [useful tool](https://git.veitheller.de/hellerve/manipulator)
 today. It might be a bad idea—I'm not completely sure yet—but the idea was
 so intriguing that I just couldn't resist building it. It's a simple data
 retrieval and transformation tool for Python datastructures, and like so
@@ -14,7 +14,7 @@ need to be. Select the data you want to change and apply some transformation
 to it. How hard can it be?
 
 One of my favorite implementations of this idea is [Clojure](http://clojure.org/),
-a name that should ring a bell if you're developer. Clojure emphasizes the use
+a name that should ring a bell if you're a developer. Clojure emphasizes the use
 of standard data types, and working with them is always fun, because most functions
 work fairly generically on all of the types. This is thanks to [the seq abstraction](https://clojure.org/reference/sequences)
 and [transducers](https://clojure.org/reference/transducers), two simple yet

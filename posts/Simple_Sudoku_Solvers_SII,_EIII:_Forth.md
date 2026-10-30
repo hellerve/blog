@@ -20,10 +20,10 @@ along. As always, [the code is on GitHub](https://github.com/hellerve/sudoku).
 
 ## Why Forth?
 
-Forth is not popular (well, maybe for a certain crowd maybe it is). It is most certainly
+Forth is not popular (well, maybe for a certain crowd it is). It is most certainly
 not trendy. All it has is words, and it turns out that’s enough!
 
-Here’s why I enjoyed work with it:
+Here’s why I enjoyed working with it:
 
 - **Radical minimalism.** Forth gives you a stack, a dictionary of “words” (think: functions),
   and gets out of your way. There are no types, no syntax to speak of, and almost no

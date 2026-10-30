@@ -39,7 +39,7 @@ similar<sup><a href="#1">1</a></sup>.
 Something that I sorely missed in Carp for a long time was `deriving`. What this
 does is automatically infer definitions of typeclasses based on a type. This
 only works for a certain set of typeclasses, but it’s fairly useful, since those
-typeclasses are among the most important: `Show` defines a functions for
+typeclasses are among the most important: `Show` defines a function for
 converting a value into a `String`, and `Eq` and `Ord` define functions for
 comparing values, among others.
 

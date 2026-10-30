@@ -145,7 +145,7 @@ implementation
 <div class="figure-label">Fig. 5: An extended skeleton for inheritance.</div>
 
 Okay, this is a little weird, but I promise it is not as scary as it seems at
-first. First, we use `with-environemnt` to bind the current interpreter
+first. First, we use `with-environment` to bind the current interpreter
 environment to a name called `env`. We then transform this environment into a
 hashmap where the keys are the names and the values are the objects bound to
 those names, and give it the name funs. We only need the names, so we get all
@@ -447,7 +447,7 @@ arguments. This is what we do in Figure 14 above. The only work that we have to
 do to get to this point—other than concatenating the whole shebang—is flattening
 the properties list.
 
-The body of the function should just create hashmap from the given properties.
+The body of the function should just create a hashmap from the given properties.
 For this we use the function `make-hash`. For the arguments we map over the
 properties once more and make key-value pairs, from the atoms that the macro
 was passed to the symbols that end up being defined in the function body.
@@ -542,7 +542,7 @@ very soon!
                        for one possible method using a hashmap.
 
 <span id="3">3.</span> Unquoting `parent-fun` would have a similar effect, I
-                       just want to make sure we are not using an accidently
+                       just want to make sure we are not using an accidentally
                        shadowed binding. Unlikely, but possible.
 
 <span id="4">4.</span> For those of you who aren’t as familiar with reserved

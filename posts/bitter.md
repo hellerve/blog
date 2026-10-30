@@ -79,7 +79,7 @@ produce a very narrow model. A general model can be used to train a
 specialist, for instance by fine-tuning it on a single task, or by using it as
 a teacher for a model that only ever sees that task. And none of this says
 anything about whether the hardware it runs on should be general. That would
-required quite a different argument.
+require quite a different argument.
 
 The essay also isn’t a theory of cost. It doesn’t tell you to run a large
 generative model when a small classifier does the job. It doesn’t tell you how

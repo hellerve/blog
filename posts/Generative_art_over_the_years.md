@@ -139,7 +139,7 @@ And I have noticed myself deliberately choosing between maximalism and
 minimalism. I still make small pieces with very little going on, but now it’s a
 choice.
 
-In the beginning, the question was “what can I do” Now it’s closer to “what do I want
+In the beginning, the question was “what can I do?” Now it’s closer to “what do I want
 to say”; not a dramatic transformation, but meaningful. The tools fade away, and
 something like a personal aesthetic starts to emerge. I couldn’t describe it
 precisely if you asked me, but I can feel it when a piece is working and when it
@@ -151,7 +151,7 @@ I don’t make generative art as often as I’d like. Life is busy in the way th
 is busy when you have a family and a career and a dozen other things competing for
 your attention. But the practice persists, even if it’s slow. A sketch here, an
 experiment there. Every couple of years I make books of poems and artwork for my
-family (something I want to write about it in the future as well), and that
+family (something I want to write about in the future as well), and that
 deadline is usually enough to pull me back in.
 
 I think the thing I value most about this practice is how patient it is. There’s no

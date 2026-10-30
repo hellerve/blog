@@ -17,7 +17,7 @@ We haven’t looked at [`VhBlogExporter`](https://github.com/hellerve/blog/blob/
 
 Nothing much there, but at least we removed some boilerplate from the actual workhorse method. We referred to that one above already, it is [`VhBlogExporter>>#export:`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L29-L64).
 
-It’s a pretty long method, but it’s all familar code. Except for the lazy accessors [`VhBlogExporter>>#blogDirectory`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L13-L16) and [`VhBlogExporter>>#layoutFile`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L74-L77) that I added. They are simple accessors that initialize slots with defaults if they aren’t set. Take, for instance, [`VhBlogExporter>>#layoutFile`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L74-L77).
+It’s a pretty long method, but it’s all familiar code. Except for the lazy accessors [`VhBlogExporter>>#blogDirectory`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L13-L16) and [`VhBlogExporter>>#layoutFile`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L74-L77) that I added. They are simple accessors that initialize slots with defaults if they aren’t set. Take, for instance, [`VhBlogExporter>>#layoutFile`](https://github.com/hellerve/blog/blob/54299060dd73489c3bb14bfd0c98762bb85582aa/src/VhBlog/VhBlogExporter.class.st#L74-L77).
 
 Now that all of that infrastructure is in place, we should be able to try out the button by clicking on it. And, if you are reading this blog post on my personal blog, it worked!
 
@@ -27,4 +27,4 @@ It was a fair bit of work, and all for a simple button, but at least we can end 
 
 ### Fin
 
-This blog post was quite a bit shorter than the last, no least because moving code from Lepiter into methods really is a triviality. Nonetheless, it has to be done, and I thought I might as well show that part. Now, I suppose, you know how the sausage is made. I hope you nonetheless still enjoy it, and it hasn’t spoiled your appetite for reading more. Perhaps, with this new system, I will be tempted to finally write more again.
+This blog post was quite a bit shorter than the last, not least because moving code from Lepiter into methods really is a triviality. Nonetheless, it has to be done, and I thought I might as well show that part. Now, I suppose, you know how the sausage is made. I hope you nonetheless still enjoy it, and it hasn’t spoiled your appetite for reading more. Perhaps, with this new system, I will be tempted to finally write more again.

@@ -5,13 +5,13 @@ date: 2025-05-29
 
 For a while now, one of my biggest responsibilities in [Glamorous Toolkit](https://gtoolkit.com) has been to develop [gt4llm](https://github.com/feenkcom/gt4llm), a workbench for large language models that is intended to help develop assistants and also comes with a set of integrated assistants for code, prose, and other subsystems with GT.
 
-I haven’t written much about the workbench outside of the Glamorous Toolkit book, and if you want to learn more about it, [I suggest reading there](https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti). It has all the context I know to talk about<sup><a href="#1">1</a></sup>.
+I haven’t written much about the workbench outside of the Glamorous Toolkit book, and if you want to learn more about it, [I suggest reading there](https://web.archive.org/web/20250529165107/https://book.gtoolkit.com/gt4llm-270ytb3y5mi1voswipfyc5hti). It has all the context I know to talk about<sup><a href="#1">1</a></sup>.
 
 Instead, today I want to talk about a silly little idea that I had a long while back, and finally realized using the workbench: LlmL, the language that lets you shell out to an LLM when you don’t know how to solve a problem<sup><a href="#2">2</a></sup>. Let’s start by looking at the language, and then talk a bit about the implementation, and see what we can learn from it. Beware that the implementation bit is written in GT-specific Smalltalk, but the code should be short and simple enough that the idea can get across.
 
 ###  A really dumb language meets a really dumb idea
 
-The language "design" of LlmL was primarily shaped by the one hour timebox I set for myself when working on this project. As such, It only has numbers as types, and it uses an S-expression-based syntax (for ease of parsing).
+The language "design" of LlmL was primarily shaped by the one hour timebox I set for myself when working on this project. As such, it only has numbers as types, and it uses an S-expression-based syntax (for ease of parsing).
 
 Here is a sample:
 
@@ -64,7 +64,7 @@ From there, we build a simple evaluator that is just a tree-walking interpreter 
 
 Really the only novel and mildly interesting bit is inside the evaluation for the `infer` primitive, which in turn happens in a class called {{gtClass:LlmlInfer}}.  Its method {{gtMethod:LlmlInfer>>#evaluate:in:}} is the key to the LLM connection.
 
-It uses [structured outputs](https://openai.com/index/introducing-structured-outputs-in-the-api/) to guarantee that we always get a well-formed result. For those not in the know, it’s basically a way to make the LLM to adhere to a user-controlled JSON schema in the output.
+It uses [structured outputs](https://openai.com/index/introducing-structured-outputs-in-the-api/) to guarantee that we always get a well-formed result. For those not in the know, it’s basically a way to make the LLM adhere to a user-controlled JSON schema in the output.
 
 To transcribe it as a snippet and annotate, it basically does this:
 

@@ -83,7 +83,7 @@ that we have come full circle: a new beast is born that can only be managed by t
 appointed few, not by the unwashed masses. Again, the market did not create, it
 merely redistributed.
 
-You could call these system “meritocracies”, if you believed these existed. But
+You could call these systems “meritocracies”, if you believed these existed. But
 then, aren’t the existing financial markets also meritocracies, ruled by those
 that understand finance and law, rather than tech and a little bit of finance?
 Maybe, maybe not. But to me, it doesn’t feel like an accident that
@@ -123,7 +123,7 @@ not a proponent of anarcho-capitalism myself.
 <span id="3">3.</span> You will have to live with my colourful metaphors for a
                        while. I promise they all lead somewhere. If the
                        narrative of my imagery is offensive to you, I
-                       apologize. Feel free to rebutt in an equally off-kilter
+                       apologize. Feel free to rebut in an equally off-kilter
                        tone.
 
 <span id="4">4.</span> I’ve tried to verify that the MakerDAO modules work as

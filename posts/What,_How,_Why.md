@@ -38,13 +38,13 @@ partly because I'm lazy.
 
 Sometimes good inventions encourage bad habits. Syntax highlighting is a great
 invention. It helps me read code by giving me semantic cues, especially when
-skimming. Sometimes it even helps me find bugs, like parenthese gone astray
+skimming. Sometimes it even helps me find bugs, like parentheses gone astray
 without me needing to compile or run the program. It's particularly helpful for
 beginners, I feel, because highlighting groups of things in different
 colors—having one for, say, primitive data type literals and one for
 keywords—helps novices find structure in the chaos that is programming.
 The effect of syntax highlighting on program understanding seems
-[measurable](http://www.ppig.org/sites/default/files/2015-PPIG-26th-Sarkar.pdf).
+[measurable](https://web.archive.org/web/20160428051344/http://www.ppig.org/sites/default/files/2015-PPIG-26th-Sarkar.pdf).
 
 In a blog setting, however, it just encourages writers to sling walls of code at
 their unsuspecting readers. I specifically chose not to use syntax highlighting

@@ -139,7 +139,7 @@ the signature of `Array.aset!` perfectly, so we can register it as a
 pass-through, i.e. a `simple-place`.
 
 Now, to enable setting variables, we use a trick: we transform it into a list
-or `(sym <variable>)` and register `set!` as a `simple-place`, meaning that
+of `(sym <variable>)` and register `set!` as a `simple-place`, meaning that
 `(setf x 10)` will first be transformed to `(setf (sym x) 10)`, and then to
 `(set! x 10)`. To enable that behavior, we have to change `setf` a little:
 

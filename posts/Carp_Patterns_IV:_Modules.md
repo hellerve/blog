@@ -43,7 +43,7 @@ are considered an anti-pattern, at least by me.
 
 ### Topic modules
 
-Another natural place where modules emerge are when you work on a topic. There
+Another natural place where modules emerge is when you work on a topic. There
 might or might not be a type involved, but if there is it is mostly incidental
 to your actual end.
 
@@ -55,11 +55,11 @@ only part of the API because the functions in `Test` take and return it, but
 you’re not expected to manually work with it in any way.
 
 Other modules might not have a type at all, such as [`Geometry`](https://carp-lang.github.io/carp-docs/core/Geometry.html),
-which sports a whole to functions, for converting from radians to degrees and
+which sports a whole two functions, for converting from radians to degrees and
 vice versa.
 
 Basically, topic modules are for all the functions that do not belong to a
-type. You don’t want to poluate the global namespace, so you put things in
+type. You don’t want to pollute the global namespace, so you put things in
 modules, or even submodules<sup><a ref="#3">3</a></sup>.
 
 ## Module annotations
@@ -82,7 +82,7 @@ things a little more—it’s part of the burden of a macro-monger!
 
 ## A special note for macros
 
-A word of caution f you work with macros that work on modules: the symbols for
+A word of caution if you work with macros that work on modules: the symbols for
 modules that are also types resolve to types first in a dynamic context. You
 might for instance want to use `s-expr` to destructure a module, but this
 might not always work. Check out this example:
@@ -103,7 +103,7 @@ might not always work. Check out this example:
 <div class="figure-label">Fig. 2: Using `s-expr`.</div>
 
 So, even though `T` is both a module and a type in Figure 2, we can only get at
-the type part! This is a littler frustratring since, this also breaks dependent
+the type part! This is a little frustrating since, this also breaks dependent
 code in the [`Introspect`](https://carp-lang.github.io/carp-docs/core/Introspect.html)
 module:
 
@@ -119,7 +119,7 @@ now this is what we have to work with.
 
 ## Fin
 
-As always, I hope this was an interesting dive into module in Carp. See you for
+As always, I hope this was an interesting dive into modules in Carp. See you for
 the next—and last—installation of this series, on dependencies!
 
 #### Footnotes

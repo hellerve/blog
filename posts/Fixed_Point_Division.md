@@ -8,7 +8,7 @@ on a library—dubbed `silly`—that implements Fixed Point Arithmetic.
 At that point I wasn’t sure how to properly implement division—i.e.
 without losing the fractional part. Afraid I might get the details wrong, I
 decided to gloss over the problem description and implementation a little.
-[Harrison Clarke](http://hclarke.ca/), a fellow Recurser, pointed me to a
+[Harrison Clarke](https://web.archive.org/web/20170818161518/http://hclarke.ca:80/), a fellow Recurser, pointed me to a
 code snippet in reaction to the post that solves the problem with long
 division. I rewrote my code based on that, and now I actually have both
 solutions [in my repo](https://github.com/hellerve/silly), one named
@@ -166,7 +166,7 @@ Turns out you can do the same thing in binary. There is another example in
 “Write Great Code”, Figure 3-2, that you can work through. The mechanics are
 exactly the same. So, without further ado, here is a stripped down version of
 that algorithm, without a whole bunch of optimizations that you can find [in the
-actual implementation](https://github.com/hellerve/silly/blob/master/silly.c#L99):
+actual implementation](https://github.com/hellerve-project-based-learning/silly/blob/master/silly.c#L99):
 
 ```
 silly silly_div(silly x, silly y) {
@@ -261,11 +261,11 @@ own code implement two simple optimizations:
 
 1. If the divider is divisible by 2^n, we can reduce the number of loop
 iterations by four for each byte if we just shift the divider. Look at the
-implementation [here](https://github.com/hellerve/silly/blob/master/silly.c#L108).
+implementation [here](https://github.com/hellerve-project-based-learning/silly/blob/master/silly.c#L108).
 2. If the remainder has leading zeroes we can skip this number of iterations.
 Think of long division: I can skip a bunch of steps if my number is padded
 with `0`. This can be checked in each iteration and is implemented
-[here](https://github.com/hellerve/silly/blob/master/silly.c#L114).
+[here](https://github.com/hellerve-project-based-learning/silly/blob/master/silly.c#L114).
 
 Neither of these optimizations interfere with the actual algorithm, meaning we
 could just turn them off if we wanted to. This makes the optimizations very

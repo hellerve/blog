@@ -19,7 +19,7 @@ websites, the fast stack-based calculator I use when in the terminal, a tool
 I use for generating documentation for my work, the cowsay prompt that greets
 me every time I open a terminal, and some miscellaneous
 scripts I use, still depend on it. The language still works, although some
-of the native extension that depend on outdated Haskell packages do not
+of the native extensions that depend on outdated Haskell packages do not
 anymore. The bitrot set in quickly.
 
 Now, one year after my optimistic announcement, I want to tell you what zepto
@@ -121,7 +121,7 @@ death. But we’ll talk about that later.
 
 The most important feature of zepto was friendliness, at least for me. This
 meant that a friendly community was encouraged—although the “community” never
-grew larger than a handful people—, but also a certain developer-friendliness
+grew larger than a handful of people—, but also a certain developer-friendliness
 in all the features of the language. Intuitive, beautiful APIs played a part in
 that, of course, but I think every language thinks it has great APIs. More
 important were tools like [zeps](https://github.com/zeps-system/zeps/), the

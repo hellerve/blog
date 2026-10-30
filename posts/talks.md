@@ -27,7 +27,7 @@ opinionated choices about how the world works.
 
 One warning before you click: the audio on that recording isn’t great. It’s
 understandable, but you’ll probably want headphones, and I’m sorry about that.
-WeAreDevelopers is more of a expo than a conference, and I gave the talk in one
+WeAreDevelopers is more of an expo than a conference, and I gave the talk in one
 of the main expo halls, with the clip-on too close to my mouth, so both clicks
 and a background hum are audible.
 

@@ -403,7 +403,7 @@ have a ways to go.
 ```
 <div class="figure-label">Fig. 9: A bit more meat on the encoding bones.</div>
 
-Once again: that’s a lot! But once you understand this, everything what’s to
+Once again: that’s a lot! But once you understand this, everything that’s to
 come is a breeze, so bear with me.
 
 We decided to do the switch for padding using a `case` statement, which is

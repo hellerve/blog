@@ -8,7 +8,7 @@ Those of you who do can rest assured that they will keep coming, though, and
 that I have no intention to stop making this blog a friendlier place by writing
 about the tiny exploits of my two favorite characters.
 
-Today I want to introduce you to a moore frequently updated alternative to my
+Today I want to introduce you to a more frequently updated alternative to my
 [backlog of stories](/koala-and-turtle): my fiancée and I have been sharing
 little vignettes of the odd couple for a long time, and she finally found the
 time and energy to [put some of hers

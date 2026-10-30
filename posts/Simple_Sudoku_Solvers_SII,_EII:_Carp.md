@@ -237,7 +237,7 @@ update on improvement. The result comes wrapped in `Maybe` so it fits right into
 `solve`'s `and-then` chain.
 
 By the way, at the time of writing `Maybe.and-then` isn't in the standard library
-([an PR exists that emerged after I wrote my
+([a PR exists that emerged after I wrote my
 solution](https://github.com/carp-lang/Carp/pull/1479)), but Carp lets you extend
 any module, so we just add it:
 

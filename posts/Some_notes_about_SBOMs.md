@@ -5,7 +5,7 @@ date: 2025-08-18
 
 Software Bills of Materials (SBOM) are something I rarely think about actively. They’re useful, yes, but for most projects I just make it part of my CI/CD pipeline (mostly because it’s in my templates) along with some sanity checks, and forget about it.
 
-This year, however, is different. I’ve been living through this weird phase of [frequency illusion](https://en.wikipedia.org/wiki/Frequency_illusion) where the topic seems to come up in every project I touch. A lot of the due diligence (DD) projects I’ve been involved this year have had some major or minor hiccups related to them, and I have to think about them in my role as Security Consultant for the [CIVITAS/Core project](https://docs.core.civitasconnect.digital/), so I decided to document some best practices and fundamentals while they’re fresh in my mind.
+This year, however, is different. I’ve been living through this weird phase of [frequency illusion](https://en.wikipedia.org/wiki/Frequency_illusion) where the topic seems to come up in every project I touch. A lot of the due diligence (DD) projects I’ve been involved in this year have had some major or minor hiccups related to them, and I have to think about them in my role as Security Consultant for the [CIVITAS/Core project](https://docs.core.civitasconnect.digital/), so I decided to document some best practices and fundamentals while they’re fresh in my mind.
 
 ## When are SBOMs useful?
 

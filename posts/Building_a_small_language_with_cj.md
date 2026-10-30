@@ -5,7 +5,7 @@ date: 2025-11-09
 
 In [a recent blog post](https://blog.veitheller.de/cj:_Making_a_minimal,_complete_JIT.html),
 I unveiled [cj](https://github.com/hellerve-pl-experiments/cj), a small,
-dependency-free JIT compiler framework in C. In theat post, I discussed the idea
+dependency-free JIT compiler framework in C. In that post, I discussed the idea
 of implementing a small programming language in it.
 
 Of course, once I had had the idea, [my fingers couldn’t stop typing until it was

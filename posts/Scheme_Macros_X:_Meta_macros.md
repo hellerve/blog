@@ -92,7 +92,7 @@ Here, too, our newly minted `defmacro` makes things quite readable and short. Al
 
 In zepto, compile time and runtime are not separated and thread safety is not an issue, so this is fine. In other languages, this might be a bit more of a problem, which is why they choose a different implementation path.
 
-For instance, [in Racket this is implemented in C](https://github.com/racket/racket/blob/8f0f634de986fe7f7c511477bff89711c615711a/racket/src/bc/src/symbol.c#L980), although it does essentially the same thing. Still, reading small definitions like these are good exercises to understand a virtual machine’s implementation, so if you are interested in how a Scheme might be implemented in C, this might help.
+For instance, [in Racket this is implemented in C](https://github.com/racket/racket/blob/8f0f634de986fe7f7c511477bff89711c615711a/racket/src/bc/src/symbol.c#L980), although it does essentially the same thing. Still, reading small definitions like these is a good exercise to understand a virtual machine’s implementation, so if you are interested in how a Scheme might be implemented in C, this might help.
 
 ## Act III: ensuring single execution
 

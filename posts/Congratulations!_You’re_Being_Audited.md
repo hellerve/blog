@@ -108,7 +108,7 @@ developers to try and “workshop” their coding. This helps get rid of bad hab
 instead of just duct-taping over problems and then going on as before.
 
 Whatever the format is, though, I try to make it as blameless as possible. I
-have this bad habit of getting to attached to my own code and then feeling
+have this bad habit of getting too attached to my own code and then feeling
 bad when someone criticizes it or finds a bug, and I don’t want anyone on the
 team to feel as if anything is “their fault” just because they wrote a
 particular piece of code that was buggy. These things happen to the best of us,
@@ -155,7 +155,7 @@ monster.
 between languages that are memory-safe and those that aren’t, because the
 auditor has to watch out and think through another class of bugs when memory
 management comes into play. Of course there’s also the garbage collector, but
-that’s mostly a problem for the perfomance people.
+that’s mostly a problem for the performance people.
 
 <span id="3">3.</span> Documentation is crucial especially when, during the
 initial development of an application, someone is writing a partial

@@ -22,7 +22,7 @@ Github and its community have been good to me. I’ve gotten a lot of support an
 friendly messages about my work over the years, and I don’t intend to
 significantly scale down my activity there. But sometimes curating this profile
 does feel like a chore, an obligation. In an effort to counter that I set
-up [my own instance of Gitea](https://veitheller.de/git). Most of my Carp
+up [my own instance of Gitea](https://git.veitheller.de). Most of my Carp
 libraries already have their main home there, and Github only has mirrors of
 these repositories. Over the course of this year, I’d like to make that true
 for more and more of my work. It will be less explorable, perhaps. It will be

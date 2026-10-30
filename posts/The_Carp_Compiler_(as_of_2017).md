@@ -179,7 +179,7 @@ make any sense to you, don’t worry, I’ll go over them in the following
 sections.
 
 The annotation procedure relies entirely on generating and then solving the
-contstraints. Generating constraints is simple, and it takes all that we know
+constraints. Generating constraints is simple, and it takes all that we know
 from our function types. Let me give you a simple example: given the statement
 `(= a b)`, we know that the type of `a` must be the same as `b`, because
 equality checking doesn’t coerce its types in Carp; it is of type `(λ [a a] Bool)`.
@@ -519,7 +519,7 @@ and I’m not alone: when I gave an introductory workshop into LLVM while at the
 [Recurse Center](http://recurse.com/), I told people that using it might not be
 the best idea. One of the people there did not heed my advice, and he emerged
 six weeks later, [battle-hardened and
-weary](https://jaseemabid.github.io/2017/07/04/compiler.html).
+weary](https://web.archive.org/web/20171208071334/https://jaseemabid.github.io/2017/07/04/compiler.html).
 
 <span id="8">8.</span> Of course those properties aren’t always correlated, but
 very often I experience that the most important feature seems to have the most

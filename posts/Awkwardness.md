@@ -20,7 +20,7 @@ it was funny doesn't mean it isn't true.
 
 Over the years I developed a bunch of mechanisms to cope with that dichotomy of
 wanting to be social and not actually having a very high tolerance for social
-activites. It ranges from the classic “I have headphones on and I can't hear you
+activities. It ranges from the classic “I have headphones on and I can't hear you
 right now (but it's not actually playing anything)” to the relatively new
 “staying in my room with the lights out for prolonged periods”.
 

@@ -18,7 +18,7 @@ For almost a year, I helped [ecix](https://www.ecix.net/), an Internet Exchange
 Provider, stay on top of their infrastructure. We built traffic monitoring
 systems, internal resource management software, and solved a lot of thrillingly
 hard problems together. My coworker and informal supervisor at the company was
-[Matthias Hannig](https://github.com/mhannig/). We became close friends, and he
+[Matthias Hannig](https://github.com/annikahannig/). We became close friends, and he
 profoundly changed a lot of my views on technical matters.
 
 We were tremendously productive together, despite our often disparate

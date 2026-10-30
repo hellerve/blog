@@ -21,7 +21,7 @@ for me and for the projects themselves.
 I’m an angsty person. Regular readers of my blog will know, I’ve always been
 upfront with it. I’m lucky enough to have a readership that either enjoys
 reading those posts or doesn’t care and just waits it out until I write about
-Lisp and C and weird hacks again. I’m also lucky enough to not having to
+Lisp and C and weird hacks again. I’m also lucky enough to not have to
 monetize this blog, and so I can just write what I want, and if people enjoy
 it, that’s great, and if not, no hard feelings.
 

@@ -39,7 +39,7 @@ string Int_format(string* str, int x) {
 
 A redditor known as 
 [u/basic-gongfu](https://www.reddit.com/user/basic-gongfu)—the creator of the
-[cixl](https://github.com/basic-gongfu/cixl) programming language, as it
+[cixl](https://web.archive.org/web/20180121190414/https://github.com/basic-gongfu/cixl) programming language, as it
 happens—gave me something much more useful: pointers on how to fix it.
 
 He told me that `snprintf` has a bit of useful behaviour: if you pass it a

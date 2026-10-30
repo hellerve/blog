@@ -9,7 +9,7 @@ post](https://blog.veitheller.de/Six_Simple_Sudoku_Solvers_I:_Python_(Reference)
 or by perusing [the backlog](https://blog.veitheller.de/sss/). Depending on your
 familiarity with my work or this blog, this post will either feel natural or
 supremely odd, because today, we’ll be talking about Smalltalk, or more
-specfically Pharo Smalltalk inside Glamorous Toolkit.
+specifically Pharo Smalltalk inside Glamorous Toolkit.
 
 I’m completely certain that Smalltalk, much like Lisp, is alien technology. It
 was handed to us by a higher power to taunt us, because it knew that we wouldn’t
@@ -39,7 +39,7 @@ inspected. There is a big emphasis on:
 - **debuggability**. This falls naturally out of liveness, of course, but it
   goes further than that. Tools are important, and debuggers are a special
   source of pride, wired together with inspectors.
-- Layer on Glamorous Toolkit, and you are addng **[Moldability](https://moldabledevelopment.com)**,
+- Layer on Glamorous Toolkit, and you are adding **[Moldability](https://moldabledevelopment.com)**,
   the ability to make context-specific views for your live data, quickly and
   cheaply.
 
@@ -50,7 +50,7 @@ So, how does that look like?
 <div class="figure-label">Fig. 1: Glamorous Toolkit, colors and all.</div>
 
 Here’s a picture. On the left, you see a notebook inside Glamorous Toolkit that
-you can think of much like a Jupyter notebook. I jsut executed the highlighted
+you can think of much like a Jupyter notebook. I just executed the highlighted
 code cell containing `Color blue`, executing the class-side method `blue` on the
 class `Color` to create an instance of it that represents, well, blue.
 
@@ -115,8 +115,8 @@ isPlaced
 	^value > 0
 ```
 
-A `SudokuGroup` is just a bag of 9 cells of distinct digist, be it a row, a column,
-or a box. The reason for its existence is that it can tell you is which digits
+A `SudokuGroup` is just a bag of 9 cells of distinct digits, be it a row, a column,
+or a box. The reason for its existence is that it can tell you which digits
 are already in use:
 
 ```smalltalk
@@ -124,7 +124,7 @@ placedValues
 	^(cells select: [:c | c isPlaced]) collect: [:c | c value] as: Set
 ```
 
-In this function, we return (`^`) the `celss` filtered by `isPlaced`, collect
+In this function, we return (`^`) the `cells` filtered by `isPlaced`, collect
 their `value`, and shove that into a `Set`. We could make this terser, but I
 didn’t want to overwhelm all of you folks who already have to deal with a
 foreign syntax.
@@ -159,7 +159,7 @@ We make 81 cells and all the groups. Then we walk the grid once and, for each
 cell, register it with its row, its column, and its box, and register each of
 those groups back with the cell. The wiring is bidirectional, and a cell knows
 the groups it belongs to. By the time `initialize` returns, the entire constraint
-structure of a Sudoku board is there, and no code will ever again have to compute
+structure of a Sudoku board is there, and no code will ever have to compute
 candidates again.
 
 This means that this is the only place where the magic numbers appear.

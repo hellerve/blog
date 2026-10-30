@@ -91,7 +91,7 @@ And that's it! We cheated by relying on the integer type for pedagogical
 purposes and because I don't know any better, but it enables us to do pointer
 arithmetic.
 
-I also learned that it is valid to do have an unused type parameter in Haskell,
+I also learned that it is valid to have an unused type parameter in Haskell,
 although this is arguably most senseless.
 
 ## A useful abstraction

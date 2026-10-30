@@ -130,7 +130,7 @@ awkward. I had this feeling of being trapped in a social [uncanny
 valley](https://en.wikipedia.org/wiki/Uncanny_valley)—the US functions mostly
 the same as Germany culture-wise, but sometimes just different enough that
 there was some friction that made it difficult for the foreign person to express
-themselves feely. One of the best decisions I made was to [write about
+themselves freely. One of the best decisions I made was to [write about
 it](https://blog.veitheller.de/Awkwardness.html), as open and as vulnerable as
 I dared to be. The reception was unequivocally positive, and a lot of
 international people shared similar feelings. It felt great to know that I
@@ -165,7 +165,7 @@ love in your schedule, or even invite them over if you can afford it and your
 landlord or roommate permits it. Some landlords are not as open about you
 inviting friends, and you should check with them if you plan on doing that, as
 early as possible. I checked to see whether that’s okay before I got my
-appartment, I even made it part of my initial message to the landlord. It was
+apartment, I even made it part of my initial message to the landlord. It was
 okay, and if it hadn’t been, I’d probably have looked somewhere else.
 
 If you have the means or are mobile enough, you might also think about bringing

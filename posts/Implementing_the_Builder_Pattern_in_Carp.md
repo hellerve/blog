@@ -94,7 +94,7 @@ Ideally, we’ll end up with this:
 As always with my blog posts, the solution to this problem is based on macros.
 First, we’re going to write macros that create setters for arrays and maps, as
 a kind of warm-up exercise. Once we’ve gotten this to work, we’ll try and write
-a macro emits a builder for a datatype passed to it. 
+a macro that emits a builder for a datatype passed to it. 
 
 ## Emitting setters
 
@@ -277,7 +277,7 @@ Next up: generating the builder type.
 
 ### Generating the builder type
 
-Generating the builder type should be fairly straighforward as well. We can
+Generating the builder type should be fairly straightforward as well. We can
 reuse the `generate-builder-name` helper function to generate the type name, and
 then iterate through the original members to get our new members.
 

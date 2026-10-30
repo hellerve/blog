@@ -56,7 +56,7 @@ write a few Python classes that will enable us to have a crude version of the
 The source code for this project is [on
 Github](https://github.com/hellerve/a_bad_idea/), if you want to follow along.
 
-Just to be clear, I don’t advertise you use this for anything other than your
+Just to be clear, I don’t advise you use this for anything other than your
 personal enjoyment. While this concept works well for a language like Racket,
 it doesn’t work super well in Python.
 
@@ -232,7 +232,7 @@ our user-supplied parsers and that’s it.
 
 We’re not quite done yet, however. For completeness’ sake, we’ll also have to
 implement `_get_code`, which is a very simple function that just reads the file
-and strips of the first line, because we don’t want to have the `#lang`
+and strips off the first line, because we don’t want to have the `#lang`
 directive in the string we pass to the user.
 
 ```

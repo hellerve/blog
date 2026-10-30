@@ -81,7 +81,7 @@ we push execution time down to eight seconds. Not too bad at all.
 
 Secondly, he observes that `[-]` and `[+]` just decrement or increment a cell
 until it is set to zero, which means that we can just add another opcode that
-will set the current cell to zero instead of looping alltogether. That’s a neat
+will set the current cell to zero instead of looping altogether. That’s a neat
 trick, but alas one I had already implemented, so no dice.
 
 The last one is a little trickier. There are a handful of loop patterns that

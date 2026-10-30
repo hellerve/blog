@@ -41,7 +41,7 @@ solve(Rows) :-
     labeling([ff], Vars).
 ```
 
-I assume that most of my readers are not fluent in Prolog—and neither am I—, but honestly, there is not that much going on in there. We define a function, assert a length for the board and a length for its constitutent rows. Then we assert that all cells are in the domain `1..9`, and that they are `all_different` across rows, columns, and blocks (`blocks` is a custom function we will get into later). 
+I assume that most of my readers are not fluent in Prolog—and neither am I—, but honestly, there is not that much going on in there. We define a function, assert a length for the board and a length for its constituent rows. Then we assert that all cells are in the domain `1..9`, and that they are `all_different` across rows, columns, and blocks (`blocks` is a custom function we will get into later). 
 
 Finally, we let the constraint solver take over using `labeling`. We can choose how it searches for candidates using the first parameter. Our choice, `ff`, stands for `fail-first`, but we could tune it to our needs if necessary. We could, for instance, use `labeling([ffc, bisect, down], Vars)` to get a solver that fails first with tiebreak (`ffc`), splits the domain in half (`bisect`), and goes downwards into the domain (i.e. from `9` to `1`).
 

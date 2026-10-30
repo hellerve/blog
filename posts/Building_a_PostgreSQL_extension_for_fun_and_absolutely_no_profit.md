@@ -27,7 +27,7 @@ and the one I came up with [can be found in the repo](https://github.com/hellerv
 [The official PostgreSQL documentation on extensions](https://www.postgresql.org/docs/current/extend-extensions.html)
 gives a little bit of a primer on why extensions are useful and sometimes
 required, but it’s mostly focused on the technical bits, so I thought I’d
-briefly explain what an extension is and why we’d use one..
+briefly explain what an extension is and why we’d use one.
 
 Extensions are packaged C-and-SQL artifacts that extend PostgreSQL with
 functions and data types. While SQL itself is geared toward defining data
@@ -160,7 +160,7 @@ Datum ddate_out(PG_FUNCTION_ARGS) {
 }
 ```
 
-The main bits that are interesting here is that we register the function using
+The main bits that are interesting here are that we register the function using
 `PG_FUNCTION_INFO_V1`, and then adhere to the signature PostgreSQL expects: we
 return a `Datum` and take in `PG_FUNCTION_ARGS`. We get to the actual arguments
 by using the accessors provided by PostgreSQL (`PG_GETARG_CSTRING` and
@@ -239,7 +239,7 @@ We utilize the fact that we can already get the current date in PostgreSQL’s
 C API, and just get the date from there. A relatively easy addition, all in
 all.
 
-Now that we’re practiced extension writes, let’s do some more interesting
+Now that we’re practiced extension writers, let’s do some more interesting
 things.
 
 #### Customizing our operators

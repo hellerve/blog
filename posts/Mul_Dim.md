@@ -10,7 +10,7 @@ seat, I’ll show you.”
 
 Angia frowned. They didn’t like when Dizz assumed that everything they did was
 interesting to everyone else, no matter how unrelated to their general interest
-profile. Nonethless, they quickly drew a hammock like the one Dizz had created
+profile. Nonetheless, they quickly drew a hammock like the one Dizz had created
 earlier, though a little more refined and cozy-looking. Dizz didn’t like to
 admit it, but they weren’t great at thaumaturgy. Of course, that was because
 often seen as an old-people thing—Angia’s own parent often complained about the
@@ -20,7 +20,7 @@ person, or a luddite.
 
 “So, look at them—I mean, her”, they said, giggling a little at the gendered
 pronoun. “It’s alright”, they quickly interjected when they noticed Angie was
-about to protest, ”it’s the 2-ohs, remember? They used gendered language, and so
+about to protest, “it’s the 2-ohs, remember? They used gendered language, and so
 I will.” Angie wanted to protest, but decided to shut their mouth instead. They
 knew it was just a manifestation of Dizz’s weird urge to shock people without
 actually being offensive—walking the line. Dizz dabbled in techno-history, after
@@ -30,37 +30,37 @@ tinkering, and sometimes for the pure shock value of their work.
 Angie tried to instead focus on the picture of the person that appeared inside
 of her. “Maya Silverstein”, explained Dizz, while the three-dimensional image
 slowly rotated, “was one of the more well known hackers in early 2-oh-2-oh. Her
-first contribution to the canon was made on the 23st of April, 2021, to be
+first contribution to the canon was made on the 23rd of April, 2021, to be
 precise. We can’t be completely sure, of course, because back then only the work
 people wanted to publish was enmeshed into the canon, and there are some
 apocryphal code sharing platforms of which no records survived.” Dizz paused a
 little and the two contemplated both the person and their background. What was
 it like to grow up in a world where contributing was optional? Where people had
 to fear that sharing all of their work would lead to them being shunned or
-shammed or expelled from whatever social cabal people formed back then?
+shamed or expelled from whatever social cabal people formed back then?
 
 Dizz swapped the image to the next one, an old-fashioned page from the
 two-dimensional web; a picture of Maya on the left hand side, and a few meagre
 blocks of hyperlinked text on the right. Angia recognized the baroque design:
 some ancient code-sharing site. “Her first few years of contributing must’ve
 gone by relatively quietly. Low publicity count, and her web activity also
-suggests a few minor personality issues: she was member of some pretty dark
+suggests a few minor personality issues: she was a member of some pretty dark
 niche communication platforms, and her sexuality profile—or what little we have
 of it, mostly aborted searches and such—shows some unusual kinks for the time.
 Maybe she just searched for them out of curiosity, of course—”
 
-Angia sighed. It wasn’t so much that they had a problem with Dizz choice of
+Angia sighed. It wasn’t so much that they had a problem with Dizz’s choice of
 topic, but they really wished Dizz would stop fooling around. The sexuality of
 2-ohs was so boring! “What do you want to actually show me?”, they said,
 clicking around Maya’s profile randomly to pass time.
 
 Dizz reset the site and faded all but one element. “Look at that contribution
-block! They—she called it ‘Ceberus’.“
+block! They—she called it ‘Ceberus’.”
 
 “Well, what is it? I can’t read 2-dim code, you know that!”, grunted Angia. Dizz
 opened the contribution block, and transpiled it to a more modern format. “I
-trained a little network this morning to aid me in decyphering these. It isn’t
-perfect, but it understand like ninety percent of these and spits out Fab.”
+trained a little network this morning to aid me in deciphering these. It isn’t
+perfect, but it understands like ninety percent of these and spits out Fab.”
 Angia rolled their eyes at the idea—Fab was Dizz’s own creation, and while
 straightforward, not the best code format in the world. “Get it now?”, Dizz
 inquired excitedly—they either hadn’t seen Angia’s gesture of annoyance or
@@ -74,7 +74,7 @@ serious!” Their eyes were wide now. “How is this not in the canon?”
 actually exists, unbeknownst to parents worldwide. “She figured it out, all on
 her own! She wrote papers about it, and if you follow the chain, she even got
 quoted by the people behind Neumann and squeal and all of the early mul-dim
-format compiler writers!“ They forced the presentation inside Angia again, and
+format compiler writers!” They forced the presentation inside Angia again, and
 showed them a few select papers, and the references back to Maya’s work.
 
 “I think it is because she chose to write those papers in the canon and not
@@ -84,7 +84,7 @@ among mul-dim format researchers and compiler writers for a while, and
 eventually even got a mul-dim compiler done in a mul-dim language—in a text
 editor.”
 
-Angia chucked. Dizz often reminded them that back in the day, people programmed
+Angia chuckled. Dizz often reminded them that back in the day, people programmed
 with nothing, and Angia never stopped being amazed.
 
 “So, you’re telling me that it’s not only possible to do that, but also that we
@@ -94,14 +94,14 @@ don’t even remember the people who do?”
 also web, and that either means she died or became a luddite. Both are about
 equally likely, because a bunch of megacorp people repackaged her work and
 passed it to the masses as their own work, and it seems that that was pretty
-hard on her. Researching lawyers, then pharamceuticals, that sort of 2-oh mind
-drama.“ Dizz paused, and sighed. “And that’s all I have.”
+hard on her. Researching lawyers, then pharmaceuticals, that sort of 2-oh mind
+drama.” Dizz paused, and sighed. “And that’s all I have.”
 
 Angia went through the snapshots of Maya’s life again. The picture: grainy as a
 three-dimensional reproduction of a two-dimensional picture always was. The
 person in it looked like a typical 2-oh hacker, nothing obviously remarkable.
 The profile: a clunky representation of a life slaved away on tools so much
-inferior than anything Angia had ever touched, and yet obviously Maya had
+inferior to anything Angia had ever touched, and yet obviously Maya had
 wrestled them and prevailed, and co-authored one of the main strands of the
 canon. And then the transpiled code, a beautiful mess of obviously
 machine-translated mul-dim code, into a format only Dizz could really navigate.

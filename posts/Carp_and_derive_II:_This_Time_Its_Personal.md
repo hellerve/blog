@@ -32,7 +32,7 @@ should roughly cover the same grounds, but I’ll try to rephrase it a little
 bit—you can switch between the explanation to see if one makes sense where the
 other doesn’t!
 
-A normal invocation of `derive` takes the type on which we should operated as
+A normal invocation of `derive` takes the type on which we should operate as
 well as the interface to derive as an argument. So if we defined a simple
 `Address` type, this is what we might do:
 
@@ -152,7 +152,7 @@ Let’s take care of the boilerplate first!
 ```
 <div class="figure-label">Fig. 6: Registering derivers.</div>
 
-Registering derivers is as simple by prepending the new deriver pair at the
+Registering derivers is as simple as prepending the new deriver pair at the
 beginning of the list. The first element of that list is clear: the name of the
 function. But what would the actual deriver look like?
 
@@ -183,7 +183,7 @@ And that’s all we need! We’re done!
 
 I understand if all of this seems like sleight of hand. It seems like we just
 wrote a bunch of connector code, and suddenly we were done. But that’s actually
-all that `derive` does: it provides a faciliating mechanism and an API.
+all that `derive` does: it provides a facilitating mechanism and an API.
 Providing types and implementations for interfaces is left to the users of that
 API.
 

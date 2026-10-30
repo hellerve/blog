@@ -13,14 +13,14 @@ Carp macros.
 The topic of format strings has come up on [the Gitter
 channel](https://gitter.im/carp-lang/Carp) ever since I joined it.
 Eventually, [a Github issue](https://github.com/carp-lang/Carp/issues/108)
-was openend, and people started voicing their opinions on the matter. It took a
+was opened, and people started voicing their opinions on the matter. It took a
 very long time until I felt confident I understood the problem and an even
 longer time until I felt that I was able to tackle it. Even then, there was
 a good amount of functionality missing from Carp proper that I had to add
 myself. Even as a Core Contributor, this is always scary. I’d rather not make
 any API decisions on my own when it concerns the core language.
 
-Carp is by no means big enough for a commitee, so decisions are often made in a
+Carp is by no means big enough for a committee, so decisions are often made in a
 quick chat with Erik and the other stakeholders—i.e., the Carp users interested
 in that specific feature. This can lead to mistakes in the design of some
 features, and sometimes we have to iterate over a piece of functionality
@@ -34,7 +34,7 @@ An important consideration was that while `printf` exists, it is a type-unsafe
 variable-argument function, and we cannot express that in Carp—at least not
 yet. So we needed a type-safe alternative. A fitting interface was quickly
 found and implemented, and then we built a macro on top of it to deliver a
-clean API to the user. This is what I want to disccuss.
+clean API to the user. This is what I want to discuss.
 
 ## A hard day’s work
 
@@ -217,7 +217,7 @@ in the introduction—are great places to start.
                        prettier, but `cond` is implemented as a macro itself
                        and thus cannot be used in the evaluator.
 
-<span id="3">3.</span> I’d also be up for stealing Rusts formatting syntax,
+<span id="3">3.</span> I’d also be up for stealing Rust’s formatting syntax,
                        but I’m not a Rust user and thus do not know the
                        system’s upsides and downsides well enough to know
                        whether copying it would be of merit.

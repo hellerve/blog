@@ -14,7 +14,7 @@ code should run. This in turn might help make our code more performant.
 This time we will look into “prefetching”, i.e. moving data into memory that
 we're sure we will need soon. Our compiler is somewhat smart about that, but even
 today we can sometimes do better than the machine—although I'd be very wary
-and go down that rabbit hole only when I need to, which fankly isn't all too often.
+and go down that rabbit hole only when I need to, which frankly isn't all too often.
 
 Let's tell GCC to grab our stuff!
 
@@ -41,8 +41,8 @@ we prefetch, where reading is the default. The second optional argument
 `3` is the default. It tweaks the degree of temporal locality, meaning that if
 we want to access the memory address multiple times—such as in a long loop—we
 can keep this value as it is. We might want to tweak it if we only access it
-once or more. Both of these values should probably only ever set after
-experimenting with their perforamnce implications, because I'm not sure they
+once or more. Both of these values should probably only ever be set after
+experimenting with their performance implications, because I'm not sure they
 make a huge difference. Then again, this blog post is basically on
 micro-optimizations, so maybe my audience will disagree.
 
@@ -104,7 +104,7 @@ The performance gain seems to come largely from a decrease in cache load
 misses—you will also see an increase in cache loads, but this leads to
 a better memory access pattern. I would've liked to show you the output of
 `perf` with these misses enabled, but that'll have to wait until I have a
-Linux machine that will doesn't blow up my hosting plan when I run tests on it.
+Linux machine that doesn't blow up my hosting plan when I run tests on it.
 
 ## A quick recap
 

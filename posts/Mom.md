@@ -26,7 +26,7 @@ every once in a while, and I know she’s only able to accept it because of its
 utility and because she loves me.
 
 Every single one of my friends loved my mom. When I was a teenager there would
-often be group sleepovers at our appartment, because it’s pretty close to the
+often be group sleepovers at our apartment, because it’s pretty close to the
 center of the little city I grew up in. Some of my friends would practice run
 difficult conversations they would need to have with their parents with her. She
 is the most understanding person I know, and she listened to all our problems

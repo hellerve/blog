@@ -4,7 +4,7 @@ date: 2023-02-27
 ---
 
 I find it hard to talk about the work that I’m doing at feenk, working on
-[Glamorous Toolkit](gtoolkit.com/), in the “dead” medium of a blog post.
+[Glamorous Toolkit](https://gtoolkit.com/), in the “dead” medium of a blog post.
 Consequently, I haven’t written much about anything I’ve done in a long, long
 while.
 

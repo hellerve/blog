@@ -230,7 +230,7 @@ So, what’s different? Most importantly, one of the main operators of regular
 expressions is completely missing: alternation. That’s right, no `|`. This is
 very important, because that little thing is often where the fun begins in a
 regular expression engine, and its omission is one of the main reasons why
-Luas’s engine is so small. The engine also implements some non-standard
+Lua’s engine is so small. The engine also implements some non-standard
 operators such as `\l` mentioned above, but alternation is definitely the big
 one.
 
@@ -268,7 +268,7 @@ simplify a lot of the already simple code. Stay tuned!
 
 A cool thing that also landed in Carp shortly after patterns is compile-time
 validation of pattern literals in the parser. I wrote that code one morning
-during a meeting and I’m less than sure that it will works in all cases, but so
+during a meeting and I’m less than sure that it will work in all cases, but so
 far it seems relatively stable.
 
 We’re also not entirely clear on whether we will eventually need a
@@ -295,8 +295,8 @@ But like with anything in Computer Science, this is untrue. I know it now
 because I worked on such an engine myself, and survived. It was a similar
 experience as when I designed my [first programming language](https://github.com/zepto-lang/zepto),
 or when I wrote [my first editor](https://github.com/hellerve/e), or tried my
-hands [at a debugger](https://github.com/hellerve/d), or learnt how [simple
-browser rendering engines work](https://github.com/hellerve/r). All of these
+hands [at a debugger](https://git.veitheller.de/degrowth/d), or learnt how [simple
+browser rendering engines work](https://git.veitheller.de/degrowth/r). All of these
 experiences were magical and addicting, because they opened my mind to what’s
 possible. And now it happened again.
 
@@ -317,7 +317,7 @@ See you next time!
                        will never contain a parenthesized section”, it is
                        generally worth encoding them.
 
-<span id="3">3.</span> Hetereogeneous arrays are definitely one of the useful
+<span id="3">3.</span> Heterogeneous arrays are definitely one of the useful
                        data structures that are missing from most strongly-typed
                        languages. Then again, you’re better off explicitly
                        defining a struct type anyway.

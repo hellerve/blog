@@ -49,7 +49,7 @@ serves a simple goal: if you know who owns what at any given moment, you also
 know when you can get rid of it.
 
 The Carp compiler tries very hard to do as much as possible for you. It infers
-almost any type, the occasional annotation nonwithstanding, for once. In
+almost any type, the occasional annotation notwithstanding, for once. In
 the same vein, it tries to make memory management as simple and automatic as
 possible.
 
@@ -83,7 +83,7 @@ argument, it will take over ownership.
 
 In Figure 1<sup><a href="#1">1</a></sup>, the function `test` will take
 ownership over the string that is being passed to it. This means that it now
-controls the memory associate to it, and it wouldn’t be safe for our main
+controls the memory associated with it, and it wouldn’t be safe for our main
 function to reuse it. Thus, `main` gives control over to `test`.
 
 ```
@@ -124,7 +124,7 @@ is where references come in.
 
 The program in Figure 3 will compile. By handing over references to `test`—and
 changing the call to `println` accordingly—we essentially tell the compiler
-that we˚re not done with `a` just yet. We’ve only borrowed it to `test`.
+that we’re not done with `a` just yet. We’ve only borrowed it to `test`.
 
 ## Special cases and implications
 

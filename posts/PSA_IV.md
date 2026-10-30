@@ -5,7 +5,7 @@ date: 2017-07-13
 
 Every once in a while I get messages about my blog posts. As I don't have
 comments enabled on my blog, most of these messages come by e-mail. While this
-is perfectly acceptable and prudent, I'd like to share and alternative way to
+is perfectly acceptable and prudent, I'd like to share an alternative way to
 communicate with me today: Github issues!
 
 This blog is [entirely open source](https://github.com/hellerve/blog), and I've

@@ -41,7 +41,7 @@ to the screen, and loop. This leaves us with eight operations in total, namely:
 - `+`: Increment the value in the current cell.
 - `-`: Decrement the value in the current cell.
 - `.`: Print the value of the current cell as an ASCII character.
-- `,`: Read in an ASCII character as a integer and put it into the current
+- `,`: Read in an ASCII character as an integer and put it into the current
   cell.
 - `[`: If the value in the current cell is not zero, continue to the next
   character. If it is, jump to the matching `]`.
@@ -153,9 +153,9 @@ body that was closed<sup>[1](#1)</a></sup>.
 
 If none of the premature exit conditions apply, we compile the character using
 `brainfuck-compile-instruction`. This will return a pair of an incrementor
-values that will tell us by how much we have to advance the index—that will be
-explained in more depth shortly—, and the compiled isntructions. We
-desconstruct that pair using the `car` and `cadr` list operations, and recurse
+value that will tell us by how much we have to advance the index—that will be
+explained in more depth shortly—, and the compiled instructions. We
+deconstruct that pair using the `car` and `cadr` list operations, and recurse
 into the next instruction. That way we'll incrementally build our instructions
 until we end up with a full program.
 
@@ -231,7 +231,7 @@ we’ll keep hunting. We get the first character and decrement the depth if it i
 a `]` and increment if it’s a `[`, otherwise we leave it untouched. Then we
 recurse using the rest of the string and the updated depth.
 
-And that’s it! In just under x45 lines we wrote a compile-time Brainfuck
+And that’s it! In just under 45 lines we wrote a compile-time Brainfuck
 compiler!
 
 ## What’s Next?

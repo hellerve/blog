@@ -94,7 +94,7 @@ been there probably knows that.
 ## What did I end up with?
 
 After a very fruitful and pleasant process—thanks in no small part to my current
-employer, who’s been extremely flexible and accomodating, and Recurse, who’ve
+employer, who’s been extremely flexible and accommodating, and Recurse, who’ve
 been very patient and reassuring to me during the entire process—, I ended up
 with my old job. I realize that this must seem anti-climactic, but there are a
 few facts that have changed since I went on my job-hunting journey a month ago.

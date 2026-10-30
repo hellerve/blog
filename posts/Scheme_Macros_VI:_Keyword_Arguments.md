@@ -196,8 +196,8 @@ By Mimir’s beard! What did we do there?
 
 To be fair, it has been a while since I wrote that macro and when I looked at
 that again, I wanted to kick my old self in the butt for not writing any
-comments—one of my nastiest code habits. I was eventually able to decypher it,
-however, and I will help you decypher it too!
+comments—one of my nastiest code habits. I was eventually able to decipher it,
+however, and I will help you decipher it too!
 
 We `map` over the list of keyword arguments we’ve been given—except we’re using
 a little helper called `treat-keywords` to make the keyword argument format
@@ -251,7 +251,7 @@ actually understand what’s going on. To write good error messages, you’ll ha
 to play around with the code a lot and figure out what messages would help you
 most if you miss something. What happens if the list of keyword arguments is
 malformed? What happens if the call to the keyword function tries to pass
-non-existant arguments? How about adding argument type
+non-existent arguments? How about adding argument type
 checking<sup><a href="#1">1</a></sup>?
 
 There’s a lot you could potentially add, but I think a simple clean abstraction

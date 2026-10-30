@@ -4,9 +4,9 @@ date: 2017-09-20
 ---
 
 After having explored how to implement a [module system](//blog.veitheller.de/Scheme_Macros_I:_Modules.html)
-and [generic functions](//blog.veitheller.de/Scheme_Macros_I:_Generics.html)
+and [generic functions](//blog.veitheller.de/Scheme_Macros_II:_Generics.html)
 in Scheme macros, we’ll look this time at how to reimplement
-[let-style](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Lexical-Binding.html)
+[let-style](https://web.archive.org/web/20170817124540/http://www.gnu.org:80/software/mit-scheme/documentation/mit-scheme-ref/Lexical-Binding.html)
 local bindings. As a little extra, we’ll explore a way of defining them that
 I’ve never seen used before, partly because it’s somewhat inefficient—but
 at least it gets rid of mutable state—no `set!` required.
@@ -105,7 +105,7 @@ For now, let’s try and implement the simplest version first: plain `let`.
 
 ## let
 
-At it’s core, `let` is quite simple: if we just want to introduce local
+At its core, `let` is quite simple: if we just want to introduce local
 bindings, we can rewrite `let` expressions to a lambda that takes a bunch
 of arguments and is immediately called with the values that were provided in
 the form. Let’s build a simple macro that does exactly this:
@@ -187,7 +187,7 @@ That’s a lot of lingo, so let’s look at an example of macro expansion:
 </div>
 
 And that’s it! We’re done with `let`.<a href="#3"><sup>3</sup></a> And because
-that didn’t require a lot of code, we’ll now look at `let`s more handy brother,
+that didn’t require a lot of code, we’ll now look at `let`’s more handy brother,
 `let*`.
 
 ## let\*
@@ -208,7 +208,7 @@ in `let`. That sounds like a job for nested lambdas!
   Fig. 9: Implementing sequential bindings with nested lambdas.
 </div>
 
-Let’s walk though the code again—recursive macros can be a bit hard to keep straight. 
+Let’s walk through the code again—recursive macros can be a bit hard to keep straight. 
 Our base case will be invoked when there are no more bindings to
 produce; it will create a lambda with the body that was provided to `let*` and
 immediately call it. This ensures that we don’t leak any contents of the body
@@ -365,7 +365,7 @@ knowledge of implementing `let` in self-study:
 
 We just implemented local bindings! I hope it was as much fun for you reading
 this as it was for me writing it. I don’t write much Scheme these days—ever
-since abandoing [zepto](https://github.com/zepto-lang/zepto), really—, and it’s
+since abandoning [zepto](https://github.com/zepto-lang/zepto), really—, and it’s
 a breath of fresh air to get back into it. Opening my own REPL and hacking away
 is one of the most rewarding things I do in my spare time, so if you have any
 suggestions for future posts in this series, [ping

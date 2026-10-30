@@ -46,7 +46,7 @@ I personally enjoy sidenotes—some call them marginalia—very much. They’re
 unobtrusive but close enough to the text to not break coherence. My personal
 gold standard in books are the books by [Edward
 Tufte](https://www.edwardtufte.com/), and my personal favorite is [Beautiful
-Evidence](https://www.edwardtufte.com/tufte/books_be). Edward Tufte is a bit of
+Evidence](https://web.archive.org/web/20191202152737/https://www.edwardtufte.com/tufte/books_be). Edward Tufte is a bit of
 a cult figure in data science, and for good reason. His thoughts are always worth
 reading, and he walks the talk—his books are typeset gorgeously.
 
@@ -113,7 +113,7 @@ footnotes I find this to be just rude.
 
 Having your footnotes at the end of the book, ideally grouped by chapter, is
 probably the best compromise: it doesn’t disturb the flow of the page, but
-provides a canonical location for all footnotes. We can accomodate both long,
+provides a canonical location for all footnotes. We can accommodate both long,
 meandering footnotes and short references there. Though this brings me to another
 point of grief for me: mixing footnotes and references.
 
@@ -153,7 +153,7 @@ took something away from it that made you think, and I hope we’ll meet again!
                        written by french philosophers, but that must be a
                        coincidence. Anyway, my editions of Baudrillard’s
                        “Simulacra and Simulation” and Foucault’s “The Order of
-                       Things” both exhibit that idiosyncracy.
+                       Things” both exhibit that idiosyncrasy.
 
 <span id="3">3.</span> My edition of “Seeing Like a State” by James C. Scott does
                        this, and it annoyed me to no end, so much so that I told

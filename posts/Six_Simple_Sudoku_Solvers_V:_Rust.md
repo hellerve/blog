@@ -45,7 +45,7 @@ I’m leaving the types and helpers here for reference. Most of them should be p
 
 ### The solver
 
-We’ll go into the entry point first, but we’ll have to take another quick detour. In our Rust solution, we’re not working with `Board`s only, we also work with `State`s. And we need a function to get from a board to a state (`init_state`) . Since this is mostly housekeeping, I’m eliding it here. If you want to check it out, [check out the repository version](https://github.com/hellerve/sudoku/blob/main/sudoku.rs).
+We’ll go into the entry point first, but we’ll have to take another quick detour. In our Rust solution, we’re not working with `Board`s only, we also work with `State`s. And we need a function to get from a board to a state (`init_state`). Since this is mostly housekeeping, I’m eliding it here. If you want to check it out, [check out the repository version](https://github.com/hellerve/sudoku/blob/main/sudoku.rs).
 
 ```
 fn solve(mut s: State) -> Option<Board> {

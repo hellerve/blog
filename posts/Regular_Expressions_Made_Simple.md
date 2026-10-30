@@ -11,9 +11,9 @@ expression engine ever, written by Rob Pike for educational purposes. The
 chapter is written by Brian Kernighan, and it's a promising preview for the
 book.
 
-As in the previous post, the algorithm is suprisingly compact.
+As in the previous post, the algorithm is surprisingly compact.
 It's originally written in C, and the code is very nice to look at. I've
-deviced to transcribe it into Scheme for the purposes of this blog post. If
+decided to transcribe it into Scheme for the purposes of this blog post. If
 you are familiar with C and aren't interested in Lisp I urge you to read the
 original article, because it is very illuminating. If you're up for another
 round of parenthetical goodness, though, I'm happy to provide it!
@@ -144,7 +144,7 @@ The `match-here` function is the bread-and-butter function of our algorithm.
 It deals with most of the special cases and the regular case, and does most
 of the heavy lifting.
 
-We dispatch on a number of case, in descending order:
+We dispatch on a number of cases, in descending order:
 
 * If the regular expression is empty, we say that the match has succeeded.
 * If the second character in our match is a `*` wildcard, we call `match-star`,
@@ -155,7 +155,7 @@ We dispatch on a number of case, in descending order:
   empty.
 * If we are supposed to match a regular character, we check for equality (if the
   character is a `.` wildcard, we skip that part). If they're equal we tail-call
-  `match-here` with the tails of both the reular expression and the text to
+  `match-here` with the tails of both the regular expression and the text to
   match.
 * In all other cases the match has failed.
 

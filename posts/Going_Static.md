@@ -8,7 +8,7 @@ I am a backend-centric fullstack developer, which means that if you
 hold me at gunpoint I can probably come up with a website that doesn't
 suck, but I would be much more comfortable building your API.
 
-Nonetheless, I have worked with with a few brilliant frontend
+Nonetheless, I have worked with a few brilliant frontend
 developers who greatly influenced the way I look at the Web. In
 hindsight, I did everything wrong when my website first launched a few
 years back. That is a blatant overstatement, of course, but my convictions
@@ -25,7 +25,7 @@ approach building these websites, both with and without a backend.
 I alluded to it earlier: I am not a frontend developer. While I have worked
 in web development in at least some capacity for most of my professional life,
 I am not especially productive when confronted with stylesheets. I have a good
-grasp on JavaScript and have used [React](https://facebook.github.io/react/)
+grasp on JavaScript and have used [React](https://react.dev/)
 and [Angular](https://angular.io/) to build pretty large web applications in
 minimal time. Styling those websites, however, takes ages if you let me do it.
 
@@ -47,7 +47,7 @@ it is hard—especially so if it has to fulfill a purpose (think Customer Resour
 Management software or sales portals).
 
 **II.** I believe minimalism and function are naturally at odds. Professional life
-is always about selling things, in one or another. It has to serve a purpose,
+is always about selling things, in one way or another. It has to serve a purpose,
 it has to fulfill its function. Thus, looking back at the first sentence of this
 paragraph, we can conclude that minimalism and professional life are at odds.
 
@@ -67,7 +67,7 @@ intuition.
 When working on projects for myself or people who aren't paying me to work, I take
 my time. I have come to think that that is key to me being able to build a website
 I don't completely despise. This is especially true because my resources for
-work that is not my domain are expertise are somewhat limited. Of course there
+work that is not my domain or expertise are somewhat limited. Of course there
 are good and bad days at work as well, but if I have less of an idea of what I am
 doing, those good days really are my only hope. The variance is just bigger.
 

@@ -213,7 +213,7 @@ people. He categorizes them as cretins, fools, morons, and lunatics. The lunatic
 is the dangerous one, recognizable by the liberties he takes with common sense,
 by his flashes of inspiration, and by the fact that sooner or later he brings up
 the Templars. Eco allows that there are lunatics who don’t bring up the Templars,
-but maintains that the ones who do are the most insidious. Unrelatedy, have I
+but maintains that the ones who do are the most insidious. Unrelatedly, have I
 told you about dependent types?
 
 <span id="2">2.</span> I don’t think this is Eco being sly. It reads like an

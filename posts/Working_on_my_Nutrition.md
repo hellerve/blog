@@ -84,7 +84,7 @@ organizer](https://enthusiasticon.de) wrote [nom](https://github.com/blinry/nom/
 a command line tool for tracking weight loss and caloric intake. It has been my
 primary source of tracking after a failed attempt at using it consistently last
 year. I’m not really using it the way it was designed, mostly to calculate my
-intake for individual day, and it’s been really helpful! Thanks, blinry!
+intake for individual days, and it’s been really helpful! Thanks, blinry!
 
 ## Drink lots of water
 
@@ -103,7 +103,7 @@ break that spell, similar to the feeling that programmers get when they’re
 
 When it comes to nutrition, I found consistency to be much harder. I love
 cooking seasonally and with local produce, and that means I don’t always get to
-consistenly max out all of my food groups—I don’t think anyone is selling
+consistently max out all of my food groups—I don’t think anyone is selling
 avocadoes grown in Brandenburg at the farmer’s market yet. Instead I just try
 to eat healthily first, and supplement with vegan protein powder and the like
 if I need to. I found this to be a good compromise between what my mind wants

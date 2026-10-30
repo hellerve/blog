@@ -105,7 +105,7 @@ with a macro implementing `if`, again prefixed:
 </div>
 
 Okay, so all `if` does is take a condition and either one or two forms. If we
-Provide it with only one, we provide `nil` as the default else clause. If we
+provide it with only one, we provide `nil` as the default else clause. If we
 provide both, we call the condition with both expressions wrapped in anonymous
 functions. Wait, what?
 
@@ -141,7 +141,7 @@ when I first discovered this trick. So you might want to step back and think
 about this for a while before continuing.
 
 *UPDATE:* I knew that I couldn’t possibly have been the first person to come up
-with this, and, embarassingly enough, it’s actually quite a famous encoding, as
+with this, and, embarrassingly enough, it’s actually quite a famous encoding, as
 pointed out by Reddit user [ghkbrew](https://www.reddit.com/r/ProgrammingLanguages/comments/9sf02m/conditionals_as_scheme_macros/e8o9oxh/):
 it’s the [Church encoding](https://en.wikipedia.org/wiki/Church_encoding#Church_Booleans)!
 I’m a little bummed that I didn’t recognize this, but oh well—you live and you
@@ -233,7 +233,7 @@ least in theory—fairly similar.
 #### `case`
 
 At a first glance, `case` looks similar to the more well-known `switch`
-statements in other languages, sans `break` and with arbitray types. Our
+statements in other languages, sans `break` and with arbitrary types. Our
 variation on the theme will always work with lists of comparators, to make
 implementing it a little more straightforward<sup><a href="#2">2</a></sup>.
 Extending it to single-value comparators is left as an exercise to the reader.
@@ -341,7 +341,7 @@ very hard to implement. Try it out and see for yourself!
 ## Fin
 
 In this blog post, we’ve implemented a bunch of conditionals, something that we
-might have thought of fundamental and necessarily provided by the language. With
+might have thought of as fundamental and necessarily provided by the language. With
 the power of macros, this needn’t be true. We can add our own abstractions, even
 on the boolean plane.
 

@@ -16,7 +16,7 @@ and leverages websockets. The UI's language is inspired by [Material
 Design](https://material.io/), but doesn't really adhere to it. It's also not
 responsive, because I couldn't be bothered with that just yet. Let me walk you through
 the ideas and guidelines I adhered to and the design decisions I made on the
-way, because I feel like it is a different kind of chat system alltogether.
+way, because I feel like it is a different kind of chat system altogether.
 
 You can see it in action [here](https://veitheller.de/hi).
 
@@ -51,7 +51,7 @@ Now for the part that is not as ordinary. You can send messages to channels
 you're not a member of. This again tries to mimic real-world communication, and
 is the equivalent to saying something to a group of people and then walking
 away. This is generally a dick move and I can construct all kinds of situations
-where this abused, but for my experiment I assume that everyone is a well
+where this is abused, but for my experiment I assume that everyone is a well
 behaved person on the internet—this is where the naivete comes in.
 
 This is a simple addition, but it completely changes the semantics of a channel.

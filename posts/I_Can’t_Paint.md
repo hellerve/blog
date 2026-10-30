@@ -7,7 +7,7 @@ I'm not very good with a paintbrush, so I made a bot that paints
 for me. It's called [shinupaint](https://twitter.com/shinupaint)
 and updates every 10 minutes while I'm online. It's still a little
 buggy, but it produces relatively pretty results. You can find
-the source code [on Github](https://github.com/hellerve/shinu).
+the source code [on Github](https://git.veitheller.de/hellerve/shinu).
 
 ![](https://pbs.twimg.com/media/C7NinIJXgAAdbBl.jpg)
 <div class="figure-label">Fig. 1: One of my favorites thus far.</div>

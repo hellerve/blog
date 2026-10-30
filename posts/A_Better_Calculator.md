@@ -9,7 +9,7 @@ know that the people who attended my lightning talk at Recurse Center last
 Thursday have, and everyone whom I've bothered by ranting about it before or
 after. I will write a quick blog post about it, followed by a shameless
 plug—hint: I've been bitten by the
-[reimplementation bug](https://github.com/hellerve/bc) yet again.
+[reimplementation bug](https://git.veitheller.de/pl/bc) yet again.
 
 `bc` is one of those commandline gems that are easy to overlook but are
 extremely handy if you know about them. It's a simple C-like programming
@@ -46,7 +46,7 @@ build a better REPL.
 <div class="figure-label">Fig. 2: A screencast of my `bc` reimplementation in
 action.</div>
 
-The REPL features a nice realtime preview, readline capabilites, and tab
+The REPL features a nice realtime preview, readline capabilities, and tab
 completion—coming soon, courtesy of an
 [independent contributor](https://github.com/hellerve/bc/pull/1). It is a
 pleasure to use, even if the underlying `bc` implementation doesn't completely

@@ -229,7 +229,7 @@ but it is still fairly manageable. We initialize the element we want to return
 using `zero`, which will generate a zero value. This will be the default if we
 don’t find anything. Then we iterate over the entries in the bucket and, if we
 find any entry whose key member matches the given key, set the element we want
-to return to that entries value and return.
+to return to that entry’s value and return.
 
 This is it! Those 40-ish lines of code are enough to specify a simple hashmap
 type!
@@ -239,7 +239,7 @@ But is it any good?
 ## Caveats
 
 There are a few things that make this hashmap implementation suboptimal.
-ALthough the Carp community was very excited when I first wrote this simple
+Although the Carp community was very excited when I first wrote this simple
 little library, I immediately cautioned against using it as our default hashmap
 implementation. This is for a few reasons that I want to share with you, and maybe
 you can rectify some of its flaws and make it better!
@@ -251,7 +251,7 @@ you can rectify some of its flaws and make it better!
 - Even for the ones that I have in fact heard of, this one is not particularly
   good. It’s the simple textbook example of how to implement hashmaps, but it
   doesn’t hold a candle to the standard implementations in circulation today.
-- It does a lot of copies. Remember all of the weird `@` glyphs everyhwere?
+- It does a lot of copies. Remember all of the weird `@` glyphs everywhere?
   Every single one of those is a copy, and this can be super costly. I’m sure
   they’re avoidable, but, truth be told, I haven’t invested a lot of time into
   getting rid of them.

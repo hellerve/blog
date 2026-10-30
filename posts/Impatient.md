@@ -21,7 +21,7 @@ laughing, crying, fighting, cuddling, making noise.
 
 As Turtle emerged from the stream, one of the animals turned. A small green, gray,
 furry, scaly, incredibly adorable body wobbled and a face lit up in the biggest smile
-it could produce. “Hawou”, she exlcaimed, waving so hard she almost fell over.
+it could produce. “Hawou”, she exclaimed, waving so hard she almost fell over.
 
 “Hello, girl”, Turtle said as he walked over until their noses touched.
 

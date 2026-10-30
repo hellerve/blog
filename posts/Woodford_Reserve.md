@@ -7,7 +7,7 @@ As a few of my readers might know, I recently finished my batch at the
 [Recurse Center](http://recurse.com/). I’m currently on my flight back from
 the States. Because of a delayed flight, I found myself in a duty-free shop
 earlier where I decided to shop my frustration away. Naturally, my eyes were
-mesmerized by the—embarassingly small—liquor shelves. After toying with the
+mesmerized by the—embarrassingly small—liquor shelves. After toying with the
 idea of buying a young bottle of Royal Salute—young in this case means their
 youngest edition, which is 21 years old—I settled for a bottle of one of my
 go-to bourbons, [Woodford Reserve](https://www.woodfordreserve.com/) Double
@@ -74,7 +74,7 @@ to the other beauties in the area. This, of course, is no coincidence: as I
 alluded to earlier, this is a ploy by Brown-Forman: they needed to create a
 spirit that was able to compete with Maker’s Mark, one of the first craft
 bourbons that “made it”.<sup><a href="#2">2</a></sup>  This isn’t meant to
-discount the spirit’s quality—it’s a superb piece of craftmanship—, but it’s
+discount the spirit’s quality—it’s a superb piece of craftsmanship—, but it’s
 an interesting lens through which you can view one of Kentucky’s finest
 liquid products. At which point I should probably introduce you to the real
 thing.
@@ -141,7 +141,7 @@ and the vanilla and leather join forces to stick to your tastebuds, sealing
 the deal with our Double Oaked. There is a whole lot going on with the fruit
 notes as well, but I feel like that can only be tasted, not described—at least
 yours truly is lacking the words here. All the way at the end a tiny bit of
-banana gets us by surprise.
+banana takes us by surprise.
 
 The finish of the Double Double Oaked comes as a little bit of a relief.
 Although there still is an undisputable amount of oak in there, we now also
@@ -165,5 +165,5 @@ at one of the most famous whiskey shops in Germany, and I doubt I’ll ever catc
 up now.
 
 <span id="2">2.</span> For more information on this little feud and a history
-of bourbon in general I suggest Fred Minnick’s “Bourbon: : The Rise, Fall, and
+of bourbon in general I suggest Fred Minnick’s “Bourbon: The Rise, Fall, and
 Rebirth of an American Whiskey”.

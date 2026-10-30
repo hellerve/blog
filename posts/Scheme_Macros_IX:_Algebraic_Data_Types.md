@@ -61,7 +61,7 @@ Let’s start with the ADT. For the purposes of this blog post, we will ignore a
      ))))
 ```
 
-First we define a based case for our macro, since it will be recursive. Then we define the head clause of our main rule, where we take one of the constructors. What do we do with it, though? We need to at least define a function named after the constructor that constructs the data type, and probably also a function that checks for the data type. Taking our example from above and the `Lit` expression that takes a literal, we would define `(Lit <n>)` and `(Lit? <to-check>)`, then go to our next constructor. So, let’s do just that:
+First we define a base case for our macro, since it will be recursive. Then we define the head clause of our main rule, where we take one of the constructors. What do we do with it, though? We need to at least define a function named after the constructor that constructs the data type, and probably also a function that checks for the data type. Taking our example from above and the `Lit` expression that takes a literal, we would define `(Lit <n>)` and `(Lit? <to-check>)`, then go to our next constructor. So, let’s do just that:
 
 ```
 (define-syntax defadt
@@ -179,4 +179,4 @@ There are even more things you could spend time on, like `let`-style destructuri
 
 In this blog post, we implemented full ADT support and pattern matching in two macros and under 30 lines of code. Not too shabby, right?
 
-Let me know if you want me to revive this series, I have a few more idea for funky macros up my sleeve!
+Let me know if you want me to revive this series, I have a few more ideas for funky macros up my sleeve!

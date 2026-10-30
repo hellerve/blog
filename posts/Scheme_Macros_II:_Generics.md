@@ -6,7 +6,7 @@ date: 2017-08-05
 This is a continuation of [an earlier post](//blog.veitheller.de/Scheme_Macros_I:_Modules.html),
 in which I talked about the power of Scheme macros in the context of modules.
 Modules aren’t the only use case of macros, though, and so this time I want to
-talk about generic functions as an another case study.
+talk about generic functions as another case study.
 
 Generic functions are a milestone in any programming language. Most languages
 use some kind of interface structure, but the naming is inconsistent. I’ve seen
@@ -110,7 +110,7 @@ a view of what `*impls*` looks like after we’ve defined and implemented the
         "cdr" <function: string:tail>,
         "null?" <lambda>}]}
 ```
-<div class="figure-label">Fig. 3: `*impls*` after a defintion of the
+<div class="figure-label">Fig. 3: `*impls*` after a definition of the
 first protocol.</div>
 
 The structure is a hash map, holding the protocol names as keys and as values a
@@ -266,7 +266,7 @@ Let's fill in the blanks with some lookup and an update skeleton:
 Here we just convert the name to a string and hand it over to `hash:update!`,
 which implements destructive assignment of a hash map’s key-value pair.
 `hash:update!` takes a hash map, a key and a function that will be handed the
-old value—or `nil` if the key doesn’t exists—and should return the new value.
+old value—or `nil` if the key doesn’t exist—and should return the new value.
 
 Equipped with that knowledge, updating the list is as simple as making sure
 we replace `nil` with an empty list and append the new implementation to it.
@@ -285,7 +285,7 @@ we replace `nil` with an empty list and append the new implementation to it.
 
 The new implementation is a pair of the predicate, by which we will filter the
 list of implementations when we look up the function to execute in `defproto`,
-and a hash maps of the functions and names. That’s all!
+and a hash map of the functions and names. That’s all!
 
 ## Wrapping up
 
