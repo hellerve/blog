@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="The personal blog of Veit Heller"/>
+    <meta name="author" content="Veit Heller"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Veit's Blog</title>
+    <link rel="canonical" href="https://blog.veitheller.de/"/>
+    <link rel="alternate" type="application/rss+xml" title="Veit's Blog" href="//blog.veitheller.de/feed.rss" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Veit's Blog"/>
+    <meta property="og:description" content="The personal blog of Veit Heller"/>
+    <meta property="og:url" content="https://blog.veitheller.de/"/>
+    <meta property="og:site_name" content="Veit's Blog"/>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Veit's Blog","description":"The personal blog of Veit Heller","url":"https://blog.veitheller.de/","author":{"@type":"Person","name":"Veit Heller","url":"https://veitheller.de"}}</script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
+    <style>
+      @font-face {
+        font-family: 'charterregular';
+        src: url('charter_regular-webfont.eot');
+        src: url('charter_regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      .content {
+        max-width: 700px;
+        margin-left: 10vw;
+        font-size: 20px;
+        font-family: 'charterregular';
+      }
+      h1 {
+        font-weight: 500;
+        font-size: 30px;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        padding-bottom: 0.2em;
+      }
+      .date {
+        color: #888;
+        margin-right: 0.8em;
+        font-variant-numeric: tabular-nums;
+        font-size: 1.1rem;
+        vertical-align: bottom;
+      }
+      a {
+        color: #222;
+        text-decoration: none;
+      }
+      a:hover {
+        border-bottom: 2px solid #d6dde3;
+      }
+      .bottom a {
+        border-bottom: 2px solid #d6dde3;
+      }
+      .rc-scout__text > .rc-scout__link:link, .rc-scout__link:visited, .rc-scout__link:hover {
+        color: #222 !important;
+        border-bottom: 2px solid #d6dde3;
+        text-decoration: none;
+      }
+      @media all and (max-width:1000px) {
+        .content {
+          max-width: 100%;
+        }
+      }
+    </style>
+    <script defer="" data-domain="blog.veitheller.de" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Veit's Blog</h1>
+      <ul>
+        {{#posts}}
+        <li class="post"><time class="date" datetime="{{date}}">{{date}}</time><a href="{{url_path}}">{{title}}</a></li>
+        {{/posts}}
+      </ul>
+      <hr/>
+      <p class="bottom">
+        You can visit <a href="https://veitheller.de">my website</a>
+        or <a href="https://github.com/hellerve">my Github profile</a>.
+      </p>
+      <p class="bottom">
+        This blog <a href="/feed.rss">has an RSS feed</a> and
+        you can find its source code <a href="https://github.com/hellerve/blog">on Github</a>.
+      </p>
+      <p class="bottom"><a href="/open_invite.html">Open Invitation</a></p>
+      <p class="bottom"><a href="https://calendly.com/veit-veitheller/coffee-chat">Coffee chats</a></p>
+      <p class="bottom"><a href="/imprint.html">Imprint</a></p>
+      <p class="bottom"><a href="/gdpr_notice.html">GDPR Notice</a></p>
+      <div class="rc-scout"></div>
+      <script async="" defer="" src="https://www.recurse-scout.com/loader.js?t=3f214b4d8605308d27685ebd4548905e"></script>
+    </div>
+  </body>
+</html>
